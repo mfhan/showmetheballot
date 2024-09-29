@@ -15,11 +15,8 @@ function loadCSV() {
 
 // Function to set up autocomplete
 function setupAutocomplete() {
-    const searchTerms = data.reduce((acc, row) => {
-        acc.push(row.county, row.zip);
-        return acc;
-    }, []);
-
+    const searchTerms = Array.from(new Set(data.flatMap(row => [row.county, row.zip])));
+    
     $("#search-input").autocomplete({
         source: searchTerms,
         minLength: 2,
@@ -35,7 +32,6 @@ function search(searchTerm = null) {
     const result = data.find(row => 
         row.county.toLowerCase() === searchTerm.toLowerCase() || row.zip === searchTerm
     );
-
     displayResult(result);
 }
 
@@ -54,4 +50,6 @@ function displayResult(result) {
 }
 
 // Load the CSV when the page loads
-window.onload = loadCSV;
+$(document).ready(function() {
+    loadCSV();
+});
