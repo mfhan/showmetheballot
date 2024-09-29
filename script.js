@@ -30,6 +30,7 @@ function setupAutocomplete() {
 function search(searchTerm = null) {
     searchTerm = searchTerm || document.getElementById('search-input').value.toLowerCase();
     const result = data.find(row => 
+                             row.state.toLowerCase() === searchTerm.toLowerCase()  ||
         row.county.toLowerCase() === searchTerm.toLowerCase() || row.zip === searchTerm
     );
     displayResult(result);
