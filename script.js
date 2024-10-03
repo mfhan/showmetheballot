@@ -18,7 +18,6 @@ function loadCSVs() {
                 complete: function(results) {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded:', ballotData);
-                    displayDefaultMessage();
                     setupAutocomplete();
                 }
             });
@@ -208,6 +207,7 @@ function setupDocumentClickListener() {
 // Load the CSVs when the page loads
 // Load the CSVs and set up event listeners when the page loads
 document.addEventListener('DOMContentLoaded', () => {
+    displayDefaultMessage();
     loadCSVs();
     setupDocumentClickListener();
 });
