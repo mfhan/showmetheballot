@@ -129,8 +129,8 @@ function search(searchTerm = null) {
     
     // If parsing fails or no exact match found, search for any partial match
     const partialMatch = ballotData.find(row => 
-        Object.values(row).some(value => 
-            value.toLowerCase().includes(searchTerm.toLowerCase())
+        ['county', 'state', 'zip'].some(key => 
+            String(row[key]).toLowerCase().includes(searchTerm.toLowerCase())
         )
     );
     
