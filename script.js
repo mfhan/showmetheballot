@@ -106,6 +106,9 @@ function handleKeyDown(e) {
 
 // Function to search for a county, state, or zip code
 function search(searchTerm = null) {
+    const suggestionList = document.getElementById('suggestions');
+    suggestionList.innerHTML = '';
+
     searchTerm = searchTerm || document.getElementById('search-input').value.trim();
     
     // Try to parse the search term into county, state, and zip
@@ -127,7 +130,7 @@ function search(searchTerm = null) {
     // If parsing fails or no exact match found, search for any partial match
     const partialMatch = ballotData.find(row => 
         Object.values(row).some(value => 
-            value.toLowerCase().toString().includes(searchTerm.toLowerCase())
+            value.toLowerCase().includes(searchTerm.toLowerCase())
         )
     );
     
