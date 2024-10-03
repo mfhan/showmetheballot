@@ -1,39 +1,137 @@
-let data = [];
+let ballotData = [];
+let zipLookup = [];
+let autocompleteData = [];
 
-// Function to load and parse the CSV file
-function loadCSV() {
-    Papa.parse('data.csv', {
+// Function to load and parse the CSV files
+function loadCSVs() {
+    Papa.parse('zip_lookup.csv', {
         download: true,
         header: true,
         complete: function(results) {
-            data = results.data;
-            console.log('CSV loaded:', data);
-            setupAutocomplete();
+            zipLookup = results.data;
+            console.log('Zip lookup CSV loaded:', zipLookup);
+            
+            // After zip_lookup is loaded, load the ballot data
+            Papa.parse('data.csv', {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    ballotData = results.data;
+                    console.log('Ballot data CSV loaded:', ballotData);
+                    setupAutocomplete();
+                }
+            });
         }
     });
 }
 
 // Function to set up autocomplete
 function setupAutocomplete() {
-    const searchTerms = Array.from(new Set(data.flatMap(row => [row.county, row.zip])));
-    
-    $("#search-input").autocomplete({
-        source: searchTerms,
-        minLength: 2,
-        select: function(event, ui) {
-            search(ui.item.value);
-        }
+    autocompleteData = zipLookup.flatMap(row => [
+        `${row.county}, ${row.state} (${row.zip})`
+    ]);
+    autocompleteData = [...new Set(autocompleteData)]; // Remove duplicates
+
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', handleInput);
+    searchInput.addEventListener('keydown', handleKeyDown);
+}
+
+function handleInput(e) {
+    const input = e.target.value.toLowerCase();
+    if (input.length < 2) return;
+
+    const matches = autocompleteData.filter(item => 
+        item.toLowerCase().includes(input)
+    ).slice(0, 5); // Limit to 5 suggestions
+
+    showSuggestions(matches);
+}
+
+function showSuggestions(suggestions) {
+    const suggestionList = document.getElementById('suggestions');
+    suggestionList.innerHTML = '';
+    suggestions.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        li.addEventListener('click', () => {
+            document.getElementById('search-input').value = item;
+            suggestionList.innerHTML = '';
+            search(item);
+        });
+        suggestionList.appendChild(li);
     });
 }
 
-// Function to search for a county or zip code
+function handleKeyDown(e) {
+    const suggestionList = document.getElementById('suggestions');
+    const suggestions = suggestionList.children;
+    let selectedIndex = -1;
+
+    for (let i = 0; i < suggestions.length; i++) {
+        if (suggestions[i].classList.contains('selected')) {
+            selectedIndex = i;
+            break;
+        }
+    }
+
+    switch (e.key) {
+        case 'ArrowDown':
+            e.preventDefault();
+            if (selectedIndex < suggestions.length - 1) {
+                if (selectedIndex > -1) suggestions[selectedIndex].classList.remove('selected');
+                suggestions[selectedIndex + 1].classList.add('selected');
+            }
+            break;
+        case 'ArrowUp':
+            e.preventDefault();
+            if (selectedIndex > 0) {
+                suggestions[selectedIndex].classList.remove('selected');
+                suggestions[selectedIndex - 1].classList.add('selected');
+            }
+            break;
+        case 'Enter':
+            e.preventDefault();
+            if (selectedIndex > -1) {
+                document.getElementById('search-input').value = suggestions[selectedIndex].textContent;
+                suggestionList.innerHTML = '';
+                search(suggestions[selectedIndex].textContent);
+            } else {
+                search();
+            }
+            break;
+    }
+}
+
+// Function to search for a county, state, or zip code
 function search(searchTerm = null) {
-    searchTerm = searchTerm || document.getElementById('search-input').value.toLowerCase();
-    const result = data.find(row => 
-                             row.state.toLowerCase() === searchTerm.toLowerCase()  ||
-        row.county.toLowerCase() === searchTerm.toLowerCase() || row.zip === searchTerm
+    searchTerm = searchTerm || document.getElementById('search-input').value;
+    let county, state, zip;
+
+    // Parse the search term
+    const parts = searchTerm.split(',');
+    if (parts.length === 2) {
+        county = parts[0].trim();
+        const stateZipParts = parts[1].trim().split('(');
+        if (stateZipParts.length === 2) {
+            state = stateZipParts[0].trim();
+            zip = stateZipParts[1].replace(')', '').trim();
+        } else {
+            displayResult(null);
+            return;
+        }
+    } else {
+        displayResult(null);
+        return;
+    }
+
+    // Find the ballot data
+    const result = ballotData.find(row => 
+        row.county.toLowerCase() === county.toLowerCase() &&
+        row.state.toLowerCase() === state.toLowerCase()
     );
-    displayResult(result);
+
+    displayResult(result, county, state, zip);
 }
 
 // Function to display the search result
@@ -42,7 +140,6 @@ function displayResult(result) {
     if (result) {
         const renderedMarkdown = marked(result.ballot_markdown);
         resultsDiv.innerHTML = `
-            <h2>${result.county}, ${result.state} (${result.zip})</h2>
             <div>${renderedMarkdown}</div>
         `;
     } else {
@@ -50,7 +147,5 @@ function displayResult(result) {
     }
 }
 
-// Load the CSV when the page loads
-$(document).ready(function() {
-    loadCSV();
-});
+// Load the CSVs when the page loads
+document.addEventListener('DOMContentLoaded', loadCSVs);

@@ -14,9 +14,10 @@
 <body>
     <h1>🗳️ Show me the Ballot!</h1>
     <div id="search-container">
-        <input type="text" id="search-input" placeholder="Enter county or zip code">
-        <button onclick="search()">Search</button>
-    </div>
+    <input type="text" id="search-input" placeholder="Enter county, state, or zip code">
+    <button onclick="search()">Search</button>
+    <ul id="suggestions"></ul>
+</div>
     <div id="results"></div>
 <footer>
             <p>(Built on data from <a href="https://ballotpedia.org/" target="_blank">Ballotpedia</a>)</p>
