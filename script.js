@@ -174,15 +174,19 @@ function displayResult(result) {
 function displayDefaultMessage() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = `
-        <h2>Your Voice, Your Vote</h2>
-        <p>Elections shape our daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
-        <p>Type and select from any location in the United States to see what's on your ticket. Examples:</p>
-        <ul>
-            <li>Los Angeles, California (90011)</li>
-            <li>Chicago, Illinois (60629)</li>
-            <li>Kings, New York (11226)</li>
-        </ul>
-        <p>Get the facts. Be prepared. Vote smart.</p>
+<h2>Your Voice, Your Vote</h2>
+<p>Elections shape our daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
+
+<p>Type and select from any location in the United States to see what's on your ticket. Examples:</p>
+<ul>
+    <li>Los Angeles, California (90011)</li>
+    <li>Chicago, Illinois (60629)</li>
+    <li>Kings, New York (11226)</li>
+</ul>
+<p>Get the facts. Be prepared. Vote smart.</p>
+
+<p><strong>Disclaimer: This tool provides a preview of your ballot based on available data from <a href="https://ballotpedia.org" target="_blank">Ballotpedia</a>.</strong></p>
+<p><strong>It may not include all races or candidates. Always verify with your local election office for the most complete and up-to-date information.</strong></p>
     `;
 }
 
