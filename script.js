@@ -19,6 +19,7 @@ function loadCSVs() {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded:', ballotData);
                     setupAutocomplete();
+                    displayDefaultMessage();
                 }
             });
         }
@@ -145,6 +146,21 @@ function displayResult(result) {
     } else {
         resultsDiv.innerHTML = '<p>No results found.</p>';
     }
+}
+
+function displayDefaultMessage() {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `
+        <h2>Your Voice, Your Vote</h2>
+        <p>Elections shape your daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
+        <p>Type and select from any location in the United States, such as:</p>
+        <ul>
+            <li>Los Angeles, CA (90011)</li>
+            <li>Chicago, IL (60629)</li>
+            <li>Brooklyn, NY (11226)</li>
+        </ul>
+        <p>Get the facts. Be prepared. Vote smart.</p>
+    `;
 }
 
 // Load the CSVs when the page loads
