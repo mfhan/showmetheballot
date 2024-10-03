@@ -18,8 +18,8 @@ function loadCSVs() {
                 complete: function(results) {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded:', ballotData);
-                    setupAutocomplete();
                     displayDefaultMessage();
+                    setupAutocomplete();
                 }
             });
         }
@@ -50,14 +50,22 @@ function handleInput(e) {
 }
 
 function showSuggestions(suggestions) {
-    const suggestionList = document.getElementById('suggestions');
+    let suggestionList = document.getElementById('suggestions');
+    
+    if (!suggestionList) {
+        suggestionList = document.createElement('ul');
+        suggestionList.id = 'suggestions';
+        const searchContainer = document.getElementById('search-container');
+        searchContainer.appendChild(suggestionList);
+    }
+
     suggestionList.innerHTML = '';
     suggestions.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
         li.addEventListener('click', () => {
             document.getElementById('search-input').value = item;
-            suggestionList.innerHTML = '';
+            removeSuggestionList();
             search(item);
         });
         suggestionList.appendChild(li);
@@ -95,7 +103,7 @@ function handleKeyDown(e) {
             e.preventDefault();
             if (selectedIndex > -1) {
                 document.getElementById('search-input').value = suggestions[selectedIndex].textContent;
-                suggestionList.innerHTML = '';
+                removeSuggestionList();
                 search(suggestions[selectedIndex].textContent);
             } else {
                 search();
@@ -106,8 +114,8 @@ function handleKeyDown(e) {
 
 // Function to search for a county, state, or zip code
 function search(searchTerm = null) {
-    const suggestionList = document.getElementById('suggestions');
-    suggestionList.innerHTML = '';
+    removeSuggestionList();
+
 
     searchTerm = searchTerm || document.getElementById('search-input').value.trim();
     
@@ -179,5 +187,27 @@ function displayDefaultMessage() {
     `;
 }
 
+function removeSuggestionList() {
+    const suggestionList = document.getElementById('suggestions');
+    if (suggestionList) {
+        suggestionList.remove();
+    }
+}
+
+function setupDocumentClickListener() {
+    document.addEventListener('click', (event) => {
+        const searchContainer = document.getElementById('search-container');
+        const isClickInsideSearchContainer = searchContainer.contains(event.target);
+        
+        if (!isClickInsideSearchContainer) {
+            removeSuggestionList();
+        }
+    });
+}
+
 // Load the CSVs when the page loads
-document.addEventListener('DOMContentLoaded', loadCSVs);
+// Load the CSVs and set up event listeners when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadCSVs();
+    setupDocumentClickListener();
+});
