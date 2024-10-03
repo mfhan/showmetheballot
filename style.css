@@ -21,6 +21,7 @@ h1 {
     align-items: center;
     margin-bottom: 30px;
     width: 100%;
+    position: relative; /* Add this to make it a positioning context for absolute children */
 }
 
 #search-input {
@@ -54,48 +55,31 @@ button:hover {
     border: 1px solid #e0e0e0;
 }
 
-/* Autocomplete styling */
-.ui-autocomplete {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    max-height: 200px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.ui-menu-item {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.ui-menu-item:hover {
-    background-color: #f0f0f0;
-}
-
-.ui-helper-hidden-accessible {
-    display: none;
-}
-
+/* Updated Autocomplete styling */
 #suggestions {
     list-style-type: none;
     padding: 0;
     margin: 0;
     position: absolute;
+    top: 100%; /* Position it right below the search input */
+    left: 0;
+    right: 0; /* Make it span the full width of the search container */
     background-color: white;
     border: 1px solid #ddd;
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #suggestions li {
     padding: 10px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 #suggestions li:hover, #suggestions li.selected {
-    background-color: #f0f0f0;
+    background-color: #fffdf0; /* Very subtle yellow highlight */
 }
 
 /* Responsive design */

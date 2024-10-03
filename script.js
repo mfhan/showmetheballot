@@ -106,33 +106,46 @@ function handleKeyDown(e) {
 
 // Function to search for a county, state, or zip code
 function search(searchTerm = null) {
-    searchTerm = searchTerm || document.getElementById('search-input').value;
-    let county, state, zip;
-
-    // Parse the search term
-    const parts = searchTerm.split(',');
-    if (parts.length === 2) {
-        county = parts[0].trim();
-        const stateZipParts = parts[1].trim().split('(');
-        if (stateZipParts.length === 2) {
-            state = stateZipParts[0].trim();
-            zip = stateZipParts[1].replace(')', '').trim();
-        } else {
-            displayResult(null);
+    searchTerm = searchTerm || document.getElementById('search-input').value.trim();
+    
+    // Try to parse the search term into county, state, and zip
+    const parsedResult = parseSearchTerm(searchTerm);
+    
+    if (parsedResult) {
+        const { county, state, zip } = parsedResult;
+        const result = ballotData.find(row => 
+            row.county.toLowerCase() === county.toLowerCase() &&
+            row.state.toLowerCase() === state.toLowerCase()
+        );
+        
+        if (result) {
+            displayResult(result, county, state, zip);
             return;
         }
-    } else {
-        displayResult(null);
-        return;
     }
-
-    // Find the ballot data
-    const result = ballotData.find(row => 
-        row.county.toLowerCase() === county.toLowerCase() &&
-        row.state.toLowerCase() === state.toLowerCase()
+    
+    // If parsing fails or no exact match found, search for any partial match
+    const partialMatch = ballotData.find(row => 
+        Object.values(row).some(value => 
+            value.toLowerCase().toString().includes(searchTerm.toLowerCase())
+        )
     );
+    
+    displayResult(partialMatch);
+}
 
-    displayResult(result, county, state, zip);
+function parseSearchTerm(searchTerm) {
+    const parts = searchTerm.split(',');
+    if (parts.length === 2) {
+        const county = parts[0].trim();
+        const stateZipParts = parts[1].trim().split('(');
+        if (stateZipParts.length === 2) {
+            const state = stateZipParts[0].trim();
+            const zip = stateZipParts[1].replace(')', '').trim();
+            return { county, state, zip };
+        }
+    }
+    return null;
 }
 
 // Function to display the search result
@@ -153,11 +166,11 @@ function displayDefaultMessage() {
     resultsDiv.innerHTML = `
         <h2>Your Voice, Your Vote</h2>
         <p>Elections shape our daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
-        <p>Type and select from any location in the United States, such as:</p>
+        <p>Type and select from any location in the United States to see what's on your ticket. Examples:</p>
         <ul>
-            <li>Los Angeles, CA (90011)</li>
-            <li>Chicago, IL (60629)</li>
-            <li>Brooklyn, NY (11226)</li>
+            <li>Los Angeles, California (90011)</li>
+            <li>Chicago, Illinois (60629)</li>
+            <li>Brooklyn, New York (11226)</li>
         </ul>
         <p>Get the facts. Be prepared. Vote smart.</p>
     `;
