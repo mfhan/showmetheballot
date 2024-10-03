@@ -1,48 +1,66 @@
-# Hello website!
+# Show me the Ballot! 🗳️
 
-This is a basic HTML starter project you can build on however you like. No need to save. While you develop your site, your changes will happen ✨ immediately in the preview window. On the left you'll see the files that make up your site, including HTML, JavaScript, and CSS. You can upload assets like images or audio in `assets`. The rest is up to you and your imagination. 🦄
+## Description
 
-_Last updated: 28 Feb 2023_
+"Show me the Ballot!" is a web application that allows users to search for ballot information based on their location (state, county, or zip code) in the United States. This tool aims to make voting information more accessible and transparent to citizens, helping them make informed decisions during elections.
 
-## What's in this project?
+## Features
 
-← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
+- Search functionality for ballot information by state, county, or zip code
+- Autocomplete suggestions for easier searching
+- Responsive design for various screen sizes
+- Displays detailed ballot information in a user-friendly format
 
-← `index.html`: This is the main web page for your site. The HTML defines the structure and content of the page using _elements_. You'll see references in the HTML to the JS and CSS files. Try clicking the image in the center of the page!
+## Technologies Used
 
-← `style.css`: CSS files add styling rules to your content. The CSS applies styles to the elements in your HTML page. The style rules also make the image move when you click it.
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- jQuery
+- jQuery UI (for autocomplete)
+- Papa Parse (for CSV parsing)
+- Marked.js (for Markdown rendering)
 
-← `script.js`: If you're feeling fancy you can add interactivity to your site with JavaScript. The code in the JavaScript file runs when the page loads, and when the visitor clicks the button you can add using the code in the TODO.
+## Setup and Installation
 
-Open each file and check out the comments (in gray) for more info.
+1. Clone this repository to your local machine.
+2. Ensure you have a web server set up to serve the files (e.g., Apache, Nginx, or a simple Python HTTP server).
+3. Place your `data.csv` file in the root directory of the project. This file should contain the ballot information with columns for state, county, zip, and ballot_markdown.
 
-## Try this next 🏗️
+## Usage
 
-Take a look in `TODO.md` for next steps you can try out in your new site!
+1. Open `index.html` in a web browser.
+2. Use the search bar to enter a state, county, or zip code.
+3. Select from the autocomplete suggestions or press enter to search.
+4. View the ballot information displayed for the selected location.
 
-___Want a minimal version of this project to build your own website? Check out [Blank Website](https://glitch.com/edit/#!/remix/glitch-blank-website)!___
+## Project Structure
 
-## Ready to share your site?
+- `index.html`: Main HTML file for the application
+- `style.css`: CSS styles for the application
+- `script.js`: JavaScript file containing the application logic
+- `data.csv`: CSV file containing the ballot information (not included in the repository)
 
-Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
+## Data Source
 
-```
-<link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-<meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta name="robots" content="index,follow" />
-<meta property="og:title" content="Hello World!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-<meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"/>
-<meta name="twitter:card" content="summary" />
-```
+The ballot information is sourced from [Ballotpedia](https://ballotpedia.org/). Please note that this is a beta version, and currently only the top 5 most populous zip codes in each state are available.
 
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
+## Future Improvements
 
-## You built this with Glitch!
+- Expand the database to include more zip codes and locations
+- Add filtering options for different types of elections (local, state, federal)
+- Implement a backend API for more efficient data retrieval
+- Add user accounts for saving and tracking ballot information
 
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
+## Contributing
 
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+Contributions to improve "Show me the Ballot!" are welcome. Please feel free to submit pull requests or open issues to discuss potential enhancements.
+
+## License
+
+[Insert appropriate license information here]
+
+## Acknowledgements
+
+- Ballotpedia for providing the initial data for this project
+- All contributors and users who help improve this tool for better democratic participation
