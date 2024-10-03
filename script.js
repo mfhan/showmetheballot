@@ -181,7 +181,7 @@ function displayDefaultMessage() {
         <ul>
             <li>Los Angeles, California (90011)</li>
             <li>Chicago, Illinois (60629)</li>
-            <li>Brooklyn, New York (11226)</li>
+            <li>Kings, New York (11226)</li>
         </ul>
         <p>Get the facts. Be prepared. Vote smart.</p>
     `;
