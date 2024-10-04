@@ -177,10 +177,10 @@ function displayDefaultMessage() {
 <h2>Your Voice, Your Vote</h2>
 <p>Elections shape our daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
 
-<p>Type and select from any location in the United States to see what's on your ticket. Examples:</p>
+<p>To see what you'll be voting for, type and select from any location in the United States. Examples:</p>
 <ul>
     <li>Los Angeles, California (90011)</li>
-    <li>Chicago, Illinois (60629)</li>
+    <li>Cook, Illinois (60629)</li>
     <li>Kings, New York (11226)</li>
 </ul>
 <p>Get the facts. Be prepared. Vote smart.</p>
