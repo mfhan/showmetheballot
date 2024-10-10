@@ -9,7 +9,7 @@ function loadCSVs() {
         header: true,
         complete: function(results) {
             zipLookup = results.data;
-            console.log('Zip lookup CSV loaded:', zipLookup);
+            console.log('Zip lookup CSV loaded');
             
             // After zip_lookup is loaded, load the ballot data
             Papa.parse('data.csv', {
@@ -17,7 +17,7 @@ function loadCSVs() {
                 header: true,
                 complete: function(results) {
                     ballotData = results.data;
-                    console.log('Ballot data CSV loaded:', ballotData);
+                    console.log('Ballot data CSV loaded');
                     setupAutocomplete();
                 }
             });
@@ -114,34 +114,30 @@ function handleKeyDown(e) {
 // Function to search for a county, state, or zip code
 function search(searchTerm = null) {
     removeSuggestionList();
-
-
     searchTerm = searchTerm || document.getElementById('search-input').value.trim();
     
     // Try to parse the search term into county, state, and zip
     const parsedResult = parseSearchTerm(searchTerm);
     
+    let results = [];
+    
     if (parsedResult) {
         const { county, state, zip } = parsedResult;
-        const result = ballotData.find(row => 
-            row.county.toLowerCase() === county.toLowerCase() &&
-            row.state.toLowerCase() === state.toLowerCase()
+        results = ballotData.filter(row => 
+            row.zip && row.zip.includes(zip)
         );
-        
-        if (result) {
-            displayResult(result, county, state, zip);
-            return;
-        }
     }
     
     // If parsing fails or no exact match found, search for any partial match
-    const partialMatch = ballotData.find(row => 
-        ['county', 'state', 'zip'].some(key => 
-            String(row[key]).toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    );
+    if (results.length === 0) {
+        results = ballotData.filter(row => 
+            ['county', 'state', 'zip', 'district'].some(key => 
+                String(row[key]).toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+    }
     
-    displayResult(partialMatch);
+    displayResults(results);
 }
 
 function parseSearchTerm(searchTerm) {
@@ -158,17 +154,33 @@ function parseSearchTerm(searchTerm) {
     return null;
 }
 
-// Function to display the search result
-function displayResult(result) {
+// Function to display the search results
+function displayResults(results) {
     const resultsDiv = document.getElementById('results');
-    if (result) {
-        const renderedMarkdown = marked(result.ballot_markdown);
-        resultsDiv.innerHTML = `
-            <div>${renderedMarkdown}</div>
-        `;
+    if (results.length > 0) {
+        resultsDiv.innerHTML = results.map((result, index) => {
+            const title = result.district ? 
+                `${result.county}, ${result.state} -- ${result.district}` : 
+                `${result.county}, ${result.state}`;
+            
+            return `
+                <div class="result-toggle">
+                    <h3 onclick="toggleBallot(${index})">${title}</h3>
+                    <div id="ballot-${index}" class="ballot-content" style="display: none;">
+                        ${marked(result.ballot_markdown)}
+                    </div>
+                </div>
+            `;
+        }).join('');
     } else {
         resultsDiv.innerHTML = '<p>No results found.</p>';
     }
+}
+
+// Function to toggle the visibility of ballot content
+function toggleBallot(index) {
+    const ballotContent = document.getElementById(`ballot-${index}`);
+    ballotContent.style.display = ballotContent.style.display === 'none' ? 'block' : 'none';
 }
 
 function displayDefaultMessage() {

@@ -82,6 +82,25 @@ button:hover {
     background-color: #fffdf0; /* Very subtle yellow highlight */
 }
 
+.result-toggle h3 {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.result-toggle h3:hover {
+    background-color: #e0e0e0;
+}
+
+.ballot-content {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 /* Responsive design */
 @media (max-width: 600px) {
     #search-container {
