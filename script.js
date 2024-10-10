@@ -123,6 +123,7 @@ function search(searchTerm = null) {
     
     if (parsedResult) {
         const { county, state, zip } = parsedResult;
+      
         results = ballotData.filter(row => 
             row.zip && row.zip.includes(zip)
         );
