@@ -1,6 +1,7 @@
 let ballotData = [];
 let zipLookup = [];
 let autocompleteData = [];
+const converter = new showdown.Converter();
 
 // Function to load and parse the CSV files
 function loadCSVs() {
@@ -123,7 +124,7 @@ function search(searchTerm = null) {
     
     if (parsedResult) {
         const { county, state, zip } = parsedResult;
-      
+        console.log(zip);
         results = ballotData.filter(row => 
             row.zip && row.zip.includes(zip)
         );
@@ -161,14 +162,17 @@ function displayResults(results) {
     if (results.length > 0) {
         resultsDiv.innerHTML = results.map((result, index) => {
             const title = result.district ? 
-                `${result.county}, ${result.state} -- ${result.district}` : 
+                `${result.county}, ${result.state} － ${result.district}` : 
                 `${result.county}, ${result.state}`;
+            
+            // Use showdown to convert Markdown to HTML
+            const htmlContent = converter.makeHtml(result.ballot_markdown);
             
             return `
                 <div class="result-toggle">
                     <h3 onclick="toggleBallot(${index})">${title}</h3>
                     <div id="ballot-${index}" class="ballot-content" style="display: none;">
-                        ${marked(result.ballot_markdown)}
+                        ${htmlContent}
                     </div>
                 </div>
             `;
