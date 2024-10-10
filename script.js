@@ -46,7 +46,7 @@ function hideLoadingIndicator() {
 // Function to set up autocomplete
 function setupAutocomplete() {
     autocompleteData = zipLookup.flatMap(row => [
-        `${row.county}, ${row.state} (${row.zip})`
+        `${row.county} County, ${row.state} (${row.zip})`
     ]);
     autocompleteData = [...new Set(autocompleteData)]; // Remove duplicates
 
@@ -197,8 +197,8 @@ function displayResults(results) {
     if (results.length > 0) {
         resultsDiv.innerHTML = results.map((result, index) => {
             const title = result.district ? 
-                `${result.county}, ${result.state} － ${result.district}` : 
-                `${result.county}, ${result.state}`;
+                `${result.county} County, ${result.state} － ${result.district}` : 
+                `${result.county} County, ${result.state}`;
             
             // Use showdown to convert Markdown to HTML
             const htmlContent = converter.makeHtml(result.ballot_markdown);
