@@ -1,6 +1,7 @@
 let ballotData = [];
 let zipLookup = [];
 let autocompleteData = [];
+showdown.setOption('tables', true);
 const converter = new showdown.Converter();
 
 // Function to load and parse the CSV files
@@ -11,7 +12,8 @@ function loadCSVs() {
         complete: function(results) {
             zipLookup = results.data;
             console.log('Zip lookup CSV loaded');
-            
+            setupAutocomplete();
+
             // After zip_lookup is loaded, load the ballot data
             Papa.parse('data.csv', {
                 download: true,
@@ -19,7 +21,6 @@ function loadCSVs() {
                 complete: function(results) {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded');
-                    setupAutocomplete();
                 }
             });
         }
