@@ -1,6 +1,7 @@
 let ballotData = [];
 let zipLookup = [];
 let autocompleteData = [];
+let isDataLoaded = false;
 showdown.setOption('tables', true);
 const converter = new showdown.Converter();
 
@@ -21,10 +22,25 @@ function loadCSVs() {
                 complete: function(results) {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded');
+                    isDataLoaded = true;
                 }
             });
         }
     });
+}
+
+// Function to show loading indicator
+function showLoadingIndicator() {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '<div class="loading"><div class="spinner"></div>Loading ballot data...</div>';
+}
+
+// Function to hide loading indicator
+function hideLoadingIndicator() {
+    const loadingDiv = document.querySelector('.loading');
+    if (loadingDiv) {
+        loadingDiv.remove();
+    }
 }
 
 // Function to set up autocomplete
@@ -117,6 +133,24 @@ function handleKeyDown(e) {
 function search(searchTerm = null) {
     removeSuggestionList();
     searchTerm = searchTerm || document.getElementById('search-input').value.trim();
+
+    if (!isDataLoaded) {
+        showLoadingIndicator();
+        // Wait for data to load before searching
+        const checkDataInterval = setInterval(() => {
+            if (isDataLoaded) {
+                clearInterval(checkDataInterval);
+                performSearch(searchTerm);
+            }
+        }, 100); // Check every 100ms
+    } else {
+        performSearch(searchTerm);
+    }
+}
+
+// Function to perform the actual search
+function performSearch(searchTerm) {
+    hideLoadingIndicator();
     
     // Try to parse the search term into county, state, and zip
     const parsedResult = parseSearchTerm(searchTerm);
