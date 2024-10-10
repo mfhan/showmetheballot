@@ -171,7 +171,7 @@ function displayResults(results) {
             
             return `
                 <div class="result-toggle">
-                    <h3 onclick="toggleBallot(${index})">${title}</h3>
+                    <h2 onclick="toggleBallot(${index})">${title}</h2>
                     <div id="ballot-${index}" class="ballot-content" style="display: none;">
                         ${htmlContent}
                     </div>

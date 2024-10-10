@@ -21,7 +21,7 @@ h1 {
     align-items: center;
     margin-bottom: 30px;
     width: 100%;
-    position: relative; /* Add this to make it a positioning context for absolute children */
+    position: relative;
 }
 
 #search-input {
@@ -55,15 +55,14 @@ button:hover {
     border: 1px solid #e0e0e0;
 }
 
-/* Updated Autocomplete styling */
 #suggestions {
     list-style-type: none;
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 100%; /* Position it right below the search input */
+    top: 100%;
     left: 0;
-    right: 0; /* Make it span the full width of the search container */
+    right: 0;
     background-color: white;
     border: 1px solid #ddd;
     max-height: 200px;
@@ -79,10 +78,11 @@ button:hover {
 }
 
 #suggestions li:hover, #suggestions li.selected {
-    background-color: #fffdf0; /* Very subtle yellow highlight */
+    background-color: #fffdf0;
 }
 
-.result-toggle h3 {
+/* Updated styles for result toggles */
+#results .result-toggle > h2 {
     cursor: pointer;
     background-color: #f0f0f0;
     padding: 10px;
@@ -90,7 +90,7 @@ button:hover {
     border-radius: 5px;
 }
 
-.result-toggle h3:hover {
+#results .result-toggle > h2:hover {
     background-color: #e0e0e0;
 }
 
@@ -99,6 +99,13 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+/* Styles for non-toggle headers */
+#results h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #1a3e6f;
 }
 
 /* Responsive design */
