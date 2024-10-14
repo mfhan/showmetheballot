@@ -23,7 +23,6 @@ function loadCSVs() {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded');
                     isDataLoaded = true;
-                    checkUrlParameters();
                 }
             });
         }
@@ -137,6 +136,8 @@ function checkUrlParameters() {
     if (searchQuery) {
         document.getElementById('search-input').value = searchQuery;
         search(searchQuery);
+    } else {
+        displayDefaultMessage();
     }
 }
 
@@ -250,6 +251,8 @@ function displayResults(results) {
                     toggleBallot(index);
                 }
             });
+        } else if (results.length == 1) {
+          toggleBallot(0);
         }
     } else {
         resultsDiv.innerHTML = '<p>No results found.</p>';
@@ -324,7 +327,8 @@ function setupDocumentClickListener() {
 // Load the CSVs when the page loads
 // Load the CSVs and set up event listeners when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    displayDefaultMessage();
-    loadCSVs();
+    showLoadingIndicator();
     setupDocumentClickListener();
+    checkUrlParameters();
+    loadCSVs();
 });
