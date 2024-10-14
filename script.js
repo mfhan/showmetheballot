@@ -23,34 +23,11 @@ function loadCSVs() {
                     ballotData = results.data;
                     console.log('Ballot data CSV loaded');
                     isDataLoaded = true;
+                    checkUrlParameters();
                 }
             });
         }
     });
-}
-
-// Function to check URL parameters and perform search if needed
-function checkUrlParameters() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get('q');
-    if (searchQuery) {
-        document.getElementById('search-input').value = searchQuery;
-        search(searchQuery);
-    }
-}
-
-// Function to update URL with search query
-function updateUrlWithSearch(searchQuery) {
-    const url = new URL(window.location);
-    url.searchParams.set('q', searchQuery);
-    window.history.pushState({}, '', url);
-}
-
-// Function to update URL with toggle states
-function updateUrlWithToggles(toggleStates) {
-    const url = new URL(window.location);
-    url.searchParams.set('toggles', toggleStates.join(','));
-    window.history.pushState({}, '', url);
 }
 
 // Function to show loading indicator
@@ -152,6 +129,31 @@ function handleKeyDown(e) {
             break;
     }
 }
+
+// Function to check URL parameters and perform search if needed
+function checkUrlParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('q');
+    if (searchQuery) {
+        document.getElementById('search-input').value = searchQuery;
+        search(searchQuery);
+    }
+}
+
+// Function to update URL with search query
+function updateUrlWithSearch(searchQuery) {
+    const url = new URL(window.location);
+    url.searchParams.set('q', searchQuery);
+    window.history.pushState({}, '', url);
+}
+
+// Function to update URL with toggle states
+function updateUrlWithToggles(toggleStates) {
+    const url = new URL(window.location);
+    url.searchParams.set('toggles', toggleStates.join(','));
+    window.history.pushState({}, '', url);
+}
+
 
 // Function to search for a county, state, or zip code
 function search(searchTerm = null) {
@@ -275,21 +277,21 @@ function displayDefaultMessage() {
     <div style="width: 48%;">
         <h3>Most Complex Ballots</h3>
         <ul>
-            <li><a href="#" onclick="search('Harris County, Texas (77088)'); return false;">Harris County, Texas (77088)</a></li>
-            <li><a href="#" onclick="search('Riverside County, California (92880)'); return false;">Riverside County, California (92880)</a></li>
-            <li><a href="#" onclick="search('Los Angeles County, California (90066)'); return false;">Los Angeles County, California (90066)</a></li>
-            <li><a href="#" onclick="search('San Diego County, California (92057)'); return false;">San Diego County, California (92057)</a></li>
-            <li><a href="#" onclick="search('Kern County, California (93505)'); return false;">Kern County, California (93505)</a></li>
+            <li><a href="?q=Harris%20County,%20Texas%20(77088)">Harris County, Texas (77088)</a></li>
+            <li><a href="?q=Riverside%20County,%20California%20(92880)">Riverside County, California (92880)</a></li>
+            <li><a href="?q=Los%20Angeles%20County,%20California%20(90066)">Los Angeles County, California (90066)</a></li>
+            <li><a href="?q=San%20Diego%20County,%20California%20(92057)">San Diego County, California (92057)</a></li>
+            <li><a href="?q=Kern%20County,%20California%20(93505)">Kern County, California (93505)</a></li>
         </ul>
     </div>
     <div style="width: 48%;">
         <h3>Least Complex Ballots</h3>
         <ul>
-            <li><a href="#" onclick="search('Cheshire County, New Hampshire (03446)'); return false;">Cheshire County, New Hampshire (03446)</a></li>
-            <li><a href="#" onclick="search('Coos County, New Hampshire (03570)'); return false;">Coos County, New Hampshire (03570)</a></li>
-            <li><a href="#" onclick="search('Belknap County, New Hampshire (03246)'); return false;">Belknap County, New Hampshire (03246)</a></li>
-            <li><a href="#" onclick="search('Grafton County, New Hampshire (03755)'); return false;">Grafton County, New Hampshire (03755)</a></li>
-            <li><a href="#" onclick="search('Hillsborough County, New Hampshire (03060)'); return false;">Hillsborough County, New Hampshire (03060)</a></li>
+            <li><a href="?q=Cheshire%20County,%20New%20Hampshire%20(03446)">Cheshire County, New Hampshire (03446)</a></li>
+            <li><a href="?q=Coos%20County,%20New%20Hampshire%20(03570)">Coos County, New Hampshire (03570)</a></li>
+            <li><a href="?q=Belknap%20County,%20New%20Hampshire%20(03246)">Belknap County, New Hampshire (03246)</a></li>
+            <li><a href="?q=Grafton%20County,%20New%20Hampshire%20(03755)">Grafton County, New Hampshire (03755)</a></li>
+            <li><a href="?q=Hillsborough%20County,%20New%20Hampshire%20(03060)">Hillsborough County, New Hampshire (03060)</a></li>
         </ul>
     </div>
 </div>
