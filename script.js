@@ -29,6 +29,30 @@ function loadCSVs() {
     });
 }
 
+// Function to check URL parameters and perform search if needed
+function checkUrlParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('q');
+    if (searchQuery) {
+        document.getElementById('search-input').value = searchQuery;
+        search(searchQuery);
+    }
+}
+
+// Function to update URL with search query
+function updateUrlWithSearch(searchQuery) {
+    const url = new URL(window.location);
+    url.searchParams.set('q', searchQuery);
+    window.history.pushState({}, '', url);
+}
+
+// Function to update URL with toggle states
+function updateUrlWithToggles(toggleStates) {
+    const url = new URL(window.location);
+    url.searchParams.set('toggles', toggleStates.join(','));
+    window.history.pushState({}, '', url);
+}
+
 // Function to show loading indicator
 function showLoadingIndicator() {
     const resultsDiv = document.getElementById('results');
@@ -152,6 +176,9 @@ function search(searchTerm = null) {
 function performSearch(searchTerm) {
     hideLoadingIndicator();
     
+    // Update URL with search query
+    updateUrlWithSearch(searchTerm);
+    
     // Try to parse the search term into county, state, and zip
     const parsedResult = parseSearchTerm(searchTerm);
     
@@ -159,7 +186,6 @@ function performSearch(searchTerm) {
     
     if (parsedResult) {
         const { county, state, zip } = parsedResult;
-        console.log(zip);
         results = ballotData.filter(row => 
             row.zip && row.zip.includes(zip)
         );
@@ -212,6 +238,17 @@ function displayResults(results) {
                 </div>
             `;
         }).join('');
+
+        // Check URL parameters for toggle states
+        const urlParams = new URLSearchParams(window.location.search);
+        const toggleStates = urlParams.get('toggles');
+        if (toggleStates) {
+            toggleStates.split(',').forEach((state, index) => {
+                if (state === '1') {
+                    toggleBallot(index);
+                }
+            });
+        }
     } else {
         resultsDiv.innerHTML = '<p>No results found.</p>';
     }
@@ -221,25 +258,46 @@ function displayResults(results) {
 function toggleBallot(index) {
     const ballotContent = document.getElementById(`ballot-${index}`);
     ballotContent.style.display = ballotContent.style.display === 'none' ? 'block' : 'none';
+    
+    // Update URL with toggle states
+    const toggleStates = Array.from(document.querySelectorAll('.ballot-content')).map(content => content.style.display === 'none' ? '0' : '1');
+    updateUrlWithToggles(toggleStates);
 }
 
 function displayDefaultMessage() {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = `
-<h2>Your Voice, Your Vote</h2>
+    resultsDiv.innerHTML = `<h2>Your Voice, Your Vote</h2>
 <p>Elections shape our daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
 
 <p>To see what you'll be voting for, type and select from any location in the United States. Examples:</p>
-<ul>
-    <li>Los Angeles, California (90011)</li>
-    <li>Cook, Illinois (60629)</li>
-    <li>Kings, New York (11226)</li>
-</ul>
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+    <div style="width: 48%;">
+        <h3>Most Complex Ballots</h3>
+        <ul>
+            <li><a href="#" onclick="search('Harris County, Texas (77088)'); return false;">Harris County, Texas (77088)</a></li>
+            <li><a href="#" onclick="search('Riverside County, California (92880)'); return false;">Riverside County, California (92880)</a></li>
+            <li><a href="#" onclick="search('Los Angeles County, California (90066)'); return false;">Los Angeles County, California (90066)</a></li>
+            <li><a href="#" onclick="search('San Diego County, California (92057)'); return false;">San Diego County, California (92057)</a></li>
+            <li><a href="#" onclick="search('Kern County, California (93505)'); return false;">Kern County, California (93505)</a></li>
+        </ul>
+    </div>
+    <div style="width: 48%;">
+        <h3>Least Complex Ballots</h3>
+        <ul>
+            <li><a href="#" onclick="search('Cheshire County, New Hampshire (03446)'); return false;">Cheshire County, New Hampshire (03446)</a></li>
+            <li><a href="#" onclick="search('Coos County, New Hampshire (03570)'); return false;">Coos County, New Hampshire (03570)</a></li>
+            <li><a href="#" onclick="search('Belknap County, New Hampshire (03246)'); return false;">Belknap County, New Hampshire (03246)</a></li>
+            <li><a href="#" onclick="search('Grafton County, New Hampshire (03755)'); return false;">Grafton County, New Hampshire (03755)</a></li>
+            <li><a href="#" onclick="search('Hillsborough County, New Hampshire (03060)'); return false;">Hillsborough County, New Hampshire (03060)</a></li>
+        </ul>
+    </div>
+</div>
+
 <p>Get the facts. Be prepared. Vote smart.</p>
 
 <p><strong>Disclaimer: This tool provides a preview of your ballot based on available data from <a href="https://ballotpedia.org" target="_blank">Ballotpedia</a>.</strong></p>
-<p><strong>It may not include all races or candidates. Always verify with your local election office for the most complete and up-to-date information.</strong></p>
-    `;
+<p><strong>It may not include all races or candidates. Always verify with your local election office for the most complete and up-to-date information.</strong></p>`;
 }
 
 function removeSuggestionList() {
@@ -259,6 +317,7 @@ function setupDocumentClickListener() {
         }
     });
 }
+
 
 // Load the CSVs when the page loads
 // Load the CSVs and set up event listeners when the page loads
