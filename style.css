@@ -133,6 +133,62 @@ button:hover {
     100% { transform: rotate(360deg); }
 }
 
+#about-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    margin-top: 30px;
+}
+
+#about-section h2, #about-section h3 {
+    color: #1a3e6f;
+    margin-bottom: 15px;
+}
+
+#about-section h3 {
+    margin-top: 20px;
+}
+
+#about-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#about-section li {
+    margin-bottom: 10px;
+}
+
+#about-section a {
+    color: #1a3e6f;
+    text-decoration: none;
+}
+
+#about-section a:hover {
+    text-decoration: underline;
+}
+
+.feedback-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1a3e6f;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.feedback-link:hover {
+    background-color: #15325a;
+    text-decoration: none !important;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #666;
+}
 /* Responsive design */
 @media (max-width: 600px) {
     #search-container {

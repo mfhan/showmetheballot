@@ -4,23 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show me the Ballot!</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 </head>
 <body>
-    <h1><a href="/" style="text-decoration: none; color: inherit;">🗳️ Show me the Ballot!</a></h1>
+    <h1>🗳️ Show me the Ballot!</h1>
+
     <div id="search-container">
-    <input type="text" id="search-input" placeholder="Enter county, state, or zip code">
-    <button onclick="search()">Search</button>
-</div>
+        <input type="text" id="search-input" placeholder="Enter county, state, or zip code">
+        <button onclick="search()">Search</button>
+    </div>
+
     <div id="results"></div>
-<footer>
-            <p>(Built on data from <a href="https://ballotpedia.org/" target="_blank">Ballotpedia</a>)</p>
-        </footer>
+
+    <div id="about-section">
+        <h2>About Show Me The Ballot</h2>
+        <p>Show Me The Ballot is a project that won second prize at the Media Party Hackathon held on Sept 29, 2024 at the Brown Institute for Media Innovation. Our goal is to make voting information more accessible and transparent to citizens.</p>
+        <h3>Created by:</h3>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/ACoAAABbAE8BFx84vrgaOhQUibQTl3fFhvzpevo" target="_blank">Marie-France Han</a></li>
+            <li><a href="https://www.linkedin.com/in/ACoAABbI7k4BKyWQVapB9DXqXpeDAtXPBEbNA4c" target="_blank">Eric Bolton</a></li>
+            <li><a href="https://www.linkedin.com/in/ACoAAAAE1A8Bp3yTncIQjXflCZZRsfwRRcdV_04" target="_blank">Jeff Nickerson</a></li>
+        </ul>
+        <p><a href="https://insigh.to/b/show-me-the-ballot" target="_blank" class="feedback-link">Share Your Feedback</a></p>
+    </div>
+  
+    <footer>
+        <p>Data sourced from <a href="https://ballotpedia.org/" target="_blank">Ballotpedia</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
