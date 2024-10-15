@@ -280,24 +280,24 @@ function displayDefaultMessage() {
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
     <div style="width: 48%;">
-        <h3>Most Complex Ballots</h3>
-        <ul>
-            <li><a href="?q=Harris%20County,%20Texas%20(77088)">Harris County, Texas (77088)</a></li>
-            <li><a href="?q=Riverside%20County,%20California%20(92880)">Riverside County, California (92880)</a></li>
-            <li><a href="?q=Los%20Angeles%20County,%20California%20(90066)">Los Angeles County, California (90066)</a></li>
-            <li><a href="?q=San%20Diego%20County,%20California%20(92057)">San Diego County, California (92057)</a></li>
-            <li><a href="?q=Kern%20County,%20California%20(93505)">Kern County, California (93505)</a></li>
-        </ul>
+      <h3 className="text-xl font-bold mb-2">Most Complex Ballots</h3>
+      <ul className="list-disc list-inside space-y-1">
+        <li><a href="?q=Harris%20County,%20Texas%20(77088)" className="text-blue-600 hover:underline">Harris County, Texas (77088)</a></li>
+        <li><a href="?q=Los%20Angeles%20County,%20California%20(90066)" className="text-blue-600 hover:underline">Los Angeles County, California (90066)</a></li>
+        <li><a href="?q=Maricopa%20County,%20Arizona%20(85343)" className="text-blue-600 hover:underline">Maricopa County, Arizona (85343)</a></li>
+        <li><a href="?q=Multnomah%20County,%20Oregon%20(97206)" className="text-blue-600 hover:underline">Multnomah County, Oregon (97206)</a></li>
+        <li><a href="?q=San%20Diego%20County,%20California%20(92057)" className="text-blue-600 hover:underline">San Diego County, California (92057)</a></li>
+      </ul>
     </div>
-    <div style="width: 48%;">
-        <h3>Least Complex Ballots</h3>
-        <ul>
-            <li><a href="?q=Cheshire%20County,%20New%20Hampshire%20(03446)">Cheshire County, New Hampshire (03446)</a></li>
-            <li><a href="?q=Coos%20County,%20New%20Hampshire%20(03570)">Coos County, New Hampshire (03570)</a></li>
-            <li><a href="?q=Belknap%20County,%20New%20Hampshire%20(03246)">Belknap County, New Hampshire (03246)</a></li>
-            <li><a href="?q=Grafton%20County,%20New%20Hampshire%20(03755)">Grafton County, New Hampshire (03755)</a></li>
-            <li><a href="?q=Hillsborough%20County,%20New%20Hampshire%20(03060)">Hillsborough County, New Hampshire (03060)</a></li>
-        </ul>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Least Complex Ballots</h3>
+      <ul className="list-disc list-inside space-y-1">
+        <li><a href="?q=Cheshire%20County,%20New%20Hampshire%20(03446)" className="text-blue-600 hover:underline">Cheshire County, New Hampshire (03446)</a></li>
+        <li><a href="?q=Cobb%20County,%20Georgia%20(30062)" className="text-blue-600 hover:underline">Cobb County, Georgia (30062)</a></li>
+        <li><a href="?q=Orange%20County,%20New%20York%20(10950)" className="text-blue-600 hover:underline">Orange County, New York (10950)</a></li>
+        <li><a href="?q=Wythe%20County,%20Virginia%20(24382)" className="text-blue-600 hover:underline">Wythe County, Virginia (24382)</a></li>
+        <li><a href="?q=Suffolk%20County,%20New%20York%20(11746)" className="text-blue-600 hover:underline">Suffolk County, New York (11746)</a></li>
+      </ul>
     </div>
 </div>
 
