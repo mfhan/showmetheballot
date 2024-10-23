@@ -205,3 +205,30 @@ footer {
         width: 100%;
     }
 }
+
+/* Fonts */
+@font-face {
+    font-family: 'Libre Caslon Text';
+    src: url('./assets/LibreCaslonText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre Caslon Text';
+    src: url('./assets/LibreCaslonText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre Caslon Text';
+    src: url('./assets/LibreCaslonText-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: bold;
+}
