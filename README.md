@@ -1,66 +1,74 @@
-# Show me the Ballot! 🗳️
+# <img src="https://cdn.glitch.global/d0deef32-a01d-4d8a-974d-d4201e267934/icon.png?v=1729724853087" width="32" height="32" alt="Ballot Box">[Show me the Ballot!](https://show-me-the-ballot.glitch.me/)
 
 ## Description
 
-"Show me the Ballot!" is a web application that allows users to search for ballot information based on their location (state, county, or zip code) in the United States. This tool aims to make voting information more accessible and transparent to citizens, helping them make informed decisions during elections.
+"Show me the Ballot!" is a web application that helps voters preview their ballot information by searching their location in the United States. The tool makes voting information more accessible by presenting ballot data in an easy-to-read format, helping voters make informed decisions before heading to the polls.
 
 ## Features
 
-- Search functionality for ballot information by state, county, or zip code
-- Autocomplete suggestions for easier searching
-- Responsive design for various screen sizes
-- Displays detailed ballot information in a user-friendly format
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- jQuery
-- jQuery UI (for autocomplete)
-- Papa Parse (for CSV parsing)
-- Marked.js (for Markdown rendering)
-
-## Setup and Installation
-
-1. Clone this repository to your local machine.
-2. Ensure you have a web server set up to serve the files (e.g., Apache, Nginx, or a simple Python HTTP server).
-3. Place your `data.csv` file in the root directory of the project. This file should contain the ballot information with columns for state, county, zip, and ballot_markdown.
+- Location-based search with support for county, state, and zip code combinations
+- Smart autocomplete with suggestions as you type
+- Collapsible ballot sections for easy navigation
+- Markdown rendering for formatted ballot content
+- Mobile-responsive design
+- Real-time search results
+- Loading indicators for better user experience
 
 ## Usage
 
-1. Open `index.html` in a web browser.
-2. Use the search bar to enter a state, county, or zip code.
-3. Select from the autocomplete suggestions or press enter to search.
-4. View the ballot information displayed for the selected location.
+1. Open the [application](https://show-me-the-ballot.glitch.me/) in a web browser
+2. Enter a location in the search box (e.g., "Los Angeles County, California (90011)")
+3. Select from autocomplete suggestions or press Enter
+4. Click on district headers to expand/collapse ballot information
 
-## Project Structure
+## Data Requirements
 
-- `index.html`: Main HTML file for the application
-- `style.css`: CSS styles for the application
-- `script.js`: JavaScript file containing the application logic
-- `data.csv`: CSV file containing the ballot information (not included in the repository)
+The application requires two CSV files:
 
-## Data Source
+1. `data.csv` - Contains ballot information with columns:
 
-The ballot information is sourced from [Ballotpedia](https://ballotpedia.org/). Please note that this is a beta version, and currently only the top 5 most populous zip codes in each state are available.
+   - county
+   - state
+   - zip
+   - district (optional)
+   - ballot_markdown
 
-## Future Improvements
+2. `zip_lookup.csv` - Contains location mapping with columns:
+   - county
+   - state
+   - zip
 
-- Expand the database to include more zip codes and locations
-- Add filtering options for different types of elections (local, state, federal)
-- Implement a backend API for more efficient data retrieval
-- Add user accounts for saving and tracking ballot information
+## Setup and Installation
+
+1. Clone this repository
+2. Place required CSV files in the root directory
+3. Serve the files using a web server (e.g., Apache, Nginx, or Python's `http.server`)
+
+```bash
+# Example using Python's built-in server
+python -m http.server 8000
+```
+
+## Data Attribution
+
+Ballot information is sourced from [Ballotpedia](https://ballotpedia.org/). The application currently supports the most populous zip codes in each state. Always verify ballot information with your local election office.
 
 ## Contributing
 
-Contributions to improve "Show me the Ballot!" are welcome. Please feel free to submit pull requests or open issues to discuss potential enhancements.
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-[Insert appropriate license information here]
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
-- Ballotpedia for providing the initial data for this project
-- All contributors and users who help improve this tool for better democratic participation
+- [Ballotpedia](https://ballotpedia.org/) for providing ballot data
+- [Showdown.js](https://github.com/showdownjs/showdown) for Markdown conversion
+- [Papa Parse](https://www.papaparse.com/) for CSV parsing
