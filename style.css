@@ -228,7 +228,31 @@ footer {
     font-style: italic;
 }
 
+.public-sans-<uniquifier> {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Caslon Text', serif;
-    font-weight: bold;
+    font-weight: normal;
+}
+
+p, li, input, button, {
+    font-family: 'Public Sans', serif;
+    font-weight: 400;
+}
+
+em {
+    font-family: 'Public Sans', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+em, st footer, header {
+    font-family: 'Public Sans', serif;
+    font-weight: 600;
 }
