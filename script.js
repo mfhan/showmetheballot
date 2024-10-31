@@ -279,7 +279,7 @@ function displayDefaultMessage() {
 <p>To see what you'll be voting for, type and select from any location in the United States. Examples:</p>
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-    <div style="width: 48%;">
+    <div style="width: 53%;">
       <h3 className="text-xl font-bold mb-2">Most Complex Ballots</h3>
       <ul className="list-disc list-inside space-y-1">
         <li><a href="?q=Harris%20County,%20Texas%20(77088)" className="text-blue-600 hover:underline">Harris County, Texas (77088)</a></li>
