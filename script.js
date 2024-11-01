@@ -171,7 +171,7 @@ async function performSearch(searchTerm) {
         const { county, state } = parsedResult;
         zip = parsedResult.zip
         results = ballotData.filter(row => 
-            row.zip && row.zip.includes(zip)
+            row.zip == zip
         );
     }
     
@@ -252,10 +252,10 @@ async function displayResults(results, zip) {
 
     // Only show iframe if map exists
     const iframeHTML = mapExists ? `
-        <div class="iframe-container" style="margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; overflow: hidden;">
+        <div class="iframe-container" style="margin-bottom: 20px; margin-left: auto; margin-right: auto; overflow: hidden;">
             <iframe 
                 src="${mapUrl}"
-                style="width: 125%; height: 500px; border: 1px solid #ccc; border-radius: 4px; transform-origin: 0 0;"
+                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 4px; transform-origin: 0 0;"
                 title="Ballot Preview">
             </iframe>
         </div>
