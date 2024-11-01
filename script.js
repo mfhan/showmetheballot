@@ -238,15 +238,14 @@ async function displayResults(results, zip) {
     
     // Start with the iframe
     const iframeHTML = `
-        <div class="iframe-container" style="margin-bottom: 20px;">
+        <div class="iframe-container" style="margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
             <iframe 
                 src="https://edbltn.github.io/show-me-the-ballot/data/processed/${zip}.html"
-                style="width: 100%; height: 500px; border: 1px solid #ccc; border-radius: 4px;"
+                style="width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 4px; transform: scale(0.4); transform-origin: top center;"
                 title="Ballot Preview">
             </iframe>
         </div>
     `;
-    
     if (results.length > 0) {
         resultsDiv.innerHTML = iframeHTML + results.map((result, index) => {
             const title = result.district ? 
