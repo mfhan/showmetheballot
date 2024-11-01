@@ -1,6 +1,5 @@
 let zipLookup = [];
 let autocompleteData = [];
-let isDataLoaded = false;
 
 showdown.setOption('tables', true);
 showdown.setOption('tasklists', true);  // Enable tasklists (checkboxes)
@@ -165,7 +164,6 @@ async function performSearch(searchTerm) {
             // Dynamically load ballot data for specific zip code
             const response = await new Promise((resolve, reject) => {
                 url = `https://edbltn.github.io/show-me-the-ballot/data/processed/zip_data_${zip}.csv`;
-                console.log(url);
                 Papa.parse(url, {
                     download: true,
                     header: true,
@@ -177,20 +175,12 @@ async function performSearch(searchTerm) {
                     }
                 });
             });
-            
-            results = response.data;
+            results = response.data.filter(row => row.zip && row.zip.includes(zip));
+
         } catch (error) {
             console.error('Error loading ballot data:', error);
             // Attempt to search in the zip lookup table if specific zip data fails
-            results = zipLookup.filter(row => 
-                row.zip === zip
-            ).map(row => ({
-                county: row.county,
-                state: row.state,
-                zip: row.zip,
-                district: '',
-                ballot_markdown: 'No specific ballot data available for this location.'
-            }));
+            results = [];
         }
     } else {
         // If no specific zip code found, search in zip lookup table
@@ -215,18 +205,13 @@ async function performSearch(searchTerm) {
                         }
                     });
                 });
-                return response.data; // Return first matching result
+                results = response.data.filter(row => row.zip && row.zip.includes(match.zip));
+                return results;
             } catch (error) {
                 console.error(`Error loading ballot data for zip ${match.zip}:`, error);
-                return {
-                    county: match.county,
-                    state: match.state,
-                    zip: match.zip,
-                    district: '',
-                    ballot_markdown: 'No specific ballot data available for this location.'
-                };
+                return [];
             }
-        }));
+        })).flat();
     }
 
     hideLoadingIndicator();
@@ -237,18 +222,8 @@ async function performSearch(searchTerm) {
 function search(searchTerm = null) {
     removeSuggestionList();
     searchTerm = searchTerm || document.getElementById('search-input').value.trim();
-
-    if (!isDataLoaded) {
-        showLoadingIndicator();
-        const checkDataInterval = setInterval(async () => {
-            if (isDataLoaded) {
-                clearInterval(checkDataInterval);
-                await performSearch(searchTerm);
-            }
-        }, 100);
-    } else {
-        performSearch(searchTerm);
-    }
+    showLoadingIndicator();
+    performSearch(searchTerm);
 }
 
 function parseSearchTerm(searchTerm) {
@@ -302,7 +277,7 @@ async function displayResults(results, zip) {
                 `${result.county} County, ${result.state}`;
             
             // Use showdown to convert Markdown to HTML
-            const htmlContent = converter.makeHtml(result.ballot_markdown);
+            const htmlContent = converter.makeHtml(result.full_markdown);
             
             return `
                 <div class="result-toggle">
