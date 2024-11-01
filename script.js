@@ -7,8 +7,6 @@ showdown.setOption('tasklists', true);  // Enable tasklists (checkboxes)
 
 const converter = new showdown.Converter();
 
-require('supabase');
-
 // Function to load and parse the CSV files
 function loadCSVs() {
     Papa.parse('zip_lookup.csv', {
@@ -18,14 +16,21 @@ function loadCSVs() {
             zipLookup = results.data;
             console.log('Zip lookup CSV loaded');
             setupAutocomplete();
-        },
-        error: function(error) {
-            console.error('Error loading zip lookup:', error);
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '<p>Error loading location data. Please try again later.</p>';
+
+            // After zip_lookup is loaded, load the ballot data
+            Papa.parse('data.csv', {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    ballotData = results.data;
+                    console.log('Ballot data CSV loaded');
+                    isDataLoaded = true;
+                }
+            });
         }
     });
 }
+
 
 // Function to show loading indicator
 function showLoadingIndicator() {
@@ -157,63 +162,29 @@ function updateUrlWithToggles(toggleStates) {
 // Function to search for a county, state, or zip code
 // Modified performSearch function to handle async displayResults
 async function performSearch(searchTerm) {
-    try {
-        showLoadingIndicator();
-        
-        const parsedResult = parseSearchTerm(searchTerm);
-        let query = supabase.from('ballot_data').select('*');
-        
-        if (parsedResult) {
-            const { county, state, zip } = parsedResult;
-            
-            // Search for zip code within the comma-separated list
-            // Using LIKE with wildcards to match zip codes in the list
-            query = query.or(`
-                zip.ilike.%${zip},%,
-                zip.ilike.%,${zip},%,
-                zip.ilike.%${zip},
-                zip.ilike.${zip},%
-            `);
-            
-        } else {
-            // For general search, check if the term matches any zip in the list
-            // or matches other fields
-            query = query.or(`
-                county.ilike.%${searchTerm}%,
-                state.ilike.%${searchTerm}%,
-                zip.ilike.%${searchTerm}%,
-                district.ilike.%${searchTerm}%
-            `);
-        }
-        
-        // Execute the query
-        const { data: results, error } = await query;
-        
-        if (error) {
-            console.error('Search error:', error);
-            throw new Error('Failed to search ballot data');
-        }
-        
-        // Log the matched results for debugging
-        console.log(`Found ${results?.length || 0} results for search term:`, searchTerm);
-        
-        // Display results
-        await displayResults(results || [], parsedResult?.zip || '');
-        
-    } catch (error) {
-        console.error('Search failed:', error);
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = `
-            <div class="error-message">
-                <p>Sorry, we couldn't complete your search. Please try again later.</p>
-                <p>Error: ${error.message}</p>
-            </div>
-        `;
-    } finally {
-        hideLoadingIndicator();
-    }
-}
 
+    const parsedResult = parseSearchTerm(searchTerm);
+    let results = [];
+    let zip = "";
+
+    if (parsedResult) {
+        const { county, state } = parsedResult;
+        zip = parsedResult.zip
+        results = ballotData.filter(row => 
+            row.zip & row.zip.contains(zip)
+        );
+    }
+
+    if (results.length === 0) {
+        results = ballotData.filter(row => 
+            ['county', 'state', 'zip', 'district'].some(key => 
+                String(row[key]).toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+    }
+    hideLoadingIndicator();
+    await displayResults(results, zip);
+}
 // Modified search function to handle async performSearch
 function search(searchTerm = null) {
     removeSuggestionList();
