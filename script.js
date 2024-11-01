@@ -264,7 +264,7 @@ async function displayResults(results, zip) {
         <div class="iframe-container" style="margin-bottom: 20px; margin-left: auto; margin-right: auto; overflow: hidden;">
             <iframe 
                 src="${mapUrl}"
-                style="width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 4px; transform-origin: 0 0;"
+                style="width: 100%; height: 300px; border: 1px solid #ccc; border-radius: 4px; transform-origin: 0 0;"
                 title="Ballot Preview">
             </iframe>
         </div>
