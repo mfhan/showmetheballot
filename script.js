@@ -16,17 +16,6 @@ function loadCSVs() {
             zipLookup = results.data;
             console.log('Zip lookup CSV loaded');
             setupAutocomplete();
-
-            // After zip_lookup is loaded, load the ballot data
-            Papa.parse('data.csv', {
-                download: true,
-                header: true,
-                complete: function(results) {
-                    ballotData = results.data;
-                    console.log('Ballot data CSV loaded');
-                    isDataLoaded = true;
-                }
-            });
         }
     });
 }
@@ -161,30 +150,89 @@ function updateUrlWithToggles(toggleStates) {
 
 // Function to search for a county, state, or zip code
 // Modified performSearch function to handle async displayResults
+// Function to perform the actual search
 async function performSearch(searchTerm) {
-
     const parsedResult = parseSearchTerm(searchTerm);
     let results = [];
     let zip = "";
 
-    if (parsedResult) {
-        const { county, state } = parsedResult;
-        zip = parsedResult.zip
-        results = ballotData.filter(row => 
-            row.zip && row.zip.includes(zip)
-        );
-    }
+    console.log(zip);
 
-    if (results.length === 0) {
-        results = ballotData.filter(row => 
-            ['county', 'state', 'zip', 'district'].some(key => 
+    if (parsedResult) {
+        console.log(zip);
+        zip = parsedResult.zip;
+        try {
+            // Dynamically load ballot data for specific zip code
+            const response = await new Promise((resolve, reject) => {
+                url = `https://edbltn.github.io/show-me-the-ballot/data/processed/zip_data_${zip}.csv`;
+                console.log(url);
+                Papa.parse(url, {
+                    download: true,
+                    header: true,
+                    complete: function(results) {
+                        resolve(results);
+                    },
+                    error: function(error) {
+                        reject(error);
+                    }
+                });
+            });
+            
+            results = response.data;
+        } catch (error) {
+            console.error('Error loading ballot data:', error);
+            // Attempt to search in the zip lookup table if specific zip data fails
+            results = zipLookup.filter(row => 
+                row.zip === zip
+            ).map(row => ({
+                county: row.county,
+                state: row.state,
+                zip: row.zip,
+                district: '',
+                ballot_markdown: 'No specific ballot data available for this location.'
+            }));
+        }
+    } else {
+        // If no specific zip code found, search in zip lookup table
+        const matchingZips = zipLookup.filter(row => 
+            ['county', 'state', 'zip'].some(key => 
                 String(row[key]).toLowerCase().includes(searchTerm.toLowerCase())
             )
         );
+
+        // For each matching zip, try to load its data
+        results = await Promise.all(matchingZips.map(async (match) => {
+            try {
+                const response = await new Promise((resolve, reject) => {
+                    Papa.parse(`https://edbltn.github.io/show-me-the-ballot/data/processed/zip_data_${match.zip}.csv`, {
+                        download: true,
+                        header: true,
+                        complete: function(results) {
+                            resolve(results);
+                        },
+                        error: function(error) {
+                            reject(error);
+                        }
+                    });
+                });
+                return response.data; // Return first matching result
+            } catch (error) {
+                console.error(`Error loading ballot data for zip ${match.zip}:`, error);
+                return {
+                    county: match.county,
+                    state: match.state,
+                    zip: match.zip,
+                    district: '',
+                    ballot_markdown: 'No specific ballot data available for this location.'
+                };
+            }
+        }));
     }
+
     hideLoadingIndicator();
     await displayResults(results, zip);
 }
+
 // Modified search function to handle async performSearch
 function search(searchTerm = null) {
     removeSuggestionList();
