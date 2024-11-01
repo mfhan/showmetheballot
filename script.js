@@ -1,14 +1,71 @@
-let ballotData = [];
-let zipLookup = [];
-let autocompleteData = [];
-let isDataLoaded = false;
+
 showdown.setOption('tables', true);
 showdown.setOption('tasklists', true);  // Enable tasklists (checkboxes)
 
 const converter = new showdown.Converter();
 
+let ballotData = {};  // Change to object to store data by state
+let zipLookup = [];
+let autocompleteData = [];
+let isDataLoaded = false;
+let loadedFileCount = 0;
+
+const totalFiles = 6;  // Number of state data files
+const stateFileMap = {
+    'alabama': 'alabama_colorado.csv',
+    'alaska': 'alabama_colorado.csv',
+    'arizona': 'alabama_colorado.csv',
+    'arkansas': 'alabama_colorado.csv',
+    'colorado': 'alabama_colorado.csv',
+    'connecticut': 'connecticut_iowa.csv',
+    'delaware': 'connecticut_iowa.csv',
+    'florida': 'connecticut_iowa.csv',
+    'georgia': 'connecticut_iowa.csv',
+    'hawaii': 'connecticut_iowa.csv',
+    'idaho': 'connecticut_iowa.csv',
+    'illinois': 'connecticut_iowa.csv',
+    'indiana': 'connecticut_iowa.csv',
+    'iowa': 'connecticut_iowa.csv',
+    'kansas': 'kansas_michigan.csv',
+    'kentucky': 'kansas_michigan.csv',
+    'louisiana': 'kansas_michigan.csv',
+    'maine': 'kansas_michigan.csv',
+    'maryland': 'kansas_michigan.csv',
+    'massachusetts': 'kansas_michigan.csv',
+    'michigan': 'kansas_michigan.csv',
+    'minnesota': 'minnesota_newyork.csv',
+    'mississippi': 'minnesota_newyork.csv',
+    'missouri': 'minnesota_newyork.csv',
+    'montana': 'minnesota_newyork.csv',
+    'nebraska': 'minnesota_newyork.csv',
+    'nevada': 'minnesota_newyork.csv',
+    'new hampshire': 'minnesota_newyork.csv',
+    'new jersey': 'minnesota_newyork.csv',
+    'new mexico': 'minnesota_newyork.csv',
+    'new york': 'minnesota_newyork.csv',
+    'north carolina': 'northcarolina_tennessee.csv',
+    'north dakota': 'northcarolina_tennessee.csv',
+    'ohio': 'northcarolina_tennessee.csv',
+    'oklahoma': 'northcarolina_tennessee.csv',
+    'oregon': 'northcarolina_tennessee.csv',
+    'pennsylvania': 'northcarolina_tennessee.csv',
+    'rhode island': 'northcarolina_tennessee.csv',
+    'south carolina': 'northcarolina_tennessee.csv',
+    'south dakota': 'northcarolina_tennessee.csv',
+    'tennessee': 'northcarolina_tennessee.csv',
+    'texas': 'texas_wyoming.csv',
+    'utah': 'texas_wyoming.csv',
+    'vermont': 'texas_wyoming.csv',
+    'virginia': 'texas_wyoming.csv',
+    'washington': 'texas_wyoming.csv',
+    'west virginia': 'texas_wyoming.csv',
+    'wisconsin': 'texas_wyoming.csv',
+    'wyoming': 'texas_wyoming.csv'
+};
+
 // Function to load and parse the CSV files
 function loadCSVs() {
+    // First load zip lookup
     Papa.parse('zip_lookup.csv', {
         download: true,
         header: true,
@@ -16,18 +73,39 @@ function loadCSVs() {
             zipLookup = results.data;
             console.log('Zip lookup CSV loaded');
             setupAutocomplete();
-
-            // After zip_lookup is loaded, load the ballot data
-            Papa.parse('data.csv', {
-                download: true,
-                header: true,
-                complete: function(results) {
-                    ballotData = results.data;
-                    console.log('Ballot data CSV loaded');
-                    isDataLoaded = true;
-                }
-            });
+            loadBallotData();
         }
+    });
+}
+
+function loadBallotData() {
+    // Get unique filenames from stateFileMap
+    const uniqueFiles = [...new Set(Object.values(stateFileMap))];
+    
+    uniqueFiles.forEach(filename => {
+        Papa.parse(filename, {
+            download: true,
+            header: true,
+            complete: function(results) {
+                // Sort the data into the ballotData object by state
+                results.data.forEach(row => {
+                    if (row.state) {
+                        const state = row.state.toLowerCase();
+                        if (!ballotData[state]) {
+                            ballotData[state] = [];
+                        }
+                        ballotData[state].push(row);
+                    }
+                });
+                
+                loadedFileCount++;
+                if (loadedFileCount === uniqueFiles.length) {
+                    console.log('All ballot data CSV files loaded');
+                    isDataLoaded = true;
+                    hideLoadingIndicator();
+                }
+            }
+        });
     });
 }
 
@@ -160,31 +238,38 @@ function updateUrlWithToggles(toggleStates) {
 
 // Function to search for a county, state, or zip code
 // Modified performSearch function to handle async displayResults
+// Update the performSearch function to handle the new data structure
 async function performSearch(searchTerm) {
     hideLoadingIndicator();
     
     const parsedResult = parseSearchTerm(searchTerm);
     let results = [];
-    let zip = "";
     
     if (parsedResult) {
-        const { county, state } = parsedResult;
-        zip = parsedResult.zip
-        results = ballotData.filter(row => 
-            row.zip & row.zip.contains(zip)
-        );
+        const { county, state, zip } = parsedResult;
+        const stateKey = state.toLowerCase();
+        
+        if (ballotData[stateKey]) {
+            results = ballotData[stateKey].filter(row => 
+                row.zip && row.zip.includes(zip)
+            );
+        }
+    } else {
+        // If parsing fails, search across all states
+        const searchTermLower = searchTerm.toLowerCase();
+        Object.values(ballotData).forEach(stateData => {
+            const stateResults = stateData.filter(row => 
+                ['county', 'state', 'zip', 'district'].some(key => 
+                    String(row[key]).toLowerCase().includes(searchTermLower)
+                )
+            );
+            results.push(...stateResults);
+        });
     }
     
-    if (results.length === 0) {
-        results = ballotData.filter(row => 
-            ['county', 'state', 'zip', 'district'].some(key => 
-                String(row[key]).toLowerCase().includes(searchTerm.toLowerCase())
-            )
-        );
-    }
-    
-    await displayResults(results, zip);
+    await displayResults(results);
 }
+
 
 // Modified search function to handle async performSearch
 function search(searchTerm = null) {
