@@ -171,7 +171,7 @@ async function performSearch(searchTerm) {
         const { county, state } = parsedResult;
         zip = parsedResult.zip
         results = ballotData.filter(row => 
-            row.zip & row.zip.contains(zip)
+            row.zip && row.zip.includes(zip)
         );
     }
 
@@ -217,19 +217,6 @@ function parseSearchTerm(searchTerm) {
     return null;
 }
 
-// Function to fetch and display the inlay HTML
-async function fetchInlayHTML(zip) {
-    try {
-        const response = await fetch(`https://edbltn.github.io/show-me-the-ballot/data/processed/${zip}.html`);
-        if (!response.ok) {
-            throw new Error('Inlay content not found');
-        }
-        return await response.text();
-    } catch (error) {
-        console.log('Error fetching inlay:', error);
-        return null;
-    }
-}
 
 // Modified displayResults function
 async function displayResults(results, zip) {
