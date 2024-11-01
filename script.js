@@ -236,16 +236,31 @@ async function fetchInlayHTML(zip) {
 async function displayResults(results, zip) {
     const resultsDiv = document.getElementById('results');
     
-    // Start with the iframe
-    const iframeHTML = `
-        <div class="iframe-container" style="margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
+    // Create a function to check if URL exists
+    const checkUrlExists = async (url) => {
+        try {
+            const response = await fetch(url);
+            return response.ok; // returns true if status is 200-299
+        } catch (error) {
+            return false;
+        }
+    };
+
+    // Check if the map file exists before creating iframe
+    const mapUrl = `https://edbltn.github.io/show-me-the-ballot/data/processed/${zip}.html`;
+    const mapExists = await checkUrlExists(mapUrl);
+
+    // Only show iframe if map exists
+    const iframeHTML = mapExists ? `
+        <div class="iframe-container" style="margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; overflow: hidden;">
             <iframe 
-                src="https://edbltn.github.io/show-me-the-ballot/data/processed/${zip}.html"
-                style="width: 100%; height: 100%; border: 1px solid #ccc; border-radius: 4px; transform: scale(0.4); transform-origin: top center;"
+                src="${mapUrl}"
+                style="width: 125%; height: 500px; border: 1px solid #ccc; border-radius: 4px; transform-origin: 0 0;"
                 title="Ballot Preview">
             </iframe>
         </div>
-    `;
+    ` : '';
+  
     if (results.length > 0) {
         resultsDiv.innerHTML = iframeHTML + results.map((result, index) => {
             const title = result.district ? 
