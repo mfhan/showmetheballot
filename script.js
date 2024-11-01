@@ -171,7 +171,7 @@ async function performSearch(searchTerm) {
         const { county, state } = parsedResult;
         zip = parsedResult.zip
         results = ballotData.filter(row => 
-            row.zip == zip
+            row.zip & row.zip.contains(zip)
         );
     }
     
