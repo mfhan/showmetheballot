@@ -1,11 +1,3 @@
-// Initialize Supabase client
-const supabaseUrl = 'https://ikrxqrvuxdzjfnackvvw.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrcnhxcnZ1eGR6amZuYWNrdnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA0ODczNDUsImV4cCI6MjA0NjA2MzM0NX0.Cr6Mi7v0ObI6TabY-bB9_XeBzELRQPPB3UaB0p74_uc' // Replace with your anon/public key
-const supabaseClient = createClient(
-    'https://ikrxqrvuxdzjfnackvvw.supabase.co',
-    supabaseKey // Replace with your anon/public key
-);
-
 let zipLookup = [];
 let autocompleteData = [];
 let isDataLoaded = false;
