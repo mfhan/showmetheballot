@@ -159,44 +159,22 @@ function updateUrlWithToggles(toggleStates) {
 
 
 // Function to search for a county, state, or zip code
-function search(searchTerm = null) {
-    removeSuggestionList();
-    searchTerm = searchTerm || document.getElementById('search-input').value.trim();
-
-    if (!isDataLoaded) {
-        showLoadingIndicator();
-        // Wait for data to load before searching
-        const checkDataInterval = setInterval(() => {
-            if (isDataLoaded) {
-                clearInterval(checkDataInterval);
-                performSearch(searchTerm);
-            }
-        }, 100); // Check every 100ms
-    } else {
-        performSearch(searchTerm);
-    }
-}
-
-// Function to perform the actual search
-function performSearch(searchTerm) {
+// Modified performSearch function to handle async displayResults
+async function performSearch(searchTerm) {
     hideLoadingIndicator();
     
-    // Update URL with search query
-    updateUrlWithSearch(searchTerm);
-    
-    // Try to parse the search term into county, state, and zip
     const parsedResult = parseSearchTerm(searchTerm);
-    
     let results = [];
+    let zip = "";
     
     if (parsedResult) {
-        const { county, state, zip } = parsedResult;
+        const { county, state } = parsedResult;
+        zip = parsedResult.zip
         results = ballotData.filter(row => 
             row.zip && row.zip.includes(zip)
         );
     }
     
-    // If parsing fails or no exact match found, search for any partial match
     if (results.length === 0) {
         results = ballotData.filter(row => 
             ['county', 'state', 'zip', 'district'].some(key => 
@@ -205,7 +183,25 @@ function performSearch(searchTerm) {
         );
     }
     
-    displayResults(results);
+    await displayResults(results, zip);
+}
+
+// Modified search function to handle async performSearch
+function search(searchTerm = null) {
+    removeSuggestionList();
+    searchTerm = searchTerm || document.getElementById('search-input').value.trim();
+
+    if (!isDataLoaded) {
+        showLoadingIndicator();
+        const checkDataInterval = setInterval(async () => {
+            if (isDataLoaded) {
+                clearInterval(checkDataInterval);
+                await performSearch(searchTerm);
+            }
+        }, 100);
+    } else {
+        performSearch(searchTerm);
+    }
 }
 
 function parseSearchTerm(searchTerm) {
@@ -222,11 +218,37 @@ function parseSearchTerm(searchTerm) {
     return null;
 }
 
-// Function to display the search results
-function displayResults(results) {
+// Function to fetch and display the inlay HTML
+async function fetchInlayHTML(zip) {
+    try {
+        const response = await fetch(`https://edbltn.github.io/show-me-the-ballot/data/processed/${zip}.html`);
+        if (!response.ok) {
+            throw new Error('Inlay content not found');
+        }
+        return await response.text();
+    } catch (error) {
+        console.log('Error fetching inlay:', error);
+        return null;
+    }
+}
+
+// Modified displayResults function
+async function displayResults(results, zip) {
     const resultsDiv = document.getElementById('results');
+    
+    // Start with the iframe
+    const iframeHTML = `
+        <div class="iframe-container" style="margin-bottom: 20px;">
+            <iframe 
+                src="https://edbltn.github.io/show-me-the-ballot/data/processed/${zip}.html"
+                style="width: 100%; height: 500px; border: 1px solid #ccc; border-radius: 4px;"
+                title="Ballot Preview">
+            </iframe>
+        </div>
+    `;
+    
     if (results.length > 0) {
-        resultsDiv.innerHTML = results.map((result, index) => {
+        resultsDiv.innerHTML = iframeHTML + results.map((result, index) => {
             const title = result.district ? 
                 `${result.county} County, ${result.state} － ${result.district}` : 
                 `${result.county} County, ${result.state}`;
@@ -243,23 +265,12 @@ function displayResults(results) {
                 </div>
             `;
         }).join('');
-
-        // Check URL parameters for toggle states
-        const urlParams = new URLSearchParams(window.location.search);
-        const toggleStates = urlParams.get('toggles');
-        if (toggleStates) {
-            toggleStates.split(',').forEach((state, index) => {
-                if (state === '1') {
-                    toggleBallot(index);
-                }
-            });
-        } else if (results.length == 1) {
-          toggleBallot(0);
-        }
     } else {
-        resultsDiv.innerHTML = '<p>No results found.</p>';
+        resultsDiv.innerHTML = iframeHTML + '<p>No results found.</p>';
     }
 }
+
+
 
 // Function to toggle the visibility of ballot content
 function toggleBallot(index) {
