@@ -1,10 +1,13 @@
 let zipLookup = [];
 let autocompleteData = [];
 let isDataLoaded = false;
+
 showdown.setOption('tables', true);
 showdown.setOption('tasklists', true);  // Enable tasklists (checkboxes)
 
 const converter = new showdown.Converter();
+
+require('supabase');
 
 // Function to load and parse the CSV files
 function loadCSVs() {
