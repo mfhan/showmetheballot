@@ -284,8 +284,6 @@ async function displayResults(results, zip) {
     }
 }
 
-
-
 // Function to toggle the visibility of ballot content
 function toggleBallot(index) {
     const ballotContent = document.getElementById(`ballot-${index}`);
