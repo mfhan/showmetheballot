@@ -19,7 +19,6 @@ function loadCSVs() {
     });
 }
 
-
 // Function to show loading indicator
 function showLoadingIndicator() {
     const resultsDiv = document.getElementById('results');
