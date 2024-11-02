@@ -287,6 +287,9 @@ async function displayResults(results, zip) {
                 </div>
             `;
         }).join('');
+        if (results.length === 1) {
+          toggleBallot(0)
+        }
     } else {
         resultsDiv.innerHTML = iframeHTML + '<p>No results found.</p>';
     }
