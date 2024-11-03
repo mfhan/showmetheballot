@@ -264,3 +264,10 @@ strong {
     font-family: 'Public Sans', serif;
     font-weight: 600;
 }
+
+@media (max-width: 600px) {
+    #results div[style*="display: flex"] > div {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}
