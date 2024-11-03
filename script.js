@@ -150,12 +150,12 @@ function updateUrlWithToggles(toggleStates) {
 // Modified performSearch function to handle async displayResults
 // Function to perform the actual search
 async function performSearch(searchTerm) {
+  
+    updateUrlWithSearch(searchTerm);
+
     const parsedResult = parseSearchTerm(searchTerm);
     let results = [];
     let zip = "";
-
-    console.log(zip);
-
     if (parsedResult) {
         console.log(zip);
         zip = parsedResult.zip;
@@ -213,8 +213,8 @@ async function performSearch(searchTerm) {
         })).flat();
     }
 
-    hideLoadingIndicator();
     await displayResults(results, zip);
+    hideLoadingIndicator();
 }
 
 // Modified search function to handle async performSearch
@@ -287,9 +287,21 @@ async function displayResults(results, zip) {
                 </div>
             `;
         }).join('');
+      
+        // Check URL parameters for toggle states
+        const urlParams = new URLSearchParams(window.location.search);
+        const toggleStates = urlParams.get('toggles');
+      
         if (results.length === 1) {
           toggleBallot(0)
+        } else if (toggleStates) {
+            toggleStates.split(',').forEach((state, index) => {
+                if (state === '1') {
+                    toggleBallot(index);
+                }
+            });
         }
+      
     } else {
         resultsDiv.innerHTML = iframeHTML + '<p>No results found.</p>';
     }
