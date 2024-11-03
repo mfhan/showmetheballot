@@ -271,3 +271,48 @@ strong {
         margin-bottom: 20px;
     }
 }
+
+#methodology-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+#methodology-section h3 {
+    color: #1a3e6f;
+    margin-top: 30px;
+}
+
+#methodology-section h4 {
+    color: #333;
+    margin-top: 20px;
+}
+
+#methodology-section ul, 
+#methodology-section ol {
+    margin-bottom: 15px;
+}
+
+#methodology-section li {
+    margin-bottom: 8px;
+}
+
+.methodology-note {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.about-link {
+    display: inline-block;
+    margin: 10px 0;
+    color: #1a3e6f;
+    text-decoration: none;
+}
+
+.about-link:hover {
+    text-decoration: underline;
+}
