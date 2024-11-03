@@ -1,0 +1,34 @@
+**Analyze the following ballot text to assess cognitive load and decision-making complexity.** For each indicator, note the relevant findings for clarity:
+
+1. **Technical/Legal Language**: Indicate only if highly technical language is present (boolean).
+   
+2. **Unique Offices/Propositions**: Provide the count of distinct offices or propositions.
+
+3. **Non-partisan Contests**: Indicate presence (boolean). If present, provide examples. **Ignore ballot measures, and ignore third-party candidates in the presidential race; only identify races where at least one of the two main parties is not present.**
+
+4. **Information Density**: Specify the overall information density as high, medium, or low.
+
+5. **Complex Instructions**: Indicate if there are non-standard voting instructions (boolean). If present, provide examples.
+
+Provide the analysis in the following structured JSON format:
+
+```json
+{
+  "technical_language": {
+    "present": boolean,
+    "examples": ["string", "string", ...] // Only include if present is True
+  },
+  "unique_decisions": integer,
+  "non_partisan_contests": {
+    "present": boolean,
+    "examples": ["string", "string", ...] // Only include if present is True
+  },
+  "information_density": "high" | "medium" | "low",
+  "complex_instructions": {
+    "present": boolean,
+    "examples": ["string", "string", ...] // Only include if present is True
+  }
+}
+```
+
+Ensure that all fields are present in your response, even if some lists are empty.
