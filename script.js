@@ -316,21 +316,21 @@ function displayDefaultMessage() {
     <div style="width: 50%;">
       <h3 className="text-xl font-bold mb-2">Most Complex Ballots</h3>
       <ul className="list-disc list-inside space-y-1">
-        <li><a href="?q=Harris%20County,%20Texas%20(77088)" className="text-blue-600 hover:underline">Harris County, Texas (77088)</a></li>
-        <li><a href="?q=Los%20Angeles%20County,%20California%20(90066)" className="text-blue-600 hover:underline">Los Angeles County, California (90066)</a></li>
-        <li><a href="?q=Maricopa%20County,%20Arizona%20(85343)" className="text-blue-600 hover:underline">Maricopa County, Arizona (85343)</a></li>
-        <li><a href="?q=Multnomah%20County,%20Oregon%20(97206)" className="text-blue-600 hover:underline">Multnomah County, Oregon (97206)</a></li>
-        <li><a href="?q=San%20Diego%20County,%20California%20(92057)" className="text-blue-600 hover:underline">San Diego County, California (92057)</a></li>
+        <li><a href="?q=Harris%20County,%20Texas%20(77375)" className="text-blue-600 hover:underline">Harris County, Texas (77375)</a></li>
+        <li><a href="?q=Oakland%20County,%20Michigan%20(48363)" className="text-blue-600 hover:underline">Oakland County, Michigan (48363)</a></li>
+        <li><a href="?q=Los%20Angeles%20County,%20California%20(90201)" className="text-blue-600 hover:underline">Los Angeles County, California (90201)</a></li>
+        <li><a href="?q=Multnomah%20County,%20Oregon%20(97227)" className="text-blue-600 hover:underline">Multnomah County, Oregon (97227)</a></li>
+        <li><a href="?q=Silver%20Bow%20County,%20Montana%20(59701)" className="text-blue-600 hover:underline">Silver Bow County, Montana (59701)</a></li>
       </ul>
     </div>
-    <div>
+    <div style="width: 50%;">
       <h3 className="text-xl font-bold mb-2">Least Complex Ballots</h3>
       <ul className="list-disc list-inside space-y-1">
-        <li><a href="?q=Cheshire%20County,%20New%20Hampshire%20(03446)" className="text-blue-600 hover:underline">Cheshire County, New Hampshire (03446)</a></li>
-        <li><a href="?q=Cobb%20County,%20Georgia%20(30062)" className="text-blue-600 hover:underline">Cobb County, Georgia (30062)</a></li>
-        <li><a href="?q=Orange%20County,%20New%20York%20(10950)" className="text-blue-600 hover:underline">Orange County, New York (10950)</a></li>
-        <li><a href="?q=Wythe%20County,%20Virginia%20(24382)" className="text-blue-600 hover:underline">Wythe County, Virginia (24382)</a></li>
-        <li><a href="?q=Suffolk%20County,%20New%20York%20(11746)" className="text-blue-600 hover:underline">Suffolk County, New York (11746)</a></li>
+        <li><a href="?q=Major%20County,%20Oklahoma%20(73755)" className="text-blue-600 hover:underline">Major County, Oklahoma (73755)</a></li>
+        <li><a href="?q=Lincoln%20County,%20Maine%20(45700)" className="text-blue-600 hover:underline">Lincoln County, Maine (45700)</a></li>
+        <li><a href="?q=Winston%20County,%20Mississippi%20(39350)" className="text-blue-600 hover:underline">Winston County, Mississippi (39350)</a></li>
+        <li><a href="?q=District%20of%20Columbia,%20District%20of%20Columbia%20(20515)" className="text-blue-600 hover:underline">District of Columbia (20515)</a></li>
+        <li><a href="?q=Rockingham%20County,%20New%20Hampshire%20(38010)" className="text-blue-600 hover:underline">Rockingham County, New Hampshire (38010)</a></li>
       </ul>
     </div>
 </div>
