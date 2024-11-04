@@ -1,8 +1,8 @@
-# <img src="https://cdn.glitch.global/d0deef32-a01d-4d8a-974d-d4201e267934/icon.png?v=1729724853087" width="32" height="32" alt="Ballot Box">[Show me the Ballot!](https://show-me-the-ballot.glitch.me/)
+# <img src="https://cdn.glitch.global/d0deef32-a01d-4d8a-974d-d4201e267934/icon.png?v=1729724853087" width="32" height="32" alt="Ballot Box">[Show Me The Ballot!](https://show-me-the-ballot.glitch.me/)
 
 ## Description
 
-"Show me the Ballot!" is a web application that helps voters preview their ballot information by searching their location in the United States. The tool makes voting information more accessible by presenting ballot data in an easy-to-read format, helping voters make informed decisions before heading to the polls.
+"Show Me The Ballot!" is a web application that helps voters preview their ballot information by searching their location in the United States. The tool makes voting information more accessible by presenting ballot data in an easy-to-read format, helping voters make informed decisions before heading to the polls.
 
 ## Features
 
