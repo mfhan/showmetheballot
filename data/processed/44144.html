@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_03cd7398f5f04928805ccb11e322bf51 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Cuyahoga - OH-CD07</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Cuyahoga - OH-CD11</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_03cd7398f5f04928805ccb11e322bf51" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_03cd7398f5f04928805ccb11e322bf51 = L.map(
+                "map_03cd7398f5f04928805ccb11e322bf51",
+                {
+                    center: [41.44107267882933, -81.73357700928958],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_03cd7398f5f04928805ccb11e322bf51);
+
+            
+
+        
+    
+            var tile_layer_8a8615cffd6a1e409105e293d6d91280 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_8a8615cffd6a1e409105e293d6d91280.addTo(map_03cd7398f5f04928805ccb11e322bf51);
+        
+    
+            var polygon_969d5d56fd9534d6d2b06fcdfb2036eb = L.polygon(
+                [[41.45987500000002, -81.740218], [41.45964699999997, -81.74001], [41.45946199999998, -81.73975200000001], [41.459320000000034, -81.739493], [41.459167999999984, -81.739065], [41.45898299999996, -81.73851], [41.45892599999998, -81.738334], [41.45890298137904, -81.73824064660967], [41.42118673298802, -81.73467773060655], [41.421523000000036, -81.753807], [41.421535999999996, -81.756995], [41.421630000000015, -81.759257], [41.42173666127876, -81.76719244400113], [41.46006209489653, -81.74031154735904], [41.45987500000002, -81.740218]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03cd7398f5f04928805ccb11e322bf51);
+        
+    
+        var popup_64619c36b51ed0b49a1630407c99be0c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_843829d5405a0bd09ac816cb0d02472a = $(`<div id="html_843829d5405a0bd09ac816cb0d02472a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cuyahoga - OH-CD07</h4>                              </div>         </div>`)[0];
+                popup_64619c36b51ed0b49a1630407c99be0c.setContent(html_843829d5405a0bd09ac816cb0d02472a);
+            
+        
+
+        polygon_969d5d56fd9534d6d2b06fcdfb2036eb.bindPopup(popup_64619c36b51ed0b49a1630407c99be0c)
+        ;
+
+        
+    
+    
+            polygon_969d5d56fd9534d6d2b06fcdfb2036eb.bindTooltip(
+                `<div>
+                      Cuyahoga - OH-CD07
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_011616ab60a979c0f8e0657adce26fba = L.polygon(
+                [[41.458889999999975, -81.738188], [41.45806400000001, -81.735609], [41.457952000000006, -81.735259], [41.456784999999996, -81.73138500000002], [41.45515400000002, -81.732094], [41.454078000000024, -81.733714], [41.45334599999999, -81.733386], [41.452164999999994, -81.731726], [41.45181100000002, -81.731229], [41.451789000000005, -81.731344], [41.45167899999997, -81.731785], [41.451502, -81.732279], [41.45128700000002, -81.732796], [41.451115000000016, -81.733121], [41.450732, -81.733693], [41.44954600000001, -81.735303], [41.448887999999975, -81.736271], [41.448342000000004, -81.735814], [41.44826999999997, -81.73574], [41.44834999999995, -81.735655], [41.44823599999998, -81.735516], [41.44802499999998, -81.735189], [41.44783000000001, -81.734913], [41.44757599999998, -81.734899], [41.44798300000001, -81.733078], [41.448428, -81.732584], [41.44952200000002, -81.73134800000001], [41.449875999999946, -81.730877], [41.45006099999996, -81.730539], [41.45022899999998, -81.730135], [41.450363999999986, -81.729753], [41.45051600000005, -81.729259], [41.45056599999999, -81.728787], [41.45066699999996, -81.72809100000002], [41.450684, -81.727507], [41.45066699999996, -81.727035], [41.450599999999994, -81.72672], [41.450363999999986, -81.726046], [41.450229, -81.725485], [41.45019599999999, -81.725148], [41.45031399999997, -81.724114], [41.45034700000005, -81.723508], [41.45034700000002, -81.722474], [41.45029699999998, -81.721441], [41.45029699999998, -81.719958], [41.45034700000005, -81.719104], [41.45039800000005, -81.718588], [41.45039800000005, -81.718184], [41.45034700000005, -81.717891], [41.450262999999985, -81.717622], [41.450222000000004, -81.71747], [41.45019599999999, -81.717375], [41.44996899999998, -81.716973], [41.44924099999996, -81.717176], [41.448898000000014, -81.717281], [41.448846999999965, -81.717297], [41.44704300000001, -81.717884], [41.44672400000005, -81.717924], [41.44331299999998, -81.71788500000001], [41.44285799999996, -81.717864], [41.44292200000003, -81.716566], [41.44194499999998, -81.716494], [41.44147100000004, -81.716459], [41.441083999999975, -81.716449], [41.44108100000004, -81.715825], [41.440667000000026, -81.715822], [41.439866999999985, -81.715822], [41.439869999999964, -81.71626600000002], [41.43987099999996, -81.716431], [41.43905700000001, -81.71643], [41.43906, -81.71678400000002], [41.43948600000001, -81.71679400000001], [41.43948799999996, -81.717522], [41.439392999999995, -81.717522], [41.43939600000004, -81.717944], [41.43907300000001, -81.717945], [41.438275, -81.717945], [41.43738400000001, -81.717925], [41.43646300000003, -81.717925], [41.43641699999998, -81.717925], [41.43557199999997, -81.717912], [41.43475100000001, -81.717906], [41.43474499999999, -81.716302], [41.43385100000001, -81.716312], [41.432979, -81.716312], [41.43213000000002, -81.716312], [41.43172600000005, -81.716298], [41.430207, -81.716244], [41.430187000000004, -81.716174], [41.429935000000064, -81.716171], [41.42992699999999, -81.715404], [41.42992400000001, -81.715062], [41.42973700000001, -81.715262], [41.428961999999956, -81.716199], [41.42897399999996, -81.717121], [41.42869499999999, -81.71713200000002], [41.42871099999998, -81.717724], [41.42801299999999, -81.717735], [41.428011000000005, -81.71751], [41.428009, -81.717317], [41.427632000000024, -81.717732], [41.42735399999998, -81.718038], [41.42681400000006, -81.718663], [41.42579700000003, -81.71985], [41.424857999999965, -81.720985], [41.42501100000003, -81.721203], [41.425082, -81.721326], [41.425133, -81.721461], [41.425184, -81.721624], [41.42489700000001, -81.721613], [41.42477699999999, -81.721754], [41.424770999999964, -81.721848], [41.424729, -81.721848], [41.424718999999975, -81.722086], [41.42434500000003, -81.722088], [41.42434500000003, -81.723198], [41.42363999999998, -81.723177], [41.42305599999998, -81.723117], [41.422953, -81.723216], [41.42274799999996, -81.72341500000002], [41.421834999999966, -81.724436], [41.42192099999998, -81.728714], [41.422045000000004, -81.734354], [41.421831999999974, -81.734353], [41.421775, -81.734353], [41.42142399999998, -81.734353], [41.421181000000004, -81.734353], [41.42118673298802, -81.73467773060655], [41.45890298137904, -81.73824064660967], [41.458889999999975, -81.738188]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03cd7398f5f04928805ccb11e322bf51);
+        
+    
+        var popup_7517427b45ac42077284a56139007cdd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dc082b0958d1287a03de1f82ff985b24 = $(`<div id="html_dc082b0958d1287a03de1f82ff985b24" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cuyahoga - OH-CD11</h4>                              </div>         </div>`)[0];
+                popup_7517427b45ac42077284a56139007cdd.setContent(html_dc082b0958d1287a03de1f82ff985b24);
+            
+        
+
+        polygon_011616ab60a979c0f8e0657adce26fba.bindPopup(popup_7517427b45ac42077284a56139007cdd)
+        ;
+
+        
+    
+    
+            polygon_011616ab60a979c0f8e0657adce26fba.bindTooltip(
+                `<div>
+                      Cuyahoga - OH-CD11
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_cdaf5721ceeb5af77b2a3816c0e449e2 = L.polygon(
+                [[41.42451600000001, -81.769454], [41.424732000000006, -81.769451], [41.426625000000065, -81.769427], [41.427883, -81.769415], [41.42837400000004, -81.76941], [41.429214999999964, -81.769376], [41.42991299999996, -81.769363], [41.430641000000044, -81.769348], [41.431557000000005, -81.769331], [41.432525999999996, -81.769314], [41.44048900000001, -81.769182], [41.44122700000001, -81.769171], [41.44419599999998, -81.764994], [41.44462100000008, -81.764379], [41.444809000000035, -81.76414500000001], [41.444977000000065, -81.763945], [41.445517, -81.763301], [41.44572900000003, -81.763046], [41.44578100000001, -81.762985], [41.446406000000025, -81.762224], [41.44831499999996, -81.759594], [41.448437000000006, -81.759417], [41.450039999999966, -81.756946], [41.450506000000004, -81.756179], [41.45209900000002, -81.753498], [41.454130999999975, -81.75060200000001], [41.454794000000035, -81.749672], [41.455615999999985, -81.748462], [41.45581500000004, -81.748176], [41.46154700000002, -81.740023], [41.46124900000001, -81.740172], [41.460773000000025, -81.740363], [41.46053499999997, -81.740407], [41.46031699999996, -81.740407], [41.460126999999986, -81.740344], [41.46006209489653, -81.74031154735904], [41.42173666127876, -81.76719244400113], [41.42176200000003, -81.76908300000001], [41.42176700000002, -81.769493], [41.42206299999997, -81.769499], [41.42363199999996, -81.769482], [41.42451600000001, -81.769454]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03cd7398f5f04928805ccb11e322bf51);
+        
+    
+        var popup_c0c946a80d9aa6cff6b5338eb0611e3a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_258e0ff821d612cb3f2fc7760ae65112 = $(`<div id="html_258e0ff821d612cb3f2fc7760ae65112" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cuyahoga - OH-CD11</h4>                              </div>         </div>`)[0];
+                popup_c0c946a80d9aa6cff6b5338eb0611e3a.setContent(html_258e0ff821d612cb3f2fc7760ae65112);
+            
+        
+
+        polygon_cdaf5721ceeb5af77b2a3816c0e449e2.bindPopup(popup_c0c946a80d9aa6cff6b5338eb0611e3a)
+        ;
+
+        
+    
+    
+            polygon_cdaf5721ceeb5af77b2a3816c0e449e2.bindTooltip(
+                `<div>
+                      Cuyahoga - OH-CD11
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_03cd7398f5f04928805ccb11e322bf51.fitBounds(
+                [[41.421181000000004, -81.769499], [41.46154700000002, -81.715062]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

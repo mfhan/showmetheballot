@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fdc342b313448cd9a7407820d041713d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Yolo - CA-CD04</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Solano - CA-CD04</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Napa - CA-CD04</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #e15759;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Solano - CA-CD08</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_fdc342b313448cd9a7407820d041713d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fdc342b313448cd9a7407820d041713d = L.map(
+                "map_fdc342b313448cd9a7407820d041713d",
+                {
+                    center: [38.43529602493072, -122.04858683061082],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_fdc342b313448cd9a7407820d041713d);
+
+            
+
+        
+    
+            var tile_layer_fd6bac24def3859a7698a0d67662f589 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_fd6bac24def3859a7698a0d67662f589.addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+            var polygon_d2aa4cf606bd9532879618b3e2b89158 = L.polygon(
+                [[38.509584999999994, -122.10433], [38.509344000000006, -122.104592], [38.509164000000034, -122.104886], [38.509060000000034, -122.105246], [38.50901699999999, -122.105563], [38.508952008333864, -122.10578097204953], [38.51171935782948, -122.10362694846756], [38.51139599999998, -122.103601], [38.51100100000004, -122.10364399999999], [38.510787, -122.103665], [38.510495000000034, -122.10375200000001], [38.510177000000034, -122.10383900000001], [38.509996999999956, -122.10397000000002], [38.509781999999994, -122.10411200000001], [38.509584999999994, -122.10433]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_0ce1a3c819fa34f286c7f14f9fa96f9b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b32b60993be01954e25608883f9e0f41 = $(`<div id="html_b32b60993be01954e25608883f9e0f41" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_0ce1a3c819fa34f286c7f14f9fa96f9b.setContent(html_b32b60993be01954e25608883f9e0f41);
+            
+        
+
+        polygon_d2aa4cf606bd9532879618b3e2b89158.bindPopup(popup_0ce1a3c819fa34f286c7f14f9fa96f9b)
+        ;
+
+        
+    
+    
+            polygon_d2aa4cf606bd9532879618b3e2b89158.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_745e792e4199976c57ac464a02fb07ec = L.polygon(
+                [[38.50776551228817, -122.1063183208162], [38.508307, -122.10628299999999], [38.50842702985238, -122.10618957821293], [38.50842500000003, -122.10619000000001], [38.50830600000002, -122.106282], [38.50776551228817, -122.1063183208162]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_47f133ad78f829d92bf83d98c7373b7e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_136624a47bdd1851063a822952ccf5ed = $(`<div id="html_136624a47bdd1851063a822952ccf5ed" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_47f133ad78f829d92bf83d98c7373b7e.setContent(html_136624a47bdd1851063a822952ccf5ed);
+            
+        
+
+        polygon_745e792e4199976c57ac464a02fb07ec.bindPopup(popup_47f133ad78f829d92bf83d98c7373b7e)
+        ;
+
+        
+    
+    
+            polygon_745e792e4199976c57ac464a02fb07ec.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dcfd7ec15127ecf75dd5759f062d1b78 = L.polygon(
+                [[38.49450699999999, -122.10718300000002], [38.50767947856753, -122.10632393267977], [38.507455000000036, -122.106314], [38.50694899999999, -122.10613900000001], [38.506777, -122.106008], [38.506666, -122.10598599999999], [38.506536999999994, -122.105931], [38.506271000000034, -122.105712], [38.50614299999995, -122.105603], [38.50598799999998, -122.10544500000002], [38.50597100000004, -122.105428], [38.50565299999998, -122.10549300000001], [38.50550799999999, -122.105569], [38.50535300000006, -122.105634], [38.505173000000035, -122.105678], [38.50504400000005, -122.10565599999998], [38.50485500000003, -122.10559], [38.504717999999954, -122.105546], [38.50444300000001, -122.105589], [38.504238000000015, -122.105589], [38.50403200000003, -122.105589], [38.503808999999976, -122.10556599999998], [38.503628000000006, -122.10553300000001], [38.503431000000006, -122.10557700000001], [38.50321599999999, -122.105675], [38.50286500000002, -122.105663], [38.502623999999976, -122.10565200000002], [38.50221200000006, -122.105608], [38.50171499999997, -122.10560700000002], [38.501414, -122.10561700000001], [38.501200000000004, -122.105628], [38.50098500000002, -122.105671], [38.50080500000004, -122.105737], [38.500582000000016, -122.10578], [38.500445000000035, -122.105834], [38.50030700000001, -122.105943], [38.500127000000035, -122.10603000000002], [38.49996399999999, -122.10599700000002], [38.49986099999999, -122.10593200000001], [38.499586000000015, -122.10587700000002], [38.499432, -122.10587700000002], [38.49917500000001, -122.105909], [38.498926000000004, -122.105963], [38.498780000000004, -122.10602800000001], [38.498573999999984, -122.10612600000002], [38.49828999999997, -122.10617], [38.49802400000002, -122.106278], [38.49783499999999, -122.106344], [38.49769799999995, -122.106354], [38.49754399999999, -122.106387], [38.49739799999999, -122.106365], [38.497132000000015, -122.10639700000002], [38.49696899999999, -122.10647299999998], [38.496823, -122.106593], [38.496548000000054, -122.10675700000002], [38.496410999999995, -122.10687700000001], [38.49622999999996, -122.106975], [38.496067000000046, -122.10703999999998], [38.495869999999975, -122.10707200000002], [38.495681, -122.10710599999999], [38.49450699999999, -122.10718300000002]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_f95837f07ddcd9c93586396dd90cc599 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b89bfbc71cc5aa80928cddf25793f6e4 = $(`<div id="html_b89bfbc71cc5aa80928cddf25793f6e4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_f95837f07ddcd9c93586396dd90cc599.setContent(html_b89bfbc71cc5aa80928cddf25793f6e4);
+            
+        
+
+        polygon_dcfd7ec15127ecf75dd5759f062d1b78.bindPopup(popup_f95837f07ddcd9c93586396dd90cc599)
+        ;
+
+        
+    
+    
+            polygon_dcfd7ec15127ecf75dd5759f062d1b78.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_316f2204c779cda4eb38791612dc2d17 = L.polygon(
+                [[38.49450699999999, -122.10718300000002], [38.494462999999975, -122.107126], [38.49446295547661, -122.10712597336544], [38.49450699999999, -122.10718300000002]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_2cca28ac553de4bd3d3eea77f5b04d87 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_423ea58cff3715b1479c66d55f8b4de6 = $(`<div id="html_423ea58cff3715b1479c66d55f8b4de6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_2cca28ac553de4bd3d3eea77f5b04d87.setContent(html_423ea58cff3715b1479c66d55f8b4de6);
+            
+        
+
+        polygon_316f2204c779cda4eb38791612dc2d17.bindPopup(popup_2cca28ac553de4bd3d3eea77f5b04d87)
+        ;
+
+        
+    
+    
+            polygon_316f2204c779cda4eb38791612dc2d17.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b2da4b5c4a53b37ed18ecad721cf23c4 = L.polygon(
+                [[38.49095499999996, -122.104663], [38.49086100000004, -122.104663], [38.49076600000001, -122.104772], [38.49070499999997, -122.104837], [38.490687, -122.104966], [38.49068696533299, -122.10496633091348], [38.490806999999975, -122.104882], [38.492165683142964, -122.10494993356197], [38.49201900000001, -122.104894], [38.491830000000036, -122.104861], [38.49169299999999, -122.10487199999999], [38.491520999999956, -122.104828], [38.49126399999998, -122.10477300000001], [38.49108400000005, -122.104707], [38.49095499999996, -122.104663]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_42023f2c7df2de28065f3b1f8bd2e22f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4faec7c345177df6d1305cd259cf6ad4 = $(`<div id="html_4faec7c345177df6d1305cd259cf6ad4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_42023f2c7df2de28065f3b1f8bd2e22f.setContent(html_4faec7c345177df6d1305cd259cf6ad4);
+            
+        
+
+        polygon_b2da4b5c4a53b37ed18ecad721cf23c4.bindPopup(popup_42023f2c7df2de28065f3b1f8bd2e22f)
+        ;
+
+        
+    
+    
+            polygon_b2da4b5c4a53b37ed18ecad721cf23c4.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7c6dd935293838c9fb9ae221f6207b76 = L.polygon(
+                [[38.49304429810337, -122.10528922206082], [38.49377940023335, -122.10624095357012], [38.49371699999997, -122.106066], [38.493623999999954, -122.10585600000002], [38.493487999999985, -122.105647], [38.49341500000001, -122.10551], [38.493262999999985, -122.10539799999998], [38.493142999999975, -122.10534299999999], [38.49304429810337, -122.10528922206082]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_8d5a1a2c995fe95216de4c5709128ffa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fc3e806f6ca6288e93698d9710303aef = $(`<div id="html_fc3e806f6ca6288e93698d9710303aef" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_8d5a1a2c995fe95216de4c5709128ffa.setContent(html_fc3e806f6ca6288e93698d9710303aef);
+            
+        
+
+        polygon_7c6dd935293838c9fb9ae221f6207b76.bindPopup(popup_8d5a1a2c995fe95216de4c5709128ffa)
+        ;
+
+        
+    
+    
+            polygon_7c6dd935293838c9fb9ae221f6207b76.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1f9fc0372a6ae68a797f85faa7cdb61c = L.polygon(
+                [[38.48828499999998, -122.106417], [38.48812200000001, -122.106438], [38.48766700000004, -122.10656900000001], [38.48747800000003, -122.106623], [38.48727200000002, -122.10674300000001], [38.48709200000003, -122.106852], [38.48700599999995, -122.10698299999999], [38.48693699999995, -122.10712399999998], [38.48679899999998, -122.10737500000002], [38.48672199999997, -122.107572], [38.48661000000002, -122.10782300000001], [38.48660434087424, -122.1078329927182], [38.48859500000002, -122.10643600000002], [38.48930386833589, -122.10593800927838], [38.48900599999998, -122.10595900000001], [38.48885199999996, -122.10600300000002], [38.48877700000001, -122.10604299999999], [38.48867100000001, -122.106101], [38.488541999999995, -122.10621000000002], [38.48840499999998, -122.106362], [38.48828499999998, -122.106417]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_13a3fa5a4f4e787576d009a573124dfc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_07c36670507463915ce358ecb15d7478 = $(`<div id="html_07c36670507463915ce358ecb15d7478" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_13a3fa5a4f4e787576d009a573124dfc.setContent(html_07c36670507463915ce358ecb15d7478);
+            
+        
+
+        polygon_1f9fc0372a6ae68a797f85faa7cdb61c.bindPopup(popup_13a3fa5a4f4e787576d009a573124dfc)
+        ;
+
+        
+    
+    
+            polygon_1f9fc0372a6ae68a797f85faa7cdb61c.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_77867e09bbe1f6d38b4ed5d979baaa81 = L.polygon(
+                [[38.48312500000003, -122.10888699999998], [38.48296199999998, -122.108942], [38.48285900000002, -122.108909], [38.48265299999998, -122.108941], [38.48240499999997, -122.108941], [38.482164, -122.10897299999999], [38.481975000000055, -122.109038], [38.48181199999998, -122.109115], [38.48168300000005, -122.10923400000001], [38.48147699999997, -122.109354], [38.481331, -122.10943], [38.48115799999999, -122.10951700000001], [38.480977, -122.10967000000001], [38.48068599999998, -122.10993699999999], [38.480646452686315, -122.11002293008232], [38.48467648354552, -122.10866430157022], [38.48456700000003, -122.10868199999999], [38.484387000000034, -122.10875799999998], [38.484035, -122.108812], [38.48389800000001, -122.108801], [38.483615000000015, -122.10878999999998], [38.48333099999998, -122.10881099999999], [38.48312500000003, -122.10888699999998]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_e907df0acb7957cf3a74c4b62be4ca2f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7a2f43457923e6396401c6b92816e48b = $(`<div id="html_7a2f43457923e6396401c6b92816e48b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_e907df0acb7957cf3a74c4b62be4ca2f.setContent(html_7a2f43457923e6396401c6b92816e48b);
+            
+        
+
+        polygon_77867e09bbe1f6d38b4ed5d979baaa81.bindPopup(popup_e907df0acb7957cf3a74c4b62be4ca2f)
+        ;
+
+        
+    
+    
+            polygon_77867e09bbe1f6d38b4ed5d979baaa81.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0c18a252beac4e688e0a8f62a9b1d84c = L.polygon(
+                [[38.477469, -122.11098500000001], [38.47733672518726, -122.11113860998202], [38.47989503308939, -122.11027623613438], [38.479894, -122.11027600000001], [38.47813000000001, -122.11087099999999], [38.47810400000003, -122.11087699999999], [38.47789799999996, -122.110899], [38.47779500000002, -122.110899], [38.47763999999996, -122.11092], [38.477469, -122.11098500000001]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_52f07da6c3aa103a9301072e4be8aa78 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_29f2e8c500d8176ac8c7a5d9502c490c = $(`<div id="html_29f2e8c500d8176ac8c7a5d9502c490c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_52f07da6c3aa103a9301072e4be8aa78.setContent(html_29f2e8c500d8176ac8c7a5d9502c490c);
+            
+        
+
+        polygon_0c18a252beac4e688e0a8f62a9b1d84c.bindPopup(popup_52f07da6c3aa103a9301072e4be8aa78)
+        ;
+
+        
+    
+    
+            polygon_0c18a252beac4e688e0a8f62a9b1d84c.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c88fbc8e75b4105985af8d8cfb0b79d2 = L.polygon(
+                [[38.47340700000002, -122.113577], [38.47315799999998, -122.11364200000001], [38.47264299999996, -122.11381600000001], [38.472421, -122.11385500000002], [38.47212899999996, -122.113946], [38.47196499999996, -122.113989], [38.47186099999999, -122.114058], [38.47162200000004, -122.114218], [38.47153000000001, -122.11426099999998], [38.471363, -122.114269], [38.471158000000024, -122.114327], [38.47096300000002, -122.11436500000002], [38.47082600000002, -122.114385], [38.47061300000005, -122.11443499999999], [38.470255999999935, -122.11459699999999], [38.469759, -122.114805], [38.469150000000006, -122.115022], [38.46884900000001, -122.115109], [38.46857500000002, -122.11513], [38.468369000000045, -122.11517300000001], [38.46818000000002, -122.115184], [38.46800000000004, -122.115238], [38.467794000000026, -122.11538000000002], [38.46747599999997, -122.115543], [38.46725299999998, -122.11569599999999], [38.466806000000034, -122.11595700000001], [38.466721999999976, -122.116025], [38.46672003674676, -122.11602663604529], [38.47481599999997, -122.113178], [38.474822386760515, -122.11317264799709], [38.47481999999997, -122.11317300000002], [38.474805999999994, -122.113175], [38.47454899999997, -122.113175], [38.474188, -122.11329400000001], [38.473957, -122.113338], [38.47375100000002, -122.11344700000001], [38.47359599999996, -122.11350100000001], [38.47340700000002, -122.113577]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_a89c37e374c6239a2c7e3d164ee7b160 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_28a56ec3e175fbb6c642bb0e84e82259 = $(`<div id="html_28a56ec3e175fbb6c642bb0e84e82259" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_a89c37e374c6239a2c7e3d164ee7b160.setContent(html_28a56ec3e175fbb6c642bb0e84e82259);
+            
+        
+
+        polygon_c88fbc8e75b4105985af8d8cfb0b79d2.bindPopup(popup_a89c37e374c6239a2c7e3d164ee7b160)
+        ;
+
+        
+    
+    
+            polygon_c88fbc8e75b4105985af8d8cfb0b79d2.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9382ed8248608e998429bb4a7295ccb6 = L.polygon(
+                [[38.328742999999974, -122.061575], [38.32902657673663, -122.06151096706175], [38.328926999999965, -122.061495], [38.32866100000002, -122.06143], [38.32837800000002, -122.061397], [38.32821499999997, -122.06140800000001], [38.32806900000002, -122.061451], [38.328043246170836, -122.06147203232628], [38.328742999999974, -122.061575]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_29f1b6ae5d6de8314e013d4660cb21d8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d52399bd259325785be55e31012b0a42 = $(`<div id="html_d52399bd259325785be55e31012b0a42" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_29f1b6ae5d6de8314e013d4660cb21d8.setContent(html_d52399bd259325785be55e31012b0a42);
+            
+        
+
+        polygon_9382ed8248608e998429bb4a7295ccb6.bindPopup(popup_29f1b6ae5d6de8314e013d4660cb21d8)
+        ;
+
+        
+    
+    
+            polygon_9382ed8248608e998429bb4a7295ccb6.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ffe7d6335a66c3212f40e8c40b9c9934 = L.polygon(
+                [[38.350794999999955, -122.069621], [38.350675, -122.06969700000002], [38.35057200000002, -122.06980600000001], [38.35034000000005, -122.07007899999999], [38.35019400000004, -122.07018700000002], [38.349987999999996, -122.07034000000002], [38.349850999999994, -122.070525], [38.34982338066841, -122.07056785758483], [38.350811, -122.069679], [38.35214410341345, -122.07040108625053], [38.351936000000016, -122.070189], [38.35179, -122.07005800000002], [38.35155900000006, -122.07002500000002], [38.35144700000005, -122.06999200000001], [38.35124099999998, -122.069829], [38.35094100000002, -122.069621], [38.350794999999955, -122.069621]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_ac0d6a6d01ca2678062b15c22cd4b4a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_15926d7a6274b1b44c96f62172cc7c1c = $(`<div id="html_15926d7a6274b1b44c96f62172cc7c1c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_ac0d6a6d01ca2678062b15c22cd4b4a1.setContent(html_15926d7a6274b1b44c96f62172cc7c1c);
+            
+        
+
+        polygon_ffe7d6335a66c3212f40e8c40b9c9934.bindPopup(popup_ac0d6a6d01ca2678062b15c22cd4b4a1)
+        ;
+
+        
+    
+    
+            polygon_ffe7d6335a66c3212f40e8c40b9c9934.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6589abc4db724fecc3ca4182de2cd4fa = L.polygon(
+                [[38.352858999999995, -122.070384], [38.352694999999954, -122.070417], [38.35249399999997, -122.070549], [38.35240499999999, -122.07054199999999], [38.35227838978889, -122.07047382513613], [38.35321100000002, -122.070979], [38.35341867170007, -122.07107244984148], [38.353369000000015, -122.070964], [38.353289000000004, -122.07087800000001], [38.35322399999999, -122.070742], [38.353174000000024, -122.07057800000001], [38.353070999999964, -122.070456], [38.35297299999998, -122.07040600000002], [38.352858999999995, -122.070384]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_4bce345d6aefe288e864676aaf2ac24a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_817fcdf87ea961f980bfc2393629aaa5 = $(`<div id="html_817fcdf87ea961f980bfc2393629aaa5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_4bce345d6aefe288e864676aaf2ac24a.setContent(html_817fcdf87ea961f980bfc2393629aaa5);
+            
+        
+
+        polygon_6589abc4db724fecc3ca4182de2cd4fa.bindPopup(popup_4bce345d6aefe288e864676aaf2ac24a)
+        ;
+
+        
+    
+    
+            polygon_6589abc4db724fecc3ca4182de2cd4fa.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7d7061bca132a6fda9ae7e108481bf50 = L.polygon(
+                [[38.36384599999999, -122.07621000000002], [38.36382600000005, -122.076135], [38.36369699999999, -122.07600999999998], [38.36360200000002, -122.0759], [38.36349099999997, -122.075813], [38.36334499999999, -122.07571499999999], [38.36317399999998, -122.07557300000002], [38.363071000000005, -122.075464], [38.36301099999995, -122.07539900000002], [38.36291599999997, -122.07528900000001], [38.362856000000015, -122.075137], [38.362788, -122.074995], [38.362624999999966, -122.07476600000001], [38.36255500000001, -122.07465200000001], [38.362518000000016, -122.074629], [38.36246800000001, -122.07452900000001], [38.362469999999966, -122.07449099999998], [38.362435999999995, -122.07440600000001], [38.36236799999998, -122.074275], [38.362205, -122.074101], [38.36199899999999, -122.07390400000001], [38.36181899999999, -122.073795], [38.36154499999997, -122.073599], [38.361382000000006, -122.07349999999998], [38.361107, -122.073446], [38.36091099999997, -122.07338], [38.363110999999996, -122.07557999999999], [38.363711000000045, -122.07608], [38.363711000000045, -122.07768], [38.36381598891132, -122.07773483490072], [38.363807000000016, -122.07760099999999], [38.36381000000003, -122.07757], [38.36383299999996, -122.07731800000002], [38.36388500000001, -122.07696900000002], [38.363932999999975, -122.07673299999999], [38.36392199999999, -122.076608], [38.36384599999999, -122.07621000000002]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_24d1d56dd4d01e518ce00257ea6d27c9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3ccb6390f0a3aa5c5f24fae984389b14 = $(`<div id="html_3ccb6390f0a3aa5c5f24fae984389b14" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_24d1d56dd4d01e518ce00257ea6d27c9.setContent(html_3ccb6390f0a3aa5c5f24fae984389b14);
+            
+        
+
+        polygon_7d7061bca132a6fda9ae7e108481bf50.bindPopup(popup_24d1d56dd4d01e518ce00257ea6d27c9)
+        ;
+
+        
+    
+    
+            polygon_7d7061bca132a6fda9ae7e108481bf50.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e4c04fbf242d7059a303fb7878185821 = L.polygon(
+                [[38.36091099999997, -122.07338], [38.36078099999999, -122.073336], [38.360635000000016, -122.07326], [38.36052400000002, -122.073162], [38.36031800000001, -122.07311800000001], [38.360077000000025, -122.07314], [38.35987099999997, -122.07320500000002], [38.359639999999985, -122.073161], [38.35940800000001, -122.073084], [38.35922799999997, -122.07322599999999], [38.35913299999997, -122.073302], [38.35880699999998, -122.07337800000002], [38.35878987506046, -122.07338], [38.36091099999997, -122.07338]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_751db97ae443006d323321c0b811979a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_54861daf8c75214914630ee8cf4dac50 = $(`<div id="html_54861daf8c75214914630ee8cf4dac50" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_751db97ae443006d323321c0b811979a.setContent(html_54861daf8c75214914630ee8cf4dac50);
+            
+        
+
+        polygon_e4c04fbf242d7059a303fb7878185821.bindPopup(popup_751db97ae443006d323321c0b811979a)
+        ;
+
+        
+    
+    
+            polygon_e4c04fbf242d7059a303fb7878185821.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2811882e49ec972199d49e9e39cf1aad = L.polygon(
+                [[38.333435448926494, -122.06433896355789], [38.33343599999998, -122.06433800000002], [38.33344899999996, -122.064313], [38.33353500000002, -122.06405900000001], [38.333571000000035, -122.06371400000002], [38.33352899999996, -122.063367], [38.333492068190964, -122.06331980932158], [38.333435448926494, -122.06433896355789]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_264187575a381d085d24087b2314b345 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aafdb8291fa56ff72aa37aa2dbc309b5 = $(`<div id="html_aafdb8291fa56ff72aa37aa2dbc309b5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_264187575a381d085d24087b2314b345.setContent(html_aafdb8291fa56ff72aa37aa2dbc309b5);
+            
+        
+
+        polygon_2811882e49ec972199d49e9e39cf1aad.bindPopup(popup_264187575a381d085d24087b2314b345)
+        ;
+
+        
+    
+    
+            polygon_2811882e49ec972199d49e9e39cf1aad.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bec8a8c88363213c7e3af03f6098a837 = L.polygon(
+                [[38.32548599999999, -122.061906], [38.325383000000045, -122.061996], [38.32538269011395, -122.06199631405619], [38.32727620291376, -122.06142002644573], [38.327244999999984, -122.061407], [38.327005, -122.061407], [38.32645599999996, -122.061548], [38.32612999999995, -122.06161300000001], [38.325915, -122.06167800000001], [38.325666000000005, -122.06173200000002], [38.32548599999999, -122.061906]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_5780411adfc9a434f0a2db91e32abe6d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ef85005064c6ebe7e44c84b1dad8de4b = $(`<div id="html_ef85005064c6ebe7e44c84b1dad8de4b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_5780411adfc9a434f0a2db91e32abe6d.setContent(html_ef85005064c6ebe7e44c84b1dad8de4b);
+            
+        
+
+        polygon_bec8a8c88363213c7e3af03f6098a837.bindPopup(popup_5780411adfc9a434f0a2db91e32abe6d)
+        ;
+
+        
+    
+    
+            polygon_bec8a8c88363213c7e3af03f6098a837.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_07f961a228e48850357f84177419dc7f = L.polygon(
+                [[38.35476217552871, -122.07167702445473], [38.35518527263084, -122.07186742235315], [38.355185000000006, -122.071867], [38.35476299999997, -122.07167700000001], [38.35476217552871, -122.07167702445473]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_04fbd42d00de354afe97c9d1c54a4032 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c685f1f995c3041b3004ea9400e0d84a = $(`<div id="html_c685f1f995c3041b3004ea9400e0d84a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_04fbd42d00de354afe97c9d1c54a4032.setContent(html_c685f1f995c3041b3004ea9400e0d84a);
+            
+        
+
+        polygon_07f961a228e48850357f84177419dc7f.bindPopup(popup_04fbd42d00de354afe97c9d1c54a4032)
+        ;
+
+        
+    
+    
+            polygon_07f961a228e48850357f84177419dc7f.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1b740da17b2be375bb437eccc86153d1 = L.polygon(
+                [[38.349284000000026, -122.07026300000001], [38.34908699999998, -122.07028399999999], [38.349071384223315, -122.07030164384562], [38.34956779372869, -122.07048779692624], [38.34943900000002, -122.07036100000002], [38.349284000000026, -122.07026300000001]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_06c8493695b853811654c505c9d7dce1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fd488627b1b180f1879160dc1c12d941 = $(`<div id="html_fd488627b1b180f1879160dc1c12d941" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_06c8493695b853811654c505c9d7dce1.setContent(html_fd488627b1b180f1879160dc1c12d941);
+            
+        
+
+        polygon_1b740da17b2be375bb437eccc86153d1.bindPopup(popup_06c8493695b853811654c505c9d7dce1)
+        ;
+
+        
+    
+    
+            polygon_1b740da17b2be375bb437eccc86153d1.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c0c9f0c782d21e9d29c321920d8399d4 = L.polygon(
+                [[38.325031999999986, -122.06242000000002], [38.32502244825713, -122.06246273151952], [38.32503281054029, -122.0624178277543], [38.325031999999986, -122.06242000000002]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_064017de06e6de37ff902afdf27a0eab = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b90cd3a2987175ebc3a7b4d2c605b654 = $(`<div id="html_b90cd3a2987175ebc3a7b4d2c605b654" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_064017de06e6de37ff902afdf27a0eab.setContent(html_b90cd3a2987175ebc3a7b4d2c605b654);
+            
+        
+
+        polygon_c0c9f0c782d21e9d29c321920d8399d4.bindPopup(popup_064017de06e6de37ff902afdf27a0eab)
+        ;
+
+        
+    
+    
+            polygon_c0c9f0c782d21e9d29c321920d8399d4.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7accdc253318b25621e287d56908d715 = L.polygon(
+                [[38.340025000000004, -122.068493], [38.34002411650761, -122.06849285750106], [38.340139743577254, -122.06853490283864], [38.340025000000004, -122.068493]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_dc4758a2273be0e8b3674a431ba014a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d62fab86e88de836d64d1f2435721271 = $(`<div id="html_d62fab86e88de836d64d1f2435721271" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_dc4758a2273be0e8b3674a431ba014a1.setContent(html_d62fab86e88de836d64d1f2435721271);
+            
+        
+
+        polygon_7accdc253318b25621e287d56908d715.bindPopup(popup_dc4758a2273be0e8b3674a431ba014a1)
+        ;
+
+        
+    
+    
+            polygon_7accdc253318b25621e287d56908d715.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_46e596470f61d3904434eca3707b5689 = L.polygon(
+                [[38.36478599999999, -122.077936], [38.36451300000004, -122.077808], [38.36446399999996, -122.077808], [38.36441600000001, -122.077809], [38.36424499999998, -122.077841], [38.36416699999998, -122.077863], [38.36409000000004, -122.077852], [38.36400399999996, -122.07781900000002], [38.36396799999999, -122.077814], [38.363878291827284, -122.07776737531478], [38.36639513876755, -122.07908195838193], [38.36547099999995, -122.078594], [38.36530000000001, -122.07847400000001], [38.36518500000002, -122.078295], [38.365128, -122.078206], [38.365044, -122.07814400000001], [38.364907999999986, -122.078008], [38.36478599999999, -122.077936]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_067f8e57a8ef9420eefc1c30a32f42a2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_50dad9881fe01cecbd2b346d721a751d = $(`<div id="html_50dad9881fe01cecbd2b346d721a751d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_067f8e57a8ef9420eefc1c30a32f42a2.setContent(html_50dad9881fe01cecbd2b346d721a751d);
+            
+        
+
+        polygon_46e596470f61d3904434eca3707b5689.bindPopup(popup_067f8e57a8ef9420eefc1c30a32f42a2)
+        ;
+
+        
+    
+    
+            polygon_46e596470f61d3904434eca3707b5689.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_436e769b814b8f48ab1620340bf8f326 = L.polygon(
+                [[38.36652791293382, -122.07915131082922], [38.36798078833156, -122.07991021464873], [38.36795000000003, -122.07988300000001], [38.367599000000006, -122.07961], [38.36738399999998, -122.079469], [38.36713499999998, -122.079392], [38.36694700000003, -122.079326], [38.366723999999984, -122.079217], [38.36652791293382, -122.07915131082922]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_734d728348f675ec63db777f194a5fd0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c7024071846ada02751d62c59cbcffb8 = $(`<div id="html_c7024071846ada02751d62c59cbcffb8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_734d728348f675ec63db777f194a5fd0.setContent(html_c7024071846ada02751d62c59cbcffb8);
+            
+        
+
+        polygon_436e769b814b8f48ab1620340bf8f326.bindPopup(popup_734d728348f675ec63db777f194a5fd0)
+        ;
+
+        
+    
+    
+            polygon_436e769b814b8f48ab1620340bf8f326.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_550205bca10e3db22b2c7caab574dd3b = L.polygon(
+                [[38.37875499999998, -122.085538], [38.37875431788522, -122.08553805780646], [38.37940999999999, -122.08588], [38.37875499999998, -122.085538]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_56f8aed1ae2494acd62d87c95615c12c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7c42a943bdd1e0febe979d9582f3855f = $(`<div id="html_7c42a943bdd1e0febe979d9582f3855f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_56f8aed1ae2494acd62d87c95615c12c.setContent(html_7c42a943bdd1e0febe979d9582f3855f);
+            
+        
+
+        polygon_550205bca10e3db22b2c7caab574dd3b.bindPopup(popup_56f8aed1ae2494acd62d87c95615c12c)
+        ;
+
+        
+    
+    
+            polygon_550205bca10e3db22b2c7caab574dd3b.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b27b7d595017135465772a7fe582f388 = L.polygon(
+                [[38.38248500000003, -122.08757400000002], [38.38248279612862, -122.08757288093264], [38.383697000000026, -122.088492], [38.38248500000003, -122.08757400000002]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_f0586ce3ec4bb32f12250215900db6cb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_daadfd5ef7eb7ca2cb575553cc06de8c = $(`<div id="html_daadfd5ef7eb7ca2cb575553cc06de8c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_f0586ce3ec4bb32f12250215900db6cb.setContent(html_daadfd5ef7eb7ca2cb575553cc06de8c);
+            
+        
+
+        polygon_b27b7d595017135465772a7fe582f388.bindPopup(popup_f0586ce3ec4bb32f12250215900db6cb)
+        ;
+
+        
+    
+    
+            polygon_b27b7d595017135465772a7fe582f388.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_3c892c6b604f0cbc76cc02c15f643fbb = L.polygon(
+                [[38.396560999999984, -122.10138599999999], [38.395946999999985, -122.100692], [38.395880999999974, -122.100653], [38.395096000000024, -122.09998600000002], [38.39507000000004, -122.099964], [38.394928000000036, -122.099844], [38.394679999999966, -122.09965], [38.39662, -122.10159300000001], [38.39697799999999, -122.101945], [38.39706900000002, -122.102039], [38.397227000000015, -122.10219400000001], [38.39740085495849, -122.10236859207042], [38.39738499999997, -122.102324], [38.39735000000002, -122.10210600000002], [38.397325999999985, -122.10202800000002], [38.397325999999985, -122.102003], [38.397260999999965, -122.10195600000002], [38.397117, -122.10178899999998], [38.39706399999998, -122.101728], [38.396560999999984, -122.10138599999999]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_90cbdea8e093f90de7c4e1674cd3649d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a6176269a0ce2cbbe7b57a08b22b6d79 = $(`<div id="html_a6176269a0ce2cbbe7b57a08b22b6d79" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_90cbdea8e093f90de7c4e1674cd3649d.setContent(html_a6176269a0ce2cbbe7b57a08b22b6d79);
+            
+        
+
+        polygon_3c892c6b604f0cbc76cc02c15f643fbb.bindPopup(popup_90cbdea8e093f90de7c4e1674cd3649d)
+        ;
+
+        
+    
+    
+            polygon_3c892c6b604f0cbc76cc02c15f643fbb.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_47abc3f07a0466a99d1497f8b916c13b = L.polygon(
+                [[38.44632991631043, -122.1238315162756], [38.44634832090497, -122.1238279741206], [38.44634800000004, -122.123828], [38.44632991631043, -122.1238315162756]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_223001d08a64008a26805886c4532c5f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e6d3fc9fe2423f92b8550460562a4c1e = $(`<div id="html_e6d3fc9fe2423f92b8550460562a4c1e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_223001d08a64008a26805886c4532c5f.setContent(html_e6d3fc9fe2423f92b8550460562a4c1e);
+            
+        
+
+        polygon_47abc3f07a0466a99d1497f8b916c13b.bindPopup(popup_223001d08a64008a26805886c4532c5f)
+        ;
+
+        
+    
+    
+            polygon_47abc3f07a0466a99d1497f8b916c13b.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bf7f40703987aa1d500f82c0865237b8 = L.polygon(
+                [[38.40489699999996, -122.10948600000002], [38.404747, -122.109489], [38.40449699999997, -122.109467], [38.40461, -122.10958299999999], [38.40594600000003, -122.109772], [38.40583900000003, -122.10967899999999], [38.405682999999954, -122.109581], [38.40548600000002, -122.109617], [38.405330999999954, -122.109597], [38.405185999999986, -122.10953100000002], [38.40508600000005, -122.109467], [38.405006000000036, -122.109464], [38.40489699999996, -122.10948600000002]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_7808f08ead3ca5f88a9b2f1710f2c06c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1efeee682141637f0f749598906a89a4 = $(`<div id="html_1efeee682141637f0f749598906a89a4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_7808f08ead3ca5f88a9b2f1710f2c06c.setContent(html_1efeee682141637f0f749598906a89a4);
+            
+        
+
+        polygon_bf7f40703987aa1d500f82c0865237b8.bindPopup(popup_7808f08ead3ca5f88a9b2f1710f2c06c)
+        ;
+
+        
+    
+    
+            polygon_bf7f40703987aa1d500f82c0865237b8.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c0d027648d25d4880ef0c6c0aac8b839 = L.polygon(
+                [[38.411676, -122.11365099999999], [38.411620999999954, -122.113589], [38.41147000000003, -122.11350000000002], [38.41127300000003, -122.113358], [38.411126999999965, -122.113238], [38.41098199999998, -122.11310700000001], [38.41085300000001, -122.112878], [38.41082100000003, -122.11278899999999], [38.410792999999984, -122.11271400000001], [38.41071600000002, -122.112572], [38.410611999999965, -122.112518], [38.410476, -122.112517], [38.410347000000044, -122.112539], [38.41015800000004, -122.112506], [38.410126999999996, -122.112478], [38.41004899999997, -122.112478], [38.40986800000004, -122.112376], [38.40970399999998, -122.11226600000002], [38.40952500000002, -122.11209299999999], [38.409361000000004, -122.111907], [38.409319014642946, -122.11186415040663], [38.40950899999998, -122.11218200000002], [38.40973100000004, -122.112337], [38.41219800000004, -122.11408099999998], [38.412213999999985, -122.11413100000001], [38.41222619869878, -122.11424027158832], [38.41223299999999, -122.11418899999998], [38.41221600000003, -122.114058], [38.41213899999998, -122.11395999999999], [38.41208400000004, -122.113928], [38.412040000000005, -122.11387900000001], [38.411854999999996, -122.113778], [38.411676, -122.11365099999999]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_bac2dffab20ba8d10aa51385d18d9e06 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_99aa20616234e1e71803b2918a629820 = $(`<div id="html_99aa20616234e1e71803b2918a629820" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_bac2dffab20ba8d10aa51385d18d9e06.setContent(html_99aa20616234e1e71803b2918a629820);
+            
+        
+
+        polygon_c0d027648d25d4880ef0c6c0aac8b839.bindPopup(popup_bac2dffab20ba8d10aa51385d18d9e06)
+        ;
+
+        
+    
+    
+            polygon_c0d027648d25d4880ef0c6c0aac8b839.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5b2c2f3799d0e703777b97f26ad28b1d = L.polygon(
+                [[38.414018000000006, -122.11465], [38.41397400000005, -122.11461200000001], [38.41393999999994, -122.114584], [38.41389799999999, -122.11457300000001], [38.41373499999998, -122.114584], [38.41354599999999, -122.114649], [38.413365, -122.11473599999998], [38.413187746464494, -122.11486147160524], [38.41390800000001, -122.11469200000002], [38.41392890796535, -122.11523201200811], [38.414, -122.115151], [38.41409399999996, -122.115031], [38.41418000000003, -122.114944], [38.414138, -122.114857], [38.41411999999997, -122.11482700000002], [38.414068999999984, -122.11473700000002], [38.414018000000006, -122.11465]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_d79b99554e62535ca7b59067d8d7ea9b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_78df0eeadc7212966d89d59272ef2a9c = $(`<div id="html_78df0eeadc7212966d89d59272ef2a9c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_d79b99554e62535ca7b59067d8d7ea9b.setContent(html_78df0eeadc7212966d89d59272ef2a9c);
+            
+        
+
+        polygon_5b2c2f3799d0e703777b97f26ad28b1d.bindPopup(popup_d79b99554e62535ca7b59067d8d7ea9b)
+        ;
+
+        
+    
+    
+            polygon_5b2c2f3799d0e703777b97f26ad28b1d.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_05a76b669c8f17b9118f0de180e8ede8 = L.polygon(
+                [[38.41399899999996, -122.11639500000001], [38.413970921948305, -122.11631733723819], [38.41400053869026, -122.11708256029468], [38.41401999999997, -122.11705], [38.41405499999997, -122.116941], [38.414077000000006, -122.116832], [38.41405499999997, -122.11664999999999], [38.41404100000001, -122.11663500000002], [38.414033000000025, -122.11655799999998], [38.41399899999996, -122.11639500000001]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_56e48d3e7c34dc460df131b1e6ec5006 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_af7285bb0a3f491fea95045297a846f6 = $(`<div id="html_af7285bb0a3f491fea95045297a846f6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_56e48d3e7c34dc460df131b1e6ec5006.setContent(html_af7285bb0a3f491fea95045297a846f6);
+            
+        
+
+        polygon_05a76b669c8f17b9118f0de180e8ede8.bindPopup(popup_56e48d3e7c34dc460df131b1e6ec5006)
+        ;
+
+        
+    
+    
+            polygon_05a76b669c8f17b9118f0de180e8ede8.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5b7b39ca877c32c06e1db4bb6dd6e21f = L.polygon(
+                [[38.41407496324242, -122.11777911767939], [38.41410900000004, -122.117983], [38.41427099999998, -122.11806400000002], [38.41439600000005, -122.11812700000002], [38.41498600000001, -122.118421], [38.41468900000002, -122.118273], [38.41465800000003, -122.11823899999999], [38.41457900000002, -122.118112], [38.414381999999996, -122.11799], [38.41423199999997, -122.117899], [38.41414600000003, -122.117835], [38.41407496324242, -122.11777911767939]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_39d6b1ca65c36c3cffa6e59aacbfc883 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3de6a883b3c1eaf632cecc05e6648e88 = $(`<div id="html_3de6a883b3c1eaf632cecc05e6648e88" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_39d6b1ca65c36c3cffa6e59aacbfc883.setContent(html_3de6a883b3c1eaf632cecc05e6648e88);
+            
+        
+
+        polygon_5b7b39ca877c32c06e1db4bb6dd6e21f.bindPopup(popup_39d6b1ca65c36c3cffa6e59aacbfc883)
+        ;
+
+        
+    
+    
+            polygon_5b7b39ca877c32c06e1db4bb6dd6e21f.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e922deef37fa8778a7c19034495a223c = L.polygon(
+                [[38.436581934089844, -122.12601555518458], [38.436583281348874, -122.12601401930823], [38.43658299999998, -122.126014], [38.436581934089844, -122.12601555518458]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_552845ccdedf22344912ddc2ae92ea86 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_20623fd8b26b578fdc67c47482e105ff = $(`<div id="html_20623fd8b26b578fdc67c47482e105ff" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_552845ccdedf22344912ddc2ae92ea86.setContent(html_20623fd8b26b578fdc67c47482e105ff);
+            
+        
+
+        polygon_e922deef37fa8778a7c19034495a223c.bindPopup(popup_552845ccdedf22344912ddc2ae92ea86)
+        ;
+
+        
+    
+    
+            polygon_e922deef37fa8778a7c19034495a223c.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_aa1a9bdb9ffcb8ee9d1746e0d9a59240 = L.polygon(
+                [[38.43585999999999, -122.126518], [38.435739000000005, -122.126547], [38.435861501961256, -122.12651806258162], [38.43585999999999, -122.126518]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_826e2ceca20519a66978a93907be45d2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_30d5e0ae1ebaa4a3729623d8af46ae0e = $(`<div id="html_30d5e0ae1ebaa4a3729623d8af46ae0e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_826e2ceca20519a66978a93907be45d2.setContent(html_30d5e0ae1ebaa4a3729623d8af46ae0e);
+            
+        
+
+        polygon_aa1a9bdb9ffcb8ee9d1746e0d9a59240.bindPopup(popup_826e2ceca20519a66978a93907be45d2)
+        ;
+
+        
+    
+    
+            polygon_aa1a9bdb9ffcb8ee9d1746e0d9a59240.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_405361ffd65806a2774454b433047979 = L.polygon(
+                [[38.43105600000003, -122.126437], [38.43073800000003, -122.126382], [38.43036099999997, -122.12637000000001], [38.43000899999998, -122.126293], [38.42981200000003, -122.126293], [38.429588, -122.126347], [38.429168000000026, -122.126401], [38.428983999999986, -122.12639099999998], [38.42890961506877, -122.12638703280363], [38.42891799999995, -122.126389], [38.431309000000006, -122.12658200000001], [38.4320712832085, -122.12653909662669], [38.43207000000001, -122.126539], [38.43191399999999, -122.126482], [38.43179399999997, -122.126482], [38.431656000000004, -122.12651399999999], [38.43141600000001, -122.12651399999999], [38.43123599999998, -122.12649200000001], [38.43105600000003, -122.126437]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_eed26a616052fdcf41ced47f10e41212 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_47262efbe3886aa826113982accc897a = $(`<div id="html_47262efbe3886aa826113982accc897a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_eed26a616052fdcf41ced47f10e41212.setContent(html_47262efbe3886aa826113982accc897a);
+            
+        
+
+        polygon_405361ffd65806a2774454b433047979.bindPopup(popup_eed26a616052fdcf41ced47f10e41212)
+        ;
+
+        
+    
+    
+            polygon_405361ffd65806a2774454b433047979.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bcf6451164d3d40d3ddaa10b66a24942 = L.polygon(
+                [[38.427137000000045, -122.125935], [38.42713714112258, -122.12593503631318], [38.42685200000003, -122.12577499999999], [38.426577000000044, -122.125665], [38.42637100000001, -122.125621], [38.426002, -122.125577], [38.42577100000002, -122.125577], [38.42570932400977, -122.12558091593594], [38.427137000000045, -122.125935]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_f0435c3dd936690dd4c329a5f2abfd9f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_af4f06575b7682ba48587c21713f15e4 = $(`<div id="html_af4f06575b7682ba48587c21713f15e4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Napa - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_f0435c3dd936690dd4c329a5f2abfd9f.setContent(html_af4f06575b7682ba48587c21713f15e4);
+            
+        
+
+        polygon_bcf6451164d3d40d3ddaa10b66a24942.bindPopup(popup_f0435c3dd936690dd4c329a5f2abfd9f)
+        ;
+
+        
+    
+    
+            polygon_bcf6451164d3d40d3ddaa10b66a24942.bindTooltip(
+                `<div>
+                      Napa - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_565f880af88f26b0ce757e09a4e612f2 = L.polygon(
+                [[38.32503281054029, -122.0624178277543], [38.32511100000004, -122.062079], [38.32538269011395, -122.06199631405619], [38.325383000000045, -122.061996], [38.32548599999999, -122.061906], [38.325666000000005, -122.06173200000002], [38.325915, -122.06167800000001], [38.32612999999995, -122.06161300000001], [38.32645599999996, -122.061548], [38.327005, -122.061407], [38.327244999999984, -122.061407], [38.32727620291376, -122.06142002644573], [38.327411000000005, -122.061379], [38.328043246170836, -122.06147203232628], [38.32806900000002, -122.061451], [38.32821499999997, -122.06140800000001], [38.32837800000002, -122.061397], [38.32866100000002, -122.06143], [38.328926999999965, -122.061495], [38.32902657673663, -122.06151096706175], [38.32961100000001, -122.061379], [38.33351099999998, -122.06297899999998], [38.333492068190964, -122.06331980932158], [38.33352899999996, -122.063367], [38.333571000000035, -122.06371400000002], [38.33353500000002, -122.06405900000001], [38.33344899999996, -122.064313], [38.33343599999998, -122.06433800000002], [38.333435448926494, -122.06433896355789], [38.33341099999996, -122.064779], [38.337211, -122.06687900000001], [38.339711000000015, -122.068379], [38.34002411650761, -122.06849285750106], [38.340025000000004, -122.068493], [38.340139743577254, -122.06853490283864], [38.34191100000004, -122.069179], [38.34281099999999, -122.06977900000001], [38.344111000000005, -122.069501], [38.344211000000044, -122.06947900000002], [38.346411000000025, -122.070679], [38.349011000000004, -122.070279], [38.349071384223315, -122.07030164384562], [38.34908699999998, -122.07028399999999], [38.349284000000026, -122.07026300000001], [38.34943900000002, -122.07036100000002], [38.34956779372869, -122.07048779692624], [38.34981100000001, -122.070579], [38.34982338066841, -122.07056785758483], [38.349850999999994, -122.070525], [38.349987999999996, -122.07034000000002], [38.35019400000004, -122.07018700000002], [38.35034000000005, -122.07007899999999], [38.35057200000002, -122.06980600000001], [38.350675, -122.06969700000002], [38.350794999999955, -122.069621], [38.35094100000002, -122.069621], [38.35124099999998, -122.069829], [38.35144700000005, -122.06999200000001], [38.35155900000006, -122.07002500000002], [38.35179, -122.07005800000002], [38.351936000000016, -122.070189], [38.35214410341345, -122.07040108625053], [38.35227838978889, -122.07047382513613], [38.35240499999999, -122.07054199999999], [38.35249399999997, -122.070549], [38.352694999999954, -122.070417], [38.352858999999995, -122.070384], [38.35297299999998, -122.07040600000002], [38.353070999999964, -122.070456], [38.353174000000024, -122.07057800000001], [38.35322399999999, -122.070742], [38.353289000000004, -122.07087800000001], [38.353369000000015, -122.070964], [38.35341867170007, -122.07107244984148], [38.35476217552871, -122.07167702445473], [38.35476299999997, -122.07167700000001], [38.355185000000006, -122.071867], [38.35518527263084, -122.07186742235315], [38.35521100000004, -122.071879], [38.35841099999995, -122.07338], [38.35878987506046, -122.07338], [38.35880699999998, -122.07337800000002], [38.35913299999997, -122.073302], [38.35922799999997, -122.07322599999999], [38.35940800000001, -122.073084], [38.359639999999985, -122.073161], [38.35987099999997, -122.07320500000002], [38.360077000000025, -122.07314], [38.36031800000001, -122.07311800000001], [38.36052400000002, -122.073162], [38.360635000000016, -122.07326], [38.36078099999999, -122.073336], [38.36091099999997, -122.07338], [38.361107, -122.073446], [38.361382000000006, -122.07349999999998], [38.36154499999997, -122.073599], [38.36181899999999, -122.073795], [38.36199899999999, -122.07390400000001], [38.362205, -122.074101], [38.36236799999998, -122.074275], [38.362435999999995, -122.07440600000001], [38.362469999999966, -122.07449099999998], [38.36246800000001, -122.07452900000001], [38.362518000000016, -122.074629], [38.36255500000001, -122.07465200000001], [38.362624999999966, -122.07476600000001], [38.362788, -122.074995], [38.362856000000015, -122.075137], [38.36291599999997, -122.07528900000001], [38.36301099999995, -122.07539900000002], [38.363071000000005, -122.075464], [38.36317399999998, -122.07557300000002], [38.36334499999999, -122.07571499999999], [38.36349099999997, -122.075813], [38.36360200000002, -122.0759], [38.36369699999999, -122.07600999999998], [38.36382600000005, -122.076135], [38.36384599999999, -122.07621000000002], [38.36392199999999, -122.076608], [38.363932999999975, -122.07673299999999], [38.36388500000001, -122.07696900000002], [38.36383299999996, -122.07731800000002], [38.36381000000003, -122.07757], [38.363807000000016, -122.07760099999999], [38.36381598891132, -122.07773483490072], [38.363878291827284, -122.07776737531478], [38.36396799999999, -122.077814], [38.36400399999996, -122.07781900000002], [38.36409000000004, -122.077852], [38.36416699999998, -122.077863], [38.36424499999998, -122.077841], [38.36441600000001, -122.077809], [38.36446399999996, -122.077808], [38.36451300000004, -122.077808], [38.36478599999999, -122.077936], [38.364907999999986, -122.078008], [38.365044, -122.07814400000001], [38.365128, -122.078206], [38.36518500000002, -122.078295], [38.36530000000001, -122.07847400000001], [38.36547099999995, -122.078594], [38.36639513876755, -122.07908195838193], [38.36652791293382, -122.07915131082922], [38.366723999999984, -122.079217], [38.36694700000003, -122.079326], [38.36713499999998, -122.079392], [38.36738399999998, -122.079469], [38.367599000000006, -122.07961], [38.36795000000003, -122.07988300000001], [38.36798078833156, -122.07991021464873], [38.37316799999998, -122.08262000000002], [38.37490999999996, -122.08353], [38.37662400000001, -122.08442500000001], [38.377296000000015, -122.08477600000002], [38.377918000000015, -122.08510100000001], [38.378086999999994, -122.08520500000002], [38.37866599999998, -122.085492], [38.37875431788522, -122.08553805780646], [38.37875499999998, -122.085538], [38.37940999999999, -122.08588], [38.380497999999996, -122.086071], [38.380848, -122.086335], [38.38161100000001, -122.086913], [38.38182299999998, -122.08707300000002], [38.38244199999997, -122.08754199999998], [38.38248279612862, -122.08757288093264], [38.38248500000003, -122.08757400000002], [38.383697000000026, -122.088492], [38.38406799999998, -122.08871900000001], [38.38415100000004, -122.08883500000002], [38.384231000000014, -122.088934], [38.384283000000046, -122.08897000000002], [38.384354999999964, -122.08902], [38.38446599999998, -122.08905400000002], [38.38456700000002, -122.08909199999998], [38.38463499999997, -122.08913299999999], [38.38466199999993, -122.089164], [38.38467800000004, -122.08926700000002], [38.384679000000034, -122.08930699999999], [38.384683000000045, -122.089424], [38.384695999999984, -122.08948400000001], [38.38473400000002, -122.08958300000002], [38.38480099999999, -122.089687], [38.38496699999999, -122.089874], [38.38544599999999, -122.090338], [38.38585600000004, -122.09067000000002], [38.38607700000001, -122.090872], [38.38613099999999, -122.09092899999997], [38.38632600000003, -122.091085], [38.386478000000004, -122.091195], [38.386566999999985, -122.091269], [38.386647, -122.09131200000002], [38.386715, -122.091362], [38.38681000000001, -122.09146899999999], [38.38699100000002, -122.091588], [38.387125000000026, -122.091606], [38.387176, -122.09160999999999], [38.38721000000003, -122.091612], [38.38725900000003, -122.091626], [38.387300999999994, -122.09170399999998], [38.387350000000005, -122.09179499999999], [38.38745199999997, -122.091897], [38.38797099999995, -122.09248], [38.38804799999997, -122.09256700000002], [38.38814399999998, -122.092656], [38.38822300000001, -122.09268299999998], [38.388333999999986, -122.092675], [38.38838799999998, -122.092686], [38.388439999999996, -122.09272399999999], [38.38851499999999, -122.09278000000002], [38.389143999999995, -122.09353100000001], [38.38917999999996, -122.093574], [38.38922300000003, -122.093625], [38.389297000000035, -122.093713], [38.39010599999999, -122.094674], [38.390122000000005, -122.094695], [38.390982999999984, -122.095832], [38.39112300000001, -122.096016], [38.39186400000001, -122.09699600000002], [38.39300699999999, -122.098475], [38.39347300000005, -122.098682], [38.393893999999996, -122.09887300000001], [38.393938, -122.09891499999999], [38.39408500000001, -122.09905599999999], [38.39409600000001, -122.099072], [38.394679999999966, -122.09965], [38.394928000000036, -122.099844], [38.39507000000004, -122.099964], [38.395096000000024, -122.09998600000002], [38.395880999999974, -122.100653], [38.395946999999985, -122.100692], [38.396560999999984, -122.10138599999999], [38.39706399999998, -122.101728], [38.397117, -122.10178899999998], [38.397260999999965, -122.10195600000002], [38.397325999999985, -122.102003], [38.397325999999985, -122.10202800000002], [38.39735000000002, -122.10210600000002], [38.39738499999997, -122.102324], [38.39740085495849, -122.10236859207042], [38.39793299999999, -122.10290299999998], [38.399463999999995, -122.10443399999998], [38.39952499999998, -122.10449700000001], [38.399797999999976, -122.10476999999999], [38.39999400000001, -122.104964], [38.401612999999955, -122.10658300000001], [38.40238699999996, -122.107357], [38.403332999999954, -122.10830300000002], [38.403984999999984, -122.10895500000001], [38.40449699999997, -122.109467], [38.404747, -122.109489], [38.40489699999996, -122.10948600000002], [38.405006000000036, -122.109464], [38.40508600000005, -122.109467], [38.405185999999986, -122.10953100000002], [38.405330999999954, -122.109597], [38.40548600000002, -122.109617], [38.405682999999954, -122.109581], [38.40583900000003, -122.10967899999999], [38.40594600000003, -122.109772], [38.40599400000004, -122.10984099999999], [38.40609199999999, -122.109869], [38.40615599999997, -122.109848], [38.406259000000034, -122.109794], [38.406445999999995, -122.10975600000002], [38.40664600000002, -122.10970500000002], [38.40697599999999, -122.109653], [38.4072, -122.10962799999999], [38.407315000000025, -122.109635], [38.40734499999998, -122.10965200000001], [38.40744200000003, -122.10970900000001], [38.40762299999999, -122.10984099999999], [38.40774199999997, -122.109965], [38.407843000000014, -122.110052], [38.407860000000014, -122.11006399999998], [38.408018, -122.110176], [38.408182, -122.110284], [38.40827799999999, -122.110347], [38.40855200000001, -122.110562], [38.40863200000003, -122.110686], [38.408672, -122.110761], [38.40868299999999, -122.110781], [38.408716999999974, -122.11082300000001], [38.40877199999997, -122.110949], [38.409319014642946, -122.11186415040663], [38.409361000000004, -122.111907], [38.40952500000002, -122.11209299999999], [38.40970399999998, -122.11226600000002], [38.40986800000004, -122.112376], [38.41004899999997, -122.112478], [38.410126999999996, -122.112478], [38.41015800000004, -122.112506], [38.410347000000044, -122.112539], [38.410476, -122.112517], [38.410611999999965, -122.112518], [38.41071600000002, -122.112572], [38.410792999999984, -122.11271400000001], [38.41082100000003, -122.11278899999999], [38.41085300000001, -122.112878], [38.41098199999998, -122.11310700000001], [38.411126999999965, -122.113238], [38.41127300000003, -122.113358], [38.41147000000003, -122.11350000000002], [38.411620999999954, -122.113589], [38.411676, -122.11365099999999], [38.411854999999996, -122.113778], [38.412040000000005, -122.11387900000001], [38.41208400000004, -122.113928], [38.41213899999998, -122.11395999999999], [38.41221600000003, -122.114058], [38.41223299999999, -122.11418899999998], [38.41222619869878, -122.11424027158832], [38.41230899999998, -122.114982], [38.412816999999954, -122.11491700000002], [38.41310899999998, -122.11488], [38.413187746464494, -122.11486147160524], [38.413365, -122.11473599999998], [38.41354599999999, -122.114649], [38.41373499999998, -122.114584], [38.41389799999999, -122.11457300000001], [38.41393999999994, -122.114584], [38.41397400000005, -122.11461200000001], [38.414018000000006, -122.11465], [38.414068999999984, -122.11473700000002], [38.41411999999997, -122.11482700000002], [38.414138, -122.114857], [38.41418000000003, -122.114944], [38.41409399999996, -122.115031], [38.414, -122.115151], [38.41392890796535, -122.11523201200811], [38.413970921948305, -122.11631733723819], [38.41399899999996, -122.11639500000001], [38.414033000000025, -122.11655799999998], [38.41404100000001, -122.11663500000002], [38.41405499999997, -122.11664999999999], [38.414077000000006, -122.116832], [38.41405499999997, -122.116941], [38.41401999999997, -122.11705], [38.41400053869026, -122.11708256029468], [38.41400399999994, -122.117172], [38.414006999999984, -122.11733799999999], [38.41400899999999, -122.117384], [38.41407496324242, -122.11777911767939], [38.41414600000003, -122.117835], [38.41423199999997, -122.117899], [38.414381999999996, -122.11799], [38.41457900000002, -122.118112], [38.41465800000003, -122.11823899999999], [38.41468900000002, -122.118273], [38.41498600000001, -122.118421], [38.41639700000002, -122.11912499999998], [38.41641500000002, -122.119142], [38.416441, -122.119165], [38.416653999999966, -122.11935600000001], [38.41674500000003, -122.11942700000002], [38.41689300000001, -122.119516], [38.417079000000015, -122.119573], [38.417219999999986, -122.1196], [38.417573, -122.11976999999999], [38.41774800000003, -122.11976799999998], [38.41798400000003, -122.11972299999998], [38.41802899999996, -122.119721], [38.41813200000003, -122.11974000000001], [38.418190999999986, -122.11976], [38.41838799999997, -122.119868], [38.41859800000002, -122.120035], [38.41873700000003, -122.12021400000002], [38.41883699999997, -122.12036100000002], [38.41893100000001, -122.120459], [38.419243999999956, -122.12067600000002], [38.41945499999997, -122.12082300000002], [38.419824999999975, -122.12101000000001], [38.41993200000006, -122.121047], [38.42009299999999, -122.12112600000002], [38.42023499999996, -122.12122999999998], [38.42029399999997, -122.12130000000002], [38.42041399999999, -122.12152600000002], [38.42049999999998, -122.121606], [38.42060899999999, -122.121656], [38.42069099999998, -122.12167999999998], [38.42081899999995, -122.12173700000001], [38.42089999999999, -122.121812], [38.420935000000036, -122.121855], [38.420975, -122.121914], [38.421040000000005, -122.12204800000002], [38.42106399999998, -122.122122], [38.421111999999944, -122.12235799999999], [38.421126999999984, -122.12239400000001], [38.42118099999998, -122.12252000000001], [38.42121799999993, -122.12258699999998], [38.42131099999997, -122.12271199999999], [38.42136699999997, -122.122771], [38.42146500000003, -122.122836], [38.42158600000003, -122.12287700000002], [38.42178100000003, -122.122905], [38.42190799999997, -122.12291400000001], [38.42195800000003, -122.122918], [38.42207099999999, -122.12295900000001], [38.42217900000002, -122.12302400000002], [38.422294, -122.12315], [38.422386999999965, -122.12321999999999], [38.42249500000001, -122.12327600000002], [38.422615000000015, -122.12331399999998], [38.42277599999999, -122.123323], [38.42299599999999, -122.12341500000001], [38.423074, -122.123458], [38.42322700000003, -122.12357999999999], [38.423301, -122.12366100000001], [38.42340799999993, -122.12387], [38.42351999999999, -122.124039], [38.423593000000025, -122.124129], [38.42368999999998, -122.12421600000002], [38.42374999999997, -122.12429100000001], [38.42380399999998, -122.12437600000001], [38.423813, -122.124552], [38.42381499999999, -122.12457600000002], [38.423826000000005, -122.124682], [38.42385299999995, -122.124797], [38.42392100000005, -122.124952], [38.42395099999997, -122.124998], [38.42397600000002, -122.125035], [38.42406199999999, -122.125134], [38.42416299999997, -122.12520500000001], [38.42430199999997, -122.12525000000001], [38.42467699999999, -122.125307], [38.42482099999999, -122.125345], [38.424953, -122.125396], [38.42504599999998, -122.12544400000002], [38.42511499999997, -122.12546900000001], [38.425207, -122.125482], [38.42525000000005, -122.125467], [38.42570932400977, -122.12558091593594], [38.42577100000002, -122.125577], [38.426002, -122.125577], [38.42637100000001, -122.125621], [38.426577000000044, -122.125665], [38.42685200000003, -122.12577499999999], [38.42713714112258, -122.12593503631318], [38.427786000000026, -122.12610200000002], [38.428065000000025, -122.126164], [38.42831699999999, -122.126248], [38.42890961506877, -122.12638703280363], [38.428983999999986, -122.12639099999998], [38.429168000000026, -122.126401], [38.429588, -122.126347], [38.42981200000003, -122.126293], [38.43000899999998, -122.126293], [38.43036099999997, -122.12637000000001], [38.43073800000003, -122.126382], [38.43105600000003, -122.126437], [38.43123599999998, -122.12649200000001], [38.43141600000001, -122.12651399999999], [38.431656000000004, -122.12651399999999], [38.43179399999997, -122.126482], [38.43191399999999, -122.126482], [38.43207000000001, -122.126539], [38.4320712832085, -122.12653909662669], [38.432073, -122.126539], [38.43224700000002, -122.126529], [38.43238699999996, -122.126553], [38.43247699999998, -122.126563], [38.43250400000001, -122.126551], [38.43256, -122.12650700000002], [38.432593, -122.126482], [38.43290700000002, -122.126176], [38.432995000000005, -122.126157], [38.433030000000024, -122.126161], [38.433108000000004, -122.126207], [38.43325499999998, -122.12633900000002], [38.43335199999998, -122.12639099999998], [38.433417000000006, -122.12641500000001], [38.43439400000002, -122.126469], [38.434795000000015, -122.126497], [38.43488500000004, -122.12650700000002], [38.43501200000003, -122.12655600000001], [38.43530899999999, -122.12662800000001], [38.43545099999999, -122.12662800000001], [38.435601999999996, -122.12658], [38.43568900000002, -122.12655899999999], [38.435739000000005, -122.126547], [38.43585999999999, -122.126518], [38.435861501961256, -122.12651806258162], [38.43599300000005, -122.12648699999998], [38.43608900000005, -122.12644199999998], [38.43614199999999, -122.12640800000001], [38.43627599999998, -122.12626999999999], [38.43636300000005, -122.12621899999999], [38.43639599999999, -122.1262], [38.436430999999985, -122.12616799999999], [38.43651400000001, -122.12609300000001], [38.436581934089844, -122.12601555518458], [38.43658299999998, -122.126014], [38.436583281348874, -122.12601401930823], [38.436614000000006, -122.12597900000002], [38.43668, -122.125866], [38.43673400000002, -122.125852], [38.438209000000015, -122.125482], [38.44297199999998, -122.124483], [38.44441199999997, -122.12420400000002], [38.44544000000002, -122.12400399999999], [38.446078000000014, -122.12388000000001], [38.44632991631043, -122.1238315162756], [38.44634800000004, -122.123828], [38.44634832090497, -122.1238279741206], [38.446582000000014, -122.123783], [38.44760800000001, -122.123582], [38.44855799999997, -122.123124], [38.45392599999998, -122.12052700000001], [38.46672003674676, -122.11602663604529], [38.466721999999976, -122.116025], [38.466806000000034, -122.11595700000001], [38.46725299999998, -122.11569599999999], [38.46747599999997, -122.115543], [38.467794000000026, -122.11538000000002], [38.46800000000004, -122.115238], [38.46818000000002, -122.115184], [38.468369000000045, -122.11517300000001], [38.46857500000002, -122.11513], [38.46884900000001, -122.115109], [38.469150000000006, -122.115022], [38.469759, -122.114805], [38.470255999999935, -122.11459699999999], [38.47061300000005, -122.11443499999999], [38.47082600000002, -122.114385], [38.47096300000002, -122.11436500000002], [38.471158000000024, -122.114327], [38.471363, -122.114269], [38.47153000000001, -122.11426099999998], [38.47162200000004, -122.114218], [38.47186099999999, -122.114058], [38.47196499999996, -122.113989], [38.47212899999996, -122.113946], [38.472421, -122.11385500000002], [38.47264299999996, -122.11381600000001], [38.47315799999998, -122.11364200000001], [38.47340700000002, -122.113577], [38.47359599999996, -122.11350100000001], [38.47375100000002, -122.11344700000001], [38.473957, -122.113338], [38.474188, -122.11329400000001], [38.47454899999997, -122.113175], [38.474805999999994, -122.113175], [38.47481999999997, -122.11317300000002], [38.474822386760515, -122.11317264799709], [38.475174000000024, -122.112878], [38.47614300000002, -122.112069], [38.477107999999994, -122.11126399999999], [38.47720799999997, -122.111182], [38.47733672518726, -122.11113860998202], [38.477469, -122.11098500000001], [38.47763999999996, -122.11092], [38.47779500000002, -122.110899], [38.47789799999996, -122.110899], [38.47810400000003, -122.11087699999999], [38.47813000000001, -122.11087099999999], [38.479894, -122.11027600000001], [38.47989503308939, -122.11027623613438], [38.480646452686315, -122.11002293008232], [38.48068599999998, -122.10993699999999], [38.480977, -122.10967000000001], [38.48115799999999, -122.10951700000001], [38.481331, -122.10943], [38.48147699999997, -122.109354], [38.48168300000005, -122.10923400000001], [38.48181199999998, -122.109115], [38.481975000000055, -122.109038], [38.482164, -122.10897299999999], [38.48240499999997, -122.108941], [38.48265299999998, -122.108941], [38.48285900000002, -122.108909], [38.48296199999998, -122.108942], [38.48312500000003, -122.10888699999998], [38.48333099999998, -122.10881099999999], [38.483615000000015, -122.10878999999998], [38.48389800000001, -122.108801], [38.484035, -122.108812], [38.484387000000034, -122.10875799999998], [38.48456700000003, -122.10868199999999], [38.48467648354552, -122.10866430157022], [38.486107, -122.108182], [38.48660434087424, -122.1078329927182], [38.48661000000002, -122.10782300000001], [38.48672199999997, -122.107572], [38.48679899999998, -122.10737500000002], [38.48693699999995, -122.10712399999998], [38.48700599999995, -122.10698299999999], [38.48709200000003, -122.106852], [38.48727200000002, -122.10674300000001], [38.48747800000003, -122.106623], [38.48766700000004, -122.10656900000001], [38.48812200000001, -122.106438], [38.48828499999998, -122.106417], [38.48840499999998, -122.106362], [38.488541999999995, -122.10621000000002], [38.48867100000001, -122.106101], [38.48877700000001, -122.10604299999999], [38.48885199999996, -122.10600300000002], [38.48900599999998, -122.10595900000001], [38.48930386833589, -122.10593800927838], [38.49068696533299, -122.10496633091348], [38.490687, -122.104966], [38.49070499999997, -122.104837], [38.49076600000001, -122.104772], [38.49086100000004, -122.104663], [38.49095499999996, -122.104663], [38.49108400000005, -122.104707], [38.49126399999998, -122.10477300000001], [38.491520999999956, -122.104828], [38.49169299999999, -122.10487199999999], [38.491830000000036, -122.104861], [38.49201900000001, -122.104894], [38.492165683142964, -122.10494993356197], [38.49280700000004, -122.10498200000002], [38.49304429810337, -122.10528922206082], [38.493142999999975, -122.10534299999999], [38.493262999999985, -122.10539799999998], [38.49341500000001, -122.10551], [38.493487999999985, -122.105647], [38.493623999999954, -122.10585600000002], [38.49371699999997, -122.106066], [38.49377940023335, -122.10624095357012], [38.49446295547661, -122.10712597336544], [38.494462999999975, -122.107126], [38.49450699999999, -122.10718300000002], [38.495681, -122.10710599999999], [38.495869999999975, -122.10707200000002], [38.496067000000046, -122.10703999999998], [38.49622999999996, -122.106975], [38.496410999999995, -122.10687700000001], [38.496548000000054, -122.10675700000002], [38.496823, -122.106593], [38.49696899999999, -122.10647299999998], [38.497132000000015, -122.10639700000002], [38.49739799999999, -122.106365], [38.49754399999999, -122.106387], [38.49769799999995, -122.106354], [38.49783499999999, -122.106344], [38.49802400000002, -122.106278], [38.49828999999997, -122.10617], [38.498573999999984, -122.10612600000002], [38.498780000000004, -122.10602800000001], [38.498926000000004, -122.105963], [38.49917500000001, -122.105909], [38.499432, -122.10587700000002], [38.499586000000015, -122.10587700000002], [38.49986099999999, -122.10593200000001], [38.49996399999999, -122.10599700000002], [38.500127000000035, -122.10603000000002], [38.50030700000001, -122.105943], [38.500445000000035, -122.105834], [38.500582000000016, -122.10578], [38.50080500000004, -122.105737], [38.50098500000002, -122.105671], [38.501200000000004, -122.105628], [38.501414, -122.10561700000001], [38.50171499999997, -122.10560700000002], [38.50221200000006, -122.105608], [38.502623999999976, -122.10565200000002], [38.50286500000002, -122.105663], [38.50321599999999, -122.105675], [38.503431000000006, -122.10557700000001], [38.503628000000006, -122.10553300000001], [38.503808999999976, -122.10556599999998], [38.50403200000003, -122.105589], [38.504238000000015, -122.105589], [38.50444300000001, -122.105589], [38.504717999999954, -122.105546], [38.50485500000003, -122.10559], [38.50504400000005, -122.10565599999998], [38.505173000000035, -122.105678], [38.50535300000006, -122.105634], [38.50550799999999, -122.105569], [38.50565299999998, -122.10549300000001], [38.50597100000004, -122.105428], [38.50598799999998, -122.10544500000002], [38.50614299999995, -122.105603], [38.506271000000034, -122.105712], [38.506536999999994, -122.105931], [38.506666, -122.10598599999999], [38.506777, -122.106008], [38.50694899999999, -122.10613900000001], [38.507455000000036, -122.106314], [38.50767947856753, -122.10632393267977], [38.50776551228817, -122.1063183208162], [38.50830600000002, -122.106282], [38.50842500000003, -122.10619000000001], [38.50842702985238, -122.10618957821293], [38.508952008333864, -122.10578097204953], [38.50901699999999, -122.105563], [38.509060000000034, -122.105246], [38.509164000000034, -122.104886], [38.509344000000006, -122.104592], [38.509584999999994, -122.10433], [38.509781999999994, -122.10411200000001], [38.509996999999956, -122.10397000000002], [38.510177000000034, -122.10383900000001], [38.510495000000034, -122.10375200000001], [38.510787, -122.103665], [38.51100100000004, -122.10364399999999], [38.51139599999998, -122.103601], [38.51171935782948, -122.10362694846756], [38.51190300000001, -122.103484], [38.51218600000003, -122.103439], [38.51310999999995, -122.103315], [38.51322600000002, -122.103298], [38.513287000000034, -122.10328900000002], [38.51334799999997, -122.10328100000001], [38.513311999999985, -122.10294199999997], [38.51338300000001, -122.101534], [38.513456000000005, -122.100222], [38.51341000000003, -122.09991799999999], [38.51340400000004, -122.09987800000002], [38.513386000000004, -122.099758], [38.51338000000006, -122.099719], [38.51335899999999, -122.09958199999997], [38.51333, -122.09928099999999], [38.51318700000001, -122.09778899999999], [38.51294599999998, -122.096839], [38.512922999999965, -122.096747], [38.512903000000044, -122.09666600000001], [38.513013000000086, -122.09550799999998], [38.513030000000015, -122.095326], [38.51305800000001, -122.095016], [38.51348400000004, -122.094059], [38.51396300000002, -122.093164], [38.51427999999998, -122.09291300000001], [38.515071999999954, -122.092441], [38.51553100000003, -122.09226700000002], [38.515976, -122.09162], [38.515996, -122.090775], [38.515643999999995, -122.08971600000001], [38.515424, -122.089254], [38.515275, -122.088918], [38.51511900000001, -122.08856500000002], [38.51488899999999, -122.087888], [38.514687999999964, -122.08735300000001], [38.514477000000014, -122.086855], [38.514461999999995, -122.08612700000002], [38.51446599999999, -122.085423], [38.514605000000046, -122.084037], [38.51488999999999, -122.08330500000001], [38.51491699999993, -122.083147], [38.514988999999964, -122.082731], [38.51499400000001, -122.08213400000001], [38.51491500000002, -122.08170500000001], [38.51480800000002, -122.081217], [38.51478900000002, -122.08118200000001], [38.51467499999999, -122.08099600000001], [38.51463699999997, -122.08093300000002], [38.51430599999994, -122.080472], [38.514192000000016, -122.08030600000001], [38.51418200000002, -122.080283], [38.514029999999956, -122.07998], [38.51403399999999, -122.07932400000001], [38.514046999999984, -122.07918000000001], [38.51408599999997, -122.078786], [38.51423000000002, -122.078092], [38.514064000000005, -122.077223], [38.51398900000001, -122.07604200000002], [38.513954000000034, -122.075801], [38.51391, -122.075494], [38.51386800000001, -122.074958], [38.51381900000001, -122.07467200000002], [38.51373099999998, -122.07426700000002], [38.513779000000014, -122.07308200000001], [38.51384900000003, -122.071384], [38.514095, -122.07050899999999], [38.514114999999975, -122.069411], [38.514106999999996, -122.06846199999998], [38.51413600000001, -122.068321], [38.514297, -122.067553], [38.51441599999998, -122.067205], [38.51469499999999, -122.066856], [38.514989, -122.066088], [38.515167000000034, -122.06529600000002], [38.515342000000004, -122.06452], [38.515363000000015, -122.06370799999999], [38.515617000000056, -122.06255300000001], [38.515674999999966, -122.06162100000002], [38.51584000000003, -122.06111799999998], [38.515950999999994, -122.060482], [38.51607299999996, -122.05978999999999], [38.51635900000002, -122.05925], [38.516469, -122.05894999999998], [38.51678800000002, -122.05893999999999], [38.517032, -122.05873000000001], [38.517086, -122.05868500000001], [38.51727899999997, -122.05828899999999], [38.517379000000005, -122.057858], [38.517441, -122.05741499999999], [38.51726900000003, -122.05694], [38.51725800000003, -122.056927], [38.517002999999974, -122.056621], [38.51685199999999, -122.056432], [38.516827000000035, -122.05637899999999], [38.516751999999975, -122.05622300000002], [38.51672799999999, -122.05617100000002], [38.51649400000002, -122.055889], [38.51614100000003, -122.05546300000002], [38.51571100000003, -122.055129], [38.515688, -122.055111], [38.51546100000002, -122.05486300000001], [38.51421999999999, -122.05334000000002], [38.51388299999999, -122.053032], [38.513124000000026, -122.05234], [38.51288700000003, -122.052009], [38.51209999999998, -122.05095100000001], [38.511785, -122.050215], [38.510031000000005, -122.04784], [38.509610000000016, -122.04721300000001], [38.509593999999986, -122.04718899999999], [38.50901699999999, -122.04655800000002], [38.508497999999996, -122.04618300000001], [38.50801599999998, -122.045641], [38.507892999999996, -122.045523], [38.507787999999955, -122.04530800000002], [38.50779399999996, -122.04487400000001], [38.507812000000015, -122.044456], [38.507747000000016, -122.04425800000001], [38.507722999999984, -122.04418300000002], [38.50754599999998, -122.043942], [38.507003999999974, -122.04349], [38.50656800000001, -122.042867], [38.506422000000015, -122.042627], [38.50622799999995, -122.042229], [38.50571299999997, -122.04156800000001], [38.50543999999997, -122.04134500000002], [38.505309000000054, -122.04129499999999], [38.505122999999976, -122.04122600000001], [38.50464399999994, -122.041143], [38.504322, -122.041115], [38.50403800000001, -122.041179], [38.50349700000004, -122.040807], [38.503427000000045, -122.04077000000001], [38.50236199999995, -122.04021], [38.50145599999999, -122.03978], [38.501318000000005, -122.039714], [38.50085, -122.039369], [38.50066299999998, -122.039231], [38.50017300000002, -122.03887], [38.50010000000004, -122.03882100000001], [38.49990799999999, -122.03869200000001], [38.499725, -122.03869400000002], [38.499542000000034, -122.03869499999999], [38.499332999999986, -122.03856900000001], [38.49927199999994, -122.038548], [38.49906399999996, -122.03843600000002], [38.49902500000002, -122.03839500000001], [38.49899800000001, -122.03833200000001], [38.498976, -122.038136], [38.498954000000026, -122.038038], [38.49891499999999, -122.03794000000002], [38.498855, -122.037828], [38.498789, -122.03773100000001], [38.49871200000001, -122.037647], [38.49831199999999, -122.037126], [38.497520999999956, -122.036706], [38.49678599999998, -122.03641399999998], [38.496558000000036, -122.03620900000001], [38.496407999999995, -122.035992], [38.49632499999996, -122.03581500000001], [38.49612199999999, -122.03556600000002], [38.496047999999995, -122.03533800000001], [38.49593400000005, -122.03524800000001], [38.49564399999998, -122.034745], [38.495517000000035, -122.03460500000001], [38.49430399999997, -122.03247000000002], [38.493610000000025, -122.03082899999998], [38.493342000000005, -122.02997300000001], [38.493171000000025, -122.029088], [38.49318999999997, -122.028618], [38.49276399999997, -122.02895799999999], [38.492497000000036, -122.02914199999998], [38.492238999999984, -122.029325], [38.492399999999996, -122.029783], [38.49249200000002, -122.030244], [38.49256099999998, -122.030633], [38.492633000000005, -122.030833], [38.49253300000003, -122.030994], [38.49237500000004, -122.031231], [38.49214700000002, -122.0318], [38.49187800000001, -122.03208600000002], [38.49160800000002, -122.03225799999998], [38.49148100000001, -122.03216100000002], [38.49121900000004, -122.03251900000001], [38.491074999999974, -122.032731], [38.490902999999996, -122.03316699999999], [38.49082200000002, -122.03341400000001], [38.490767000000055, -122.033458], [38.49071099999997, -122.03345300000001], [38.49066699999999, -122.03342800000001], [38.490611, -122.03333899999998], [38.49048100000003, -122.033175], [38.4904, -122.03310799999998], [38.49009999999997, -122.03345300000001], [38.48994999999994, -122.03389999999999], [38.48984700000001, -122.034261], [38.489764000000015, -122.034622], [38.489772000000016, -122.035189], [38.489752999999986, -122.035589], [38.48966099999998, -122.035817], [38.489547, -122.03601699999999], [38.489501999999995, -122.036186], [38.489489000000006, -122.0363], [38.48948099999999, -122.03812], [38.48946900000005, -122.04169799999998], [38.483834999999985, -122.041605], [38.48211200000002, -122.04116300000001], [38.480388000000026, -122.04072100000002], [38.480377, -122.038412], [38.48036900000002, -122.036869], [38.478951000000045, -122.03686600000002], [38.478944000000006, -122.03811800000001], [38.47815199999999, -122.03811500000002], [38.47815199999999, -122.039179], [38.475985999999985, -122.039255], [38.47481599999997, -122.038766], [38.474227999999975, -122.03838900000001], [38.47405200000001, -122.038257], [38.47385500000003, -122.038075], [38.47361300000002, -122.03776099999999], [38.473507999999995, -122.037642], [38.47340400000002, -122.037558], [38.47327799999994, -122.037481], [38.47255299999996, -122.037258], [38.47225599999998, -122.037195], [38.472167999999975, -122.03716000000001], [38.472009000000035, -122.037056], [38.47192100000001, -122.036958], [38.47176099999999, -122.036622], [38.471646000000035, -122.036441], [38.47152500000001, -122.036294], [38.47140999999999, -122.03620299999999], [38.47131600000001, -122.036147], [38.47124500000001, -122.03613300000002], [38.47116799999998, -122.03613999999999], [38.470822000000034, -122.03627299999998], [38.470634999999966, -122.036322], [38.47056899999995, -122.036322], [38.470503000000036, -122.036288], [38.47044300000002, -122.036218], [38.470393000000016, -122.03611299999999], [38.470288999999944, -122.036078], [38.47011899999996, -122.036064], [38.46995899999997, -122.03602899999998], [38.469836, -122.03596500000002], [38.46980600000001, -122.035219], [38.469738999999976, -122.034358], [38.46961400000003, -122.032533], [38.46825599999997, -122.032547], [38.46803600000001, -122.032539], [38.46778600000002, -122.032581], [38.46761100000002, -122.032583], [38.46751099999997, -122.03261100000002], [38.46739700000004, -122.03268100000001], [38.467186000000005, -122.03286900000002], [38.46698300000004, -122.03293599999999], [38.466821999999965, -122.03297800000001], [38.466668999999975, -122.033039], [38.46649699999999, -122.03325], [38.46641399999996, -122.033317], [38.46635600000002, -122.033331], [38.46630000000004, -122.033322], [38.46623599999997, -122.033256], [38.46610199999999, -122.03289400000001], [38.46592200000003, -122.032886], [38.46575799999999, -122.03285799999999], [38.465594, -122.032842], [38.46536699999998, -122.032911], [38.46515300000002, -122.03305300000001], [38.46502500000002, -122.03327500000002], [38.46488900000001, -122.03339200000002], [38.464763999999995, -122.033444], [38.46463300000003, -122.03345300000001], [38.464535999999995, -122.03342800000001], [38.46444999999999, -122.033375], [38.464367, -122.03329399999998], [38.46426700000005, -122.033231], [38.46418099999999, -122.03321399999997], [38.46408900000003, -122.033244], [38.46377799999996, -122.033703], [38.46368900000005, -122.03397799999999], [38.463667, -122.03420000000001], [38.46359699999999, -122.034436], [38.46352200000001, -122.034628], [38.463602999999964, -122.03537199999998], [38.46354699999998, -122.035917], [38.463456, -122.03635000000001], [38.46335599999998, -122.036694], [38.46326399999998, -122.03680299999999], [38.463111000000005, -122.03687200000002], [38.46298299999999, -122.036894], [38.46268900000002, -122.03696899999998], [38.46243600000003, -122.03715], [38.46188599999999, -122.037225], [38.46174700000002, -122.037225], [38.461643999999986, -122.03721100000001], [38.461578000000074, -122.037164], [38.461550000000024, -122.036994], [38.461574999999996, -122.036708], [38.461567, -122.036606], [38.461538999999995, -122.03649199999998], [38.461480999999985, -122.036397], [38.46125799999997, -122.036186], [38.46115800000002, -122.035942], [38.46100799999998, -122.035367], [38.46094200000001, -122.03521100000002], [38.46079699999994, -122.03516700000002], [38.460733000000026, -122.03512200000002], [38.46069199999996, -122.035061], [38.460656, -122.034925], [38.460639000000036, -122.03476100000002], [38.46064999999996, -122.03456099999998], [38.46060299999998, -122.034436], [38.46051399999997, -122.03438300000002], [38.460442000000015, -122.03430299999998], [38.46035299999998, -122.034181], [38.46035299999998, -122.034094], [38.46037200000002, -122.033967], [38.460368999999986, -122.033833], [38.46033099999997, -122.03374400000001], [38.46026899999997, -122.033667], [38.460252, -122.03365400000001], [38.46015799999998, -122.033581], [38.460097000000026, -122.03348600000001], [38.460074999999975, -122.033406], [38.460074999999975, -122.03326099999998], [38.46010300000002, -122.03301100000002], [38.46013099999997, -122.032556], [38.46012799999998, -122.032394], [38.46011100000001, -122.03238099999999], [38.46006899999998, -122.03238600000002], [38.459955999999956, -122.03252199999999], [38.45987199999996, -122.032641], [38.45982799999998, -122.032703], [38.459666000000006, -122.032892], [38.45942500000002, -122.03322800000001], [38.459178, -122.033536], [38.459063999999984, -122.03363900000001], [38.45890299999999, -122.033689], [38.45876899999999, -122.033689], [38.45865000000004, -122.033625], [38.458032999999936, -122.033156], [38.457886000000045, -122.032961], [38.457711, -122.03278900000001], [38.45774699999997, -122.032622], [38.45775300000001, -122.032247], [38.45776899999999, -122.031889], [38.45780000000001, -122.031425], [38.457814000000035, -122.03135000000002], [38.457850000000015, -122.03129700000001], [38.45794699999998, -122.031231], [38.458002999999955, -122.031172], [38.45802799999998, -122.03106899999999], [38.45802200000004, -122.03068100000002], [38.457953, -122.030517], [38.45783900000002, -122.03029699999999], [38.457833, -122.02981900000002], [38.457641999999964, -122.02903900000001], [38.45752499999997, -122.028767], [38.457268999999954, -122.028464], [38.45707799999997, -122.028272], [38.45695300000005, -122.02808100000001], [38.45692300000001, -122.02797300000002], [38.456931999999945, -122.02793700000001], [38.456993, -122.02780400000002], [38.45722899999995, -122.02742000000002], [38.457288999999996, -122.02730100000001], [38.45735999999999, -122.027092], [38.457366000000036, -122.026966], [38.457547, -122.026812], [38.457750000000004, -122.02652500000002], [38.45780499999997, -122.02648400000001], [38.45794800000001, -122.02644199999999], [38.45802499999995, -122.026386], [38.45807400000001, -122.02633000000002], [38.45812899999999, -122.02624600000001], [38.45819000000004, -122.026071], [38.45824400000001, -122.025771], [38.458250000000035, -122.02550500000001], [38.45831599999996, -122.02494600000001], [38.45831599999996, -122.02477200000001], [38.45824400000004, -122.024269], [38.45820899999998, -122.023918], [38.458205000000056, -122.02386999999997], [38.45818899999997, -122.02378], [38.45813899999995, -122.023682], [38.45794699999998, -122.02338900000001], [38.45787000000003, -122.0232], [38.45778799999997, -122.022928], [38.457737999999964, -122.02284400000002], [38.45757300000002, -122.02268299999999], [38.45755099999999, -122.02261999999999], [38.457458000000024, -122.02252300000002], [38.45732600000003, -122.02218700000002], [38.45716700000001, -122.021915], [38.457068000000014, -122.02171899999999], [38.456870000000016, -122.02126500000001], [38.45674900000002, -122.02104900000002], [38.45663300000004, -122.020888], [38.45656700000003, -122.02077699999998], [38.45653399999994, -122.02070700000002], [38.456419, -122.02046899999999], [38.45635800000002, -122.02015499999999], [38.456364000000036, -122.02006400000002], [38.456401999999976, -122.019973], [38.45658099999999, -122.01972200000002], [38.45667099999996, -122.01959599999999], [38.45670400000001, -122.019463], [38.45672599999998, -122.019225], [38.45667099999999, -122.019114], [38.456647, -122.019084], [38.45663099999997, -122.019056], [38.456600999999935, -122.01904099999999], [38.45652800000001, -122.01900199999999], [38.45629700000003, -122.01896], [38.45626399999999, -122.018946], [38.45621200000001, -122.01889300000002], [38.45616500000003, -122.018814], [38.456148999999996, -122.01873700000002], [38.45616500000003, -122.018646], [38.456192999999956, -122.018583], [38.45629100000002, -122.01843099999999], [38.45630200000001, -122.0184], [38.45631399999997, -122.01834499999998], [38.45631399999997, -122.018304], [38.45629700000003, -122.01826900000002], [38.456198000000015, -122.018136], [38.45608799999997, -122.018024], [38.45577499999997, -122.01777999999999], [38.455587999999985, -122.017619], [38.45547300000005, -122.017487], [38.45538999999998, -122.01735399999998], [38.45536299999997, -122.017291], [38.45530199999998, -122.016914], [38.45527499999997, -122.01685800000001], [38.45515399999998, -122.01668400000001], [38.45514799999997, -122.016628], [38.45512100000002, -122.016572], [38.45506600000004, -122.016495], [38.45493899999999, -122.01636200000002], [38.45488399999996, -122.01629999999999], [38.454730999999995, -122.016167], [38.45467000000002, -122.016013], [38.454675999999985, -122.01584600000001], [38.45471400000003, -122.015538], [38.45482400000002, -122.015259], [38.454899999999995, -122.015028], [38.45492799999999, -122.014923], [38.45495000000002, -122.014749], [38.45502100000002, -122.014595], [38.455102999999966, -122.014455], [38.455361000000025, -122.01405700000001], [38.45547100000004, -122.013812], [38.45554800000001, -122.013602], [38.45558600000003, -122.01344199999998], [38.45561899999995, -122.01310599999998], [38.45562999999997, -122.01275700000001], [38.455585999999975, -122.01254699999998], [38.455498, -122.012296], [38.455470000000055, -122.012184], [38.455459000000026, -122.011947], [38.455502999999965, -122.011786], [38.45550900000005, -122.011702], [38.455492000000035, -122.011584], [38.45540999999997, -122.011262], [38.455403999999994, -122.01115000000001], [38.45541999999998, -122.011074], [38.455459000000026, -122.011025], [38.45551399999997, -122.01098299999998], [38.45558500000002, -122.01097600000001], [38.45560200000006, -122.01099000000002], [38.45569000000002, -122.01101], [38.455789, -122.01108000000002], [38.45589800000002, -122.01113600000001], [38.45596400000002, -122.01113600000001], [38.456041000000006, -122.011108], [38.456168000000034, -122.01102399999999], [38.456201, -122.010954], [38.456228, -122.010849], [38.45602300000003, -122.01060400000001], [38.456385, -122.009146], [38.45683099999999, -122.009032], [38.45699000000001, -122.00887200000001], [38.45704500000001, -122.00880200000002], [38.45707300000004, -122.008683], [38.457094999999995, -122.008522], [38.45710500000004, -122.00801899999999], [38.45718200000001, -122.007691], [38.457247999999986, -122.00753], [38.45731400000002, -122.007411], [38.45740700000003, -122.007293], [38.45769299999998, -122.00701300000001], [38.45772600000003, -122.00699200000001], [38.45786300000003, -122.006852], [38.457884999999976, -122.006817], [38.45790699999997, -122.00675400000002], [38.45791799999996, -122.006642], [38.45787400000001, -122.00618800000001], [38.45787899999996, -122.005993], [38.45790099999999, -122.00588100000002], [38.45799400000003, -122.005664], [38.45803799999998, -122.005503], [38.458049000000024, -122.00519600000001], [38.45805499999995, -122.005174], [38.458093000000005, -122.00513300000001], [38.45809999999999, -122.005111], [38.45814199999998, -122.005091], [38.458229999999986, -122.00507699999999], [38.45831300000001, -122.00504900000001], [38.45834499999997, -122.00499299999998], [38.45836699999996, -122.00493], [38.458394999999975, -122.004672], [38.45849899999999, -122.00434999999999], [38.45881700000004, -122.00370699999999], [38.45897100000002, -122.00344200000002], [38.459037000000016, -122.00336500000002], [38.45906399999997, -122.003316], [38.45910300000003, -122.00328100000002], [38.45945900000001, -122.00300800000001], [38.459799999999994, -122.002889], [38.46029400000003, -122.00264400000002], [38.46074499999999, -122.00239200000001], [38.46083300000002, -122.002364], [38.46115100000006, -122.00226599999999], [38.46124399999997, -122.00220300000001], [38.46131000000003, -122.002133], [38.46135400000004, -122.002043], [38.461417000000026, -122.00176100000002], [38.46143000000002, -122.001732], [38.46144199999998, -122.00165100000001], [38.46145800000001, -122.001623], [38.461475, -122.00156], [38.461535999999995, -122.00108000000002], [38.46149799999998, -122.00080300000002], [38.46147200000004, -122.000704], [38.46145599999998, -122.000646], [38.46139100000003, -122.000479], [38.46136899999999, -122.000469], [38.46135900000002, -122.000426], [38.46132300000005, -122.000367], [38.46129900000002, -122.000247], [38.46127900000002, -122.000207], [38.46138900000001, -122.000136], [38.461511000000044, -121.99999700000001], [38.46160600000002, -121.999836], [38.46172800000005, -121.999758], [38.46196599999999, -121.999659], [38.462011000000004, -121.999647], [38.462324999999986, -121.99949199999999], [38.46303899999997, -121.999017], [38.46346699999996, -121.99877499999998], [38.46367800000006, -121.998694], [38.46398099999997, -121.99852800000001], [38.46410599999998, -121.998436], [38.46434399999998, -121.99811700000001], [38.464549999999996, -121.997789], [38.464717, -121.99764200000001], [38.46490000000002, -121.997511], [38.46500800000002, -121.99730600000001], [38.465025000000026, -121.997158], [38.46502500000002, -121.996972], [38.46505000000002, -121.996592], [38.46510799999998, -121.996383], [38.465156000000036, -121.99635000000002], [38.465218999999934, -121.996353], [38.46526399999999, -121.99637799999999], [38.46530800000005, -121.996446], [38.46538300000001, -121.99652500000002], [38.465531, -121.99659400000002], [38.465594, -121.99656700000001], [38.46563900000001, -121.996467], [38.46567799999998, -121.99629999999999], [38.46572800000002, -121.996209], [38.465752999999985, -121.996164], [38.465957999999965, -121.995933], [38.46631100000003, -121.995719], [38.46666399999998, -121.995578], [38.467199999999984, -121.995392], [38.46752799999999, -121.995292], [38.46772800000003, -121.995214], [38.46786900000002, -121.995117], [38.468017000000046, -121.994897], [38.46884399999999, -121.99403900000001], [38.469536, -121.993347], [38.470246999999986, -121.992761], [38.47059700000001, -121.99249399999998], [38.470728000000015, -121.992164], [38.470769000000004, -121.99192200000002], [38.470827999999955, -121.99127799999998], [38.470847000000035, -121.991161], [38.470861000000006, -121.990822], [38.47093099999999, -121.99050600000001], [38.47093900000001, -121.99048], [38.47102499999999, -121.990192], [38.47106700000004, -121.99001899999999], [38.47109399999999, -121.989847], [38.47109399999999, -121.989739], [38.47106100000001, -121.98958600000002], [38.47098100000004, -121.989378], [38.47089999999998, -121.98923899999998], [38.47076400000004, -121.98909199999999], [38.47045299999997, -121.98890300000001], [38.47028299999998, -121.98880000000001], [38.47016399999998, -121.988681], [38.470006000000005, -121.9886], [38.469839000000036, -121.988561], [38.468985999999994, -121.988528], [38.468803, -121.988508], [38.46868100000001, -121.98846400000001], [38.468542, -121.988333], [38.46831399999996, -121.98805300000001], [38.468250000000005, -121.98786900000002], [38.468222000000026, -121.987717], [38.46821099999999, -121.98755300000002], [38.468242000000025, -121.98731400000001], [38.46825599999997, -121.98713600000002], [38.468256000000004, -121.986967], [38.468238999999976, -121.98680000000002], [38.46814700000001, -121.98649199999998], [38.468072000000014, -121.986328], [38.46781699999993, -121.985964], [38.46768100000005, -121.98579700000002], [38.467469, -121.985442], [38.46745799999998, -121.98531400000002], [38.46748300000001, -121.985175], [38.46753600000003, -121.985022], [38.46756699999999, -121.98486399999999], [38.46756899999996, -121.984731], [38.467542000000016, -121.984428], [38.46753299999997, -121.98414999999999], [38.467472, -121.98395600000002], [38.46735599999999, -121.983772], [38.46701100000002, -121.98346100000002], [38.46686899999995, -121.98329999999999], [38.466656000000036, -121.982992], [38.46635299999996, -121.98226900000002], [38.466233000000024, -121.981964], [38.46609399999996, -121.981583], [38.467793999999984, -121.97913799999999], [38.469209000000006, -121.976176], [38.46939700000006, -121.975591], [38.47012499999997, -121.97331700000001], [38.47030399999998, -121.97151700000002], [38.47027900000005, -121.97111600000001], [38.469953000000004, -121.96962000000002], [38.469917999999964, -121.96890999999998], [38.46988799999996, -121.96829100000001], [38.46878000000004, -121.968192], [38.467221000000016, -121.96804199999998], [38.465919, -121.967959], [38.464878, -121.96804199999998], [38.46428199999998, -121.96801499999998], [38.45969699999995, -121.96817000000001], [38.459748000000005, -121.96877400000001], [38.45972200000005, -121.968772], [38.45920599999997, -121.96878600000001], [38.45898599999997, -121.968781], [38.458536000000024, -121.96873100000002], [38.458208000000035, -121.96873100000002], [38.457999999999984, -121.968703], [38.45742500000003, -121.96867200000001], [38.45668599999996, -121.968589], [38.456338999999964, -121.968625], [38.45594400000003, -121.968628], [38.45543599999998, -121.968511], [38.454620999999996, -121.96848599999998], [38.45445799999997, -121.968483], [38.45344999999998, -121.96848599999998], [38.45318899999997, -121.968533], [38.45320600000002, -121.96826099999998], [38.453169, -121.968163], [38.453184, -121.968122], [38.453190000000035, -121.96671400000001], [38.45319399999999, -121.965572], [38.45320300000002, -121.96428299999998], [38.453208000000025, -121.96107800000001], [38.45321400000006, -121.95991400000001], [38.45321800000002, -121.958414], [38.45322199999998, -121.95685799999998], [38.45322900000001, -121.954997], [38.453229, -121.954917], [38.45322999999998, -121.95481899999999], [38.45323899999998, -121.95226399999999], [38.45325599999999, -121.94754400000001], [38.45325900000001, -121.945588], [38.45326100000003, -121.944456], [38.45327499999998, -121.943047], [38.453276999999986, -121.94284800000001], [38.45327799999998, -121.942756], [38.45327799999998, -121.942294], [38.45327799999998, -121.942], [38.45327799999998, -121.941672], [38.45327799999998, -121.941364], [38.45327799999998, -121.94098600000001], [38.45327799999998, -121.94081200000001], [38.453259999999965, -121.940484], [38.45324400000004, -121.940381], [38.453244999999995, -121.940355], [38.45327799999998, -121.94036400000002], [38.453522000000014, -121.94030500000001], [38.453531000000005, -121.93686100000001], [38.45352999999999, -121.921932], [38.45350199999996, -121.918405], [38.453490000000016, -121.915617], [38.453480000000035, -121.915567], [38.45345799999998, -121.915567], [38.45332800000005, -121.91556400000002], [38.453328000000035, -121.91783099999999], [38.45330599999999, -121.92005300000001], [38.453305, -121.920142], [38.453297000000035, -121.920892], [38.45329400000001, -121.924669], [38.453297000000035, -121.92480300000001], [38.45164300000001, -121.92480500000002], [38.45141000000004, -121.924825], [38.45116600000003, -121.92490599999998], [38.45109399999999, -121.92494700000002], [38.45106600000002, -121.924915], [38.451047000000024, -121.924885], [38.45102400000002, -121.924828], [38.45087299999995, -121.92454100000002], [38.45066299999999, -121.924266], [38.450600000000016, -121.92421800000001], [38.45047700000003, -121.92410100000001], [38.45042700000001, -121.924062], [38.45038600000001, -121.924018], [38.45034099999995, -121.92399299999998], [38.45016799999996, -121.923835], [38.450157999999966, -121.92381499999999], [38.450095, -121.92377399999998], [38.45005899999998, -121.923757], [38.44996400000004, -121.923669], [38.44990500000004, -121.923627], [38.44988200000006, -121.923618], [38.44970099999997, -121.92347000000001], [38.449651, -121.923444], [38.449563999999995, -121.923366], [38.44945999999997, -121.923283], [38.449419999999996, -121.923244], [38.449368, -121.923322], [38.449332000000005, -121.92337499999998], [38.44935700000004, -121.923393], [38.44941600000001, -121.923418], [38.449501999999995, -121.92347900000001], [38.449552, -121.92350399999998], [38.449834000000024, -121.923732], [38.449878999999996, -121.92377500000002], [38.44999299999999, -121.923853], [38.45006100000002, -121.92391400000001], [38.450101, -121.923932], [38.45022, -121.924053], [38.45030599999998, -121.92411799999999], [38.450338, -121.924132], [38.45049700000003, -121.924288], [38.45057899999997, -121.924375], [38.450792999999976, -121.92467099999999], [38.45083399999999, -121.92475899999998], [38.45096900000002, -121.925018], [38.45095100000003, -121.92502800000001], [38.45088099999997, -121.92502299999998], [38.450836999999986, -121.924982], [38.45078299999999, -121.924796], [38.450721999999985, -121.924736], [38.45063900000003, -121.92471399999998], [38.45050000000003, -121.92469400000002], [38.44856099999998, -121.924678], [38.446771999999946, -121.92462500000002], [38.44644700000003, -121.924628], [38.44622200000005, -121.92459600000001], [38.44613900000002, -121.924555], [38.446118999999975, -121.92013900000002], [38.44611700000002, -121.91603900000001], [38.44610600000005, -121.915714], [38.446089999999984, -121.91563399999998], [38.446100999999985, -121.91560000000001], [38.446237000000046, -121.915602], [38.44620699999998, -121.91549499999999], [38.44617099999992, -121.914954], [38.44615099999999, -121.914779], [38.446159000000016, -121.91466100000001], [38.44620500000002, -121.91432100000002], [38.446228999999974, -121.913945], [38.44619099999996, -121.91381], [38.446163999999975, -121.913741], [38.44605900000001, -121.91361900000001], [38.44600900000001, -121.91359200000001], [38.44598200000001, -121.913566], [38.445911000000024, -121.913515], [38.44588699999995, -121.913514], [38.445816, -121.91348000000002], [38.44574599999998, -121.91344500000001], [38.44569599999998, -121.91343], [38.445669999999986, -121.913411], [38.44551499999999, -121.913245], [38.44541000000002, -121.913114], [38.445387, -121.91304500000001], [38.445365000000024, -121.912695], [38.44539899999999, -121.912443], [38.445598999999994, -121.91210200000002], [38.44568199999996, -121.911795], [38.445671999999995, -121.911224], [38.44566699999999, -121.911176], [38.445652999999986, -121.91115400000001], [38.44560199999999, -121.91104500000002], [38.44552899999999, -121.91093199999999], [38.44539300000002, -121.91075799999999], [38.445356000000004, -121.910741], [38.445328999999994, -121.910714], [38.44526599999997, -121.91067999999999], [38.445234000000006, -121.910654], [38.44518899999998, -121.910636], [38.44516099999999, -121.91061000000002], [38.44493499999998, -121.910541], [38.44489900000005, -121.910515], [38.444872, -121.91050599999998], [38.444850000000024, -121.910488], [38.444813000000025, -121.91048899999997], [38.444777000000016, -121.91044600000001], [38.444754000000025, -121.910437], [38.44472700000006, -121.910437], [38.44468200000004, -121.910402], [38.44460500000004, -121.91038499999999], [38.444564000000014, -121.910359], [38.44448200000003, -121.91028899999999], [38.44439599999997, -121.91020299999998], [38.44432799999996, -121.910116], [38.44432199999997, -121.91002], [38.44437099999997, -121.90994099999999], [38.444585000000004, -121.90972199999999], [38.44461199999996, -121.909705], [38.44472799999997, -121.909591], [38.444804, -121.909495], [38.444831000000036, -121.90945100000002], [38.444843000000034, -121.909354], [38.44482400000002, -121.909241], [38.44478300000003, -121.90917200000001], [38.44469600000007, -121.909067], [38.444588, -121.909024], [38.44446600000001, -121.90898899999999], [38.44442900000001, -121.90895500000002], [38.444387999999954, -121.90890200000001], [38.444365999999945, -121.90890299999998], [38.44433400000002, -121.90887500000001], [38.44414299999999, -121.90863400000002], [38.444001999999976, -121.908519], [38.44391600000002, -121.908482], [38.44389800000005, -121.908481], [38.443834999999986, -121.908462], [38.443635999999984, -121.90845], [38.44357299999999, -121.90842799999999], [38.44346400000003, -121.908312], [38.44335399999999, -121.908167], [38.44329000000002, -121.90804099999998], [38.443224999999984, -121.907846], [38.44316599999996, -121.90774900000001], [38.44309299999998, -121.907672], [38.44287899999997, -121.90742], [38.44282300000003, -121.907216], [38.44283499999999, -121.907079], [38.44279200000003, -121.90684400000002], [38.442763, -121.90659000000001], [38.44275199999996, -121.906424], [38.44268600000001, -121.906102], [38.44260899999997, -121.90599599999999], [38.442521999999975, -121.90589900000002], [38.442368, -121.905862], [38.442206999999975, -121.905933], [38.44204099999998, -121.90601300000002], [38.44187100000003, -121.906133], [38.441705000000006, -121.90626300000001], [38.44152100000004, -121.90634399999999], [38.441382000000026, -121.90635599999999], [38.44104700000005, -121.90626300000001], [38.44084800000003, -121.906178], [38.44063299999999, -121.90624], [38.440494, -121.90636], [38.44030999999999, -121.90646100000001], [38.440085999999994, -121.90653600000002], [38.439851999999966, -121.906553], [38.439643999999994, -121.90649000000002], [38.439387000000025, -121.90648499999999], [38.439148000000046, -121.90648800000001], [38.438921999999984, -121.906551], [38.438742999999974, -121.90654200000002], [38.43860399999999, -121.906588], [38.43858599999998, -121.906588], [38.438207999999996, -121.90669799999999], [38.43802400000006, -121.90679199999998], [38.437759000000014, -121.906834], [38.437336999999964, -121.906841], [38.43727199999999, -121.90684200000001], [38.437046999999986, -121.90680600000002], [38.43664100000005, -121.90681200000002], [38.436302999999995, -121.90677900000001], [38.43597399999999, -121.90681000000001], [38.435627, -121.906763], [38.43526200000001, -121.90678199999999], [38.434977999999965, -121.90669500000001], [38.43476000000003, -121.906556], [38.43449200000002, -121.90636500000001], [38.43434700000004, -121.90621200000001], [38.43414299999997, -121.90608500000002], [38.43401200000001, -121.90603499999999], [38.43370499999997, -121.90601399999998], [38.43344800000002, -121.905966], [38.43313199999999, -121.90593200000002], [38.43239700000002, -121.905826], [38.43197700000006, -121.90571600000001], [38.43162399999998, -121.90554800000001], [38.431613, -121.90535699999998], [38.43146, -121.905213], [38.43144499999996, -121.905198], [38.43143299999999, -121.903985], [38.43142700000001, -121.90094899999998], [38.431299, -121.887381], [38.43139300000001, -121.887262], [38.43131900000001, -121.88721700000002], [38.43119399999999, -121.887208], [38.43059199999996, -121.887225], [38.429202999999994, -121.887219], [38.427618999999964, -121.887225], [38.426286000000005, -121.887256], [38.42535, -121.887256], [38.424894000000016, -121.887278], [38.42471400000001, -121.88731400000002], [38.42454199999999, -121.887375], [38.42451899999998, -121.887391], [38.42435800000001, -121.88750000000002], [38.42407500000004, -121.887733], [38.42344400000006, -121.888525], [38.422706000000005, -121.889511], [38.42184399999999, -121.890619], [38.42124700000003, -121.891436], [38.42057199999997, -121.892311], [38.419821999999996, -121.893303], [38.419381000000016, -121.89386599999999], [38.419267000000005, -121.894011], [38.41913099999999, -121.894183], [38.418553000000024, -121.89495800000002], [38.41815599999998, -121.89557499999998], [38.41798599999999, -121.89594699999998], [38.41785799999999, -121.896245], [38.41768300000001, -121.896653], [38.41757499999997, -121.896975], [38.41747500000002, -121.897392], [38.41747100000002, -121.897428], [38.417171999999994, -121.89729400000002], [38.41666200000002, -121.897065], [38.41644600000002, -121.89696499999998], [38.41624399999998, -121.897233], [38.414603000000014, -121.89937200000001], [38.413717999999996, -121.900526], [38.413409000000016, -121.900929], [38.412888999999964, -121.901608], [38.412182999999985, -121.902536], [38.409595, -121.905945], [38.408988999999984, -121.906744], [38.407508000000014, -121.90865600000001], [38.40484400000002, -121.91222500000002], [38.404338, -121.912884], [38.40355300000002, -121.913906], [38.40268300000001, -121.91504200000001], [38.402284, -121.915553], [38.40144999999999, -121.91661899999998], [38.401171999999995, -121.91697900000001], [38.40050799999996, -121.917839], [38.399705999999966, -121.918853], [38.398556000000006, -121.92035600000001], [38.39532499999998, -121.92446900000002], [38.395211, -121.92461000000002], [38.39445299999998, -121.925558], [38.39361000000002, -121.926661], [38.393114000000004, -121.927311], [38.39115200000001, -121.929779], [38.39084400000004, -121.930169], [38.39035599999998, -121.930803], [38.390089000000025, -121.93115000000002], [38.38897400000004, -121.93257099999998], [38.38809099999997, -121.933707], [38.388021, -121.93379800000001], [38.387069, -121.93504700000001], [38.385953000000015, -121.936481], [38.385903000000006, -121.93654800000002], [38.38506500000004, -121.937657], [38.384058000000024, -121.93895000000002], [38.38217800000002, -121.94145199999998], [38.380760999999985, -121.943339], [38.379433, -121.94506900000002], [38.37794700000002, -121.946983], [38.376621999999955, -121.948706], [38.37532500000002, -121.950367], [38.375019, -121.950772], [38.37470000000002, -121.95122799999999], [38.37459700000004, -121.95135600000002], [38.37400800000002, -121.9521], [38.37343200000001, -121.952868], [38.373230999999976, -121.953136], [38.37303100000002, -121.953358], [38.37237499999999, -121.954214], [38.37159700000003, -121.95515], [38.371006, -121.955831], [38.37058600000001, -121.956314], [38.36950800000001, -121.95769200000001], [38.36895599999998, -121.958381], [38.36857499999994, -121.95887800000001], [38.367833, -121.959839], [38.36738499999996, -121.960431], [38.366663999999965, -121.961386], [38.36568899999996, -121.962697], [38.36495299999998, -121.963636], [38.36476099999998, -121.963921], [38.36469200000003, -121.964023], [38.364608000000004, -121.96414799999998], [38.364062000000004, -121.96496099999999], [38.36391199999997, -121.96518399999998], [38.36333900000001, -121.96611100000001], [38.36242799999998, -121.967607], [38.36193200000003, -121.968405], [38.36147800000003, -121.969139], [38.361356, -121.96933599999998], [38.36124699999994, -121.969508], [38.36069200000001, -121.97046399999999], [38.35977200000002, -121.971958], [38.35902200000002, -121.97312499999998], [38.358753000000014, -121.973547], [38.35843900000005, -121.97395600000002], [38.35685300000006, -121.975697], [38.355990999999975, -121.976608], [38.355872000000005, -121.97673300000001], [38.35501400000002, -121.97762200000001], [38.354431000000005, -121.97825300000001], [38.354085999999995, -121.97862199999999], [38.35379200000003, -121.979011], [38.353269000000004, -121.97969400000001], [38.352743999999994, -121.980608], [38.35246899999998, -121.981181], [38.35229200000002, -121.98160299999999], [38.35148099999999, -121.983719], [38.35129699999999, -121.984158], [38.35107799999997, -121.98468900000002], [38.35090500000001, -121.985139], [38.350792, -121.985433], [38.350405, -121.98642100000002], [38.35023300000001, -121.98686400000001], [38.35016899999996, -121.98702599999999], [38.34975900000003, -121.98807399999998], [38.349352999999994, -121.989111], [38.349278000000005, -121.989303], [38.348728000000044, -121.99073900000002], [38.34795800000001, -121.992692], [38.34749400000001, -121.99383299999998], [38.34723299999997, -121.99450800000001], [38.34651900000001, -121.99640600000001], [38.346269000000014, -121.997048], [38.34621400000002, -121.997187], [38.344829000000026, -122.00075800000002], [38.34453899999999, -122.00150399999998], [38.344467000000016, -122.001689], [38.34426100000001, -122.00223099999998], [38.34385799999994, -122.00323300000001], [38.343571999999995, -122.003986], [38.343269000000014, -122.00491699999999], [38.342853000000034, -122.006369], [38.34279299999998, -122.006566], [38.34251399999997, -122.007489], [38.342242, -122.008458], [38.34194700000006, -122.009467], [38.341763999999976, -122.010014], [38.34161300000005, -122.010382], [38.341469, -122.010731], [38.34116400000001, -122.011392], [38.34114600000001, -122.01142700000001], [38.34082200000004, -122.01205], [38.34044699999998, -122.01267500000002], [38.340082999999986, -122.01318900000001], [38.33961400000002, -122.013819], [38.33959900000005, -122.01384099999999], [38.33911700000001, -122.014425], [38.338667, -122.014908], [38.33836899999999, -122.01519700000001], [38.33778299999996, -122.01570599999998], [38.33763, -122.015819], [38.33732499999995, -122.016044], [38.33671100000001, -122.01645800000001], [38.33577500000002, -122.01705600000001], [38.33323299999996, -122.01868099999999], [38.332545, -122.01911899999999], [38.328474999999976, -122.021712], [38.32780499999998, -122.022139], [38.326797000000035, -122.02277200000002], [38.325464, -122.023644], [38.325081, -122.023883], [38.32451100000003, -122.02423899999998], [38.323321999999955, -122.025011], [38.32273299999999, -122.02545000000002], [38.32244199999997, -122.025703], [38.31796700000003, -122.029731], [38.31674199999997, -122.030819], [38.31617800000001, -122.03126700000001], [38.315850385609515, -122.03149706702857], [38.315852245191145, -122.0324364717106], [38.316010000000034, -122.03399300000001], [38.31715999999998, -122.034018], [38.321208000000006, -122.034106], [38.3231, -122.03411899999999], [38.32313599999996, -122.04032800000002], [38.32312399999994, -122.04169799999998], [38.32312499999998, -122.041861], [38.32345000000001, -122.042206], [38.323524000000035, -122.042068], [38.32358400000003, -122.04216800000002], [38.32313599999996, -122.043674], [38.32354400000002, -122.04456799999998], [38.323378000000034, -122.054668], [38.32320400000001, -122.065271], [38.32481100000002, -122.063379], [38.32502244825713, -122.06246273151952], [38.325031999999986, -122.06242000000002], [38.32503281054029, -122.0624178277543]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_ceae0121645c9be9b8279cc329e7c4cf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_83b6a8acb3cb7193020d58dd4f4af1d6 = $(`<div id="html_83b6a8acb3cb7193020d58dd4f4af1d6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Solano - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_ceae0121645c9be9b8279cc329e7c4cf.setContent(html_83b6a8acb3cb7193020d58dd4f4af1d6);
+            
+        
+
+        polygon_565f880af88f26b0ce757e09a4e612f2.bindPopup(popup_ceae0121645c9be9b8279cc329e7c4cf)
+        ;
+
+        
+    
+    
+            polygon_565f880af88f26b0ce757e09a4e612f2.bindTooltip(
+                `<div>
+                      Solano - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_75857f24618187a8ca75f6ca12c6e256 = L.polygon(
+                [[38.31564399999999, -122.03164199999999], [38.315367000000045, -122.031809], [38.315387999999956, -122.03211699999999], [38.31540399999996, -122.032355], [38.31540399999998, -122.032447], [38.315767000000015, -122.03219400000002], [38.31582999999998, -122.032217], [38.315852245191145, -122.0324364717106], [38.315850385609515, -122.03149706702857], [38.31564399999999, -122.03164199999999]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_5149902efb221757d42fa52284cab920 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_022ba017f507ed44d08f6022b1fb0c72 = $(`<div id="html_022ba017f507ed44d08f6022b1fb0c72" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Solano - CA-CD08</h4>                              </div>         </div>`)[0];
+                popup_5149902efb221757d42fa52284cab920.setContent(html_022ba017f507ed44d08f6022b1fb0c72);
+            
+        
+
+        polygon_75857f24618187a8ca75f6ca12c6e256.bindPopup(popup_5149902efb221757d42fa52284cab920)
+        ;
+
+        
+    
+    
+            polygon_75857f24618187a8ca75f6ca12c6e256.bindTooltip(
+                `<div>
+                      Solano - CA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_46e44d88270164818531311357736fa4 = L.polygon(
+                [[38.51318700000001, -122.09778899999999], [38.51333, -122.09928099999999], [38.51335899999999, -122.09958199999997], [38.51318700000001, -122.09778899999999]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_fdc342b313448cd9a7407820d041713d);
+        
+    
+        var popup_8ffc0acb6c03a5c63c90b2f970073edb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b943d6a38cd37d0af5b859d0024d8e8a = $(`<div id="html_b943d6a38cd37d0af5b859d0024d8e8a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Yolo - CA-CD04</h4>                              </div>         </div>`)[0];
+                popup_8ffc0acb6c03a5c63c90b2f970073edb.setContent(html_b943d6a38cd37d0af5b859d0024d8e8a);
+            
+        
+
+        polygon_46e44d88270164818531311357736fa4.bindPopup(popup_8ffc0acb6c03a5c63c90b2f970073edb)
+        ;
+
+        
+    
+    
+            polygon_46e44d88270164818531311357736fa4.bindTooltip(
+                `<div>
+                      Yolo - CA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_fdc342b313448cd9a7407820d041713d.fitBounds(
+                [[38.315367000000045, -122.12662800000001], [38.517441, -121.887208]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

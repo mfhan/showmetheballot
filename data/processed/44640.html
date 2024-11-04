@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_21e06d8fb58abca989f7e6d388b4ae1e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Stark - OH-CD14</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Stark - OH-CD06</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_21e06d8fb58abca989f7e6d388b4ae1e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_21e06d8fb58abca989f7e6d388b4ae1e = L.map(
+                "map_21e06d8fb58abca989f7e6d388b4ae1e",
+                {
+                    center: [40.983310795491406, -81.14773165076527],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_21e06d8fb58abca989f7e6d388b4ae1e);
+
+            
+
+        
+    
+            var tile_layer_183f8b87002ace2dff1d8688f722baee = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_183f8b87002ace2dff1d8688f722baee.addTo(map_21e06d8fb58abca989f7e6d388b4ae1e);
+        
+    
+            var polygon_6aab6f307f393a6546199b40957c4c89 = L.polygon(
+                [[40.98821400000003, -81.148851], [40.98821899999997, -81.147995], [40.98822699999998, -81.146709], [40.98822599999998, -81.146501], [40.98822500000001, -81.14633], [40.988219999999984, -81.145766], [40.988219999999984, -81.145743], [40.98821400000003, -81.144786], [40.98819801687422, -81.14478126237371], [40.98821035972559, -81.14951277538098], [40.98821400000003, -81.148851]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_21e06d8fb58abca989f7e6d388b4ae1e);
+        
+    
+        var popup_874afc0e20188afb67fcc9c5cee042a8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5d5729de7e068872769605b3eac3ab23 = $(`<div id="html_5d5729de7e068872769605b3eac3ab23" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Stark - OH-CD14</h4>                              </div>         </div>`)[0];
+                popup_874afc0e20188afb67fcc9c5cee042a8.setContent(html_5d5729de7e068872769605b3eac3ab23);
+            
+        
+
+        polygon_6aab6f307f393a6546199b40957c4c89.bindPopup(popup_874afc0e20188afb67fcc9c5cee042a8)
+        ;
+
+        
+    
+    
+            polygon_6aab6f307f393a6546199b40957c4c89.bindTooltip(
+                `<div>
+                      Stark - OH-CD14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_cfe3cd6ed67406c46d8b6b0a585b3355 = L.polygon(
+                [[40.98821479412636, -81.15122929858916], [40.98822013834105, -81.15330999726892], [40.988220999999974, -81.15331000000002], [40.988229, -81.152308], [40.98821479412636, -81.15122929858916]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_21e06d8fb58abca989f7e6d388b4ae1e);
+        
+    
+        var popup_879c75d10af53353995f661011c768df = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_38465a5c141f59f7360eecfcd08b1a54 = $(`<div id="html_38465a5c141f59f7360eecfcd08b1a54" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Stark - OH-CD14</h4>                              </div>         </div>`)[0];
+                popup_879c75d10af53353995f661011c768df.setContent(html_38465a5c141f59f7360eecfcd08b1a54);
+            
+        
+
+        polygon_cfe3cd6ed67406c46d8b6b0a585b3355.bindPopup(popup_879c75d10af53353995f661011c768df)
+        ;
+
+        
+    
+    
+            polygon_cfe3cd6ed67406c46d8b6b0a585b3355.bindTooltip(
+                `<div>
+                      Stark - OH-CD14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c84f71c1b73cf28ad4f0a33f66109445 = L.polygon(
+                [[40.98820499999997, -81.150486], [40.98821035972559, -81.14951277538098], [40.98819801687422, -81.14478126237371], [40.987239000000024, -81.144497], [40.98679800000006, -81.14438], [40.98644500000003, -81.144301], [40.98608299999995, -81.14423300000001], [40.98564599999999, -81.144162], [40.98523900000002, -81.14411], [40.98468400000004, -81.144058], [40.98299699999999, -81.143947], [40.98217299999999, -81.143893], [40.98111800000003, -81.143811], [40.98117499999997, -81.144041], [40.981246999999954, -81.144309], [40.98134100000001, -81.144758], [40.98151999999996, -81.145251], [40.98160599999999, -81.145533], [40.981628, -81.145685], [40.981618999999995, -81.145818], [40.98160899999999, -81.145953], [40.981586999999976, -81.146113], [40.98150099999999, -81.146374], [40.981456000000016, -81.146533], [40.98132900000005, -81.146736], [40.98124399999998, -81.14683], [40.98119400000001, -81.146867], [40.981117000000026, -81.146823], [40.98097400000005, -81.146664], [40.98089299999999, -81.146541], [40.98082100000001, -81.146381], [40.98080699999999, -81.146316], [40.98082600000003, -81.14615], [40.98082999999998, -81.14605500000002], [40.98082100000001, -81.146012], [40.98067699999998, -81.14586], [40.980559999999976, -81.145802], [40.98036199999996, -81.145715], [40.98028100000005, -81.145722], [40.98016800000002, -81.1458], [40.98013199999997, -81.145824], [40.980059999999995, -81.145933], [40.980017000000004, -81.14607700000002], [40.98000900000001, -81.14686], [40.97994599999999, -81.147273], [40.97986400000001, -81.147896], [40.979868, -81.148012], [40.97987200000001, -81.14802400000002], [40.97981999999998, -81.14802400000002], [40.97985699999999, -81.148224], [40.98026099999999, -81.148482], [40.980978000000015, -81.1491], [40.981201000000006, -81.149422], [40.98137999999996, -81.149874], [40.98146400000003, -81.150085], [40.98191700000003, -81.150545], [40.98194400000002, -81.150693], [40.98174899999999, -81.151179], [40.98165700000004, -81.151703], [40.98154500000007, -81.152158], [40.981555999999955, -81.152388], [40.98161500000002, -81.152439], [40.98179400000003, -81.152874], [40.98186200000001, -81.153062], [40.98188799999999, -81.153163], [40.981891000000005, -81.153265], [40.98222599999999, -81.153291], [40.98822013834105, -81.15330999726892], [40.98821479412636, -81.15122929858916], [40.98820499999997, -81.150486]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_21e06d8fb58abca989f7e6d388b4ae1e);
+        
+    
+        var popup_b317c1da81804f4ee8b3d65da00cd5ca = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_189bde40732a0e2ee1a0abdc0175067c = $(`<div id="html_189bde40732a0e2ee1a0abdc0175067c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Stark - OH-CD06</h4>                              </div>         </div>`)[0];
+                popup_b317c1da81804f4ee8b3d65da00cd5ca.setContent(html_189bde40732a0e2ee1a0abdc0175067c);
+            
+        
+
+        polygon_c84f71c1b73cf28ad4f0a33f66109445.bindPopup(popup_b317c1da81804f4ee8b3d65da00cd5ca)
+        ;
+
+        
+    
+    
+            polygon_c84f71c1b73cf28ad4f0a33f66109445.bindTooltip(
+                `<div>
+                      Stark - OH-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_21e06d8fb58abca989f7e6d388b4ae1e.fitBounds(
+                [[40.97981999999998, -81.15331000000002], [40.988229, -81.143811]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

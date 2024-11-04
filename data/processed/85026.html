@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9ba52574db5460356022d416d4bef7a3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Maricopa - AZ-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Maricopa - AZ-CD04</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_9ba52574db5460356022d416d4bef7a3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9ba52574db5460356022d416d4bef7a3 = L.map(
+                "map_9ba52574db5460356022d416d4bef7a3",
+                {
+                    center: [33.44922922647592, -111.97251458117579],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_9ba52574db5460356022d416d4bef7a3);
+
+            
+
+        
+    
+            var tile_layer_92d3c3a279faedce2e39c21329dd835c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_92d3c3a279faedce2e39c21329dd835c.addTo(map_9ba52574db5460356022d416d4bef7a3);
+        
+    
+            var polygon_ceab65bcdf1d09c8b30192b5d46b0e5a = L.polygon(
+                [[33.449706000000006, -111.96902499999999], [33.448762, -111.969023], [33.447867000000016, -111.969029], [33.44751500000003, -111.96902], [33.44658700000005, -111.969034], [33.446357, -111.96902499999999], [33.446253999999996, -111.969025], [33.44626799999999, -111.969151], [33.446342999999985, -111.969777], [33.44651699999995, -111.97122], [33.44661600000001, -111.97207], [33.44663700000002, -111.972222], [33.446689000000006, -111.972693], [33.446746999999995, -111.973158], [33.44684900000002, -111.974036], [33.44700099999996, -111.975211], [33.447353000000014, -111.97813], [33.44737800000003, -111.97842], [33.44792299999996, -111.978414], [33.44997900000001, -111.978415], [33.45079814331481, -111.9784250950331], [33.449719952393345, -111.96902498142177], [33.449706000000006, -111.96902499999999]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_9ba52574db5460356022d416d4bef7a3);
+        
+    
+        var popup_6cad741688e4ae1d53a7c52795e734f0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_06a088dcf4e2f5ff43fabaa31c1b3251 = $(`<div id="html_06a088dcf4e2f5ff43fabaa31c1b3251" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD04</h4>                              </div>         </div>`)[0];
+                popup_6cad741688e4ae1d53a7c52795e734f0.setContent(html_06a088dcf4e2f5ff43fabaa31c1b3251);
+            
+        
+
+        polygon_ceab65bcdf1d09c8b30192b5d46b0e5a.bindPopup(popup_6cad741688e4ae1d53a7c52795e734f0)
+        ;
+
+        
+    
+    
+            polygon_ceab65bcdf1d09c8b30192b5d46b0e5a.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8ae0587e60e025632cceb68736f3ef99 = L.polygon(
+                [[33.451082, -111.975872], [33.451045000000015, -111.975126], [33.451020000000014, -111.974737], [33.45099299999996, -111.974191], [33.45098300000002, -111.973962], [33.45096800000002, -111.973147], [33.45096800000002, -111.972465], [33.450966999999984, -111.972371], [33.450960999999985, -111.971542], [33.450960999999985, -111.97085], [33.45097099999998, -111.970592], [33.45097099999998, -111.970514], [33.450974, -111.970178], [33.450960999999985, -111.96974800000001], [33.45094600000004, -111.969066], [33.450704, -111.96904], [33.45045700000001, -111.969024], [33.449719952393345, -111.96902498142177], [33.45079814331481, -111.9784250950331], [33.451115000000016, -111.978429], [33.45109600000003, -111.976407], [33.451082, -111.975872]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_9ba52574db5460356022d416d4bef7a3);
+        
+    
+        var popup_ab64a3e6b4a1c6f526d840066638f53b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c99149b7298cdb5198b62898d3f72bce = $(`<div id="html_c99149b7298cdb5198b62898d3f72bce" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD01</h4>                              </div>         </div>`)[0];
+                popup_ab64a3e6b4a1c6f526d840066638f53b.setContent(html_c99149b7298cdb5198b62898d3f72bce);
+            
+        
+
+        polygon_8ae0587e60e025632cceb68736f3ef99.bindPopup(popup_ab64a3e6b4a1c6f526d840066638f53b)
+        ;
+
+        
+    
+    
+            polygon_8ae0587e60e025632cceb68736f3ef99.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_9ba52574db5460356022d416d4bef7a3.fitBounds(
+                [[33.446253999999996, -111.978429], [33.451115000000016, -111.96902]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

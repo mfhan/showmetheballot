@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cd52126e09504d53ce3d3f724856eb05 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Dakota - MN-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Hennepin - MN-CD03</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Hennepin - MN-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #e15759;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Hennepin - MN-CD05</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_cd52126e09504d53ce3d3f724856eb05" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cd52126e09504d53ce3d3f724856eb05 = L.map(
+                "map_cd52126e09504d53ce3d3f724856eb05",
+                {
+                    center: [44.8224764607172, -93.312301055489],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_cd52126e09504d53ce3d3f724856eb05);
+
+            
+
+        
+    
+            var tile_layer_1fba7789fee644847c9c7efc86f7dda6 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_1fba7789fee644847c9c7efc86f7dda6.addTo(map_cd52126e09504d53ce3d3f724856eb05);
+        
+    
+            var polygon_91b0756b698684640c63b5ae2c4572f7 = L.polygon(
+                [[44.79591700000001, -93.30144], [44.79610699999995, -93.301053], [44.79505600000003, -93.303191], [44.79474900000006, -93.303774], [44.79454500000003, -93.304101], [44.794411999999994, -93.304418], [44.79433000000001, -93.304735], [44.79425799999992, -93.305216], [44.794154000000006, -93.305856], [44.79404600000001, -93.306303], [44.794028, -93.30663], [44.79398544522055, -93.30688896295347], [44.794501, -93.30453], [44.79591700000001, -93.30144]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cd52126e09504d53ce3d3f724856eb05);
+        
+    
+        var popup_6eb40f05714fe2a4327fbeaaf644f46a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6365c5c82d93d6e0c542523e70bfbdae = $(`<div id="html_6365c5c82d93d6e0c542523e70bfbdae" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Dakota - MN-CD02</h4>                              </div>         </div>`)[0];
+                popup_6eb40f05714fe2a4327fbeaaf644f46a.setContent(html_6365c5c82d93d6e0c542523e70bfbdae);
+            
+        
+
+        polygon_91b0756b698684640c63b5ae2c4572f7.bindPopup(popup_6eb40f05714fe2a4327fbeaaf644f46a)
+        ;
+
+        
+    
+    
+            polygon_91b0756b698684640c63b5ae2c4572f7.bindTooltip(
+                `<div>
+                      Dakota - MN-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_64a5549f43d568d0ce7e5d9445cac840 = L.polygon(
+                [[44.86201299999999, -93.317085], [44.86201999999997, -93.315018], [44.862065, -93.313736], [44.86203299999997, -93.313102], [44.862027000000054, -93.311346], [44.862052000000034, -93.310664], [44.86206799999998, -93.309001], [44.86206800000001, -93.308907], [44.86207099999998, -93.308677], [44.862027999999974, -93.307957], [44.862002894713065, -93.30729419321169], [44.861997999999964, -93.318828], [44.86201299999999, -93.317085]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cd52126e09504d53ce3d3f724856eb05);
+        
+    
+        var popup_f3cfa248bcabb3166a16a526bb41c6f6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6251dd193356834cc8229ff4b8d6d593 = $(`<div id="html_6251dd193356834cc8229ff4b8d6d593" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Hennepin - MN-CD05</h4>                              </div>         </div>`)[0];
+                popup_f3cfa248bcabb3166a16a526bb41c6f6.setContent(html_6251dd193356834cc8229ff4b8d6d593);
+            
+        
+
+        polygon_64a5549f43d568d0ce7e5d9445cac840.bindPopup(popup_f3cfa248bcabb3166a16a526bb41c6f6)
+        ;
+
+        
+    
+    
+            polygon_64a5549f43d568d0ce7e5d9445cac840.bindTooltip(
+                `<div>
+                      Hennepin - MN-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_61dea9b56260b644924cd3a52d69939e = L.polygon(
+                [[44.79270100000001, -93.324142], [44.79269399999999, -93.324314], [44.792665999999976, -93.325729], [44.79220900000004, -93.327312], [44.792192000000014, -93.327347], [44.79217699999997, -93.32737700000001], [44.791984999999976, -93.32777], [44.79177899999998, -93.328194], [44.79114499999999, -93.329495], [44.79109900000004, -93.329589], [44.79112899999998, -93.329595], [44.79158800000003, -93.329685], [44.791953999999976, -93.329712], [44.79225899999998, -93.329613], [44.79283500000001, -93.329613], [44.792991999999984, -93.32962], [44.79313999999996, -93.329666], [44.79328500000002, -93.329735], [44.79342700000001, -93.329834], [44.79355200000002, -93.329956], [44.794776999999954, -93.331276], [44.79519299999997, -93.331146], [44.79585600000002, -93.33136], [44.796291000000025, -93.331337], [44.796847999999954, -93.331657], [44.79686, -93.331589], [44.796902000000046, -93.330353], [44.79693199999997, -93.330116], [44.79698899999994, -93.32988700000001], [44.797031000000054, -93.329781], [44.79709199999997, -93.329697], [44.79717299999999, -93.329636], [44.797260000000016, -93.329613], [44.79745100000005, -93.329605], [44.79757800000003, -93.329726], [44.797619999999995, -93.330303], [44.79794000000002, -93.330138], [44.79846300000002, -93.330361], [44.79899799999997, -93.330369], [44.79918200000006, -93.330407], [44.799239999999976, -93.330111], [44.79963299999997, -93.330126], [44.79964399999997, -93.329703], [44.79972499999998, -93.32958200000002], [44.801181999999955, -93.329575], [44.80299, -93.329559], [44.80478999999997, -93.329552], [44.80661400000003, -93.329544], [44.808417999999996, -93.329544], [44.81051599999999, -93.329536], [44.812034999999995, -93.329536], [44.81306800000004, -93.329536], [44.81369300000004, -93.329533], [44.81445699999997, -93.329529], [44.81724899999999, -93.329521], [44.81827899999996, -93.329514], [44.819248000000016, -93.329514], [44.82007999999996, -93.329506], [44.82356300000001, -93.329478], [44.82445100000002, -93.329468], [44.826466, -93.32945300000002], [44.82734700000004, -93.329445], [44.82736599999995, -93.329445], [44.833613999999976, -93.329399], [44.83376799999998, -93.32945100000002], [44.833882000000045, -93.32945100000002], [44.836848999999965, -93.329415], [44.841653999999984, -93.329387], [44.84179700000001, -93.329381], [44.84214000000001, -93.32937], [44.84229299999997, -93.329366], [44.84263199999999, -93.329356], [44.84327699999997, -93.329342], [44.84476499999994, -93.329309], [44.84555999999997, -93.329284], [44.847649, -93.329251], [44.84832900000003, -93.329251], [44.848689999999955, -93.329267], [44.85170400000001, -93.329212], [44.853655000000025, -93.329212], [44.855134999999954, -93.329218], [44.85536800000001, -93.32921], [44.85573300000002, -93.3292], [44.855881999999994, -93.32919], [44.85628700000002, -93.329163], [44.857165000000016, -93.329107], [44.858472, -93.328955], [44.85883600000002, -93.32894], [44.85889199999999, -93.328726], [44.85919700000003, -93.327652], [44.85965199999998, -93.326111], [44.85984400000002, -93.325408], [44.860034999999996, -93.324712], [44.860276999999975, -93.323767], [44.86046899999999, -93.322937], [44.86063899999999, -93.322198], [44.860781, -93.32146], [44.86090200000001, -93.320821], [44.861029000000045, -93.32016], [44.86111499999999, -93.319635], [44.86117099999997, -93.319209], [44.861208, -93.3189], [44.86122299999998, -93.318776], [44.86137800000003, -93.318777], [44.86170400000006, -93.318775], [44.861809999999984, -93.318782], [44.861997999999964, -93.318828], [44.862002894713065, -93.30729419321169], [44.86194999999994, -93.305898], [44.86190799999997, -93.304389], [44.86190799999997, -93.302346], [44.861904, -93.29921500000002], [44.861903999999996, -93.298552], [44.861904, -93.298332], [44.861768, -93.298317], [44.859734999999986, -93.298099], [44.85904400000003, -93.298027], [44.85888599999995, -93.298011], [44.85762800000001, -93.297992], [44.85567299999998, -93.297986], [44.855190000000064, -93.297985], [44.85467199999997, -93.297984], [44.853235000000005, -93.297979], [44.84835199999999, -93.298052], [44.84797999999995, -93.298058], [44.847440999999996, -93.298068], [44.84674800000005, -93.29808], [44.844330000000056, -93.298119], [44.84329000000001, -93.298134], [44.84123599999997, -93.298165], [44.84074799999995, -93.298172], [44.840399999999974, -93.298172], [44.84027500000006, -93.298172], [44.83980200000001, -93.298134], [44.839329, -93.298058], [44.838862999999996, -93.297943], [44.838686000000024, -93.297884], [44.83840200000002, -93.297791], [44.83794799999995, -93.2976], [44.83750199999997, -93.297371], [44.83713900000004, -93.29715], [44.83585099999995, -93.296348], [44.83550399999998, -93.296133], [44.834090999999994, -93.295254], [44.83351900000003, -93.294899], [44.83323100000003, -93.294724], [44.83277500000002, -93.294445], [44.83193100000004, -93.29393100000001], [44.830821000000036, -93.29318600000002], [44.83024199999999, -93.292825], [44.829716000000005, -93.292572], [44.829194000000015, -93.292306], [44.82894800000002, -93.292218], [44.828748999999995, -93.292146], [44.82792700000007, -93.291876], [44.827799999999996, -93.291824], [44.82730099999998, -93.291674], [44.82680300000006, -93.291565], [44.82673700000003, -93.291554], [44.826298000000016, -93.291482], [44.82610100000001, -93.291452], [44.82566899999999, -93.291387], [44.82503799999999, -93.291332], [44.824473000000005, -93.291302], [44.82440700000002, -93.291301], [44.823156, -93.291339], [44.819060999999984, -93.291335], [44.816908000000005, -93.291319], [44.815129999999975, -93.291305], [44.81462, -93.291301], [44.811848000000026, -93.29129], [44.81016399999999, -93.29129], [44.809120000000036, -93.291279], [44.80872000000001, -93.291271], [44.80837800000001, -93.291255], [44.808042999999984, -93.29123900000002], [44.80744499999999, -93.291165], [44.801934000000045, -93.290146], [44.801466578998436, -93.29006522877786], [44.79273297964217, -93.32334696794916], [44.79270100000001, -93.324142]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cd52126e09504d53ce3d3f724856eb05);
+        
+    
+        var popup_43698f0ecb5b0ec93bbd4e6d85ad2e69 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_43d37258e8ce4d157e41c7b0ac068202 = $(`<div id="html_43d37258e8ce4d157e41c7b0ac068202" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Hennepin - MN-CD03</h4>                              </div>         </div>`)[0];
+                popup_43698f0ecb5b0ec93bbd4e6d85ad2e69.setContent(html_43d37258e8ce4d157e41c7b0ac068202);
+            
+        
+
+        polygon_61dea9b56260b644924cd3a52d69939e.bindPopup(popup_43698f0ecb5b0ec93bbd4e6d85ad2e69)
+        ;
+
+        
+    
+    
+            polygon_61dea9b56260b644924cd3a52d69939e.bindTooltip(
+                `<div>
+                      Hennepin - MN-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ca028991356adcd9cebfad0eb55d8601 = L.polygon(
+                [[44.800033999999975, -93.290358], [44.799753999999986, -93.291392], [44.799716999999966, -93.291529], [44.79969500000001, -93.29161], [44.799684999999975, -93.291647], [44.79968, -93.291665], [44.799672999999984, -93.291692], [44.79947000000002, -93.292444], [44.79926599999999, -93.29319600000001], [44.79901999999995, -93.294105], [44.79836900000003, -93.295774], [44.79789900000004, -93.296999], [44.79742500000002, -93.298178], [44.79610699999995, -93.301053], [44.79591700000001, -93.30144], [44.794501, -93.30453], [44.79398544522055, -93.30688896295347], [44.79394599999998, -93.307129], [44.793478999999984, -93.309265], [44.79322500000004, -93.310487], [44.79288599999998, -93.312122], [44.79283999999999, -93.31234200000002], [44.792715999999956, -93.312941], [44.792706, -93.31298900000002], [44.79270100000001, -93.313014], [44.79254700000002, -93.313758], [44.79247099999999, -93.314122], [44.79259099999996, -93.316567], [44.792623, -93.316966], [44.792817000000056, -93.31940700000001], [44.79277700000001, -93.321681], [44.792759, -93.3227], [44.79273297964217, -93.32334696794916], [44.801466578998436, -93.29006522877786], [44.80068400000001, -93.28993], [44.80062199999996, -93.28992], [44.80017699999997, -93.289828], [44.80012900000005, -93.290006], [44.800033999999975, -93.290358]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cd52126e09504d53ce3d3f724856eb05);
+        
+    
+        var popup_d7698af7420268b08b4c85f51091fca0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_90cd950481ae9779ad16d51b6dc8a4b8 = $(`<div id="html_90cd950481ae9779ad16d51b6dc8a4b8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Hennepin - MN-CD02</h4>                              </div>         </div>`)[0];
+                popup_d7698af7420268b08b4c85f51091fca0.setContent(html_90cd950481ae9779ad16d51b6dc8a4b8);
+            
+        
+
+        polygon_ca028991356adcd9cebfad0eb55d8601.bindPopup(popup_d7698af7420268b08b4c85f51091fca0)
+        ;
+
+        
+    
+    
+            polygon_ca028991356adcd9cebfad0eb55d8601.bindTooltip(
+                `<div>
+                      Hennepin - MN-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_cd52126e09504d53ce3d3f724856eb05.fitBounds(
+                [[44.79109900000004, -93.331657], [44.86207099999998, -93.289828]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

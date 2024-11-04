@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f5da5b3821ff1108ae23cc4ac04ef599 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Hamilton - OH-CD08</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Hamilton - OH-CD01</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_f5da5b3821ff1108ae23cc4ac04ef599" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f5da5b3821ff1108ae23cc4ac04ef599 = L.map(
+                "map_f5da5b3821ff1108ae23cc4ac04ef599",
+                {
+                    center: [39.13329306658673, -84.70733686702285],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_f5da5b3821ff1108ae23cc4ac04ef599);
+
+            
+
+        
+    
+            var tile_layer_166c76382b6cdb87d4d452f5b7a3a7bb = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_166c76382b6cdb87d4d452f5b7a3a7bb.addTo(map_f5da5b3821ff1108ae23cc4ac04ef599);
+        
+    
+            var polygon_44e085a6f4f262f3d82db7cc7027ea17 = L.polygon(
+                [[39.13346099999998, -84.714868], [39.13371999999997, -84.715095], [39.134100999999994, -84.715523], [39.13510699999998, -84.716651], [39.135132999999975, -84.71668], [39.13535100000001, -84.716937], [39.135701999999995, -84.717315], [39.13603600000004, -84.717607], [39.13634900000005, -84.717917], [39.136475999999995, -84.718146], [39.136859999999984, -84.718524], [39.13784800000002, -84.719842], [39.13789, -84.719896], [39.13831199999996, -84.720492], [39.13920100000004, -84.721748], [39.139826000000006, -84.722686], [39.14016400000002, -84.723252], [39.14021900000002, -84.723343], [39.140855, -84.724231], [39.14107100000001, -84.724679], [39.14108599999998, -84.724707], [39.141168999999984, -84.724907], [39.14147500000005, -84.725446], [39.141821999999976, -84.72596100000001], [39.14194399999998, -84.726149], [39.141994000000025, -84.726232], [39.142099999999964, -84.72641], [39.14268300000001, -84.72636], [39.143000999999984, -84.726326], [39.14371100000002, -84.726252], [39.144936000000015, -84.726101], [39.144563999999995, -84.721777], [39.144520999999976, -84.721176], [39.14450299999999, -84.720957], [39.14417499999998, -84.71641], [39.143798999999966, -84.711187], [39.143397, -84.705633], [39.14331300000001, -84.704397], [39.14320099999998, -84.702733], [39.143135000000015, -84.702335], [39.143019, -84.702355], [39.14195899999999, -84.702548], [39.14205899999999, -84.704448], [39.141758999999986, -84.705948], [39.141259, -84.706548], [39.14115900000003, -84.706148], [39.13875899999995, -84.706648], [39.137558999999975, -84.704448], [39.13685899999998, -84.70494800000002], [39.13415899999997, -84.699848], [39.133958999999955, -84.698748], [39.13256999999996, -84.697203], [39.132128, -84.69671200000002], [39.131755999999946, -84.697297], [39.131340999999985, -84.697846], [39.12874253605112, -84.6950600506335], [39.129448762195594, -84.70121110887082], [39.12977500000001, -84.701187], [39.12990099999999, -84.701271], [39.129948999999975, -84.701392], [39.129879, -84.702264], [39.12990900000003, -84.702433], [39.129918999999965, -84.702457], [39.13002300000001, -84.702622], [39.130321, -84.702766], [39.131096000000014, -84.702838], [39.13115499999999, -84.702862], [39.13133400000003, -84.702935], [39.13208100000004, -84.703722], [39.132149, -84.703885], [39.132271000000024, -84.704176], [39.13236899999997, -84.704487], [39.13256500000002, -84.705237], [39.13274400000001, -84.705692], [39.13275300000004, -84.706391], [39.13287000000002, -84.70677], [39.132166000000005, -84.707733], [39.131972999999945, -84.707998], [39.13149299999996, -84.708655], [39.13133100000006, -84.709503], [39.13115299999995, -84.710065], [39.130949999999956, -84.710704], [39.13077699999995, -84.711513], [39.130748, -84.711561], [39.130654247409105, -84.71171699492434], [39.130678600088025, -84.7119293134928], [39.13265900000001, -84.714048], [39.13273136599422, -84.7142285837373], [39.13346099999998, -84.714868]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f5da5b3821ff1108ae23cc4ac04ef599);
+        
+    
+        var popup_6a238cd0ded6c5ba77f19e1eb53fa54d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_64afefab5001e03cd7d229a2a7222854 = $(`<div id="html_64afefab5001e03cd7d229a2a7222854" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Hamilton - OH-CD08</h4>                              </div>         </div>`)[0];
+                popup_6a238cd0ded6c5ba77f19e1eb53fa54d.setContent(html_64afefab5001e03cd7d229a2a7222854);
+            
+        
+
+        polygon_44e085a6f4f262f3d82db7cc7027ea17.bindPopup(popup_6a238cd0ded6c5ba77f19e1eb53fa54d)
+        ;
+
+        
+    
+    
+            polygon_44e085a6f4f262f3d82db7cc7027ea17.bindTooltip(
+                `<div>
+                      Hamilton - OH-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_240b19ea399c64ce28cbe2ac0b910214 = L.polygon(
+                [[39.12757000000002, -84.693803], [39.12704999999997, -84.694383], [39.127019999999966, -84.694424], [39.12678899999995, -84.694161], [39.12649399999995, -84.693908], [39.12499200000002, -84.695742], [39.12510300000002, -84.695688], [39.12514099999997, -84.695683], [39.12517399999995, -84.695702], [39.12519700000003, -84.695725], [39.125216000000016, -84.695763], [39.125239, -84.69581], [39.125235, -84.695923], [39.125249000000025, -84.69597500000002], [39.12554000000002, -84.69651], [39.12570899999999, -84.696871], [39.12598199999996, -84.697318], [39.12620699999997, -84.697768], [39.12653100000002, -84.698426], [39.126726000000005, -84.69866700000001], [39.12707199999996, -84.698794], [39.12738499999996, -84.698805], [39.127590999999995, -84.698826], [39.127813, -84.698932], [39.12805899999999, -84.699347], [39.12828900000001, -84.699739], [39.128338000000035, -84.70002], [39.12823500000001, -84.700548], [39.12804100000001, -84.701021], [39.128, -84.701246], [39.128019000000016, -84.701384], [39.12845000000001, -84.702281], [39.128559999999965, -84.702396], [39.12866199999996, -84.70238], [39.12879900000003, -84.702236], [39.12880900000005, -84.702197], [39.12903500000003, -84.701361], [39.129139, -84.701234], [39.129448762195594, -84.70121110887082], [39.12874253605112, -84.6950600506335], [39.12757000000002, -84.693803]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f5da5b3821ff1108ae23cc4ac04ef599);
+        
+    
+        var popup_7c2c99306f3e34089f3311a8b30e6133 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_041c1256babc052ad76d26aaaaa7e733 = $(`<div id="html_041c1256babc052ad76d26aaaaa7e733" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Hamilton - OH-CD01</h4>                              </div>         </div>`)[0];
+                popup_7c2c99306f3e34089f3311a8b30e6133.setContent(html_041c1256babc052ad76d26aaaaa7e733);
+            
+        
+
+        polygon_240b19ea399c64ce28cbe2ac0b910214.bindPopup(popup_7c2c99306f3e34089f3311a8b30e6133)
+        ;
+
+        
+    
+    
+            polygon_240b19ea399c64ce28cbe2ac0b910214.bindTooltip(
+                `<div>
+                      Hamilton - OH-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2f2ce397991d6801c083a0a17389ce15 = L.polygon(
+                [[39.13058613257044, -84.71183033074097], [39.130678600088025, -84.7119293134928], [39.130654247409105, -84.71171699492434], [39.13058613257044, -84.71183033074097]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f5da5b3821ff1108ae23cc4ac04ef599);
+        
+    
+        var popup_3dde2620ae7a34637524c5112e4ab1b5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_36b341b70eef04c3f224e51f737e3bf3 = $(`<div id="html_36b341b70eef04c3f224e51f737e3bf3" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Hamilton - OH-CD01</h4>                              </div>         </div>`)[0];
+                popup_3dde2620ae7a34637524c5112e4ab1b5.setContent(html_36b341b70eef04c3f224e51f737e3bf3);
+            
+        
+
+        polygon_2f2ce397991d6801c083a0a17389ce15.bindPopup(popup_3dde2620ae7a34637524c5112e4ab1b5)
+        ;
+
+        
+    
+    
+            polygon_2f2ce397991d6801c083a0a17389ce15.bindTooltip(
+                `<div>
+                      Hamilton - OH-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_f5da5b3821ff1108ae23cc4ac04ef599.fitBounds(
+                [[39.12499200000002, -84.72641], [39.144936000000015, -84.693803]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

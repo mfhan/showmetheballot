@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_80e2275957582b6ad43dd95422e27a23 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Montgomery - OH-CD10</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Montgomery - OH-CD08</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_80e2275957582b6ad43dd95422e27a23" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_80e2275957582b6ad43dd95422e27a23 = L.map(
+                "map_80e2275957582b6ad43dd95422e27a23",
+                {
+                    center: [39.908549707892426, -84.40170277393828],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_80e2275957582b6ad43dd95422e27a23);
+
+            
+
+        
+    
+            var tile_layer_7e6f19274abc22f88be0b5c6fd7f00f3 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_7e6f19274abc22f88be0b5c6fd7f00f3.addTo(map_80e2275957582b6ad43dd95422e27a23);
+        
+    
+            var polygon_a9542eb8848eb1f03d7042e6f95a31ca = L.polygon(
+                [[39.92003300000001, -84.40033500000001], [39.920072, -84.397674], [39.920072, -84.397647], [39.92012799999998, -84.394055], [39.920148, -84.393164], [39.92010138478149, -84.39316243761778], [39.91993818356112, -84.4043738762835], [39.919959999999996, -84.40437], [39.91998700000001, -84.402701], [39.92003300000001, -84.40033500000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_80e2275957582b6ad43dd95422e27a23);
+        
+    
+        var popup_d52deb2bbeae3daf793678a4756a87bf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_02c126a2305f3481f7b0bb2a7eeac228 = $(`<div id="html_02c126a2305f3481f7b0bb2a7eeac228" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Montgomery - OH-CD08</h4>                              </div>         </div>`)[0];
+                popup_d52deb2bbeae3daf793678a4756a87bf.setContent(html_02c126a2305f3481f7b0bb2a7eeac228);
+            
+        
+
+        polygon_a9542eb8848eb1f03d7042e6f95a31ca.bindPopup(popup_d52deb2bbeae3daf793678a4756a87bf)
+        ;
+
+        
+    
+    
+            polygon_a9542eb8848eb1f03d7042e6f95a31ca.bindTooltip(
+                `<div>
+                      Montgomery - OH-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_14d918af60cfb0b3c08f36ba2730949b = L.polygon(
+                [[39.914240000000035, -84.392966], [39.91312200000002, -84.39294], [39.911515, -84.39288300000001], [39.910526999999995, -84.392857], [39.90648799999999, -84.392728], [39.90481799999997, -84.392679], [39.90480600000002, -84.393569], [39.9048, -84.394062], [39.90479200000002, -84.394527], [39.90407199999995, -84.394452], [39.90402900000002, -84.394733], [39.90306699999995, -84.394663], [39.90295899999998, -84.397227], [39.89915499999998, -84.396946], [39.899152999999956, -84.397283], [39.899141000000014, -84.398875], [39.89914200000002, -84.399461], [39.900057999999994, -84.39946900000001], [39.90008200000002, -84.400035], [39.901039999999995, -84.400037], [39.90120000000005, -84.400049], [39.901217000000024, -84.401379], [39.90140500000005, -84.40137700000001], [39.90143199999996, -84.401869], [39.90141, -84.40345], [39.901398000000015, -84.404156], [39.90139800000002, -84.404551], [39.901399000000005, -84.40569], [39.90132700000005, -84.407716], [39.902996000000016, -84.407751], [39.902985, -84.408143], [39.903391999999975, -84.408152], [39.90394200000001, -84.408172], [39.904363000000004, -84.408179], [39.90456899999999, -84.408189], [39.90459799999999, -84.406674], [39.90461999999999, -84.407765], [39.90585399999997, -84.407843], [39.90589399999998, -84.406515], [39.905942000000024, -84.404873], [39.90795500000003, -84.40466900000001], [39.909066, -84.405756], [39.90992299999996, -84.406583], [39.91062000000002, -84.407272], [39.91085999999998, -84.407504], [39.911366000000015, -84.407994], [39.911913, -84.408542], [39.91225599999998, -84.408873], [39.91239799999998, -84.409004], [39.91277199999998, -84.409382], [39.91284, -84.409447], [39.912873999999974, -84.408853], [39.912902999999986, -84.408334], [39.91327099999996, -84.405522], [39.917264, -84.404849], [39.91993818356112, -84.4043738762835], [39.92010138478149, -84.39316243761778], [39.914240000000035, -84.392966]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_80e2275957582b6ad43dd95422e27a23);
+        
+    
+        var popup_12c6301ccbec542bbc973e940ea5deca = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8a8a0e00a654b4150d9fb568b89ab830 = $(`<div id="html_8a8a0e00a654b4150d9fb568b89ab830" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Montgomery - OH-CD10</h4>                              </div>         </div>`)[0];
+                popup_12c6301ccbec542bbc973e940ea5deca.setContent(html_8a8a0e00a654b4150d9fb568b89ab830);
+            
+        
+
+        polygon_14d918af60cfb0b3c08f36ba2730949b.bindPopup(popup_12c6301ccbec542bbc973e940ea5deca)
+        ;
+
+        
+    
+    
+            polygon_14d918af60cfb0b3c08f36ba2730949b.bindTooltip(
+                `<div>
+                      Montgomery - OH-CD10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_80e2275957582b6ad43dd95422e27a23.fitBounds(
+                [[39.899141000000014, -84.409447], [39.920148, -84.392679]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_870acb13874cd721db50c15f69f34c10 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bristol - MA-CD08</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bristol - MA-CD04</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_870acb13874cd721db50c15f69f34c10" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_870acb13874cd721db50c15f69f34c10 = L.map(
+                "map_870acb13874cd721db50c15f69f34c10",
+                {
+                    center: [41.96918286949021, -71.18013977788758],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_870acb13874cd721db50c15f69f34c10);
+
+            
+
+        
+    
+            var tile_layer_7aba10078e9bab6b5f8d2934c63566b0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_7aba10078e9bab6b5f8d2934c63566b0.addTo(map_870acb13874cd721db50c15f69f34c10);
+        
+    
+            var polygon_0a5f9c3aa73b752f57a2af0a78d212cf = L.polygon(
+                [[41.97953399999995, -71.24528], [41.98022699999999, -71.243455], [41.981118, -71.241111], [41.98190399999997, -71.239087], [41.98338499999995, -71.235161], [41.98857700000001, -71.221469], [41.99264200000004, -71.21079700000001], [41.992747999999956, -71.210517], [41.99327099999997, -71.20914500000002], [41.99367300000002, -71.20807900000001], [41.994162, -71.20679100000001], [41.99472400000001, -71.205311], [41.995295, -71.203815], [41.99559399999995, -71.203019], [41.99569599999997, -71.20286100000001], [41.995951999999974, -71.20204], [41.996227999999974, -71.201176], [41.996503000000004, -71.200321], [41.99687399999998, -71.199192], [41.99727099999999, -71.19797900000002], [41.99749700000004, -71.19727], [41.997749999999996, -71.196481], [41.998458999999976, -71.19432], [41.99866099999998, -71.193705], [41.99919400000003, -71.19208], [41.999549999999985, -71.19099800000001], [41.99957899999999, -71.190907], [42.00027799999999, -71.18875799999999], [42.001461000000035, -71.185126], [42.001833999999974, -71.183975], [42.00184400000001, -71.183944], [42.002141000000016, -71.183029], [42.002334000000026, -71.182434], [42.004841000000006, -71.17669], [42.00847699999999, -71.16827], [42.01083100000006, -71.162821], [42.012537999999985, -71.158921], [42.01258705659536, -71.15879721783587], [42.00145662081749, -71.1565342832611], [42.00117599999998, -71.15648], [42.001042000000005, -71.15645], [41.9924264038436, -71.10154961835914], [41.98977899999996, -71.104091], [41.98953499999999, -71.104323], [41.97140099999999, -71.12158700000002], [41.969115000000045, -71.12372900000001], [41.96887700000002, -71.123958], [41.96708200000004, -71.12566400000001], [41.96699099999997, -71.125751], [41.96662700000004, -71.126126], [41.96655000000002, -71.126206], [41.964477999999986, -71.128345], [41.96420300000004, -71.128629], [41.96325099999998, -71.12961100000001], [41.96316999999996, -71.129697], [41.96282699999999, -71.13005500000001], [41.96213100000003, -71.130772], [41.95865499999999, -71.13435700000001], [41.95834800000002, -71.134668], [41.95424299999996, -71.13891], [41.95288600000001, -71.140336], [41.94925099999999, -71.144075], [41.94912100000001, -71.14421], [41.94809999999996, -71.145238], [41.94473399999995, -71.148721], [41.94349400000003, -71.14999700000001], [41.940334, -71.15325900000002], [41.94029099999999, -71.153304], [41.94024300000001, -71.15335400000001], [41.94000599999999, -71.153597], [41.93989900000002, -71.153707], [41.939683000000024, -71.153921], [41.93956100000002, -71.154055], [41.93925599999994, -71.15437], [41.938463999999975, -71.15519], [41.93833099999998, -71.155328], [41.93825400000003, -71.155409], [41.938187000000006, -71.15548], [41.93799899999999, -71.15567], [41.93577000000002, -71.158772], [41.935767000000034, -71.158802], [41.93296300000005, -71.162739], [41.93132300000003, -71.16504900000001], [41.92568899999999, -71.172953], [41.92037799999999, -71.180408], [41.91795100000003, -71.183816], [41.917393999999994, -71.184599], [41.916499, -71.185854], [41.91411799999998, -71.18918499999998], [41.910765, -71.193893], [41.91069600000001, -71.19437200000002], [41.910677, -71.19451], [41.91045400000002, -71.19622300000002], [41.909541999999945, -71.203018], [41.90896200000001, -71.20735200000001], [41.90885200000004, -71.208162], [41.927640000000004, -71.222846], [41.92960000000001, -71.224387], [41.93160099999997, -71.225952], [41.932126999999966, -71.226364], [41.932432999999946, -71.226604], [41.932817000000014, -71.226904], [41.94049099999996, -71.23291200000001], [41.94172600000002, -71.233885], [41.941849999999995, -71.23398200000001], [41.94208899999997, -71.23417], [41.943956000000036, -71.23563599999999], [41.945848000000005, -71.237109], [41.94606599999999, -71.237279], [41.946618, -71.237711], [41.94683200000002, -71.23787800000001], [41.94753100000002, -71.238426], [41.947696999999984, -71.238553], [41.94827499999999, -71.239018], [41.950112999999995, -71.240444], [41.95384499999996, -71.24338300000001], [41.95396899999997, -71.243476], [41.95449400000005, -71.243874], [41.96007899999999, -71.24824600000001], [41.965015000000044, -71.25211], [41.967091999999965, -71.253726], [41.969464999999964, -71.255588], [41.97265099999998, -71.258089], [41.97358500000002, -71.25880500000001], [41.974216000000055, -71.259289], [41.977977999999915, -71.249391], [41.97953399999995, -71.24528]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_870acb13874cd721db50c15f69f34c10);
+        
+    
+        var popup_2947a66b3262ef9817636ab109424a76 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0cdd81ba52c224f36ce80f68883c93bc = $(`<div id="html_0cdd81ba52c224f36ce80f68883c93bc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bristol - MA-CD04</h4>                              </div>         </div>`)[0];
+                popup_2947a66b3262ef9817636ab109424a76.setContent(html_0cdd81ba52c224f36ce80f68883c93bc);
+            
+        
+
+        polygon_0a5f9c3aa73b752f57a2af0a78d212cf.bindPopup(popup_2947a66b3262ef9817636ab109424a76)
+        ;
+
+        
+    
+    
+            polygon_0a5f9c3aa73b752f57a2af0a78d212cf.bindTooltip(
+                `<div>
+                      Bristol - MA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7284a8f10c03b3d484ff00d152f750bf = L.polygon(
+                [[42.000884000000006, -71.15532], [41.999631999999956, -71.146467], [41.99845399999997, -71.138126], [41.99819199999999, -71.136322], [41.997112999999956, -71.128656], [41.996380999999964, -71.123462], [41.99604600000001, -71.121081], [41.993649000000005, -71.104156], [41.99339000000003, -71.102328], [41.99334799999995, -71.10203], [41.993151, -71.100854], [41.9924264038436, -71.10154961835914], [42.001042000000005, -71.15645], [42.000884000000006, -71.15532]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_870acb13874cd721db50c15f69f34c10);
+        
+    
+        var popup_b966eaa6acad421cdfb4efc3f7983452 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89551b9a678cc9f8a22479ad34433bbb = $(`<div id="html_89551b9a678cc9f8a22479ad34433bbb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bristol - MA-CD08</h4>                              </div>         </div>`)[0];
+                popup_b966eaa6acad421cdfb4efc3f7983452.setContent(html_89551b9a678cc9f8a22479ad34433bbb);
+            
+        
+
+        polygon_7284a8f10c03b3d484ff00d152f750bf.bindPopup(popup_b966eaa6acad421cdfb4efc3f7983452)
+        ;
+
+        
+    
+    
+            polygon_7284a8f10c03b3d484ff00d152f750bf.bindTooltip(
+                `<div>
+                      Bristol - MA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bb22064480c3555ce715c15cf1224c5e = L.polygon(
+                [[42.01262399999998, -71.158704], [42.009639000000014, -71.15812400000002], [42.00942499999998, -71.158082], [42.00789999999999, -71.157785], [42.00660599999998, -71.157537], [42.00627300000004, -71.157473], [42.00596299999996, -71.157414], [42.00438099999995, -71.1571], [42.00145662081749, -71.1565342832611], [42.01258705659536, -71.15879721783587], [42.01262399999998, -71.158704]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_870acb13874cd721db50c15f69f34c10);
+        
+    
+        var popup_2e479ced36880cddbcec94262fa2bad9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_48702922f3621110aa94f0f6ecb37ec0 = $(`<div id="html_48702922f3621110aa94f0f6ecb37ec0" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bristol - MA-CD08</h4>                              </div>         </div>`)[0];
+                popup_2e479ced36880cddbcec94262fa2bad9.setContent(html_48702922f3621110aa94f0f6ecb37ec0);
+            
+        
+
+        polygon_bb22064480c3555ce715c15cf1224c5e.bindPopup(popup_2e479ced36880cddbcec94262fa2bad9)
+        ;
+
+        
+    
+    
+            polygon_bb22064480c3555ce715c15cf1224c5e.bindTooltip(
+                `<div>
+                      Bristol - MA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_870acb13874cd721db50c15f69f34c10.fitBounds(
+                [[41.90885200000004, -71.259289], [42.01262399999998, -71.100854]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

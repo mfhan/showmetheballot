@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_48c3bcd025f5ef9c6f4ec11ab01d7b34 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bronx - NY-CD15</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bronx - NY-CD16</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bronx - NY-CD14</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #e15759;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Westchester - NY-CD16</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_48c3bcd025f5ef9c6f4ec11ab01d7b34" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_48c3bcd025f5ef9c6f4ec11ab01d7b34 = L.map(
+                "map_48c3bcd025f5ef9c6f4ec11ab01d7b34",
+                {
+                    center: [40.89331568566463, -73.84262096885159],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+
+            
+
+        
+    
+            var tile_layer_77e31e121ccfa631d8c77e63c9e89d4a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_77e31e121ccfa631d8c77e63c9e89d4a.addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+            var polygon_eab4bdf1b66ff56a7f433222fbdda2a8 = L.polygon(
+                [[40.90470562879683, -73.84494897266315], [40.904732, -73.844728], [40.90462499999997, -73.844713], [40.904183, -73.844702], [40.90417199999995, -73.84442], [40.90418999999997, -73.84491100000001], [40.90470562879683, -73.84494897266315]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+        var popup_6d9df6bdf116dee868657ddf397456a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ce155fa48d88420a00fe57d3d70f85e1 = $(`<div id="html_ce155fa48d88420a00fe57d3d70f85e1" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Westchester - NY-CD16</h4>                              </div>         </div>`)[0];
+                popup_6d9df6bdf116dee868657ddf397456a3.setContent(html_ce155fa48d88420a00fe57d3d70f85e1);
+            
+        
+
+        polygon_eab4bdf1b66ff56a7f433222fbdda2a8.bindPopup(popup_6d9df6bdf116dee868657ddf397456a3)
+        ;
+
+        
+    
+    
+            polygon_eab4bdf1b66ff56a7f433222fbdda2a8.bindTooltip(
+                `<div>
+                      Westchester - NY-CD16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bec9eda4acd78fd01343d58ce3be4d3d = L.polygon(
+                [[40.88211999999999, -73.836641], [40.88193899999998, -73.836987], [40.88160800000002, -73.837827], [40.88126599999999, -73.838743], [40.880925999999995, -73.839652], [40.88062300000003, -73.840462], [40.88031700000001, -73.841277], [40.87987200000002, -73.842015], [40.879425000000026, -73.842738], [40.87926200000005, -73.842997], [40.87922400000001, -73.843057], [40.879516999999986, -73.84336], [40.87958699999999, -73.843308], [40.879650000000005, -73.843408], [40.88011499999998, -73.844496], [40.88128200000001, -73.847269], [40.882012000000046, -73.849001], [40.88216699999996, -73.849059], [40.88207499999996, -73.849445], [40.88234899999999, -73.84974], [40.88257600000003, -73.85039500000002], [40.882423999999965, -73.850496], [40.882192000000046, -73.850651], [40.882345000000015, -73.851129], [40.88271699999999, -73.85093400000001], [40.88324299999997, -73.852543], [40.883174, -73.852586], [40.88330699999999, -73.853061], [40.88340700000003, -73.852997], [40.883428000000016, -73.853143], [40.88418299999995, -73.855513], [40.88421199999996, -73.855691], [40.88493399999999, -73.857848], [40.88494899999999, -73.858419], [40.884945000000066, -73.85866700000001], [40.88506199999998, -73.85860200000002], [40.88525300000002, -73.859191], [40.88532199999999, -73.85917], [40.885634, -73.860087], [40.88575600000002, -73.860447], [40.88593999999997, -73.860989], [40.88601599999998, -73.861459], [40.885692999999975, -73.86164], [40.88581400000001, -73.86202000000002], [40.886038999999954, -73.862727], [40.88642200000001, -73.862529], [40.886853999999985, -73.863861], [40.886818000000005, -73.86388100000002], [40.88695100000006, -73.864314], [40.88670999999998, -73.864448], [40.88660800000002, -73.864505], [40.886883999999995, -73.86538], [40.88830000000004, -73.8646], [40.88974999999998, -73.863863], [40.89111599999996, -73.863044], [40.891822000000005, -73.862652], [40.892613999999995, -73.862291], [40.89282300000005, -73.86219600000001], [40.892911000000026, -73.862156], [40.89314299999998, -73.862051], [40.89466299999996, -73.86136], [40.894803, -73.861796], [40.89483400000004, -73.861894], [40.894914, -73.862139], [40.895153999999984, -73.862875], [40.89528999999999, -73.863293], [40.895376999999996, -73.863559], [40.896328000000004, -73.862961], [40.89740699999999, -73.86261300000001], [40.89809099999995, -73.862428], [40.89881600000001, -73.86222], [40.89883, -73.861916], [40.90018999999999, -73.861335], [40.899527000000006, -73.86145700000002], [40.899147999999954, -73.861471], [40.89853900000003, -73.861423], [40.89809899999999, -73.86129500000001], [40.897588999999996, -73.861113], [40.897760000000005, -73.860993], [40.89883999999995, -73.860238], [40.90029866243634, -73.85928373543243], [40.89838251552328, -73.85674105228715], [40.89793699999998, -73.857044], [40.89762600000003, -73.85624], [40.89787601216994, -73.85606896749582], [40.883333999999984, -73.836779], [40.88226521258033, -73.83641600095281], [40.88211999999999, -73.836641]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+        var popup_f58a20c250cdd3e1ae29982c1c66eb26 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_936b52fc18ffeb27439d5d75643bd535 = $(`<div id="html_936b52fc18ffeb27439d5d75643bd535" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD15</h4>                              </div>         </div>`)[0];
+                popup_f58a20c250cdd3e1ae29982c1c66eb26.setContent(html_936b52fc18ffeb27439d5d75643bd535);
+            
+        
+
+        polygon_bec9eda4acd78fd01343d58ce3be4d3d.bindPopup(popup_f58a20c250cdd3e1ae29982c1c66eb26)
+        ;
+
+        
+    
+    
+            polygon_bec9eda4acd78fd01343d58ce3be4d3d.bindTooltip(
+                `<div>
+                      Bronx - NY-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_3abe55484d64c37a214e3f6193a3a80c = L.polygon(
+                [[40.89244299999998, -73.832716], [40.892438, -73.8327], [40.89237700000002, -73.832503], [40.892217, -73.831856], [40.892178, -73.831703], [40.89193499999997, -73.83097200000002], [40.89187900000001, -73.83081800000001], [40.891700000000014, -73.83008700000002], [40.89168600000004, -73.830022], [40.89127400000001, -73.828716], [40.89105100000002, -73.828125], [40.89092800000001, -73.827943], [40.89079700000001, -73.827269], [40.890785000000015, -73.827224], [40.89024799999993, -73.825256], [40.89024400000004, -73.825241], [40.89017799999998, -73.825002], [40.88997800000007, -73.824403], [40.88997800000007, -73.824025], [40.88997800000007, -73.824009], [40.889866, -73.824047], [40.88982300000001, -73.824036], [40.88974999999998, -73.824017], [40.889762999999974, -73.823963], [40.889809, -73.823781], [40.88985000000001, -73.823639], [40.889824999999995, -73.823567], [40.88947699999997, -73.822375], [40.88964000000002, -73.822363], [40.88988199999997, -73.822508], [40.889958, -73.822667], [40.889926, -73.822899], [40.88989200000007, -73.823101], [40.89005699999998, -73.823304], [40.89017962314138, -73.82328244806656], [40.88954198082275, -73.82068027352781], [40.889213, -73.821304], [40.887831999999946, -73.823752], [40.88737800000001, -73.824492], [40.886982000000025, -73.82519], [40.886771, -73.82571400000002], [40.886298, -73.826963], [40.88595199999994, -73.82789600000001], [40.885659000000025, -73.828635], [40.88530300000001, -73.829533], [40.88496899999998, -73.830337], [40.88485299999995, -73.830654], [40.88471099999998, -73.831302], [40.884550000000026, -73.832337], [40.88452200000001, -73.832549], [40.884472, -73.83281], [40.88441900000003, -73.833014], [40.88434500000001, -73.833244], [40.88427000000001, -73.833435], [40.88418600000003, -73.833618], [40.883989999999926, -73.834047], [40.88384999999998, -73.834346], [40.88370799999999, -73.834544], [40.88294499999997, -73.835609], [40.88239299999999, -73.836218], [40.88226521258033, -73.83641600095281], [40.883333999999984, -73.836779], [40.89270599999998, -73.833595], [40.89244299999998, -73.832716]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+        var popup_553ab46b0b73197d4f59928dbbc4fef0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ad51f32326832b0bc2265dc58c2c9199 = $(`<div id="html_ad51f32326832b0bc2265dc58c2c9199" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD14</h4>                              </div>         </div>`)[0];
+                popup_553ab46b0b73197d4f59928dbbc4fef0.setContent(html_ad51f32326832b0bc2265dc58c2c9199);
+            
+        
+
+        polygon_3abe55484d64c37a214e3f6193a3a80c.bindPopup(popup_553ab46b0b73197d4f59928dbbc4fef0)
+        ;
+
+        
+    
+    
+            polygon_3abe55484d64c37a214e3f6193a3a80c.bindTooltip(
+                `<div>
+                      Bronx - NY-CD14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_285427de78e9738188ad9b17f15767ce = L.polygon(
+                [[40.89022199999997, -73.82327500000001], [40.890364999999996, -73.82321700000001], [40.89047400000003, -73.823245], [40.89054499999998, -73.82317200000001], [40.89064800000003, -73.82312], [40.89077700000004, -73.823113], [40.89087100000005, -73.823132], [40.890918, -73.823205], [40.890961000000026, -73.823256], [40.89098899999995, -73.823302], [40.891082000000004, -73.82328200000002], [40.89119899999999, -73.82324400000002], [40.89107799999994, -73.823003], [40.89105599999998, -73.822959], [40.890730000000005, -73.821703], [40.89054300000003, -73.820994], [40.89020599999999, -73.819719], [40.89016299999999, -73.819558], [40.89001099999998, -73.819782], [40.88960699999997, -73.820557], [40.88954198082275, -73.82068027352781], [40.89017962314138, -73.82328244806656], [40.89022199999997, -73.82327500000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+        var popup_ea1a021e8fd8c709718b4c2ae81caf23 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_73c74d71dc30c939c37a6588d789fbdf = $(`<div id="html_73c74d71dc30c939c37a6588d789fbdf" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD16</h4>                              </div>         </div>`)[0];
+                popup_ea1a021e8fd8c709718b4c2ae81caf23.setContent(html_73c74d71dc30c939c37a6588d789fbdf);
+            
+        
+
+        polygon_285427de78e9738188ad9b17f15767ce.bindPopup(popup_ea1a021e8fd8c709718b4c2ae81caf23)
+        ;
+
+        
+    
+    
+            polygon_285427de78e9738188ad9b17f15767ce.bindTooltip(
+                `<div>
+                      Bronx - NY-CD16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_97116013ccfc040fbb0410ef6ed05ff9 = L.polygon(
+                [[40.90417199999995, -73.84442], [40.90417100000003, -73.84339900000002], [40.90416599999996, -73.842374], [40.904174000000005, -73.841386], [40.90398700000004, -73.841318], [40.903913000000024, -73.841291], [40.903885999999986, -73.841281], [40.903487000000005, -73.84113600000002], [40.90321400000001, -73.84106200000001], [40.90316199999998, -73.84104800000001], [40.902978999999995, -73.841017], [40.90281199999997, -73.840999], [40.90251600000001, -73.840958], [40.90197900000002, -73.840873], [40.90181899999996, -73.84083200000002], [40.901693000000016, -73.84078700000002], [40.901566999999986, -73.840729], [40.901414, -73.84065], [40.901284000000054, -73.84056200000002], [40.90112399999994, -73.840445], [40.900804, -73.84021], [40.90077700000002, -73.84019], [40.90076199999998, -73.840179], [40.90075300000001, -73.840172], [40.90073500000002, -73.840159], [40.900634, -73.840085], [40.900585000000014, -73.840049], [40.90056700000003, -73.840036], [40.899713, -73.839363], [40.89959399999999, -73.839287], [40.89947500000003, -73.839221], [40.89936000000001, -73.839185], [40.89922600000003, -73.839155], [40.89919900000003, -73.839154], [40.89906100000002, -73.839149], [40.89881900000003, -73.839208], [40.898743999999986, -73.839241], [40.898706999999995, -73.839257], [40.89840999999999, -73.839391], [40.89818399999998, -73.83951000000002], [40.897890999999994, -73.839649], [40.897694000000016, -73.83972], [40.897632999999985, -73.839724], [40.89751100000005, -73.83971800000002], [40.89738499999994, -73.839696], [40.897322999999986, -73.839677], [40.89724899999997, -73.839655], [40.89713999999995, -73.839615], [40.896693, -73.83941100000001], [40.895602, -73.838985], [40.89406100000002, -73.83840700000002], [40.89382099999996, -73.837368], [40.89381399999999, -73.837337], [40.89353099999997, -73.836282], [40.893315000000044, -73.83560500000002], [40.89317000000004, -73.835174], [40.89270599999998, -73.833595], [40.883333999999984, -73.836779], [40.89787601216994, -73.85606896749582], [40.89862000000001, -73.85556000000001], [40.89845699999998, -73.855146], [40.898319999999984, -73.854865], [40.898603, -73.854689], [40.89845000000003, -73.854299], [40.898615, -73.854159], [40.89844700000001, -73.853675], [40.89896100000003, -73.853237], [40.898981000000006, -73.853279], [40.89951800000004, -73.852856], [40.89948199999999, -73.85278], [40.899783, -73.85254800000001], [40.89964000000002, -73.852233], [40.901636000000025, -73.850663], [40.903044999999956, -73.84955000000001], [40.90237700000001, -73.848098], [40.90216199999996, -73.847619], [40.902095999999965, -73.847473], [40.902021000000005, -73.847346], [40.90193399999996, -73.84723], [40.901836, -73.847129], [40.901730000000015, -73.84704500000001], [40.90162699999999, -73.84698200000001], [40.90152, -73.846936], [40.901552, -73.846802], [40.901791000000024, -73.84676800000001], [40.90178999999999, -73.846678], [40.901775999999984, -73.846494], [40.902009999999976, -73.84651], [40.90207699999998, -73.846213], [40.90305599999995, -73.846109], [40.90316099999999, -73.846099], [40.90316299999999, -73.84598500000001], [40.90378899999995, -73.846071], [40.904107999999994, -73.846049], [40.90427900000001, -73.845433], [40.90479600000003, -73.845724], [40.904711, -73.845186], [40.904702999999955, -73.844971], [40.90470562879683, -73.84494897266315], [40.90418999999997, -73.84491100000001], [40.90417199999995, -73.84442]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+        var popup_6be794cf3bb3d6fa673b305283be15a0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1ebca1a445aef5ed7efaf297ca989102 = $(`<div id="html_1ebca1a445aef5ed7efaf297ca989102" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD16</h4>                              </div>         </div>`)[0];
+                popup_6be794cf3bb3d6fa673b305283be15a0.setContent(html_1ebca1a445aef5ed7efaf297ca989102);
+            
+        
+
+        polygon_97116013ccfc040fbb0410ef6ed05ff9.bindPopup(popup_6be794cf3bb3d6fa673b305283be15a0)
+        ;
+
+        
+    
+    
+            polygon_97116013ccfc040fbb0410ef6ed05ff9.bindTooltip(
+                `<div>
+                      Bronx - NY-CD16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0bac2e7af08ae71f6ab0f6bb39bc8b55 = L.polygon(
+                [[40.900337999999984, -73.859258], [40.90022199999996, -73.858883], [40.90013599999998, -73.858626], [40.89981600000001, -73.857803], [40.899504000000015, -73.856997], [40.899188000000024, -73.856194], [40.898986999999984, -73.85633000000001], [40.89838251552328, -73.85674105228715], [40.90029866243634, -73.85928373543243], [40.900337999999984, -73.859258]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_48c3bcd025f5ef9c6f4ec11ab01d7b34);
+        
+    
+        var popup_84d318530cd9a61805497b0a76e58914 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cfee2c5ec9bb319a9dc93e170c340ecb = $(`<div id="html_cfee2c5ec9bb319a9dc93e170c340ecb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD16</h4>                              </div>         </div>`)[0];
+                popup_84d318530cd9a61805497b0a76e58914.setContent(html_cfee2c5ec9bb319a9dc93e170c340ecb);
+            
+        
+
+        polygon_0bac2e7af08ae71f6ab0f6bb39bc8b55.bindPopup(popup_84d318530cd9a61805497b0a76e58914)
+        ;
+
+        
+    
+    
+            polygon_0bac2e7af08ae71f6ab0f6bb39bc8b55.bindTooltip(
+                `<div>
+                      Bronx - NY-CD16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_48c3bcd025f5ef9c6f4ec11ab01d7b34.fitBounds(
+                [[40.87922400000001, -73.86538], [40.90479600000003, -73.819558]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

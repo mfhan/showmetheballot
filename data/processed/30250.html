@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a00e7df8708dfc01476df853f0a18384 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clayton - GA-CD13</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clayton - GA-CD03</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_a00e7df8708dfc01476df853f0a18384" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a00e7df8708dfc01476df853f0a18384 = L.map(
+                "map_a00e7df8708dfc01476df853f0a18384",
+                {
+                    center: [33.43517370117831, -84.30570071613927],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_a00e7df8708dfc01476df853f0a18384);
+
+            
+
+        
+    
+            var tile_layer_82257f447acce7c6a3b0cd28116cfda1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_82257f447acce7c6a3b0cd28116cfda1.addTo(map_a00e7df8708dfc01476df853f0a18384);
+        
+    
+            var polygon_33a1a165527084143dc646d298be91dc = L.polygon(
+                [[33.43555200000001, -84.304311], [33.43534599999996, -84.304311], [33.434704, -84.304339], [33.433675, -84.304387], [33.433630000000015, -84.30431], [33.43361099999999, -84.304315], [33.433906, -84.306575], [33.43407399999998, -84.308004], [33.435527999999984, -84.30794], [33.43573800000001, -84.307923], [33.43581875538851, -84.30791698630193], [33.435790756394596, -84.30432567509064], [33.435727000000014, -84.304323], [33.43567799999999, -84.304319], [33.43555200000001, -84.304311]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a00e7df8708dfc01476df853f0a18384);
+        
+    
+        var popup_97067085d216c3d7fb03bd746a083113 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c51778858716b29b1d392bc26a3cfbbf = $(`<div id="html_c51778858716b29b1d392bc26a3cfbbf" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clayton - GA-CD03</h4>                              </div>         </div>`)[0];
+                popup_97067085d216c3d7fb03bd746a083113.setContent(html_c51778858716b29b1d392bc26a3cfbbf);
+            
+        
+
+        polygon_33a1a165527084143dc646d298be91dc.bindPopup(popup_97067085d216c3d7fb03bd746a083113)
+        ;
+
+        
+    
+    
+            polygon_33a1a165527084143dc646d298be91dc.bindTooltip(
+                `<div>
+                      Clayton - GA-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dc8cfe35731dfe9294f90a11ea133008 = L.polygon(
+                [[33.435832000000005, -84.307916], [33.43586999999999, -84.30432900000001], [33.435790756394596, -84.30432567509064], [33.43581875538851, -84.30791698630193], [33.435832000000005, -84.307916]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a00e7df8708dfc01476df853f0a18384);
+        
+    
+        var popup_471018d45a5196b16d17a7a411a6639f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_58589f74113dfffab0b03bd26284446d = $(`<div id="html_58589f74113dfffab0b03bd26284446d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clayton - GA-CD13</h4>                              </div>         </div>`)[0];
+                popup_471018d45a5196b16d17a7a411a6639f.setContent(html_58589f74113dfffab0b03bd26284446d);
+            
+        
+
+        polygon_dc8cfe35731dfe9294f90a11ea133008.bindPopup(popup_471018d45a5196b16d17a7a411a6639f)
+        ;
+
+        
+    
+    
+            polygon_dc8cfe35731dfe9294f90a11ea133008.bindTooltip(
+                `<div>
+                      Clayton - GA-CD13
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_a00e7df8708dfc01476df853f0a18384.fitBounds(
+                [[33.43361099999999, -84.308004], [33.43586999999999, -84.30431]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

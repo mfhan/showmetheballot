@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d4049b25384b9a012477f8708b776854 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Grand Isle - VT-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Franklin - VT-CD01</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_d4049b25384b9a012477f8708b776854" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d4049b25384b9a012477f8708b776854 = L.map(
+                "map_d4049b25384b9a012477f8708b776854",
+                {
+                    center: [44.815095997298315, -73.25976463045257],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_d4049b25384b9a012477f8708b776854);
+
+            
+
+        
+    
+            var tile_layer_24022a80d69a8c513887818a7662659f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_24022a80d69a8c513887818a7662659f.addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+            var polygon_de058bf224702e2c35d12a0b3d177cc6 = L.polygon(
+                [[44.83548700000004, -73.20250100000001], [44.83442843887334, -73.20293349421846], [44.83489300000001, -73.202766], [44.8360817171375, -73.20260230169903], [44.83548700000004, -73.20250100000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_2ab9f372f998948a1cb325623fd48434 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d618633f55022df8d686c7630a440caa = $(`<div id="html_d618633f55022df8d686c7630a440caa" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_2ab9f372f998948a1cb325623fd48434.setContent(html_d618633f55022df8d686c7630a440caa);
+            
+        
+
+        polygon_de058bf224702e2c35d12a0b3d177cc6.bindPopup(popup_2ab9f372f998948a1cb325623fd48434)
+        ;
+
+        
+    
+    
+            polygon_de058bf224702e2c35d12a0b3d177cc6.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e5043d91796bfcd3b9850ac6e63123f3 = L.polygon(
+                [[44.82921199999999, -73.20693300000002], [44.8285519406895, -73.20720150070139], [44.82921700000003, -73.207047], [44.83033699999998, -73.206098], [44.83153300000001, -73.204934], [44.83225838554716, -73.2042873257453], [44.831685000000036, -73.204674], [44.82999799999997, -73.206277], [44.82921199999999, -73.20693300000002]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_07ced5e534aa1956e87ebe27906460d0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7b57d0b8011952a221411a84455fbdc1 = $(`<div id="html_7b57d0b8011952a221411a84455fbdc1" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_07ced5e534aa1956e87ebe27906460d0.setContent(html_7b57d0b8011952a221411a84455fbdc1);
+            
+        
+
+        polygon_e5043d91796bfcd3b9850ac6e63123f3.bindPopup(popup_07ced5e534aa1956e87ebe27906460d0)
+        ;
+
+        
+    
+    
+            polygon_e5043d91796bfcd3b9850ac6e63123f3.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_abb55c846287b4bc200704dfb1b2f63a = L.polygon(
+                [[44.8236239666108, -73.2087588251975], [44.823471000000026, -73.20886400000002], [44.82319991413593, -73.20926770789735], [44.82362300000002, -73.20876], [44.8236239666108, -73.2087588251975]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_05f868f49fa373529cef0054db43c99b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0caa3968fe5944d38e759eca73316fce = $(`<div id="html_0caa3968fe5944d38e759eca73316fce" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_05f868f49fa373529cef0054db43c99b.setContent(html_0caa3968fe5944d38e759eca73316fce);
+            
+        
+
+        polygon_abb55c846287b4bc200704dfb1b2f63a.bindPopup(popup_05f868f49fa373529cef0054db43c99b)
+        ;
+
+        
+    
+    
+            polygon_abb55c846287b4bc200704dfb1b2f63a.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_755241c6964605b5b270d1af507d1413 = L.polygon(
+                [[44.8217207766732, -73.21205327977528], [44.821519000000016, -73.212552], [44.82140156357392, -73.21307835404238], [44.821673000000025, -73.212212], [44.8217207766732, -73.21205327977528]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_b285f3658873e633b97bb8c52f9fc06a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b3398ae84077558881a05a6e3c60f593 = $(`<div id="html_b3398ae84077558881a05a6e3c60f593" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_b285f3658873e633b97bb8c52f9fc06a.setContent(html_b3398ae84077558881a05a6e3c60f593);
+            
+        
+
+        polygon_755241c6964605b5b270d1af507d1413.bindPopup(popup_b285f3658873e633b97bb8c52f9fc06a)
+        ;
+
+        
+    
+    
+            polygon_755241c6964605b5b270d1af507d1413.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6d1cc416c17685f82f5d5b8f7a56cd7b = L.polygon(
+                [[44.84883200000003, -73.207509], [44.85033099999995, -73.207285], [44.85194799999997, -73.207055], [44.85216129624284, -73.2069909775322], [44.84832200000001, -73.207501], [44.84638899999996, -73.207554], [44.84523899999996, -73.207234], [44.84282499999998, -73.20580000000001], [44.84246916196966, -73.20554576407775], [44.842918000000076, -73.205912], [44.843858999999995, -73.206765], [44.844736999999974, -73.207123], [44.84609499999997, -73.207554], [44.84744600000002, -73.207609], [44.84883200000003, -73.207509]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_d3220d02dc351a840e63292c70ce8943 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c985d60ec07847cb4464bf83486d04eb = $(`<div id="html_c985d60ec07847cb4464bf83486d04eb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_d3220d02dc351a840e63292c70ce8943.setContent(html_c985d60ec07847cb4464bf83486d04eb);
+            
+        
+
+        polygon_6d1cc416c17685f82f5d5b8f7a56cd7b.bindPopup(popup_d3220d02dc351a840e63292c70ce8943)
+        ;
+
+        
+    
+    
+            polygon_6d1cc416c17685f82f5d5b8f7a56cd7b.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8050ac0772d79d2903c1ab8c4e3d1388 = L.polygon(
+                [[44.87346400000004, -73.197145], [44.87140799999996, -73.198575], [44.86965694426099, -73.20048855996549], [44.870057999999965, -73.200123], [44.870854999999985, -73.199211], [44.871839000000044, -73.198305], [44.87306199999998, -73.19765], [44.87385120790075, -73.19700685401223], [44.87346400000004, -73.197145]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_8b0fd3c9e735e02ec210c70f235c0d65 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ee73b137ba1d15b05e29d00600501b53 = $(`<div id="html_ee73b137ba1d15b05e29d00600501b53" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_8b0fd3c9e735e02ec210c70f235c0d65.setContent(html_ee73b137ba1d15b05e29d00600501b53);
+            
+        
+
+        polygon_8050ac0772d79d2903c1ab8c4e3d1388.bindPopup(popup_8b0fd3c9e735e02ec210c70f235c0d65)
+        ;
+
+        
+    
+    
+            polygon_8050ac0772d79d2903c1ab8c4e3d1388.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dbc1deab6425f65f48a802c85fabd9df = L.polygon(
+                [[44.81138500000002, -73.23487], [44.812300000000015, -73.23355], [44.81317199999999, -73.232262], [44.81399100000004, -73.231088], [44.814686, -73.230062], [44.81536999999998, -73.228902], [44.81631100000001, -73.227468], [44.816969000000036, -73.22637000000002], [44.817565, -73.225272], [44.81815, -73.224128], [44.81865799999998, -73.22264600000001], [44.81913, -73.221163], [44.81963099999998, -73.219778], [44.82012200000004, -73.21838], [44.820612000000004, -73.216874], [44.82081401512938, -73.2157116015054], [44.82067000000001, -73.216357], [44.81937399999997, -73.220472], [44.81796799999995, -73.224392], [44.817043000000005, -73.226089], [44.81631900000001, -73.227418], [44.81485400000004, -73.229652], [44.814256999999984, -73.230562], [44.81415200000001, -73.230713], [44.81342899999998, -73.231752], [44.812706000000006, -73.232791], [44.81216500000005, -73.233569], [44.810204999999975, -73.236082], [44.80727499999998, -73.23902], [44.805018690477056, -73.2412413830393], [44.805853999999975, -73.240495], [44.80707999999996, -73.239402], [44.80800199999999, -73.23856], [44.808835999999964, -73.237764], [44.809654000000016, -73.23703], [44.81035899999995, -73.236087], [44.81138500000002, -73.23487]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_b26dbc47b7966d7bfb5546f407f6d9f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_518b1b3d390a6824b00806a9ec63c85a = $(`<div id="html_518b1b3d390a6824b00806a9ec63c85a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_b26dbc47b7966d7bfb5546f407f6d9f2.setContent(html_518b1b3d390a6824b00806a9ec63c85a);
+            
+        
+
+        polygon_dbc1deab6425f65f48a802c85fabd9df.bindPopup(popup_b26dbc47b7966d7bfb5546f407f6d9f2)
+        ;
+
+        
+    
+    
+            polygon_dbc1deab6425f65f48a802c85fabd9df.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1985cc69da7b56e7391bbd4a0c096b67 = L.polygon(
+                [[44.87902987649006, -73.19634017839518], [44.87890067044282, -73.19633786572446], [44.878964999999965, -73.196345], [44.87898600000005, -73.196343], [44.87902987649006, -73.19634017839518]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_60324c6b462778d6c48e5eb750e8b3ca = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0d52615c456c6bf213b06b9c7ef56c2f = $(`<div id="html_0d52615c456c6bf213b06b9c7ef56c2f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_60324c6b462778d6c48e5eb750e8b3ca.setContent(html_0d52615c456c6bf213b06b9c7ef56c2f);
+            
+        
+
+        polygon_1985cc69da7b56e7391bbd4a0c096b67.bindPopup(popup_60324c6b462778d6c48e5eb750e8b3ca)
+        ;
+
+        
+    
+    
+            polygon_1985cc69da7b56e7391bbd4a0c096b67.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6db0135b2085bdd487aeb185306d205c = L.polygon(
+                [[44.89439407792331, -73.19180030154124], [44.893955999999974, -73.191821], [44.893773555749036, -73.19186433525141], [44.89439407792331, -73.19180030154124]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_3e87f005100c8d781cfd467f17df1c37 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_07bf53133e6bea7c01fc703719d4ec02 = $(`<div id="html_07bf53133e6bea7c01fc703719d4ec02" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_3e87f005100c8d781cfd467f17df1c37.setContent(html_07bf53133e6bea7c01fc703719d4ec02);
+            
+        
+
+        polygon_6db0135b2085bdd487aeb185306d205c.bindPopup(popup_3e87f005100c8d781cfd467f17df1c37)
+        ;
+
+        
+    
+    
+            polygon_6db0135b2085bdd487aeb185306d205c.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c8aa59f6efbf7d09ddf392e73d5339f6 = L.polygon(
+                [[44.86002099999995, -73.203866], [44.85963212395397, -73.20406295415638], [44.86062700000002, -73.203695], [44.861794999999994, -73.20350900000001], [44.86320900000003, -73.20358699999998], [44.864307758980296, -73.20356205088677], [44.861555000000024, -73.203368], [44.86103899999997, -73.203417], [44.86002099999995, -73.203866]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_fc4e7d24dbb293de79913ddfe41e1a22 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_23d393e946599cec0ef6e64984673d15 = $(`<div id="html_23d393e946599cec0ef6e64984673d15" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_fc4e7d24dbb293de79913ddfe41e1a22.setContent(html_23d393e946599cec0ef6e64984673d15);
+            
+        
+
+        polygon_c8aa59f6efbf7d09ddf392e73d5339f6.bindPopup(popup_fc4e7d24dbb293de79913ddfe41e1a22)
+        ;
+
+        
+    
+    
+            polygon_c8aa59f6efbf7d09ddf392e73d5339f6.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_41f91de3f3450f9a18ad08cdb904207d = L.polygon(
+                [[44.85660899999997, -73.205594], [44.857349000000006, -73.205335], [44.85839300000002, -73.204777], [44.85953000000001, -73.204115], [44.859626925539516, -73.20406558698356], [44.85660899999997, -73.205594]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_5fa935b180af7fd94070ccb0b8dabd02 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f2ac24de8365725cd1eb90be56f4068f = $(`<div id="html_f2ac24de8365725cd1eb90be56f4068f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_5fa935b180af7fd94070ccb0b8dabd02.setContent(html_f2ac24de8365725cd1eb90be56f4068f);
+            
+        
+
+        polygon_41f91de3f3450f9a18ad08cdb904207d.bindPopup(popup_5fa935b180af7fd94070ccb0b8dabd02)
+        ;
+
+        
+    
+    
+            polygon_41f91de3f3450f9a18ad08cdb904207d.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a25b122150d77f621d674afda2b66020 = L.polygon(
+                [[44.85660899999997, -73.205594], [44.85338795966686, -73.20663911080202], [44.854279000000005, -73.206443], [44.855218000000015, -73.206116], [44.85626599999999, -73.205714], [44.85660899999997, -73.205594]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_621aa0edcf18d682822b9f2f76552b55 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c1df957bdedaec64c496a185a268093f = $(`<div id="html_c1df957bdedaec64c496a185a268093f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_621aa0edcf18d682822b9f2f76552b55.setContent(html_c1df957bdedaec64c496a185a268093f);
+            
+        
+
+        polygon_a25b122150d77f621d674afda2b66020.bindPopup(popup_621aa0edcf18d682822b9f2f76552b55)
+        ;
+
+        
+    
+    
+            polygon_a25b122150d77f621d674afda2b66020.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_d136e73ea80bd34d7c25c497eb943ddc = L.polygon(
+                [[44.867426389375574, -73.20241363099277], [44.868063000000035, -73.201993], [44.86897921775883, -73.2011126971328], [44.867426389375574, -73.20241363099277]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_638e473ef223ebf31e913035e935f3ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7aa3d3a9263934afded8130b51c81471 = $(`<div id="html_7aa3d3a9263934afded8130b51c81471" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_638e473ef223ebf31e913035e935f3ae.setContent(html_7aa3d3a9263934afded8130b51c81471);
+            
+        
+
+        polygon_d136e73ea80bd34d7c25c497eb943ddc.bindPopup(popup_638e473ef223ebf31e913035e935f3ae)
+        ;
+
+        
+    
+    
+            polygon_d136e73ea80bd34d7c25c497eb943ddc.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e5aa79d8b3579006fdd3e519047cb92c = L.polygon(
+                [[44.91047932941651, -73.19513113523435], [44.91048600000002, -73.19493899999999], [44.910258999999996, -73.19459100000002], [44.91018072018548, -73.19450041584774], [44.910181000000044, -73.194501], [44.91047932941651, -73.19513113523435]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_290c7fddf0dcf300ef2067a38bb32193 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_36858ae349d90be073681356cf4f488c = $(`<div id="html_36858ae349d90be073681356cf4f488c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_290c7fddf0dcf300ef2067a38bb32193.setContent(html_36858ae349d90be073681356cf4f488c);
+            
+        
+
+        polygon_e5aa79d8b3579006fdd3e519047cb92c.bindPopup(popup_290c7fddf0dcf300ef2067a38bb32193)
+        ;
+
+        
+    
+    
+            polygon_e5aa79d8b3579006fdd3e519047cb92c.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_da105b88d3ad9e354f14075acc9a19c3 = L.polygon(
+                [[44.91072093227984, -73.20068851566687], [44.910718999999986, -73.2005], [44.9107056621562, -73.20040287824044], [44.910709000000026, -73.200507], [44.91072093227984, -73.20068851566687]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_21330f8a2bf107d32c1d69bfface618f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_da7b0b3b0838b50edb82b292c47169eb = $(`<div id="html_da7b0b3b0838b50edb82b292c47169eb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_21330f8a2bf107d32c1d69bfface618f.setContent(html_da7b0b3b0838b50edb82b292c47169eb);
+            
+        
+
+        polygon_da105b88d3ad9e354f14075acc9a19c3.bindPopup(popup_21330f8a2bf107d32c1d69bfface618f)
+        ;
+
+        
+    
+    
+            polygon_da105b88d3ad9e354f14075acc9a19c3.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9aa8d5ae9b6b9aa0bcc9c91557a6931a = L.polygon(
+                [[44.801304000000016, -73.244379], [44.80225800000005, -73.243714], [44.80331700000003, -73.242913], [44.80415, -73.242078], [44.804283999999974, -73.241948], [44.804367999999975, -73.241882], [44.80458318942642, -73.24167012277566], [44.80436999999995, -73.24188000000001], [44.800982000000005, -73.244552], [44.797095000000056, -73.247261], [44.794317000000056, -73.249135], [44.79413180450621, -73.2492595966286], [44.794917999999974, -73.248804], [44.796247000000015, -73.248012], [44.797468000000016, -73.247211], [44.798679999999976, -73.24638], [44.799578999999994, -73.245746], [44.80042399999997, -73.245098], [44.801304000000016, -73.244379]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_87a8c2b4c8e318049fd6789345ca7830 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6429d458f6985a5d055dc2560ab6c5c2 = $(`<div id="html_6429d458f6985a5d055dc2560ab6c5c2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_87a8c2b4c8e318049fd6789345ca7830.setContent(html_6429d458f6985a5d055dc2560ab6c5c2);
+            
+        
+
+        polygon_9aa8d5ae9b6b9aa0bcc9c91557a6931a.bindPopup(popup_87a8c2b4c8e318049fd6789345ca7830)
+        ;
+
+        
+    
+    
+            polygon_9aa8d5ae9b6b9aa0bcc9c91557a6931a.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2a998ec8f52984b319494ab83f4f8d42 = L.polygon(
+                [[44.79095999999998, -73.251351], [44.791197258282395, -73.25117936798449], [44.790842, -73.251394], [44.789353, -73.252265], [44.78846499999998, -73.252832], [44.78821500000001, -73.252995], [44.78749290946092, -73.25346560489815], [44.788124999999994, -73.25319100000002], [44.78821399999998, -73.25314], [44.788296, -73.25309400000002], [44.789009000000036, -73.252689], [44.78995299999995, -73.252047], [44.79095999999998, -73.251351]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_2352f29b1f3d071dc763c3003494619b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dcef97d34b0377d6c043fd8a114cf74e = $(`<div id="html_dcef97d34b0377d6c043fd8a114cf74e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_2352f29b1f3d071dc763c3003494619b.setContent(html_dcef97d34b0377d6c043fd8a114cf74e);
+            
+        
+
+        polygon_2a998ec8f52984b319494ab83f4f8d42.bindPopup(popup_2352f29b1f3d071dc763c3003494619b)
+        ;
+
+        
+    
+    
+            polygon_2a998ec8f52984b319494ab83f4f8d42.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_923dda622e6b81532345c0be54e708f6 = L.polygon(
+                [[44.913088999999935, -73.211647], [44.913795000000036, -73.213078], [44.913850000000004, -73.213175], [44.91385042635169, -73.21317575674561], [44.91303400000004, -73.211451], [44.91253400758623, -73.2103255420289], [44.913088999999935, -73.211647]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_f98c51d1e81c3200ee13a1aae8533339 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d1c65b3467c39d322a606098c4112129 = $(`<div id="html_d1c65b3467c39d322a606098c4112129" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_f98c51d1e81c3200ee13a1aae8533339.setContent(html_d1c65b3467c39d322a606098c4112129);
+            
+        
+
+        polygon_923dda622e6b81532345c0be54e708f6.bindPopup(popup_f98c51d1e81c3200ee13a1aae8533339)
+        ;
+
+        
+    
+    
+            polygon_923dda622e6b81532345c0be54e708f6.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c9876130f2a7ed5341213ee9ab9beec8 = L.polygon(
+                [[44.78504895552376, -73.25489839931954], [44.78546600000002, -73.254747], [44.78610930917421, -73.25432009725854], [44.78504895552376, -73.25489839931954]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_02167e8d9606bd51478e25aeca4a192e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1634553607cee58217dd9752b95a510d = $(`<div id="html_1634553607cee58217dd9752b95a510d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_02167e8d9606bd51478e25aeca4a192e.setContent(html_1634553607cee58217dd9752b95a510d);
+            
+        
+
+        polygon_c9876130f2a7ed5341213ee9ab9beec8.bindPopup(popup_02167e8d9606bd51478e25aeca4a192e)
+        ;
+
+        
+    
+    
+            polygon_c9876130f2a7ed5341213ee9ab9beec8.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_475e31fb04c729a8c80a8bd205479182 = L.polygon(
+                [[44.78249799999999, -73.256107], [44.781818999999984, -73.256969], [44.78166032214388, -73.25723038723066], [44.78187700000001, -73.25725200000001], [44.783162000000026, -73.255912], [44.783671999999946, -73.255577], [44.78367390598203, -73.25557574408302], [44.78322099999999, -73.255796], [44.78249799999999, -73.256107]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_7cd36be8924b5bfe6e04dc5b957946f9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3e3be4c2f43162bfa1ee04c71a6b5219 = $(`<div id="html_3e3be4c2f43162bfa1ee04c71a6b5219" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_7cd36be8924b5bfe6e04dc5b957946f9.setContent(html_3e3be4c2f43162bfa1ee04c71a6b5219);
+            
+        
+
+        polygon_475e31fb04c729a8c80a8bd205479182.bindPopup(popup_7cd36be8924b5bfe6e04dc5b957946f9)
+        ;
+
+        
+    
+    
+            polygon_475e31fb04c729a8c80a8bd205479182.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c317a2ab8171f8f23cbe71094cde283c = L.polygon(
+                [[44.91782513483367, -73.22371553715674], [44.91786399999997, -73.223816], [44.91786580565158, -73.2238192044693], [44.91782513483367, -73.22371553715674]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_12ce41951ef9ea85b4654eab4fbd1200 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_404e87ff95175de95d644c51fa5c5866 = $(`<div id="html_404e87ff95175de95d644c51fa5c5866" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Franklin - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_12ce41951ef9ea85b4654eab4fbd1200.setContent(html_404e87ff95175de95d644c51fa5c5866);
+            
+        
+
+        polygon_c317a2ab8171f8f23cbe71094cde283c.bindPopup(popup_12ce41951ef9ea85b4654eab4fbd1200)
+        ;
+
+        
+    
+    
+            polygon_c317a2ab8171f8f23cbe71094cde283c.bindTooltip(
+                `<div>
+                      Franklin - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ff6db3054bf0508c45a5f799a5f22071 = L.polygon(
+                [[44.925937999999995, -73.229929], [44.92513700000002, -73.229476], [44.924335999999954, -73.229023], [44.92292099999997, -73.228222], [44.92150600000003, -73.227421], [44.91998899999994, -73.226563], [44.91950500000001, -73.226274], [44.918107, -73.22443400000002], [44.91786580565158, -73.2238192044693], [44.91786399999997, -73.223816], [44.91782513483367, -73.22371553715674], [44.917073999999985, -73.221801], [44.916314999999955, -73.21911], [44.91617100000002, -73.21869700000002], [44.91544400000001, -73.216611], [44.91416199999999, -73.213834], [44.91385042635169, -73.21317575674561], [44.913850000000004, -73.213175], [44.913795000000036, -73.213078], [44.913088999999935, -73.211647], [44.91253400758623, -73.2103255420289], [44.911929999999984, -73.208966], [44.91117900000002, -73.206444], [44.910748, -73.20333200000002], [44.91072093227984, -73.20068851566687], [44.910709000000026, -73.200507], [44.9107056621562, -73.20040287824044], [44.91058399999996, -73.199517], [44.91037900000002, -73.19802], [44.91047932941651, -73.19513113523435], [44.910181000000044, -73.194501], [44.91018072018548, -73.19450041584774], [44.908699999999975, -73.192787], [44.90679799999993, -73.191709], [44.90476200000004, -73.19131], [44.90265699999996, -73.19141], [44.90096200000004, -73.19149], [44.899268000000006, -73.19157], [44.89439407792331, -73.19180030154124], [44.893773555749036, -73.19186433525141], [44.89213299999996, -73.192254], [44.89084799999998, -73.192602], [44.889562999999974, -73.192949], [44.888382000000014, -73.19326800000002], [44.88684400000003, -73.19402], [44.88619900000002, -73.194337], [44.88444999999998, -73.195209], [44.88241899999998, -73.195948], [44.880324, -73.196348], [44.88024900000001, -73.196362], [44.87902987649006, -73.19634017839518], [44.87898600000005, -73.196343], [44.878964999999965, -73.196345], [44.87890067044282, -73.19633786572446], [44.87812600000003, -73.196324], [44.87607599999998, -73.196443], [44.87504199999998, -73.19658200000002], [44.87385120790075, -73.19700685401223], [44.87306199999998, -73.19765], [44.871839000000044, -73.198305], [44.870854999999985, -73.199211], [44.870057999999965, -73.200123], [44.86965694426099, -73.20048855996549], [44.869436000000036, -73.20073000000001], [44.86897921775883, -73.2011126971328], [44.868063000000035, -73.201993], [44.867426389375574, -73.20241363099277], [44.86639699999999, -73.203276], [44.86453399999994, -73.203578], [44.864307758980296, -73.20356205088677], [44.86320900000003, -73.20358699999998], [44.861794999999994, -73.20350900000001], [44.86062700000002, -73.203695], [44.85963212395397, -73.20406295415638], [44.859626925539516, -73.20406558698356], [44.85953000000001, -73.204115], [44.85839300000002, -73.204777], [44.857349000000006, -73.205335], [44.85660899999997, -73.205594], [44.85626599999999, -73.205714], [44.855218000000015, -73.206116], [44.854279000000005, -73.206443], [44.85338795966686, -73.20663911080202], [44.85240200000002, -73.206959], [44.85216129624284, -73.2069909775322], [44.85194799999997, -73.207055], [44.85033099999995, -73.207285], [44.84883200000003, -73.207509], [44.84744600000002, -73.207609], [44.84609499999997, -73.207554], [44.844736999999974, -73.207123], [44.843858999999995, -73.206765], [44.842918000000076, -73.205912], [44.84246916196966, -73.20554576407775], [44.84013199999998, -73.203876], [44.837940999999965, -73.202919], [44.836848999999965, -73.202733], [44.8360817171375, -73.20260230169903], [44.83489300000001, -73.202766], [44.83442843887334, -73.20293349421846], [44.83401599999998, -73.203102], [44.83225838554716, -73.2042873257453], [44.83153300000001, -73.204934], [44.83033699999998, -73.206098], [44.82921700000003, -73.207047], [44.8285519406895, -73.20720150070139], [44.82803200000005, -73.207413], [44.826397000000036, -73.20747], [44.825000999999986, -73.207812], [44.8236239666108, -73.2087588251975], [44.82362300000002, -73.20876], [44.82319991413593, -73.20926770789735], [44.82231399999998, -73.210587], [44.8217207766732, -73.21205327977528], [44.821673000000025, -73.212212], [44.82140156357392, -73.21307835404238], [44.82081401512938, -73.2157116015054], [44.820612000000004, -73.216874], [44.82012200000004, -73.21838], [44.81963099999998, -73.219778], [44.81913, -73.221163], [44.81865799999998, -73.22264600000001], [44.81815, -73.224128], [44.817565, -73.225272], [44.816969000000036, -73.22637000000002], [44.81631100000001, -73.227468], [44.81536999999998, -73.228902], [44.814686, -73.230062], [44.81399100000004, -73.231088], [44.81317199999999, -73.232262], [44.812300000000015, -73.23355], [44.81138500000002, -73.23487], [44.81035899999995, -73.236087], [44.809654000000016, -73.23703], [44.808835999999964, -73.237764], [44.80800199999999, -73.23856], [44.80707999999996, -73.239402], [44.805853999999975, -73.240495], [44.805018690477056, -73.2412413830393], [44.80458318942642, -73.24167012277566], [44.804367999999975, -73.241882], [44.804283999999974, -73.241948], [44.80415, -73.242078], [44.80331700000003, -73.242913], [44.80225800000005, -73.243714], [44.801304000000016, -73.244379], [44.80042399999997, -73.245098], [44.799578999999994, -73.245746], [44.798679999999976, -73.24638], [44.797468000000016, -73.247211], [44.796247000000015, -73.248012], [44.794917999999974, -73.248804], [44.79413180450621, -73.2492595966286], [44.79398999999997, -73.249355], [44.793664, -73.249575], [44.792186, -73.25058200000001], [44.791197258282395, -73.25117936798449], [44.79095999999998, -73.251351], [44.78995299999995, -73.252047], [44.789009000000036, -73.252689], [44.788296, -73.25309400000002], [44.78821399999998, -73.25314], [44.788124999999994, -73.25319100000002], [44.78749290946092, -73.25346560489815], [44.78734499999996, -73.25356200000002], [44.786225, -73.254257], [44.78610930917421, -73.25432009725854], [44.78546600000002, -73.254747], [44.78504895552376, -73.25489839931954], [44.78490300000001, -73.254978], [44.78367390598203, -73.25557574408302], [44.783671999999946, -73.255577], [44.783162000000026, -73.255912], [44.78187700000001, -73.25725200000001], [44.78166032214388, -73.25723038723066], [44.78125200000003, -73.257903], [44.78056300000003, -73.259297], [44.779608999999994, -73.261029], [44.779273000000074, -73.261659], [44.77304600000001, -73.281386], [44.772482000000004, -73.283082], [44.77217599999999, -73.284304], [44.77160700000001, -73.28547300000001], [44.770806999999984, -73.286152], [44.76996099999999, -73.286753], [44.76892300000004, -73.28719], [44.76782199999997, -73.287862], [44.766855, -73.288532], [44.765784999999944, -73.28938200000002], [44.76573199999998, -73.289477], [44.76557100000003, -73.289279], [44.76553400000001, -73.289232], [44.76489399999995, -73.288429], [44.764824, -73.288343], [44.76481299999998, -73.2884], [44.764797999999985, -73.288471], [44.76473099999997, -73.288451], [44.764567999999954, -73.288468], [44.76428300000002, -73.288654], [44.763537999999926, -73.288938], [44.76301099999999, -73.289006], [44.76268599999998, -73.28902100000002], [44.761914999999995, -73.289105], [44.76146900000001, -73.289099], [44.76089899999994, -73.289235], [44.76079199999999, -73.289261], [44.76049499999998, -73.289219], [44.75998700000001, -73.289263], [44.759833000000015, -73.28927600000002], [44.759575999999996, -73.289254], [44.75930500000001, -73.289307], [44.75899399999999, -73.289454], [44.75850699999999, -73.289467], [44.758235999999975, -73.28952], [44.75620599999996, -73.28991900000001], [44.755435, -73.290022], [44.75524900000001, -73.290019], [44.75477300000004, -73.29001300000002], [44.754249, -73.290024], [44.75420499999999, -73.290025], [44.753759999999986, -73.289962], [44.75343500000004, -73.290052], [44.75319200000001, -73.290068], [44.75309799999999, -73.28999], [44.75302999999997, -73.289933], [44.75294999999999, -73.28978], [44.752938000000036, -73.289609], [44.75281699999995, -73.289513], [44.75238499999999, -73.289393], [44.75195400000001, -73.28922600000001], [44.75135399999998, -73.289165], [44.75107599999997, -73.289138], [44.75060299999999, -73.289075], [44.75004099999999, -73.289016], [44.74967800000004, -73.28897], [44.74903599999998, -73.289632], [44.74874700000002, -73.289917], [44.74842599999999, -73.289973], [44.7484, -73.28999], [44.74838300000001, -73.289953], [44.74825800000002, -73.289867], [44.74813700000002, -73.289777], [44.74811500000002, -73.28979], [44.74787899999999, -73.289923], [44.74753599999999, -73.290215], [44.74741799999997, -73.290755], [44.74691099999998, -73.29144900000001], [44.74657299999999, -73.291996], [44.74642200000004, -73.29222800000001], [44.74631300000002, -73.292397], [44.74632100000001, -73.29292100000002], [44.74617899999999, -73.293322], [44.74604099999998, -73.29376200000002], [44.74587000000002, -73.29407], [44.74573399999999, -73.294594], [44.745659999999965, -73.29488800000001], [44.745623000000016, -73.29504100000001], [44.74549899999997, -73.29548100000001], [44.745650000000026, -73.29714], [44.74583999999997, -73.297826], [44.74595900000001, -73.298236], [44.74597300000005, -73.298262], [44.746218000000006, -73.29869900000001], [44.74644200000001, -73.298931], [44.74674700000008, -73.299163], [44.746936999999974, -73.29949500000001], [44.74698299999996, -73.30019], [44.74728499999998, -73.300506], [44.74727899999999, -73.30101600000002], [44.747483999999936, -73.30146400000001], [44.74780499999999, -73.301881], [44.74784299999998, -73.301937], [44.74814500000004, -73.302383], [44.74848300000004, -73.30269200000001], [44.748947, -73.303002], [44.74928300000001, -73.303234], [44.75004200000005, -73.303329], [44.75029799999997, -73.30334], [44.75078399999998, -73.303441], [44.750918000000034, -73.30361399999998], [44.75107899999999, -73.303787], [44.751280000000065, -73.304017], [44.751522, -73.304172], [44.75173399999998, -73.304801], [44.751853000000004, -73.305106], [44.752094999999976, -73.305375], [44.75249699999996, -73.30576], [44.752658000000025, -73.30599], [44.75308900000003, -73.30612900000001], [44.753276999999976, -73.306378], [44.75328899999999, -73.30660600000002], [44.753166, -73.306813], [44.75308400000003, -73.306868], [44.75293599999999, -73.30679], [44.75276000000002, -73.306807], [44.75259600000002, -73.30703200000002], [44.752514000000005, -73.30724], [44.752389999999956, -73.307579], [44.752319000000064, -73.307977], [44.75227700000002, -73.308241], [44.75213900000001, -73.308581], [44.75193500000001, -73.308806], [44.75178299999998, -73.309221], [44.751658000000006, -73.309788], [44.751506999999954, -73.310165], [44.751478000000056, -73.310393], [44.751515999999995, -73.310678], [44.751393, -73.310941], [44.75106500000001, -73.311392], [44.75086099999996, -73.311655], [44.75068400000001, -73.311747], [44.75050900000001, -73.311764], [44.75027799999999, -73.311893], [44.750042000000015, -73.311951], [44.749367000000014, -73.312241], [44.74923699999998, -73.312259], [44.74915099999997, -73.312258], [44.74900299999999, -73.312291], [44.74898600000004, -73.312302], [44.74888700000005, -73.312342], [44.748735000000025, -73.312427], [44.74854299999997, -73.312487], [44.748493000000025, -73.31251000000002], [44.74843499999995, -73.312524], [44.74825599999999, -73.312609], [44.748065000000004, -73.31275600000001], [44.747968000000014, -73.31287], [44.747905999999986, -73.312956], [44.74782199999996, -73.31309], [44.74778300000007, -73.313176], [44.74772699999998, -73.313344], [44.74768899999999, -73.31349200000001], [44.74767700000001, -73.313637], [44.74768099999998, -73.313877], [44.74766499999997, -73.31405], [44.747672, -73.314074], [44.747684999999954, -73.31418], [44.747719000000025, -73.314301], [44.74778700000003, -73.31447], [44.74783900000001, -73.314553], [44.748004999999964, -73.314766], [44.74815099999995, -73.31494], [44.748196999999976, -73.31497], [44.748292000000035, -73.314996], [44.74837799999997, -73.31503], [44.74862599999997, -73.315086], [44.74867099999995, -73.315105], [44.74874399999998, -73.315164], [44.748752999999965, -73.315196], [44.74875400000001, -73.315222], [44.74874599999998, -73.315245], [44.74873700000006, -73.315294], [44.74877800000001, -73.31533300000001], [44.74910299999998, -73.315356], [44.74973399999999, -73.315469], [44.74991900000001, -73.315514], [44.750042000000015, -73.315813], [44.75006000000003, -73.315857], [44.75004200000001, -73.315854], [44.750042000000015, -73.321614], [44.75004211644856, -73.35782289031812], [44.751018000000016, -73.357671], [44.751554, -73.357325], [44.75232200000001, -73.356761], [44.75323200000002, -73.355857], [44.754240000000024, -73.35513200000001], [44.755295999999966, -73.354361], [44.75631400000001, -73.353861], [44.756674999999966, -73.353653], [44.757556999999984, -73.353279], [44.75867900000001, -73.352789], [44.759520999999935, -73.352382], [44.76042000000002, -73.352154], [44.76070799999997, -73.352061], [44.760798000000015, -73.352032], [44.76095799999999, -73.35198100000001], [44.763358000000025, -73.351209], [44.763647000000006, -73.351193], [44.764311, -73.35073200000001], [44.764447999999966, -73.35063100000002], [44.76527899999996, -73.350019], [44.766433000000035, -73.349472], [44.767155000000024, -73.349201], [44.76823, -73.34871200000002], [44.76934500000001, -73.348357], [44.77038200000004, -73.347952], [44.77039599999999, -73.347947], [44.77185700000003, -73.347575], [44.77297999999997, -73.347085], [44.77417999999997, -73.346187], [44.775339, -73.34524500000002], [44.77627999999996, -73.34426100000002], [44.777156000000005, -73.343075], [44.77785499999999, -73.34188], [44.77825800000002, -73.34096], [44.778893, -73.339958], [44.77950599999999, -73.339159], [44.78012600000001, -73.338214], [44.780891000000054, -73.337232], [44.78148, -73.33637700000001], [44.78208600000002, -73.335713], [44.78278200000001, -73.335229], [44.78328500000003, -73.334759], [44.785192000000016, -73.33377100000001], [44.78597899999998, -73.33359], [44.78650900000004, -73.333458], [44.78716799999999, -73.333358], [44.787988000000006, -73.333334], [44.78875899999999, -73.333154], [44.78958800000001, -73.333152], [44.79788000000004, -73.33375], [44.79802900000001, -73.33378], [44.79824199999997, -73.33382300000001], [44.798820000000006, -73.333889], [44.799200999999954, -73.333933], [44.79994200000001, -73.33412500000001], [44.80009700000003, -73.334141], [44.80020510844948, -73.33415275090617], [44.80069100000006, -73.334204], [44.80140800000001, -73.334306], [44.802188999999984, -73.33443], [44.802544000000005, -73.33454800000001], [44.80293999999997, -73.334701], [44.803536999999984, -73.334861], [44.804109, -73.335044], [44.804603000000036, -73.335443], [44.80514, -73.33615700000001], [44.80527500000002, -73.336409], [44.80537400000003, -73.336593], [44.80552400000005, -73.336874], [44.80588199999996, -73.337444], [44.80636399999995, -73.338261], [44.806852000000006, -73.338919], [44.807892000000045, -73.340303], [44.808051000000034, -73.34051], [44.808356000000046, -73.340906], [44.80882700000001, -73.341429], [44.819241000000034, -73.331549], [44.82051700000002, -73.330338], [44.82179399999999, -73.329128], [44.83552799999999, -73.31609900000001], [44.83914199999995, -73.312672], [44.84275499999999, -73.309244], [44.842697000000015, -73.30764000000002], [44.84211400000001, -73.29167], [44.842109, -73.291543], [44.84219699999999, -73.29145], [44.842977000000005, -73.290964], [44.843657, -73.290817], [44.843913999999984, -73.290749], [44.84411299999998, -73.290697], [44.84513000000003, -73.29068200000002], [44.847874, -73.290268], [44.84855199999996, -73.289908], [44.84950699999998, -73.28913600000001], [44.85042300000003, -73.28851200000001], [44.85136500000004, -73.28807999999998], [44.859407999999995, -73.284513], [44.860598000000024, -73.28401], [44.86197800000004, -73.283299], [44.86303799999999, -73.282594], [44.86305799999996, -73.282533], [44.863084000000036, -73.282458], [44.86557900000001, -73.281255], [44.872136000000026, -73.27809300000001], [44.87375799999998, -73.277311], [44.874846, -73.277026], [44.885179000000015, -73.274726], [44.88523899999996, -73.274654], [44.88694300000003, -73.27435300000002], [44.892201, -73.273204], [44.894781999999985, -73.272564], [44.897423999999965, -73.271255], [44.89768999999999, -73.27112300000002], [44.900098, -73.269446], [44.90300199999996, -73.267171], [44.90576199999999, -73.264678], [44.908471000000006, -73.262316], [44.909378000000025, -73.261526], [44.913741, -73.25869800000001], [44.91422299999999, -73.25838500000002], [44.91924699999999, -73.255518], [44.922545, -73.253033], [44.9249, -73.249473], [44.925510999999986, -73.247921], [44.925961, -73.246437], [44.92661600000002, -73.244144], [44.92707899999998, -73.241708], [44.92733299999998, -73.239408], [44.92746899999997, -73.236997], [44.92749999999999, -73.234834], [44.927541999999995, -73.23265999999998], [44.92743699999997, -73.230777], [44.926688000000006, -73.230353], [44.925937999999995, -73.229929]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d4049b25384b9a012477f8708b776854);
+        
+    
+        var popup_5e81e5c0cc10d9c204b8c36cccc0bb66 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c9ff2987386e8f4e8153a656127b4a90 = $(`<div id="html_c9ff2987386e8f4e8153a656127b4a90" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Grand Isle - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_5e81e5c0cc10d9c204b8c36cccc0bb66.setContent(html_c9ff2987386e8f4e8153a656127b4a90);
+            
+        
+
+        polygon_ff6db3054bf0508c45a5f799a5f22071.bindPopup(popup_5e81e5c0cc10d9c204b8c36cccc0bb66)
+        ;
+
+        
+    
+    
+            polygon_ff6db3054bf0508c45a5f799a5f22071.bindTooltip(
+                `<div>
+                      Grand Isle - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_d4049b25384b9a012477f8708b776854.fitBounds(
+                [[44.74549899999997, -73.35782289031812], [44.927541999999995, -73.19131]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

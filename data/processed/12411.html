@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d2a91bb1583bdd3eb604c3e8a174ac05 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Ulster - NY-CD19</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Ulster - NY-CD18</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_d2a91bb1583bdd3eb604c3e8a174ac05" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d2a91bb1583bdd3eb604c3e8a174ac05 = L.map(
+                "map_d2a91bb1583bdd3eb604c3e8a174ac05",
+                {
+                    center: [41.88015045355526, -74.04207385531677],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_d2a91bb1583bdd3eb604c3e8a174ac05);
+
+            
+
+        
+    
+            var tile_layer_a137dc4aa0a276712f5409683a45e695 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_a137dc4aa0a276712f5409683a45e695.addTo(map_d2a91bb1583bdd3eb604c3e8a174ac05);
+        
+    
+            var polygon_78887a06564b093f725e887fef5bd3cf = L.polygon(
+                [[41.88484200000002, -74.036006], [41.88525400000005, -74.035627], [41.88531799999999, -74.035521], [41.885332, -74.035465], [41.885300000000036, -74.03524], [41.885284000000034, -74.0352], [41.885178, -74.035042], [41.88508199999994, -74.034863], [41.88505899999999, -74.03475900000001], [41.88506500000004, -74.034717], [41.88510200000004, -74.034674], [41.885326999999975, -74.03469], [41.885384, -74.034715], [41.885529, -74.034853], [41.885576, -74.034876], [41.885661999999996, -74.034882], [41.88578300000005, -74.034847], [41.885901, -74.03477], [41.88604700000004, -74.034611], [41.88643199999995, -74.03411200000001], [41.885608, -74.033764], [41.88278200000001, -74.031165], [41.88157400000001, -74.030061], [41.88097900000003, -74.029504], [41.880784999999946, -74.02955300000002], [41.87965300000003, -74.030347], [41.879211999999995, -74.031116], [41.87807999999998, -74.032058], [41.876775, -74.032708], [41.87597599999997, -74.033716], [41.87558900000001, -74.034333], [41.875412000000004, -74.034597], [41.88478418197029, -74.03606603777743], [41.88484200000002, -74.036006]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d2a91bb1583bdd3eb604c3e8a174ac05);
+        
+    
+        var popup_062fd1af8040677dff0f6d631ba3a000 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c428c78d6215e4e390c90ea7ca4a90ed = $(`<div id="html_c428c78d6215e4e390c90ea7ca4a90ed" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ulster - NY-CD18</h4>                              </div>         </div>`)[0];
+                popup_062fd1af8040677dff0f6d631ba3a000.setContent(html_c428c78d6215e4e390c90ea7ca4a90ed);
+            
+        
+
+        polygon_78887a06564b093f725e887fef5bd3cf.bindPopup(popup_062fd1af8040677dff0f6d631ba3a000)
+        ;
+
+        
+    
+    
+            polygon_78887a06564b093f725e887fef5bd3cf.bindTooltip(
+                `<div>
+                      Ulster - NY-CD18
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a708ccadb1cdc76c43b08b12ce78400b = L.polygon(
+                [[41.87765299999999, -74.048958], [41.87811200000001, -74.04886300000001], [41.878141, -74.049105], [41.878184000000005, -74.049323], [41.878249000000004, -74.049525], [41.87836399999998, -74.049779], [41.878546999999976, -74.050089], [41.87862300000002, -74.05020200000001], [41.87882599999995, -74.049797], [41.87903000000001, -74.049458], [41.87928299999999, -74.049127], [41.879586999999965, -74.048814], [41.88048399999998, -74.048044], [41.880944999999954, -74.047655], [41.881345999999986, -74.047345], [41.88162199999998, -74.047174], [41.88186600000003, -74.047062], [41.88197999999998, -74.047019], [41.88234865690172, -74.04689611495101], [41.87555853299261, -74.03485676622208], [41.87532899999998, -74.035303], [41.875102999999996, -74.03588100000002], [41.87478500000005, -74.036495], [41.874642000000016, -74.03674], [41.87451300000004, -74.036992], [41.87432400000006, -74.037548], [41.874188999999994, -74.037947], [41.87413099999997, -74.03816500000002], [41.87408699999999, -74.038404], [41.87406600000001, -74.038546], [41.87399799999995, -74.03903199999999], [41.87392300000003, -74.039386], [41.873684999999945, -74.040126], [41.87497199999998, -74.041484], [41.874749, -74.041756], [41.87498999999999, -74.041994], [41.87518699999998, -74.042231], [41.87528499999994, -74.04237500000002], [41.87544499999997, -74.042566], [41.87562, -74.042706], [41.87579999999998, -74.042805], [41.875914999999964, -74.042844], [41.87610500000001, -74.042866], [41.87620500000002, -74.042862], [41.87648999999999, -74.042791], [41.87668599999994, -74.04267300000001], [41.87678399999997, -74.042667], [41.876976999999975, -74.042711], [41.87729800000001, -74.042741], [41.87744300000002, -74.042812], [41.87752199999998, -74.042918], [41.877686999999995, -74.043386], [41.877784999999946, -74.043555], [41.87785600000001, -74.04366900000001], [41.87804199999999, -74.043893], [41.87812700000001, -74.043954], [41.878060000000005, -74.044181], [41.87804900000002, -74.044288], [41.87805799999998, -74.044392], [41.87814199999998, -74.044648], [41.87822099999999, -74.044827], [41.878289999999986, -74.044924], [41.878392000000034, -74.04502400000001], [41.87852699999998, -74.045126], [41.87863099999998, -74.045187], [41.87845000000001, -74.045621], [41.87792700000003, -74.046763], [41.877867999999985, -74.046866], [41.87776999999999, -74.047007], [41.87772600000003, -74.047045], [41.87768199999998, -74.04708], [41.877479999999984, -74.047182], [41.87711500000004, -74.04731700000002], [41.87566200000002, -74.047679], [41.875606999999974, -74.047725], [41.87557399999998, -74.047785], [41.875557, -74.047877], [41.87556200000003, -74.047949], [41.87558599999997, -74.048245], [41.87565400000004, -74.048666], [41.875663, -74.048786], [41.87566200000002, -74.048973], [41.87564099999997, -74.04910400000001], [41.87557399999998, -74.049256], [41.875242000000014, -74.049724], [41.87519699999992, -74.049822], [41.875024, -74.049681], [41.87500699999997, -74.04963500000001], [41.867864999999966, -74.051207], [41.869210000000024, -74.054457], [41.87433499999996, -74.05293], [41.87416299999998, -74.051962], [41.87765299999999, -74.048958]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d2a91bb1583bdd3eb604c3e8a174ac05);
+        
+    
+        var popup_11959c8f866084252a62bacfb47747b9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1456dafe0945c66a6877a8c9b5b11c01 = $(`<div id="html_1456dafe0945c66a6877a8c9b5b11c01" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ulster - NY-CD18</h4>                              </div>         </div>`)[0];
+                popup_11959c8f866084252a62bacfb47747b9.setContent(html_1456dafe0945c66a6877a8c9b5b11c01);
+            
+        
+
+        polygon_a708ccadb1cdc76c43b08b12ce78400b.bindPopup(popup_11959c8f866084252a62bacfb47747b9)
+        ;
+
+        
+    
+    
+            polygon_a708ccadb1cdc76c43b08b12ce78400b.bindTooltip(
+                `<div>
+                      Ulster - NY-CD18
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_22006aabddbd3826b6e57b5c1dc35361 = L.polygon(
+                [[41.882684999999995, -74.046784], [41.884504999999955, -74.046161], [41.884867, -74.046003], [41.88521199999995, -74.045799], [41.885401, -74.04568], [41.885708, -74.045453], [41.885965000000034, -74.045241], [41.886139000000036, -74.045076], [41.88640799999999, -74.044789], [41.88740499999998, -74.043601], [41.88726400000001, -74.043501], [41.887145000000004, -74.043393], [41.88691499999999, -74.043254], [41.886849, -74.043193], [41.886795000000006, -74.043108], [41.886756999999996, -74.042945], [41.88676499999995, -74.042771], [41.88677799999993, -74.042692], [41.886830000000025, -74.042546], [41.886926999999986, -74.042354], [41.88722000000002, -74.041842], [41.88740099999996, -74.041461], [41.88760200000001, -74.04087], [41.88769599999997, -74.04066000000002], [41.88777300000002, -74.040535], [41.88812399999996, -74.04014], [41.88862500000003, -74.039613], [41.888942999999976, -74.039227], [41.88900399999998, -74.039136], [41.88743999999996, -74.038638], [41.887118, -74.038533], [41.88361299999997, -74.03734], [41.88363200000005, -74.037319], [41.88434700000002, -74.03652], [41.88478418197029, -74.03606603777743], [41.875412000000004, -74.034597], [41.875650999999955, -74.034677], [41.87555853299261, -74.03485676622208], [41.88234865690172, -74.04689611495101], [41.882684999999995, -74.046784]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d2a91bb1583bdd3eb604c3e8a174ac05);
+        
+    
+        var popup_a15b2c2f3368797f4c00227349be0e78 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7f9d3028921a842515168153dbb36f86 = $(`<div id="html_7f9d3028921a842515168153dbb36f86" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ulster - NY-CD19</h4>                              </div>         </div>`)[0];
+                popup_a15b2c2f3368797f4c00227349be0e78.setContent(html_7f9d3028921a842515168153dbb36f86);
+            
+        
+
+        polygon_22006aabddbd3826b6e57b5c1dc35361.bindPopup(popup_a15b2c2f3368797f4c00227349be0e78)
+        ;
+
+        
+    
+    
+            polygon_22006aabddbd3826b6e57b5c1dc35361.bindTooltip(
+                `<div>
+                      Ulster - NY-CD19
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_d2a91bb1583bdd3eb604c3e8a174ac05.fitBounds(
+                [[41.867864999999966, -74.054457], [41.88900399999998, -74.029504]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

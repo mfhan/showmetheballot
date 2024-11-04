@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4776c75301346990d889d3bd8bb9264b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Passaic - NJ-CD09</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Passaic - NJ-CD11</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_4776c75301346990d889d3bd8bb9264b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4776c75301346990d889d3bd8bb9264b = L.map(
+                "map_4776c75301346990d889d3bd8bb9264b",
+                {
+                    center: [40.92025109543976, -74.19200634993464],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_4776c75301346990d889d3bd8bb9264b);
+
+            
+
+        
+    
+            var tile_layer_b5cc4913286c3487183d01cbee81fb7c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_b5cc4913286c3487183d01cbee81fb7c.addTo(map_4776c75301346990d889d3bd8bb9264b);
+        
+    
+            var polygon_333f63837c934eb5e326f502258e1cce = L.polygon(
+                [[40.92624499999998, -74.197439], [40.92680300000002, -74.196897], [40.92711599999998, -74.196488], [40.927281000000036, -74.196331], [40.92757299999996, -74.196054], [40.927912, -74.19573200000002], [40.928174000000006, -74.195483], [40.92944800000002, -74.194273], [40.92959400000003, -74.194134], [40.930468, -74.193304], [40.93037499999999, -74.19314300000002], [40.93015500000002, -74.192761], [40.92959700000004, -74.193295], [40.92948699999997, -74.193176], [40.929001999999976, -74.19261], [40.92860200000007, -74.193189], [40.928559999999976, -74.193262], [40.927987000000044, -74.192646], [40.92766599999997, -74.192681], [40.92721299999999, -74.192175], [40.926986999999976, -74.191922], [40.926315000000024, -74.191172], [40.92627399999998, -74.191236], [40.926226, -74.19131], [40.925702000000015, -74.190725], [40.925778, -74.190611], [40.926335999999985, -74.18976700000002], [40.92646499999999, -74.189671], [40.92575300000002, -74.188857], [40.925491000000015, -74.188548], [40.92540899999997, -74.188769], [40.92530399999998, -74.188987], [40.925086000000015, -74.18924800000002], [40.924811000000034, -74.188935], [40.92446400000001, -74.187889], [40.92345100000002, -74.186592], [40.923402, -74.186544], [40.92332900000001, -74.186657], [40.92244299999998, -74.185655], [40.92187100000005, -74.18500700000001], [40.922049, -74.184733], [40.921841999999984, -74.184496], [40.92181399999998, -74.184327], [40.92171599999999, -74.184214], [40.92158499999999, -74.18406300000001], [40.921535000000006, -74.184123], [40.921433000000015, -74.184279], [40.92138500000001, -74.18422500000001], [40.92129800000001, -74.184359], [40.92088099999999, -74.183888], [40.92101499999996, -74.183682], [40.92096900000004, -74.18363], [40.92102399999997, -74.183545], [40.92107699999994, -74.18347500000002], [40.92099399999995, -74.18338], [40.920858999999965, -74.183224], [40.92061600000002, -74.183592], [40.91989099999999, -74.182769], [40.92008599999997, -74.182468], [40.91987900000005, -74.18223], [40.919878000000004, -74.182091], [40.92003400000001, -74.18185], [40.919559, -74.181307], [40.91952999999999, -74.181289], [40.919498000000004, -74.181282], [40.91947200000001, -74.181284], [40.91944700000003, -74.181297], [40.919422, -74.181317], [40.91938500000001, -74.181378], [40.91915299999999, -74.181721], [40.91858, -74.182608], [40.918888999999986, -74.182965], [40.918831, -74.183009], [40.917708000000005, -74.184735], [40.91767099999999, -74.184791], [40.917619000000016, -74.184872], [40.916842, -74.186067], [40.916779, -74.186102], [40.916699999999985, -74.186146], [40.916521000000024, -74.186421], [40.916574000000004, -74.186479], [40.915845999999995, -74.187597], [40.91610299999995, -74.187882], [40.91564600000003, -74.188586], [40.91527900000002, -74.18913500000001], [40.915195000000026, -74.18928], [40.914768000000024, -74.19002], [40.91457899999997, -74.190347], [40.914328999999974, -74.190781], [40.91389399999999, -74.191535], [40.913462, -74.192283], [40.913033, -74.193033], [40.912597000000034, -74.193793], [40.912404999999964, -74.193598], [40.912071, -74.193367], [40.911956, -74.193287], [40.911598000000005, -74.194289], [40.91049799999999, -74.19498900000002], [40.91028200000001, -74.19501500000001], [40.90881299999998, -74.195088], [40.90797900000001, -74.195234], [40.90757799999999, -74.195548], [40.90763900000005, -74.195677], [40.907665000000016, -74.19576700000002], [40.90768599999998, -74.195792], [40.90788100000003, -74.19601100000001], [40.90808200000004, -74.196239], [40.908215000000006, -74.196311], [40.90926738804541, -74.19752685402771], [40.925967531336894, -74.19770401623374], [40.92624499999998, -74.197439]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_4776c75301346990d889d3bd8bb9264b);
+        
+    
+        var popup_48e90d724c3c9161f5cbb86e8ae59823 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_345666acb878fc8f9331c9b6e3288e03 = $(`<div id="html_345666acb878fc8f9331c9b6e3288e03" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Passaic - NJ-CD09</h4>                              </div>         </div>`)[0];
+                popup_48e90d724c3c9161f5cbb86e8ae59823.setContent(html_345666acb878fc8f9331c9b6e3288e03);
+            
+        
+
+        polygon_333f63837c934eb5e326f502258e1cce.bindPopup(popup_48e90d724c3c9161f5cbb86e8ae59823)
+        ;
+
+        
+    
+    
+            polygon_333f63837c934eb5e326f502258e1cce.bindTooltip(
+                `<div>
+                      Passaic - NJ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9c3c67558500aa89df70e6743dbdd071 = L.polygon(
+                [[40.918128000000024, -74.20502], [40.91875399999997, -74.204425], [40.919280000000015, -74.20392499999998], [40.919921, -74.203318], [40.92053099999996, -74.202744], [40.92056900000004, -74.20270300000001], [40.92111099999997, -74.20218800000002], [40.921717000000044, -74.201612], [40.92230900000003, -74.201051], [40.92291500000002, -74.200475], [40.92350299999999, -74.199917], [40.924105999999995, -74.199345], [40.924680000000016, -74.19879800000001], [40.92487399999998, -74.19861300000001], [40.92486299999999, -74.19866500000002], [40.92483999999997, -74.198735], [40.924814000000026, -74.19878], [40.92474800000002, -74.198877], [40.925126999999954, -74.198497], [40.925196, -74.198428], [40.92568799999999, -74.197971], [40.925967531336894, -74.19770401623374], [40.90926738804541, -74.19752685402771], [40.90940599999999, -74.197687], [40.91169599999998, -74.200191], [40.91339700000001, -74.202106], [40.91444499999998, -74.20329400000001], [40.915224, -74.204196], [40.916212, -74.205298], [40.91683999999998, -74.206006], [40.916888, -74.20606500000001], [40.916952999999964, -74.206136], [40.91755699999998, -74.205562], [40.918128000000024, -74.20502]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_4776c75301346990d889d3bd8bb9264b);
+        
+    
+        var popup_9a6174b53bd6a30e7ea1ed35f63ff34d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6ad7b4b569a98cb1f4c2733b5bebff9b = $(`<div id="html_6ad7b4b569a98cb1f4c2733b5bebff9b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Passaic - NJ-CD11</h4>                              </div>         </div>`)[0];
+                popup_9a6174b53bd6a30e7ea1ed35f63ff34d.setContent(html_6ad7b4b569a98cb1f4c2733b5bebff9b);
+            
+        
+
+        polygon_9c3c67558500aa89df70e6743dbdd071.bindPopup(popup_9a6174b53bd6a30e7ea1ed35f63ff34d)
+        ;
+
+        
+    
+    
+            polygon_9c3c67558500aa89df70e6743dbdd071.bindTooltip(
+                `<div>
+                      Passaic - NJ-CD11
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_4776c75301346990d889d3bd8bb9264b.fitBounds(
+                [[40.90757799999999, -74.206136], [40.930468, -74.181282]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

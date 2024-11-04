@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5a81c4edd8a0cc652e1a4080426f5630 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Maricopa - AZ-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Maricopa - AZ-CD04</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_5a81c4edd8a0cc652e1a4080426f5630" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5a81c4edd8a0cc652e1a4080426f5630 = L.map(
+                "map_5a81c4edd8a0cc652e1a4080426f5630",
+                {
+                    center: [33.302299986198165, -112.08894315380127],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_5a81c4edd8a0cc652e1a4080426f5630);
+
+            
+
+        
+    
+            var tile_layer_97e81567249821b6530191935947d537 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_97e81567249821b6530191935947d537.addTo(map_5a81c4edd8a0cc652e1a4080426f5630);
+        
+    
+            var polygon_93e99d658a973e75b5a1ee2a42001024 = L.polygon(
+                [[33.30469000000001, -112.14299], [33.304736999999996, -112.137698], [33.30485100000002, -112.124827], [33.30501400000001, -112.106209], [33.30505799999999, -112.101333], [33.305066000000025, -112.100437], [33.30506700000002, -112.100358], [33.30509299999999, -112.09465], [33.30510299999999, -112.092984], [33.305105, -112.09241], [33.30511099999997, -112.09122200000002], [33.30511799999997, -112.089855], [33.305128, -112.087636], [33.305136, -112.085353], [33.30513700000002, -112.085158], [33.305141999999975, -112.083615], [33.305183, -112.083615], [33.30523999999998, -112.083615], [33.306579000000006, -112.083615], [33.30762300000004, -112.083615], [33.307734000000046, -112.083616], [33.308004999999994, -112.083614], [33.30839999999998, -112.083615], [33.308592, -112.083616], [33.308930999999966, -112.083616], [33.309303, -112.083616], [33.30954699999997, -112.083616], [33.309731000000006, -112.083617], [33.31029300000001, -112.083617], [33.311966999999974, -112.083617], [33.31236100000001, -112.083617], [33.312419, -112.083617], [33.31256899999997, -112.083617], [33.31324599999995, -112.083618], [33.31387900000002, -112.083618], [33.316045, -112.083618], [33.31970599999998, -112.08362], [33.315414999999945, -112.077404], [33.314756000000024, -112.07658400000001], [33.31388699999999, -112.075923], [33.31355900000001, -112.075888], [33.31285100000003, -112.076306], [33.312637999999986, -112.076432], [33.31215199999998, -112.07645500000001], [33.31203400000001, -112.07642], [33.31207799999997, -112.076227], [33.31209399999996, -112.076158], [33.31221799999996, -112.075666], [33.312329000000005, -112.07529], [33.31245199999999, -112.07492699999999], [33.31258999999997, -112.074568], [33.312772, -112.07415200000001], [33.31297499999999, -112.073727], [33.31302300000007, -112.07363400000001], [33.31316200000001, -112.07337], [33.313516, -112.072761], [33.31256899999996, -112.072002], [33.30888100000005, -112.068918], [33.30813100000004, -112.070183], [33.30666999999998, -112.07021900000001], [33.306845999999965, -112.070753], [33.307778000000035, -112.070693], [33.30800800000001, -112.070634], [33.30814000000002, -112.070708], [33.307946999999984, -112.071141], [33.30787699999998, -112.071289], [33.30785300000001, -112.071593], [33.307893999999976, -112.071788], [33.307993999999994, -112.07196], [33.30761100000001, -112.071852], [33.30717900000001, -112.071633], [33.306965000000005, -112.071632], [33.30686200000002, -112.071689], [33.30661499999999, -112.071838], [33.30626000000003, -112.071919], [33.30615099999998, -112.072103], [33.306143000000006, -112.07238], [33.30596800000002, -112.072565], [33.30554199999996, -112.073656], [33.305581999999994, -112.074456], [33.305237, -112.074725], [33.305269999999965, -112.074915], [33.305309999999984, -112.07506300000001], [33.305363, -112.075209], [33.30543600000001, -112.075363], [33.30569199999999, -112.075788], [33.30564699999998, -112.07583], [33.30556299999999, -112.075921], [33.305486999999985, -112.07601900000002], [33.30541799999996, -112.07614200000002], [33.30523100000004, -112.07645500000001], [33.30517300000002, -112.07653700000002], [33.30507800000001, -112.07665], [33.304971999999985, -112.076748], [33.30465100000003, -112.07696], [33.304496, -112.076625], [33.30425700000002, -112.07610500000001], [33.30417000000001, -112.075894], [33.303766000000024, -112.07612], [33.30314000000001, -112.076468], [33.30298200000003, -112.076569], [33.302808000000006, -112.076697], [33.30272099999999, -112.076773], [33.302563, -112.076939], [33.302432999999986, -112.077103], [33.30232899999998, -112.07725], [33.301926, -112.07792300000001], [33.301730000000006, -112.07823400000001], [33.30159199999998, -112.078436], [33.30154699999999, -112.0785], [33.30131599999999, -112.078803], [33.30111299999998, -112.07904900000001], [33.30086599999996, -112.079324], [33.300642999999965, -112.07955], [33.30037099999999, -112.079805], [33.29986100000001, -112.08025], [33.29979899999998, -112.080295], [33.29971700000004, -112.080348], [33.29959299999997, -112.080416], [33.299464000000036, -112.080474], [33.29930999999997, -112.080529], [33.299169000000006, -112.080567], [33.299011, -112.080597], [33.29884799999999, -112.080612], [33.29840300000001, -112.080612], [33.297798, -112.080619], [33.297739000000014, -112.08062299999999], [33.297513999999985, -112.080648], [33.29731099999998, -112.08068900000002], [33.297289000000035, -112.080693], [33.29711099999997, -112.080743], [33.296835000000016, -112.080834], [33.296630000000064, -112.080913], [33.29636899999998, -112.081027], [33.295984999999966, -112.08119], [33.29577199999999, -112.08128], [33.29544699999999, -112.081438], [33.29497199999999, -112.081669], [33.29435799999999, -112.082002], [33.29408299999997, -112.082162], [33.29358299999998, -112.082462], [33.29342200000004, -112.08258], [33.293304000000006, -112.082681], [33.29319299999998, -112.082788], [33.29308999999997, -112.082901], [33.293020000000006, -112.082991], [33.292907, -112.083152], [33.29284500000003, -112.083256], [33.29275799999998, -112.083423], [33.29268199999997, -112.08359400000002], [33.291887999999986, -112.083567], [33.291457000000015, -112.083554], [33.291266000000036, -112.08354900000002], [33.29124099999999, -112.083548], [33.29104299999997, -112.083538], [33.29090499999994, -112.083537], [33.290621161222276, -112.08353541872387], [33.29044599999999, -112.129597], [33.304647, -112.147914], [33.30466500000002, -112.14584499999998], [33.304668, -112.145487], [33.30469000000001, -112.14299]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_5a81c4edd8a0cc652e1a4080426f5630);
+        
+    
+        var popup_d01efa3798412b516a56baa48755dde5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c61082b43666bdce993a9ce348d92d1f = $(`<div id="html_c61082b43666bdce993a9ce348d92d1f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD04</h4>                              </div>         </div>`)[0];
+                popup_d01efa3798412b516a56baa48755dde5.setContent(html_c61082b43666bdce993a9ce348d92d1f);
+            
+        
+
+        polygon_93e99d658a973e75b5a1ee2a42001024.bindPopup(popup_d01efa3798412b516a56baa48755dde5)
+        ;
+
+        
+    
+    
+            polygon_93e99d658a973e75b5a1ee2a42001024.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9c851b5177b6e17c0d67cbd9be2731ef = L.polygon(
+                [[33.29029200000002, -112.133066], [33.290260000000025, -112.133789], [33.29062899999997, -112.133424], [33.29124099999999, -112.134077], [33.29174399999999, -112.134611], [33.293551999999984, -112.136336], [33.29464399999999, -112.137377], [33.29608099999999, -112.13874699999998], [33.29680699999998, -112.139439], [33.299433000000036, -112.141936], [33.300292000000034, -112.142751], [33.300679999999986, -112.143127], [33.30081899999996, -112.143293], [33.30179900000003, -112.144482], [33.304647, -112.147914], [33.29044599999999, -112.129597], [33.29029200000002, -112.133066]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_5a81c4edd8a0cc652e1a4080426f5630);
+        
+    
+        var popup_3c010fa114e357ce11d527f6b2b5ea4b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_73dfed6b91cebba058bc51137e8965d1 = $(`<div id="html_73dfed6b91cebba058bc51137e8965d1" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD02</h4>                              </div>         </div>`)[0];
+                popup_3c010fa114e357ce11d527f6b2b5ea4b.setContent(html_73dfed6b91cebba058bc51137e8965d1);
+            
+        
+
+        polygon_9c851b5177b6e17c0d67cbd9be2731ef.bindPopup(popup_3c010fa114e357ce11d527f6b2b5ea4b)
+        ;
+
+        
+    
+    
+            polygon_9c851b5177b6e17c0d67cbd9be2731ef.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_761226c6c708a039e0b0419c0f563f37 = L.polygon(
+                [[33.29044599999999, -112.129597], [33.290621161222276, -112.08353541872387], [33.29054600000003, -112.083535], [33.29054400000002, -112.085138], [33.29052899999999, -112.091627], [33.29052300000002, -112.094873], [33.29051499999997, -112.09784500000002], [33.29051299999998, -112.099081], [33.290511000000016, -112.100146], [33.29051299999998, -112.100403], [33.290509000000014, -112.10145200000001], [33.29050000000001, -112.10582], [33.29047500000001, -112.116218], [33.29044599999998, -112.128685], [33.29044599999999, -112.129597]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_5a81c4edd8a0cc652e1a4080426f5630);
+        
+    
+        var popup_dc90c311ffe96fe3bdde494b632e443f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e552e6aa116098c6fca35b0ae1131500 = $(`<div id="html_e552e6aa116098c6fca35b0ae1131500" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD02</h4>                              </div>         </div>`)[0];
+                popup_dc90c311ffe96fe3bdde494b632e443f.setContent(html_e552e6aa116098c6fca35b0ae1131500);
+            
+        
+
+        polygon_761226c6c708a039e0b0419c0f563f37.bindPopup(popup_dc90c311ffe96fe3bdde494b632e443f)
+        ;
+
+        
+    
+    
+            polygon_761226c6c708a039e0b0419c0f563f37.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_5a81c4edd8a0cc652e1a4080426f5630.fitBounds(
+                [[33.290260000000025, -112.147914], [33.31970599999998, -112.068918]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

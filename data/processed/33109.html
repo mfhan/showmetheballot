@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ad5b14b63cc3c8b5de097b4b8349c008 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Miami-Dade - FL-CD24</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Miami-Dade - FL-CD27</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_ad5b14b63cc3c8b5de097b4b8349c008" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ad5b14b63cc3c8b5de097b4b8349c008 = L.map(
+                "map_ad5b14b63cc3c8b5de097b4b8349c008",
+                {
+                    center: [25.765049398510325, -80.13419804001659],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_ad5b14b63cc3c8b5de097b4b8349c008);
+
+            
+
+        
+    
+            var tile_layer_e67b0f61bda2895741f2d62427d625b2 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_e67b0f61bda2895741f2d62427d625b2.addTo(map_ad5b14b63cc3c8b5de097b4b8349c008);
+        
+    
+            var polygon_8eafbbca406ea166afed2294e8c7285a = L.polygon(
+                [[25.766187000000013, -80.13908], [25.765932999999983, -80.138401], [25.766212000000007, -80.138211], [25.76752500000001, -80.137316], [25.767405999999966, -80.137253], [25.76714299999997, -80.137077], [25.76730100000001, -80.136813], [25.767134000000006, -80.136708], [25.767012000000012, -80.13697100000002], [25.766726999999992, -80.136786], [25.766666000000015, -80.136789], [25.76663400000002, -80.136775], [25.766576000000022, -80.136701], [25.766496999999987, -80.136499], [25.76638399999995, -80.136176], [25.766363999999978, -80.136065], [25.76634200000002, -80.13584500000002], [25.766185000000043, -80.135502], [25.765891999999994, -80.134888], [25.765604000000014, -80.134235], [25.765281, -80.133436], [25.764981999999968, -80.132716], [25.764653999999997, -80.131907], [25.764359000000002, -80.131223], [25.764211999999993, -80.130868], [25.764207, -80.130847], [25.764188, -80.13082], [25.76416000000005, -80.130794], [25.764320999999978, -80.130719], [25.764440999999962, -80.130769], [25.764518999999982, -80.130787], [25.765069999999955, -80.130804], [25.765207999999998, -80.130808], [25.765378000000002, -80.13084], [25.765549000000018, -80.130883], [25.76578300000002, -80.130905], [25.766735000000043, -80.130907], [25.767287000000007, -80.130909], [25.767331999999982, -80.130909], [25.767558, -80.13091], [25.76811599999997, -80.130885], [25.768416000000006, -80.130881], [25.76853, -80.130879], [25.768815, -80.130854], [25.768971999999984, -80.130827], [25.769814000000018, -80.130788], [25.770362999999982, -80.130704], [25.770502999999984, -80.130677], [25.771115999999996, -80.13056100000001], [25.771200999999994, -80.130558], [25.771750000000026, -80.130565], [25.771804999999944, -80.130557], [25.77196400000003, -80.130515], [25.77199199999995, -80.130512], [25.771094999999992, -80.125858], [25.770475999999977, -80.12596700000002], [25.76281997430447, -80.12379278548627], [25.762767000000018, -80.123806], [25.761077554132463, -80.12434738029137], [25.760045000000037, -80.124888], [25.749414567668232, -80.13045691033538], [25.765163999999974, -80.136902], [25.76599710852644, -80.13922460743919], [25.766187000000013, -80.13908]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ad5b14b63cc3c8b5de097b4b8349c008);
+        
+    
+        var popup_6eabc654dad6b35fbc05f560d1d5ee95 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e654e0505652e15cc095af8f93f2c57 = $(`<div id="html_5e654e0505652e15cc095af8f93f2c57" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Miami-Dade - FL-CD24</h4>                              </div>         </div>`)[0];
+                popup_6eabc654dad6b35fbc05f560d1d5ee95.setContent(html_5e654e0505652e15cc095af8f93f2c57);
+            
+        
+
+        polygon_8eafbbca406ea166afed2294e8c7285a.bindPopup(popup_6eabc654dad6b35fbc05f560d1d5ee95)
+        ;
+
+        
+    
+    
+            polygon_8eafbbca406ea166afed2294e8c7285a.bindTooltip(
+                `<div>
+                      Miami-Dade - FL-CD24
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_183c13f65a67177d89ac27b5b5f49d52 = L.polygon(
+                [[25.765113, -80.149117], [25.765357999999996, -80.141862], [25.76544999999999, -80.139157], [25.765688000000015, -80.13946], [25.76599710852644, -80.13922460743919], [25.765163999999974, -80.136902], [25.749414567668232, -80.13045691033538], [25.747676999999992, -80.131367], [25.748546999999995, -80.132538], [25.750577000000018, -80.135267], [25.751076999999988, -80.136067], [25.753096999999975, -80.138966], [25.760977000000004, -80.150268], [25.764276999999996, -80.154968], [25.765077000000034, -80.150168], [25.765113, -80.149117]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ad5b14b63cc3c8b5de097b4b8349c008);
+        
+    
+        var popup_5f69021b350e9ddc1f23a52ecbfa0f95 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b85a868759c936cfcf565ab36067a99d = $(`<div id="html_b85a868759c936cfcf565ab36067a99d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Miami-Dade - FL-CD27</h4>                              </div>         </div>`)[0];
+                popup_5f69021b350e9ddc1f23a52ecbfa0f95.setContent(html_b85a868759c936cfcf565ab36067a99d);
+            
+        
+
+        polygon_183c13f65a67177d89ac27b5b5f49d52.bindPopup(popup_5f69021b350e9ddc1f23a52ecbfa0f95)
+        ;
+
+        
+    
+    
+            polygon_183c13f65a67177d89ac27b5b5f49d52.bindTooltip(
+                `<div>
+                      Miami-Dade - FL-CD27
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_ad5b14b63cc3c8b5de097b4b8349c008.fitBounds(
+                [[25.747676999999992, -80.154968], [25.77199199999995, -80.12379278548627]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d188f04b9b53010e0acf208d3e2c4bf3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Norfolk - MA-CD07</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Norfolk - MA-CD08</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_d188f04b9b53010e0acf208d3e2c4bf3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d188f04b9b53010e0acf208d3e2c4bf3 = L.map(
+                "map_d188f04b9b53010e0acf208d3e2c4bf3",
+                {
+                    center: [42.122434321757694, -71.04654460229443],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_d188f04b9b53010e0acf208d3e2c4bf3);
+
+            
+
+        
+    
+            var tile_layer_4663df2be940a7f22b2fc3bd69e8ae57 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_4663df2be940a7f22b2fc3bd69e8ae57.addTo(map_d188f04b9b53010e0acf208d3e2c4bf3);
+        
+    
+            var polygon_1a574348bdc9be824843f212692ec753 = L.polygon(
+                [[42.117445, -71.025151], [42.11729300000006, -71.025534], [42.11722600000002, -71.025705], [42.116794999999996, -71.026797], [42.116646, -71.027154], [42.116511, -71.027518], [42.116191, -71.028328], [42.11584299999999, -71.02921], [42.11569899999998, -71.02957400000001], [42.11562100000001, -71.029773], [42.115466, -71.030164], [42.115394000000045, -71.030347], [42.114962000000006, -71.031442], [42.11478899999994, -71.031883], [42.11459900000003, -71.03236100000001], [42.11431600000001, -71.03307900000001], [42.11404699999997, -71.03376], [42.11393599999997, -71.034025], [42.113925000000044, -71.034054], [42.113871999999986, -71.034188], [42.11345699999996, -71.035254], [42.113198999999945, -71.035908], [42.11264999999999, -71.037299], [42.11216099999998, -71.03853700000002], [42.111871000000036, -71.03927300000001], [42.11162800000002, -71.039863], [42.111367000000016, -71.040556], [42.11116899999998, -71.041056], [42.11115000000001, -71.04110700000001], [42.11098699999997, -71.041519], [42.11094100000002, -71.041628], [42.11060099999999, -71.042488], [42.110160000000036, -71.043606], [42.109877999999966, -71.04430500000001], [42.109813999999986, -71.044484], [42.109802999999964, -71.044511], [42.109690999999984, -71.04480300000002], [42.10958700000001, -71.045065], [42.10932700000002, -71.045714], [42.10901499999997, -71.04650600000001], [42.10846999999997, -71.047832], [42.10821699999998, -71.048527], [42.108017, -71.049033], [42.10783400000006, -71.049504], [42.107576000000044, -71.050154], [42.10748699999996, -71.050378], [42.10736000000001, -71.0507], [42.10658599999998, -71.05266800000001], [42.104947, -71.056812], [42.10488299999999, -71.056975], [42.104737000000014, -71.057344], [42.10456999999998, -71.057766], [42.10450199999996, -71.057938], [42.10435699999999, -71.05830800000001], [42.10407100000001, -71.05903200000002], [42.103646999999974, -71.06010600000002], [42.103193999999995, -71.06125600000001], [42.10374300000001, -71.061076], [42.103910999999954, -71.061021], [42.10482799999996, -71.060787], [42.10553999999994, -71.06068], [42.10561200000001, -71.06068400000001], [42.10590299999996, -71.06060200000002], [42.10599299999994, -71.060577], [42.106041000000026, -71.060574], [42.10693600000003, -71.060342], [42.10696200000003, -71.060335], [42.10701100000003, -71.060355], [42.10705900000001, -71.060376], [42.108254, -71.060881], [42.10976500000002, -71.061519], [42.113800000000005, -71.063224], [42.117831000000024, -71.06492800000001], [42.120228, -71.065939], [42.12080400000003, -71.066182], [42.124281999999994, -71.067653], [42.124775, -71.06786], [42.12565099999997, -71.06823], [42.12575799999997, -71.068274], [42.12587399999994, -71.06832600000001], [42.126682000000024, -71.068665], [42.12694799999998, -71.068778], [42.12744099999994, -71.068986], [42.13064900000002, -71.070342], [42.13108499999994, -71.07052600000002], [42.13214499999995, -71.07097300000001], [42.132180999999996, -71.070944], [42.13283400000003, -71.070352], [42.133403999999985, -71.069837], [42.134995, -71.068402], [42.13661200000005, -71.066943], [42.13855800000003, -71.06518600000001], [42.138722000000016, -71.065038], [42.13887900000002, -71.064947], [42.14047299999998, -71.063846], [42.14081099999998, -71.06366100000001], [42.14146100000003, -71.063331], [42.141494000000016, -71.063295], [42.142454, -71.062759], [42.14290400000002, -71.062523], [42.14526999999995, -71.06121000000002], [42.14856900000004, -71.059396], [42.15252799999997, -71.057221], [42.153690116527514, -71.05657989572694], [42.13719400000006, -71.04012], [42.13717000000003, -71.04007], [42.137085015299164, -71.03976877635493], [42.135634000000046, -71.035093], [42.13560500000003, -71.034997], [42.134930000000004, -71.03302500000001], [42.13441999999998, -71.03146600000001], [42.13436799999999, -71.03138400000002], [42.13406500000003, -71.030497], [42.133952000000015, -71.030168], [42.132939000000015, -71.02721], [42.132624000000014, -71.027227], [42.131071999999975, -71.027314], [42.12956699999997, -71.02744900000002], [42.12782399999999, -71.027576], [42.12759599999997, -71.027576], [42.126415000000044, -71.027521], [42.12562699999997, -71.02739], [42.125015000000026, -71.027278], [42.123733999999985, -71.026953], [42.12334299999999, -71.026561], [42.123198, -71.026406], [42.123153, -71.02636], [42.12209500000004, -71.02528], [42.12125300000006, -71.02442], [42.11880200000001, -71.021917], [42.118777000000016, -71.021892], [42.118745, -71.021859], [42.11857799999999, -71.022282], [42.117445, -71.025151]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d188f04b9b53010e0acf208d3e2c4bf3);
+        
+    
+        var popup_c7f2dfdf49c61444f2fe11759533c5aa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e9544fade6de19bae7044a81719d5515 = $(`<div id="html_e9544fade6de19bae7044a81719d5515" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Norfolk - MA-CD08</h4>                              </div>         </div>`)[0];
+                popup_c7f2dfdf49c61444f2fe11759533c5aa.setContent(html_e9544fade6de19bae7044a81719d5515);
+            
+        
+
+        polygon_1a574348bdc9be824843f212692ec753.bindPopup(popup_c7f2dfdf49c61444f2fe11759533c5aa)
+        ;
+
+        
+    
+    
+            polygon_1a574348bdc9be824843f212692ec753.bindTooltip(
+                `<div>
+                      Norfolk - MA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_fe68f9b9f09ceece065d7cce611876db = L.polygon(
+                [[42.13708000000005, -71.039751], [42.135634000000046, -71.035093], [42.137085015299164, -71.03976877635493], [42.13708000000005, -71.039751]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d188f04b9b53010e0acf208d3e2c4bf3);
+        
+    
+        var popup_493617a77b3532bc3c88666b6671d085 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d18fae13ed6860433d1db14de462fbde = $(`<div id="html_d18fae13ed6860433d1db14de462fbde" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Norfolk - MA-CD07</h4>                              </div>         </div>`)[0];
+                popup_493617a77b3532bc3c88666b6671d085.setContent(html_d18fae13ed6860433d1db14de462fbde);
+            
+        
+
+        polygon_fe68f9b9f09ceece065d7cce611876db.bindPopup(popup_493617a77b3532bc3c88666b6671d085)
+        ;
+
+        
+    
+    
+            polygon_fe68f9b9f09ceece065d7cce611876db.bindTooltip(
+                `<div>
+                      Norfolk - MA-CD07
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_fb74c655a52d96bbb55f5325e3fefd1c = L.polygon(
+                [[42.15381500000001, -71.056511], [42.15119499999995, -71.053927], [42.15015100000001, -71.052898], [42.14869700000007, -71.05146300000001], [42.14537200000004, -71.048185], [42.140584999999994, -71.043463], [42.13883699999999, -71.041742], [42.138268999999966, -71.04118], [42.137586999999975, -71.040508], [42.13719400000006, -71.04012], [42.153690116527514, -71.05657989572694], [42.15381500000001, -71.056511]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d188f04b9b53010e0acf208d3e2c4bf3);
+        
+    
+        var popup_9911ef2e976b4d4f55971a088ea6372d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6a56c4f55dd51cc010411a38b9e8d9aa = $(`<div id="html_6a56c4f55dd51cc010411a38b9e8d9aa" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Norfolk - MA-CD07</h4>                              </div>         </div>`)[0];
+                popup_9911ef2e976b4d4f55971a088ea6372d.setContent(html_6a56c4f55dd51cc010411a38b9e8d9aa);
+            
+        
+
+        polygon_fb74c655a52d96bbb55f5325e3fefd1c.bindPopup(popup_9911ef2e976b4d4f55971a088ea6372d)
+        ;
+
+        
+    
+    
+            polygon_fb74c655a52d96bbb55f5325e3fefd1c.bindTooltip(
+                `<div>
+                      Norfolk - MA-CD07
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_d188f04b9b53010e0acf208d3e2c4bf3.fitBounds(
+                [[42.103193999999995, -71.07097300000001], [42.15381500000001, -71.021859]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

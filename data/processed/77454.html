@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9c6a2a356f638f53a6e44da375a85a33 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wharton - TX-CD22</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wharton - TX-CD10</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_9c6a2a356f638f53a6e44da375a85a33" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9c6a2a356f638f53a6e44da375a85a33 = L.map(
+                "map_9c6a2a356f638f53a6e44da375a85a33",
+                {
+                    center: [29.541432046763735, -96.23146739345572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_9c6a2a356f638f53a6e44da375a85a33);
+
+            
+
+        
+    
+            var tile_layer_ebb6b7d1fe3d82c8eff0685b76e0c719 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_ebb6b7d1fe3d82c8eff0685b76e0c719.addTo(map_9c6a2a356f638f53a6e44da375a85a33);
+        
+    
+            var polygon_80db383a016cba498c75b2515157e744 = L.polygon(
+                [[29.56208204916155, -96.25501422645985], [29.563669147534906, -96.25325534945597], [29.562620999999975, -96.248841], [29.562502000000038, -96.24834200000001], [29.56174200000004, -96.245158], [29.561397000000003, -96.243697], [29.561083000000007, -96.242381], [29.560360000000003, -96.239373], [29.560259999999996, -96.23889400000002], [29.56009899999999, -96.238247], [29.559313000000014, -96.23491200000001], [29.558405000000043, -96.231043], [29.557701999999992, -96.228169], [29.55735, -96.226684], [29.556998999999998, -96.225259], [29.55688799999998, -96.224756], [29.55665100000004, -96.22375], [29.556310000000032, -96.222323], [29.555943999999993, -96.22086400000002], [29.555721000000002, -96.219981], [29.55506600000004, -96.217164], [29.55488099999997, -96.21636600000001], [29.554748000000004, -96.216425], [29.554606, -96.216287], [29.554552000000022, -96.216224], [29.552294000000025, -96.213562], [29.541881999999994, -96.201509], [29.539427, -96.198513], [29.53692500000001, -96.195548], [29.532378000000033, -96.200568], [29.53185400000001, -96.201146], [29.53176200000001, -96.201119], [29.529338999999997, -96.198749], [29.52798600000001, -96.200244], [29.524090000000015, -96.204548], [29.52398200000001, -96.20466800000001], [29.52551500000005, -96.206431], [29.527186999999973, -96.208353], [29.52916300000001, -96.210662], [29.529248000000006, -96.210955], [29.530991999999994, -96.212961], [29.529370999999983, -96.214625], [29.52923199999998, -96.214708], [29.527239, -96.216842], [29.52705500000003, -96.217098], [29.52694000000002, -96.217319], [29.526501000000003, -96.217365], [29.526323000000023, -96.217461], [29.526175999999975, -96.217602], [29.52602400000003, -96.217867], [29.526069999999965, -96.217917], [29.52605700000002, -96.217934], [29.526035000000004, -96.218079], [29.526062999999994, -96.218198], [29.526914, -96.220593], [29.527233000000003, -96.22151700000002], [29.527541000000024, -96.221995], [29.528237000000015, -96.222989], [29.528194000000024, -96.223037], [29.52764200000003, -96.223654], [29.52640500000003, -96.22504], [29.526630000000015, -96.225371], [29.52993499999998, -96.229256], [29.536475000000014, -96.236993], [29.53160899999998, -96.242345], [29.53009199999999, -96.244013], [29.529994999999996, -96.244161], [29.52987900000002, -96.244338], [29.529357000000022, -96.24491700000002], [29.525717999999998, -96.248909], [29.525793999999994, -96.24898], [29.530013999999987, -96.253987], [29.530683999999976, -96.25486], [29.53080499999994, -96.254993], [29.533269, -96.257767], [29.533400000000004, -96.257919], [29.533567, -96.25812], [29.534989999999986, -96.260023], [29.535606000000012, -96.260761], [29.535724999999992, -96.260887], [29.54496899999998, -96.25074], [29.54498500000001, -96.250672], [29.546561000000008, -96.248909], [29.547076999999987, -96.249523], [29.551463000000002, -96.254724], [29.55238700000001, -96.25582], [29.55404000000004, -96.257794], [29.554390000000012, -96.258183], [29.556734000000006, -96.260877], [29.558483999999993, -96.258931], [29.56208204916155, -96.25501422645985]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_9c6a2a356f638f53a6e44da375a85a33);
+        
+    
+        var popup_302c74ba3a8f21970b8d5679b022c75d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7e1392a630dd9a5b7af82cac5a05073d = $(`<div id="html_7e1392a630dd9a5b7af82cac5a05073d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wharton - TX-CD22</h4>                              </div>         </div>`)[0];
+                popup_302c74ba3a8f21970b8d5679b022c75d.setContent(html_7e1392a630dd9a5b7af82cac5a05073d);
+            
+        
+
+        polygon_80db383a016cba498c75b2515157e744.bindPopup(popup_302c74ba3a8f21970b8d5679b022c75d)
+        ;
+
+        
+    
+    
+            polygon_80db383a016cba498c75b2515157e744.bindTooltip(
+                `<div>
+                      Wharton - TX-CD22
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6f169777b05985eaadc33efc7753db4d = L.polygon(
+                [[29.563675000000014, -96.25328], [29.563669147534906, -96.25325534945597], [29.56208204916155, -96.25501422645985], [29.563675000000014, -96.25328]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_9c6a2a356f638f53a6e44da375a85a33);
+        
+    
+        var popup_08632316bb14b2bd23519d3b43335154 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bfb41b9f5cb7ba5747a6d2db3709c5e2 = $(`<div id="html_bfb41b9f5cb7ba5747a6d2db3709c5e2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wharton - TX-CD10</h4>                              </div>         </div>`)[0];
+                popup_08632316bb14b2bd23519d3b43335154.setContent(html_bfb41b9f5cb7ba5747a6d2db3709c5e2);
+            
+        
+
+        polygon_6f169777b05985eaadc33efc7753db4d.bindPopup(popup_08632316bb14b2bd23519d3b43335154)
+        ;
+
+        
+    
+    
+            polygon_6f169777b05985eaadc33efc7753db4d.bindTooltip(
+                `<div>
+                      Wharton - TX-CD10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_9c6a2a356f638f53a6e44da375a85a33.fitBounds(
+                [[29.52398200000001, -96.260887], [29.563675000000014, -96.195548]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

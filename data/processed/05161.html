@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bd4484722c931ffed9740c15e8b75fcf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bennington - VT-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Windham - VT-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Rutland - VT-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #e15759;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Windsor - VT-CD01</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_bd4484722c931ffed9740c15e8b75fcf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bd4484722c931ffed9740c15e8b75fcf = L.map(
+                "map_bd4484722c931ffed9740c15e8b75fcf",
+                {
+                    center: [43.28870081808015, -72.81105218067303],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+
+            
+
+        
+    
+            var tile_layer_4fb2f0587d240735b1203ba443c1bfdc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_4fb2f0587d240735b1203ba443c1bfdc.addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+            var polygon_6292614cec7f223a1cd8ec8815c275fd = L.polygon(
+                [[43.380289999999995, -72.825913], [43.381672000000016, -72.825929], [43.382333, -72.825937], [43.38213600000002, -72.825478], [43.38045199999998, -72.821561], [43.38061100000003, -72.821933], [43.380438, -72.821936], [43.378726, -72.821955], [43.380289999999995, -72.825913]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_f8a69cc480d28ac09141ad992f312788 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2d694163f334a7b34cb918ae65aa2baf = $(`<div id="html_2d694163f334a7b34cb918ae65aa2baf" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rutland - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_f8a69cc480d28ac09141ad992f312788.setContent(html_2d694163f334a7b34cb918ae65aa2baf);
+            
+        
+
+        polygon_6292614cec7f223a1cd8ec8815c275fd.bindPopup(popup_f8a69cc480d28ac09141ad992f312788)
+        ;
+
+        
+    
+    
+            polygon_6292614cec7f223a1cd8ec8815c275fd.bindTooltip(
+                `<div>
+                      Rutland - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7a43a8f1ae45eb4bc4c64a57dbdc199c = L.polygon(
+                [[43.37347100000003, -72.852635], [43.371103305474264, -72.85284797252369], [43.37107600000002, -72.853439], [43.373100000000015, -72.853404], [43.37638800000003, -72.853317], [43.376370999999956, -72.852385], [43.37628199999993, -72.84843500000001], [43.37620799999999, -72.845172], [43.37578499999998, -72.82589400000002], [43.37614599999999, -72.845264], [43.37620799999999, -72.848559], [43.37627899999997, -72.852384], [43.37347100000003, -72.852635]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_131ac8a813f53b2acf506ec4b7c1c189 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aa46455bb0d5cb1728f8f0885f4e4b09 = $(`<div id="html_aa46455bb0d5cb1728f8f0885f4e4b09" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rutland - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_131ac8a813f53b2acf506ec4b7c1c189.setContent(html_aa46455bb0d5cb1728f8f0885f4e4b09);
+            
+        
+
+        polygon_7a43a8f1ae45eb4bc4c64a57dbdc199c.bindPopup(popup_131ac8a813f53b2acf506ec4b7c1c189)
+        ;
+
+        
+    
+    
+            polygon_7a43a8f1ae45eb4bc4c64a57dbdc199c.bindTooltip(
+                `<div>
+                      Rutland - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0fa874ed4446fbe38c175579986f1fe7 = L.polygon(
+                [[43.34701799999999, -72.865102], [43.34697, -72.866076], [43.348639999999996, -72.866022], [43.349277000000015, -72.8547], [43.34874599999997, -72.864133], [43.34869900000002, -72.86497200000001], [43.34701799999999, -72.865102]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_1bff64c29051ee762be5c34a0254b73b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cdc370517bc61a314701f47a66941041 = $(`<div id="html_cdc370517bc61a314701f47a66941041" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rutland - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_1bff64c29051ee762be5c34a0254b73b.setContent(html_cdc370517bc61a314701f47a66941041);
+            
+        
+
+        polygon_0fa874ed4446fbe38c175579986f1fe7.bindPopup(popup_1bff64c29051ee762be5c34a0254b73b)
+        ;
+
+        
+    
+    
+            polygon_0fa874ed4446fbe38c175579986f1fe7.bindTooltip(
+                `<div>
+                      Rutland - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5e6af8db62434078e3d0bab1c783d9c9 = L.polygon(
+                [[43.29968099999997, -72.831259], [43.29967400000003, -72.830982], [43.299661999999984, -72.830561], [43.29937199999995, -72.81989500000002], [43.298386999999984, -72.819914], [43.29182400000001, -72.82003], [43.29921000000001, -72.81990000000002], [43.29957499999999, -72.830684], [43.29958799999997, -72.831069], [43.29958999999994, -72.831123], [43.29991100000003, -72.840627], [43.299967999999986, -72.842312], [43.29997499999998, -72.84253100000001], [43.29998199999999, -72.842742], [43.29998600000003, -72.842852], [43.299989999999994, -72.842956], [43.299993999999955, -72.843085], [43.30004700000002, -72.84465], [43.299935999999995, -72.84063200000001], [43.29968099999997, -72.831259]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_eccc9245a38df69a1caef51c62ddb69d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_98389984ffabf349c47c1c138dfb1ac7 = $(`<div id="html_98389984ffabf349c47c1c138dfb1ac7" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bennington - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_eccc9245a38df69a1caef51c62ddb69d.setContent(html_98389984ffabf349c47c1c138dfb1ac7);
+            
+        
+
+        polygon_5e6af8db62434078e3d0bab1c783d9c9.bindPopup(popup_eccc9245a38df69a1caef51c62ddb69d)
+        ;
+
+        
+    
+    
+            polygon_5e6af8db62434078e3d0bab1c783d9c9.bindTooltip(
+                `<div>
+                      Bennington - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_998ebbf07a5d96f41929bdeffcd61da8 = L.polygon(
+                [[43.24728799999995, -72.78597], [43.24730800000002, -72.786048], [43.24786000000004, -72.788275], [43.24807700000002, -72.789113], [43.248105000000024, -72.78921700000001], [43.24812399999995, -72.789296], [43.24971999569893, -72.79543398345675], [43.24985099999997, -72.795338], [43.25004499999996, -72.795214], [43.25024799999998, -72.79511900000001], [43.25045299999998, -72.795052], [43.250667999999955, -72.795017], [43.25088600000001, -72.79503], [43.251101000000006, -72.795072], [43.251308999999964, -72.79513900000002], [43.25192400000001, -72.795382], [43.25212600000002, -72.795453], [43.25237099999996, -72.795532], [43.252893999999976, -72.79564], [43.25333199999998, -72.795712], [43.253544000000005, -72.795754], [43.25375499999997, -72.795784], [43.25396400000002, -72.795804], [43.25410400000002, -72.795808], [43.25424399999997, -72.795796], [43.25434700000002, -72.795767], [43.25444799999994, -72.795719], [43.25452500000003, -72.795658], [43.254614000000025, -72.79558], [43.254666999999976, -72.795522], [43.25471800000003, -72.795452], [43.254765999999975, -72.79537600000002], [43.25480900000002, -72.795297], [43.254912999999995, -72.79503600000001], [43.25500600000004, -72.79465400000001], [43.25507600000002, -72.794274], [43.255194000000024, -72.793685], [43.25531699999999, -72.793091], [43.25542599999999, -72.79253], [43.25548599999999, -72.792249], [43.25555399999997, -72.791973], [43.25563699999998, -72.791705], [43.25570000000004, -72.791537], [43.255719999999954, -72.791818], [43.255716999999976, -72.792201], [43.25575400000005, -72.792358], [43.25581999999996, -72.792573], [43.25606300000004, -72.793107], [43.25624899999994, -72.793385], [43.256402, -72.793574], [43.256599000000016, -72.793729], [43.25670800000001, -72.793842], [43.25683399999996, -72.79399200000002], [43.256929000000035, -72.794136], [43.257016999999955, -72.794211], [43.257099000000046, -72.794234], [43.25714900000005, -72.794241], [43.257318999999974, -72.794194], [43.257544, -72.794225], [43.25808700000005, -72.794224], [43.25868499999998, -72.794174], [43.25887799999996, -72.794171], [43.25900899999999, -72.79412], [43.25918300000003, -72.794023], [43.25961000000003, -72.79462], [43.25966500000001, -72.79487899999998], [43.25965499999998, -72.79535700000001], [43.25982600000005, -72.795882], [43.25997800000002, -72.796032], [43.25990600000004, -72.796763], [43.26020699999998, -72.801199], [43.25929500000003, -72.80118600000002], [43.259131999999944, -72.800701], [43.25871399999997, -72.80039], [43.25686299999998, -72.800329], [43.25693, -72.80038], [43.25711500000002, -72.800508], [43.25730900000002, -72.800653], [43.257412000000045, -72.800798], [43.257484999999996, -72.800971], [43.25774199999996, -72.80178], [43.25783700000002, -72.802039], [43.257926000000005, -72.802304], [43.25798799999999, -72.802587], [43.25804199999999, -72.803323], [43.258047000000005, -72.803503], [43.25811300000002, -72.803969], [43.258186999999985, -72.804239], [43.25827600000003, -72.804505], [43.258607000000005, -72.80537600000001], [43.258717000000026, -72.805608], [43.25884899999998, -72.805876], [43.25888499999992, -72.805958], [43.259082000000014, -72.80637], [43.259686999999936, -72.807498], [43.25930900000003, -72.807565], [43.25910100000002, -72.807634], [43.25889200000001, -72.80773], [43.258683000000005, -72.80779], [43.25847199999998, -72.807818], [43.258438999999996, -72.807816], [43.25825500000001, -72.807805], [43.25804, -72.80777200000001], [43.25761600000001, -72.807681], [43.257183999999995, -72.807613], [43.256966999999996, -72.807586], [43.25692299999997, -72.807584], [43.25653500000003, -72.807562], [43.256327000000006, -72.807562], [43.256119000000034, -72.807553], [43.25590900000001, -72.80753], [43.25587999999999, -72.80752600000001], [43.253762000000016, -72.807], [43.25280599999999, -72.806761], [43.252646941685114, -72.80669777591123], [43.25264699999997, -72.806698], [43.25497100000002, -72.81564100000001], [43.25594000000003, -72.819373], [43.25600600000002, -72.819619], [43.26498800000004, -72.819724], [43.265498999999984, -72.819727], [43.273927000000015, -72.819825], [43.280355999999955, -72.819899], [43.28135199999999, -72.819909], [43.289594, -72.820005], [43.290807999999984, -72.820019], [43.29182400000001, -72.82003], [43.298386999999984, -72.819914], [43.29937199999995, -72.81989500000002], [43.299661999999984, -72.830561], [43.29967400000003, -72.830982], [43.29968099999997, -72.831259], [43.299935999999995, -72.84063200000001], [43.30004700000002, -72.84465], [43.300051, -72.844762], [43.30050099999997, -72.859877], [43.300543, -72.861262], [43.30057700000002, -72.862393], [43.300685, -72.866011], [43.30074199999998, -72.867902], [43.30077399999998, -72.868629], [43.307416999999994, -72.868139], [43.308087000000015, -72.868089], [43.31223699999995, -72.867779], [43.31353500000002, -72.867681], [43.32098099999995, -72.86712400000002], [43.336368999999976, -72.865928], [43.33995, -72.865651], [43.341161, -72.865558], [43.34701799999999, -72.865102], [43.34869900000002, -72.86497200000001], [43.34874599999997, -72.864133], [43.349277000000015, -72.8547], [43.35133699999997, -72.854491], [43.360574999999976, -72.85355], [43.37110699999998, -72.852768], [43.371103305474264, -72.85284797252369], [43.37347100000003, -72.852635], [43.37627899999997, -72.852384], [43.37620799999999, -72.848559], [43.37614599999999, -72.845264], [43.37578499999998, -72.82589400000002], [43.37571000000001, -72.821982], [43.378726, -72.821955], [43.380438, -72.821936], [43.38061100000003, -72.821933], [43.38045199999998, -72.821561], [43.37142199999999, -72.80059600000001], [43.36808400000006, -72.793046], [43.367534, -72.7918], [43.36553200000001, -72.787271], [43.36391499999999, -72.783618], [43.35972899999998, -72.77372000000001], [43.35862300000002, -72.7711], [43.35376699999997, -72.759627], [43.350910000000006, -72.759836], [43.342006000000055, -72.760494], [43.33141899999999, -72.761275], [43.327788000000034, -72.761544], [43.298303000000004, -72.763756], [43.29724700000006, -72.763853], [43.295186999999956, -72.76428100000001], [43.29195499999996, -72.764355], [43.29127500000001, -72.764386], [43.27267400000002, -72.765198], [43.27120500000006, -72.757887], [43.27065400000001, -72.75513], [43.260181, -72.755783], [43.25921300000002, -72.755842], [43.255325, -72.756079], [43.247982999999984, -72.756427], [43.24574999999998, -72.756533], [43.24005099999995, -72.756805], [43.23981300000006, -72.755814], [43.239447999999946, -72.755813], [43.239688, -72.756829], [43.24728799999995, -72.78597]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_48630f12d7cd2af80faffd2481569061 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_30a5776d7158f1a5592d29be56e2b070 = $(`<div id="html_30a5776d7158f1a5592d29be56e2b070" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Windsor - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_48630f12d7cd2af80faffd2481569061.setContent(html_30a5776d7158f1a5592d29be56e2b070);
+            
+        
+
+        polygon_998ebbf07a5d96f41929bdeffcd61da8.bindPopup(popup_48630f12d7cd2af80faffd2481569061)
+        ;
+
+        
+    
+    
+            polygon_998ebbf07a5d96f41929bdeffcd61da8.bindTooltip(
+                `<div>
+                      Windsor - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bdfe92c8960006d9262e86996835331e = L.polygon(
+                [[43.24807700000002, -72.789113], [43.24786000000004, -72.788275], [43.24730800000002, -72.786048], [43.248066999999985, -72.789112], [43.24809399999996, -72.789221], [43.24811299999999, -72.789297], [43.24963300000002, -72.795422], [43.24964899999998, -72.795486], [43.24971999569893, -72.79543398345675], [43.24812399999995, -72.789296], [43.248105000000024, -72.78921700000001], [43.24807700000002, -72.789113]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_7003713be45f29e7940d93a61ad0ffeb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cb43a6b3f3ea0a1814604e629039331a = $(`<div id="html_cb43a6b3f3ea0a1814604e629039331a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Windham - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_7003713be45f29e7940d93a61ad0ffeb.setContent(html_cb43a6b3f3ea0a1814604e629039331a);
+            
+        
+
+        polygon_bdfe92c8960006d9262e86996835331e.bindPopup(popup_7003713be45f29e7940d93a61ad0ffeb)
+        ;
+
+        
+    
+    
+            polygon_bdfe92c8960006d9262e86996835331e.bindTooltip(
+                `<div>
+                      Windham - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_abee571b703ae992de2ac16e25f22e69 = L.polygon(
+                [[43.252646941685114, -72.80669777591123], [43.252566999999964, -72.806666], [43.25252800000006, -72.806654], [43.25300200000001, -72.80842], [43.25494499999995, -72.815668], [43.25594000000003, -72.819373], [43.25497100000002, -72.81564100000001], [43.25264699999997, -72.806698], [43.252646941685114, -72.80669777591123]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bd4484722c931ffed9740c15e8b75fcf);
+        
+    
+        var popup_979101206a05aae702f70a058bd4e9d8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cce4a586a2b1149afcb898646d3b7714 = $(`<div id="html_cce4a586a2b1149afcb898646d3b7714" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Windham - VT-CD01</h4>                              </div>         </div>`)[0];
+                popup_979101206a05aae702f70a058bd4e9d8.setContent(html_cce4a586a2b1149afcb898646d3b7714);
+            
+        
+
+        polygon_abee571b703ae992de2ac16e25f22e69.bindPopup(popup_979101206a05aae702f70a058bd4e9d8)
+        ;
+
+        
+    
+    
+            polygon_abee571b703ae992de2ac16e25f22e69.bindTooltip(
+                `<div>
+                      Windham - VT-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_bd4484722c931ffed9740c15e8b75fcf.fitBounds(
+                [[43.239447999999946, -72.868629], [43.382333, -72.75513]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

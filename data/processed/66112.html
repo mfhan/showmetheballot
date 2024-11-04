@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_464babef7c4ee547179e67d0dfa38287 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wyandotte - KS-CD03</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wyandotte - KS-CD02</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_464babef7c4ee547179e67d0dfa38287" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_464babef7c4ee547179e67d0dfa38287 = L.map(
+                "map_464babef7c4ee547179e67d0dfa38287",
+                {
+                    center: [39.11631776877554, -94.76716035750513],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_464babef7c4ee547179e67d0dfa38287);
+
+            
+
+        
+    
+            var tile_layer_58b00749f70a2820ed10a8b26f01bd1c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_58b00749f70a2820ed10a8b26f01bd1c.addTo(map_464babef7c4ee547179e67d0dfa38287);
+        
+    
+            var polygon_e223c7d1bb15587279820916fbc3bdf9 = L.polygon(
+                [[39.10378499999998, -94.738448], [39.103698, -94.738404], [39.10365, -94.738373], [39.102904000000024, -94.737894], [39.10227999999997, -94.73734], [39.102282, -94.739085], [39.10228299999999, -94.739534], [39.102286, -94.740772], [39.102273999999966, -94.741703], [39.10226299999999, -94.74276], [39.10225900000001, -94.743226], [39.102239999999995, -94.744526], [39.102226, -94.745614], [39.10216300000003, -94.747783], [39.10210499999999, -94.750587], [39.10209199999998, -94.751194], [39.10205899999997, -94.753364], [39.10202000000002, -94.755698], [39.10201099999998, -94.755841], [39.10194000000002, -94.758311], [39.101884, -94.760516], [39.10186800000001, -94.762419], [39.101856000000026, -94.763952], [39.10184200000004, -94.765621], [39.101834000000004, -94.766591], [39.10181400000002, -94.767834], [39.101797999999995, -94.768787], [39.10179299999998, -94.76972], [39.10178699999999, -94.770903], [39.101764999999986, -94.773255], [39.101764999999986, -94.773268], [39.10176000000002, -94.774291], [39.10176000000002, -94.774389], [39.101751000000014, -94.776271], [39.10174799999999, -94.777259], [39.1017460000001, -94.777976], [39.10174499999999, -94.779054], [39.10178500000003, -94.787027], [39.101799, -94.789878], [39.101799, -94.789917], [39.10181999999999, -94.794149], [39.10182399999997, -94.794913], [39.10183799999998, -94.79771100000002], [39.10316700000003, -94.79771300000002], [39.10413199999998, -94.79771500000001], [39.10495399999998, -94.797716], [39.105586, -94.797718], [39.105731999999996, -94.797718], [39.10819244509281, -94.7977223753664], [39.10397717256174, -94.73852404629169], [39.10378499999998, -94.738448]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_464babef7c4ee547179e67d0dfa38287);
+        
+    
+        var popup_0ee0e280156e589f510661770a17d4a2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_db4c23ecd1d87d1e2ec289ff22a99a62 = $(`<div id="html_db4c23ecd1d87d1e2ec289ff22a99a62" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wyandotte - KS-CD03</h4>                              </div>         </div>`)[0];
+                popup_0ee0e280156e589f510661770a17d4a2.setContent(html_db4c23ecd1d87d1e2ec289ff22a99a62);
+            
+        
+
+        polygon_e223c7d1bb15587279820916fbc3bdf9.bindPopup(popup_0ee0e280156e589f510661770a17d4a2)
+        ;
+
+        
+    
+    
+            polygon_e223c7d1bb15587279820916fbc3bdf9.bindTooltip(
+                `<div>
+                      Wyandotte - KS-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_539ebaabd6f993915ece49f20325cccc = L.polygon(
+                [[39.128597, -94.797719], [39.128594000000014, -94.794313], [39.128592, -94.792938], [39.12859, -94.791612], [39.12858699999999, -94.789669], [39.12858099999999, -94.78847], [39.12858800000005, -94.78566900000001], [39.12859199999997, -94.784122], [39.128592999999995, -94.783505], [39.12858300000003, -94.78089], [39.12858300000003, -94.780803], [39.12859499999996, -94.779766], [39.12901099999999, -94.779761], [39.12903299999996, -94.779687], [39.12901399999999, -94.77934300000001], [39.12899800000002, -94.779052], [39.12901599999999, -94.779053], [39.12918499999996, -94.779064], [39.129465000000025, -94.778887], [39.12975900000005, -94.778416], [39.129756000000015, -94.778171], [39.12964200000005, -94.778161], [39.12966399999999, -94.77703], [39.12940100000001, -94.777034], [39.12939799999999, -94.77648100000002], [39.12903500000003, -94.776465], [39.12899000000003, -94.776463], [39.12902100000003, -94.776102], [39.12904299999997, -94.775847], [39.128963, -94.77572], [39.12864300000003, -94.775721], [39.12864200000002, -94.773208], [39.12863199999999, -94.771982], [39.12861399999997, -94.770923], [39.128602, -94.76985800000001], [39.128571000000036, -94.767916], [39.12856900000001, -94.767826], [39.12854400000002, -94.766389], [39.12854100000005, -94.764973], [39.12853599999999, -94.761666], [39.128547000000005, -94.760611], [39.12854300000002, -94.75848], [39.12854800000002, -94.757082], [39.128550999999945, -94.755963], [39.128556000000025, -94.753972], [39.12853000000002, -94.752431], [39.12899599999996, -94.752431], [39.12906399999999, -94.752431], [39.12906200000005, -94.750245], [39.129007, -94.750245], [39.128645999999975, -94.750242], [39.12864300000003, -94.750272], [39.12853999999996, -94.750303], [39.12854000000001, -94.749787], [39.129008999999954, -94.74978], [39.12911200000003, -94.746134], [39.12904900000002, -94.745598], [39.128542000000046, -94.745597], [39.127313000000015, -94.745622], [39.12603899999997, -94.745641], [39.125471, -94.745628], [39.125216000000016, -94.7456], [39.12386299999997, -94.74543], [39.123101, -94.745324], [39.121911999999995, -94.745123], [39.12099900000001, -94.744921], [39.12002600000003, -94.744647], [39.118980000000064, -94.744274], [39.118717999999994, -94.744132], [39.11837599999995, -94.743944], [39.11751299999998, -94.743485], [39.11672100000002, -94.743065], [39.11664499999999, -94.743034], [39.116002000000016, -94.742772], [39.11444499999999, -94.742136], [39.11269100000001, -94.741554], [39.11031300000002, -94.740729], [39.109981, -94.74061], [39.10994800000001, -94.740598], [39.10990199999993, -94.740582], [39.10857399999998, -94.740105], [39.10756699999997, -94.739771], [39.107081999999984, -94.73961], [39.106323000000046, -94.73935800000001], [39.10615799999997, -94.739303], [39.10453299999999, -94.738744], [39.10397717256174, -94.73852404629169], [39.10819244509281, -94.7977223753664], [39.109106, -94.797724], [39.111545000000035, -94.797729], [39.11163099999997, -94.797738], [39.11265100000002, -94.797763], [39.114171999999996, -94.797756], [39.114516, -94.797735], [39.114696999999985, -94.797724], [39.11515900000002, -94.797723], [39.11525199999997, -94.797723], [39.11600500000001, -94.797689], [39.11608200000003, -94.797685], [39.11618499999996, -94.797703], [39.11638800000002, -94.797741], [39.11652400000002, -94.797766], [39.11676299999999, -94.797791], [39.11721000000001, -94.797792], [39.12026599999996, -94.797795], [39.12543399999999, -94.797794], [39.127185999999966, -94.797707], [39.128597, -94.797719]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_464babef7c4ee547179e67d0dfa38287);
+        
+    
+        var popup_96111a416775378e1c2f78d4a45d172c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2e09797fb4ec9886f7ed1d6b2d601f0b = $(`<div id="html_2e09797fb4ec9886f7ed1d6b2d601f0b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wyandotte - KS-CD02</h4>                              </div>         </div>`)[0];
+                popup_96111a416775378e1c2f78d4a45d172c.setContent(html_2e09797fb4ec9886f7ed1d6b2d601f0b);
+            
+        
+
+        polygon_539ebaabd6f993915ece49f20325cccc.bindPopup(popup_96111a416775378e1c2f78d4a45d172c)
+        ;
+
+        
+    
+    
+            polygon_539ebaabd6f993915ece49f20325cccc.bindTooltip(
+                `<div>
+                      Wyandotte - KS-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_464babef7c4ee547179e67d0dfa38287.fitBounds(
+                [[39.10174499999999, -94.797795], [39.12975900000005, -94.73734]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

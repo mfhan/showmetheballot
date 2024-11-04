@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c49b00bf743ff0cdb379e96f2642ed69 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clay - MO-CD05</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clay - MO-CD06</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_c49b00bf743ff0cdb379e96f2642ed69" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c49b00bf743ff0cdb379e96f2642ed69 = L.map(
+                "map_c49b00bf743ff0cdb379e96f2642ed69",
+                {
+                    center: [39.32091377219844, -94.52249158041967],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_c49b00bf743ff0cdb379e96f2642ed69);
+
+            
+
+        
+    
+            var tile_layer_4d891849cf76287b5a14123f1b7084f7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_4d891849cf76287b5a14123f1b7084f7.addTo(map_c49b00bf743ff0cdb379e96f2642ed69);
+        
+    
+            var polygon_bb4709aef917b5677142aa38d25543e1 = L.polygon(
+                [[39.310977000000015, -94.491751], [39.31023099999997, -94.49176100000001], [39.31004200000002, -94.49176100000001], [39.31003800000002, -94.492036], [39.30983599999998, -94.492036], [39.310005000000004, -94.50198100000001], [39.310014, -94.502305], [39.30988600000006, -94.502524], [39.309724000000024, -94.502779], [39.309583999999965, -94.503002], [39.309289000000014, -94.503411], [39.30919399999995, -94.503545], [39.30921999999999, -94.503609], [39.30926800000001, -94.503686], [39.30936900000003, -94.503838], [39.309481, -94.504027], [39.309515999999945, -94.504099], [39.30955000000001, -94.504173], [39.30958399999995, -94.504248], [39.30961500000004, -94.504327], [39.309642, -94.50440700000001], [39.30966700000001, -94.504485], [39.30969000000002, -94.504561], [39.30971299999999, -94.504636], [39.30973399999997, -94.504709], [39.309755000000024, -94.504782], [39.30977600000005, -94.504853], [39.30979599999991, -94.50492500000001], [39.30982800000005, -94.505036], [39.309837000000044, -94.505068], [39.309877999999955, -94.505212], [39.309920000000005, -94.50535700000002], [39.30994100000003, -94.50543], [39.309960999999994, -94.505503], [39.30997999999998, -94.505573], [39.31012700000001, -94.506052], [39.31013000000002, -94.506124], [39.310207, -94.509072], [39.31036500000002, -94.514557], [39.310505000000006, -94.514966], [39.310637, -94.515422], [39.31076700000003, -94.515983], [39.31086599999998, -94.516555], [39.310937999999965, -94.517183], [39.310965999999986, -94.517591], [39.311173, -94.533797], [39.31127000000004, -94.542911], [39.31396799999999, -94.542883], [39.31839500000005, -94.542899], [39.31840699999997, -94.547376], [39.31862900000001, -94.547375], [39.31862599999997, -94.555863], [39.321793000000035, -94.555856], [39.32228899999998, -94.555853], [39.322288, -94.556821], [39.32228700000005, -94.559181], [39.32228400000004, -94.560612], [39.323911000000045, -94.560613], [39.32542199999999, -94.560614], [39.32569600000001, -94.560614], [39.32678400000002, -94.560615], [39.327547725321594, -94.56061550211533], [39.31793999999999, -94.491977], [39.31271226488245, -94.49173869369537], [39.310977000000015, -94.491751]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c49b00bf743ff0cdb379e96f2642ed69);
+        
+    
+        var popup_47c12a0c772079dd4529f961dd5029eb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_06f6ee8f046be33784f813074aea86f8 = $(`<div id="html_06f6ee8f046be33784f813074aea86f8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clay - MO-CD05</h4>                              </div>         </div>`)[0];
+                popup_47c12a0c772079dd4529f961dd5029eb.setContent(html_06f6ee8f046be33784f813074aea86f8);
+            
+        
+
+        polygon_bb4709aef917b5677142aa38d25543e1.bindPopup(popup_47c12a0c772079dd4529f961dd5029eb)
+        ;
+
+        
+    
+    
+            polygon_bb4709aef917b5677142aa38d25543e1.bindTooltip(
+                `<div>
+                      Clay - MO-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_007daa7fadfc1954e5a871139886ec51 = L.polygon(
+                [[39.33263600000002, -94.558661], [39.332621, -94.554084], [39.332614, -94.552369], [39.33261199999994, -94.551877], [39.332606999999996, -94.550704], [39.332599999999985, -94.548394], [39.33259900000006, -94.547554], [39.33260499999999, -94.547438], [39.33260900000002, -94.547381], [39.332632999999994, -94.547246], [39.33268899999997, -94.547062], [39.33271300000001, -94.546881], [39.33273699999997, -94.546191], [39.332708000000004, -94.544928], [39.33269600000003, -94.543554], [39.332694999999966, -94.543326], [39.33268099999997, -94.543052], [39.332663999999944, -94.54287700000002], [39.332556999999966, -94.542347], [39.33249499999998, -94.541775], [39.332451000000006, -94.541214], [39.332228999999984, -94.538955], [39.332128, -94.536807], [39.33214399999996, -94.536315], [39.332194000000015, -94.535633], [39.332205000000016, -94.535161], [39.33215500000001, -94.532492], [39.332135, -94.52970500000002], [39.33212499999999, -94.529556], [39.33219799999996, -94.528943], [39.33220599999997, -94.528593], [39.33218399999997, -94.528087], [39.33213100000004, -94.527681], [39.332102, -94.526779], [39.332088999999996, -94.523812], [39.332079000000014, -94.520503], [39.332095, -94.517548], [39.33203599999999, -94.506056], [39.331989000000014, -94.500859], [39.33198400000003, -94.500309], [39.33197600000001, -94.491865], [39.33027299999999, -94.491855], [39.32601099999998, -94.491883], [39.32472500000003, -94.491889], [39.32348300000001, -94.491894], [39.32308400000005, -94.491916], [39.32203799999999, -94.49184500000001], [39.320173, -94.491719], [39.318989999999964, -94.491738], [39.31793600000002, -94.49173], [39.315912000000004, -94.49171600000001], [39.31271226488245, -94.49173869369537], [39.31793999999999, -94.491977], [39.327547725321594, -94.56061550211533], [39.32830499999999, -94.560616], [39.33093199999997, -94.560618], [39.332642000000035, -94.560573], [39.33263600000002, -94.558661]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c49b00bf743ff0cdb379e96f2642ed69);
+        
+    
+        var popup_e22255e331276988e5040a32711a2d27 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_10f7da53cc6aab85760d768ff297b19d = $(`<div id="html_10f7da53cc6aab85760d768ff297b19d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clay - MO-CD06</h4>                              </div>         </div>`)[0];
+                popup_e22255e331276988e5040a32711a2d27.setContent(html_10f7da53cc6aab85760d768ff297b19d);
+            
+        
+
+        polygon_007daa7fadfc1954e5a871139886ec51.bindPopup(popup_e22255e331276988e5040a32711a2d27)
+        ;
+
+        
+    
+    
+            polygon_007daa7fadfc1954e5a871139886ec51.bindTooltip(
+                `<div>
+                      Clay - MO-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_c49b00bf743ff0cdb379e96f2642ed69.fitBounds(
+                [[39.30919399999995, -94.560618], [39.33273699999997, -94.49171600000001]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

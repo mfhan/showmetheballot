@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c35c9a517539b5183f55bebe0f7d0766 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Fairfax - VA-CD08</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Fairfax - VA-CD11</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_c35c9a517539b5183f55bebe0f7d0766" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c35c9a517539b5183f55bebe0f7d0766 = L.map(
+                "map_c35c9a517539b5183f55bebe0f7d0766",
+                {
+                    center: [38.89305803157548, -77.22212690977487],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_c35c9a517539b5183f55bebe0f7d0766);
+
+            
+
+        
+    
+            var tile_layer_e3d5316da49160855fc03555d17ed848 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_e3d5316da49160855fc03555d17ed848.addTo(map_c35c9a517539b5183f55bebe0f7d0766);
+        
+    
+            var polygon_c12d5f92f0f54ecf731914ead2f096c2 = L.polygon(
+                [[38.903643, -77.21671900000001], [38.90312799999995, -77.216565], [38.90252100000003, -77.216318], [38.90115200000003, -77.21577], [38.90079400000002, -77.21562], [38.90050600000004, -77.21554], [38.90030299999996, -77.215478], [38.899455999999965, -77.215239], [38.898582999999995, -77.215088], [38.898227999999996, -77.215071], [38.89798799999996, -77.215032], [38.89769199999998, -77.215045], [38.896927000000055, -77.21511200000002], [38.896154, -77.215253], [38.894951999999996, -77.21557600000001], [38.894345999999935, -77.215743], [38.89388400000001, -77.21597], [38.89321578012926, -77.21635690837847], [38.90368893015418, -77.21688827586196], [38.903643, -77.21671900000001]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c35c9a517539b5183f55bebe0f7d0766);
+        
+    
+        var popup_077687bb8f7addc5873be0814502c156 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_25d388714f7e30ebba1d6e05e85085d6 = $(`<div id="html_25d388714f7e30ebba1d6e05e85085d6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Fairfax - VA-CD08</h4>                              </div>         </div>`)[0];
+                popup_077687bb8f7addc5873be0814502c156.setContent(html_25d388714f7e30ebba1d6e05e85085d6);
+            
+        
+
+        polygon_c12d5f92f0f54ecf731914ead2f096c2.bindPopup(popup_077687bb8f7addc5873be0814502c156)
+        ;
+
+        
+    
+    
+            polygon_c12d5f92f0f54ecf731914ead2f096c2.bindTooltip(
+                `<div>
+                      Fairfax - VA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ce5ff8b42d00b986d905b49a2f1ef7c7 = L.polygon(
+                [[38.890484000000036, -77.22842], [38.890359999999994, -77.227915], [38.89051399999999, -77.227847], [38.89083200000001, -77.227708], [38.89116699999998, -77.228798], [38.89225199999999, -77.228346], [38.892430000000004, -77.228334], [38.892649999999996, -77.22822100000002], [38.89276599999997, -77.228148], [38.89284200000003, -77.2281], [38.893158, -77.227967], [38.89281099999998, -77.226303], [38.89242899999999, -77.224988], [38.892786999999984, -77.225032], [38.893612000000005, -77.225133], [38.89439699999998, -77.22523], [38.894563999999995, -77.225233], [38.894814999999994, -77.225223], [38.894877999999984, -77.225217], [38.89511000000004, -77.225187], [38.89537599999997, -77.225133], [38.89613499999999, -77.224917], [38.89680600000003, -77.224727], [38.897470000000006, -77.224616], [38.89789899999996, -77.224499], [38.90053699999999, -77.223784], [38.90191000000002, -77.223414], [38.90258599999999, -77.22323200000001], [38.90289000000001, -77.223151], [38.903301000000006, -77.223043], [38.904015, -77.222856], [38.90408999999995, -77.222835], [38.90336600000005, -77.21865], [38.90401599999997, -77.218518], [38.904016999999996, -77.218261], [38.903960000000055, -77.217841], [38.90390499999998, -77.217623], [38.90388600000004, -77.217594], [38.90386399999999, -77.217582], [38.90384299999997, -77.217578], [38.903828999999995, -77.217561], [38.903809999999964, -77.21752], [38.90380699999999, -77.21749], [38.903825, -77.217476], [38.903824000000036, -77.217434], [38.903808, -77.217374], [38.90380199999996, -77.217335], [38.90380199999996, -77.217305], [38.90368893015418, -77.21688827586196], [38.89321578012926, -77.21635690837847], [38.893074000000006, -77.216439], [38.892399000000005, -77.21681], [38.89215399999999, -77.216949], [38.89204300000002, -77.217015], [38.89177700000004, -77.217172], [38.89169200000003, -77.217222], [38.89145899999997, -77.217361], [38.891414000000005, -77.217393], [38.89117999999995, -77.217561], [38.89076200000002, -77.217885], [38.890673999999976, -77.217961], [38.89064399999998, -77.21786], [38.89063899999999, -77.217843], [38.89059199999997, -77.217683], [38.89056099999998, -77.217578], [38.890522999999966, -77.21744800000002], [38.89046200000003, -77.217483], [38.89029800000004, -77.217578], [38.89006200000004, -77.21770500000001], [38.889681, -77.217911], [38.889354000000004, -77.218089], [38.88835299999997, -77.218619], [38.88754199999995, -77.219204], [38.88714399999998, -77.219423], [38.887041999999965, -77.219687], [38.88696699999998, -77.21988], [38.886887999999956, -77.220083], [38.88647099999996, -77.221174], [38.886322000000014, -77.221522], [38.886241, -77.221711], [38.88620000000004, -77.221807], [38.886164999999984, -77.221889], [38.8861, -77.222041], [38.88593799999995, -77.22241800000002], [38.884988999999976, -77.224877], [38.88496700000003, -77.224922], [38.884852999999964, -77.225153], [38.883613999999966, -77.228025], [38.88358699999996, -77.22809], [38.88354900000001, -77.22818], [38.88393999999999, -77.228331], [38.88412099999999, -77.22839], [38.88416500000004, -77.2284], [38.88425799999998, -77.228423], [38.88444399999997, -77.228448], [38.884562000000024, -77.228449], [38.88470999999997, -77.228438], [38.88484599999999, -77.228414], [38.884957000000036, -77.228384], [38.88509600000002, -77.228333], [38.88522399999999, -77.228274], [38.885377, -77.228187], [38.885486, -77.228106], [38.885624999999976, -77.228004], [38.88578900000001, -77.227868], [38.88595399999999, -77.227731], [38.88617800000001, -77.227547], [38.886320000000026, -77.227451], [38.886497999999946, -77.227351], [38.886684000000045, -77.22726], [38.88721500000002, -77.227018], [38.887263, -77.226999], [38.88723599999998, -77.227187], [38.88779300000001, -77.22897], [38.887823000000026, -77.228957], [38.88783299999999, -77.228953], [38.88806799999998, -77.229647], [38.88821699999996, -77.23008800000001], [38.890636000000015, -77.229041], [38.890484000000036, -77.22842]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c35c9a517539b5183f55bebe0f7d0766);
+        
+    
+        var popup_737687111e6022477546879854d5d2f1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4ed1a530c7d81b30c757a2d5b21dca2c = $(`<div id="html_4ed1a530c7d81b30c757a2d5b21dca2c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Fairfax - VA-CD11</h4>                              </div>         </div>`)[0];
+                popup_737687111e6022477546879854d5d2f1.setContent(html_4ed1a530c7d81b30c757a2d5b21dca2c);
+            
+        
+
+        polygon_ce5ff8b42d00b986d905b49a2f1ef7c7.bindPopup(popup_737687111e6022477546879854d5d2f1)
+        ;
+
+        
+    
+    
+            polygon_ce5ff8b42d00b986d905b49a2f1ef7c7.bindTooltip(
+                `<div>
+                      Fairfax - VA-CD11
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_c35c9a517539b5183f55bebe0f7d0766.fitBounds(
+                [[38.88354900000001, -77.23008800000001], [38.90408999999995, -77.215032]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

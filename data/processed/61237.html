@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0bb669508b1474943fb8a8576b46b8c4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Rock Island - IL-CD17</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Rock Island - IL-CD15</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_0bb669508b1474943fb8a8576b46b8c4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0bb669508b1474943fb8a8576b46b8c4 = L.map(
+                "map_0bb669508b1474943fb8a8576b46b8c4",
+                {
+                    center: [41.3395567934225, -90.86231577939354],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_0bb669508b1474943fb8a8576b46b8c4);
+
+            
+
+        
+    
+            var tile_layer_cbe461aa689b554f5b096c5d4796e9f7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_cbe461aa689b554f5b096c5d4796e9f7.addTo(map_0bb669508b1474943fb8a8576b46b8c4);
+        
+    
+            var polygon_06e9abb556e3a93f1f4d3234a8bc3ef1 = L.polygon(
+                [[41.33134200000002, -90.858576], [41.33138468985779, -90.8606092789306], [41.331296129260686, -90.85454815439246], [41.33125599999998, -90.854547], [41.331324, -90.857704], [41.33134200000002, -90.858576]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_0bb669508b1474943fb8a8576b46b8c4);
+        
+    
+        var popup_0d353171ac4085c06d48f41f52c4ccfc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1ca1a87b1e7988028870aaf45253e43e = $(`<div id="html_1ca1a87b1e7988028870aaf45253e43e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rock Island - IL-CD15</h4>                              </div>         </div>`)[0];
+                popup_0d353171ac4085c06d48f41f52c4ccfc.setContent(html_1ca1a87b1e7988028870aaf45253e43e);
+            
+        
+
+        polygon_06e9abb556e3a93f1f4d3234a8bc3ef1.bindPopup(popup_0d353171ac4085c06d48f41f52c4ccfc)
+        ;
+
+        
+    
+    
+            polygon_06e9abb556e3a93f1f4d3234a8bc3ef1.bindTooltip(
+                `<div>
+                      Rock Island - IL-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0b9fe020e7c9b959a5410b520ea7a3ed = L.polygon(
+                [[41.331552000000045, -90.868593], [41.331593999999996, -90.870539], [41.331768, -90.87909], [41.33336, -90.87892], [41.334555999999964, -90.878787], [41.33517100000001, -90.878719], [41.33660200000003, -90.878566], [41.33775899999997, -90.878531], [41.33835299999997, -90.878514], [41.33923300000001, -90.878522], [41.33915599999996, -90.876602], [41.33904799999995, -90.87385], [41.338975000000005, -90.870841], [41.33892899999997, -90.868921], [41.34174900000004, -90.868927], [41.346150999999985, -90.868938], [41.34620799999998, -90.868938], [41.35021200000005, -90.868918], [41.353033, -90.868905], [41.35310799999999, -90.868904], [41.353334999999994, -90.868903], [41.353411, -90.868903], [41.35335399999996, -90.865058], [41.353339000000005, -90.86404500000002], [41.35308900000002, -90.853528], [41.35299799999998, -90.849685], [41.351186000000006, -90.849659], [41.350094000000006, -90.849674], [41.34844999999999, -90.849697], [41.342125000000024, -90.849697], [41.341381999999996, -90.849699], [41.338478000000016, -90.849709], [41.33849200000003, -90.85070100000002], [41.338535999999976, -90.853679], [41.33853800000003, -90.853765], [41.33853800000003, -90.853791], [41.33854700000003, -90.854672], [41.33783300000001, -90.85466], [41.33600799999997, -90.854631], [41.33569400000001, -90.854638], [41.334981999999975, -90.854656], [41.334927999999984, -90.854657], [41.33446999999999, -90.854633], [41.334233000000005, -90.854627], [41.33290299999998, -90.854597], [41.331986000000015, -90.854568], [41.331296129260686, -90.85454815439246], [41.33138468985779, -90.8606092789306], [41.331552000000045, -90.868593]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_0bb669508b1474943fb8a8576b46b8c4);
+        
+    
+        var popup_c95499b473e4e63bb6a398ac0190ae0e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_39f48a034bb77c49eadd4e336b4faedd = $(`<div id="html_39f48a034bb77c49eadd4e336b4faedd" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rock Island - IL-CD17</h4>                              </div>         </div>`)[0];
+                popup_c95499b473e4e63bb6a398ac0190ae0e.setContent(html_39f48a034bb77c49eadd4e336b4faedd);
+            
+        
+
+        polygon_0b9fe020e7c9b959a5410b520ea7a3ed.bindPopup(popup_c95499b473e4e63bb6a398ac0190ae0e)
+        ;
+
+        
+    
+    
+            polygon_0b9fe020e7c9b959a5410b520ea7a3ed.bindTooltip(
+                `<div>
+                      Rock Island - IL-CD17
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_0bb669508b1474943fb8a8576b46b8c4.fitBounds(
+                [[41.33125599999998, -90.87909], [41.353411, -90.849659]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

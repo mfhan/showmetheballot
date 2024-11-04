@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_96ae5d41a6c06dab309324b2c98894ba {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Telfair - GA-CD12</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Telfair - GA-CD08</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_96ae5d41a6c06dab309324b2c98894ba" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_96ae5d41a6c06dab309324b2c98894ba = L.map(
+                "map_96ae5d41a6c06dab309324b2c98894ba",
+                {
+                    center: [32.04685006327053, -82.81883750695258],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_96ae5d41a6c06dab309324b2c98894ba);
+
+            
+
+        
+    
+            var tile_layer_daac7621eec614fb7e3eca01812e3e98 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_daac7621eec614fb7e3eca01812e3e98.addTo(map_96ae5d41a6c06dab309324b2c98894ba);
+        
+    
+            var polygon_f754a59e025ab0a1763d6530514e7dcd = L.polygon(
+                [[32.05271999999999, -82.828635], [32.05155299999996, -82.82060800000001], [32.05115699999999, -82.818085], [32.05106700000002, -82.8177], [32.05080100000003, -82.816574], [32.05073000000001, -82.81635400000002], [32.05052800000001, -82.81644600000001], [32.05029499999998, -82.815736], [32.050266999999984, -82.815752], [32.049632000000045, -82.815998], [32.04883699999998, -82.81638], [32.04837800000001, -82.81503], [32.04719799999997, -82.815639], [32.04606000000002, -82.816104], [32.04584300000001, -82.815468], [32.04580099999996, -82.815358], [32.04517400000004, -82.813565], [32.04498599999999, -82.813179], [32.044178501472494, -82.81223732175663], [32.05297516903246, -82.83079805686596], [32.053027999999955, -82.830735], [32.05271999999999, -82.828635]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_96ae5d41a6c06dab309324b2c98894ba);
+        
+    
+        var popup_bb5ec8817d1a443e5848ea8126987497 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_02530411df37dd9a5705d628ed2c013c = $(`<div id="html_02530411df37dd9a5705d628ed2c013c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Telfair - GA-CD12</h4>                              </div>         </div>`)[0];
+                popup_bb5ec8817d1a443e5848ea8126987497.setContent(html_02530411df37dd9a5705d628ed2c013c);
+            
+        
+
+        polygon_f754a59e025ab0a1763d6530514e7dcd.bindPopup(popup_bb5ec8817d1a443e5848ea8126987497)
+        ;
+
+        
+    
+    
+            polygon_f754a59e025ab0a1763d6530514e7dcd.bindTooltip(
+                `<div>
+                      Telfair - GA-CD12
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e54c87dfb230d1dc9831d53bd7ba3d8e = L.polygon(
+                [[32.040916, -82.80843300000001], [32.040595, -82.808293], [32.039335, -82.807875], [32.03456900000003, -82.81377], [32.034266000000024, -82.814146], [32.038994000000024, -82.819483], [32.04193500000002, -82.822807], [32.044379, -82.82555], [32.04575100000004, -82.82709800000002], [32.04711800000001, -82.828638], [32.05106400000002, -82.833083], [32.05253200000001, -82.831327], [32.05297516903246, -82.83079805686596], [32.044178501472494, -82.81223732175663], [32.040916, -82.80843300000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_96ae5d41a6c06dab309324b2c98894ba);
+        
+    
+        var popup_e19075bdbe6fea9c4975cd3efdf2a4d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91b4a0b7ab7ec64ee710a09f839c7cc1 = $(`<div id="html_91b4a0b7ab7ec64ee710a09f839c7cc1" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Telfair - GA-CD08</h4>                              </div>         </div>`)[0];
+                popup_e19075bdbe6fea9c4975cd3efdf2a4d7.setContent(html_91b4a0b7ab7ec64ee710a09f839c7cc1);
+            
+        
+
+        polygon_e54c87dfb230d1dc9831d53bd7ba3d8e.bindPopup(popup_e19075bdbe6fea9c4975cd3efdf2a4d7)
+        ;
+
+        
+    
+    
+            polygon_e54c87dfb230d1dc9831d53bd7ba3d8e.bindTooltip(
+                `<div>
+                      Telfair - GA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_96ae5d41a6c06dab309324b2c98894ba.fitBounds(
+                [[32.034266000000024, -82.833083], [32.053027999999955, -82.807875]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

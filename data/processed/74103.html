@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d179ed21045e2f500dda125bd04c97aa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Tulsa - OK-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Tulsa - OK-CD03</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_d179ed21045e2f500dda125bd04c97aa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d179ed21045e2f500dda125bd04c97aa = L.map(
+                "map_d179ed21045e2f500dda125bd04c97aa",
+                {
+                    center: [36.15723887337489, -95.99743148392636],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_d179ed21045e2f500dda125bd04c97aa);
+
+            
+
+        
+    
+            var tile_layer_2f7da5562b5883acd9410195c985b235 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_2f7da5562b5883acd9410195c985b235.addTo(map_d179ed21045e2f500dda125bd04c97aa);
+        
+    
+            var polygon_d5289e5f231ca9035ec3c7bdd7610d73 = L.polygon(
+                [[36.16129399999997, -96.001055], [36.16225600000005, -96.000811], [36.16242199999997, -96.000772], [36.16241700000003, -96.00049], [36.16243499999997, -96.000235], [36.162366999999996, -95.99944500000001], [36.162212999999994, -95.99804], [36.16206800000003, -95.997158], [36.162262999999975, -95.9971], [36.162603000000004, -95.996004], [36.163028999999966, -95.994786], [36.16331599999999, -95.993912], [36.16346399999999, -95.99346], [36.162563999999975, -95.993001], [36.16235600000002, -95.992925], [36.162213, -95.992861], [36.16233100000001, -95.992107], [36.16234499999998, -95.99161], [36.162168999999935, -95.991506], [36.161961, -95.991418], [36.161730000000006, -95.991276], [36.160796, -95.99077700000001], [36.16052200000002, -95.990637], [36.15995200000002, -95.99037], [36.15953499999995, -95.990166], [36.15903999999999, -95.989856], [36.158545999999966, -95.989587], [36.157623999999956, -95.989128], [36.157538000000024, -95.989082], [36.15746699999994, -95.989045], [36.157261, -95.988936], [36.15699699999999, -95.988768], [36.15656899999998, -95.988537], [36.15559199999999, -95.988026], [36.154609000000015, -95.987584], [36.15365299999996, -95.987018], [36.15320699999997, -95.98830400000001], [36.15229400000001, -95.987723], [36.15269899999999, -95.986573], [36.15175400000004, -95.985993], [36.15131700000001, -95.98722500000001], [36.15086899999999, -95.988417], [36.150506999999976, -95.989526], [36.15143199999997, -95.990147], [36.15099400000002, -95.991325], [36.150060999999965, -95.990799], [36.14968800000002, -95.991908], [36.14928399999999, -95.993126], [36.14892300000001, -95.994206], [36.148458999999995, -95.995532], [36.147884000000055, -95.99709], [36.147910999999965, -95.998068], [36.14957800000002, -95.998831], [36.15051900000001, -95.999359], [36.15094599999998, -95.998181], [36.15193300000006, -95.998666], [36.152317, -95.99753], [36.15327200000002, -95.998002], [36.15326300000003, -95.998149], [36.15322200000001, -95.99831100000002], [36.15310800000002, -95.99865], [36.15305399999997, -95.998814], [36.152983000000006, -95.999031], [36.15292199999998, -95.999218], [36.15420699999994, -95.99991], [36.154850999999965, -96.000252], [36.15485999999999, -96.00079], [36.15485499999998, -96.001125], [36.15488299999999, -96.00154], [36.15518699999998, -96.001522], [36.15539699999997, -96.001543], [36.15566899999998, -96.001583], [36.156083000000045, -96.001698], [36.15707599999999, -96.001874], [36.15763200000003, -96.001927], [36.15848299999998, -96.002092], [36.15794599999999, -96.002839], [36.15761000000003, -96.003372], [36.15715700000001, -96.004139], [36.15676200000001, -96.005236], [36.15632199999998, -96.006884], [36.15653000000001, -96.006959], [36.15683600000002, -96.007085], [36.15758700000001, -96.007053], [36.158838999999986, -96.007115], [36.159501999999996, -96.007085], [36.15950599999998, -96.006655], [36.159450000000064, -96.005919], [36.15921299999995, -96.005375], [36.15924799999998, -96.004904], [36.159497, -96.004147], [36.159817999999994, -96.003857], [36.16038999999996, -96.003561], [36.16078200000002, -96.003551], [36.16085799999998, -96.00377100000001], [36.161305288869066, -96.00375764809738], [36.161296, -96.001226], [36.16129399999997, -96.001055]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d179ed21045e2f500dda125bd04c97aa);
+        
+    
+        var popup_15e3b6ce4907050a6eabcf0e41b99b63 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2a495c311451b19ece20eb2c855a02cf = $(`<div id="html_2a495c311451b19ece20eb2c855a02cf" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Tulsa - OK-CD01</h4>                              </div>         </div>`)[0];
+                popup_15e3b6ce4907050a6eabcf0e41b99b63.setContent(html_2a495c311451b19ece20eb2c855a02cf);
+            
+        
+
+        polygon_d5289e5f231ca9035ec3c7bdd7610d73.bindPopup(popup_15e3b6ce4907050a6eabcf0e41b99b63)
+        ;
+
+        
+    
+    
+            polygon_d5289e5f231ca9035ec3c7bdd7610d73.bindTooltip(
+                `<div>
+                      Tulsa - OK-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0414e5285ea40512dac9bd4ba3caacaa = L.polygon(
+                [[36.161313000000035, -96.002632], [36.161301, -96.001621], [36.16130000000003, -96.001563], [36.161296, -96.001226], [36.161305288869066, -96.00375764809738], [36.16132700000006, -96.003757], [36.16131699999993, -96.002954], [36.161313000000035, -96.002632]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_d179ed21045e2f500dda125bd04c97aa);
+        
+    
+        var popup_bab8de061af62f6f3dbf1adff1b3cfd4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_03074b478290c43279953fc18ec0ae00 = $(`<div id="html_03074b478290c43279953fc18ec0ae00" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Tulsa - OK-CD03</h4>                              </div>         </div>`)[0];
+                popup_bab8de061af62f6f3dbf1adff1b3cfd4.setContent(html_03074b478290c43279953fc18ec0ae00);
+            
+        
+
+        polygon_0414e5285ea40512dac9bd4ba3caacaa.bindPopup(popup_bab8de061af62f6f3dbf1adff1b3cfd4)
+        ;
+
+        
+    
+    
+            polygon_0414e5285ea40512dac9bd4ba3caacaa.bindTooltip(
+                `<div>
+                      Tulsa - OK-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_d179ed21045e2f500dda125bd04c97aa.fitBounds(
+                [[36.147884000000055, -96.007115], [36.16346399999999, -95.985993]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f59044f6e08249c184b7db23ae4bb021 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Warren - NY-CD20</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Warren - NY-CD21</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_f59044f6e08249c184b7db23ae4bb021" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f59044f6e08249c184b7db23ae4bb021 = L.map(
+                "map_f59044f6e08249c184b7db23ae4bb021",
+                {
+                    center: [43.310954026627584, -73.64737606597629],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_f59044f6e08249c184b7db23ae4bb021);
+
+            
+
+        
+    
+            var tile_layer_e2dea108f69520e3694797add4724dca = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_e2dea108f69520e3694797add4724dca.addTo(map_f59044f6e08249c184b7db23ae4bb021);
+        
+    
+            var polygon_c1d4ad9fb07466b8ac2be33385d38fdb = L.polygon(
+                [[43.293272999999964, -73.641861], [43.289572000000014, -73.650661], [43.290078999999984, -73.651377], [43.29127199999992, -73.653061], [43.290572, -73.660461], [43.29128299999997, -73.660557], [43.29152499999996, -73.660716], [43.291815999999976, -73.660898], [43.292651000000006, -73.661073], [43.29295297227511, -73.66106562912113], [43.296703798459376, -73.64214425830264], [43.293272999999964, -73.641861]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f59044f6e08249c184b7db23ae4bb021);
+        
+    
+        var popup_cd4a2d96b02d4a95efc737deafe4abc7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cf1197488e4e3d9fa8f80b1d9dd7bdb5 = $(`<div id="html_cf1197488e4e3d9fa8f80b1d9dd7bdb5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Warren - NY-CD20</h4>                              </div>         </div>`)[0];
+                popup_cd4a2d96b02d4a95efc737deafe4abc7.setContent(html_cf1197488e4e3d9fa8f80b1d9dd7bdb5);
+            
+        
+
+        polygon_c1d4ad9fb07466b8ac2be33385d38fdb.bindPopup(popup_cd4a2d96b02d4a95efc737deafe4abc7)
+        ;
+
+        
+    
+    
+            polygon_c1d4ad9fb07466b8ac2be33385d38fdb.bindTooltip(
+                `<div>
+                      Warren - NY-CD20
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_533357c3d02cd5989a9f50e89fbd57cc = L.polygon(
+                [[43.30456800000001, -73.623075], [43.304226999999955, -73.624442], [43.30386299999997, -73.62814900000001], [43.304033999999966, -73.628584], [43.30595100000002, -73.632419], [43.306310000000046, -73.633064], [43.30635699999998, -73.633203], [43.306646000000015, -73.634064], [43.30689400000004, -73.635244], [43.306904999999965, -73.635256], [43.306998, -73.635941], [43.30693600000005, -73.636798], [43.30692699999996, -73.636838], [43.30671600000003, -73.637732], [43.30655800000002, -73.638238], [43.30644399999996, -73.638608], [43.30627199999995, -73.639161], [43.30613100000002, -73.639698], [43.30603, -73.640084], [43.305927999999994, -73.640471], [43.30592000000002, -73.64050000000002], [43.305851999999994, -73.640764], [43.305796999999984, -73.640976], [43.30577600000007, -73.641056], [43.30514600000002, -73.641726], [43.304171999999994, -73.642761], [43.30034600000001, -73.642445], [43.296703798459376, -73.64214425830264], [43.29295297227511, -73.66106562912113], [43.29392099999997, -73.661042], [43.29409900000002, -73.661077], [43.294671000000015, -73.661878], [43.295125999999975, -73.66128], [43.297894999999954, -73.661828], [43.29936200000002, -73.662112], [43.300260000000016, -73.662285], [43.301137, -73.662446], [43.302533999999994, -73.662722], [43.30336100000002, -73.662863], [43.303995, -73.662977], [43.304275000000025, -73.663039], [43.30487500000004, -73.663173], [43.305726000000035, -73.66335199999999], [43.30627699999997, -73.663455], [43.30710700000002, -73.663598], [43.307967999999995, -73.66373600000001], [43.30873600000001, -73.663838], [43.30878799999999, -73.663842], [43.30890999999999, -73.66385200000002], [43.30898900000005, -73.663859], [43.309068999999965, -73.66387], [43.309483999999976, -73.66393], [43.310906999999986, -73.66424700000002], [43.31139800000002, -73.664368], [43.312049999999985, -73.664525], [43.312445999999944, -73.664618], [43.313086000000034, -73.664766], [43.313491999999954, -73.664867], [43.313699000000014, -73.66494], [43.31403599999997, -73.665118], [43.31516299999998, -73.665292], [43.316179000000034, -73.665388], [43.317272000000024, -73.665552], [43.31770800000004, -73.665627], [43.319703000000025, -73.665971], [43.321111999999964, -73.666218], [43.32121000000001, -73.666215], [43.32130699999998, -73.666154], [43.32139600000006, -73.66614900000002], [43.32177800000001, -73.666228], [43.32340099999995, -73.66645700000001], [43.32398100000003, -73.662202], [43.32399499999999, -73.662157], [43.324028000000006, -73.661942], [43.32414000000003, -73.66099400000002], [43.32431700000001, -73.65938], [43.32450099999999, -73.657879], [43.324657000000016, -73.656598], [43.32483199999999, -73.655144], [43.32498099999995, -73.654058], [43.32521800000002, -73.652191], [43.32527199999999, -73.651669], [43.325409000000015, -73.649288], [43.32558399999993, -73.646352], [43.325669, -73.645018], [43.325751000000054, -73.645042], [43.326000999999984, -73.645084], [43.32606200000004, -73.644426], [43.32606200000004, -73.64427800000001], [43.326040000000035, -73.644185], [43.32599299999995, -73.644119], [43.325896999999976, -73.644065], [43.32583900000001, -73.64405100000002], [43.32577799999993, -73.644037], [43.32588700000001, -73.642927], [43.32597100000002, -73.642343], [43.326076000000015, -73.641389], [43.326071999999954, -73.64111100000001], [43.326571, -73.636161], [43.326797999999975, -73.633925], [43.327143000000035, -73.631337], [43.32342299999999, -73.630817], [43.32127500000001, -73.63045700000002], [43.321670999999974, -73.62376], [43.32165600000001, -73.621957], [43.32126600000002, -73.62190600000001], [43.31841900000002, -73.62153], [43.31679200000002, -73.621293], [43.31536000000003, -73.62105], [43.31062900000002, -73.620454], [43.310036, -73.620387], [43.30985199999994, -73.620355], [43.309627, -73.620339], [43.30896499999998, -73.620241], [43.30798800000001, -73.620124], [43.30776799999997, -73.620098], [43.30564000000003, -73.619824], [43.30549599999999, -73.619809], [43.30494000000003, -73.619736], [43.30474800000003, -73.621456], [43.30456800000001, -73.623075]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f59044f6e08249c184b7db23ae4bb021);
+        
+    
+        var popup_2cc1f15cf7c4e1843d8a926a5408e450 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_97f4313ac80e11f0d6e327b92f69960e = $(`<div id="html_97f4313ac80e11f0d6e327b92f69960e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Warren - NY-CD21</h4>                              </div>         </div>`)[0];
+                popup_2cc1f15cf7c4e1843d8a926a5408e450.setContent(html_97f4313ac80e11f0d6e327b92f69960e);
+            
+        
+
+        polygon_533357c3d02cd5989a9f50e89fbd57cc.bindPopup(popup_2cc1f15cf7c4e1843d8a926a5408e450)
+        ;
+
+        
+    
+    
+            polygon_533357c3d02cd5989a9f50e89fbd57cc.bindTooltip(
+                `<div>
+                      Warren - NY-CD21
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_f59044f6e08249c184b7db23ae4bb021.fitBounds(
+                [[43.289572000000014, -73.66645700000001], [43.327143000000035, -73.619736]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

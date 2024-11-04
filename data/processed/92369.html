@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1bd3c586855473787fb27c795984c69e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> San Bernardino - CA-CD23</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> San Bernardino - CA-CD33</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_1bd3c586855473787fb27c795984c69e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1bd3c586855473787fb27c795984c69e = L.map(
+                "map_1bd3c586855473787fb27c795984c69e",
+                {
+                    center: [34.13814311000266, -117.21863921798213],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_1bd3c586855473787fb27c795984c69e);
+
+            
+
+        
+    
+            var tile_layer_0cc34f1a8c5fb9e3e5f8a5ab303a3dc8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_0cc34f1a8c5fb9e3e5f8a5ab303a3dc8.addTo(map_1bd3c586855473787fb27c795984c69e);
+        
+    
+            var polygon_94b7b1a2cf966c0b99e95d1913c6acc0 = L.polygon(
+                [[34.138925999999984, -117.22620300000001], [34.14127200000001, -117.22616], [34.14140499999999, -117.226156], [34.14252999999995, -117.22612799999999], [34.142724999999984, -117.226118], [34.143061999999986, -117.226102], [34.1430427228165, -117.22320603584413], [34.13989518726597, -117.21311572160182], [34.13962799999999, -117.213117], [34.139140999999974, -117.213119], [34.138907, -117.21312199999998], [34.13838899999999, -117.213129], [34.13798799999997, -117.213129], [34.13719200000001, -117.21312999999999], [34.13678599999999, -117.21312999999999], [34.136386, -117.213131], [34.13626699999998, -117.213131], [34.135910999999986, -117.213131], [34.13579300000005, -117.213132], [34.135796, -117.213349], [34.135805, -117.21400199999998], [34.13580899999999, -117.21422000000001], [34.13581100000001, -117.21443900000001], [34.13581700000002, -117.215098], [34.13582, -117.215318], [34.13581900000004, -117.21540600000002], [34.13581700000002, -117.215651], [34.13581599999999, -117.215672], [34.13581599999999, -117.21576099999999], [34.13581200000002, -117.216123], [34.135803999999986, -117.217211], [34.13580200000001, -117.21757400000001], [34.135803999999986, -117.218394], [34.13581100000001, -117.22085500000001], [34.13581299999998, -117.22143], [34.13581400000001, -117.221676], [34.13581400000001, -117.22183499999998], [34.13581700000004, -117.222584], [34.13582100000005, -117.22362400000002], [34.135822, -117.22531], [34.13582300000005, -117.225976], [34.13582300000005, -117.226219], [34.13603999999999, -117.22621799999999], [34.136691, -117.22621799999999], [34.13690899999997, -117.22621799999999], [34.13707100000001, -117.22621799999999], [34.137134000000025, -117.22621799999999], [34.137527000000006, -117.22622100000001], [34.137862, -117.22622300000002], [34.13803300000003, -117.226219], [34.138925999999984, -117.22620300000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bd3c586855473787fb27c795984c69e);
+        
+    
+        var popup_4b98cdac6c3a0552a40065222c9fe0b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8e21af198513a50ad80aac42a8f7926 = $(`<div id="html_d8e21af198513a50ad80aac42a8f7926" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> San Bernardino - CA-CD33</h4>                              </div>         </div>`)[0];
+                popup_4b98cdac6c3a0552a40065222c9fe0b0.setContent(html_d8e21af198513a50ad80aac42a8f7926);
+            
+        
+
+        polygon_94b7b1a2cf966c0b99e95d1913c6acc0.bindPopup(popup_4b98cdac6c3a0552a40065222c9fe0b0)
+        ;
+
+        
+    
+    
+            polygon_94b7b1a2cf966c0b99e95d1913c6acc0.bindTooltip(
+                `<div>
+                      San Bernardino - CA-CD33
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_030d0f72ca69a4be89780abb07123caa = L.polygon(
+                [[34.14297499999996, -117.213117], [34.14248400000002, -117.213118], [34.14218900000002, -117.213117], [34.14186800000002, -117.213117], [34.14169099999998, -117.21311500000002], [34.14115999999998, -117.213112], [34.14098399999998, -117.213111], [34.14046399999999, -117.213113], [34.13989518726597, -117.21311572160182], [34.1430427228165, -117.22320603584413], [34.14297499999996, -117.213117]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bd3c586855473787fb27c795984c69e);
+        
+    
+        var popup_b9c9b03a812b62064c054595e9b39f74 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6439c91a9016bc1f54795a746db3d6ae = $(`<div id="html_6439c91a9016bc1f54795a746db3d6ae" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> San Bernardino - CA-CD23</h4>                              </div>         </div>`)[0];
+                popup_b9c9b03a812b62064c054595e9b39f74.setContent(html_6439c91a9016bc1f54795a746db3d6ae);
+            
+        
+
+        polygon_030d0f72ca69a4be89780abb07123caa.bindPopup(popup_b9c9b03a812b62064c054595e9b39f74)
+        ;
+
+        
+    
+    
+            polygon_030d0f72ca69a4be89780abb07123caa.bindTooltip(
+                `<div>
+                      San Bernardino - CA-CD23
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_1bd3c586855473787fb27c795984c69e.fitBounds(
+                [[34.13579300000005, -117.22622300000002], [34.143061999999986, -117.213111]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

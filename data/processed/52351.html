@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_242a70e37ced8c0925ffeb0ebf889879 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Benton - IA-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Linn - IA-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Benton - IA-CD02</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_242a70e37ced8c0925ffeb0ebf889879" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_242a70e37ced8c0925ffeb0ebf889879 = L.map(
+                "map_242a70e37ced8c0925ffeb0ebf889879",
+                {
+                    center: [41.87985199067892, -91.83288333105463],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_242a70e37ced8c0925ffeb0ebf889879);
+
+            
+
+        
+    
+            var tile_layer_343be907555be4322ac0e05186ce1bf0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_343be907555be4322ac0e05186ce1bf0.addTo(map_242a70e37ced8c0925ffeb0ebf889879);
+        
+    
+            var polygon_612600ad7c06104b3f6af9d24342bcf2 = L.polygon(
+                [[41.88295400000001, -91.831635], [41.88262399999994, -91.831632], [41.882248, -91.831628], [41.881575999999974, -91.83162], [41.881532999999976, -91.83162], [41.881502999999974, -91.83162], [41.881429999999995, -91.83162], [41.88067200000001, -91.831618], [41.880514000000026, -91.831618], [41.880178000000015, -91.831618], [41.87969100000004, -91.83161000000001], [41.87942700000002, -91.83161000000001], [41.87933299999997, -91.8316], [41.87912399999999, -91.831578], [41.87862799999999, -91.831573], [41.878416999999956, -91.831571], [41.877933999999996, -91.831571], [41.87729300000002, -91.831571], [41.87636600000002, -91.831569], [41.87610099999996, -91.83156500000001], [41.87575600000004, -91.83156], [41.87553600000002, -91.831556], [41.875494000000025, -91.831555], [41.87500299999999, -91.831547], [41.874263, -91.831535], [41.87319000000001, -91.83151800000002], [41.87279600000004, -91.831508], [41.87197600000003, -91.831499], [41.871828999999984, -91.831497], [41.87017300000001, -91.83147900000002], [41.86941999999999, -91.83147], [41.86913, -91.831466], [41.86911400000002, -91.831466], [41.868579000000004, -91.831461], [41.86802800000003, -91.831454], [41.86502700000001, -91.831421], [41.86385000000007, -91.831408], [41.86353500000003, -91.831404], [41.86251900000003, -91.831393], [41.862451, -91.831392], [41.86185100000001, -91.831379], [41.86192299798436, -91.85072008837251], [41.86562700000003, -91.850788], [41.867807999999954, -91.850811], [41.868042000000024, -91.850814], [41.86908700000003, -91.850832], [41.869273, -91.850835], [41.870778999999985, -91.850838], [41.87180699999997, -91.850861], [41.87277599999995, -91.850868], [41.87290500000006, -91.850875], [41.873174999999996, -91.85087], [41.87541, -91.85088500000002], [41.876202999999954, -91.850906], [41.87622700000002, -91.849917], [41.87622700000003, -91.849201], [41.876269000000036, -91.846658], [41.87626500000002, -91.845602], [41.87628500000003, -91.843982], [41.876292999999954, -91.843373], [41.87630300000003, -91.842596], [41.87630499999998, -91.842203], [41.87630600000005, -91.842012], [41.87630799999998, -91.841811], [41.87630799999998, -91.84171], [41.87631099999996, -91.841494], [41.87631299999998, -91.8413], [41.876314000000015, -91.841232], [41.87660100000001, -91.841234], [41.87678399999997, -91.841238], [41.87765200000002, -91.841257], [41.87799400000002, -91.84126500000002], [41.878335000000014, -91.841272], [41.87892799999996, -91.841285], [41.87943599999998, -91.841296], [41.87998199999996, -91.841308], [41.880366000000016, -91.841317], [41.88083700000004, -91.841327], [41.88116599999997, -91.841334], [41.88163299999998, -91.841345], [41.88199300000002, -91.841353], [41.882329, -91.84136], [41.88281199999998, -91.841371], [41.88307100000001, -91.841377], [41.883388000000025, -91.841383], [41.88351200000002, -91.84139], [41.88349700000002, -91.840621], [41.88351000000001, -91.840568], [41.883514000000034, -91.840502], [41.88351200000003, -91.840273], [41.88349199999993, -91.838663], [41.88349000000006, -91.837161], [41.883502999999976, -91.836192], [41.883504000000045, -91.835431], [41.88349399999995, -91.834954], [41.883502999999976, -91.834033], [41.88349900000004, -91.833193], [41.88349900000004, -91.831728], [41.88348900000001, -91.83169], [41.883451, -91.831641], [41.88326700000001, -91.831639], [41.88295400000001, -91.831635]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_242a70e37ced8c0925ffeb0ebf889879);
+        
+    
+        var popup_28a43bef0f165953aca2a71a157a2bf8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8a22549f8fc7c4ccc3674bf8a1b86b50 = $(`<div id="html_8a22549f8fc7c4ccc3674bf8a1b86b50" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Benton - IA-CD02</h4>                              </div>         </div>`)[0];
+                popup_28a43bef0f165953aca2a71a157a2bf8.setContent(html_8a22549f8fc7c4ccc3674bf8a1b86b50);
+            
+        
+
+        polygon_612600ad7c06104b3f6af9d24342bcf2.bindPopup(popup_28a43bef0f165953aca2a71a157a2bf8)
+        ;
+
+        
+    
+    
+            polygon_612600ad7c06104b3f6af9d24342bcf2.bindTooltip(
+                `<div>
+                      Benton - IA-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c361c2034545da5fc75edadf007fea0c = L.polygon(
+                [[41.8617, -91.850716], [41.86192299798436, -91.85072008837251], [41.86185100000001, -91.831379], [41.8617, -91.850716]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_242a70e37ced8c0925ffeb0ebf889879);
+        
+    
+        var popup_f0725db80cd236b49baca5528fa00365 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b7449c9160a85d0a5c86616c4cf5ffca = $(`<div id="html_b7449c9160a85d0a5c86616c4cf5ffca" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Benton - IA-CD01</h4>                              </div>         </div>`)[0];
+                popup_f0725db80cd236b49baca5528fa00365.setContent(html_b7449c9160a85d0a5c86616c4cf5ffca);
+            
+        
+
+        polygon_c361c2034545da5fc75edadf007fea0c.bindPopup(popup_f0725db80cd236b49baca5528fa00365)
+        ;
+
+        
+    
+    
+            polygon_c361c2034545da5fc75edadf007fea0c.bindTooltip(
+                `<div>
+                      Benton - IA-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4f480a0730e6df0d7ff1b518c2b6eda5 = L.polygon(
+                [[41.87575600000004, -91.83156], [41.87610099999996, -91.83156500000001], [41.87636600000002, -91.831569], [41.87729300000002, -91.831571], [41.877933999999996, -91.831571], [41.878416999999956, -91.831571], [41.87862799999999, -91.831573], [41.87912399999999, -91.831578], [41.87933299999997, -91.8316], [41.87942700000002, -91.83161000000001], [41.87969100000004, -91.83161000000001], [41.880178000000015, -91.831618], [41.880514000000026, -91.831618], [41.88067200000001, -91.831618], [41.881429999999995, -91.83162], [41.881502999999974, -91.83162], [41.881532999999976, -91.83162], [41.881575999999974, -91.83162], [41.882248, -91.831628], [41.88262399999994, -91.831632], [41.88295400000001, -91.831635], [41.88326700000001, -91.831639], [41.883451, -91.831641], [41.88350900000003, -91.831642], [41.88358100000002, -91.831643], [41.883879000000015, -91.831646], [41.884600000000006, -91.831654], [41.884926999999976, -91.831658], [41.885118000000055, -91.83166], [41.885182, -91.831661], [41.885241999999984, -91.831662], [41.88569600000001, -91.831667], [41.88607499999996, -91.831671], [41.88626299999996, -91.831673], [41.88662300000002, -91.831677], [41.887269999999965, -91.831684], [41.88726999999999, -91.83104], [41.88727599999999, -91.82909400000001], [41.88727900000001, -91.828366], [41.887556, -91.828565], [41.88771699999998, -91.828682], [41.887905999999944, -91.828817], [41.88815500000001, -91.828997], [41.888184999999964, -91.829019], [41.888250999999975, -91.829063], [41.88843699999998, -91.82915], [41.88853899999999, -91.829198], [41.888617, -91.829234], [41.88906199999999, -91.82944200000001], [41.88919800000003, -91.829506], [41.88924699999995, -91.82952800000001], [41.88927999999999, -91.829544], [41.89050600000001, -91.830756], [41.8907, -91.830961], [41.890801999999994, -91.831097], [41.89091500000004, -91.831147], [41.890911, -91.830306], [41.89092400000001, -91.827703], [41.89093199999999, -91.826287], [41.89093199999999, -91.824578], [41.89093199999999, -91.823128], [41.89093199999999, -91.82207], [41.88997899999997, -91.822149], [41.887203, -91.822144], [41.887035, -91.822112], [41.88696900000001, -91.822052], [41.88694400000002, -91.822029], [41.88683499999994, -91.821849], [41.88712100000001, -91.821481], [41.889947, -91.81785], [41.89074200000003, -91.816829], [41.89319699999998, -91.813667], [41.89299300000001, -91.813429], [41.89144599999998, -91.815405], [41.88974099999999, -91.817606], [41.888068, -91.819765], [41.88641800000001, -91.821875], [41.88445500000002, -91.824401], [41.884073, -91.824893], [41.88365000000005, -91.825501], [41.88363900000001, -91.823755], [41.88364500000003, -91.821948], [41.88365199999996, -91.818077], [41.88365399999996, -91.817156], [41.88347000000006, -91.817147], [41.877495999999994, -91.817109], [41.876386999999994, -91.817102], [41.876382999999976, -91.818242], [41.876382999999976, -91.818388], [41.87638700000004, -91.821944], [41.876385000000006, -91.824644], [41.87638400000001, -91.82614], [41.87638199999998, -91.82748900000001], [41.87638199999998, -91.828803], [41.876382999999976, -91.830051], [41.87627799999997, -91.830049], [41.87623999999997, -91.830049], [41.87620900000002, -91.830048], [41.87613400000003, -91.830047], [41.876059999999995, -91.830046], [41.87564299999998, -91.830041], [41.87549600000002, -91.830039], [41.875493, -91.8304], [41.875494000000025, -91.83082], [41.875493, -91.831314], [41.875492000000015, -91.831421], [41.875494000000025, -91.831555], [41.87553600000002, -91.831556], [41.87575600000004, -91.83156]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_242a70e37ced8c0925ffeb0ebf889879);
+        
+    
+        var popup_91fd5ebac4627d9839b0ba46be058364 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3309311706b643ece7e1a87e460ef13f = $(`<div id="html_3309311706b643ece7e1a87e460ef13f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Linn - IA-CD02</h4>                              </div>         </div>`)[0];
+                popup_91fd5ebac4627d9839b0ba46be058364.setContent(html_3309311706b643ece7e1a87e460ef13f);
+            
+        
+
+        polygon_4f480a0730e6df0d7ff1b518c2b6eda5.bindPopup(popup_91fd5ebac4627d9839b0ba46be058364)
+        ;
+
+        
+    
+    
+            polygon_4f480a0730e6df0d7ff1b518c2b6eda5.bindTooltip(
+                `<div>
+                      Linn - IA-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_242a70e37ced8c0925ffeb0ebf889879.fitBounds(
+                [[41.8617, -91.850906], [41.89319699999998, -91.813429]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

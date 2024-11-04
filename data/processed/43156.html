@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_99bf9bff593df2ec09b64b08a3bac457 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Pickaway - OH-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Pickaway - OH-CD12</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_99bf9bff593df2ec09b64b08a3bac457" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_99bf9bff593df2ec09b64b08a3bac457 = L.map(
+                "map_99bf9bff593df2ec09b64b08a3bac457",
+                {
+                    center: [39.55471184349213, -82.77892975043974],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_99bf9bff593df2ec09b64b08a3bac457);
+
+            
+
+        
+    
+            var tile_layer_2d702d3c4ee94b22ad10c9e64230c9c1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_2d702d3c4ee94b22ad10c9e64230c9c1.addTo(map_99bf9bff593df2ec09b64b08a3bac457);
+        
+    
+            var polygon_b439ceb195c86021aadeaa62ee317d1e = L.polygon(
+                [[39.55726400000005, -82.775759], [39.557275999999966, -82.775714], [39.557275000000025, -82.77569], [39.55722699999995, -82.774974], [39.55720800000002, -82.774722], [39.55711699999994, -82.773526], [39.55707199999999, -82.772934], [39.55706826107201, -82.77288464452893], [39.557302883057886, -82.77659512613928], [39.55726400000005, -82.775759]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_99bf9bff593df2ec09b64b08a3bac457);
+        
+    
+        var popup_5ff2dcc7c01d32cc8380f7d9ec71ce37 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_470c7ea71a8a425c6e735cb4d22d547d = $(`<div id="html_470c7ea71a8a425c6e735cb4d22d547d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Pickaway - OH-CD12</h4>                              </div>         </div>`)[0];
+                popup_5ff2dcc7c01d32cc8380f7d9ec71ce37.setContent(html_470c7ea71a8a425c6e735cb4d22d547d);
+            
+        
+
+        polygon_b439ceb195c86021aadeaa62ee317d1e.bindPopup(popup_5ff2dcc7c01d32cc8380f7d9ec71ce37)
+        ;
+
+        
+    
+    
+            polygon_b439ceb195c86021aadeaa62ee317d1e.bindTooltip(
+                `<div>
+                      Pickaway - OH-CD12
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b43d95507fdacc5742ed9cb95b155468 = L.polygon(
+                [[39.557381000000014, -82.778264], [39.557374999999965, -82.778155], [39.55735299999999, -82.77767300000001], [39.557302883057886, -82.77659512613928], [39.55706826107201, -82.77288464452893], [39.55702200000004, -82.772274], [39.55701399999996, -82.77217], [39.55697800000002, -82.771604], [39.55696700000002, -82.771421], [39.55548100000002, -82.771504], [39.55550700000003, -82.77126100000001], [39.555659, -82.769664], [39.55351399999999, -82.769935], [39.553650999999945, -82.768556], [39.55217999999998, -82.768705], [39.55144299999999, -82.768794], [39.54884599999999, -82.772205], [39.54846799999997, -82.773193], [39.54850300000001, -82.77320600000002], [39.54864699999999, -82.773274], [39.552490000000006, -82.77507], [39.55256300000003, -82.775107], [39.55265300000005, -82.775146], [39.55273300000002, -82.775187], [39.55291100000004, -82.775259], [39.552893000000005, -82.775326], [39.55288300000004, -82.775436], [39.552842999999996, -82.775657], [39.55281299999996, -82.776006], [39.552793, -82.776126], [39.55277300000004, -82.776355], [39.55276299999999, -82.776467], [39.55267600000003, -82.777622], [39.55238499999996, -82.780451], [39.551983, -82.784318], [39.55177000000002, -82.78633100000002], [39.55162700000002, -82.787708], [39.55189300000001, -82.787681], [39.55312400000001, -82.786002], [39.55316300000001, -82.785957], [39.55341300000001, -82.785626], [39.55348299999995, -82.785546], [39.55354300000005, -82.785466], [39.55360299999998, -82.785376], [39.553672999999975, -82.785296], [39.553733000000015, -82.785216], [39.553793000000006, -82.785127], [39.55386300000003, -82.785046], [39.55392299999999, -82.784966], [39.55398300000004, -82.784876], [39.55404299999999, -82.784796], [39.55411299999997, -82.784716], [39.55442299999999, -82.784306], [39.554693, -82.783996], [39.55488300000004, -82.783747], [39.554939, -82.783663], [39.55506299999996, -82.783487], [39.55517300000001, -82.783296], [39.555253, -82.783096], [39.55528300000001, -82.782976], [39.555322999999966, -82.782757], [39.55534299999998, -82.782527], [39.55536300000001, -82.782406], [39.55539299999998, -82.782067], [39.55541299999996, -82.781947], [39.55542199999998, -82.781843], [39.55544300000003, -82.781607], [39.55546299999998, -82.78148700000001], [39.55548300000002, -82.781257], [39.55550300000001, -82.781146], [39.55554299999994, -82.780686], [39.555558000000026, -82.780597], [39.55572899999997, -82.780635], [39.55617399999998, -82.780713], [39.55633100000002, -82.780749], [39.556476000000046, -82.780784], [39.55670099999997, -82.78082], [39.55681599999999, -82.780855], [39.557080000000006, -82.780912], [39.557448, -82.781018], [39.55752500000003, -82.781025], [39.55756499999998, -82.781039], [39.557395, -82.778528], [39.557381000000014, -82.778264]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_99bf9bff593df2ec09b64b08a3bac457);
+        
+    
+        var popup_e191395d28d388687a4817e69fb18b57 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_236d12d2a9afb35c1321109770e2ef4e = $(`<div id="html_236d12d2a9afb35c1321109770e2ef4e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Pickaway - OH-CD02</h4>                              </div>         </div>`)[0];
+                popup_e191395d28d388687a4817e69fb18b57.setContent(html_236d12d2a9afb35c1321109770e2ef4e);
+            
+        
+
+        polygon_b43d95507fdacc5742ed9cb95b155468.bindPopup(popup_e191395d28d388687a4817e69fb18b57)
+        ;
+
+        
+    
+    
+            polygon_b43d95507fdacc5742ed9cb95b155468.bindTooltip(
+                `<div>
+                      Pickaway - OH-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_99bf9bff593df2ec09b64b08a3bac457.fitBounds(
+                [[39.54846799999997, -82.787708], [39.55756499999998, -82.768556]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

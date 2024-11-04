@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3ad8a86d8ad9b7c6b695a1e5bca37d86 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Oneida - NY-CD22</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Oneida - NY-CD21</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_3ad8a86d8ad9b7c6b695a1e5bca37d86" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3ad8a86d8ad9b7c6b695a1e5bca37d86 = L.map(
+                "map_3ad8a86d8ad9b7c6b695a1e5bca37d86",
+                {
+                    center: [43.303088793160754, -75.14852914649532],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_3ad8a86d8ad9b7c6b695a1e5bca37d86);
+
+            
+
+        
+    
+            var tile_layer_e32990f8e4d1243b8e8c6102d2383280 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_e32990f8e4d1243b8e8c6102d2383280.addTo(map_3ad8a86d8ad9b7c6b695a1e5bca37d86);
+        
+    
+            var polygon_c9170aba0a5de35fa4f4eca8c02519bc = L.polygon(
+                [[43.30482799999996, -75.14818], [43.30470005376732, -75.14812843364166], [43.29686743325032, -75.15040541799168], [43.296873999999924, -75.150408], [43.29700899999992, -75.150453], [43.29717099999996, -75.150483], [43.29730999999999, -75.150477], [43.298028000000016, -75.153804], [43.299351000000016, -75.152901], [43.30017200000001, -75.156138], [43.300353000000015, -75.155946], [43.30054200000003, -75.15576], [43.30070000000001, -75.155579], [43.30100199999999, -75.15528300000001], [43.30229799999996, -75.16055], [43.30497800000003, -75.158873], [43.306022000000006, -75.158221], [43.30649500000004, -75.157867], [43.306808000000004, -75.15756], [43.30703999999995, -75.157289], [43.307240000000014, -75.157023], [43.30748500000002, -75.156627], [43.307642999999956, -75.15633], [43.30779200000003, -75.156], [43.307959, -75.155562], [43.308100999999986, -75.155074], [43.30819200000005, -75.15466], [43.30827900000001, -75.154052], [43.308296, -75.15381], [43.308317, -75.15333], [43.30830599999995, -75.152979], [43.308268000000076, -75.152483], [43.308223000000034, -75.152173], [43.30811599999999, -75.151586], [43.30776799999997, -75.149997], [43.30721299999998, -75.147461], [43.30783199999998, -75.146439], [43.30817199999998, -75.146137], [43.308047, -75.145372], [43.307536, -75.145347], [43.307497, -75.145475], [43.30705400000001, -75.146734], [43.30690599999995, -75.146027], [43.306833000000026, -75.145568], [43.306808000000004, -75.145353], [43.30676500000002, -75.144901], [43.306742999999955, -75.14432500000001], [43.30677963682333, -75.14346920561009], [43.30515900000002, -75.147995], [43.30482799999996, -75.14818]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3ad8a86d8ad9b7c6b695a1e5bca37d86);
+        
+    
+        var popup_9399df4bad578f15a05600a36bd86bd1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5ba9c2be9e8a827aba099116b1e4a38c = $(`<div id="html_5ba9c2be9e8a827aba099116b1e4a38c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Oneida - NY-CD22</h4>                              </div>         </div>`)[0];
+                popup_9399df4bad578f15a05600a36bd86bd1.setContent(html_5ba9c2be9e8a827aba099116b1e4a38c);
+            
+        
+
+        polygon_c9170aba0a5de35fa4f4eca8c02519bc.bindPopup(popup_9399df4bad578f15a05600a36bd86bd1)
+        ;
+
+        
+    
+    
+            polygon_c9170aba0a5de35fa4f4eca8c02519bc.bindTooltip(
+                `<div>
+                      Oneida - NY-CD22
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_525c70989b7447cede72ea2cead16795 = L.polygon(
+                [[43.305109000000044, -75.144623], [43.30528400000003, -75.145989], [43.30522400000005, -75.147344], [43.30515900000002, -75.147995], [43.30677963682333, -75.14346920561009], [43.306782, -75.143414], [43.30683499999997, -75.14296300000001], [43.30689700000002, -75.14244200000002], [43.30649399999997, -75.142495], [43.305904000000005, -75.142648], [43.305904000000005, -75.14269], [43.305881000000014, -75.142717], [43.30583100000001, -75.14274], [43.305696000000005, -75.142744], [43.30537699999999, -75.142728], [43.30525599999997, -75.142736], [43.30524100000002, -75.142752], [43.30523300000003, -75.142817], [43.305234999999975, -75.14283800000001], [43.30480400000004, -75.142976], [43.30482199999999, -75.143233], [43.305109000000044, -75.144623]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3ad8a86d8ad9b7c6b695a1e5bca37d86);
+        
+    
+        var popup_c366058776eee40a01dbecbb26964a38 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1c791d6b63cd0caebf931e0698f4ee69 = $(`<div id="html_1c791d6b63cd0caebf931e0698f4ee69" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Oneida - NY-CD21</h4>                              </div>         </div>`)[0];
+                popup_c366058776eee40a01dbecbb26964a38.setContent(html_1c791d6b63cd0caebf931e0698f4ee69);
+            
+        
+
+        polygon_525c70989b7447cede72ea2cead16795.bindPopup(popup_c366058776eee40a01dbecbb26964a38)
+        ;
+
+        
+    
+    
+            polygon_525c70989b7447cede72ea2cead16795.bindTooltip(
+                `<div>
+                      Oneida - NY-CD21
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_14e3dab213466f3ced399cb3c5a59ac4 = L.polygon(
+                [[43.30449800000006, -75.148047], [43.304264999999965, -75.147561], [43.30388000000005, -75.14698800000001], [43.30333900000002, -75.146835], [43.30305599999999, -75.146866], [43.30252000000002, -75.146896], [43.302245000000006, -75.146903], [43.30204999999998, -75.146888], [43.30180100000004, -75.146808], [43.301441, -75.146619], [43.30110800000002, -75.146401], [43.30076899999998, -75.146067], [43.30056300000001, -75.145943], [43.30028200000004, -75.145842], [43.30003399999998, -75.14580500000001], [43.299369000000006, -75.145782], [43.29861899999999, -75.145647], [43.29828299999996, -75.145647], [43.29793199999998, -75.145727], [43.297591000000025, -75.145932], [43.29724900000001, -75.146225], [43.29688699999995, -75.146591], [43.29654099999999, -75.14690600000002], [43.29631199999998, -75.147059], [43.29610399999997, -75.14714], [43.29583699999997, -75.147191], [43.295403000000036, -75.147216], [43.295119, -75.147139], [43.29419600000003, -75.147398], [43.29405699999999, -75.14744600000002], [43.294041000000014, -75.149494], [43.29448600000001, -75.149411], [43.29487699999999, -75.149561], [43.295480000000005, -75.149866], [43.295905000000054, -75.150027], [43.29686743325032, -75.15040541799168], [43.30470005376732, -75.14812843364166], [43.30449800000006, -75.148047]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_3ad8a86d8ad9b7c6b695a1e5bca37d86);
+        
+    
+        var popup_d742491ab7e56a8fd09d6f655ce80b14 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c7ce7a1c0a76cc525e540f969e02ea62 = $(`<div id="html_c7ce7a1c0a76cc525e540f969e02ea62" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Oneida - NY-CD21</h4>                              </div>         </div>`)[0];
+                popup_d742491ab7e56a8fd09d6f655ce80b14.setContent(html_c7ce7a1c0a76cc525e540f969e02ea62);
+            
+        
+
+        polygon_14e3dab213466f3ced399cb3c5a59ac4.bindPopup(popup_d742491ab7e56a8fd09d6f655ce80b14)
+        ;
+
+        
+    
+    
+            polygon_14e3dab213466f3ced399cb3c5a59ac4.bindTooltip(
+                `<div>
+                      Oneida - NY-CD21
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_3ad8a86d8ad9b7c6b695a1e5bca37d86.fitBounds(
+                [[43.294041000000014, -75.16055], [43.308317, -75.14244200000002]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

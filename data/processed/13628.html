@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1f01934cece281af84017d750504fa6b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Jefferson - NY-CD24</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Jefferson - NY-CD21</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_1f01934cece281af84017d750504fa6b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1f01934cece281af84017d750504fa6b = L.map(
+                "map_1f01934cece281af84017d750504fa6b",
+                {
+                    center: [44.0384440515445, -75.68312231758127],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_1f01934cece281af84017d750504fa6b);
+
+            
+
+        
+    
+            var tile_layer_a3f012a7f7502f30d5670120e4805dd4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_a3f012a7f7502f30d5670120e4805dd4.addTo(map_1f01934cece281af84017d750504fa6b);
+        
+    
+            var polygon_4467024ed06cdc70f7d424f675532408 = L.polygon(
+                [[44.035629, -75.68770500000001], [44.03600800000004, -75.68757300000001], [44.03615600000002, -75.687517], [44.03636300000001, -75.687465], [44.03654100000003, -75.687426], [44.03677400000001, -75.687379], [44.03689700000003, -75.687355], [44.037141999999996, -75.68731], [44.03730500000002, -75.687281], [44.03751100000003, -75.687259], [44.037587, -75.687258], [44.03807799999995, -75.687251], [44.038313000000045, -75.687238], [44.03841100000003, -75.687233], [44.038458000000034, -75.687226], [44.038659, -75.687198], [44.03878199999997, -75.687174], [44.038848000000044, -75.687149], [44.03954599999998, -75.686887], [44.03965900000002, -75.68679700000001], [44.039991000000015, -75.686506], [44.040160000000014, -75.686359], [44.04019700000001, -75.686321], [44.04032900000001, -75.686188], [44.04047200000001, -75.686018], [44.04059199999999, -75.685866], [44.04070800000001, -75.685702], [44.041137999999954, -75.685093], [44.04126500000002, -75.684913], [44.04156700000005, -75.684478], [44.04171399999999, -75.68422700000002], [44.041762, -75.684145], [44.04193100000003, -75.683818], [44.042016000000025, -75.683653], [44.042224, -75.683269], [44.04223699999998, -75.683245], [44.04242300000001, -75.682881], [44.042447999999965, -75.682821], [44.04267791219773, -75.68136321808197], [44.04062658771052, -75.67884268460944], [44.04042199999995, -75.678861], [44.040250999999955, -75.678894], [44.040008000000014, -75.678965], [44.03927100000002, -75.67925800000002], [44.03894799999996, -75.679413], [44.038757999999994, -75.679551], [44.03851199999998, -75.679764], [44.03844100000004, -75.679839], [44.038221, -75.680104], [44.03804, -75.680255], [44.03795400000003, -75.680289], [44.03791799999999, -75.68029300000002], [44.03782299999997, -75.680304], [44.037746, -75.680301], [44.03762899999998, -75.680296], [44.03747799999997, -75.680261], [44.03733999999996, -75.680205], [44.037053, -75.680052], [44.03644999999998, -75.679677], [44.03564800000007, -75.679155], [44.03558399999998, -75.679117], [44.03540699999999, -75.67901], [44.034639000000006, -75.678504], [44.03433000000005, -75.679302], [44.03419300000005, -75.67967900000001], [44.03310900000001, -75.682624], [44.032882, -75.683048], [44.03279000000003, -75.68319], [44.032615000000014, -75.683412], [44.03302499999994, -75.684273], [44.033308000000005, -75.684859], [44.033615000000005, -75.685555], [44.03379000000003, -75.685995], [44.03389999999999, -75.686286], [44.033999, -75.686581], [44.03424300000001, -75.687367], [44.03438400000001, -75.687893], [44.03440699999996, -75.688002], [44.034779000000015, -75.687983], [44.035019999999996, -75.687907], [44.035629, -75.68770500000001]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1f01934cece281af84017d750504fa6b);
+        
+    
+        var popup_87f3543e750398677cf9e85fdeaa9075 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_657bcde8fbe7298879b6b5e3dc19f415 = $(`<div id="html_657bcde8fbe7298879b6b5e3dc19f415" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Jefferson - NY-CD24</h4>                              </div>         </div>`)[0];
+                popup_87f3543e750398677cf9e85fdeaa9075.setContent(html_657bcde8fbe7298879b6b5e3dc19f415);
+            
+        
+
+        polygon_4467024ed06cdc70f7d424f675532408.bindPopup(popup_87f3543e750398677cf9e85fdeaa9075)
+        ;
+
+        
+    
+    
+            polygon_4467024ed06cdc70f7d424f675532408.bindTooltip(
+                `<div>
+                      Jefferson - NY-CD24
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_75b64ddf548d3f0e9a132c34ac2fc093 = L.polygon(
+                [[44.042765, -75.68081100000002], [44.042774000000016, -75.680711], [44.04234000000006, -75.67952], [44.041868999999956, -75.678235], [44.041843999999934, -75.678278], [44.04181200000001, -75.678331], [44.04179100000001, -75.678443], [44.041788000000004, -75.678503], [44.041825000000046, -75.678685], [44.04169999999999, -75.678676], [44.04155800000002, -75.678687], [44.041285999999985, -75.67873500000002], [44.04094700000002, -75.678814], [44.04062658771052, -75.67884268460944], [44.04267791219773, -75.68136321808197], [44.042765, -75.68081100000002]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1f01934cece281af84017d750504fa6b);
+        
+    
+        var popup_c2efd82f899f28b797d888f4729acbdb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d4a47b99b9c5af3626398e7ab638f87b = $(`<div id="html_d4a47b99b9c5af3626398e7ab638f87b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Jefferson - NY-CD21</h4>                              </div>         </div>`)[0];
+                popup_c2efd82f899f28b797d888f4729acbdb.setContent(html_d4a47b99b9c5af3626398e7ab638f87b);
+            
+        
+
+        polygon_75b64ddf548d3f0e9a132c34ac2fc093.bindPopup(popup_c2efd82f899f28b797d888f4729acbdb)
+        ;
+
+        
+    
+    
+            polygon_75b64ddf548d3f0e9a132c34ac2fc093.bindTooltip(
+                `<div>
+                      Jefferson - NY-CD21
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_1f01934cece281af84017d750504fa6b.fitBounds(
+                [[44.032615000000014, -75.688002], [44.042774000000016, -75.678235]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

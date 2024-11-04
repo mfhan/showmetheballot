@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_44b8908497a993a67fe4d47521bc1b71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Suffolk - MA-CD07</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Suffolk - MA-CD08</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_44b8908497a993a67fe4d47521bc1b71" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_44b8908497a993a67fe4d47521bc1b71 = L.map(
+                "map_44b8908497a993a67fe4d47521bc1b71",
+                {
+                    center: [42.36532644578517, -71.05439552140638],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_44b8908497a993a67fe4d47521bc1b71);
+
+            
+
+        
+    
+            var tile_layer_b7e16152c53ef32f2125879a2871f3c8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_b7e16152c53ef32f2125879a2871f3c8.addTo(map_44b8908497a993a67fe4d47521bc1b71);
+        
+    
+            var polygon_de79c2f9809361d4696f490574b85dce = L.polygon(
+                [[42.36545800000001, -71.052968], [42.36538899999998, -71.052993], [42.36527100000004, -71.053047], [42.36521500000003, -71.052853], [42.36500799999999, -71.052945], [42.364989000000016, -71.05287700000001], [42.36496899999998, -71.052806], [42.364943000000004, -71.052818], [42.364798000000015, -71.05249], [42.36485999999999, -71.05246], [42.364838, -71.052379], [42.364813000000005, -71.052283], [42.36486199999999, -71.052259], [42.36483100000001, -71.05214500000001], [42.3649, -71.051961], [42.364979999999996, -71.05194900000001], [42.364959, -71.051877], [42.36495000000001, -71.051786], [42.36491199999999, -71.051549], [42.36501126454773, -71.05139360032557], [42.36491080373908, -71.05107475638663], [42.36482800000002, -71.051069], [42.36452200000002, -71.051074], [42.36425699999998, -71.051466], [42.364199999999975, -71.05155100000002], [42.36414499999999, -71.051632], [42.364056000000055, -71.051549], [42.36400399999997, -71.051575], [42.36394400000002, -71.051605], [42.363896999999994, -71.05160999999998], [42.363654000000054, -71.051746], [42.36366899999999, -71.051783], [42.36364600000002, -71.051814], [42.363593, -71.051917], [42.36357500000002, -71.051901], [42.36350099999997, -71.051895], [42.363676, -71.052111], [42.363570999999986, -71.052314], [42.36351500000006, -71.052565], [42.36343699999997, -71.052681], [42.36322000000001, -71.053003], [42.363045999999976, -71.05326700000002], [42.36298999999999, -71.053352], [42.36287200000008, -71.053533], [42.36277900000002, -71.053675], [42.362806000000006, -71.053702], [42.363096000000056, -71.054075], [42.362972999999975, -71.05419], [42.362753000000026, -71.054334], [42.362435000000005, -71.054521], [42.36224300000002, -71.054753], [42.36218200000002, -71.054829], [42.36204600000004, -71.05492500000001], [42.36232999999994, -71.055433], [42.362468999999976, -71.055681], [42.36254199999998, -71.055812], [42.36288400000005, -71.056381], [42.36320800000002, -71.056972], [42.36328900000002, -71.05707], [42.36340200000002, -71.05721], [42.36346799999996, -71.057289], [42.363655999999956, -71.05750499999999], [42.363812000000024, -71.057661], [42.36395099999998, -71.057801], [42.364042, -71.057893], [42.36438899999997, -71.058229], [42.36447199999996, -71.05829600000001], [42.36450399999996, -71.058299], [42.36437399999997, -71.058192], [42.36437899999997, -71.058074], [42.36438299999996, -71.057986], [42.36438999999999, -71.057822], [42.36439300000003, -71.057772], [42.365282000000036, -71.05783], [42.36527900000003, -71.058175], [42.36526600000005, -71.058381], [42.36555500000003, -71.058405], [42.36594000000003, -71.058438], [42.366153000000025, -71.05845700000002], [42.36674199999998, -71.058483], [42.366952, -71.058525], [42.36716163490975, -71.05821928310904], [42.36550338730217, -71.05295555510828], [42.36545800000001, -71.052968]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_44b8908497a993a67fe4d47521bc1b71);
+        
+    
+        var popup_5b8007a77bb111b4f0d7992f84f222b5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_292d38c61adf00a69eecddcbc12e609c = $(`<div id="html_292d38c61adf00a69eecddcbc12e609c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Suffolk - MA-CD08</h4>                              </div>         </div>`)[0];
+                popup_5b8007a77bb111b4f0d7992f84f222b5.setContent(html_292d38c61adf00a69eecddcbc12e609c);
+            
+        
+
+        polygon_de79c2f9809361d4696f490574b85dce.bindPopup(popup_5b8007a77bb111b4f0d7992f84f222b5)
+        ;
+
+        
+    
+    
+            polygon_de79c2f9809361d4696f490574b85dce.bindTooltip(
+                `<div>
+                      Suffolk - MA-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6af4db6580d5dec02ec231dfaaab2181 = L.polygon(
+                [[42.365202000000046, -71.051095], [42.36491080373908, -71.05107475638663], [42.36501126454773, -71.05139360032557], [42.365202000000046, -71.051095]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_44b8908497a993a67fe4d47521bc1b71);
+        
+    
+        var popup_9d8090e139a302d7e43db9b968a1dd5d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b184a6c23cf7fadb6d2452b93c74c9e6 = $(`<div id="html_b184a6c23cf7fadb6d2452b93c74c9e6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Suffolk - MA-CD07</h4>                              </div>         </div>`)[0];
+                popup_9d8090e139a302d7e43db9b968a1dd5d.setContent(html_b184a6c23cf7fadb6d2452b93c74c9e6);
+            
+        
+
+        polygon_6af4db6580d5dec02ec231dfaaab2181.bindPopup(popup_9d8090e139a302d7e43db9b968a1dd5d)
+        ;
+
+        
+    
+    
+            polygon_6af4db6580d5dec02ec231dfaaab2181.bindTooltip(
+                `<div>
+                      Suffolk - MA-CD07
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9c315734e6f5cdfd1846ec98e12d8f06 = L.polygon(
+                [[42.367646999999955, -71.057568], [42.36777099999996, -71.057369], [42.367799, -71.057324], [42.368074, -71.056883], [42.36817999999999, -71.056694], [42.36821699999995, -71.05662800000002], [42.36822599999998, -71.05660500000002], [42.36826500000004, -71.056507], [42.368291999999954, -71.056374], [42.368291, -71.056187], [42.36828199999997, -71.056085], [42.368196999999974, -71.05577900000002], [42.367740999999974, -71.05578700000001], [42.367576999999955, -71.055432], [42.36745600000005, -71.055192], [42.36777500000004, -71.05491099999999], [42.367608000000004, -71.054784], [42.36755999999998, -71.054687], [42.36746199999995, -71.054488], [42.367397999999966, -71.054548], [42.367389999999986, -71.05453200000001], [42.36735700000003, -71.05446500000001], [42.367324, -71.054391], [42.36735200000001, -71.054369], [42.367370000000015, -71.05431300000001], [42.36732, -71.054122], [42.36730200000006, -71.054016], [42.36743700000002, -71.053926], [42.36743700000002, -71.053901], [42.36737299999998, -71.05373400000002], [42.36747599999999, -71.053645], [42.36752499999996, -71.0534], [42.367365000000014, -71.052912], [42.36721, -71.05247300000002], [42.367055999999984, -71.052538], [42.366819000000035, -71.05261700000001], [42.36677300000002, -71.052632], [42.366530999999995, -71.052686], [42.366251000000005, -71.052749], [42.36605200000002, -71.052801], [42.36577099999996, -71.052878], [42.365650000000024, -71.052913], [42.36558200000005, -71.052934], [42.36550338730217, -71.05295555510828], [42.36716163490975, -71.05821928310904], [42.367264000000056, -71.05807000000001], [42.367646999999955, -71.057568]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_44b8908497a993a67fe4d47521bc1b71);
+        
+    
+        var popup_b0d1f1c9e3d35763d93a28cf7d9da0c3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cb814fcd5a9a89f3e7711f96f8919a62 = $(`<div id="html_cb814fcd5a9a89f3e7711f96f8919a62" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Suffolk - MA-CD07</h4>                              </div>         </div>`)[0];
+                popup_b0d1f1c9e3d35763d93a28cf7d9da0c3.setContent(html_cb814fcd5a9a89f3e7711f96f8919a62);
+            
+        
+
+        polygon_9c315734e6f5cdfd1846ec98e12d8f06.bindPopup(popup_b0d1f1c9e3d35763d93a28cf7d9da0c3)
+        ;
+
+        
+    
+    
+            polygon_9c315734e6f5cdfd1846ec98e12d8f06.bindTooltip(
+                `<div>
+                      Suffolk - MA-CD07
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_44b8908497a993a67fe4d47521bc1b71.fitBounds(
+                [[42.36204600000004, -71.058525], [42.368291999999954, -71.051069]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cfddc94715d67094a078e08ad19f0a00 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Palm Beach - FL-CD20</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Palm Beach - FL-CD23</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Palm Beach - FL-CD22</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_cfddc94715d67094a078e08ad19f0a00" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cfddc94715d67094a078e08ad19f0a00 = L.map(
+                "map_cfddc94715d67094a078e08ad19f0a00",
+                {
+                    center: [26.380954158648905, -80.22308315293877],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_cfddc94715d67094a078e08ad19f0a00);
+
+            
+
+        
+    
+            var tile_layer_b1e9b78299792038a34ac30a23463aca = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_b1e9b78299792038a34ac30a23463aca.addTo(map_cfddc94715d67094a078e08ad19f0a00);
+        
+    
+            var polygon_90326294961aa7757c673292e4d6887f = L.polygon(
+                [[26.395679000000015, -80.203713], [26.394202999999965, -80.203724], [26.392564999999987, -80.203719], [26.388924999999976, -80.203678], [26.382698999999985, -80.203573], [26.381341000000003, -80.203561], [26.378942000000013, -80.203539], [26.37895100000004, -80.203419], [26.37895299999997, -80.19426], [26.378954000000018, -80.193335], [26.37900499999997, -80.190742], [26.379070999999993, -80.187325], [26.379084999999975, -80.186632], [26.371489999999994, -80.18663], [26.37148999999997, -80.187589], [26.37143399999998, -80.190492], [26.371406000000032, -80.194892], [26.371398000000013, -80.19623300000002], [26.371386999999995, -80.197882], [26.371353999999993, -80.203368], [26.367866999999986, -80.203304], [26.367866000000003, -80.203462], [26.367866000000024, -80.205605], [26.367860000000004, -80.206605], [26.367870999999987, -80.206844], [26.36789700000003, -80.207081], [26.367936000000064, -80.207317], [26.367984999999994, -80.20753], [26.368029999999987, -80.207691], [26.369075000000038, -80.211162], [26.369162999999986, -80.211501], [26.369238000000006, -80.211843], [26.369298999999963, -80.212189], [26.36934600000005, -80.212537], [26.369372999999957, -80.212811], [26.369395999999977, -80.213195], [26.369402999999995, -80.213548], [26.369394999999997, -80.2139], [26.369373999999983, -80.214251], [26.369338000000003, -80.214602], [26.36928899999998, -80.21495], [26.369225999999994, -80.215295], [26.369149000000018, -80.215637], [26.36905800000002, -80.215974], [26.368925999999977, -80.21639], [26.368805000000012, -80.216715], [26.36870600000002, -80.216956], [26.368266000000002, -80.217981], [26.367862, -80.218924], [26.367734999999993, -80.219254], [26.367599999999953, -80.219659], [26.36752500000001, -80.219917], [26.36750200000001, -80.220001], [26.367418000000008, -80.220348], [26.367363000000005, -80.22061], [26.367302999999982, -80.220963], [26.367255999999998, -80.221318], [26.367222999999953, -80.221675], [26.36720499999999, -80.222034], [26.367200000000054, -80.222303], [26.36720099999999, -80.223483], [26.36720200000002, -80.223643], [26.367204000000015, -80.224726], [26.367191000000002, -80.225035], [26.367163000000016, -80.225342], [26.36712199999998, -80.225648], [26.367067, -80.225951], [26.366997999999985, -80.22625], [26.366916000000018, -80.226545], [26.366819999999972, -80.226836], [26.366711000000045, -80.22712000000001], [26.366556999999975, -80.227466], [26.36643299999997, -80.22771], [26.364307999999976, -80.231464], [26.36388400000002, -80.232234], [26.363524999999953, -80.23288700000002], [26.36327699999997, -80.233576], [26.363143000000008, -80.234221], [26.363107999999993, -80.234788], [26.36309000000001, -80.235357], [26.363090000000003, -80.235495], [26.363091000000008, -80.235877], [26.363094000000007, -80.238919], [26.363093000000035, -80.240573], [26.363082000000013, -80.240824], [26.363059000000003, -80.241075], [26.363024999999976, -80.241324], [26.362981000000016, -80.241571], [26.36292500000003, -80.24181500000002], [26.362859, -80.242056], [26.36278299999998, -80.242293], [26.362697000000008, -80.242526], [26.36234116584845, -80.24342002891102], [26.383681999999997, -80.236906], [26.395850636605786, -80.20370877676059], [26.395679000000015, -80.203713]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cfddc94715d67094a078e08ad19f0a00);
+        
+    
+        var popup_6a182e1d147f7be2649c58c4c0c151b6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_907baf9c257b732a768fe0e61368839e = $(`<div id="html_907baf9c257b732a768fe0e61368839e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Palm Beach - FL-CD23</h4>                              </div>         </div>`)[0];
+                popup_6a182e1d147f7be2649c58c4c0c151b6.setContent(html_907baf9c257b732a768fe0e61368839e);
+            
+        
+
+        polygon_90326294961aa7757c673292e4d6887f.bindPopup(popup_6a182e1d147f7be2649c58c4c0c151b6)
+        ;
+
+        
+    
+    
+            polygon_90326294961aa7757c673292e4d6887f.bindTooltip(
+                `<div>
+                      Palm Beach - FL-CD23
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e95da036307e2b6ce4ba139077883f49 = L.polygon(
+                [[26.384989000000015, -80.235963], [26.38528900000003, -80.23583], [26.39082199999999, -80.23583700000002], [26.39163199999998, -80.235818], [26.39275400000001, -80.23579200000002], [26.39684000000001, -80.235699], [26.400081999999998, -80.235688], [26.408935999999983, -80.235661], [26.40921399999998, -80.235591], [26.409159000000034, -80.23535], [26.40941099999998, -80.234027], [26.40939699999999, -80.23379], [26.409058000000012, -80.228079], [26.409079000000023, -80.226944], [26.40904700000003, -80.224531], [26.40908099999998, -80.223911], [26.41639899999999, -80.224021], [26.416573999999976, -80.224024], [26.416575000000012, -80.224109], [26.416576999999958, -80.232177], [26.416578000000015, -80.233446], [26.41657799999997, -80.233765], [26.424387999999997, -80.23183], [26.431188999999947, -80.230066], [26.433728999999985, -80.229456], [26.434940000000008, -80.229166], [26.43494, -80.228629], [26.434943000000004, -80.224211], [26.434956000000017, -80.204187], [26.432311999999996, -80.204138], [26.431541000000028, -80.204123], [26.431407000000014, -80.204121], [26.424305999999998, -80.203988], [26.423842000000022, -80.203988], [26.423787999999988, -80.203988], [26.416265000000053, -80.203957], [26.416116, -80.20396], [26.413489999999967, -80.203896], [26.410750999999966, -80.203801], [26.408701000000004, -80.203731], [26.406764999999996, -80.203706], [26.406396999999977, -80.203702], [26.402818000000035, -80.203644], [26.401615000000042, -80.203625], [26.40134099999999, -80.203621], [26.40085399999998, -80.203614], [26.397710999999997, -80.203663], [26.395850636605786, -80.20370877676059], [26.383681999999997, -80.236906], [26.384989000000015, -80.235963]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cfddc94715d67094a078e08ad19f0a00);
+        
+    
+        var popup_4cf55c2f4b25da1b362ea0a1e827024c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c197c789c9c44c67278b0703d6a54c5b = $(`<div id="html_c197c789c9c44c67278b0703d6a54c5b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Palm Beach - FL-CD22</h4>                              </div>         </div>`)[0];
+                popup_4cf55c2f4b25da1b362ea0a1e827024c.setContent(html_c197c789c9c44c67278b0703d6a54c5b);
+            
+        
+
+        polygon_e95da036307e2b6ce4ba139077883f49.bindPopup(popup_4cf55c2f4b25da1b362ea0a1e827024c)
+        ;
+
+        
+    
+    
+            polygon_e95da036307e2b6ce4ba139077883f49.bindTooltip(
+                `<div>
+                      Palm Beach - FL-CD22
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0d17b3dbc342991f405c4a358aab8392 = L.polygon(
+                [[26.379150000000017, -80.240523], [26.38095299999997, -80.239099], [26.382960000000022, -80.237503], [26.383681999999997, -80.236906], [26.36234116584845, -80.24342002891102], [26.360457999999973, -80.248151], [26.360384000000007, -80.248328], [26.360280999999986, -80.248549], [26.360168000000012, -80.248763], [26.360045999999983, -80.248971], [26.359915000000026, -80.249171], [26.359774999999985, -80.249365], [26.359627000000028, -80.24955], [26.35947000000002, -80.249728], [26.35930600000003, -80.249896], [26.359135000000016, -80.250056], [26.358956999999993, -80.250205], [26.358772000000002, -80.250345], [26.358581999999988, -80.250475], [26.35838600000001, -80.250594], [26.358184999999988, -80.250702], [26.357979000000018, -80.250799], [26.357769000000037, -80.250885], [26.357744999999976, -80.251571], [26.363626999999966, -80.251696], [26.36498800000002, -80.251669], [26.36575600000002, -80.251018], [26.379150000000017, -80.240523]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_cfddc94715d67094a078e08ad19f0a00);
+        
+    
+        var popup_ec7b23dd411dd69f6551bb825375267c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ae06a76013270a27e5124822690355a1 = $(`<div id="html_ae06a76013270a27e5124822690355a1" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Palm Beach - FL-CD20</h4>                              </div>         </div>`)[0];
+                popup_ec7b23dd411dd69f6551bb825375267c.setContent(html_ae06a76013270a27e5124822690355a1);
+            
+        
+
+        polygon_0d17b3dbc342991f405c4a358aab8392.bindPopup(popup_ec7b23dd411dd69f6551bb825375267c)
+        ;
+
+        
+    
+    
+            polygon_0d17b3dbc342991f405c4a358aab8392.bindTooltip(
+                `<div>
+                      Palm Beach - FL-CD20
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_cfddc94715d67094a078e08ad19f0a00.fitBounds(
+                [[26.357744999999976, -80.251696], [26.434956000000017, -80.18663]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

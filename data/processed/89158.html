@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1c44283f93420d1acd0f758e56248048 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clark - NV-CD03</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clark - NV-CD01</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_1c44283f93420d1acd0f758e56248048" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1c44283f93420d1acd0f758e56248048 = L.map(
+                "map_1c44283f93420d1acd0f758e56248048",
+                {
+                    center: [36.10529144833189, -115.17680232100912],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_1c44283f93420d1acd0f758e56248048);
+
+            
+
+        
+    
+            var tile_layer_290844f937f76676874f47f3ca2f1964 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_290844f937f76676874f47f3ca2f1964.addTo(map_1c44283f93420d1acd0f758e56248048);
+        
+    
+            var polygon_10a29f31b61b45078e5a2381675c6c0e = L.polygon(
+                [[36.109231, -115.17513700000002], [36.109210999999995, -115.17422800000001], [36.10919099999999, -115.173743], [36.10912799999999, -115.17345000000002], [36.10900900000003, -115.17321900000002], [36.10884500000005, -115.17300000000002], [36.10856800000002, -115.173001], [36.10849099999997, -115.173001], [36.106418, -115.172975], [36.105294000000015, -115.172972], [36.103884000000015, -115.172969], [36.10235900000002, -115.172957], [36.10083800000003, -115.17294600000001], [36.10086800000001, -115.17407200000001], [36.10086331187749, -115.17464771279568], [36.10922867225358, -115.1752941519277], [36.109231, -115.17513700000002]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1c44283f93420d1acd0f758e56248048);
+        
+    
+        var popup_f4b6f2f47121d088a653d71675d15a87 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8d94706933b93eb31dc28285bdb102af = $(`<div id="html_8d94706933b93eb31dc28285bdb102af" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clark - NV-CD01</h4>                              </div>         </div>`)[0];
+                popup_f4b6f2f47121d088a653d71675d15a87.setContent(html_8d94706933b93eb31dc28285bdb102af);
+            
+        
+
+        polygon_10a29f31b61b45078e5a2381675c6c0e.bindPopup(popup_f4b6f2f47121d088a653d71675d15a87)
+        ;
+
+        
+    
+    
+            polygon_10a29f31b61b45078e5a2381675c6c0e.bindTooltip(
+                `<div>
+                      Clark - NV-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f20f653896f2a14dad39acd50c177e1b = L.polygon(
+                [[36.103808000000015, -115.180478], [36.10387199999999, -115.18047699999998], [36.10406800000003, -115.180475], [36.10413299999994, -115.180475], [36.10492800000004, -115.180468], [36.107317000000016, -115.18044999999998], [36.10811300000006, -115.18044399999998], [36.10811300000004, -115.179994], [36.10810400000001, -115.1794], [36.108121000000025, -115.178905], [36.108186000000046, -115.178602], [36.108485999999985, -115.177604], [36.10876700000004, -115.17723], [36.109001, -115.17685200000001], [36.10906800000002, -115.17668600000002], [36.10917999999997, -115.17625700000002], [36.109219, -115.175947], [36.10922867225358, -115.1752941519277], [36.10086331187749, -115.17464771279568], [36.10086300000002, -115.174686], [36.10084999999997, -115.17520000000002], [36.10081300000003, -115.17600500000002], [36.10080100000001, -115.17722100000002], [36.100798000000026, -115.17751000000001], [36.10079000000002, -115.177611], [36.10071500000003, -115.17939799999999], [36.10070600000004, -115.179998], [36.10069999999998, -115.180331], [36.100697999999994, -115.18048200000001], [36.101319, -115.180481], [36.10318599999998, -115.180478], [36.103808000000015, -115.180478]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1c44283f93420d1acd0f758e56248048);
+        
+    
+        var popup_462e94de4b5c0ddd389dd6153152a8e3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eb6a0d004765908d12ef16ab29a4f6ed = $(`<div id="html_eb6a0d004765908d12ef16ab29a4f6ed" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clark - NV-CD03</h4>                              </div>         </div>`)[0];
+                popup_462e94de4b5c0ddd389dd6153152a8e3.setContent(html_eb6a0d004765908d12ef16ab29a4f6ed);
+            
+        
+
+        polygon_f20f653896f2a14dad39acd50c177e1b.bindPopup(popup_462e94de4b5c0ddd389dd6153152a8e3)
+        ;
+
+        
+    
+    
+            polygon_f20f653896f2a14dad39acd50c177e1b.bindTooltip(
+                `<div>
+                      Clark - NV-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_1c44283f93420d1acd0f758e56248048.fitBounds(
+                [[36.100697999999994, -115.18048200000001], [36.109231, -115.17294600000001]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

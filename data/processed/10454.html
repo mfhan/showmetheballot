@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_94d8cd4afb665d89d8c59279ced0ec68 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bronx - NY-CD15</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bronx - NY-CD13</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Bronx - NY-CD14</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_94d8cd4afb665d89d8c59279ced0ec68" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_94d8cd4afb665d89d8c59279ced0ec68 = L.map(
+                "map_94d8cd4afb665d89d8c59279ced0ec68",
+                {
+                    center: [40.80668683331345, -73.91646159975829],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_94d8cd4afb665d89d8c59279ced0ec68);
+
+            
+
+        
+    
+            var tile_layer_c0159fe5af75619d74ebe388f67d4a4f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_c0159fe5af75619d74ebe388f67d4a4f.addTo(map_94d8cd4afb665d89d8c59279ced0ec68);
+        
+    
+            var polygon_9f21e5f7e6be22c19c3d12bba832420f = L.polygon(
+                [[40.812311000000044, -73.91647], [40.812582999999975, -73.91631100000001], [40.81263399999999, -73.916281], [40.812199, -73.914952], [40.81186099999999, -73.915113], [40.811783, -73.914876], [40.811651, -73.91447399999998], [40.81099399999997, -73.914847], [40.81042700000001, -73.915178], [40.81025499999996, -73.914333], [40.81017399999999, -73.914031], [40.81015200000004, -73.913808], [40.81013800000002, -73.913676], [40.81011900000001, -73.913586], [40.81007499999996, -73.913489], [40.810017000000045, -73.913415], [40.80991299999999, -73.913355], [40.80975100000004, -73.913319], [40.809656000000025, -73.913302], [40.809343, -73.912479], [40.80906999999999, -73.91157000000001], [40.808808999999975, -73.910693], [40.809644999999975, -73.910366], [40.80945699999999, -73.909445], [40.80926600000005, -73.90853], [40.80905999999999, -73.90753700000002], [40.80889100000001, -73.906709], [40.80879, -73.906216], [40.80853100000004, -73.90496], [40.80988000000004, -73.903074], [40.809783000000024, -73.903057], [40.80969699999998, -73.903042], [40.80963100000004, -73.90303], [40.809485999999936, -73.903002], [40.80936399999993, -73.902988], [40.809145999999984, -73.902952], [40.80658399999997, -73.902433], [40.805935, -73.902294], [40.80563655876775, -73.90226297081435], [40.79678600000001, -73.913624], [40.812361606606515, -73.91660401347396], [40.812311000000044, -73.91647]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_94d8cd4afb665d89d8c59279ced0ec68);
+        
+    
+        var popup_92482a4d88b35c4dfca655c2c5c899a2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e415883846ae844ff7548cfe543a2a66 = $(`<div id="html_e415883846ae844ff7548cfe543a2a66" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD15</h4>                              </div>         </div>`)[0];
+                popup_92482a4d88b35c4dfca655c2c5c899a2.setContent(html_e415883846ae844ff7548cfe543a2a66);
+            
+        
+
+        polygon_9f21e5f7e6be22c19c3d12bba832420f.bindPopup(popup_92482a4d88b35c4dfca655c2c5c899a2)
+        ;
+
+        
+    
+    
+            polygon_9f21e5f7e6be22c19c3d12bba832420f.bindTooltip(
+                `<div>
+                      Bronx - NY-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_16b16e662ae340fa201cfa67913109cf = L.polygon(
+                [[40.796842999999974, -73.913903], [40.79704200000001, -73.91446200000001], [40.797589, -73.915754], [40.79783800000004, -73.916252], [40.797880999999975, -73.916306], [40.79880099999994, -73.918669], [40.798853000000044, -73.918812], [40.798903, -73.91890100000002], [40.79898799999997, -73.919053], [40.799012999999995, -73.919098], [40.799353000000025, -73.91986100000001], [40.79967199999997, -73.920357], [40.800101000000005, -73.920728], [40.800642, -73.921052], [40.80101100000003, -73.921204], [40.801446999999975, -73.921622], [40.80168900000001, -73.921742], [40.80196200000001, -73.92234], [40.80242499999997, -73.92302200000002], [40.802553999999986, -73.923633], [40.802548, -73.923748], [40.80250399999995, -73.923801], [40.80246799999999, -73.92406900000002], [40.80252099999993, -73.925081], [40.802476000000034, -73.926419], [40.802475999999984, -73.926562], [40.8025, -73.926737], [40.80255800000001, -73.92725], [40.80276399999993, -73.927525], [40.803850000000025, -73.928225], [40.80410599999998, -73.928401], [40.80579300000009, -73.929986], [40.80619599999998, -73.93034700000001], [40.806479000000024, -73.930406], [40.80720500000005, -73.93116600000002], [40.80787599999999, -73.931801], [40.808252999999986, -73.930938], [40.808877, -73.930108], [40.809322000000044, -73.929522], [40.809383999999994, -73.92944000000001], [40.80947099999999, -73.929332], [40.80956399999996, -73.929219], [40.80989899999998, -73.928806], [40.81048600000001, -73.928014], [40.810584999999946, -73.927893], [40.81107799999999, -73.927288], [40.811718, -73.926697], [40.811506999999914, -73.92644300000002], [40.81194099999997, -73.925553], [40.81238400000004, -73.924683], [40.81282399999999, -73.923829], [40.813007000000006, -73.923473], [40.813314999999974, -73.922875], [40.81373099999998, -73.922088], [40.814174, -73.921211], [40.814333000000026, -73.920913], [40.814257, -73.920801], [40.81412300000002, -73.920483], [40.81423699999992, -73.920398], [40.814040999999946, -73.919927], [40.81372799999996, -73.920153], [40.81352000000001, -73.919658], [40.81349699999996, -73.919598], [40.81372699999999, -73.919267], [40.81275299999997, -73.916722], [40.812418999999956, -73.916756], [40.812361606606515, -73.91660401347396], [40.79678600000001, -73.913624], [40.79683399999999, -73.913802], [40.796842999999974, -73.913903]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_94d8cd4afb665d89d8c59279ced0ec68);
+        
+    
+        var popup_36dbfd43bef7528afb4b2e194796de9f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_72410780f4cf12904b8a7307521abebf = $(`<div id="html_72410780f4cf12904b8a7307521abebf" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD13</h4>                              </div>         </div>`)[0];
+                popup_36dbfd43bef7528afb4b2e194796de9f.setContent(html_72410780f4cf12904b8a7307521abebf);
+            
+        
+
+        polygon_16b16e662ae340fa201cfa67913109cf.bindPopup(popup_36dbfd43bef7528afb4b2e194796de9f)
+        ;
+
+        
+    
+    
+            polygon_16b16e662ae340fa201cfa67913109cf.bindTooltip(
+                `<div>
+                      Bronx - NY-CD13
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_df3a32abc2f0797545f9f04dbba083d9 = L.polygon(
+                [[40.804877, -73.902184], [40.804623999999976, -73.902392], [40.80455399999999, -73.902293], [40.80438399999994, -73.90247], [40.80442600000005, -73.902612], [40.803847000000005, -73.90334700000001], [40.803810999999996, -73.903707], [40.80311099999997, -73.90458400000001], [40.80279300000001, -73.90488100000002], [40.802517999999964, -73.905106], [40.801712000000016, -73.905885], [40.80149599999998, -73.906181], [40.799091999999995, -73.90853000000001], [40.79799499999995, -73.90988500000002], [40.79668599999999, -73.91141000000002], [40.79678600000001, -73.913624], [40.80563655876775, -73.90226297081435], [40.804877, -73.902184]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_94d8cd4afb665d89d8c59279ced0ec68);
+        
+    
+        var popup_04fc636eb479b6e5dee0d1368b676285 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7aea99f70531606057b71ac8f09ee3cd = $(`<div id="html_7aea99f70531606057b71ac8f09ee3cd" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Bronx - NY-CD14</h4>                              </div>         </div>`)[0];
+                popup_04fc636eb479b6e5dee0d1368b676285.setContent(html_7aea99f70531606057b71ac8f09ee3cd);
+            
+        
+
+        polygon_df3a32abc2f0797545f9f04dbba083d9.bindPopup(popup_04fc636eb479b6e5dee0d1368b676285)
+        ;
+
+        
+    
+    
+            polygon_df3a32abc2f0797545f9f04dbba083d9.bindTooltip(
+                `<div>
+                      Bronx - NY-CD14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_94d8cd4afb665d89d8c59279ced0ec68.fitBounds(
+                [[40.79668599999999, -73.931801], [40.814333000000026, -73.902184]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_31569f22e87484f93585d84d22e7a90a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Westmoreland - PA-CD12</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Westmoreland - PA-CD14</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_31569f22e87484f93585d84d22e7a90a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_31569f22e87484f93585d84d22e7a90a = L.map(
+                "map_31569f22e87484f93585d84d22e7a90a",
+                {
+                    center: [40.325256166272254, -79.60593984670734],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_31569f22e87484f93585d84d22e7a90a);
+
+            
+
+        
+    
+            var tile_layer_4ae9eaa9098754d1e2072f2cd97e120f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_4ae9eaa9098754d1e2072f2cd97e120f.addTo(map_31569f22e87484f93585d84d22e7a90a);
+        
+    
+            var polygon_7bb514dace6f0baf68f2bbb9e48b7f8b = L.polygon(
+                [[40.32814099999996, -79.60686100000001], [40.32812600000003, -79.606668], [40.32808800000002, -79.606545], [40.32802399999997, -79.606424], [40.32799300000003, -79.606307], [40.32798600000004, -79.60628], [40.32796600000003, -79.606129], [40.32796800000004, -79.605965], [40.32798899999997, -79.605814], [40.32805000000002, -79.60567], [40.32810999999999, -79.605405], [40.32811600000001, -79.605303], [40.32812499999998, -79.605168], [40.32814200000002, -79.60508200000001], [40.328156000000035, -79.604919], [40.32816999999997, -79.604774], [40.328256999999994, -79.604149], [40.328302, -79.603725], [40.32831, -79.603661], [40.32830899999999, -79.603539], [40.32827900000004, -79.60334600000002], [40.328233, -79.603206], [40.32821000000003, -79.60322], [40.32815200000004, -79.603282], [40.32807499999997, -79.603329], [40.32802499999997, -79.603395], [40.32799099999997, -79.603454], [40.32797199999998, -79.60352400000001], [40.32791800000001, -79.603973], [40.327878000000034, -79.603874], [40.32783299999994, -79.603824], [40.32778899999999, -79.603738], [40.32767800000002, -79.603496], [40.327629000000016, -79.603408], [40.32758700000005, -79.603331], [40.327419999999975, -79.603055], [40.327379000000036, -79.60300600000001], [40.32735599999999, -79.602998], [40.327286999999956, -79.602869], [40.327080999999964, -79.602483], [40.327012999999965, -79.602355], [40.32673900000001, -79.602694], [40.325919000000006, -79.603712], [40.32564600000002, -79.604052], [40.325553, -79.603903], [40.32527400000003, -79.603456], [40.32518100000003, -79.603308], [40.325161, -79.603341], [40.325057999999984, -79.603221], [40.324986, -79.603137], [40.324879999999986, -79.603024], [40.32475699999996, -79.60286], [40.324722999999956, -79.602815], [40.32468100000001, -79.602744], [40.32467400000001, -79.602728], [40.32459800000003, -79.602558], [40.32456, -79.602473], [40.32449899999998, -79.602345], [40.32444899999999, -79.602263], [40.32439099999999, -79.602187], [40.32430399999999, -79.602089], [40.324202999999954, -79.601974], [40.32417300000004, -79.60196400000001], [40.324124000000026, -79.601986], [40.324049000000024, -79.602109], [40.32400099999999, -79.602193], [40.323968000000015, -79.602252], [40.32374600000004, -79.602618], [40.32368199999998, -79.602703], [40.32352200000002, -79.602938], [40.32347999999999, -79.603001], [40.32341300000001, -79.603093], [40.323360999999984, -79.603185], [40.323325000000025, -79.603134], [40.323293, -79.603072], [40.323271000000005, -79.603035], [40.32302800000004, -79.602615], [40.323008000000016, -79.602583], [40.322916999999954, -79.602435], [40.32288300000001, -79.602381], [40.322827999999994, -79.602275], [40.322799000000025, -79.602218], [40.32267000000006, -79.602], [40.32255500000006, -79.601802], [40.322500999999995, -79.60171], [40.322455000000026, -79.601654], [40.32244099999997, -79.601653], [40.32242399999997, -79.60168], [40.32233799999997, -79.601757], [40.32232399999999, -79.601774], [40.32219799999999, -79.601938], [40.322032, -79.602207], [40.32202400000003, -79.602225], [40.32200100000005, -79.602277], [40.32198600000001, -79.602329], [40.32198499999996, -79.602399], [40.32186299999995, -79.602532], [40.32149800000002, -79.602931], [40.321377000000005, -79.603065], [40.32156499999997, -79.603404], [40.32166200000005, -79.60357900000001], [40.321807000000014, -79.603837], [40.321851, -79.603903], [40.32201599999998, -79.604127], [40.32211900000001, -79.604278], [40.322186000000045, -79.60439000000001], [40.322242, -79.604483], [40.322376999999975, -79.604729], [40.32246599999998, -79.604891], [40.32259000000001, -79.605114], [40.322730000000014, -79.60538], [40.32281699999996, -79.605544], [40.32290100000003, -79.6057], [40.323154000000024, -79.60616900000001], [40.32323899999999, -79.606326], [40.32329399999997, -79.606416], [40.32345900000001, -79.606689], [40.32351399999998, -79.60678], [40.32355199999999, -79.606843], [40.32366599999998, -79.607032], [40.32370499999999, -79.607096], [40.32374800000002, -79.607162], [40.32387700000001, -79.607362], [40.32392, -79.607429], [40.32396400000002, -79.607497], [40.32397699999998, -79.607516], [40.324150999999965, -79.607777], [40.32421000000002, -79.607864], [40.324282999999994, -79.607963], [40.32450200000001, -79.608262], [40.324574999999975, -79.608362], [40.32454200000001, -79.608422], [40.324467000000006, -79.608531], [40.324366000000005, -79.608682], [40.324169, -79.608939], [40.32414299999998, -79.608985], [40.32413399999999, -79.609026], [40.324134, -79.609067], [40.32414799999996, -79.609106], [40.32418000000002, -79.609135], [40.32423599999999, -79.60917], [40.32424499999996, -79.609174], [40.32423099999997, -79.609217], [40.32419300000001, -79.609347], [40.32418099999998, -79.60939100000002], [40.324035, -79.609744], [40.32416299999999, -79.609966], [40.32419300000001, -79.610007], [40.324350000000045, -79.61028], [40.325001999999955, -79.611235], [40.325151250699726, -79.61148222500196], [40.3251939934343, -79.61146707158309], [40.325324, -79.611297], [40.325385999999995, -79.611399], [40.32813621563593, -79.60698156756233], [40.32814099999996, -79.60686100000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_31569f22e87484f93585d84d22e7a90a);
+        
+    
+        var popup_bddd79f7bdc128d1f06ecbf1a6ed5c0e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3bb59f16ded4cb1c29a34001887695e8 = $(`<div id="html_3bb59f16ded4cb1c29a34001887695e8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Westmoreland - PA-CD14</h4>                              </div>         </div>`)[0];
+                popup_bddd79f7bdc128d1f06ecbf1a6ed5c0e.setContent(html_3bb59f16ded4cb1c29a34001887695e8);
+            
+        
+
+        polygon_7bb514dace6f0baf68f2bbb9e48b7f8b.bindPopup(popup_bddd79f7bdc128d1f06ecbf1a6ed5c0e)
+        ;
+
+        
+    
+    
+            polygon_7bb514dace6f0baf68f2bbb9e48b7f8b.bindTooltip(
+                `<div>
+                      Westmoreland - PA-CD14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_d618821ccf1324582e510ddde84454af = L.polygon(
+                [[40.32543399999999, -79.611336], [40.32544100000001, -79.611311], [40.32555299999997, -79.61115000000001], [40.32556199999999, -79.611128], [40.32578300000003, -79.610814], [40.325792000000014, -79.610792], [40.32590599999999, -79.610621], [40.32591199999995, -79.610598], [40.32597800000001, -79.610512], [40.326204, -79.61015300000001], [40.326248000000035, -79.610103], [40.32634999999999, -79.609931], [40.32645400000004, -79.609789], [40.32645999999995, -79.60976600000001], [40.32652699999998, -79.60968], [40.32653699999999, -79.609654], [40.32654899999996, -79.609623], [40.32658399999999, -79.609587], [40.326633000000015, -79.609493], [40.326723999999935, -79.609373], [40.32672999999999, -79.60935], [40.32677399999997, -79.609293], [40.32680099999996, -79.609235], [40.32684499999996, -79.609178], [40.326889000000065, -79.609092], [40.326960000000014, -79.608985], [40.32698199999998, -79.608934], [40.32714100000003, -79.608719], [40.327233999999976, -79.608569], [40.32744700000005, -79.608296], [40.32757399999998, -79.608099], [40.32763300000002, -79.608009], [40.327677, -79.607923], [40.32779200000004, -79.607794], [40.327884000000026, -79.607717], [40.32789499999996, -79.607708], [40.32796999999999, -79.607579], [40.328018000000014, -79.607457], [40.32805300000005, -79.607392], [40.32810999999999, -79.60722], [40.32813100000002, -79.607113], [40.32813621563593, -79.60698156756233], [40.325385999999995, -79.611399], [40.32543399999999, -79.611336]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_31569f22e87484f93585d84d22e7a90a);
+        
+    
+        var popup_0591b8d4706a315cf30128d28b726ca3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f1db8303e3bcede6dd0b4ad60cd0b0cf = $(`<div id="html_f1db8303e3bcede6dd0b4ad60cd0b0cf" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Westmoreland - PA-CD12</h4>                              </div>         </div>`)[0];
+                popup_0591b8d4706a315cf30128d28b726ca3.setContent(html_f1db8303e3bcede6dd0b4ad60cd0b0cf);
+            
+        
+
+        polygon_d618821ccf1324582e510ddde84454af.bindPopup(popup_0591b8d4706a315cf30128d28b726ca3)
+        ;
+
+        
+    
+    
+            polygon_d618821ccf1324582e510ddde84454af.bindTooltip(
+                `<div>
+                      Westmoreland - PA-CD12
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0d67f640ef4bc4d32cde8b0597f1c7c1 = L.polygon(
+                [[40.325165, -79.611505], [40.3251939934343, -79.61146707158309], [40.325151250699726, -79.61148222500196], [40.325165, -79.611505]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_31569f22e87484f93585d84d22e7a90a);
+        
+    
+        var popup_1cc099ed1ed1a8252a451b646b153591 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4f6de608f0606fefea5f896d6a942062 = $(`<div id="html_4f6de608f0606fefea5f896d6a942062" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Westmoreland - PA-CD12</h4>                              </div>         </div>`)[0];
+                popup_1cc099ed1ed1a8252a451b646b153591.setContent(html_4f6de608f0606fefea5f896d6a942062);
+            
+        
+
+        polygon_0d67f640ef4bc4d32cde8b0597f1c7c1.bindPopup(popup_1cc099ed1ed1a8252a451b646b153591)
+        ;
+
+        
+    
+    
+            polygon_0d67f640ef4bc4d32cde8b0597f1c7c1.bindTooltip(
+                `<div>
+                      Westmoreland - PA-CD12
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_31569f22e87484f93585d84d22e7a90a.fitBounds(
+                [[40.321377000000005, -79.611505], [40.32831, -79.601653]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

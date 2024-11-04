@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aa41c800ab18354c3332bdfbe50984d9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Anoka - MN-CD05</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Anoka - MN-CD03</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Anoka - MN-CD06</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_aa41c800ab18354c3332bdfbe50984d9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_aa41c800ab18354c3332bdfbe50984d9 = L.map(
+                "map_aa41c800ab18354c3332bdfbe50984d9",
+                {
+                    center: [45.164106730529774, -93.25067752981522],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+
+            
+
+        
+    
+            var tile_layer_dd46fd2e65889c87c41483f1151af101 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_dd46fd2e65889c87c41483f1151af101.addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+        
+    
+            var polygon_23e39c35afbb19af48dcad8f33e2ed65 = L.polygon(
+                [[45.124550000000006, -93.243037], [45.12454900000003, -93.243288], [45.124556478918855, -93.24423842660954], [45.124553508903254, -93.24206403315532], [45.124550000000006, -93.243037]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+        
+    
+        var popup_ddb83d45e62c1b2ef28c73eeea88f82f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8e1ebdbcf3e251ebb9ac828611e82cda = $(`<div id="html_8e1ebdbcf3e251ebb9ac828611e82cda" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Anoka - MN-CD05</h4>                              </div>         </div>`)[0];
+                popup_ddb83d45e62c1b2ef28c73eeea88f82f.setContent(html_8e1ebdbcf3e251ebb9ac828611e82cda);
+            
+        
+
+        polygon_23e39c35afbb19af48dcad8f33e2ed65.bindPopup(popup_ddb83d45e62c1b2ef28c73eeea88f82f)
+        ;
+
+        
+    
+    
+            polygon_23e39c35afbb19af48dcad8f33e2ed65.bindTooltip(
+                `<div>
+                      Anoka - MN-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5def66e315e1586b5ae58ceef301d187 = L.polygon(
+                [[45.12454599999999, -93.245753], [45.124541999999984, -93.245916], [45.124537999999994, -93.247278], [45.124537000000004, -93.247316], [45.12453500000002, -93.247908], [45.12453400000001, -93.248402], [45.12453400000001, -93.248698], [45.124533999999976, -93.24884], [45.12453600000003, -93.249465], [45.12453799999998, -93.250156], [45.12450000000004, -93.25087], [45.124517999999966, -93.253589], [45.12452000000003, -93.254029], [45.12452700000001, -93.256018], [45.12453600000003, -93.258636], [45.124537999999994, -93.259688], [45.12453799999998, -93.26328], [45.124553, -93.264152], [45.124557999999986, -93.264427], [45.124583999999984, -93.265777], [45.12455714475445, -93.24472945676109], [45.12454599999999, -93.245753]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+        
+    
+        var popup_cd7b480f0df5167ec305eb84f3b8ecf1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8cd08122d19a77a8d464b03ca04df9ce = $(`<div id="html_8cd08122d19a77a8d464b03ca04df9ce" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Anoka - MN-CD05</h4>                              </div>         </div>`)[0];
+                popup_cd7b480f0df5167ec305eb84f3b8ecf1.setContent(html_8cd08122d19a77a8d464b03ca04df9ce);
+            
+        
+
+        polygon_5def66e315e1586b5ae58ceef301d187.bindPopup(popup_cd7b480f0df5167ec305eb84f3b8ecf1)
+        ;
+
+        
+    
+    
+            polygon_5def66e315e1586b5ae58ceef301d187.bindTooltip(
+                `<div>
+                      Anoka - MN-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1c19caa42081127fa37b2682712f7c05 = L.polygon(
+                [[45.12886499999999, -93.266823], [45.130035999999976, -93.266808], [45.131144000000006, -93.266792], [45.13268700000003, -93.266769], [45.132921000000046, -93.266766], [45.13314999999999, -93.266761], [45.13377300000002, -93.266828], [45.13397100000006, -93.266851], [45.13437399999997, -93.266844], [45.13494299999998, -93.266833], [45.135887999999994, -93.266816], [45.136816999999965, -93.266804], [45.138112, -93.266795], [45.138466000000015, -93.266792], [45.139385, -93.266786], [45.14016300000001, -93.266781], [45.14026300000002, -93.266703], [45.14089800000006, -93.266661], [45.142386000000016, -93.26663300000001], [45.142616000000025, -93.26663100000002], [45.142865, -93.266629], [45.14325200000001, -93.266627], [45.14335599999997, -93.266626], [45.14350399999996, -93.266625], [45.14450900000002, -93.26662], [45.14464700000002, -93.266619], [45.14554299999996, -93.266615], [45.14626899999997, -93.266611], [45.14674800000001, -93.266604], [45.148545000000006, -93.266558], [45.148928000000055, -93.266548], [45.15005900000001, -93.266543], [45.15044999999996, -93.266532], [45.151577, -93.266501], [45.15268099999995, -93.266485], [45.15280100000004, -93.266486], [45.153531, -93.266469], [45.15400200000003, -93.26646500000001], [45.15491299999997, -93.266456], [45.15547800000002, -93.266451], [45.15581700000005, -93.266438], [45.156687000000005, -93.266403], [45.156787, -93.266399], [45.157115, -93.266395], [45.158216999999986, -93.266382], [45.15897500000003, -93.266372], [45.16021800000001, -93.266339], [45.16077899999995, -93.266335], [45.16175200000001, -93.266329], [45.16183100000003, -93.26632600000002], [45.162838999999984, -93.266286], [45.163453000000025, -93.266271], [45.16442799999995, -93.266257], [45.165796, -93.266222], [45.16632599999999, -93.266224], [45.16731900000003, -93.266229], [45.168082000000055, -93.266202], [45.168207000000024, -93.26619700000002], [45.16875800000001, -93.266177], [45.17107099999998, -93.266154], [45.17117900000003, -93.266208], [45.17154699999996, -93.266204], [45.171831999999995, -93.266201], [45.172463, -93.266194], [45.17383799999998, -93.266179], [45.17431899999999, -93.266174], [45.17500399999997, -93.266167], [45.175168000000006, -93.266165], [45.178273, -93.26614], [45.17889100000004, -93.266135], [45.17994300000003, -93.266125], [45.18249400000001, -93.266101], [45.18346599999999, -93.266089], [45.18407499999997, -93.266081], [45.18496300000001, -93.26607000000001], [45.18795999999997, -93.265997], [45.18884000000002, -93.265972], [45.189330999999974, -93.265971], [45.19026599999998, -93.265967], [45.190918000000046, -93.265965], [45.193313000000025, -93.26593], [45.193593, -93.265926], [45.19438900000001, -93.265915], [45.19453999999998, -93.26586], [45.19506900880045, -93.2658434688406], [45.124583999999984, -93.265777], [45.12460099999998, -93.266659], [45.12460299999998, -93.266888], [45.127714999999974, -93.266839], [45.12810099999998, -93.266834], [45.128718000000006, -93.266829], [45.12886499999999, -93.266823]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+        
+    
+        var popup_28570afc1e4b05398a120d6a03eace28 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_296b4f855f2d258c56bc4aa849809ae5 = $(`<div id="html_296b4f855f2d258c56bc4aa849809ae5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Anoka - MN-CD03</h4>                              </div>         </div>`)[0];
+                popup_28570afc1e4b05398a120d6a03eace28.setContent(html_296b4f855f2d258c56bc4aa849809ae5);
+            
+        
+
+        polygon_1c19caa42081127fa37b2682712f7c05.bindPopup(popup_28570afc1e4b05398a120d6a03eace28)
+        ;
+
+        
+    
+    
+            polygon_1c19caa42081127fa37b2682712f7c05.bindTooltip(
+                `<div>
+                      Anoka - MN-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0b3db0e2a6c3f21a9a59df1db4cd7e29 = L.polygon(
+                [[45.198224999999944, -93.265866], [45.19900000000006, -93.265868], [45.19925000000002, -93.265868], [45.19944299999997, -93.265871], [45.200214, -93.26588], [45.20058599999997, -93.265874], [45.201964477909, -93.26584997830435], [45.1970120000045, -93.26584530293965], [45.19701200000001, -93.265872], [45.197117000000034, -93.26587], [45.198224999999944, -93.265866]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+        
+    
+        var popup_f207e67b7aae0fedc8c5c6af007efc16 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1b53427c0d9277651c82055a85bdfd2c = $(`<div id="html_1b53427c0d9277651c82055a85bdfd2c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Anoka - MN-CD03</h4>                              </div>         </div>`)[0];
+                popup_f207e67b7aae0fedc8c5c6af007efc16.setContent(html_1b53427c0d9277651c82055a85bdfd2c);
+            
+        
+
+        polygon_0b3db0e2a6c3f21a9a59df1db4cd7e29.bindPopup(popup_f207e67b7aae0fedc8c5c6af007efc16)
+        ;
+
+        
+    
+    
+            polygon_0b3db0e2a6c3f21a9a59df1db4cd7e29.bindTooltip(
+                `<div>
+                      Anoka - MN-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5c86eb19e6403519ad40fe7fcae3df56 = L.polygon(
+                [[45.19668399999997, -93.265793], [45.19701200000001, -93.2658], [45.1970120000045, -93.26584530293965], [45.201964477909, -93.26584997830435], [45.20207800000001, -93.265848], [45.20440399999998, -93.265852], [45.20897498784204, -93.26585659762907], [45.20940109449794, -93.26585700000001], [45.209831000000015, -93.26585700000001], [45.211518999999946, -93.265859], [45.21149800000004, -93.259069], [45.21150500000003, -93.258746], [45.211497000000016, -93.255007], [45.211490000000055, -93.25138], [45.211467, -93.245088], [45.21144199999997, -93.234942], [45.21144199999999, -93.234853], [45.21144199999997, -93.234575], [45.21136299999996, -93.23457700000002], [45.209100999999976, -93.23463], [45.20796000000002, -93.234649], [45.20435299999998, -93.234711], [45.204332999999984, -93.234319], [45.20434499999998, -93.233156], [45.20415400000006, -93.233144], [45.20389999999998, -93.23305600000002], [45.20367699999999, -93.232925], [45.20352400000004, -93.232902], [45.20318500000002, -93.23296600000002], [45.20307900000001, -93.233054], [45.202923000000055, -93.233183], [45.202730000000024, -93.233454], [45.202507000000026, -93.23387700000002], [45.202360000000006, -93.234072], [45.20215199999999, -93.234126], [45.20143800000002, -93.234107], [45.20114500000001, -93.23410000000001], [45.20072199999993, -93.234109], [45.20060900000003, -93.234104], [45.20045399999996, -93.23409], [45.200321999999986, -93.234076], [45.19830499999992, -93.233816], [45.198159, -93.233701], [45.19803600000002, -93.233519], [45.19796700000001, -93.233322], [45.197943999999964, -93.233098], [45.197943000000045, -93.232637], [45.197935, -93.232202], [45.197912000000045, -93.232058], [45.197836000000024, -93.231824], [45.197620999999984, -93.231649], [45.19730900000001, -93.231613], [45.19730499999996, -93.232571], [45.19730399999999, -93.233168], [45.197298999999944, -93.234446], [45.19718099999995, -93.23444800000001], [45.197175999999985, -93.234853], [45.197091999999955, -93.234854], [45.197022000000004, -93.234855], [45.19622200000002, -93.23487], [45.19433399999999, -93.234877], [45.19356799999999, -93.234881], [45.192796000000044, -93.23488400000001], [45.190518000000004, -93.234898], [45.18994000000001, -93.234902], [45.187497000000015, -93.234927], [45.185210999999974, -93.234972], [45.183281999999984, -93.23496400000002], [45.18298499999999, -93.234971], [45.180416, -93.235033], [45.180194000000014, -93.235038], [45.17995599999998, -93.235044], [45.179414, -93.235056], [45.17814500000001, -93.235083], [45.176747999999975, -93.235112], [45.175362000000014, -93.235128], [45.17309700000005, -93.235159], [45.17159000000005, -93.235186], [45.168269, -93.235247], [45.16815700000001, -93.23525], [45.16732399999999, -93.23526300000002], [45.166530000000016, -93.235272], [45.16450199999997, -93.235296], [45.162698000000034, -93.235297], [45.16081800000003, -93.235301], [45.15955900000001, -93.235333], [45.15870100000002, -93.235354], [45.157934000000004, -93.235374], [45.15744799999998, -93.235376], [45.157009999999964, -93.235378], [45.15630000000001, -93.235381], [45.154552, -93.23539], [45.153822999999974, -93.23540000000001], [45.153552, -93.235403], [45.15349600000004, -93.235404], [45.14995700000001, -93.235463], [45.149854999999974, -93.235463], [45.14626799999998, -93.235521], [45.145369999999986, -93.235536], [45.14271800000003, -93.235511], [45.140000000000065, -93.235501], [45.139130999999956, -93.235503], [45.13653299999999, -93.235511], [45.135816999999975, -93.235514], [45.13569900000002, -93.235513], [45.13544000000002, -93.23551], [45.134721999999975, -93.235503], [45.13413400000003, -93.235498], [45.133861, -93.235495], [45.133337000000004, -93.23549], [45.13303299999999, -93.235494], [45.132664999999996, -93.235499], [45.131811, -93.235475], [45.13069699999997, -93.235465], [45.128171, -93.235478], [45.12501100000002, -93.235497], [45.12476999999997, -93.235507], [45.12468999999997, -93.23552], [45.124569000000044, -93.23554], [45.12457100000001, -93.235581], [45.124570999999996, -93.235761], [45.12475899999995, -93.23572], [45.12475799999999, -93.235877], [45.12475700000002, -93.236145], [45.12475399999999, -93.237585], [45.12475099999999, -93.238621], [45.124713000000014, -93.238446], [45.12458199999994, -93.23806], [45.124568, -93.238025], [45.124553508903254, -93.24206403315532], [45.124556478918855, -93.24423842660954], [45.124559000000026, -93.244559], [45.12455714475445, -93.24472945676109], [45.124583999999984, -93.265777], [45.19506900880045, -93.2658434688406], [45.19668399999997, -93.265793]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_aa41c800ab18354c3332bdfbe50984d9);
+        
+    
+        var popup_8da21dcb882cb2a8d56449007f875d2e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e5bfe8d4af1702b49f0aec6f86da02ad = $(`<div id="html_e5bfe8d4af1702b49f0aec6f86da02ad" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Anoka - MN-CD06</h4>                              </div>         </div>`)[0];
+                popup_8da21dcb882cb2a8d56449007f875d2e.setContent(html_e5bfe8d4af1702b49f0aec6f86da02ad);
+            
+        
+
+        polygon_5c86eb19e6403519ad40fe7fcae3df56.bindPopup(popup_8da21dcb882cb2a8d56449007f875d2e)
+        ;
+
+        
+    
+    
+            polygon_5c86eb19e6403519ad40fe7fcae3df56.bindTooltip(
+                `<div>
+                      Anoka - MN-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_aa41c800ab18354c3332bdfbe50984d9.fitBounds(
+                [[45.12450000000004, -93.266888], [45.211518999999946, -93.231613]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

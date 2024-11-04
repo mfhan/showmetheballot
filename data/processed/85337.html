@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ef1c2ba8abd12722a71956517c9df7b7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Maricopa - AZ-CD09</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Maricopa - AZ-CD07</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_ef1c2ba8abd12722a71956517c9df7b7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ef1c2ba8abd12722a71956517c9df7b7 = L.map(
+                "map_ef1c2ba8abd12722a71956517c9df7b7",
+                {
+                    center: [33.039939206132544, -112.95396765434288],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+
+            
+
+        
+    
+            var tile_layer_697619968b33fe17a83e58ace372740f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_697619968b33fe17a83e58ace372740f.addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+            var polygon_9db99dea027f96d35a1f7eea56431947 = L.polygon(
+                [[33.19297999999997, -113.039572], [33.19327800000003, -113.039374], [33.19353600000004, -113.039017], [33.193654999999964, -113.03868], [33.19426899999997, -113.038105], [33.19470499999998, -113.037788], [33.19518100000004, -113.037312], [33.195379999999986, -113.037034], [33.19578900000001, -113.036459], [33.196127000000004, -113.036082], [33.196325000000016, -113.035983], [33.196583000000025, -113.035924], [33.196999, -113.035646], [33.19762299999999, -113.035338], [33.19839500000002, -113.034544], [33.199535999999966, -113.033305], [33.199902, -113.032816], [33.201051999999976, -113.031131], [33.202891000000015, -113.028656], [33.204394000000015, -113.026578], [33.19253865910406, -113.03983138638385], [33.19297999999997, -113.039572]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_c78536425e530c9df98db05e90a1851c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a68cb362040edbbe8b55de0bd84f83f7 = $(`<div id="html_a68cb362040edbbe8b55de0bd84f83f7" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_c78536425e530c9df98db05e90a1851c.setContent(html_a68cb362040edbbe8b55de0bd84f83f7);
+            
+        
+
+        polygon_9db99dea027f96d35a1f7eea56431947.bindPopup(popup_c78536425e530c9df98db05e90a1851c)
+        ;
+
+        
+    
+    
+            polygon_9db99dea027f96d35a1f7eea56431947.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8b0159bad163c942a1dedea6c66b38bb = L.polygon(
+                [[33.18644999999999, -113.047011], [33.186646999999944, -113.046932], [33.18670099999998, -113.046902], [33.186781, -113.046843], [33.186861, -113.046753], [33.187097000000016, -113.046421], [33.18744300000005, -113.04596500000001], [33.187552999999994, -113.045838], [33.18764000000001, -113.04576], [33.18796700000003, -113.045491], [33.18819499999999, -113.045266], [33.18841800000002, -113.04505200000001], [33.18883599999995, -113.04469], [33.188884999999985, -113.04464], [33.188906999999986, -113.044606], [33.18910400000003, -113.044212], [33.189191000000015, -113.043991], [33.189272999999964, -113.043758], [33.189298999999984, -113.043693], [33.189448, -113.04344], [33.189469, -113.043388], [33.18948000000001, -113.043341], [33.189495862612056, -113.0432320494307], [33.185988209668764, -113.04715175663553], [33.18644999999999, -113.047011]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_82d105b952f48b2eb9ebafa65b876259 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea28bf986e7fd5b6801a7ad980f2164b = $(`<div id="html_ea28bf986e7fd5b6801a7ad980f2164b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_82d105b952f48b2eb9ebafa65b876259.setContent(html_ea28bf986e7fd5b6801a7ad980f2164b);
+            
+        
+
+        polygon_8b0159bad163c942a1dedea6c66b38bb.bindPopup(popup_82d105b952f48b2eb9ebafa65b876259)
+        ;
+
+        
+    
+    
+            polygon_8b0159bad163c942a1dedea6c66b38bb.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_794445ddf8097c79ec129f4f9e15c39c = L.polygon(
+                [[33.16733299999998, -113.067997], [33.16751899999995, -113.067804], [33.167733000000005, -113.067569], [33.16781699999995, -113.067461], [33.16784755135665, -113.06741517316041], [33.1673000610462, -113.06802651334863], [33.16733299999998, -113.067997]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_a45850d2abfcd8a91920c42dafa6c907 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3d671cb9a8e6046527239aff47756fa0 = $(`<div id="html_3d671cb9a8e6046527239aff47756fa0" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_a45850d2abfcd8a91920c42dafa6c907.setContent(html_3d671cb9a8e6046527239aff47756fa0);
+            
+        
+
+        polygon_794445ddf8097c79ec129f4f9e15c39c.bindPopup(popup_a45850d2abfcd8a91920c42dafa6c907)
+        ;
+
+        
+    
+    
+            polygon_794445ddf8097c79ec129f4f9e15c39c.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6cd2d9206829bd673c9e47b0e38353ad = L.polygon(
+                [[33.160127999999965, -113.076114], [33.16018499999998, -113.076079], [33.16028199999995, -113.075995], [33.16032999999993, -113.075934], [33.160371999999995, -113.07584900000002], [33.16043346957943, -113.07569283412292], [33.1600111282745, -113.0761642993096], [33.160127999999965, -113.076114]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_59fd85f4bd8190fdde7f2a7062c7612a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_03eaa31fdbeaa72f20bad7529f15e7ad = $(`<div id="html_03eaa31fdbeaa72f20bad7529f15e7ad" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_59fd85f4bd8190fdde7f2a7062c7612a.setContent(html_03eaa31fdbeaa72f20bad7529f15e7ad);
+            
+        
+
+        polygon_6cd2d9206829bd673c9e47b0e38353ad.bindPopup(popup_59fd85f4bd8190fdde7f2a7062c7612a)
+        ;
+
+        
+    
+    
+            polygon_6cd2d9206829bd673c9e47b0e38353ad.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5c0e230612a2e246603dd8fce99d07b4 = L.polygon(
+                [[33.158159999999995, -113.07827500000002], [33.15819999999997, -113.07823000000002], [33.158291999999975, -113.078099], [33.15832540965886, -113.07804601449148], [33.15796633874733, -113.07844681870866], [33.158159999999995, -113.07827500000002]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_c09beed93311e7eb3e4c84b9135f3d7c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_356d4a9fe9904f30edb555da70aab1ea = $(`<div id="html_356d4a9fe9904f30edb555da70aab1ea" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_c09beed93311e7eb3e4c84b9135f3d7c.setContent(html_356d4a9fe9904f30edb555da70aab1ea);
+            
+        
+
+        polygon_5c0e230612a2e246603dd8fce99d07b4.bindPopup(popup_c09beed93311e7eb3e4c84b9135f3d7c)
+        ;
+
+        
+    
+    
+            polygon_5c0e230612a2e246603dd8fce99d07b4.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7f4e7b89a3c6deb2f45c4a5f49511f3e = L.polygon(
+                [[33.15260299999999, -113.084767], [33.15265300000003, -113.084736], [33.15272099999997, -113.084675], [33.153136999999944, -113.08417700000001], [33.153771, -113.083518], [33.15408899999995, -113.083164], [33.15420099999997, -113.083048], [33.15450500000004, -113.08273], [33.154776000000005, -113.082425], [33.154993999999995, -113.082156], [33.15528400000001, -113.08176], [33.155372000000014, -113.08155], [33.15540800000001, -113.081443], [33.155427999999965, -113.081398], [33.155450999999985, -113.081363], [33.15572300000003, -113.081063], [33.15575700000004, -113.081033], [33.15580300000003, -113.081011], [33.15586400000002, -113.080999], [33.15597999999997, -113.081002], [33.155997000000006, -113.080988], [33.15601600000004, -113.080916], [33.156023999999995, -113.080862], [33.15605600000003, -113.080755], [33.15620425501873, -113.08041362335895], [33.152120936562426, -113.08497084409214], [33.15260299999999, -113.084767]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_324f1dbe3b3645bc816c4a2b535f6cff = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_20990c70552eb8429c611dbf45874134 = $(`<div id="html_20990c70552eb8429c611dbf45874134" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_324f1dbe3b3645bc816c4a2b535f6cff.setContent(html_20990c70552eb8429c611dbf45874134);
+            
+        
+
+        polygon_7f4e7b89a3c6deb2f45c4a5f49511f3e.bindPopup(popup_324f1dbe3b3645bc816c4a2b535f6cff)
+        ;
+
+        
+    
+    
+            polygon_7f4e7b89a3c6deb2f45c4a5f49511f3e.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6b822112e31be2aee4f400b1c7691e56 = L.polygon(
+                [[33.147492, -113.090167], [33.147620000000025, -113.09013], [33.14769599999999, -113.09009], [33.147834000000046, -113.089985], [33.14810300000003, -113.089756], [33.14817599999998, -113.089675], [33.14824499999999, -113.089575], [33.14845500000001, -113.089163], [33.14853534407171, -113.08897199506882], [33.14745954884637, -113.09017236594565], [33.147492, -113.090167]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_61f38d816c929c42a7a35dc04f01fd39 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1467ace7086848f29536d2175637ee5d = $(`<div id="html_1467ace7086848f29536d2175637ee5d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_61f38d816c929c42a7a35dc04f01fd39.setContent(html_1467ace7086848f29536d2175637ee5d);
+            
+        
+
+        polygon_6b822112e31be2aee4f400b1c7691e56.bindPopup(popup_61f38d816c929c42a7a35dc04f01fd39)
+        ;
+
+        
+    
+    
+            polygon_6b822112e31be2aee4f400b1c7691e56.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a2c7ba512682fc1a97eb7a1e80a2a8b3 = L.polygon(
+                [[33.138946999999995, -113.099688], [33.13897200000002, -113.099667], [33.13906000000001, -113.099581], [33.13913100000003, -113.099489], [33.13917086606796, -113.09941923442618], [33.13889997872393, -113.0997213880401], [33.138946999999995, -113.099688]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_71d27b3b1355f888fc86b811e96a85a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9b10eae48d8680a6c443f27e336b17f4 = $(`<div id="html_9b10eae48d8680a6c443f27e336b17f4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_71d27b3b1355f888fc86b811e96a85a6.setContent(html_9b10eae48d8680a6c443f27e336b17f4);
+            
+        
+
+        polygon_a2c7ba512682fc1a97eb7a1e80a2a8b3.bindPopup(popup_71d27b3b1355f888fc86b811e96a85a6)
+        ;
+
+        
+    
+    
+            polygon_a2c7ba512682fc1a97eb7a1e80a2a8b3.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4b6124d8584c0396b1d4a8da36d4f856 = L.polygon(
+                [[33.134574000000015, -113.104568], [33.13478799999995, -113.104326], [33.1349117340126, -113.10416960546648], [33.13439005564425, -113.10475140064342], [33.134574000000015, -113.104568]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_5c3fde93f29e5d834ae23227ee86a041 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c6a87bbe21be06974e8a21f3b3f79089 = $(`<div id="html_c6a87bbe21be06974e8a21f3b3f79089" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_5c3fde93f29e5d834ae23227ee86a041.setContent(html_c6a87bbe21be06974e8a21f3b3f79089);
+            
+        
+
+        polygon_4b6124d8584c0396b1d4a8da36d4f856.bindPopup(popup_5c3fde93f29e5d834ae23227ee86a041)
+        ;
+
+        
+    
+    
+            polygon_4b6124d8584c0396b1d4a8da36d4f856.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e7d83230bc61599d25e6f7d67b50c466 = L.polygon(
+                [[33.13363400000003, -113.105646], [33.13372100000001, -113.105621], [33.133806000000035, -113.105581], [33.13385599999997, -113.105545], [33.13389099999996, -113.105506], [33.13392900000003, -113.105447], [33.13397399999998, -113.105333], [33.13403600000002, -113.105186], [33.13408559714852, -113.10509093882783], [33.13358194806002, -113.10565260977674], [33.13363400000003, -113.105646]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_a0a944d5f66c66e1de8e8159d5a21cda = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a42b93e54e0a8180101cfbb0ff793388 = $(`<div id="html_a42b93e54e0a8180101cfbb0ff793388" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_a0a944d5f66c66e1de8e8159d5a21cda.setContent(html_a42b93e54e0a8180101cfbb0ff793388);
+            
+        
+
+        polygon_e7d83230bc61599d25e6f7d67b50c466.bindPopup(popup_a0a944d5f66c66e1de8e8159d5a21cda)
+        ;
+
+        
+    
+    
+            polygon_e7d83230bc61599d25e6f7d67b50c466.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f11952299ad18e0a16be553d3f4d7944 = L.polygon(
+                [[33.120145, -113.120677], [33.12022000000002, -113.120639], [33.120306, -113.120575], [33.12037799999998, -113.120507], [33.120443999999985, -113.120431], [33.120501999999995, -113.120347], [33.12055199999998, -113.120256], [33.12062009702825, -113.12010403624919], [33.12009296702709, -113.12069159462037], [33.120145, -113.120677]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_532de5e85c7612f39b9c0dc4a97b5e11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e0b59ee17c546cd74ccc27b438c94525 = $(`<div id="html_e0b59ee17c546cd74ccc27b438c94525" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_532de5e85c7612f39b9c0dc4a97b5e11.setContent(html_e0b59ee17c546cd74ccc27b438c94525);
+            
+        
+
+        polygon_f11952299ad18e0a16be553d3f4d7944.bindPopup(popup_532de5e85c7612f39b9c0dc4a97b5e11)
+        ;
+
+        
+    
+    
+            polygon_f11952299ad18e0a16be553d3f4d7944.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_31c14f322e46a5ed1f7a1f296a8a0df6 = L.polygon(
+                [[33.115729999999964, -113.12557], [33.115963999999956, -113.125322], [33.116138000000056, -113.125121], [33.11634299999998, -113.124879], [33.11649499999999, -113.124718], [33.116837999999994, -113.124387], [33.11696499999995, -113.124252], [33.11701300000003, -113.124174], [33.11704000000001, -113.124104], [33.11704260465924, -113.1240914108361], [33.11505737193016, -113.12630386470501], [33.115729999999964, -113.12557]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_6615f1281f1014dc3244bdba31c13b0f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c66de77ac8eff090b718ff35b3a844bb = $(`<div id="html_c66de77ac8eff090b718ff35b3a844bb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_6615f1281f1014dc3244bdba31c13b0f.setContent(html_c66de77ac8eff090b718ff35b3a844bb);
+            
+        
+
+        polygon_31c14f322e46a5ed1f7a1f296a8a0df6.bindPopup(popup_6615f1281f1014dc3244bdba31c13b0f)
+        ;
+
+        
+    
+    
+            polygon_31c14f322e46a5ed1f7a1f296a8a0df6.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_00e66f5e488fb7a60f40fb1b2e3cb310 = L.polygon(
+                [[33.109322999999975, -113.132744], [33.10949600000002, -113.132604], [33.10963999999996, -113.132468], [33.10977700000001, -113.132314], [33.11040200000001, -113.131568], [33.110860999999986, -113.13105300000001], [33.11168599999998, -113.130151], [33.11257500000004, -113.129169], [33.11262299999997, -113.129097], [33.11266, -113.129017], [33.11267644868927, -113.12895707982422], [33.10921633022933, -113.13281248691362], [33.109322999999975, -113.132744]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_54b15a9bde2783b1a73baf36f47c9a98 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e9db3bf68324846a5d40b72953b629d = $(`<div id="html_6e9db3bf68324846a5d40b72953b629d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_54b15a9bde2783b1a73baf36f47c9a98.setContent(html_6e9db3bf68324846a5d40b72953b629d);
+            
+        
+
+        polygon_00e66f5e488fb7a60f40fb1b2e3cb310.bindPopup(popup_54b15a9bde2783b1a73baf36f47c9a98)
+        ;
+
+        
+    
+    
+            polygon_00e66f5e488fb7a60f40fb1b2e3cb310.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c9fa78298f1fbc455331c1960ac1d3cf = L.polygon(
+                [[33.097072999999995, -113.146373], [33.09739100000001, -113.146143], [33.097584999999995, -113.145988], [33.09771200000005, -113.145881], [33.09777699999999, -113.145805], [33.09781400000001, -113.145741], [33.09785599999999, -113.145642], [33.09787199999999, -113.145581], [33.097881000000015, -113.145548], [33.09789499999999, -113.14544], [33.09789520968118, -113.1454234355429], [33.096942000000034, -113.146485], [33.097072999999995, -113.146373]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_03fdfda17044ba4e9b4f9d50c7c166a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_204d4ed3048fb363ffa86bb4c4e11160 = $(`<div id="html_204d4ed3048fb363ffa86bb4c4e11160" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_03fdfda17044ba4e9b4f9d50c7c166a3.setContent(html_204d4ed3048fb363ffa86bb4c4e11160);
+            
+        
+
+        polygon_c9fa78298f1fbc455331c1960ac1d3cf.bindPopup(popup_03fdfda17044ba4e9b4f9d50c7c166a3)
+        ;
+
+        
+    
+    
+            polygon_c9fa78298f1fbc455331c1960ac1d3cf.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_09276509d581ba5c442cba1984d76dfe = L.polygon(
+                [[33.089639999999996, -113.187387], [33.08981299999996, -113.18736300000002], [33.08999299999998, -113.187321], [33.09007099999996, -113.18728700000001], [33.090134, -113.187239], [33.09018200000002, -113.187187], [33.09031600000001, -113.18697800000001], [33.09047700000003, -113.186699], [33.09062900000002, -113.186404], [33.09074300000002, -113.18615500000001], [33.090837, -113.185926], [33.091262000000015, -113.184862], [33.09129899999997, -113.18474], [33.09132300000001, -113.184632], [33.091338000000036, -113.184497], [33.09135400000001, -113.184141], [33.09135700000001, -113.18381300000001], [33.09135100000002, -113.183579], [33.09134900000001, -113.182489], [33.091384999999995, -113.180749], [33.09137499999997, -113.18059], [33.09135500000003, -113.18044300000001], [33.09132000000001, -113.180283], [33.091262000000015, -113.180065], [33.09122299999999, -113.179849], [33.091202, -113.179674], [33.0912, -113.179649], [33.09119200000005, -113.17953000000001], [33.09117800000001, -113.178722], [33.09119099999998, -113.178541], [33.091219000000024, -113.178363], [33.09126500000001, -113.178176], [33.09132000000001, -113.178008], [33.09134900000001, -113.17788200000001], [33.09136699999999, -113.177747], [33.091371999999986, -113.177595], [33.09142000000001, -113.176966], [33.09147089664938, -113.17643860721815], [33.08946739959, -113.18739567339051], [33.089639999999996, -113.187387]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_64ba48f4e5d986da4b0fe7c1681c05d1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d71d455aa940d56c55255e9453758152 = $(`<div id="html_d71d455aa940d56c55255e9453758152" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_64ba48f4e5d986da4b0fe7c1681c05d1.setContent(html_d71d455aa940d56c55255e9453758152);
+            
+        
+
+        polygon_09276509d581ba5c442cba1984d76dfe.bindPopup(popup_64ba48f4e5d986da4b0fe7c1681c05d1)
+        ;
+
+        
+    
+    
+            polygon_09276509d581ba5c442cba1984d76dfe.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2846f03a91586f0150a4c54b3d3c5b71 = L.polygon(
+                [[33.08191000000001, -113.208851], [33.08202999999998, -113.208602], [33.082137999999986, -113.208396], [33.08227600000001, -113.208164], [33.082403000000035, -113.207968], [33.082586, -113.207706], [33.08265800000003, -113.207575], [33.082707000000035, -113.207454], [33.08468699999999, -113.203191], [33.08533000000002, -113.201787], [33.08583499999999, -113.200734], [33.08640399999997, -113.199502], [33.086895000000005, -113.198401], [33.08717300000004, -113.197745], [33.087313999999985, -113.197383], [33.087412000000015, -113.197106], [33.087699000000036, -113.196443], [33.08790499999999, -113.195936], [33.08174243321864, -113.20914692838869], [33.08191000000001, -113.208851]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_00fa357057c3bcc569aac2d40159aa1e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9f85ca3b19a87d4e2a80318161cd7a79 = $(`<div id="html_9f85ca3b19a87d4e2a80318161cd7a79" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_00fa357057c3bcc569aac2d40159aa1e.setContent(html_9f85ca3b19a87d4e2a80318161cd7a79);
+            
+        
+
+        polygon_2846f03a91586f0150a4c54b3d3c5b71.bindPopup(popup_00fa357057c3bcc569aac2d40159aa1e)
+        ;
+
+        
+    
+    
+            polygon_2846f03a91586f0150a4c54b3d3c5b71.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2090b6c685c6bfaa14f2c1243387e678 = L.polygon(
+                [[33.08790499999999, -113.195936], [33.08799200000005, -113.19568700000002], [33.08804800000001, -113.195503], [33.088106999999965, -113.19528], [33.08817700000002, -113.194943], [33.088212000000006, -113.19475], [33.08825800000004, -113.194569], [33.08830899999999, -113.194416], [33.08840200000001, -113.194187], [33.08851299999997, -113.193886], [33.088635999999994, -113.193514], [33.088741, -113.19316099999999], [33.08883500000003, -113.192797], [33.08903300000003, -113.191953], [33.08905299999999, -113.191807], [33.089063, -113.191691], [33.089062999999975, -113.191513], [33.08904999999999, -113.191378], [33.08904499999997, -113.191335], [33.08903099999999, -113.19111499999998], [33.08897400000002, -113.190213], [33.088965891459395, -113.19013741622638], [33.08790499999999, -113.195936]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_57fa2004fa766079b987c2a6579105e8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_359b28eef1cbf3a66f65f67dbf97d97c = $(`<div id="html_359b28eef1cbf3a66f65f67dbf97d97c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD09</h4>                              </div>         </div>`)[0];
+                popup_57fa2004fa766079b987c2a6579105e8.setContent(html_359b28eef1cbf3a66f65f67dbf97d97c);
+            
+        
+
+        polygon_2090b6c685c6bfaa14f2c1243387e678.bindPopup(popup_57fa2004fa766079b987c2a6579105e8)
+        ;
+
+        
+    
+    
+            polygon_2090b6c685c6bfaa14f2c1243387e678.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD09
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_adabab39aa53fe8b04a5d1d6a79be201 = L.polygon(
+                [[33.081271000000015, -113.209949], [33.081598000000035, -113.209402], [33.08174243321864, -113.20914692838869], [33.08790499999999, -113.195936], [33.088965891459395, -113.19013741622638], [33.088945999999986, -113.189952], [33.08889599999998, -113.189663], [33.08885299999999, -113.189472], [33.08879999999995, -113.18928100000001], [33.08861999999996, -113.188425], [33.08860000000001, -113.188279], [33.08859199999999, -113.18815300000001], [33.08859400000001, -113.187987], [33.088607999999994, -113.187894], [33.08863, -113.187816], [33.088665000000006, -113.187733], [33.088713999999996, -113.187654], [33.088762, -113.187596], [33.08884199999998, -113.187529], [33.089008, -113.187439], [33.08909399999999, -113.187409], [33.08918099999999, -113.187392], [33.089271999999994, -113.18739], [33.08944100000003, -113.187397], [33.08946739959, -113.18739567339051], [33.09147089664938, -113.17643860721815], [33.09147800000001, -113.17636500000002], [33.09148200000001, -113.176183], [33.09146700000001, -113.175968], [33.091457, -113.175893], [33.091439, -113.175247], [33.091434, -113.174856], [33.091451, -113.174428], [33.09144800000002, -113.174041], [33.091428000000015, -113.173655], [33.09141199999999, -113.173486], [33.09132100000002, -113.172933], [33.091234, -113.172489], [33.09121999999996, -113.172323], [33.09121999999999, -113.172196], [33.09123599999997, -113.17204], [33.09125700000003, -113.171926], [33.091665, -113.170204], [33.09170100000001, -113.169971], [33.091720999999986, -113.169729], [33.091720999999986, -113.169518], [33.091710000000006, -113.16934100000002], [33.091720999999986, -113.169114], [33.09174399999999, -113.168912], [33.091777, -113.168712], [33.091976999999964, -113.167812], [33.09205900000004, -113.167406], [33.09211200000003, -113.167087], [33.09215999999999, -113.16674900000001], [33.09221099999997, -113.166488], [33.092316999999994, -113.166041], [33.09235599999995, -113.16581], [33.09237399999994, -113.165617], [33.092398000000045, -113.165122], [33.092432000000024, -113.164713], [33.09246300000002, -113.164443], [33.09266099999998, -113.163614], [33.09282599999998, -113.162954], [33.092874999999985, -113.16267700000002], [33.09290200000006, -113.162441], [33.09292200000002, -113.162105], [33.092942000000036, -113.161948], [33.092979000000035, -113.161763], [33.09306199999998, -113.161407], [33.093116, -113.161127], [33.093165000000006, -113.16081400000002], [33.09325200000001, -113.160218], [33.093316000000044, -113.159832], [33.09359400000001, -113.158275], [33.09391599999999, -113.156718], [33.09437499999999, -113.154663], [33.094636000000015, -113.153605], [33.09469199999998, -113.153323], [33.09472099999999, -113.153118], [33.094754999999985, -113.152855], [33.09479299999999, -113.152679], [33.09483300000003, -113.152531], [33.09488300000002, -113.152383], [33.094938000000035, -113.152243], [33.09503899999997, -113.15204], [33.095125, -113.151902], [33.09521400000003, -113.151789], [33.09532599999997, -113.151673], [33.09539100000004, -113.151587], [33.09547500000001, -113.15144800000002], [33.095548000000015, -113.151299], [33.095599000000014, -113.15116], [33.09563499999999, -113.151043], [33.095671000000024, -113.150874], [33.095702999999986, -113.150619], [33.09573299999999, -113.150471], [33.095779, -113.150307], [33.095803999999966, -113.150241], [33.095875000000035, -113.149985], [33.09597500000001, -113.149696], [33.09609100000001, -113.149416], [33.09626900000001, -113.149048], [33.096366999999965, -113.14881], [33.09643699999997, -113.148598], [33.096500000000006, -113.148359], [33.096547000000044, -113.148126], [33.09657300000004, -113.14796199999999], [33.09668700000003, -113.147139], [33.096744000000015, -113.146832], [33.09677699999997, -113.146732], [33.09681400000002, -113.146652], [33.09687100000005, -113.146564], [33.096942000000034, -113.146485], [33.09789520968118, -113.1454234355429], [33.097896000000006, -113.145361], [33.09787500000002, -113.145158], [33.09785100000001, -113.144967], [33.09784800000001, -113.144816], [33.097862000000006, -113.144748], [33.09788299999999, -113.14469200000002], [33.09791799999998, -113.144635], [33.098036000000015, -113.144513], [33.098368999999984, -113.144198], [33.09846299999999, -113.14411], [33.098605, -113.14395500000002], [33.09869500000003, -113.143838], [33.09885700000002, -113.143609], [33.09916699999998, -113.143224], [33.09928000000001, -113.143063], [33.099474, -113.14274100000002], [33.09955300000002, -113.142632], [33.09969399999999, -113.142474], [33.099771999999966, -113.142408], [33.099881, -113.142344], [33.100014000000016, -113.142286], [33.10013300000005, -113.14225], [33.10030200000004, -113.14222], [33.100462, -113.142187], [33.10065899999999, -113.142121], [33.10074299999998, -113.142073], [33.100862000000035, -113.141969], [33.10110100000002, -113.141726], [33.101204999999965, -113.141635], [33.10135699999999, -113.141522], [33.10151900000002, -113.141381], [33.101632999999964, -113.141258], [33.10171700000001, -113.141153], [33.10191299999998, -113.140866], [33.10197499999995, -113.140751], [33.10208800000001, -113.1405], [33.10222600000004, -113.140157], [33.10227200000001, -113.140043], [33.10242100000005, -113.139706], [33.10263200000002, -113.139205], [33.102722, -113.139037], [33.10282199999996, -113.138882], [33.10291100000002, -113.138765], [33.10305200000004, -113.138611], [33.10313800000004, -113.138532], [33.103371, -113.138332], [33.10349, -113.138256], [33.10360600000002, -113.138195], [33.10381599999998, -113.13811000000001], [33.103940000000016, -113.138074], [33.104321999999996, -113.137984], [33.104421, -113.137947], [33.104521999999996, -113.13789500000001], [33.104631999999995, -113.137818], [33.10473000000004, -113.137728], [33.10505400000006, -113.137348], [33.106766000000015, -113.135451], [33.10729500000003, -113.134896], [33.107363000000014, -113.13480800000002], [33.107427000000015, -113.134701], [33.107474999999994, -113.134596], [33.10759000000001, -113.134295], [33.10770399999999, -113.134047], [33.10774599999999, -113.133983], [33.107785000000035, -113.13394], [33.10829900000002, -113.133468], [33.10873500000001, -113.133097], [33.10883199999993, -113.133027], [33.10893899999999, -113.132966], [33.10914699999998, -113.132857], [33.10921633022933, -113.13281248691362], [33.11267644868927, -113.12895707982422], [33.11268800000005, -113.128915], [33.112696000000014, -113.12884699999998], [33.11269800000002, -113.12874600000002], [33.11269500000001, -113.12871100000001], [33.11261999999998, -113.128336], [33.112595999999975, -113.12821], [33.112594000000016, -113.128113], [33.11260599999997, -113.128036], [33.112636, -113.127956], [33.11267400000001, -113.127892], [33.11271899999999, -113.12784], [33.11300999999998, -113.127582], [33.113061000000016, -113.127549], [33.11312800000004, -113.127519], [33.11319100000001, -113.127503], [33.11330400000001, -113.12749900000001], [33.11347200000001, -113.127507], [33.113571000000015, -113.127516], [33.11364400000001, -113.127513], [33.113745, -113.12749500000001], [33.11382699999998, -113.127466], [33.11391200000001, -113.127423], [33.113987, -113.12737000000001], [33.114125, -113.127257], [33.11429099999999, -113.127097], [33.11443400000001, -113.126945], [33.11467199999999, -113.126693], [33.115038, -113.126325], [33.11505737193016, -113.12630386470501], [33.11704260465924, -113.1240914108361], [33.11705800000002, -113.124017], [33.117070999999996, -113.123897], [33.11709499999998, -113.123789], [33.117126, -113.123697], [33.11717400000002, -113.12359300000001], [33.117223999999986, -113.12351], [33.11725800000002, -113.123461], [33.117613000000006, -113.12302800000002], [33.117745, -113.122867], [33.11793399999997, -113.122593], [33.117969, -113.122532], [33.118011, -113.122427], [33.118025999999965, -113.122371], [33.118114, -113.121947], [33.11813600000001, -113.12177500000001], [33.11814599999999, -113.121616], [33.118153, -113.121445], [33.11816999999999, -113.121329], [33.11819499999997, -113.121261], [33.118234, -113.121202], [33.11828699999996, -113.121151], [33.11834399999995, -113.12112000000002], [33.118450999999986, -113.121097], [33.11856900000001, -113.12109], [33.11871799999998, -113.121087], [33.11881899999998, -113.121074], [33.11894800000002, -113.12104], [33.11906399999997, -113.120993], [33.11916299999998, -113.12094], [33.119244999999985, -113.120884], [33.119366, -113.12079399999999], [33.11945600000005, -113.120745], [33.11956900000004, -113.120706], [33.11967800000001, -113.120687], [33.119751999999956, -113.120685], [33.11998400000001, -113.120705], [33.12006299999997, -113.1207], [33.12009296702709, -113.12069159462037], [33.12062009702825, -113.12010403624919], [33.12064699999997, -113.120044], [33.120731000000006, -113.119893], [33.12082799999999, -113.119754], [33.121507999999984, -113.118965], [33.12155999999999, -113.118886], [33.121599, -113.118804], [33.121629000000034, -113.118717], [33.12165100000003, -113.118597], [33.121678000000024, -113.118339], [33.121692999999965, -113.118147], [33.12172399999998, -113.118036], [33.12176400000001, -113.117944], [33.12181400000001, -113.11785], [33.12186999999999, -113.117762], [33.121964000000006, -113.11764], [33.122053, -113.117548], [33.12214699999997, -113.11747], [33.122239000000036, -113.117407], [33.12306999999997, -113.116914], [33.12320899999998, -113.116816], [33.12344399999997, -113.11661800000002], [33.12369000000002, -113.116395], [33.123870999999994, -113.116216], [33.124047999999966, -113.116024], [33.12439800000001, -113.115619], [33.124713, -113.115234], [33.12490999999998, -113.115018], [33.125114999999994, -113.114814], [33.12522000000001, -113.114717], [33.12551799999998, -113.114471], [33.125573999999986, -113.114424], [33.12565899999997, -113.114367], [33.12579399999997, -113.114255], [33.12588600000005, -113.114162], [33.12718599999999, -113.112647], [33.12850600000005, -113.111092], [33.12855600000003, -113.111017], [33.12860800000001, -113.110918], [33.128651999999974, -113.110806], [33.12868300000004, -113.11068700000001], [33.12871099999999, -113.110557], [33.12875600000003, -113.110431], [33.12880199999999, -113.11034], [33.128852999999985, -113.110258], [33.128889999999984, -113.110212], [33.12927199999999, -113.109862], [33.12948099999998, -113.10968200000002], [33.129732999999995, -113.109438], [33.13055500000001, -113.108635], [33.13085399999998, -113.108319], [33.13127899999996, -113.107856], [33.13152700000002, -113.107568], [33.131654999999995, -113.107411], [33.13176200000001, -113.107243], [33.13183599999998, -113.107099], [33.131903, -113.106932], [33.13196699999997, -113.106728], [33.132016000000014, -113.10661], [33.13206299999998, -113.106532], [33.132126000000056, -113.106447], [33.13217600000005, -113.106395], [33.13249900000002, -113.10612], [33.13280899999996, -113.105873], [33.132851999999914, -113.105834], [33.13292799999997, -113.105782], [33.133031999999986, -113.105732], [33.13310200000003, -113.105708], [33.13322499999998, -113.105688], [33.13350800000001, -113.105662], [33.13358194806002, -113.10565260977674], [33.13408559714852, -113.10509093882783], [33.134096000000035, -113.105071], [33.13415400000002, -113.10499], [33.134236, -113.104905], [33.13439005564425, -113.10475140064342], [33.1349117340126, -113.10416960546648], [33.13498500000002, -113.104077], [33.135257999999965, -113.1037], [33.13610000000005, -113.102649], [33.136592, -113.10206200000002], [33.137177000000015, -113.101412], [33.137571000000015, -113.10098], [33.138057000000025, -113.10045900000001], [33.138332000000005, -113.100163], [33.13845399999998, -113.100051], [33.13860899999999, -113.099928], [33.13889997872393, -113.0997213880401], [33.13917086606796, -113.09941923442618], [33.139194999999965, -113.099377], [33.139291000000014, -113.099111], [33.13941699999999, -113.098615], [33.13944600000001, -113.098455], [33.139484999999986, -113.098055], [33.139516, -113.097832], [33.139591000000024, -113.097588], [33.139699, -113.097291], [33.139798000000006, -113.096978], [33.13985300000003, -113.096729], [33.139963999999985, -113.096042], [33.14003400000003, -113.09578100000002], [33.140048000000014, -113.095722], [33.140088, -113.095461], [33.14017700000002, -113.094583], [33.14027300000001, -113.093891], [33.140331999999994, -113.093603], [33.140451999999996, -113.093227], [33.140532000000036, -113.093006], [33.140613, -113.092849], [33.140695, -113.092721], [33.14107300000002, -113.092291], [33.14117299999999, -113.092166], [33.141292, -113.092041], [33.14141899999998, -113.091952], [33.141507999999966, -113.091899], [33.14160199999998, -113.091857], [33.141886, -113.091778], [33.142415000000035, -113.091685], [33.14262899999997, -113.091652], [33.14277499999995, -113.091643], [33.14289300000002, -113.091643], [33.14315699999997, -113.091657], [33.14325900000002, -113.091649], [33.14336100000002, -113.091622], [33.143596999999986, -113.091534], [33.14378699999998, -113.091471], [33.14387000000001, -113.091458], [33.14396299999996, -113.091458], [33.144229999999986, -113.091498], [33.144458000000014, -113.091554], [33.14458099999998, -113.091577], [33.14468900000002, -113.09158400000001], [33.14480700000001, -113.09157600000002], [33.14489699999996, -113.091556], [33.145009999999985, -113.091511], [33.145082999999985, -113.091466], [33.14514799999996, -113.09140800000002], [33.14520400000003, -113.091341], [33.14525099999997, -113.091266], [33.145287, -113.09118700000002], [33.145309999999995, -113.091117], [33.14533099999996, -113.091014], [33.14533600000002, -113.090927], [33.145325000000014, -113.09054000000002], [33.14533299999995, -113.090426], [33.14535799999998, -113.09022], [33.145376999999975, -113.090131], [33.14540099999998, -113.090053], [33.145435000000006, -113.08998], [33.14546899999997, -113.08992600000002], [33.14551899999997, -113.089876], [33.14558399999997, -113.089837], [33.14569, -113.089795], [33.14577500000003, -113.089772], [33.145868000000036, -113.089767], [33.14597100000001, -113.089782], [33.14615500000001, -113.089824], [33.146322999999995, -113.089875], [33.146476000000035, -113.08993200000002], [33.146679, -113.090025], [33.146819, -113.090084], [33.14695700000002, -113.09013], [33.147130999999995, -113.090174], [33.14723900000003, -113.090189], [33.14736500000001, -113.090188], [33.14745954884637, -113.09017236594565], [33.14853534407171, -113.08897199506882], [33.14877299999997, -113.088407], [33.148992, -113.08792699999998], [33.149083999999995, -113.087708], [33.149140000000045, -113.087544], [33.149161000000014, -113.087483], [33.14921700000005, -113.087268], [33.14930700000001, -113.086977], [33.149383, -113.086801], [33.14946700000004, -113.086655], [33.149862000000006, -113.086086], [33.149972000000005, -113.08596], [33.15003099999997, -113.08590100000002], [33.150109, -113.085847], [33.150190999999985, -113.085809], [33.15026900000002, -113.085789], [33.150608999999996, -113.085775], [33.15075300000001, -113.085756], [33.150905999999985, -113.085725], [33.150974999999995, -113.085701], [33.15104300000001, -113.085664], [33.151328, -113.08543200000001], [33.15155200000003, -113.085277], [33.151736, -113.085173], [33.15207799999999, -113.084989], [33.152120936562426, -113.08497084409214], [33.15620425501873, -113.08041362335895], [33.15620800000003, -113.080405], [33.156331999999985, -113.080102], [33.156356999999986, -113.080052], [33.15639100000002, -113.079911], [33.15643500000004, -113.079787], [33.15646999999998, -113.079711], [33.156484999999996, -113.079686], [33.15650599999999, -113.079648], [33.15667999999996, -113.07938], [33.156764000000024, -113.079287], [33.156833000000006, -113.079232], [33.15689999999997, -113.079196], [33.15697799999999, -113.079178], [33.157082999999965, -113.07917099999999], [33.157139, -113.079155], [33.157201, -113.079122], [33.157238000000014, -113.079093], [33.15796633874733, -113.07844681870866], [33.15832540965886, -113.07804601449148], [33.15842000000002, -113.07789600000001], [33.158433000000045, -113.077878], [33.15856600000005, -113.077695], [33.158662000000035, -113.077576], [33.158938, -113.07727800000002], [33.15920400000004, -113.07697], [33.15960199999999, -113.076473], [33.159729000000034, -113.076334], [33.159813, -113.07626199999999], [33.159891000000016, -113.07621599999999], [33.1600111282745, -113.0761642993096], [33.16043346957943, -113.07569283412292], [33.160446000000015, -113.075661], [33.16053100000002, -113.075479], [33.16059300000001, -113.075361], [33.16079399999999, -113.075027], [33.16110700000002, -113.074556], [33.16133599999999, -113.074203], [33.161433999999964, -113.074043], [33.16149799999997, -113.073957], [33.161575, -113.073864], [33.161897999999994, -113.073519], [33.16230099999994, -113.073108], [33.162542999999985, -113.072855], [33.16276800000006, -113.072611], [33.16296, -113.072387], [33.16333599999998, -113.071894], [33.163496000000045, -113.071704], [33.163812000000014, -113.07137], [33.163881999999994, -113.071289], [33.16416100000002, -113.070858], [33.16427000000001, -113.070687], [33.16433699999999, -113.0706], [33.16449900000003, -113.070414], [33.16469200000002, -113.070233], [33.164918000000036, -113.07004700000002], [33.165074999999995, -113.069938], [33.165199999999984, -113.06984], [33.165338000000006, -113.06969700000002], [33.165392999999995, -113.06960700000002], [33.16549699999999, -113.069442], [33.165629999999986, -113.069244], [33.165698000000035, -113.069152], [33.165762, -113.069085], [33.16586900000001, -113.06899], [33.16620299999996, -113.068764], [33.167036999999986, -113.068233], [33.167208, -113.068109], [33.1673000610462, -113.06802651334863], [33.16784755135665, -113.06741517316041], [33.168030999999964, -113.06714], [33.16827000000006, -113.066741], [33.16829299999996, -113.06666500000001], [33.16832399999998, -113.066572], [33.168364999999994, -113.06648], [33.168450000000036, -113.06633], [33.168597999999974, -113.066123], [33.168756999999985, -113.065908], [33.16883799999996, -113.065775], [33.168987, -113.065484], [33.169021000000015, -113.065395], [33.169048999999994, -113.065273], [33.16906600000002, -113.065127], [33.169067000000005, -113.064924], [33.16907899999999, -113.064839], [33.16916400000005, -113.064551], [33.16931400000002, -113.064077], [33.169476999999986, -113.063541], [33.16962599999999, -113.063014], [33.169676000000024, -113.062824], [33.16968499999999, -113.062798], [33.169711, -113.062749], [33.16971599999998, -113.062714], [33.169721000000024, -113.062648], [33.16973, -113.062616], [33.169760999999966, -113.062545], [33.169781, -113.062486], [33.16981100000001, -113.062447], [33.169924, -113.062128], [33.169971999999994, -113.062029], [33.170010999999995, -113.061961], [33.17008800000003, -113.061854], [33.17017500000002, -113.061754], [33.170283999999974, -113.061655], [33.17034400000003, -113.061607], [33.17047699999998, -113.06151400000002], [33.170664999999964, -113.061405], [33.17103800000004, -113.06116800000001], [33.171308999999965, -113.061023], [33.171643, -113.060856], [33.171846999999964, -113.060726], [33.17240699999996, -113.06030000000001], [33.172842000000024, -113.060028], [33.17294999999999, -113.059976], [33.173084999999986, -113.059927], [33.17324299999999, -113.059885], [33.173356999999996, -113.05986600000001], [33.17352700000002, -113.059846], [33.173545999999995, -113.059832], [33.17365100000001, -113.059724], [33.173789000000035, -113.05957], [33.173935, -113.05942400000002], [33.17397999999997, -113.05938700000002], [33.17406099999998, -113.059338], [33.17422799999998, -113.059248], [33.17439899999997, -113.059119], [33.17454999999999, -113.058992], [33.17466399999998, -113.058876], [33.17494299999996, -113.058516], [33.175017999999994, -113.058446], [33.17509399999996, -113.058397], [33.175182, -113.058357], [33.175469, -113.058271], [33.17555900000003, -113.05826100000002], [33.17562600000004, -113.058237], [33.17568600000004, -113.058193], [33.175739000000014, -113.058135], [33.17577800000003, -113.058074], [33.17587400000005, -113.057886], [33.17613800000001, -113.057512], [33.17616699999997, -113.057459], [33.17621199999999, -113.057407], [33.17625599999999, -113.057374], [33.176356000000006, -113.057319], [33.17642, -113.057267], [33.176513, -113.057161], [33.17659599999999, -113.057047], [33.176853999999985, -113.056631], [33.177036999999984, -113.056362], [33.177146, -113.056216], [33.177187, -113.056169], [33.17729800000002, -113.056065], [33.177664000000036, -113.05579600000002], [33.17786699999996, -113.05567], [33.17822700000004, -113.05549], [33.178491999999956, -113.055338], [33.17861399999997, -113.05526], [33.17867200000002, -113.055212], [33.178745000000006, -113.055133], [33.17904299999998, -113.054699], [33.179232, -113.05439999999999], [33.17928499999998, -113.05428500000001], [33.17931900000002, -113.054177], [33.17939700000002, -113.053813], [33.17941799999999, -113.053683], [33.17943099999999, -113.05358700000001], [33.17945099999999, -113.053497], [33.17947900000001, -113.0533], [33.179518000000016, -113.053119], [33.17962799999998, -113.052749], [33.17969199999998, -113.052581], [33.179799999999965, -113.052348], [33.179965999999986, -113.052066], [33.18021100000002, -113.051694], [33.180418999999986, -113.05135], [33.18065999999997, -113.050993], [33.180892000000014, -113.050677], [33.181073999999995, -113.050453], [33.18119200000004, -113.050314], [33.181348, -113.050169], [33.18158700000003, -113.049975], [33.18187999999999, -113.049761], [33.18215499999996, -113.049588], [33.18238899999999, -113.049475], [33.18264000000002, -113.049387], [33.18327000000001, -113.049134], [33.18341999999999, -113.04906], [33.18352600000001, -113.048984], [33.18358199999998, -113.048935], [33.183661, -113.048849], [33.18380699999996, -113.048676], [33.18397000000004, -113.04845], [33.18418400000004, -113.048197], [33.184387999999984, -113.047991], [33.184626000000016, -113.04777900000002], [33.18481799999997, -113.047619], [33.18490699999998, -113.047556], [33.18505100000005, -113.047467], [33.18517299999997, -113.04741], [33.18530499999998, -113.04736], [33.185988209668764, -113.04715175663553], [33.189495862612056, -113.0432320494307], [33.189518, -113.04308], [33.18952899999999, -113.042813], [33.18953800000001, -113.042705], [33.18955099999998, -113.04264], [33.18959000000001, -113.042447], [33.18982699999999, -113.04219000000002], [33.19036299999998, -113.041833], [33.190878000000026, -113.041555], [33.19101700000001, -113.041416], [33.19111600000002, -113.041159], [33.19121599999998, -113.04080200000001], [33.191493, -113.040524], [33.192068000000006, -113.04010800000002], [33.19253865910406, -113.03983138638385], [33.204394000000015, -113.026578], [33.19288699999998, -113.025741], [33.188781000000034, -113.025749], [33.154949000000016, -113.025818], [33.15024199999997, -113.025828], [33.147802999999975, -113.025867], [33.146786000000006, -113.025869], [33.139919000000006, -113.02588], [33.11616099999998, -113.025922], [33.101053000000014, -113.02594900000001], [33.094934999999985, -113.025996], [33.09060600000003, -113.025967], [33.09049699999995, -113.026044], [33.09046799999995, -113.025967], [33.087256000000025, -113.025972], [33.08654600000001, -113.025974], [33.086100999999964, -113.025085], [33.08562899999996, -113.024574], [33.084037999999985, -113.022855], [33.080718, -113.020238], [33.080195999999965, -113.019827], [33.078722000000035, -113.018351], [33.07855000000001, -113.018474], [33.07780200000001, -113.018686], [33.07712799999997, -113.018978], [33.07630099999997, -113.018117], [33.076138, -113.01781], [33.07599199999994, -113.017727], [33.07520600000001, -113.016785], [33.074701999999974, -113.01656699999998], [33.073987999999964, -113.016074], [33.073731999999985, -113.015808], [33.07420499999995, -113.01514], [33.07721200000002, -113.010827], [33.07857500000001, -113.008874], [33.07825400000001, -113.00870100000002], [33.07743500000002, -113.00826], [33.076872999999964, -113.007384], [33.076293, -113.00675600000001], [33.07437100000001, -113.005036], [33.07384400000004, -113.004653], [33.07298900000001, -113.00448799999998], [33.07177500000002, -113.004023], [33.07161599999999, -113.004042], [33.07085300000003, -113.00363200000001], [33.07058700000001, -113.00361], [33.06960800000002, -113.00312], [33.068725000000015, -113.002931], [33.067527000000005, -113.002309], [33.06520399999997, -112.999972], [33.06413500000001, -112.999362], [33.06403099999999, -112.999375], [33.06361699999997, -112.999109], [33.06348399999998, -112.999099], [33.06223299999998, -112.998482], [33.06212599999999, -112.99852200000001], [33.06113199999999, -112.998205], [33.06032200000005, -112.997935], [33.06019800000002, -112.99758], [33.06001200000001, -112.997522], [33.059621, -112.996995], [33.058951000000036, -112.996249], [33.058404999999986, -112.995298], [33.05773800000001, -112.99455], [33.05625199999999, -112.992277], [33.05569199999997, -112.99054800000002], [33.05525, -112.989641], [33.055015999999966, -112.988535], [33.05475200000003, -112.988035], [33.054471000000035, -112.986616], [33.053615000000015, -112.985191], [33.05349699999998, -112.98471], [33.053646000000015, -112.984407], [33.05363499999998, -112.984023], [33.05315599999998, -112.983387], [33.053071999999986, -112.980721], [33.052974999999975, -112.980529], [33.05299900000001, -112.980242], [33.05324100000001, -112.979874], [33.053334, -112.979446], [33.05314000000004, -112.978315], [33.05298099999999, -112.97788], [33.053141999999966, -112.977228], [33.05323399999997, -112.976249], [33.053392999999964, -112.975487], [33.054082000000015, -112.974318], [33.05435700000001, -112.97369300000001], [33.05465399999996, -112.972143], [33.05490700000001, -112.971545], [33.05534199999998, -112.97111], [33.05586899999996, -112.97091999999999], [33.05614400000005, -112.970675], [33.05632800000004, -112.969885], [33.056855000000034, -112.96907], [33.05765599999996, -112.967139], [33.05783900000003, -112.965997], [33.057794000000015, -112.965045], [33.05758800000004, -112.963196], [33.05761100000001, -112.961673], [33.057268, -112.95922500000002], [33.05687900000001, -112.957892], [33.056168000000056, -112.95588], [33.055390999999986, -112.954656], [33.05532099999999, -112.954411], [33.05516200000001, -112.95419300000002], [33.055093, -112.953269], [33.05371999999998, -112.947802], [33.053398999999956, -112.947041], [33.05326099999998, -112.946877], [33.053054999999965, -112.946497], [33.051818999999995, -112.944838], [33.05136100000002, -112.944129], [33.049184999999945, -112.939262], [33.047787, -112.936488], [33.04701000000005, -112.935074], [33.046735, -112.934394], [33.04625300000002, -112.933687], [33.04517699999998, -112.931647], [33.04460399999998, -112.929717], [33.044627999999996, -112.929146], [33.04499400000002, -112.92902800000002], [33.04517699999997, -112.928777], [33.04522300000001, -112.926977], [33.04499200000003, -112.925397], [33.044877000000014, -112.920354], [33.044762999999975, -112.91918900000002], [33.044257999999964, -112.917165], [33.04391400000005, -112.916276], [33.04368500000001, -112.915417], [33.04354800000002, -112.915111], [33.04329499999998, -112.914832], [33.04208200000002, -112.914039], [33.041853000000025, -112.913677], [33.04160099999999, -112.913094], [33.04121000000003, -112.912619], [33.039445000000036, -112.91113], [33.038914, -112.911084], [33.038597999999986, -112.911057], [33.03820900000004, -112.910912], [33.03786600000002, -112.910603], [33.03775100000002, -112.910298], [33.037771, -112.908972], [33.037795999999965, -112.907358], [33.037978999999986, -112.90666], [33.038436999999945, -112.905506], [33.038507999999986, -112.905127], [33.03852799999997, -112.90502400000001], [33.03852799999997, -112.903145], [33.03868800000002, -112.90191], [33.038917999999974, -112.900836], [33.038916000000015, -112.897936], [33.038847999999994, -112.897372], [33.03848000000003, -112.896219], [33.038504, -112.893829], [33.03838699999999, -112.891333], [33.03845700000001, -112.887788], [33.038617, -112.88703700000002], [33.03909699999999, -112.885911], [33.03950899999996, -112.885295], [33.04081300000002, -112.883934], [33.04136200000001, -112.882916], [33.042003999999984, -112.881119], [33.042577, -112.880046], [33.043263999999965, -112.879165], [33.04411099999999, -112.878311], [33.04526499999996, -112.875727], [33.045572, -112.874983], [33.04568699999995, -112.874032], [33.04555100000002, -112.872454], [33.04541500000003, -112.869028], [33.04514099999996, -112.866934], [33.045394, -112.865628], [33.045506999999986, -112.865519], [33.04592, -112.86568200000002], [33.046194, -112.865601], [33.046286999999985, -112.86516600000002], [33.045921, -112.864187], [33.04585300000003, -112.863153], [33.045097, -112.862174], [33.044935999999986, -112.861657], [33.04491500000002, -112.859808], [33.044663, -112.85918200000002], [33.04459500000001, -112.859155], [33.04422900000002, -112.858067], [33.04420600000003, -112.857605], [33.044274999999985, -112.857442], [33.04432000000002, -112.85706100000002], [33.04445799999998, -112.856735], [33.045008, -112.855946], [33.04507699999999, -112.855403], [33.044756000000014, -112.854668], [33.04377300000003, -112.852166], [33.04356699999996, -112.85208400000002], [33.04356699999996, -112.851731], [33.04265100000002, -112.85018000000001], [33.04168799999999, -112.848983], [33.04141499999996, -112.848249], [33.0413, -112.84710700000001], [33.041231000000025, -112.847079], [33.04081, -112.84658], [33.03835000000001, -112.843423], [33.037173999999986, -112.841542], [33.03595600000003, -112.840073], [33.035435000000035, -112.839738], [33.035044, -112.839503], [33.03486100000001, -112.83928], [33.03411099999999, -112.838729], [33.03408700000004, -112.838049], [33.033904000000014, -112.837641], [33.03333300000001, -112.837015], [33.03289700000001, -112.836798], [33.03179799999999, -112.836444], [33.031431999999995, -112.836417], [33.030561000000006, -112.8359], [33.03035499999999, -112.835546], [33.02978300000003, -112.83380600000001], [33.028729999999996, -112.831903], [33.028889, -112.831794], [33.029049, -112.831359], [33.029050999999974, -112.830326], [33.02879899999996, -112.829021], [33.028455000000015, -112.82812300000002], [33.02689799999997, -112.825268], [33.02644000000002, -112.82467], [33.02595900000002, -112.823582], [33.02602700000001, -112.823311], [33.02750699999997, -112.821895], [33.02782700000001, -112.82159], [33.027906000000016, -112.821516], [33.02825000000001, -112.82150000000001], [33.029669999999996, -112.821435], [33.03422800000003, -112.821653], [33.035207, -112.821166], [33.036906999999985, -112.82032100000002], [33.037106000000044, -112.82017], [33.03615200000001, -112.818472], [33.03399900000002, -112.813957], [33.033907, -112.81382100000002], [33.03358599999998, -112.813141], [33.03294599999997, -112.81227100000001], [33.03239000000004, -112.812339], [33.032281999999974, -112.81235300000002], [33.03164000000002, -112.812842], [33.03118200000002, -112.81306], [33.030311999999995, -112.81322300000001], [33.03006000000002, -112.813114], [33.02987700000005, -112.812462], [33.03003700000001, -112.811945], [33.03012899999998, -112.81118400000001], [33.02992200000001, -112.810912], [33.02918900000004, -112.81064], [33.02836500000003, -112.809906], [33.028302000000004, -112.809831], [33.02676100000001, -112.808003], [33.026372000000016, -112.807649], [33.02621199999999, -112.807296], [33.02627999999998, -112.806235], [33.02616599999999, -112.806127], [33.02605099999998, -112.8058], [33.026123000000005, -112.804877], [33.026141999999965, -112.804631], [33.025937000000006, -112.804006], [33.02557, -112.803245], [33.02536399999999, -112.802647], [33.024768, -112.801315], [33.02470000000003, -112.800227], [33.02433300000003, -112.799248], [33.02422800000004, -112.79862200000001], [33.025213999999984, -112.798624], [33.02524999999998, -112.796507], [33.02373000000001, -112.796468], [33.02364500000001, -112.795878], [33.023545999999975, -112.794989], [33.023456000000024, -112.794349], [33.023340999999945, -112.79380500000002], [33.023316000000015, -112.793423], [33.02339499999998, -112.792859], [33.023538999999936, -112.79224700000002], [33.02353800000003, -112.791951], [33.02356699999999, -112.791014], [33.023409999999984, -112.788874], [33.02328300000002, -112.786381], [33.02311399999998, -112.783821], [33.022882999999965, -112.781662], [33.022613000000035, -112.780259], [33.02228900000002, -112.779381], [33.022040999999994, -112.779014], [33.021625000000014, -112.778399], [33.02065400000001, -112.777275], [33.01926400000001, -112.776582], [33.01790200000006, -112.776587], [33.01618500000002, -112.77708], [33.015048, -112.777628], [33.014509999999994, -112.77806], [33.01407499999997, -112.77831], [33.01347700000003, -112.778083], [33.012013999999986, -112.776922], [33.01187400000004, -112.776738], [33.01127699999999, -112.77595], [33.010862999999986, -112.775111], [33.01072400000003, -112.773964], [33.010505000000045, -112.77322], [33.01024399999997, -112.772743], [33.009873999999996, -112.772505], [33.00903300000002, -112.77189700000001], [33.00844200000004, -112.771192], [33.007914, -112.770047], [33.007621000000015, -112.769122], [33.00723300000001, -112.76829200000002], [33.00667499999996, -112.76775], [33.00602000000001, -112.767236], [33.00559400000001, -112.767041], [33.005909999999986, -112.766739], [33.006985000000036, -112.766113], [33.007765, -112.765379], [33.007992999999985, -112.764672], [33.00851900000001, -112.764101], [33.008816999999965, -112.762687], [33.00877099999997, -112.761247], [33.008633, -112.760839], [33.00870199999999, -112.760377], [33.008885000000014, -112.760241], [33.00920599999998, -112.760213], [33.009710000000005, -112.75986], [33.00982400000001, -112.759126], [33.00870100000001, -112.758148], [33.007830000000006, -112.757224], [33.007761000000016, -112.757007], [33.007182000000014, -112.756181], [33.00629299999996, -112.754915], [33.00585899999997, -112.754589], [33.00567599999999, -112.75412700000001], [33.005695999999986, -112.753501], [33.005925999999995, -112.753066], [33.00571900000003, -112.75170700000001], [33.00553600000001, -112.75149], [33.00542099999999, -112.751193], [33.005396999999995, -112.750722], [33.00546400000004, -112.75017], [33.00576100000001, -112.749734], [33.00585399999998, -112.748511], [33.005968999999986, -112.748049], [33.00718400000002, -112.746908], [33.00717900000002, -112.747322], [33.007150999999986, -112.747389], [33.00901000000003, -112.747436], [33.00905099999999, -112.745284], [33.00905099999999, -112.745078], [33.00860899999997, -112.74507400000002], [33.008432, -112.745073], [33.008443000000014, -112.744952], [33.008994999999985, -112.743784], [33.009132999999956, -112.74226100000001], [33.00931599999996, -112.741038], [33.009660999999994, -112.739815], [33.00977400000001, -112.739027], [33.009752999999975, -112.737341], [33.00989100000001, -112.735982], [33.009388000000015, -112.734378], [33.009272999999986, -112.732883], [33.00870199999999, -112.731931], [33.008380999999986, -112.730789], [33.00817500000001, -112.730436], [33.007991999999994, -112.729675], [33.00744300000001, -112.728478], [33.00712300000003, -112.727255], [33.006482000000005, -112.72657500000001], [33.00592999999996, -112.725525], [33.005497, -112.724699], [33.00522299999999, -112.723937], [33.005204, -112.723756], [33.006265000000006, -112.72376200000001], [33.00627899999999, -112.722761], [33.00711999999997, -112.722767], [33.00711999999997, -112.721535], [33.00628499999999, -112.721546], [33.006287999999984, -112.717543], [33.00628900000001, -112.717472], [33.00433099999998, -112.717467], [33.004055999999984, -112.71635300000001], [33.002246000000014, -112.713297], [33.00231600000002, -112.712003], [33.002293999999964, -112.711215], [33.002682000000014, -112.710236], [33.002980999999984, -112.709747], [33.004125999999985, -112.706594], [33.00440199999998, -112.704447], [33.004607, -112.704392], [33.005363999999986, -112.702463], [33.006556000000025, -112.701403], [33.007393000000015, -112.700332], [33.007489999999954, -112.700208], [33.007724, -112.699908], [33.00820399999999, -112.699011], [33.00843399999999, -112.698739], [33.00918900000001, -112.69727], [33.010129, -112.696455], [33.011435, -112.695911], [33.01175600000003, -112.69563900000001], [33.01205300000002, -112.694987], [33.012579999999964, -112.694633], [33.01441200000002, -112.694335], [33.01453399999999, -112.694263], [33.01514600000003, -112.6939], [33.01615399999999, -112.692921], [33.01892500000001, -112.691507], [33.01924600000003, -112.69129], [33.02116900000003, -112.690447], [33.024285000000006, -112.689305], [33.025545000000015, -112.689305], [33.02613899999998, -112.689088], [33.026812, -112.688688], [33.02746899999997, -112.688299], [33.03007900000004, -112.686423], [33.03024000000004, -112.686179], [33.030859000000035, -112.685852], [33.03257699999999, -112.685309], [33.03381399999997, -112.68452], [33.034478000000014, -112.684357], [33.035051, -112.68433000000002], [33.035873999999986, -112.684085], [33.03676899999998, -112.683541], [33.038395, -112.682344], [33.03974600000001, -112.681719], [33.04100600000001, -112.681392], [33.04162399999999, -112.681365], [33.041831, -112.68155600000001], [33.042014000000016, -112.681583], [33.04206000000003, -112.681664], [33.04336499999996, -112.68199600000001], [33.043557999999976, -112.682045], [33.04357400000004, -112.678936], [33.043535999999996, -112.678388], [33.04355899999997, -112.678319], [33.04356500000002, -112.67826], [33.04356199999997, -112.67756699999998], [33.04357099999999, -112.676844], [33.043570000000024, -112.674603], [33.04357400000004, -112.67237400000002], [33.04358200000004, -112.67143], [33.04358099999998, -112.670055], [33.043576999999985, -112.669477], [33.04358400000002, -112.668963], [33.043576999999985, -112.668273], [33.04358400000002, -112.66795200000001], [33.043576999999985, -112.666891], [33.04355400000004, -112.666279], [33.04354899999999, -112.665646], [33.042000999999985, -112.66564], [33.04010099999996, -112.66564], [33.03642300000004, -112.665635], [33.036144000000014, -112.665635], [33.03262400000002, -112.66563], [33.03072900000002, -112.665627], [33.02902600000003, -112.665629], [33.02705700000001, -112.665631], [33.02695399999998, -112.665632], [33.02685100000003, -112.665633], [33.02654600000002, -112.665635], [33.021456000000036, -112.665669], [33.020149000000046, -112.665672], [33.01997899999999, -112.665673], [33.01853199999999, -112.665677], [33.015633000000044, -112.665686], [33.014381999999976, -112.665687], [33.014160999999994, -112.665688], [33.01296300000004, -112.665682], [33.01016700000004, -112.665689], [33.00893700000001, -112.665696], [33.00804900000002, -112.665701], [33.00587099999999, -112.665696], [33.00350700000004, -112.66570200000001], [33.002995, -112.665722], [33.00281900000004, -112.665739], [33.00278199999998, -112.66574300000002], [33.002400000000016, -112.665798], [33.00206299999999, -112.665866], [33.001771999999995, -112.665941], [33.001467999999974, -112.666034], [33.001111999999964, -112.666163], [33.000809999999944, -112.666289], [33.00054900000001, -112.66641], [33.00025199999999, -112.666561], [32.999979000000046, -112.666719], [32.99996299999998, -112.666729], [32.99967899999994, -112.666913], [32.999636, -112.666942], [32.99810600000001, -112.668073], [32.997222, -112.668735], [32.995577999999995, -112.669949], [32.99535899999999, -112.670111], [32.99410399999999, -112.671055], [32.99217300000004, -112.67249700000002], [32.99206799999995, -112.672575], [32.99169499999999, -112.672848], [32.991353999999994, -112.673098], [32.989824000000034, -112.674242], [32.98618500000002, -112.676944], [32.985500999999985, -112.677457], [32.98551100000002, -112.67402000000001], [32.983666, -112.673989], [32.97092199999996, -112.67401800000002], [32.970908, -112.672845], [32.970489000000015, -112.673041], [32.96945899999995, -112.673535], [32.96883400000001, -112.673835], [32.96852799999996, -112.673993], [32.968281999999995, -112.674123], [32.96754499999996, -112.674526], [32.967238000000016, -112.674703], [32.966828000000014, -112.674949], [32.966641999999965, -112.675067], [32.96575500000001, -112.67563100000001], [32.965279999999964, -112.675958], [32.96498499999999, -112.676162], [32.964086999999964, -112.676819], [32.96299799999999, -112.677694], [32.962279999999986, -112.678314], [32.961653, -112.678891], [32.96155000000002, -112.678989], [32.961180999999996, -112.67934], [32.96067299999997, -112.67984], [32.96053999999999, -112.679978], [32.96035100000001, -112.68017400000001], [32.959923999999994, -112.680629], [32.959237999999985, -112.681373], [32.95875900000002, -112.681929], [32.95824400000002, -112.682541], [32.957858, -112.68303800000001], [32.95778700000001, -112.683134], [32.957272000000025, -112.683708], [32.957009000000006, -112.684008], [32.956745999999995, -112.684213], [32.95648300000004, -112.684371], [32.956156999999955, -112.684487], [32.955328999999935, -112.68476600000001], [32.95371600000001, -112.685255], [32.95367900000003, -112.685093], [32.95364699999999, -112.684971], [32.95360500000003, -112.684826], [32.95355, -112.684653], [32.95349899999996, -112.684519], [32.95343999999997, -112.684374], [32.95335300000002, -112.684173], [32.95326100000002, -112.68397], [32.95315300000005, -112.683734], [32.95304599999998, -112.68356], [32.95286799999998, -112.683034], [32.952756999999984, -112.682622], [32.95266099999999, -112.682086], [32.95262400000003, -112.68142500000002], [32.952634000000025, -112.681141], [32.952677000000016, -112.680711], [32.952718999999995, -112.68047500000002], [32.95304299999998, -112.678606], [32.953183000000024, -112.6778], [32.95343999999997, -112.676373], [32.95375500000003, -112.674575], [32.95525799999997, -112.666013], [32.95563, -112.663873], [32.95630500000005, -112.660059], [32.95689400000005, -112.656707], [32.95831200000002, -112.648642], [32.958563999999974, -112.647206], [32.95870800000001, -112.64639], [32.95892400000001, -112.645167], [32.95952800000005, -112.641758], [32.95984900000001, -112.639928], [32.95994700000002, -112.639343], [32.960217000000014, -112.637724], [32.960862000000006, -112.634036], [32.96109499999999, -112.63276], [32.96131900000002, -112.631504], [32.96277399999999, -112.623172], [32.96294999999998, -112.622145], [32.96315399999996, -112.620971], [32.963188999999964, -112.62076], [32.96344400000002, -112.619322], [32.96388000000005, -112.616852], [32.96399000000001, -112.61623200000001], [32.96435700000003, -112.614119], [32.96501300000002, -112.610397], [32.96504899999999, -112.61019699999999], [32.965201, -112.60925300000001], [32.96590099999997, -112.605247], [32.966115, -112.604042], [32.96875300000004, -112.588898], [32.96905099999995, -112.58719600000002], [32.96959999999997, -112.58403], [32.97055700000003, -112.578621], [32.970850999999996, -112.576937], [32.97122400000001, -112.574821], [32.97126599999999, -112.574574], [32.971395, -112.573798], [32.97153499999999, -112.573036], [32.97167, -112.572231], [32.972233999999986, -112.568983], [32.97242200000002, -112.567953], [32.972480999999966, -112.5676], [32.97255199999996, -112.567249], [32.972629999999974, -112.56692400000001], [32.97270599999999, -112.566642], [32.972977000000014, -112.565784], [32.972994000000014, -112.565729], [32.97318299999995, -112.565077], [32.97329700000003, -112.564504], [32.97372599999996, -112.562017], [32.97396700000001, -112.56060299999999], [32.97406000000004, -112.560165], [32.97417300000001, -112.55972], [32.97423199999998, -112.559534], [32.974308000000015, -112.55934500000001], [32.97463199999996, -112.558652], [32.974872999999974, -112.55821900000001], [32.97672000000001, -112.554952], [32.97856100000001, -112.55171500000002], [32.97972600000002, -112.549679], [32.980162, -112.548901], [32.981473000000015, -112.546561], [32.98188100000003, -112.545833], [32.98274299999995, -112.544284], [32.98334400000002, -112.543179], [32.983877000000035, -112.542209], [32.98472300000004, -112.540702], [32.984768999999986, -112.540618], [32.985607000000016, -112.539146], [32.985864000000035, -112.538666], [32.985901000000034, -112.538593], [32.986024000000015, -112.538341], [32.98618500000002, -112.537962], [32.98621599999997, -112.53788], [32.986251, -112.537784], [32.986365, -112.537467], [32.98646499999996, -112.53716], [32.98656200000006, -112.536838], [32.98667699999999, -112.536518], [32.98682100000001, -112.536171], [32.986947000000036, -112.535897], [32.98720600000001, -112.53537], [32.987291000000006, -112.53520600000002], [32.98749899999999, -112.534769], [32.987851000000006, -112.533968], [32.98798799999997, -112.533627], [32.98842099999998, -112.532452], [32.98856300000001, -112.532075], [32.98903900000002, -112.531022], [32.990501999999985, -112.52784600000001], [32.99108699999999, -112.526558], [32.991298, -112.52606700000001], [32.99141100000001, -112.525786], [32.99146999999999, -112.525635], [32.99178800000001, -112.52494], [32.99189099999997, -112.524723], [32.99212499999999, -112.524277], [32.992494000000015, -112.523662], [32.99284900000003, -112.523089], [32.993135, -112.522641], [32.993369000000065, -112.522274], [32.995098, -112.519606], [32.99566599999999, -112.518741], [32.995836999999995, -112.518481], [32.996149999999965, -112.517995], [32.99634699999997, -112.51767], [32.996467000000024, -112.51744], [32.996569000000015, -112.517205], [32.996656000000044, -112.51696900000002], [32.99671600000001, -112.516767], [32.99679600000001, -112.516442], [32.99683399999996, -112.516224], [32.99686800000005, -112.51593500000001], [32.996899000000035, -112.515529], [32.996949000000065, -112.514701], [32.997031, -112.512961], [32.99704200000006, -112.512708], [32.997076000000014, -112.511915], [32.99709599999999, -112.511102], [32.99674100000001, -112.51112000000002], [32.996493000000015, -112.511113], [32.99563200000003, -112.511114], [32.985350999999994, -112.511123], [32.98500299999999, -112.511123], [32.975315999999964, -112.51113000000001], [32.964601999999985, -112.511096], [32.957323000000024, -112.511116], [32.944437000000036, -112.511151], [32.942576999999986, -112.511156], [32.94256499999995, -112.512954], [32.932281999999994, -112.512905], [32.921177000000014, -112.512876], [32.909589999999994, -112.512844], [32.900133999999994, -112.512814], [32.90330299999999, -112.522495], [32.90417599999997, -112.525145], [32.905140999999986, -112.528101], [32.90530700000005, -112.528603], [32.90564500000001, -112.52966400000001], [32.90590700000003, -112.530542], [32.905943000000015, -112.530664], [32.906129000000014, -112.531333], [32.90628000000002, -112.53191400000001], [32.90644199999998, -112.532585], [32.90659400000002, -112.533266], [32.90676499999999, -112.534098], [32.90691099999997, -112.534874], [32.907061, -112.53576900000002], [32.90717899999996, -112.536567], [32.90727999999998, -112.537352], [32.90735299999999, -112.537999], [32.90742299999998, -112.53871900000001], [32.907485999999984, -112.53953], [32.90752800000003, -112.540222], [32.90755499999999, -112.54079700000001], [32.907579000000005, -112.54152], [32.907592, -112.542243], [32.907592999999984, -112.543042], [32.90757599999995, -112.543918], [32.907542000000035, -112.544793], [32.90736200000005, -112.547947], [32.907137000000006, -112.552002], [32.907048999999994, -112.553434], [32.90694700000001, -112.555274], [32.906663, -112.560197], [32.90663700000001, -112.560751], [32.90651499999999, -112.56284], [32.906462999999995, -112.563754], [32.90630400000002, -112.566508], [32.905836999999984, -112.574659], [32.90582000000004, -112.575048], [32.90579400000008, -112.57576000000002], [32.90578600000002, -112.576161], [32.905781999999974, -112.576907], [32.90579100000002, -112.577741], [32.90581000000001, -112.57844600000001], [32.90582699999998, -112.578863], [32.90586699999999, -112.579625], [32.905946000000014, -112.580691], [32.90600499999997, -112.581297], [32.90608900000002, -112.582075], [32.906190999999964, -112.582868], [32.90630000000002, -112.583605], [32.90643200000003, -112.584411], [32.906501999999996, -112.584799], [32.90666, -112.585608], [32.90691400000003, -112.586813], [32.90700699999999, -112.58720499999998], [32.90709599999999, -112.587621], [32.90718999999998, -112.588038], [32.907358000000016, -112.588836], [32.90751, -112.589522], [32.907672999999996, -112.590274], [32.90805400000002, -112.591994], [32.90875799999999, -112.59521100000002], [32.90922500000003, -112.597332], [32.91001800000003, -112.60092], [32.910462, -112.602951], [32.911750999999974, -112.608822], [32.911912000000044, -112.609587], [32.911968999999964, -112.609836], [32.91206100000001, -112.610265], [32.912572999999995, -112.612601], [32.91276000000002, -112.613452], [32.91361200000001, -112.617334], [32.914318999999985, -112.620549], [32.91543900000002, -112.625655], [32.91544899999997, -112.625709], [32.91694300000001, -112.632504], [32.91728100000003, -112.634042], [32.92018600000003, -112.647296], [32.91987699999999, -112.647295], [32.91922299999996, -112.647292], [32.919162000000014, -112.64722], [32.90750699999996, -112.647146], [32.90019600000001, -112.647107], [32.89541200000001, -112.647141], [32.89214699999999, -112.647219], [32.891025, -112.647133], [32.89098599999996, -112.655761], [32.889875999999994, -112.655753], [32.88704599999997, -112.655733], [32.88360099999996, -112.655709], [32.883607999999995, -112.656681], [32.88363600000002, -112.660162], [32.88365899999995, -112.663179], [32.883669, -112.664394], [32.88289699999998, -112.66438], [32.881313000000034, -112.664366], [32.88066299999999, -112.664349], [32.88038599999998, -112.664346], [32.880299999999984, -112.664338], [32.88016999999998, -112.664313], [32.88009099999997, -112.66431400000002], [32.87993600000001, -112.664331], [32.87893100000001, -112.664322], [32.87807, -112.664289], [32.87751300000001, -112.664282], [32.87699499999998, -112.664262], [32.87578400000001, -112.664244], [32.87561099999997, -112.664233], [32.87527599999999, -112.664188], [32.875039000000015, -112.664156], [32.87488699999999, -112.664113], [32.87476900000002, -112.664064], [32.87465299999999, -112.664001], [32.874537999999994, -112.663923], [32.87381799999995, -112.663349], [32.873505, -112.663112], [32.873323000000035, -112.662955], [32.87304899999996, -112.662688], [32.872946000000006, -112.66261], [32.872843999999965, -112.662553], [32.87274499999996, -112.662514], [32.87242200000001, -112.662392], [32.87230300000001, -112.662359], [32.87205899999997, -112.662284], [32.87195499999997, -112.662254], [32.87184499999999, -112.662236], [32.87173200000001, -112.662233], [32.87167100000004, -112.662239], [32.871582999999994, -112.662243], [32.87148800000001, -112.662224], [32.871200999999985, -112.662114], [32.87080099999996, -112.66192900000001], [32.870627, -112.661831], [32.87055, -112.661782], [32.870449999999984, -112.661708], [32.87037300000003, -112.66164], [32.87002199999996, -112.661323], [32.86953499999997, -112.6609], [32.86908400000003, -112.660478], [32.86897200000001, -112.66039], [32.868817000000014, -112.66028500000002], [32.86842500000002, -112.66007400000001], [32.86811199999999, -112.659931], [32.86768300000001, -112.659765], [32.86709399999997, -112.65955499999998], [32.86697699999997, -112.659518], [32.866816, -112.659478], [32.86665200000003, -112.659453], [32.866363, -112.659387], [32.866239000000014, -112.65935], [32.86608900000002, -112.659289], [32.86588500000001, -112.659182], [32.86578899999998, -112.659144], [32.865691000000005, -112.659115], [32.86510699999999, -112.659008], [32.86484300000001, -112.658945], [32.864375999999986, -112.658798], [32.86419200000005, -112.658755], [32.86367299999997, -112.65867], [32.863283000000024, -112.658612], [32.862935000000014, -112.658572], [32.862859, -112.658568], [32.862757000000016, -112.658554], [32.86263900000001, -112.658524], [32.862054, -112.65831], [32.86145399999998, -112.65812700000001], [32.860894999999964, -112.657973], [32.86029199999996, -112.657783], [32.859772000000014, -112.657608], [32.859517999999994, -112.6575], [32.85938099999997, -112.657432], [32.85926499999997, -112.657379], [32.85909900000001, -112.657318], [32.85853800000002, -112.657156], [32.85818899999999, -112.657037], [32.85795099999994, -112.656962], [32.85772900000001, -112.656906], [32.85744700000002, -112.656851], [32.85725300000001, -112.65682300000002], [32.857010999999964, -112.656803], [32.85656600000003, -112.65674100000001], [32.856156, -112.656736], [32.856096999999956, -112.656726], [32.856039, -112.656707], [32.85598300000002, -112.656678], [32.855760999999994, -112.656504], [32.85557000000001, -112.656382], [32.855117, -112.656119], [32.85475700000003, -112.655899], [32.85468300000001, -112.655861], [32.85458400000002, -112.65582800000001], [32.854483000000016, -112.655812], [32.85437999999997, -112.655812], [32.854053000000015, -112.655863], [32.85397999999999, -112.655863], [32.853909999999985, -112.655849], [32.85384500000005, -112.655825], [32.853782000000024, -112.655787], [32.85368799999997, -112.655686], [32.85358099999998, -112.655548], [32.853498000000016, -112.655453], [32.85344700000003, -112.655405], [32.853378, -112.655364], [32.85329599999999, -112.655334], [32.85321699999999, -112.655288], [32.85313200000001, -112.655123], [32.853104000000016, -112.654885], [32.853168000000004, -112.654744], [32.853306, -112.654514], [32.85342099999995, -112.654238], [32.85339800000004, -112.654146], [32.853215000000006, -112.654025], [32.85297200000006, -112.653856], [32.852573, -112.653602], [32.85212000000001, -112.653497], [32.85140200000001, -112.65318300000001], [32.849742999999975, -112.652443], [32.847188000000045, -112.651278], [32.846223999999964, -112.650829], [32.84481099999999, -112.650179], [32.84317499999997, -112.649416], [32.842233000000014, -112.649058], [32.84203100000002, -112.648924], [32.841851999999996, -112.648677], [32.84174, -112.64852], [32.840171, -112.647848], [32.83844499999997, -112.647063], [32.835976999999986, -112.645923], [32.833888999999985, -112.644988], [32.83319899999997, -112.64464200000002], [32.83291700000002, -112.64435], [32.83242300000001, -112.643947], [32.829553999999945, -112.642736], [32.82647600000001, -112.64133], [32.826447000000044, -112.650361], [32.82638999999997, -112.66808], [32.82632699999994, -112.687258], [32.826306999999986, -112.694007], [32.82622800000003, -112.718461], [32.85281199999995, -112.71862399999999], [32.84574700000001, -112.725256], [32.84450999999998, -112.726856], [32.84201100000002, -112.729026], [32.841233000000024, -112.729541], [32.83740699999997, -112.732632], [32.836215, -112.733689], [32.833672000000014, -112.73556], [32.833616, -112.735589], [32.83021300000002, -112.737376], [32.82964100000003, -112.737538], [32.828678999999994, -112.7377], [32.82785400000001, -112.7377], [32.82668600000001, -112.737536], [32.825448999999956, -112.737183], [32.82435000000001, -112.737155], [32.82386900000002, -112.737236], [32.82258599999999, -112.73729], [32.821554000000006, -112.736991], [32.820776000000016, -112.736963], [32.81944800000004, -112.737152], [32.815828999999994, -112.737557], [32.81223200000004, -112.738043], [32.811956999999985, -112.738124], [32.810972, -112.738259], [32.809734999999975, -112.738313], [32.80820000000001, -112.738203], [32.807994999999984, -112.73809500000002], [32.805338000000035, -112.737768], [32.804581999999996, -112.73793], [32.80309200000001, -112.737956], [32.800801000000014, -112.73847], [32.79999899999998, -112.73847], [32.79894700000002, -112.738198], [32.797617999999986, -112.737871], [32.797046, -112.737898], [32.79420400000002, -112.739523], [32.793035999999994, -112.73995600000002], [32.79214300000001, -112.740064], [32.79049200000002, -112.740524], [32.789347, -112.740686], [32.78311599999999, -112.741984], [32.780437000000006, -112.74266], [32.77997799999999, -112.74285], [32.779659, -112.742904], [32.77885700000002, -112.743283], [32.776864000000046, -112.74355300000002], [32.77003800000003, -112.74425300000001], [32.768541000000006, -112.744514], [32.76637300000001, -112.744901], [32.76394399999998, -112.745361], [32.762731, -112.745062], [32.76397699999996, -112.746344], [32.76474399999999, -112.747091], [32.76800999999999, -112.750199], [32.77121600000005, -112.753288], [32.77434400000001, -112.756298], [32.77829199999998, -112.760114], [32.78071199999999, -112.762416], [32.78230500000001, -112.763951], [32.784036000000015, -112.765623], [32.78574799999999, -112.767275], [32.787616999999976, -112.769065], [32.788619999999995, -112.770049], [32.79023300000002, -112.771879], [32.79256099999999, -112.774554], [32.79612199999999, -112.778646], [32.79869899999996, -112.781617], [32.800842999999965, -112.784076], [32.80294800000004, -112.786456], [32.80342, -112.78685], [32.80340099999998, -112.787164], [32.80355800000003, -112.7874], [32.80695000000002, -112.791413], [32.807912999999985, -112.793762], [32.81091599999999, -112.792112], [32.811275, -112.79191300000001], [32.83187599999998, -112.780488], [32.833872, -112.779391], [32.84005700000001, -112.775864], [32.845776, -112.772975], [32.85132499999996, -112.769877], [32.853164, -112.768837], [32.85621999999999, -112.767125], [32.86165400000003, -112.764121], [32.86453899999997, -112.762495], [32.868027999999995, -112.760529], [32.870611999999966, -112.759082], [32.87084499999999, -112.758951], [32.87571100000004, -112.75624800000001], [32.88008299999996, -112.753837], [32.88527099999999, -112.750907], [32.88731, -112.749767], [32.88754500000001, -112.749637], [32.89282899999997, -112.746722], [32.89901700000004, -112.743225], [32.89915499999999, -112.743146], [32.90123499999998, -112.742], [32.903755999999994, -112.74061300000001], [32.90549600000001, -112.739636], [32.91238399999997, -112.735776], [32.91237900000001, -112.736518], [32.91237099999998, -112.740424], [32.91236900000003, -112.741202], [32.91236799999998, -112.74153], [32.912063999999965, -112.741527], [32.909651999999994, -112.74156], [32.909077000000025, -112.74156100000002], [32.90899100000001, -112.74156100000002], [32.90901200000003, -112.745575], [32.90903499999998, -112.750072], [32.91267600000004, -112.750028], [32.91271499999999, -112.750714], [32.91283700000001, -112.756478], [32.91275000000001, -112.770215], [32.912670999999996, -112.782714], [32.91264299999998, -112.787149], [32.91258800000002, -112.79585200000001], [32.91254599999999, -112.802687], [32.91252300000001, -112.80628900000002], [32.908724000000035, -112.806193], [32.90871200000003, -112.80689], [32.908588, -112.814783], [32.905189000000014, -112.814927], [32.90528699999999, -112.82387500000002], [32.90185600000001, -112.823859], [32.90182200000003, -112.82665700000001], [32.90175300000004, -112.832409], [32.897682999999965, -112.832271], [32.89761000000001, -112.84090000000002], [32.89465100000001, -112.841006], [32.89461500000001, -112.849038], [32.89078000000001, -112.849218], [32.89084200000001, -112.857648], [32.887007999999994, -112.857629], [32.88699599999998, -112.870662], [32.88662800000002, -112.870657], [32.88584500000001, -112.870637], [32.884905999999965, -112.870634], [32.88391900000001, -112.870622], [32.88352899999998, -112.870615], [32.883235, -112.898351], [32.88316400000001, -112.905149], [32.88307400000003, -112.913713], [32.88314199999999, -112.91393], [32.88321199999998, -112.922426], [32.88284699999999, -112.937275], [32.88273300000001, -112.943219], [32.88273300000001, -112.94471200000001], [32.883673999999985, -113.008966], [32.88356300000002, -113.023186], [32.89227400000006, -113.023216], [32.892350000000015, -113.023216], [32.89707000000001, -113.023224], [32.897378000000025, -113.023224], [32.93762699999994, -113.023524], [32.93858300000001, -113.023521], [32.941086000000006, -113.023513], [32.94095800000003, -113.02689100000002], [32.94095099999999, -113.027081], [32.94139700000003, -113.02707500000001], [32.96016600000001, -113.026834], [32.98291199999996, -113.026541], [32.99700700000001, -113.026361], [33.017861000000046, -113.02609299999999], [33.023918999999985, -113.026061], [33.02936699999999, -113.026049], [33.02892199999998, -113.028225], [33.028512000000006, -113.030295], [33.028444000000015, -113.030579], [33.028274, -113.031246], [33.027904, -113.032548], [33.02696399999998, -113.035914], [33.02667100000002, -113.03698400000002], [33.024949, -113.043163], [33.024496, -113.04479899999998], [33.024352, -113.045319], [33.024293, -113.045542], [33.024110000000015, -113.046188], [33.023806, -113.047316], [33.023770000000006, -113.047493], [33.02375000000003, -113.047651], [33.023743999999965, -113.047794], [33.02374899999998, -113.04793], [33.02408699999999, -113.05131], [33.024292, -113.05361499999998], [33.02479, -113.058722], [33.02486199999999, -113.059464], [33.025163, -113.06255000000002], [33.025167999999965, -113.062602], [33.025212999999994, -113.062994], [33.025270000000006, -113.063384], [33.025331000000016, -113.063753], [33.025387999999985, -113.064029], [33.02540500000001, -113.064139], [33.02541099999999, -113.06419200000002], [33.02541299999998, -113.06840500000001], [33.02541500000002, -113.072708], [33.02541499999999, -113.07285], [33.02542399999999, -113.073066], [33.02541800000003, -113.07322], [33.025423, -113.076959], [33.02542999999999, -113.07949], [33.025427, -113.079697], [33.02541800000003, -113.08001300000001], [33.02543200000001, -113.08052700000002], [33.02543299999998, -113.081159], [33.02546700000002, -113.085654], [33.02546699999999, -113.085789], [33.025484000000006, -113.092776], [33.02548399999999, -113.092964], [33.025481000000006, -113.098614], [33.025481000000006, -113.098794], [33.02549900000001, -113.100661], [33.02551099999999, -113.102669], [33.02550299999997, -113.104283], [33.025488999999986, -113.105631], [33.025488999999986, -113.10592100000001], [33.02548899999997, -113.10669900000002], [33.025483000000015, -113.107015], [33.025475, -113.107491], [33.025442, -113.10860300000002], [33.025427000000036, -113.109085], [33.02542499999996, -113.10941], [33.02543200000001, -113.109845], [33.02543000000001, -113.112537], [33.02542999999999, -113.11401600000002], [33.025410000000015, -113.117103], [33.02541600000002, -113.120444], [33.02541500000002, -113.120803], [33.025402, -113.12141], [33.02539600000001, -113.12185], [33.02540899999999, -113.122313], [33.02543899999999, -113.123519], [33.025457999999986, -113.123693], [33.02549400000003, -113.123861], [33.02552799999999, -113.123959], [33.02558200000001, -113.124055], [33.025624, -113.12410900000002], [33.02565699999995, -113.12413799999999], [33.02569599999996, -113.124174], [33.02580700000001, -113.124245], [33.025852, -113.12428900000002], [33.025882999999986, -113.12433200000001], [33.02591699999997, -113.124401], [33.025933999999964, -113.124356], [33.025976000000014, -113.124303], [33.026024, -113.124274], [33.02606499999996, -113.124264], [33.026379999999996, -113.124251], [33.02661499999998, -113.124253], [33.02717100000002, -113.124274], [33.027793000000045, -113.124311], [33.02845699999998, -113.124346], [33.02860600000001, -113.124368], [33.02876200000001, -113.124405], [33.028851999999944, -113.124442], [33.028934, -113.124491], [33.02904499999999, -113.124579], [33.029096999999965, -113.124632], [33.029175999999964, -113.12472500000001], [33.02929299999998, -113.12489100000002], [33.029422999999966, -113.12509699999998], [33.02955499999999, -113.12533100000002], [33.029635000000034, -113.125505], [33.02968699999995, -113.125603], [33.030008999999964, -113.126091], [33.030077000000055, -113.1262], [33.03020000000005, -113.12645300000001], [33.03030299999999, -113.126631], [33.03089300000005, -113.127476], [33.030979999999985, -113.127633], [33.031019000000015, -113.127721], [33.031057999999994, -113.12784300000001], [33.03112499999996, -113.128157], [33.03119600000001, -113.128556], [33.03121100000003, -113.12862500000001], [33.03125000000001, -113.128743], [33.03130499999997, -113.128853], [33.03137999999995, -113.128961], [33.03244899999998, -113.130094], [33.03250700000003, -113.130159], [33.03258999999998, -113.130265], [33.03269699999999, -113.130426], [33.03278399999999, -113.130591], [33.03285299999997, -113.130752], [33.032949000000016, -113.13102], [33.032998000000006, -113.131191], [33.03310200000003, -113.131637], [33.033147000000035, -113.13178000000002], [33.03320600000001, -113.131926], [33.03325599999998, -113.132018], [33.033315000000016, -113.132105], [33.03341999999997, -113.132226], [33.03355200000002, -113.13235100000001], [33.03364800000001, -113.132457], [33.033880000000025, -113.132761], [33.03394800000002, -113.132875], [33.03399399999999, -113.132983], [33.034039, -113.133138], [33.03407800000003, -113.133327], [33.034107000000006, -113.133538], [33.03412299999998, -113.133744], [33.03412299999998, -113.13377600000001], [33.034131999999985, -113.134417], [33.03412500000002, -113.134596], [33.03411200000001, -113.134693], [33.03409000000002, -113.13478], [33.03405900000001, -113.134849], [33.03402199999997, -113.134907], [33.03366699999994, -113.135282], [33.033583000000036, -113.13539199999998], [33.03346800000002, -113.135558], [33.033378, -113.135706], [33.033326999999936, -113.13581100000002], [33.03328899999997, -113.135918], [33.03325400000002, -113.136047], [33.03320900000001, -113.136266], [33.03319499999998, -113.136406], [33.03319399999997, -113.136556], [33.03320500000003, -113.136691], [33.033224999999995, -113.1368], [33.033263999999996, -113.136923], [33.033326999999986, -113.137063], [33.033450999999964, -113.1373], [33.03350899999998, -113.137417], [33.03355700000002, -113.13754], [33.033599000000024, -113.137683], [33.033630999999964, -113.137846], [33.033645, -113.137974], [33.033651000000006, -113.138122], [33.033645, -113.138254], [33.03362999999996, -113.138432], [33.03359499999998, -113.138665], [33.03336899999998, -113.139732], [33.033333999999975, -113.13986499999999], [33.03327599999999, -113.140032], [33.032971999999965, -113.140737], [33.03288200000003, -113.14096800000002], [33.03281499999996, -113.141162], [33.03242800000002, -113.142448], [33.03235199999998, -113.142649], [33.03215600000001, -113.143084], [33.03212399999999, -113.143165], [33.03205999999997, -113.143297], [33.03185500000002, -113.14365800000002], [33.03179900000002, -113.14377], [33.03160200000001, -113.14421500000002], [33.031553999999986, -113.144317], [33.03147300000002, -113.144459], [33.031394999999996, -113.144572], [33.031292, -113.144697], [33.03098000000001, -113.14500100000001], [33.03093199999996, -113.145053], [33.030847999999956, -113.145161], [33.03049, -113.145622], [33.030427999999986, -113.145708], [33.03032999999999, -113.145864], [33.030237000000014, -113.14604100000001], [33.03013900000002, -113.146244], [33.03008200000002, -113.14636], [33.02987299999997, -113.146851], [33.02975999999999, -113.147138], [33.029666999999996, -113.14742], [33.02945799999996, -113.148171], [33.029417, -113.148384], [33.029331, -113.148788], [33.02928800000001, -113.149058], [33.02925500000001, -113.149346], [33.02924100000004, -113.149572], [33.029237000000016, -113.149844], [33.029245999999986, -113.150113], [33.02926599999996, -113.150341], [33.029290999999965, -113.150786], [33.02933699999998, -113.15166], [33.02934500000002, -113.151942], [33.029339, -113.152262], [33.02927699999996, -113.153069], [33.029268999999935, -113.153292], [33.02927499999995, -113.153637], [33.02926799999998, -113.153813], [33.02926199999999, -113.153985], [33.02924299999999, -113.15423000000001], [33.02918900000004, -113.15472], [33.029175999999964, -113.154919], [33.02918199999996, -113.155246], [33.029175999999964, -113.155315], [33.02915599999995, -113.155391], [33.029130999999964, -113.155446], [33.02909399999997, -113.155498], [33.028951, -113.155744], [33.02890300000004, -113.15583500000001], [33.028861, -113.155952], [33.02879099999999, -113.15626], [33.02876100000002, -113.156515], [33.02875000000001, -113.156747], [33.028755999999994, -113.156969], [33.02875099999995, -113.157176], [33.02873699999997, -113.157325], [33.02869199999994, -113.157642], [33.02866299999999, -113.157793], [33.02861600000005, -113.157978], [33.02855400000002, -113.15816100000002], [33.028498000000006, -113.158297], [33.02823500000003, -113.158764], [33.02799599999997, -113.159223], [33.02791800000003, -113.159391], [33.02777400000003, -113.159674], [33.02764199999998, -113.159902], [33.02717200000003, -113.160586], [33.027074999999975, -113.160748], [33.02697400000001, -113.160948], [33.026898999999965, -113.161128], [33.02669400000001, -113.161701], [33.02626599999999, -113.16285300000001], [33.02620300000003, -113.163011], [33.026112999999995, -113.163204], [33.02601, -113.163393], [33.02582599999998, -113.163682], [33.025759, -113.163769], [33.025663999999956, -113.163914], [33.02558200000001, -113.164067], [33.02552499999999, -113.164197], [33.02542099999997, -113.164493], [33.025359000000016, -113.164707], [33.02528099999999, -113.165028], [33.02522800000003, -113.16532600000001], [33.02518500000001, -113.165649], [33.02516299999998, -113.16592299999999], [33.02512300000001, -113.167311], [33.025135, -113.167642], [33.02514200000001, -113.16774400000001], [33.025157, -113.167983], [33.02519100000001, -113.168318], [33.02526400000001, -113.168884], [33.025470999999996, -113.170334], [33.025553999999985, -113.17081700000001], [33.02558800000001, -113.170941], [33.02559900000001, -113.170985], [33.02565100000001, -113.171127], [33.02571300000002, -113.171266], [33.02578399999998, -113.171396], [33.025962000000014, -113.171659], [33.02609000000002, -113.171825], [33.02627499999999, -113.172044], [33.026737999999966, -113.172478], [33.026884999999986, -113.17263300000002], [33.027122000000006, -113.172909], [33.02739999999999, -113.173222], [33.02768400000001, -113.17351999999998], [33.028363000000006, -113.17429100000001], [33.02870899999999, -113.174696], [33.02878899999998, -113.174796], [33.02887100000001, -113.174913], [33.02895500000002, -113.175053], [33.02903799999997, -113.175217], [33.02935899999997, -113.175985], [33.029422999999966, -113.176118], [33.029502000000036, -113.176254], [33.029608999999994, -113.176393], [33.0297, -113.176522], [33.02978900000001, -113.176681], [33.02985599999996, -113.17684000000001], [33.030081999999965, -113.177581], [33.030132999999964, -113.177725], [33.03020500000006, -113.17787], [33.030267999999985, -113.17797200000001], [33.030495000000045, -113.178252], [33.030609999999974, -113.178383], [33.03077700000002, -113.17859], [33.03093399999998, -113.178801], [33.03158200000002, -113.179762], [33.032001, -113.180456], [33.032159, -113.1807], [33.032415000000036, -113.181091], [33.032531, -113.181271], [33.03265299999997, -113.181482], [33.03275200000003, -113.181674], [33.032854000000036, -113.181899], [33.032958, -113.182164], [33.03336300000001, -113.18311], [33.03344800000004, -113.183296], [33.03352099999999, -113.18343000000002], [33.03362199999997, -113.18359], [33.033711999999994, -113.183713], [33.034007999999965, -113.184064], [33.034104000000035, -113.184167], [33.03423900000002, -113.18432900000002], [33.03439, -113.184535], [33.03448699999999, -113.184689], [33.034607999999984, -113.184909], [33.03526799999999, -113.186308], [33.03567599999999, -113.187122], [33.03585699999994, -113.187523], [33.035904999999985, -113.187652], [33.03594400000002, -113.187798], [33.03597200000001, -113.187952], [33.03600599999996, -113.18840700000001], [33.03602200000003, -113.188685], [33.03602599999998, -113.189014], [33.03601699999999, -113.18931800000001], [33.035987999999975, -113.18970500000002], [33.035975000000015, -113.189967], [33.03597800000002, -113.190127], [33.035987, -113.19024], [33.03601699999999, -113.190451], [33.03605999999995, -113.190644], [33.03611599999996, -113.190828], [33.03614999999996, -113.190916], [33.03624700000001, -113.191128], [33.03642300000004, -113.191449], [33.036809999999996, -113.19213900000001], [33.037418000000024, -113.193226], [33.037566000000005, -113.193509], [33.03775699999998, -113.193845], [33.038026, -113.194274], [33.038127999999986, -113.194405], [33.038227, -113.194509], [33.03835000000001, -113.194614], [33.03848000000003, -113.194703], [33.03863799999998, -113.194782], [33.03876399999998, -113.194827], [33.038912000000025, -113.19486200000001], [33.039648, -113.19494600000002], [33.039859000000014, -113.194985], [33.040022000000015, -113.195027], [33.04020400000001, -113.195085], [33.040382999999984, -113.195156], [33.040962, -113.195424], [33.04109699999999, -113.195493], [33.04126800000002, -113.195595], [33.041452, -113.195721], [33.041647999999995, -113.195879], [33.041828999999964, -113.19605], [33.042163999999985, -113.19641], [33.04224999999998, -113.196517], [33.042369000000036, -113.196646], [33.04284800000001, -113.197094], [33.04288399999997, -113.197123], [33.043008000000015, -113.197238], [33.043155999999975, -113.197393], [33.04375400000003, -113.198119], [33.04385700000001, -113.198258], [33.04395100000002, -113.198402], [33.04405499999999, -113.198582], [33.044286000000014, -113.199054], [33.04444899999999, -113.199366], [33.04472800000002, -113.199833], [33.045076999999964, -113.200382], [33.04514200000001, -113.200476], [33.04528200000001, -113.200666], [33.04544499999996, -113.200863], [33.04553800000004, -113.200998], [33.04560199999998, -113.201116], [33.045700999999994, -113.201343], [33.045847, -113.201718], [33.045896000000006, -113.201826], [33.04597399999998, -113.201957], [33.046038, -113.202042], [33.04608700000004, -113.202096], [33.046614999999996, -113.20266], [33.046700999999985, -113.202744], [33.046840999999986, -113.202869], [33.04700900000005, -113.202995], [33.04716199999996, -113.203093], [33.047342, -113.203189], [33.04862599999996, -113.20373], [33.04891, -113.203839], [33.049149000000014, -113.203912], [33.049672, -113.204041], [33.05039499999997, -113.204243], [33.051082, -113.20443500000002], [33.052885999999994, -113.204956], [33.05465600000003, -113.205533], [33.055700999999964, -113.205865], [33.055993, -113.205953], [33.05624399999997, -113.206002], [33.05652799999998, -113.206039], [33.056782, -113.206058], [33.05713600000006, -113.20607], [33.057331999999995, -113.206092], [33.05751200000001, -113.206125], [33.05773699999995, -113.206185], [33.05812399999999, -113.206322], [33.058965000000015, -113.206651], [33.05932199999996, -113.206799], [33.05953399999999, -113.20687699999999], [33.05986799999997, -113.20695100000002], [33.060108, -113.206994], [33.06043199999997, -113.207036], [33.06195399999999, -113.207194], [33.063907000000015, -113.207427], [33.064937000000015, -113.207537], [33.06615300000001, -113.207657], [33.067214, -113.207771], [33.067358000000034, -113.207786], [33.068492, -113.207898], [33.070731, -113.208134], [33.071546999999974, -113.208226], [33.07387399999999, -113.208448], [33.07476499999994, -113.208525], [33.074849, -113.208543], [33.074953, -113.208584], [33.075038000000035, -113.208636], [33.075096000000045, -113.208681], [33.07514899999998, -113.20873200000001], [33.075235000000006, -113.208832], [33.07567399999998, -113.209343], [33.07677700000002, -113.210262], [33.07697699999996, -113.210412], [33.07706399999999, -113.21047099999998], [33.07784099999999, -113.210881], [33.078133, -113.211025], [33.07845099999996, -113.211208], [33.07869300000001, -113.21136599999998], [33.07897800000002, -113.211572], [33.07910700000005, -113.211662], [33.07922500000001, -113.211767], [33.07932399999999, -113.211881], [33.07940000000005, -113.211987], [33.079445, -113.21207], [33.079488999999995, -113.212183], [33.07951699999998, -113.212292], [33.079529999999984, -113.212402], [33.07952999999996, -113.21253], [33.07951800000002, -113.21263], [33.07950100000001, -113.21271000000002], [33.079687000000014, -113.212446], [33.081271000000015, -113.209949]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_ef1c2ba8abd12722a71956517c9df7b7);
+        
+    
+        var popup_2316bcaf42f2bec126326e2172302a15 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_516889bc2b9978a0373f8ef9dc29122a = $(`<div id="html_516889bc2b9978a0373f8ef9dc29122a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Maricopa - AZ-CD07</h4>                              </div>         </div>`)[0];
+                popup_2316bcaf42f2bec126326e2172302a15.setContent(html_516889bc2b9978a0373f8ef9dc29122a);
+            
+        
+
+        polygon_adabab39aa53fe8b04a5d1d6a79be201.bindPopup(popup_2316bcaf42f2bec126326e2172302a15)
+        ;
+
+        
+    
+    
+            polygon_adabab39aa53fe8b04a5d1d6a79be201.bindTooltip(
+                `<div>
+                      Maricopa - AZ-CD07
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_ef1c2ba8abd12722a71956517c9df7b7.fitBounds(
+                [[32.762731, -113.21271000000002], [33.204394000000015, -112.511096]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_35fa2f3756a4b02ee37579adb87a7284 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Denver - CO-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Adams - CO-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Adams - CO-CD06</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #e15759;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Denver - CO-CD04</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #76b7b2;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Adams - CO-CD04</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #6c5b7b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Denver - CO-CD06</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #b07aa1;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Denver - CO-CD08</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_35fa2f3756a4b02ee37579adb87a7284" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_35fa2f3756a4b02ee37579adb87a7284 = L.map(
+                "map_35fa2f3756a4b02ee37579adb87a7284",
+                {
+                    center: [39.82648034984823, -104.71898140672724],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+
+            
+
+        
+    
+            var tile_layer_689e3cfee6a6e037d83f896fc905e8c7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_689e3cfee6a6e037d83f896fc905e8c7.addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+            var polygon_a319730b0b35b1c944a2225b3e05808a = L.polygon(
+                [[39.84178800000003, -104.762317], [39.84339299999994, -104.7623], [39.84375399999999, -104.762296], [39.8445660787627, -104.76228756162394], [39.845382703089676, -104.76178279556996], [39.845375000000004, -104.760586], [39.845369, -104.759127], [39.84535599999997, -104.75747200000002], [39.84535699999997, -104.756936], [39.84535499999999, -104.756544], [39.845349999999996, -104.755283], [39.845339, -104.753063], [39.84534500000001, -104.752759], [39.84533500000002, -104.752383], [39.84529899999997, -104.747001], [39.845297, -104.746713], [39.845225, -104.735716], [39.84521400000003, -104.734181], [39.84521000000005, -104.73329], [39.845209, -104.732722], [39.845199999999934, -104.732135], [39.84519499999997, -104.730953], [39.84524799999999, -104.730962], [39.85647599999995, -104.730828], [39.856539, -104.73082700000002], [39.858036000000034, -104.730811], [39.86146199999998, -104.730773], [39.886802, -104.730493], [39.88965400000003, -104.730461], [39.88999500000003, -104.730458], [39.89049700000001, -104.730452], [39.892609, -104.730429], [39.89568699999999, -104.730394], [39.89613099999997, -104.73039], [39.896127, -104.729806], [39.896027, -104.714979], [39.89594899999997, -104.703311], [39.89932482525903, -104.70327310754678], [39.90671100000001, -104.640361], [39.90493986569473, -104.6309408741744], [39.89936600000003, -104.630947], [39.89929099999997, -104.630945], [39.89929599999999, -104.625844], [39.89932800000002, -104.620759], [39.899131000000054, -104.607729], [39.89912400000002, -104.607274], [39.899109999999986, -104.606887], [39.899113, -104.60655], [39.89910700000005, -104.606166], [39.89907600000001, -104.604097], [39.89904199999998, -104.600447], [39.899038000000026, -104.599581], [39.881344066145786, -104.60452679684296], [39.881344999999996, -104.60462600000001], [39.88134599999998, -104.605154], [39.88097700000002, -104.605159], [39.880577, -104.605165], [39.87898564314185, -104.60518583665143], [39.873125753250186, -104.60682314107038], [39.87312699999998, -104.606989], [39.873133999999965, -104.607438], [39.87313600000004, -104.60817400000002], [39.873138999999995, -104.608547], [39.87322000000002, -104.619152], [39.87032700000004, -104.619189], [39.85578600000005, -104.619374], [39.84564199999999, -104.619503], [39.843837999999984, -104.619521], [39.843324000000024, -104.619539], [39.842651999999994, -104.619548], [39.84032300000002, -104.619571], [39.83777900000006, -104.619603], [39.83351500000001, -104.619658], [39.82691975801321, -104.61974200355864], [39.826851999999974, -104.61974300000001], [39.823443000000005, -104.762462], [39.82297999999999, -104.76247], [39.822956000000005, -104.762471], [39.820163999999984, -104.762592], [39.818608000000076, -104.762566], [39.81650600000004, -104.762597], [39.81645499999997, -104.762598], [39.81604399999996, -104.762604], [39.81500700000003, -104.76262], [39.814743, -104.762618], [39.81285199999999, -104.762607], [39.81114699999996, -104.762554], [39.80922100000005, -104.762652], [39.80557400000002, -104.762658], [39.80367800000002, -104.762632], [39.801589, -104.762646], [39.80122899999997, -104.762655], [39.80108299999996, -104.762666], [39.80089799999996, -104.762698], [39.80027600000003, -104.762824], [39.80023300000002, -104.762829], [39.80015299999995, -104.762839], [39.80001399999999, -104.762841], [39.79987800000003, -104.762834], [39.799550999999965, -104.762786], [39.79892199999998, -104.762648], [39.79872199999998, -104.762611], [39.79863499999997, -104.762604], [39.798432999999996, -104.762606], [39.79845899999997, -104.758094], [39.79846900000001, -104.755548], [39.79846299999999, -104.753608], [39.79845999999996, -104.753328], [39.79846900000001, -104.751292], [39.79846185156909, -104.74962981299808], [39.76918100000004, -104.734601], [39.769210999999984, -104.734749], [39.769217, -104.73598400000002], [39.76923300000002, -104.739434], [39.769261999999976, -104.74543200000001], [39.76928100000001, -104.749326], [39.76929599999999, -104.75227600000001], [39.76930200000003, -104.753442], [39.76924999999998, -104.757568], [39.769222000000006, -104.760946], [39.76918799999999, -104.764574], [39.76939099999996, -104.76457600000002], [39.76999699999997, -104.764567], [39.77029900000003, -104.764566], [39.77060899999996, -104.764557], [39.77127100000001, -104.764554], [39.771568, -104.764559], [39.77156200000001, -104.765015], [39.77154400000002, -104.767059], [39.77151499999997, -104.770334], [39.77150000000001, -104.772166], [39.77306099999998, -104.772149], [39.77348299999999, -104.772154], [39.77386200000004, -104.772172], [39.774666999999994, -104.772168], [39.77538100000006, -104.77216], [39.77552600000001, -104.77216], [39.776130000000016, -104.772155], [39.77640900000002, -104.77215700000002], [39.776483000000006, -104.78156000000001], [39.776068, -104.781564], [39.77338899999997, -104.781574], [39.772840999999985, -104.781575], [39.772795, -104.781577], [39.77280099999994, -104.783548], [39.77281499999999, -104.789895], [39.772822, -104.790592], [39.77290400000001, -104.790591], [39.773322999999955, -104.790568], [39.773545999999975, -104.790566], [39.77391200000001, -104.790563], [39.77421699999995, -104.79056], [39.774441000000024, -104.790558], [39.77475899999996, -104.790554], [39.77571600000002, -104.790546], [39.776035000000014, -104.790543], [39.77751899999997, -104.790534], [39.77963399999999, -104.79052], [39.78155800000001, -104.790508], [39.78327200000001, -104.790491], [39.78348799999999, -104.790483], [39.78363599999999, -104.790478], [39.78363599999999, -104.790403], [39.78363599999999, -104.789893], [39.78365, -104.788616], [39.78364199999999, -104.787737], [39.785449000000035, -104.787716], [39.78652899999997, -104.787519], [39.78839300000002, -104.78698], [39.79747000000002, -104.784085], [39.79836699999998, -104.783909], [39.79836999999995, -104.784167], [39.79838499999999, -104.785762], [39.798383, -104.786069], [39.798383, -104.78627], [39.79838500000002, -104.786377], [39.79838899999996, -104.786993], [39.79839099999998, -104.787301], [39.79839199999998, -104.787426], [39.79839299999997, -104.787439], [39.798397999999985, -104.78780200000001], [39.79840000000002, -104.787928], [39.79839699999999, -104.788522], [39.79839700000002, -104.78863], [39.79837699999996, -104.789001], [39.798265000000015, -104.790254], [39.79826300000002, -104.7903], [39.79825099999997, -104.790895], [39.8417830469795, -104.7640076953699], [39.84178800000003, -104.762317]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_1b601e63f6fa2b6612f8b6ae27bed056 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d17a34e644d2a6fc2bd07718b255a776 = $(`<div id="html_d17a34e644d2a6fc2bd07718b255a776" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD01</h4>                              </div>         </div>`)[0];
+                popup_1b601e63f6fa2b6612f8b6ae27bed056.setContent(html_d17a34e644d2a6fc2bd07718b255a776);
+            
+        
+
+        polygon_a319730b0b35b1c944a2225b3e05808a.bindPopup(popup_1b601e63f6fa2b6612f8b6ae27bed056)
+        ;
+
+        
+    
+    
+            polygon_a319730b0b35b1c944a2225b3e05808a.bindTooltip(
+                `<div>
+                      Denver - CO-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2f3200a2a5f4bab4e3e7b42fccfec430 = L.polygon(
+                [[39.82676299999998, -104.619744], [39.82663499999996, -104.619742], [39.82241700000004, -104.619799], [39.82242099999997, -104.619938], [39.822420000000015, -104.620676], [39.822419000000004, -104.621523], [39.82249100000002, -104.62499000000001], [39.82248999999997, -104.625463], [39.82248999999997, -104.625566], [39.822479, -104.62559600000002], [39.82254999999997, -104.637956], [39.82255200000002, -104.63967300000002], [39.82255300000001, -104.640346], [39.82255300000001, -104.640472], [39.82252399999996, -104.644322], [39.822534, -104.64564900000002], [39.822562000000005, -104.64943000000001], [39.822605000000046, -104.65539], [39.816095999999995, -104.655469], [39.81404799999998, -104.655455], [39.81299900000005, -104.65544500000001], [39.81302500000001, -104.65917100000001], [39.81307099999997, -104.665558], [39.81307499999997, -104.666182], [39.818840999999956, -104.66611], [39.82013699999998, -104.666095], [39.82279100000004, -104.66606200000001], [39.822840000000014, -104.673394], [39.822848999999984, -104.674634], [39.82286799999999, -104.677574], [39.82287099999999, -104.677972], [39.82287699999998, -104.678873], [39.822869, -104.679953], [39.823003000000014, -104.69473600000002], [39.823148000000025, -104.710735], [39.82320700000003, -104.716084], [39.82321900000001, -104.71709600000001], [39.82318000000003, -104.722047], [39.823178, -104.722675], [39.82324900000005, -104.734149], [39.823259000000014, -104.735381], [39.823321000000014, -104.744418], [39.823329999999984, -104.745503], [39.82333399999999, -104.745816], [39.823369999999954, -104.751521], [39.82338099999995, -104.753082], [39.823397999999976, -104.75552100000002], [39.823443000000005, -104.762462], [39.826851999999974, -104.61974300000001], [39.82676299999998, -104.619744]],
+                {"bubblingMouseEvents": true, "color": "#6c5b7b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6c5b7b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_0182f652da95b9e574f1e02f49704d54 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_04caf16f204ad68b1608f1d70c6da881 = $(`<div id="html_04caf16f204ad68b1608f1d70c6da881" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD06</h4>                              </div>         </div>`)[0];
+                popup_0182f652da95b9e574f1e02f49704d54.setContent(html_04caf16f204ad68b1608f1d70c6da881);
+            
+        
+
+        polygon_2f3200a2a5f4bab4e3e7b42fccfec430.bindPopup(popup_0182f652da95b9e574f1e02f49704d54)
+        ;
+
+        
+    
+    
+            polygon_2f3200a2a5f4bab4e3e7b42fccfec430.bindTooltip(
+                `<div>
+                      Denver - CO-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_af8d3b8f629d8c564688b45f7dcc47c6 = L.polygon(
+                [[39.79845399999993, -104.74781], [39.79846900000001, -104.74703500000001], [39.79850699999999, -104.745947], [39.798510000000036, -104.745423], [39.79850799999999, -104.744584], [39.79849700000002, -104.743861], [39.79847800000001, -104.743151], [39.79848999999997, -104.743148], [39.79846900000001, -104.742316], [39.79845999999999, -104.741361], [39.798455000000054, -104.740674], [39.798442999999985, -104.73463900000002], [39.79844299999999, -104.734468], [39.798442, -104.734399], [39.79680100000002, -104.734403], [39.795763, -104.734406], [39.79511600000002, -104.734416], [39.794620000000016, -104.734417], [39.792363999999985, -104.73442600000001], [39.791090000000025, -104.734417], [39.79046499999999, -104.734414], [39.78968900000001, -104.73442], [39.789128000000034, -104.734429], [39.785355, -104.734492], [39.784359999999985, -104.734509], [39.78377599999999, -104.734515], [39.78294899999995, -104.734519], [39.782821, -104.73452], [39.782587, -104.734523], [39.78231799999998, -104.734527], [39.781862, -104.734532], [39.781729999999996, -104.734534], [39.780074999999975, -104.734558], [39.77964999999995, -104.73454], [39.778774999999975, -104.734564], [39.77867000000002, -104.734567], [39.775807, -104.734578], [39.775615000000016, -104.734578], [39.775587, -104.734578], [39.77517999999999, -104.73458], [39.774838000000024, -104.734581], [39.76926799999999, -104.734601], [39.769210999999984, -104.734601], [39.76918100000004, -104.734601], [39.79846185156909, -104.74962981299808], [39.79845399999993, -104.74781]],
+                {"bubblingMouseEvents": true, "color": "#6c5b7b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6c5b7b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_00e3352c1935a89b7564ffc937320386 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2774409e08ad499b81a45000873b51f5 = $(`<div id="html_2774409e08ad499b81a45000873b51f5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD06</h4>                              </div>         </div>`)[0];
+                popup_00e3352c1935a89b7564ffc937320386.setContent(html_2774409e08ad499b81a45000873b51f5);
+            
+        
+
+        polygon_af8d3b8f629d8c564688b45f7dcc47c6.bindPopup(popup_00e3352c1935a89b7564ffc937320386)
+        ;
+
+        
+    
+    
+            polygon_af8d3b8f629d8c564688b45f7dcc47c6.bindTooltip(
+                `<div>
+                      Denver - CO-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_696d3322a881836bb1d0654961491c31 = L.polygon(
+                [[39.90692599999996, -104.70318500000002], [39.90691199999999, -104.701065], [39.906912, -104.701005], [39.90685599999997, -104.692759], [39.90685499999999, -104.69261700000001], [39.906851000000024, -104.692139], [39.911267000000024, -104.692088], [39.91336999999999, -104.692063], [39.91417799999999, -104.69205400000001], [39.91416299999998, -104.689447], [39.91415100000001, -104.687455], [39.91402099999999, -104.680251], [39.91401599999999, -104.67958200000001], [39.90700799999998, -104.67966400000002], [39.90699099999998, -104.678083], [39.90689399999999, -104.668532], [39.906786999999994, -104.65916300000002], [39.90674700000002, -104.649782], [39.906725, -104.644508], [39.90671599999998, -104.642398], [39.90671100000001, -104.640361], [39.89932482525903, -104.70327310754678], [39.90450099999998, -104.703215], [39.90646299999999, -104.703188], [39.90692599999996, -104.70318500000002]],
+                {"bubblingMouseEvents": true, "color": "#b07aa1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b07aa1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_838d131298da78b6f7d2be2161d361ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1543081463fdbe70a250e22f63e86ba4 = $(`<div id="html_1543081463fdbe70a250e22f63e86ba4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD08</h4>                              </div>         </div>`)[0];
+                popup_838d131298da78b6f7d2be2161d361ae.setContent(html_1543081463fdbe70a250e22f63e86ba4);
+            
+        
+
+        polygon_696d3322a881836bb1d0654961491c31.bindPopup(popup_838d131298da78b6f7d2be2161d361ae)
+        ;
+
+        
+    
+    
+            polygon_696d3322a881836bb1d0654961491c31.bindTooltip(
+                `<div>
+                      Denver - CO-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4b0802c45ba18cd488d4c21cbbb6126a = L.polygon(
+                [[39.845382703089676, -104.76178279556996], [39.8445660787627, -104.76228756162394], [39.84539000000001, -104.76227900000002], [39.84538499999996, -104.76214], [39.845382703089676, -104.76178279556996]],
+                {"bubblingMouseEvents": true, "color": "#b07aa1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b07aa1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_a7a8c16e4711f6255d5cd9a029afae1c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_37f468b475fe222efddbdd7ba045c48d = $(`<div id="html_37f468b475fe222efddbdd7ba045c48d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD08</h4>                              </div>         </div>`)[0];
+                popup_a7a8c16e4711f6255d5cd9a029afae1c.setContent(html_37f468b475fe222efddbdd7ba045c48d);
+            
+        
+
+        polygon_4b0802c45ba18cd488d4c21cbbb6126a.bindPopup(popup_a7a8c16e4711f6255d5cd9a029afae1c)
+        ;
+
+        
+    
+    
+            polygon_4b0802c45ba18cd488d4c21cbbb6126a.bindTooltip(
+                `<div>
+                      Denver - CO-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f145bf2ca737570ae82de4ab9ba82ec9 = L.polygon(
+                [[39.80356699999998, -104.790966], [39.80407099999999, -104.79097], [39.80563999999998, -104.79098], [39.80586800000002, -104.790982], [39.80655100000001, -104.790993], [39.80719699999996, -104.791021], [39.807789999999954, -104.791013], [39.808225000000036, -104.79102], [39.80827500000001, -104.79102], [39.80897599999993, -104.791023], [39.809846, -104.791031], [39.810462000000015, -104.791054], [39.81167900000001, -104.791036], [39.812683, -104.790999], [39.81284799999998, -104.790992], [39.819682000000036, -104.79092200000001], [39.823558999999996, -104.790822], [39.82504599999997, -104.790764], [39.82645499999999, -104.790723], [39.82721399999996, -104.790708], [39.83123299999999, -104.79074400000002], [39.83729200000004, -104.7908], [39.84175399999999, -104.790859], [39.841801999999994, -104.790859], [39.84179299999999, -104.786472], [39.84176900000001, -104.776065], [39.841761000000005, -104.772186], [39.841758999999975, -104.771968], [39.841774000000015, -104.767076], [39.8417830469795, -104.7640076953699], [39.79825099999997, -104.790895], [39.799558999999945, -104.790917], [39.80093700000004, -104.790926], [39.80356699999998, -104.790966]],
+                {"bubblingMouseEvents": true, "color": "#b07aa1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b07aa1", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_a08b2d79bb808e09d327d8220bc8d583 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_161f37ad5eed480a8e7bf06a576f093c = $(`<div id="html_161f37ad5eed480a8e7bf06a576f093c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD08</h4>                              </div>         </div>`)[0];
+                popup_a08b2d79bb808e09d327d8220bc8d583.setContent(html_161f37ad5eed480a8e7bf06a576f093c);
+            
+        
+
+        polygon_f145bf2ca737570ae82de4ab9ba82ec9.bindPopup(popup_a08b2d79bb808e09d327d8220bc8d583)
+        ;
+
+        
+    
+    
+            polygon_f145bf2ca737570ae82de4ab9ba82ec9.bindTooltip(
+                `<div>
+                      Denver - CO-CD08
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_38a33e9b90d375289a5938a6ddc51fb4 = L.polygon(
+                [[39.881333999999974, -104.603458], [39.881344066145786, -104.60452679684296], [39.899038000000026, -104.599581], [39.88458500000002, -104.599776], [39.88130700000001, -104.59981], [39.881333999999974, -104.603458]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_f9eb18d0a3f24aaea47485615e43c759 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ff8f06e22ef683853438576c358340cc = $(`<div id="html_ff8f06e22ef683853438576c358340cc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD04</h4>                              </div>         </div>`)[0];
+                popup_f9eb18d0a3f24aaea47485615e43c759.setContent(html_ff8f06e22ef683853438576c358340cc);
+            
+        
+
+        polygon_38a33e9b90d375289a5938a6ddc51fb4.bindPopup(popup_f9eb18d0a3f24aaea47485615e43c759)
+        ;
+
+        
+    
+    
+            polygon_38a33e9b90d375289a5938a6ddc51fb4.bindTooltip(
+                `<div>
+                      Denver - CO-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_13ac4fe0c7555d757b6a835be77e34d7 = L.polygon(
+                [[39.87507199999999, -104.605236], [39.874797000000015, -104.605233], [39.873114000000015, -104.605261], [39.873125753250186, -104.60682314107038], [39.87898564314185, -104.60518583665143], [39.875306999999985, -104.60523400000001], [39.87507199999999, -104.605236]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_f0189a6765654b34c56d112fcda2209c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bdaa545a4a38fd0439247ce6f3fb0215 = $(`<div id="html_bdaa545a4a38fd0439247ce6f3fb0215" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD04</h4>                              </div>         </div>`)[0];
+                popup_f0189a6765654b34c56d112fcda2209c.setContent(html_bdaa545a4a38fd0439247ce6f3fb0215);
+            
+        
+
+        polygon_13ac4fe0c7555d757b6a835be77e34d7.bindPopup(popup_f0189a6765654b34c56d112fcda2209c)
+        ;
+
+        
+    
+    
+            polygon_13ac4fe0c7555d757b6a835be77e34d7.bindTooltip(
+                `<div>
+                      Denver - CO-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_eee0b315f2837ec130c84427c2c177b8 = L.polygon(
+                [[39.90666900000003, -104.634451], [39.90664500000001, -104.630939], [39.90493986569473, -104.6309408741744], [39.90671100000001, -104.640361], [39.906704999999995, -104.640043], [39.90667399999999, -104.635259], [39.90666900000003, -104.634451]],
+                {"bubblingMouseEvents": true, "color": "#e15759", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e15759", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_15d189cc72449c6949a9432fbdfb7aff = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6f554829314c3c1bb1475a3647294df5 = $(`<div id="html_6f554829314c3c1bb1475a3647294df5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Denver - CO-CD04</h4>                              </div>         </div>`)[0];
+                popup_15d189cc72449c6949a9432fbdfb7aff.setContent(html_6f554829314c3c1bb1475a3647294df5);
+            
+        
+
+        polygon_eee0b315f2837ec130c84427c2c177b8.bindPopup(popup_15d189cc72449c6949a9432fbdfb7aff)
+        ;
+
+        
+    
+    
+            polygon_eee0b315f2837ec130c84427c2c177b8.bindTooltip(
+                `<div>
+                      Denver - CO-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dd7a0496d0d90bbac8a09c0a6ad11895 = L.polygon(
+                [[39.82691975801321, -104.61974200355864], [39.826852501286275, -104.61974286012905], [39.826851999999974, -104.61974300000001], [39.82691975801321, -104.61974200355864]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_3f851b1a88a37c323c33ae13d5884625 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_196e19478215cf29c7853632b4d5f8fc = $(`<div id="html_196e19478215cf29c7853632b4d5f8fc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Adams - CO-CD01</h4>                              </div>         </div>`)[0];
+                popup_3f851b1a88a37c323c33ae13d5884625.setContent(html_196e19478215cf29c7853632b4d5f8fc);
+            
+        
+
+        polygon_dd7a0496d0d90bbac8a09c0a6ad11895.bindPopup(popup_3f851b1a88a37c323c33ae13d5884625)
+        ;
+
+        
+    
+    
+            polygon_dd7a0496d0d90bbac8a09c0a6ad11895.bindTooltip(
+                `<div>
+                      Adams - CO-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5637717d3fc5ac67cffe243419ff0ed5 = L.polygon(
+                [[39.82676299999998, -104.619744], [39.826851999999974, -104.61974300000001], [39.82685199817968, -104.61974286653653], [39.82676299999998, -104.619744]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_56e4bd02719e3a3340a2b0bcc066c96a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_284c9e5c53fea3642607ce322b09e6dd = $(`<div id="html_284c9e5c53fea3642607ce322b09e6dd" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Adams - CO-CD06</h4>                              </div>         </div>`)[0];
+                popup_56e4bd02719e3a3340a2b0bcc066c96a.setContent(html_284c9e5c53fea3642607ce322b09e6dd);
+            
+        
+
+        polygon_5637717d3fc5ac67cffe243419ff0ed5.bindPopup(popup_56e4bd02719e3a3340a2b0bcc066c96a)
+        ;
+
+        
+    
+    
+            polygon_5637717d3fc5ac67cffe243419ff0ed5.bindTooltip(
+                `<div>
+                      Adams - CO-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4a11525cd34a88c387dc7af45fa93bc3 = L.polygon(
+                [[39.82685199817968, -104.61974286653653], [39.826851999999974, -104.61974300000001], [39.826852501286275, -104.61974286012905], [39.82685199817968, -104.61974286653653]],
+                {"bubblingMouseEvents": true, "color": "#76b7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#76b7b2", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_35fa2f3756a4b02ee37579adb87a7284);
+        
+    
+        var popup_15f8742ca474c854ae8b92a56e11e47d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e4b131e4050f50686487c90aa8f2a38a = $(`<div id="html_e4b131e4050f50686487c90aa8f2a38a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Adams - CO-CD04</h4>                              </div>         </div>`)[0];
+                popup_15f8742ca474c854ae8b92a56e11e47d.setContent(html_e4b131e4050f50686487c90aa8f2a38a);
+            
+        
+
+        polygon_4a11525cd34a88c387dc7af45fa93bc3.bindPopup(popup_15f8742ca474c854ae8b92a56e11e47d)
+        ;
+
+        
+    
+    
+            polygon_4a11525cd34a88c387dc7af45fa93bc3.bindTooltip(
+                `<div>
+                      Adams - CO-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_35fa2f3756a4b02ee37579adb87a7284.fitBounds(
+                [[39.76918100000004, -104.791054], [39.91417799999999, -104.599581]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
