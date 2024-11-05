@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_54d1d7cf759646bf18e9715550ba4976 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Boone - MO-CD03</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Boone - MO-CD04</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_54d1d7cf759646bf18e9715550ba4976" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_54d1d7cf759646bf18e9715550ba4976 = L.map(
+                "map_54d1d7cf759646bf18e9715550ba4976",
+                {
+                    center: [38.951700784928114, -92.32050460778046],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_54d1d7cf759646bf18e9715550ba4976);
+
+            
+
+        
+    
+            var tile_layer_ea91d05a3708365b3aab3ea4ecb6fd4a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_ea91d05a3708365b3aab3ea4ecb6fd4a.addTo(map_54d1d7cf759646bf18e9715550ba4976);
+        
+    
+            var polygon_73986a2896c7c41892d916558aa45bc4 = L.polygon(
+                [[38.951410000000045, -92.32185], [38.95143999999997, -92.32184], [38.95150717432056, -92.32183483274902], [38.95112298105923, -92.31959059677474], [38.950807999999974, -92.319625], [38.95067999999996, -92.31964], [38.949718999999995, -92.31973700000002], [38.949451999999994, -92.319764], [38.94899999999996, -92.31981], [38.94899999999996, -92.32], [38.94899999999996, -92.32057], [38.94899999999996, -92.32076], [38.94947200000003, -92.32076], [38.9496, -92.32076], [38.94996000000006, -92.32075], [38.95052999999998, -92.32073], [38.95063400000003, -92.320727], [38.950647999999994, -92.321873], [38.95100200000001, -92.321865], [38.95121000000001, -92.32186], [38.951410000000045, -92.32185]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_54d1d7cf759646bf18e9715550ba4976);
+        
+    
+        var popup_08293153fabca6a510633ed22fe42a4a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_abc507a2107d586a7145bb2284d5543f = $(`<div id="html_abc507a2107d586a7145bb2284d5543f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Boone - MO-CD03</h4>                              </div>         </div>`)[0];
+                popup_08293153fabca6a510633ed22fe42a4a.setContent(html_abc507a2107d586a7145bb2284d5543f);
+            
+        
+
+        polygon_73986a2896c7c41892d916558aa45bc4.bindPopup(popup_08293153fabca6a510633ed22fe42a4a)
+        ;
+
+        
+    
+    
+            polygon_73986a2896c7c41892d916558aa45bc4.bindTooltip(
+                `<div>
+                      Boone - MO-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_269fcaee60fa603ebcc0fda99ad0972f = L.polygon(
+                [[38.95156999999998, -92.32183], [38.951621999999986, -92.32182], [38.95180000000003, -92.32179], [38.951979999999956, -92.32174], [38.95221999999998, -92.32171], [38.95225499999996, -92.32171], [38.95246999999997, -92.32171], [38.95270700000002, -92.321702], [38.953420999999985, -92.321677], [38.95366000000001, -92.32167], [38.95370600000001, -92.321668], [38.953843999999975, -92.321662], [38.95389000000001, -92.32166], [38.95389000000001, -92.321329], [38.95389000000001, -92.32034], [38.95389000000001, -92.32001], [38.953705000000014, -92.32001], [38.95315299999995, -92.32001], [38.95306000000001, -92.32001], [38.95296999999999, -92.32002], [38.95286499999993, -92.320023], [38.952552999999995, -92.320035], [38.952449999999956, -92.32004000000002], [38.952449999999956, -92.31972], [38.95244999999998, -92.31943], [38.95244999999998, -92.31876], [38.95245, -92.31844], [38.95219000000004, -92.31843], [38.952161999999994, -92.31843], [38.951979999999956, -92.31843], [38.95129799999998, -92.318444], [38.95105000000002, -92.31845], [38.951010000000025, -92.31845], [38.95125999999997, -92.31958], [38.95121999999998, -92.31958], [38.95112298105923, -92.31959059677474], [38.95150717432056, -92.32183483274902], [38.95156999999998, -92.32183]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_54d1d7cf759646bf18e9715550ba4976);
+        
+    
+        var popup_7910fd0e9a629111681ca95a6f9537c7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_94e69e52fba6eab8853971a3764036ae = $(`<div id="html_94e69e52fba6eab8853971a3764036ae" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Boone - MO-CD04</h4>                              </div>         </div>`)[0];
+                popup_7910fd0e9a629111681ca95a6f9537c7.setContent(html_94e69e52fba6eab8853971a3764036ae);
+            
+        
+
+        polygon_269fcaee60fa603ebcc0fda99ad0972f.bindPopup(popup_7910fd0e9a629111681ca95a6f9537c7)
+        ;
+
+        
+    
+    
+            polygon_269fcaee60fa603ebcc0fda99ad0972f.bindTooltip(
+                `<div>
+                      Boone - MO-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_54d1d7cf759646bf18e9715550ba4976.fitBounds(
+                [[38.94899999999996, -92.321873], [38.95389000000001, -92.31843]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bb6d73afdd9be37c2892ba03095487b9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Clearfield - PA-CD15</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Centre - PA-CD15</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_bb6d73afdd9be37c2892ba03095487b9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bb6d73afdd9be37c2892ba03095487b9 = L.map(
+                "map_bb6d73afdd9be37c2892ba03095487b9",
+                {
+                    center: [41.05402973394681, -78.04606472910955],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+
+            
+
+        
+    
+            var tile_layer_59f5e0ddeb6101205f50155da1e0d2f0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_59f5e0ddeb6101205f50155da1e0d2f0.addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+            var polygon_b29434c5014c130a0fb0c9aae10763af = L.polygon(
+                [[41.00553700000005, -78.05558], [41.00486000000002, -78.055705], [41.004539000000015, -78.055929], [41.00425599999999, -78.056163], [41.00421799999998, -78.056249], [41.004217952651366, -78.05624910735797], [41.004803000000024, -78.055921], [41.00538599999999, -78.055727], [41.007016000000014, -78.055788], [41.00833099999996, -78.056203], [41.00988299999997, -78.057396], [41.00925200000002, -78.056717], [41.008658999999945, -78.056243], [41.008273000000045, -78.055956], [41.007811999999994, -78.055826], [41.00700899999998, -78.055675], [41.006324999999975, -78.055604], [41.00553700000005, -78.05558]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_362e44e8c21d0ddd2f5a138f8d1c91f8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b9a5c5df92b959d35419bd1f9ffc5c7d = $(`<div id="html_b9a5c5df92b959d35419bd1f9ffc5c7d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_362e44e8c21d0ddd2f5a138f8d1c91f8.setContent(html_b9a5c5df92b959d35419bd1f9ffc5c7d);
+            
+        
+
+        polygon_b29434c5014c130a0fb0c9aae10763af.bindPopup(popup_362e44e8c21d0ddd2f5a138f8d1c91f8)
+        ;
+
+        
+    
+    
+            polygon_b29434c5014c130a0fb0c9aae10763af.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_17e6bd2023798a996101e332b0f99f11 = L.polygon(
+                [[41.01247000000004, -78.060656], [41.01258899999999, -78.060751], [41.01252999999999, -78.060618], [41.01241000000004, -78.060347], [41.01247000000004, -78.060656]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_4ff234f95c49f48f0363cfa6f4b836a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_70a58903861d0d985d5adfec2445c93e = $(`<div id="html_70a58903861d0d985d5adfec2445c93e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_4ff234f95c49f48f0363cfa6f4b836a7.setContent(html_70a58903861d0d985d5adfec2445c93e);
+            
+        
+
+        polygon_17e6bd2023798a996101e332b0f99f11.bindPopup(popup_4ff234f95c49f48f0363cfa6f4b836a7)
+        ;
+
+        
+    
+    
+            polygon_17e6bd2023798a996101e332b0f99f11.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b8d14a80c3650af43c06d72d358e4d59 = L.polygon(
+                [[41.03753299999999, -78.057149], [41.03753177100147, -78.05715006788562], [41.037534791941866, -78.05714873210282], [41.03753299999999, -78.057149]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_1479dfe4abe6d0da117a68b4d3d70ceb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a99a150533556b51320695a718bdf083 = $(`<div id="html_a99a150533556b51320695a718bdf083" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_1479dfe4abe6d0da117a68b4d3d70ceb.setContent(html_a99a150533556b51320695a718bdf083);
+            
+        
+
+        polygon_b8d14a80c3650af43c06d72d358e4d59.bindPopup(popup_1479dfe4abe6d0da117a68b4d3d70ceb)
+        ;
+
+        
+    
+    
+            polygon_b8d14a80c3650af43c06d72d358e4d59.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0d7168248ce430e789c85691641144fb = L.polygon(
+                [[41.01277100000004, -78.06741200000002], [41.012773000000024, -78.066748], [41.0128389009444, -78.06574550693695], [41.012786999999975, -78.065961], [41.01266799999998, -78.06701], [41.0127710390081, -78.06741236499458], [41.01277100000004, -78.06741200000002]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_a34b43ed8e53354042bcebc2cd4b967e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9fb02652d5d0551678afc2d4e6e11fe6 = $(`<div id="html_9fb02652d5d0551678afc2d4e6e11fe6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_a34b43ed8e53354042bcebc2cd4b967e.setContent(html_9fb02652d5d0551678afc2d4e6e11fe6);
+            
+        
+
+        polygon_0d7168248ce430e789c85691641144fb.bindPopup(popup_a34b43ed8e53354042bcebc2cd4b967e)
+        ;
+
+        
+    
+    
+            polygon_0d7168248ce430e789c85691641144fb.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8ea7afc7fbcfa13b16a76276ee550304 = L.polygon(
+                [[41.05177299999997, -78.0596], [41.051561000000056, -78.059516], [41.051173999999975, -78.05937], [41.050943999999966, -78.05938], [41.050834, -78.059385], [41.050389, -78.059697], [41.050204291839115, -78.05987072551436], [41.050248999999944, -78.059838], [41.05074399999999, -78.059573], [41.050823999999956, -78.059585], [41.05090299999999, -78.05959], [41.05109899999997, -78.059602], [41.051294999999975, -78.059613], [41.05149599999998, -78.059698], [41.05169600000002, -78.059783], [41.05180300000001, -78.059828], [41.05191099999999, -78.059866], [41.051959, -78.059926], [41.051975999999996, -78.059944], [41.05234321830203, -78.06013430097802], [41.05234300000003, -78.06013400000002], [41.05231100000006, -78.060077], [41.05226500000001, -78.060001], [41.05220300000001, -78.059898], [41.05203400000002, -78.059779], [41.051922999999974, -78.059702], [41.05177299999997, -78.0596]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_0c6cdd0985a841c9a593522add47ec23 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9c2933f41c5c0cbb7bce319a2696e16f = $(`<div id="html_9c2933f41c5c0cbb7bce319a2696e16f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_0c6cdd0985a841c9a593522add47ec23.setContent(html_9c2933f41c5c0cbb7bce319a2696e16f);
+            
+        
+
+        polygon_8ea7afc7fbcfa13b16a76276ee550304.bindPopup(popup_0c6cdd0985a841c9a593522add47ec23)
+        ;
+
+        
+    
+    
+            polygon_8ea7afc7fbcfa13b16a76276ee550304.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_806995ec4564c6313396c23d580814d9 = L.polygon(
+                [[41.018147, -78.068163], [41.018146337434715, -78.0681636736095], [41.01839672004869, -78.06798211799632], [41.018147, -78.068163]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_1687db42cdbb2f5704423fa8f71f2a13 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_32fbb0e1e743cfc7c2bcc437397ba142 = $(`<div id="html_32fbb0e1e743cfc7c2bcc437397ba142" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_1687db42cdbb2f5704423fa8f71f2a13.setContent(html_32fbb0e1e743cfc7c2bcc437397ba142);
+            
+        
+
+        polygon_806995ec4564c6313396c23d580814d9.bindPopup(popup_1687db42cdbb2f5704423fa8f71f2a13)
+        ;
+
+        
+    
+    
+            polygon_806995ec4564c6313396c23d580814d9.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_28adb6bde406354124b5a5e5a30654e7 = L.polygon(
+                [[41.01390199999999, -78.06976], [41.01469700000001, -78.069915], [41.01538900000002, -78.069896], [41.015573898205155, -78.06978201220436], [41.015206999999975, -78.069826], [41.01495899999996, -78.069812], [41.014694, -78.069831], [41.01396200000002, -78.069678], [41.013751999999926, -78.06952], [41.01375181567517, -78.06951990174089], [41.01390199999999, -78.06976]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_743cc26a8716985c3c3a8eb761b30718 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_579387ec907373e45f7c0e141e72b9f9 = $(`<div id="html_579387ec907373e45f7c0e141e72b9f9" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_743cc26a8716985c3c3a8eb761b30718.setContent(html_579387ec907373e45f7c0e141e72b9f9);
+            
+        
+
+        polygon_28adb6bde406354124b5a5e5a30654e7.bindPopup(popup_743cc26a8716985c3c3a8eb761b30718)
+        ;
+
+        
+    
+    
+            polygon_28adb6bde406354124b5a5e5a30654e7.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_19b0f3ecffd0ddfcdf18a8a6da74064b = L.polygon(
+                [[41.03596240524788, -78.06442361124299], [41.03596799999999, -78.06439], [41.03596779174391, -78.06435198437168], [41.03596240524788, -78.06442361124299]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_62871a326e647b2ea9edc60e8b1770de = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5d3d154af0e23b6e0172c6b98a41dcef = $(`<div id="html_5d3d154af0e23b6e0172c6b98a41dcef" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_62871a326e647b2ea9edc60e8b1770de.setContent(html_5d3d154af0e23b6e0172c6b98a41dcef);
+            
+        
+
+        polygon_19b0f3ecffd0ddfcdf18a8a6da74064b.bindPopup(popup_62871a326e647b2ea9edc60e8b1770de)
+        ;
+
+        
+    
+    
+            polygon_19b0f3ecffd0ddfcdf18a8a6da74064b.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7edc8c07448c19d640a0cf4ffd84f5b0 = L.polygon(
+                [[41.04546499999999, -78.063972], [41.04537199999999, -78.06395], [41.04591299999999, -78.06408], [41.04546499999999, -78.063972]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_ef774c3cb6041dabe4b447a1780d1305 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ef8aab0e719623814d962291ecb271de = $(`<div id="html_ef8aab0e719623814d962291ecb271de" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_ef774c3cb6041dabe4b447a1780d1305.setContent(html_ef8aab0e719623814d962291ecb271de);
+            
+        
+
+        polygon_7edc8c07448c19d640a0cf4ffd84f5b0.bindPopup(popup_ef774c3cb6041dabe4b447a1780d1305)
+        ;
+
+        
+    
+    
+            polygon_7edc8c07448c19d640a0cf4ffd84f5b0.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f7df82ff6c59043a63a005f9890e8d6a = L.polygon(
+                [[41.04537199999999, -78.06395], [41.04513799999998, -78.063688], [41.04502300000004, -78.063512], [41.04484700000002, -78.06343600000001], [41.04448143927141, -78.06336727059734], [41.044745000000034, -78.06356500000001], [41.04537199999999, -78.06395]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_fb61719a01851d586a7f487c2d1e57a0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_40f1b044f450049523eb89a1dcc84c46 = $(`<div id="html_40f1b044f450049523eb89a1dcc84c46" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_fb61719a01851d586a7f487c2d1e57a0.setContent(html_40f1b044f450049523eb89a1dcc84c46);
+            
+        
+
+        polygon_f7df82ff6c59043a63a005f9890e8d6a.bindPopup(popup_fb61719a01851d586a7f487c2d1e57a0)
+        ;
+
+        
+    
+    
+            polygon_f7df82ff6c59043a63a005f9890e8d6a.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e207e0f275f1cfe75f4ecb8b571f60dc = L.polygon(
+                [[41.04638879264564, -78.06380070388936], [41.046595, -78.06364], [41.046615025009835, -78.06361297623653], [41.04638879264564, -78.06380070388936]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_2cbb757df876ec4607d0a79596f0ced5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8855e04589440363c47c0b17169c8f68 = $(`<div id="html_8855e04589440363c47c0b17169c8f68" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_2cbb757df876ec4607d0a79596f0ced5.setContent(html_8855e04589440363c47c0b17169c8f68);
+            
+        
+
+        polygon_e207e0f275f1cfe75f4ecb8b571f60dc.bindPopup(popup_2cbb757df876ec4607d0a79596f0ced5)
+        ;
+
+        
+    
+    
+            polygon_e207e0f275f1cfe75f4ecb8b571f60dc.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_d50f8f622e2fec02c1d71b3040d2f32d = L.polygon(
+                [[41.024881, -78.070509], [41.02459699999999, -78.070747], [41.024901287722564, -78.0704921508852], [41.024881, -78.070509]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_07a6496f22e166821cfd339b9e038791 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f18869d48b6af5d5504b1a7f31a5728a = $(`<div id="html_f18869d48b6af5d5504b1a7f31a5728a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_07a6496f22e166821cfd339b9e038791.setContent(html_f18869d48b6af5d5504b1a7f31a5728a);
+            
+        
+
+        polygon_d50f8f622e2fec02c1d71b3040d2f32d.bindPopup(popup_07a6496f22e166821cfd339b9e038791)
+        ;
+
+        
+    
+    
+            polygon_d50f8f622e2fec02c1d71b3040d2f32d.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6fa850caafff8d102bb7a6a6acf13fb7 = L.polygon(
+                [[41.02658199999996, -78.071255], [41.02675719991455, -78.07152655858134], [41.026757000000025, -78.071526], [41.02674399999994, -78.071506], [41.02658199999996, -78.071255]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_469d19d482f261588c2dd4305bfcb387 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_983f2de727189344deb7ccf285df6da4 = $(`<div id="html_983f2de727189344deb7ccf285df6da4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_469d19d482f261588c2dd4305bfcb387.setContent(html_983f2de727189344deb7ccf285df6da4);
+            
+        
+
+        polygon_6fa850caafff8d102bb7a6a6acf13fb7.bindPopup(popup_469d19d482f261588c2dd4305bfcb387)
+        ;
+
+        
+    
+    
+            polygon_6fa850caafff8d102bb7a6a6acf13fb7.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f34a361714fe9c2ee6cd16ad552fb078 = L.polygon(
+                [[41.02343500000002, -78.075092], [41.02345352517719, -78.07496742609607], [41.02345300000002, -78.074968], [41.02319336607479, -78.07525449261438], [41.02343500000002, -78.075092]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_cc96f9a51bfe08d1ff1651443879bf82 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7910bb90368a18c78fa6c9f5903434ce = $(`<div id="html_7910bb90368a18c78fa6c9f5903434ce" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_cc96f9a51bfe08d1ff1651443879bf82.setContent(html_7910bb90368a18c78fa6c9f5903434ce);
+            
+        
+
+        polygon_f34a361714fe9c2ee6cd16ad552fb078.bindPopup(popup_cc96f9a51bfe08d1ff1651443879bf82)
+        ;
+
+        
+    
+    
+            polygon_f34a361714fe9c2ee6cd16ad552fb078.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_81c6d46535e4855f500dbe9b9d5ce284 = L.polygon(
+                [[41.026822948770864, -78.07435116986701], [41.026665999999985, -78.074672], [41.02659699999999, -78.075067], [41.02660307755194, -78.07507875324393], [41.02661400000004, -78.075044], [41.026822948770864, -78.07435116986701]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_4a216cd720111d80c34ad86e17ada163 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f0d3dcf0a28c958b1cdca95c6d4c1a2f = $(`<div id="html_f0d3dcf0a28c958b1cdca95c6d4c1a2f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_4a216cd720111d80c34ad86e17ada163.setContent(html_f0d3dcf0a28c958b1cdca95c6d4c1a2f);
+            
+        
+
+        polygon_81c6d46535e4855f500dbe9b9d5ce284.bindPopup(popup_4a216cd720111d80c34ad86e17ada163)
+        ;
+
+        
+    
+    
+            polygon_81c6d46535e4855f500dbe9b9d5ce284.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2cfc23d7e46d1055f5bf9066b0fe1d7c = L.polygon(
+                [[41.02301891978855, -78.07540804440293], [41.02273935837797, -78.07556280161303], [41.02286999999999, -78.07555], [41.02301891978855, -78.07540804440293]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_945551ea182d9baf607218ecd00fce00 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3e9c901e3637da649ce8949fa7aa4bb7 = $(`<div id="html_3e9c901e3637da649ce8949fa7aa4bb7" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_945551ea182d9baf607218ecd00fce00.setContent(html_3e9c901e3637da649ce8949fa7aa4bb7);
+            
+        
+
+        polygon_2cfc23d7e46d1055f5bf9066b0fe1d7c.bindPopup(popup_945551ea182d9baf607218ecd00fce00)
+        ;
+
+        
+    
+    
+            polygon_2cfc23d7e46d1055f5bf9066b0fe1d7c.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_188fd48b55deaf59c3f20c9985834b02 = L.polygon(
+                [[41.05596000000005, -78.073213], [41.05529799999997, -78.073239], [41.054848598225576, -78.07328593751905], [41.05495899999994, -78.073303], [41.056558999999986, -78.073349], [41.057503, -78.07344], [41.05757099999995, -78.073519], [41.0577171809277, -78.07353710110664], [41.057716999999975, -78.073537], [41.05759900000002, -78.073474], [41.057409, -78.073367], [41.056993000000006, -78.07326700000002], [41.05669300000001, -78.073221], [41.05648800000001, -78.073176], [41.05596000000005, -78.073213]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_5ba7b11477301a9be148d27154b0ba08 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3208dd61af684805627188b4243fadb7 = $(`<div id="html_3208dd61af684805627188b4243fadb7" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_5ba7b11477301a9be148d27154b0ba08.setContent(html_3208dd61af684805627188b4243fadb7);
+            
+        
+
+        polygon_188fd48b55deaf59c3f20c9985834b02.bindPopup(popup_5ba7b11477301a9be148d27154b0ba08)
+        ;
+
+        
+    
+    
+            polygon_188fd48b55deaf59c3f20c9985834b02.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_64c625e59ffdf9ca9ddeca4c71cc7809 = L.polygon(
+                [[41.03151819589662, -78.0797855865719], [41.03151699999997, -78.079786], [41.031389999999995, -78.079831], [41.03092800000003, -78.07993700000002], [41.03065529113487, -78.0803116000918], [41.03078300000003, -78.080356], [41.031130999999995, -78.080182], [41.03151819589662, -78.0797855865719]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_e4e6b7f3c631bc0e7e6113ace50ccfde = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e712ec340d93403ad300103f57e56fd8 = $(`<div id="html_e712ec340d93403ad300103f57e56fd8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_e4e6b7f3c631bc0e7e6113ace50ccfde.setContent(html_e712ec340d93403ad300103f57e56fd8);
+            
+        
+
+        polygon_64c625e59ffdf9ca9ddeca4c71cc7809.bindPopup(popup_e4e6b7f3c631bc0e7e6113ace50ccfde)
+        ;
+
+        
+    
+    
+            polygon_64c625e59ffdf9ca9ddeca4c71cc7809.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_414990b6e7ac9c3ede2d059fc5dd4f24 = L.polygon(
+                [[41.06780200000005, -78.08508], [41.067664806570725, -78.08511025293437], [41.06780295163759, -78.08508005490194], [41.06780200000005, -78.08508]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_16067103c60372c60dba6218250bfc41 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ade30148e2cd6734882410edbc8a9b71 = $(`<div id="html_ade30148e2cd6734882410edbc8a9b71" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_16067103c60372c60dba6218250bfc41.setContent(html_ade30148e2cd6734882410edbc8a9b71);
+            
+        
+
+        polygon_414990b6e7ac9c3ede2d059fc5dd4f24.bindPopup(popup_16067103c60372c60dba6218250bfc41)
+        ;
+
+        
+    
+    
+            polygon_414990b6e7ac9c3ede2d059fc5dd4f24.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7345dc9f0ded117408d254f1d37f3402 = L.polygon(
+                [[41.06922926389206, -78.08834295311091], [41.06922900000001, -78.088342], [41.06920699999999, -78.088264], [41.068935000000025, -78.08731], [41.068915999999994, -78.087195], [41.06891591169406, -78.08719446389574], [41.06887599999999, -78.087712], [41.06922926389206, -78.08834295311091]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_bce189b5fe53f2a8ca67bf20f077b583 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_26e24fbf464c26e5c813390599bee4a9 = $(`<div id="html_26e24fbf464c26e5c813390599bee4a9" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_bce189b5fe53f2a8ca67bf20f077b583.setContent(html_26e24fbf464c26e5c813390599bee4a9);
+            
+        
+
+        polygon_7345dc9f0ded117408d254f1d37f3402.bindPopup(popup_bce189b5fe53f2a8ca67bf20f077b583)
+        ;
+
+        
+    
+    
+            polygon_7345dc9f0ded117408d254f1d37f3402.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bb80044c5630bb5c65695c261b439311 = L.polygon(
+                [[41.059981000000036, -78.09065], [41.06024799999997, -78.090713], [41.06070900000002, -78.090208], [41.06131500000001, -78.08966], [41.061941738586086, -78.08925442047158], [41.06190100000002, -78.089268], [41.06152099999997, -78.089463], [41.060961999999996, -78.089902], [41.06036499999994, -78.090351], [41.05990399999998, -78.090545], [41.05982205053244, -78.09056398829128], [41.059981000000036, -78.09065]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_edae769fe4aedb411d85825a8c2f99b0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_afc92814fe8c449cffe24c6d0b53810d = $(`<div id="html_afc92814fe8c449cffe24c6d0b53810d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_edae769fe4aedb411d85825a8c2f99b0.setContent(html_afc92814fe8c449cffe24c6d0b53810d);
+            
+        
+
+        polygon_bb80044c5630bb5c65695c261b439311.bindPopup(popup_edae769fe4aedb411d85825a8c2f99b0)
+        ;
+
+        
+    
+    
+            polygon_bb80044c5630bb5c65695c261b439311.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_402a3e16e25f2874b189409644060119 = L.polygon(
+                [[41.06956100000001, -78.089564], [41.069489999999995, -78.08925400000001], [41.06961800000003, -78.08981300000002], [41.06956100000001, -78.089564]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_72118a35947c12f30ea95b7bacb7d9ed = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ec9fc3178f5b83c7bdcae70802fd90dc = $(`<div id="html_ec9fc3178f5b83c7bdcae70802fd90dc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_72118a35947c12f30ea95b7bacb7d9ed.setContent(html_ec9fc3178f5b83c7bdcae70802fd90dc);
+            
+        
+
+        polygon_402a3e16e25f2874b189409644060119.bindPopup(popup_72118a35947c12f30ea95b7bacb7d9ed)
+        ;
+
+        
+    
+    
+            polygon_402a3e16e25f2874b189409644060119.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_516a5be1ae5d5b098541e879c85b972b = L.polygon(
+                [[41.069489999999995, -78.08925400000001], [41.069314, -78.088649], [41.069313989657616, -78.0886489626457], [41.06938499999999, -78.089081], [41.069489999999995, -78.08925400000001]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_5f325cf5e3eeb8160d8deebe00f34707 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ce02bd9c7f95c17340fafc2263aed606 = $(`<div id="html_ce02bd9c7f95c17340fafc2263aed606" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_5f325cf5e3eeb8160d8deebe00f34707.setContent(html_ce02bd9c7f95c17340fafc2263aed606);
+            
+        
+
+        polygon_516a5be1ae5d5b098541e879c85b972b.bindPopup(popup_5f325cf5e3eeb8160d8deebe00f34707)
+        ;
+
+        
+    
+    
+            polygon_516a5be1ae5d5b098541e879c85b972b.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_732b55887a0a2139ee5cadd0725186c7 = L.polygon(
+                [[41.07050696958358, -78.09375841336204], [41.070465000000006, -78.092949], [41.07044899999999, -78.09243], [41.070413999999985, -78.092192], [41.07037600000001, -78.092972], [41.070448999999954, -78.093258], [41.070467, -78.093428], [41.07050696958358, -78.09375841336204]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_f823fc69bb3d50eca67dce2f2ee3c7a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6cc754d7cb468d0c1b7d0fd63f7ba71f = $(`<div id="html_6cc754d7cb468d0c1b7d0fd63f7ba71f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_f823fc69bb3d50eca67dce2f2ee3c7a7.setContent(html_6cc754d7cb468d0c1b7d0fd63f7ba71f);
+            
+        
+
+        polygon_732b55887a0a2139ee5cadd0725186c7.bindPopup(popup_f823fc69bb3d50eca67dce2f2ee3c7a7)
+        ;
+
+        
+    
+    
+            polygon_732b55887a0a2139ee5cadd0725186c7.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_fa9659d4ad09d57dd3523eefd11585db = L.polygon(
+                [[41.08521500000004, -78.097438], [41.08438400000005, -78.096618], [41.08345699999996, -78.095847], [41.08235200000005, -78.094809], [41.08110400000003, -78.093828], [41.08003699999995, -78.092988], [41.07956200000001, -78.092671], [41.07894499999997, -78.09255], [41.07836499999997, -78.092557], [41.077955999999986, -78.092643], [41.07727000000001, -78.092974], [41.076622, -78.093364], [41.075832999999975, -78.093733], [41.07512499999997, -78.094231], [41.07455700000002, -78.094827], [41.074251999999994, -78.09512], [41.073872000000016, -78.095374], [41.073655, -78.095638], [41.07340099999999, -78.09605], [41.07333100000001, -78.09628], [41.073250999999985, -78.09654], [41.073131000000004, -78.096884], [41.072967, -78.097079], [41.072883999999966, -78.097124], [41.072757999999986, -78.097186], [41.07267600000003, -78.0972], [41.07267504475008, -78.09720018993319], [41.072840999999954, -78.097266], [41.07321599999996, -78.097032], [41.073383000000064, -78.096621], [41.07433299999994, -78.095356], [41.07587300000001, -78.09392300000002], [41.07845000000003, -78.092894], [41.07872599999998, -78.092842], [41.07890100000002, -78.092842], [41.079271, -78.092864], [41.079587999999966, -78.092964], [41.080005999999976, -78.093237], [41.08022700000002, -78.093385], [41.08293000000005, -78.095787], [41.08491699999997, -78.09755600000001], [41.08602100000004, -78.098397], [41.089553720396516, -78.10013521528724], [41.08955199999998, -78.100134], [41.089327999999995, -78.099977], [41.08860800000003, -78.099403], [41.087977000000045, -78.099065], [41.08704799999995, -78.098657], [41.08603899999997, -78.098111], [41.08521500000004, -78.097438]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_df2a1606833f1d766f5e02ff25f98726 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2293a780c87891a906954619f6537641 = $(`<div id="html_2293a780c87891a906954619f6537641" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_df2a1606833f1d766f5e02ff25f98726.setContent(html_2293a780c87891a906954619f6537641);
+            
+        
+
+        polygon_fa9659d4ad09d57dd3523eefd11585db.bindPopup(popup_df2a1606833f1d766f5e02ff25f98726)
+        ;
+
+        
+    
+    
+            polygon_fa9659d4ad09d57dd3523eefd11585db.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c12b789e5a5f3d073cf5bfbbbb5e8fd5 = L.polygon(
+                [[41.071286, -78.09624500000001], [41.070903, -78.095752], [41.07063700000007, -78.095092], [41.0705565734085, -78.0946551147792], [41.07057699999998, -78.095305], [41.07081300000001, -78.095859], [41.071114999999985, -78.096151], [41.071286, -78.09624500000001]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_7d47b17f38d3fc4a3f8aca42aa786058 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3460d5a3856092794f4c3f12b81a66f4 = $(`<div id="html_3460d5a3856092794f4c3f12b81a66f4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_7d47b17f38d3fc4a3f8aca42aa786058.setContent(html_3460d5a3856092794f4c3f12b81a66f4);
+            
+        
+
+        polygon_c12b789e5a5f3d073cf5bfbbbb5e8fd5.bindPopup(popup_7d47b17f38d3fc4a3f8aca42aa786058)
+        ;
+
+        
+    
+    
+            polygon_c12b789e5a5f3d073cf5bfbbbb5e8fd5.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_20d3a4a546d5b55dad57e62a5eb96b1b = L.polygon(
+                [[41.09308999999999, -78.101875], [41.09308783211329, -78.10187429531061], [41.09324123552071, -78.10194978676222], [41.09308999999999, -78.101875]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_3eb19d68c33e1b1db9b6b6f994e3217d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_459467104012428dfbc125a42bccd3dc = $(`<div id="html_459467104012428dfbc125a42bccd3dc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_3eb19d68c33e1b1db9b6b6f994e3217d.setContent(html_459467104012428dfbc125a42bccd3dc);
+            
+        
+
+        polygon_20d3a4a546d5b55dad57e62a5eb96b1b.bindPopup(popup_3eb19d68c33e1b1db9b6b6f994e3217d)
+        ;
+
+        
+    
+    
+            polygon_20d3a4a546d5b55dad57e62a5eb96b1b.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b665b220c772f22cd929565b29c865a4 = L.polygon(
+                [[41.10622300000003, -78.108031], [41.10551000000001, -78.107614], [41.104627000000036, -78.107206], [41.10334100000003, -78.106707], [41.101314000000045, -78.105762], [41.099064000000006, -78.10463900000002], [41.09762300000002, -78.103914], [41.09638299999997, -78.103406], [41.09546199999996, -78.102988], [41.09487534839904, -78.10276267018325], [41.09537, -78.10301], [41.096469, -78.103501], [41.09746999999996, -78.10399300000002], [41.09877000000001, -78.104583], [41.10338000000002, -78.107113], [41.10538300000007, -78.107836], [41.107127, -78.109056], [41.108789000000016, -78.110159], [41.10971700000004, -78.110823], [41.110970999999964, -78.111874], [41.111652663946195, -78.1119506477388], [41.11106099999997, -78.111695], [41.11037099999998, -78.111062], [41.10965200000003, -78.11043900000001], [41.10949900000002, -78.110346], [41.10873899999994, -78.109883], [41.10754400000001, -78.108873], [41.10622300000003, -78.108031]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_0684bbecbf1f6451a7f8050aee720de5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_29a2cd7134fe45a60b8684a275762e50 = $(`<div id="html_29a2cd7134fe45a60b8684a275762e50" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_0684bbecbf1f6451a7f8050aee720de5.setContent(html_29a2cd7134fe45a60b8684a275762e50);
+            
+        
+
+        polygon_b665b220c772f22cd929565b29c865a4.bindPopup(popup_0684bbecbf1f6451a7f8050aee720de5)
+        ;
+
+        
+    
+    
+            polygon_b665b220c772f22cd929565b29c865a4.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a5e5293345a8714dee623bc72aa870b9 = L.polygon(
+                [[41.114324999999994, -78.11203700000002], [41.113820999999994, -78.112194], [41.11381988678268, -78.11219434442172], [41.114216999999975, -78.112239], [41.11476524922739, -78.11176607740576], [41.114324999999994, -78.11203700000002]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_705fc59ef97b0bd8e6129c3f496915db = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_62b30d15de7f363c5dd6b74e7e83224f = $(`<div id="html_62b30d15de7f363c5dd6b74e7e83224f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Clearfield - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_705fc59ef97b0bd8e6129c3f496915db.setContent(html_62b30d15de7f363c5dd6b74e7e83224f);
+            
+        
+
+        polygon_a5e5293345a8714dee623bc72aa870b9.bindPopup(popup_705fc59ef97b0bd8e6129c3f496915db)
+        ;
+
+        
+    
+    
+            polygon_a5e5293345a8714dee623bc72aa870b9.bindTooltip(
+                `<div>
+                      Clearfield - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_69fa9e097f95c68370fc3ca45cfd11c0 = L.polygon(
+                [[41.00425599999999, -78.056163], [41.004539000000015, -78.055929], [41.00486000000002, -78.055705], [41.00553700000005, -78.05558], [41.006324999999975, -78.055604], [41.00700899999998, -78.055675], [41.007811999999994, -78.055826], [41.008273000000045, -78.055956], [41.008658999999945, -78.056243], [41.00925200000002, -78.056717], [41.00988299999997, -78.057396], [41.01013399999997, -78.057701], [41.01015900000002, -78.057747], [41.01043899999998, -78.058262], [41.010721000000004, -78.058781], [41.01082499999998, -78.05892], [41.01117599999999, -78.059238], [41.01135999999996, -78.059555], [41.01185200000002, -78.059941], [41.01221299999997, -78.06012], [41.01241000000004, -78.060347], [41.01252999999999, -78.060618], [41.01258899999999, -78.060751], [41.013039999999975, -78.06159], [41.01327099999999, -78.062002], [41.013253999999996, -78.06238], [41.01323099999996, -78.062789], [41.01302699999999, -78.063768], [41.01295999999998, -78.064512], [41.01295800000002, -78.065251], [41.0128389009444, -78.06574550693695], [41.012773000000024, -78.066748], [41.01277100000004, -78.06741200000002], [41.0127710390081, -78.06741236499458], [41.01300500000002, -78.068326], [41.01375181567517, -78.06951990174089], [41.013751999999926, -78.06952], [41.01396200000002, -78.069678], [41.014694, -78.069831], [41.01495899999996, -78.069812], [41.015206999999975, -78.069826], [41.015573898205155, -78.06978201220436], [41.017848000000015, -78.06838], [41.018146337434715, -78.0681636736095], [41.018147, -78.068163], [41.01839672004869, -78.06798211799632], [41.01873200000007, -78.067739], [41.019748, -78.0677], [41.02039600000002, -78.068827], [41.020630999999966, -78.06976], [41.020572000000044, -78.071936], [41.02148499999997, -78.074462], [41.02218499999995, -78.075599], [41.02247199999995, -78.075589], [41.02273935837797, -78.07556280161303], [41.02301891978855, -78.07540804440293], [41.02314800000001, -78.075285], [41.02319336607479, -78.07525449261438], [41.02345300000002, -78.074968], [41.02345352517719, -78.07496742609607], [41.023503999999946, -78.074628], [41.02432399999996, -78.071213], [41.02459699999999, -78.070747], [41.024881, -78.070509], [41.024901287722564, -78.0704921508852], [41.02503400000003, -78.070381], [41.02543899999996, -78.07071], [41.025908, -78.070932], [41.026142, -78.071093], [41.02658199999996, -78.071255], [41.02674399999994, -78.071506], [41.026757000000025, -78.071526], [41.02675719991455, -78.07152655858134], [41.026962000000005, -78.071844], [41.026996999999966, -78.072305], [41.027081, -78.072399], [41.02727700000007, -78.072672], [41.02732900000002, -78.072844], [41.027404000000004, -78.07322200000002], [41.027238999999994, -78.07367], [41.02691500000003, -78.074163], [41.026822948770864, -78.07435116986701], [41.02661400000004, -78.075044], [41.02660307755194, -78.07507875324393], [41.026718, -78.075301], [41.026304999999994, -78.076299], [41.026464000000004, -78.076911], [41.02660100000001, -78.077308], [41.02693999999996, -78.077637], [41.02725500000001, -78.077892], [41.027608000000015, -78.078053], [41.02826000000002, -78.078663], [41.02947999999998, -78.079903], [41.03065529113487, -78.0803116000918], [41.03092800000003, -78.07993700000002], [41.031389999999995, -78.079831], [41.03151699999997, -78.079786], [41.03151819589662, -78.0797855865719], [41.03171899999998, -78.07958], [41.03338299999998, -78.078414], [41.03382699999999, -78.078581], [41.034134999999985, -78.077085], [41.03416100000001, -78.076732], [41.034220000000076, -78.076588], [41.03427099999997, -78.076479], [41.034333000000004, -78.076388], [41.034341999999995, -78.076353], [41.03433200000001, -78.076273], [41.03428699999998, -78.076167], [41.03420800000002, -78.076036], [41.03432499999998, -78.075595], [41.03422799999998, -78.074421], [41.03358600000003, -78.073339], [41.03271600000005, -78.071497], [41.03237400000002, -78.070625], [41.03243499999998, -78.069558], [41.03291800000003, -78.068492], [41.033921, -78.068081], [41.03422400000004, -78.067898], [41.03449499999999, -78.067634], [41.03488799999999, -78.066824], [41.03506400000003, -78.066582], [41.03546000000001, -78.066046], [41.03583500000002, -78.065189], [41.03596240524788, -78.06442361124299], [41.03596779174391, -78.06435198437168], [41.035965999999995, -78.064025], [41.03565799999996, -78.061934], [41.03565899999998, -78.061593], [41.03571499999997, -78.061336], [41.03591399999998, -78.06032], [41.03594999999999, -78.060211], [41.03607499999999, -78.05982], [41.036309999999986, -78.059067], [41.03644000000002, -78.05840800000001], [41.036559999999994, -78.058018], [41.036718999999984, -78.057784], [41.03689399999997, -78.057554], [41.03735100000001, -78.05723], [41.03753177100147, -78.05715006788562], [41.03753299999999, -78.057149], [41.037534791941866, -78.05714873210282], [41.03808599999998, -78.056905], [41.03902600000001, -78.056864], [41.03928399999995, -78.056933], [41.03999900000002, -78.057507], [41.04082899999995, -78.058442], [41.04086900000001, -78.058488], [41.041685, -78.059811], [41.04272199999998, -78.061726], [41.04301299999999, -78.062085], [41.043568, -78.062682], [41.04448143927141, -78.06336727059734], [41.04484700000002, -78.06343600000001], [41.04502300000004, -78.063512], [41.04513799999998, -78.063688], [41.04537199999999, -78.06395], [41.04546499999999, -78.063972], [41.04591299999999, -78.06408], [41.04623700000002, -78.063919], [41.04638879264564, -78.06380070388936], [41.046615025009835, -78.06361297623653], [41.04711000000002, -78.062945], [41.04859900000002, -78.061504], [41.04951400000004, -78.060376], [41.050204291839115, -78.05987072551436], [41.050389, -78.059697], [41.050834, -78.059385], [41.050943999999966, -78.05938], [41.051173999999975, -78.05937], [41.051561000000056, -78.059516], [41.05177299999997, -78.0596], [41.051922999999974, -78.059702], [41.05203400000002, -78.059779], [41.05220300000001, -78.059898], [41.05226500000001, -78.060001], [41.05231100000006, -78.060077], [41.05234300000003, -78.06013400000002], [41.05234321830203, -78.06013430097802], [41.05260699999999, -78.060271], [41.053016999999976, -78.060693], [41.053260000000016, -78.061429], [41.05335800000001, -78.062122], [41.05324100000001, -78.062775], [41.053222999999946, -78.062938], [41.05293799999999, -78.064017], [41.05231799999995, -78.065414], [41.050518999999994, -78.068076], [41.05019800000001, -78.06879], [41.05016400000001, -78.06894], [41.04995699999995, -78.069673], [41.04993600000002, -78.070541], [41.05012800000001, -78.071172], [41.050379999999976, -78.0716], [41.050851, -78.072021], [41.05160599999998, -78.072436], [41.05218299999998, -78.07271], [41.052446999999965, -78.072733], [41.05319900000002, -78.073031], [41.054848598225576, -78.07328593751905], [41.05529799999997, -78.073239], [41.05596000000005, -78.073213], [41.05648800000001, -78.073176], [41.05669300000001, -78.073221], [41.056993000000006, -78.07326700000002], [41.057409, -78.073367], [41.05759900000002, -78.073474], [41.057716999999975, -78.073537], [41.0577171809277, -78.07353710110664], [41.058104, -78.073585], [41.058836000000035, -78.074155], [41.05976600000002, -78.075204], [41.060014, -78.075873], [41.06001899999996, -78.076673], [41.059900999999975, -78.077942], [41.05857199999997, -78.081572], [41.05838899999999, -78.08373500000002], [41.058101, -78.085231], [41.058039, -78.086788], [41.05831700000001, -78.088356], [41.05902900000004, -78.08968800000001], [41.05953900000004, -78.090282], [41.05975000000003, -78.090525], [41.05982205053244, -78.09056398829128], [41.05990399999998, -78.090545], [41.06036499999994, -78.090351], [41.060961999999996, -78.089902], [41.06152099999997, -78.089463], [41.06190100000002, -78.089268], [41.061941738586086, -78.08925442047158], [41.06215100000004, -78.089119], [41.063238, -78.088215], [41.06385400000002, -78.087315], [41.06453199999994, -78.085619], [41.06519400000003, -78.084629], [41.065569999999994, -78.084331], [41.065833999999974, -78.08427100000002], [41.066034999999964, -78.084305], [41.06629400000002, -78.084521], [41.066538999999985, -78.084866], [41.066909000000045, -78.085404], [41.06751500000003, -78.085143], [41.067664806570725, -78.08511025293437], [41.06780200000005, -78.08508], [41.06780295163759, -78.08508005490194], [41.068127999999994, -78.085009], [41.06864499999998, -78.085368], [41.068936999999956, -78.086921], [41.06891591169406, -78.08719446389574], [41.068915999999994, -78.087195], [41.068935000000025, -78.08731], [41.06920699999999, -78.088264], [41.06922900000001, -78.088342], [41.06922926389206, -78.08834295311091], [41.06927799999998, -78.08843], [41.069313989657616, -78.0886489626457], [41.069314, -78.088649], [41.069489999999995, -78.08925400000001], [41.06956100000001, -78.089564], [41.06961800000003, -78.08981300000002], [41.070074, -78.091285], [41.070413999999985, -78.092192], [41.07044899999999, -78.09243], [41.070465000000006, -78.092949], [41.07050696958358, -78.09375841336204], [41.07052699999998, -78.093924], [41.07054000000001, -78.094136], [41.07055000000001, -78.09444600000002], [41.0705565734085, -78.0946551147792], [41.07063700000007, -78.095092], [41.070903, -78.095752], [41.071286, -78.09624500000001], [41.072150000000015, -78.097001], [41.072434999999984, -78.097105], [41.07267504475008, -78.09720018993319], [41.07267600000003, -78.0972], [41.072757999999986, -78.097186], [41.072883999999966, -78.097124], [41.072967, -78.097079], [41.073131000000004, -78.096884], [41.073250999999985, -78.09654], [41.07333100000001, -78.09628], [41.07340099999999, -78.09605], [41.073655, -78.095638], [41.073872000000016, -78.095374], [41.074251999999994, -78.09512], [41.07455700000002, -78.094827], [41.07512499999997, -78.094231], [41.075832999999975, -78.093733], [41.076622, -78.093364], [41.07727000000001, -78.092974], [41.077955999999986, -78.092643], [41.07836499999997, -78.092557], [41.07894499999997, -78.09255], [41.07956200000001, -78.092671], [41.08003699999995, -78.092988], [41.08110400000003, -78.093828], [41.08235200000005, -78.094809], [41.08345699999996, -78.095847], [41.08438400000005, -78.096618], [41.08521500000004, -78.097438], [41.08603899999997, -78.098111], [41.08704799999995, -78.098657], [41.087977000000045, -78.099065], [41.08860800000003, -78.099403], [41.089327999999995, -78.099977], [41.08955199999998, -78.100134], [41.089553720396516, -78.10013521528724], [41.09308783211329, -78.10187429531061], [41.09308999999999, -78.101875], [41.09324123552071, -78.10194978676222], [41.09376999999998, -78.10221000000001], [41.09487534839904, -78.10276267018325], [41.09546199999996, -78.102988], [41.09638299999997, -78.103406], [41.09762300000002, -78.103914], [41.099064000000006, -78.10463900000002], [41.101314000000045, -78.105762], [41.10334100000003, -78.106707], [41.104627000000036, -78.107206], [41.10551000000001, -78.107614], [41.10622300000003, -78.108031], [41.10754400000001, -78.108873], [41.10873899999994, -78.109883], [41.10949900000002, -78.110346], [41.10965200000003, -78.11043900000001], [41.11037099999998, -78.111062], [41.11106099999997, -78.111695], [41.111652663946195, -78.1119506477388], [41.11381988678268, -78.11219434442172], [41.113820999999994, -78.112194], [41.114324999999994, -78.11203700000002], [41.11476524922739, -78.11176607740576], [41.11541799999998, -78.111203], [41.115275000000025, -78.111064], [41.11478699999999, -78.10982], [41.114731000000035, -78.109852], [41.11465400000001, -78.10989], [41.11457599999997, -78.109922], [41.11448100000001, -78.109957], [41.11429000000002, -78.11001], [41.11416399999998, -78.110036], [41.113774999999954, -78.110099], [41.11321800000003, -78.110184], [41.11308700000003, -78.1102], [41.11283000000002, -78.110224], [41.11269899999999, -78.110225], [41.11260900000002, -78.110219], [41.112519999999975, -78.11021], [41.11243000000003, -78.110197], [41.11234499999997, -78.110176], [41.112255999999974, -78.110148], [41.112086000000026, -78.110087], [41.11200599999999, -78.11005], [41.11192599999997, -78.110011], [41.11182900000001, -78.109957], [41.11173099999998, -78.109898], [41.11163799999999, -78.10983100000001], [41.11156800000003, -78.10977], [41.111498000000026, -78.109704], [41.11142800000004, -78.109633], [41.111366000000004, -78.109562], [41.11130999999993, -78.109487], [41.11119700000001, -78.109318], [41.11108500000002, -78.109126], [41.11103000000001, -78.109007], [41.11097900000003, -78.108883], [41.110923999999955, -78.108759], [41.11068299999998, -78.108016], [41.110549999999975, -78.107601], [41.11050899999997, -78.107467], [41.11050000000001, -78.10745000000001], [41.11048799999996, -78.107399], [41.110349999999976, -78.10699300000002], [41.11018899999996, -78.106476], [41.10994600000002, -78.105794], [41.109786000000035, -78.105376], [41.109702, -78.105171], [41.10963000000004, -78.105006], [41.10947599999998, -78.104681], [41.10939100000003, -78.10450800000001], [41.109295999999965, -78.104338], [41.10912899999998, -78.104018], [41.10904799999997, -78.10387000000001], [41.10897100000002, -78.103723], [41.108726, -78.103291], [41.10866200000005, -78.103164], [41.108593000000006, -78.10303400000001], [41.108529, -78.102904], [41.108350000000044, -78.102518], [41.108222999999995, -78.102221], [41.108155000000004, -78.102071], [41.108088000000016, -78.101902], [41.107944, -78.101562], [41.10767699999997, -78.100944], [41.107414000000006, -78.100331], [41.10735900000003, -78.100199], [41.10723999999998, -78.099925], [41.10711300000002, -78.099644], [41.10697299999999, -78.099298], [41.106918000000036, -78.099171], [41.10685900000002, -78.09904500000002], [41.10669299999999, -78.098666], [41.10663399999998, -78.098539], [41.10648100000002, -78.098173], [41.106366999999956, -78.097907], [41.10623499999997, -78.097606], [41.10616799999997, -78.097438], [41.10609600000001, -78.09727], [41.10599500000003, -78.097021], [41.10593900000002, -78.096897], [41.10587999999992, -78.096757], [41.10576099999998, -78.096481], [41.10553300000003, -78.095932], [41.105465, -78.09578200000001], [41.105401000000036, -78.095634], [41.105334000000006, -78.095469], [41.10526200000001, -78.095302], [41.10519400000001, -78.095138], [41.10506599999999, -78.094861], [41.10499800000003, -78.094723], [41.10494299999998, -78.094602], [41.10488300000004, -78.09448], [41.10474599999998, -78.094222], [41.104721, -78.094177], [41.10459099999996, -78.093949], [41.10447100000002, -78.093734], [41.10440599999998, -78.09362500000002], [41.10435900000003, -78.093535], [41.104253000000014, -78.093347], [41.104217000000006, -78.093282], [41.10420900000003, -78.093271], [41.10413100000003, -78.093136], [41.10408799999999, -78.093054], [41.103964999999974, -78.092779], [41.103818, -78.092375], [41.103789, -78.092282], [41.10374, -78.092105], [41.10370799999999, -78.09197], [41.10367099999996, -78.091835], [41.10361400000002, -78.091603], [41.10359399999999, -78.091508], [41.103569999999955, -78.09141200000002], [41.103550000000006, -78.091312], [41.103500999999994, -78.091116], [41.10346800000002, -78.090998], [41.103393, -78.090769], [41.10334699999994, -78.090642], [41.10324600000002, -78.090395], [41.10314399999997, -78.09015], [41.10302900000003, -78.08989400000002], [41.102965000000005, -78.08975800000002], [41.102841999999995, -78.08948], [41.10277399999999, -78.089337], [41.10270999999999, -78.089194], [41.10249400000004, -78.088687], [41.10243499999998, -78.088554], [41.10240299999997, -78.088488], [41.097782, -78.08545], [41.094054000000035, -78.081511], [41.09296900000003, -78.079004], [41.08995800000001, -78.071163], [41.08344899999999, -78.060589], [41.081253000000004, -78.052955], [41.081264000000004, -78.05016], [41.07834999999995, -78.047622], [41.075633, -78.045255], [41.074634000000025, -78.04437200000001], [41.07445899999999, -78.044222], [41.074762999999976, -78.043814], [41.07497299999995, -78.043745], [41.07646499999998, -78.042596], [41.07767900000003, -78.04120900000001], [41.07798899999996, -78.040984], [41.078022999999995, -78.040964], [41.079007000000004, -78.040845], [41.07900800000001, -78.040405], [41.07916199999999, -78.038802], [41.07942200000002, -78.037944], [41.08023700000003, -78.036773], [41.08123600000003, -78.035814], [41.08181700000004, -78.035045], [41.08291599999999, -78.033047], [41.085777000000014, -78.029533], [41.088655999999965, -78.02687], [41.08869999999998, -78.026599], [41.088882, -78.02639], [41.089131, -78.025699], [41.09000799999999, -78.021427], [41.09080099999998, -78.019052], [41.09132399999999, -78.018291], [41.09144500000003, -78.01868], [41.091508000000005, -78.019218], [41.09160999999998, -78.019604], [41.091767999999995, -78.020272], [41.09190099999996, -78.021571], [41.092155000000005, -78.021841], [41.092423999999994, -78.022219], [41.09257100000001, -78.022641], [41.09262000000004, -78.023352], [41.09268799999999, -78.023823], [41.09286599999999, -78.024086], [41.093177000000054, -78.024261], [41.09323400000002, -78.02448700000001], [41.09313100000005, -78.02498], [41.09277000000001, -78.02570300000001], [41.09272800000002, -78.025929], [41.09289699999995, -78.026322], [41.093204999999955, -78.026772], [41.09340300000001, -78.027151], [41.09346100000002, -78.02768], [41.093574000000004, -78.028146], [41.09371500000002, -78.028452], [41.09400700000005, -78.028808], [41.09432100000001, -78.029383], [41.09466199999999, -78.030095], [41.09483800000001, -78.030263], [41.09514000000001, -78.030619], [41.095441999999984, -78.031107], [41.09596700000003, -78.031865], [41.096304, -78.032418], [41.09701600000002, -78.0329], [41.09734199999998, -78.033336], [41.09770000000002, -78.033773], [41.09827399999996, -78.034538], [41.098829, -78.035338], [41.09903899999999, -78.035919], [41.09907999999999, -78.03661], [41.09907499999995, -78.036659], [41.09926799999998, -78.036606], [41.099633000000004, -78.036371], [41.09992700000001, -78.035234], [41.09992599999999, -78.034724], [41.099532, -78.03329], [41.09959700000001, -78.032271], [41.10007099999999, -78.030236], [41.09993199999998, -78.028978], [41.099856999999965, -78.027154], [41.09898299999998, -78.026321], [41.09900999999999, -78.019166], [41.09912100000002, -78.018299], [41.100871999999995, -78.015432], [41.10121300000004, -78.014683], [41.100743000000016, -78.010853], [41.10059, -78.00546600000001], [41.099946000000024, -78.004571], [41.09918799999998, -78.00389], [41.09815100000001, -78.001708], [41.09796599999997, -78.000871], [41.09765399999998, -77.999766], [41.097528, -77.999229], [41.09775200000003, -77.99779300000002], [41.097819999999984, -77.997043], [41.097747000000034, -77.995159], [41.09742399999999, -77.993513], [41.09746799999996, -77.992613], [41.09785400000002, -77.991778], [41.098105000000025, -77.99145], [41.09949500000003, -77.990354], [41.099677, -77.990356], [41.09967699999999, -77.99022000000001], [41.099688000000015, -77.990132], [41.09978600000003, -77.990026], [41.09989800000002, -77.98986400000001], [41.099838000000005, -77.989756], [41.099726000000004, -77.989534], [41.09948099999997, -77.98908400000002], [41.09943, -77.988981], [41.099399999999974, -77.988931], [41.09937399999999, -77.988884], [41.09934399999997, -77.988837], [41.099313, -77.988793], [41.09925199999996, -77.988726], [41.09919499999999, -77.98868], [41.099172999999986, -77.988664], [41.09909299999999, -77.988621], [41.098980999999995, -77.988572], [41.098806, -77.988492], [41.09828300000001, -77.988227], [41.09792299999997, -77.988063], [41.09694199999996, -77.98767000000001], [41.095646000000016, -77.98713], [41.094771999999985, -77.986782], [41.09316400000001, -77.986106], [41.092961000000045, -77.986011], [41.09184200000002, -77.985498], [41.09082899999996, -77.984985], [41.09048600000003, -77.984821], [41.090282000000045, -77.984735], [41.09006199999999, -77.984694], [41.08969800000001, -77.984647], [41.089348, -77.984619], [41.08893, -77.984577], [41.08752099999998, -77.984403], [41.087229, -77.984366], [41.08690100000001, -77.984321], [41.08684499999998, -77.984314], [41.086466000000044, -77.984265], [41.08589200000001, -77.984173], [41.08537599999994, -77.984099], [41.08479300000003, -77.984025], [41.083791, -77.98391], [41.083265999999966, -77.98384], [41.082871999999966, -77.983769], [41.082456000000015, -77.983664], [41.08198199999994, -77.983532], [41.08144600000004, -77.983374], [41.08098499999996, -77.983245], [41.08036800000003, -77.983087], [41.080058, -77.983032], [41.079879, -77.983003], [41.078852, -77.982833], [41.078591999999986, -77.982792], [41.07836299999995, -77.98276000000001], [41.07825100000004, -77.982744], [41.078103000000006, -77.98272100000001], [41.07781599999997, -77.982672], [41.07753400000001, -77.982626], [41.077219000000014, -77.982583], [41.076945999999985, -77.98254], [41.07672600000002, -77.982501], [41.07657300000006, -77.982477], [41.076416999999985, -77.98245300000002], [41.076318, -77.982448], [41.076250000000044, -77.982449], [41.07618299999998, -77.98245200000001], [41.076119000000034, -77.98246300000001], [41.07605999999999, -77.982477], [41.07600100000002, -77.982494], [41.075947, -77.982518], [41.075887, -77.982548], [41.07582799999999, -77.98258300000002], [41.07577300000001, -77.982625], [41.07571300000001, -77.98267600000001], [41.07565700000004, -77.982735], [41.075601999999975, -77.982796], [41.07553600000003, -77.982885], [41.07541399999999, -77.983075], [41.07520300000001, -77.983396], [41.07471099999999, -77.984148], [41.07465500000001, -77.984238], [41.07459399999997, -77.984329], [41.074566999999966, -77.984373], [41.074545000000036, -77.984407], [41.07453300000001, -77.984429], [41.074476999999995, -77.984513], [41.074419999999975, -77.984607], [41.07435499999994, -77.984696], [41.07427099999996, -77.984798], [41.07418299999996, -77.984893], [41.07400300000001, -77.985073], [41.073915000000014, -77.985158], [41.07372099999999, -77.985334], [41.07351399999995, -77.985514], [41.07337999999995, -77.985639], [41.073233000000016, -77.98576], [41.07314999999996, -77.985817], [41.07306299999996, -77.985869], [41.07300399999994, -77.985899], [41.07294499999999, -77.985926], [41.072881, -77.985949], [41.072813000000025, -77.98596600000002], [41.07274100000006, -77.985978], [41.072568999999994, -77.985997], [41.07238399999999, -77.986008], [41.07228000000001, -77.986021], [41.071788000000005, -77.986091], [41.071403999999966, -77.986147], [41.07094700000002, -77.986217], [41.070617000000034, -77.986265], [41.070305000000005, -77.986299], [41.06995299999996, -77.986349], [41.069735999999985, -77.986376], [41.06945999999997, -77.986413], [41.069166000000045, -77.986455], [41.069068999999985, -77.986467], [41.06885900000004, -77.98649400000001], [41.06872400000001, -77.986514], [41.06835700000003, -77.986571], [41.06800899999998, -77.986629], [41.06751099999998, -77.98672], [41.067040999999975, -77.986811], [41.06690000000003, -77.986839], [41.066755999999984, -77.986864], [41.06652200000001, -77.986902], [41.06617699999999, -77.98695], [41.06586, -77.987002], [41.065702, -77.987031], [41.06542600000004, -77.987091], [41.06528599999994, -77.987114], [41.06519500000001, -77.987126], [41.065096000000025, -77.987137], [41.06505499999997, -77.987136], [41.065006000000025, -77.987136], [41.06488900000004, -77.987112], [41.06466199999998, -77.987032], [41.064465999999975, -77.986949], [41.06370100000001, -77.986567], [41.063513999999955, -77.986505], [41.063329999999965, -77.986471], [41.06315400000001, -77.986466], [41.062884, -77.986497], [41.062368, -77.986559], [41.06227799999999, -77.986579], [41.06208199999999, -77.98665], [41.06189999999999, -77.986736], [41.06173500000003, -77.98683], [41.06104800000003, -77.988193], [41.05957300000001, -77.991087], [41.05896200000001, -77.992289], [41.055522, -77.999043], [41.054681999999964, -78.000714], [41.054670000000016, -78.000738], [41.05449299999999, -78.001089], [41.053497, -78.003074], [41.05148400000006, -78.00697], [41.05121499999999, -78.0075], [41.049821999999985, -78.01025], [41.04978199999997, -78.010084], [41.04969699999999, -78.009704], [41.04965300000003, -78.009491], [41.04960499999996, -78.00927800000001], [41.04956500000001, -78.009075], [41.04947600000001, -78.008672], [41.04943600000002, -78.008499], [41.04939100000003, -78.008328], [41.049268999999974, -78.007801], [41.04918399999993, -78.00745], [41.049102999999974, -78.007104], [41.04905400000001, -78.006907], [41.049010000000024, -78.006709], [41.04885000000002, -78.005924], [41.04878600000002, -78.005604], [41.048728000000025, -78.005244], [41.04865700000001, -78.004704], [41.04861000000004, -78.004425], [41.04853799999996, -78.004087], [41.04849700000001, -78.00392100000002], [41.04846000000003, -78.003788], [41.048355999999984, -78.00346], [41.04830500000003, -78.003333], [41.04827500000005, -78.003268], [41.048241000000004, -78.003207], [41.048202000000025, -78.00315], [41.04816299999995, -78.003106], [41.04811899999999, -78.003067], [41.04806999999999, -78.003032], [41.04802999999999, -78.003007], [41.047986, -78.002985], [41.047891999999976, -78.002946], [41.04778900000005, -78.002913], [41.047736, -78.00290300000002], [41.04734999999996, -78.002844], [41.04645799999999, -78.002679], [41.04580499999996, -78.002507], [41.04419400000003, -78.002052], [41.04368600000002, -78.00191], [41.04256, -78.00156], [41.04215400000001, -78.001432], [41.04189099999996, -78.001333], [41.04176700000005, -78.001263], [41.04162499999997, -78.001151], [41.04151599999994, -78.001029], [41.04139099999999, -78.000821], [41.04089400000004, -77.999823], [41.040301000000014, -77.998559], [41.04018099999999, -77.99834], [41.040110999999975, -77.998247], [41.03999300000001, -77.99814300000001], [41.03988599999998, -77.998068], [41.03949100000001, -77.997876], [41.03900099999997, -77.997659], [41.03824799999996, -77.997358], [41.03810000000001, -77.997312], [41.03782199999999, -77.997265], [41.03742700000001, -77.997236], [41.037224999999985, -77.99719700000001], [41.037010999999985, -77.997115], [41.036824999999986, -77.997008], [41.03673600000004, -77.99695], [41.03665700000002, -77.996882], [41.036569, -77.996793], [41.03641700000001, -77.99658500000001], [41.03634000000004, -77.996442], [41.03602500000003, -77.995711], [41.035999, -77.995648], [41.03582999999999, -77.995241], [41.035613999999974, -77.994724], [41.035307999999965, -77.993855], [41.03511799999999, -77.993305], [41.03509899999999, -77.993251], [41.03492399999996, -77.992865], [41.03469199999998, -77.99243], [41.034641, -77.99233300000002], [41.03437299999998, -77.99189], [41.03425599999999, -77.99173300000001], [41.03424699999996, -77.991723], [41.03382200000002, -77.991269], [41.03365799999998, -77.9911], [41.03336499999997, -77.99097], [41.03321799999999, -77.990976], [41.03306000000001, -77.990998], [41.032801000000006, -77.991077], [41.03253300000001, -77.991043], [41.03250700000002, -77.991146], [41.032439000000004, -77.991495], [41.03190900000002, -77.993493], [41.031826999999964, -77.99385], [41.03175900000003, -77.994219], [41.03172099999995, -77.994636], [41.03171099999998, -77.994875], [41.03171200000001, -77.995167], [41.031722999999964, -77.995453], [41.031737000000014, -77.995595], [41.031839000000026, -77.996169], [41.03211099999997, -77.99748], [41.03227600000004, -77.998228], [41.032347000000016, -77.99861], [41.032399999999974, -77.999012], [41.032412, -77.999232], [41.032410999999975, -77.99946600000001], [41.03233000000001, -78.000833], [41.03231400000001, -78.001112], [41.032294, -78.001334], [41.03225599999994, -78.001925], [41.03017099999999, -78.001573], [41.029581999999984, -78.00401], [41.029404999999976, -78.004714], [41.02841799999997, -78.00864], [41.028403999999995, -78.008636], [41.027579999999986, -78.00840700000002], [41.02700700000002, -78.009021], [41.02828599999997, -78.010626], [41.028339, -78.010693], [41.02765900000001, -78.011043], [41.026791000000024, -78.011547], [41.02637100000002, -78.011757], [41.02569700000001, -78.012049], [41.025617000000004, -78.012082], [41.02515499999996, -78.012279], [41.024940000000036, -78.012405], [41.024101, -78.012982], [41.02375699999999, -78.013195], [41.02341499999997, -78.01338], [41.022980999999966, -78.013595], [41.02286699999999, -78.013668], [41.02277, -78.013749], [41.02258900000001, -78.013938], [41.022184, -78.014457], [41.02202500000001, -78.014693], [41.02190700000002, -78.014911], [41.02119299999998, -78.016357], [41.02102600000002, -78.016731], [41.020893, -78.016971], [41.020725000000006, -78.017196], [41.02054, -78.017395], [41.02035999999999, -78.01755], [41.02019500000003, -78.017659], [41.02009800000002, -78.017718], [41.01946299999996, -78.01811200000002], [41.01912900000001, -78.018331], [41.01849000000001, -78.018653], [41.018273999999984, -78.018792], [41.01810399999998, -78.01892100000002], [41.01774499999996, -78.01922800000001], [41.017569000000066, -78.019404], [41.017387999999954, -78.019637], [41.017298000000004, -78.019775], [41.01718000000001, -78.019984], [41.01707499999995, -78.020215], [41.01694899999996, -78.020555], [41.016765, -78.021072], [41.01661600000004, -78.021418], [41.01658700000003, -78.021483], [41.01647000000003, -78.021666], [41.01639999999999, -78.021742], [41.01633599999998, -78.021796], [41.01624899999999, -78.021839], [41.016157999999976, -78.021862], [41.015985000000036, -78.021867], [41.016157000000035, -78.021418], [41.01637899999997, -78.020997], [41.01669000000001, -78.020489], [41.016778000000016, -78.020317], [41.01701699999999, -78.019849], [41.017432999999976, -78.019268], [41.017833, -78.018775], [41.01834999999998, -78.017606], [41.01851400000002, -78.017395], [41.01869199999997, -78.017301], [41.018787999999994, -78.01725], [41.019174, -78.017126], [41.01958500000003, -78.017074], [41.01991099999999, -78.017], [41.020224999999996, -78.016883], [41.02046799999997, -78.016549], [41.020504000000024, -78.016179], [41.02047199999995, -78.015687], [41.02057899999999, -78.015237], [41.02082900000001, -78.014968], [41.02103799999998, -78.014722], [41.02122899999996, -78.014308], [41.021620999999975, -78.013785], [41.022131999999964, -78.013355], [41.022618000000044, -78.01303400000002], [41.02297400000002, -78.012663], [41.02320200000002, -78.012048], [41.02348800000005, -78.011598], [41.02402200000001, -78.011342], [41.02447899999996, -78.011239], [41.024782999999985, -78.010976], [41.025455, -78.00975700000001], [41.02557000000002, -78.009329], [41.02575800000003, -78.008835], [41.026207000000035, -78.00853700000002], [41.02656800000004, -78.008181], [41.02689399999997, -78.007759], [41.027079, -78.007244], [41.02711100000001, -78.006708], [41.026934, -78.006245], [41.026608999999965, -78.005898], [41.02643900000002, -78.005689], [41.02599800000001, -78.005669], [41.02566500000001, -78.005836], [41.02537899999999, -78.006295], [41.024840000000005, -78.007441], [41.024548000000046, -78.007942], [41.024256, -78.008407], [41.024034, -78.00864], [41.02376600000002, -78.008554], [41.023451000000016, -78.008366], [41.02321799999996, -78.007983], [41.02293499999998, -78.007086], [41.02271600000004, -78.00650000000002], [41.02252199999998, -78.005826], [41.022287999999975, -78.005132], [41.02180799999995, -78.004395], [41.02102000000001, -78.003529], [41.020589, -78.003117], [41.02030999999998, -78.002771], [41.020165000000034, -78.00212700000002], [41.01988499999999, -78.001462], [41.01977200000006, -78.000955], [41.01995900000001, -78.000526], [41.020418000000014, -78.00001], [41.020538000000016, -77.999894], [41.020930999999976, -77.999855], [41.021225, -77.999779], [41.02141399999996, -77.999632], [41.02151800000001, -77.999428], [41.02151899999996, -77.999224], [41.02136799999996, -77.998812], [41.02137100000003, -77.998349], [41.021458999999965, -77.997891], [41.02158699999997, -77.997324], [41.02161500000003, -77.996758], [41.021508, -77.996019], [41.022023, -77.995607], [41.022028000000006, -77.995237], [41.02193300000001, -77.994753], [41.021655000000045, -77.994531], [41.02145499999997, -77.994235], [41.02123199999996, -77.99381], [41.02083900000001, -77.992987], [41.020442000000024, -77.991983], [41.02007600000001, -77.99116], [41.01962399999996, -77.990207], [41.01943199999998, -77.9896], [41.01947500000001, -77.988807], [41.01957399999996, -77.988132], [41.01973800000005, -77.987696], [41.01984999999996, -77.987376], [41.01986099999995, -77.98678], [41.01966199999998, -77.986123], [41.019413999999976, -77.985422], [41.019166000000006, -77.984946], [41.01905300000004, -77.98478], [41.018842, -77.984934], [41.018704, -77.984864], [41.01823699999999, -77.984114], [41.01800899999994, -77.983689], [41.017798000000006, -77.983343], [41.01756, -77.983287], [41.01721500000001, -77.983407], [41.017050000000026, -77.983538], [41.016928, -77.983367], [41.01679499999998, -77.983099], [41.01654999999996, -77.982812], [41.016291999999986, -77.982538], [41.015730000000026, -77.982146], [41.01510799999999, -77.981993], [41.01446000000002, -77.981977], [41.013849, -77.981919], [41.013305, -77.981707], [41.01259900000004, -77.981338], [41.012269000000025, -77.981037], [41.01218000000002, -77.980479], [41.01194099999995, -77.980293], [41.011338000000016, -77.980103], [41.010600999999994, -77.98006], [41.010125999999964, -77.980145], [41.00959399999996, -77.97999200000001], [41.00909600000001, -77.97975], [41.00843499999997, -77.979722], [41.00793100000002, -77.979858], [41.00719399999997, -77.980343], [41.00667800000005, -77.980784], [41.006305000000005, -77.981282], [41.00630299999999, -77.981883], [41.00649499999998, -77.982643], [41.00655600000003, -77.983404], [41.00652699999997, -77.983831], [41.00652899999998, -77.983905], [41.00641099999996, -77.984471], [41.00619599999998, -77.985126], [41.00579800000005, -77.98553600000001], [41.00462800000001, -77.986049], [41.00411499999999, -77.986541], [41.003733000000025, -77.987045], [41.00343700000001, -77.987519], [41.003322000000004, -77.988101], [41.00319800000005, -77.989777], [41.00315399999999, -77.990596], [41.002974000000016, -77.99127], [41.00267500000002, -77.991371], [41.00232499999999, -77.99165], [41.001878000000026, -77.992203], [41.001492000000006, -77.992674], [41.00106800000002, -77.993403], [41.00062299999997, -77.993909], [41.000157999999985, -77.994276], [40.99986300000003, -77.994561], [40.99972200000004, -77.994779], [40.99947000000002, -77.995461], [40.99936799999999, -77.995939], [40.99938900000001, -77.99633800000001], [40.99981400000001, -77.99712], [40.999923999999965, -77.997577], [41.00004699999997, -77.998396], [41.00012399999997, -77.998866], [41.00011300000001, -77.99931600000001], [41.00005999999995, -77.999614], [40.999939999999995, -78.000603], [40.99999800000003, -78.00097300000002], [41.00008500000001, -78.00124], [41.00011799999999, -78.001538], [41.00006600000001, -78.001807], [40.999957000000045, -78.002168], [40.99974199999998, -78.002838], [40.99970600000003, -78.003158], [40.99901400000004, -78.003305], [40.998599, -78.003492], [40.99816100000001, -78.003541], [40.99804600000005, -78.003541], [40.99781899999999, -78.003539], [40.997556, -78.003608], [40.99723800000002, -78.00372], [40.99670300000001, -78.003488], [40.99641800000004, -78.003401], [40.996095999999994, -78.00433200000002], [40.99549200000001, -78.006061], [40.99522900000001, -78.00684200000002], [40.99481100000001, -78.008174], [40.99367299999998, -78.011919], [40.99354099999996, -78.01232500000002], [40.992023000000025, -78.01731], [40.990890999999976, -78.021018], [40.99054500000002, -78.020805], [40.99028500000001, -78.021779], [40.989900000000006, -78.023069], [40.98837700000001, -78.028056], [40.988230000000016, -78.028506], [40.98813800000002, -78.028761], [40.98794, -78.029261], [40.98771999999999, -78.029756], [40.987497000000005, -78.030194], [40.98727999999997, -78.030582], [40.98691599999997, -78.031156], [40.98677300000004, -78.03136600000002], [40.986575999999985, -78.031633], [40.986302000000045, -78.031986], [40.98597699999999, -78.032353], [40.98529200000001, -78.033026], [40.98468499999999, -78.03358100000001], [40.98318999999999, -78.034947], [40.982723000000014, -78.035373], [40.983193999999976, -78.03592300000001], [40.98394299999998, -78.036796], [40.98489899999999, -78.037911], [40.98820799999995, -78.04177200000001], [40.989945999999996, -78.0438], [40.99047, -78.044411], [40.99177200000001, -78.045931], [40.99261699999998, -78.046916], [40.99866300000001, -78.053971], [41.002738999999984, -78.058727], [41.00357099999995, -78.05970000000002], [41.003454000000026, -78.059253], [41.00340100000001, -78.058555], [41.003442, -78.058081], [41.00353, -78.057502], [41.00368899999998, -78.056985], [41.00376100000001, -78.056841], [41.004170000000016, -78.056276], [41.004217952651366, -78.05624910735797], [41.00421799999998, -78.056249], [41.00425599999999, -78.056163]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_bb6d73afdd9be37c2892ba03095487b9);
+        
+    
+        var popup_deb796e7a26b4f71f6a74caad5727167 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f159ddf2788d075c21a68ef5bfde5113 = $(`<div id="html_f159ddf2788d075c21a68ef5bfde5113" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Centre - PA-CD15</h4>                              </div>         </div>`)[0];
+                popup_deb796e7a26b4f71f6a74caad5727167.setContent(html_f159ddf2788d075c21a68ef5bfde5113);
+            
+        
+
+        polygon_69fa9e097f95c68370fc3ca45cfd11c0.bindPopup(popup_deb796e7a26b4f71f6a74caad5727167)
+        ;
+
+        
+    
+    
+            polygon_69fa9e097f95c68370fc3ca45cfd11c0.bindTooltip(
+                `<div>
+                      Centre - PA-CD15
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_bb6d73afdd9be37c2892ba03095487b9.fitBounds(
+                [[40.982723000000014, -78.112239], [41.11541799999998, -77.979722]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

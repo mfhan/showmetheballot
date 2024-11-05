@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1ad436ac83e6d34e438fbea9e5284e39 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Greene - NC-CD01</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wayne - NC-CD01</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_1ad436ac83e6d34e438fbea9e5284e39" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1ad436ac83e6d34e438fbea9e5284e39 = L.map(
+                "map_1ad436ac83e6d34e438fbea9e5284e39",
+                {
+                    center: [35.45309518326276, -77.82224553742846],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_1ad436ac83e6d34e438fbea9e5284e39);
+
+            
+
+        
+    
+            var tile_layer_c389aadc2a0a4341b2cbbd81982864f1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_c389aadc2a0a4341b2cbbd81982864f1.addTo(map_1ad436ac83e6d34e438fbea9e5284e39);
+        
+    
+            var polygon_ec2ba67b0a82f00c5b71d71b73f7d903 = L.polygon(
+                [[35.44729599999996, -77.826132], [35.45050499999998, -77.826052], [35.455458000000014, -77.825922], [35.457322000000005, -77.82586], [35.458553667095686, -77.8258410819134], [35.468395083423125, -77.82558309073016], [35.46802, -77.825211], [35.467984, -77.825183], [35.46758600000002, -77.824875], [35.467471000000025, -77.824903], [35.46726499999999, -77.824735], [35.46662400000001, -77.824511], [35.46653299999999, -77.824427], [35.46630399999999, -77.824399], [35.46602899999996, -77.824175], [35.46593800000001, -77.824203], [35.46509100000001, -77.823392], [35.464496, -77.822944], [35.46426799999995, -77.822888], [35.46410700000004, -77.822776], [35.463969999999975, -77.822692], [35.46390099999998, -77.822636], [35.463740999999956, -77.822664], [35.46367299999999, -77.82258], [35.46268899999999, -77.822356], [35.46220800000004, -77.822272], [35.461978999999985, -77.822257], [35.460926, -77.822188], [35.46019400000001, -77.82202], [35.460126000000024, -77.821936], [35.46003400000003, -77.821908], [35.45998799999999, -77.82188], [35.45973699999999, -77.821824], [35.459714000000034, -77.821684], [35.45946399999997, -77.821567], [35.45941600000001, -77.821545], [35.45932500000003, -77.821461], [35.45923299999997, -77.821433], [35.458455000000015, -77.820901], [35.45842800000004, -77.820878], [35.45816800000001, -77.82066], [35.45810400000001, -77.820619], [35.457958000000005, -77.820529], [35.457525, -77.820262], [35.45738099999995, -77.820174], [35.457198000000005, -77.820146], [35.457128999999995, -77.820062], [35.45678499999995, -77.81995], [35.45671600000002, -77.819866], [35.456556, -77.819866], [35.45614400000001, -77.819698], [35.455777000000026, -77.819642], [35.45573099999998, -77.819586], [35.45481499999999, -77.81941800000001], [35.45467699999999, -77.819362], [35.45440299999999, -77.819306], [35.454279000000014, -77.81927], [35.453921000000044, -77.819166], [35.45279899999996, -77.818914], [35.452020000000005, -77.81883], [35.45082900000002, -77.819138], [35.449888999999985, -77.819222], [35.44968299999998, -77.819305], [35.448446000000025, -77.819332], [35.448170999999995, -77.819248], [35.445582, -77.819024], [35.444552000000044, -77.818703], [35.44450600000002, -77.81868900000002], [35.44306299999999, -77.818045], [35.44288000000003, -77.818017], [35.44239799999994, -77.817793], [35.44212399999998, -77.817709], [35.44207799999996, -77.817654], [35.44194, -77.81762600000002], [35.44189400000005, -77.81754200000002], [35.441545999999995, -77.817444], [35.44149199999997, -77.818289], [35.44146400000001, -77.818798], [35.44141800000001, -77.81934400000002], [35.441354000000025, -77.819945], [35.44108199999999, -77.822239], [35.44101200000004, -77.82284200000001], [35.44094599999997, -77.82341200000002], [35.44090700000002, -77.82384600000002], [35.44088500000001, -77.824193], [35.44087799999999, -77.824288], [35.44087099999998, -77.824423], [35.440863, -77.82457400000001], [35.44085800000001, -77.82467], [35.44085199999998, -77.82476200000002], [35.440853999999995, -77.824883], [35.44084599999998, -77.825131], [35.44081100000002, -77.826297], [35.44396630540799, -77.82622336090033], [35.44462295603937, -77.8262061558416], [35.44729599999996, -77.826132]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1ad436ac83e6d34e438fbea9e5284e39);
+        
+    
+        var popup_f91c0ad28d71fccd4fc450e7528d050d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8fe797136dd820701c96148a29cadc02 = $(`<div id="html_8fe797136dd820701c96148a29cadc02" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Greene - NC-CD01</h4>                              </div>         </div>`)[0];
+                popup_f91c0ad28d71fccd4fc450e7528d050d.setContent(html_8fe797136dd820701c96148a29cadc02);
+            
+        
+
+        polygon_ec2ba67b0a82f00c5b71d71b73f7d903.bindPopup(popup_f91c0ad28d71fccd4fc450e7528d050d)
+        ;
+
+        
+    
+    
+            polygon_ec2ba67b0a82f00c5b71d71b73f7d903.bindTooltip(
+                `<div>
+                      Greene - NC-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4592e5674c29b6946cdea64e4b603f83 = L.polygon(
+                [[35.44081100000002, -77.826297], [35.43919727674499, -77.82634830617529], [35.44396630540799, -77.82622336090033], [35.44081100000002, -77.826297]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1ad436ac83e6d34e438fbea9e5284e39);
+        
+    
+        var popup_df21a0f85ec91e08724f978e6a55043a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_47d9c8061abaa87148d0d93845817600 = $(`<div id="html_47d9c8061abaa87148d0d93845817600" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wayne - NC-CD01</h4>                              </div>         </div>`)[0];
+                popup_df21a0f85ec91e08724f978e6a55043a.setContent(html_47d9c8061abaa87148d0d93845817600);
+            
+        
+
+        polygon_4592e5674c29b6946cdea64e4b603f83.bindPopup(popup_df21a0f85ec91e08724f978e6a55043a)
+        ;
+
+        
+    
+    
+            polygon_4592e5674c29b6946cdea64e4b603f83.bindTooltip(
+                `<div>
+                      Wayne - NC-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_d01a6edf59bee1c1c7f6b7b9954c5e76 = L.polygon(
+                [[35.45050499999998, -77.826052], [35.44729599999996, -77.826132], [35.44462295603937, -77.8262061558416], [35.457298058957804, -77.82587399254021], [35.457322000000005, -77.82586], [35.455458000000014, -77.825922], [35.45050499999998, -77.826052]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_1ad436ac83e6d34e438fbea9e5284e39);
+        
+    
+        var popup_375680ab3e4750e80d50e77e0fc22b83 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f4338eb8a70f929f35f5813c7920390b = $(`<div id="html_f4338eb8a70f929f35f5813c7920390b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wayne - NC-CD01</h4>                              </div>         </div>`)[0];
+                popup_375680ab3e4750e80d50e77e0fc22b83.setContent(html_f4338eb8a70f929f35f5813c7920390b);
+            
+        
+
+        polygon_d01a6edf59bee1c1c7f6b7b9954c5e76.bindPopup(popup_375680ab3e4750e80d50e77e0fc22b83)
+        ;
+
+        
+    
+    
+            polygon_d01a6edf59bee1c1c7f6b7b9954c5e76.bindTooltip(
+                `<div>
+                      Wayne - NC-CD01
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_1ad436ac83e6d34e438fbea9e5284e39.fitBounds(
+                [[35.43919727674499, -77.82634830617529], [35.468395083423125, -77.817444]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2c5d258c40eb518475165158b7dc710c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> York - SC-CD05</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Cherokee - SC-CD05</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_2c5d258c40eb518475165158b7dc710c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2c5d258c40eb518475165158b7dc710c = L.map(
+                "map_2c5d258c40eb518475165158b7dc710c",
+                {
+                    center: [34.933434520901635, -81.44884013358114],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_2c5d258c40eb518475165158b7dc710c);
+
+            
+
+        
+    
+            var tile_layer_8c6bd2589b689a15036e812526a8fccb = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_8c6bd2589b689a15036e812526a8fccb.addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+            var polygon_c526a1e3b6842c804a15c7bb340dff1c = L.polygon(
+                [[34.86027299999999, -81.465003], [34.85941399999998, -81.464785], [34.85767200000004, -81.464134], [34.856959999999994, -81.463855], [34.856020000000036, -81.463352], [34.85773900000004, -81.464272], [34.85902299999998, -81.464686], [34.86027299999999, -81.465003]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_aa2ac4129c4bfeb699fc0807ec71b18d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea7263bd8fb272a6991a768d75467dde = $(`<div id="html_ea7263bd8fb272a6991a768d75467dde" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_aa2ac4129c4bfeb699fc0807ec71b18d.setContent(html_ea7263bd8fb272a6991a768d75467dde);
+            
+        
+
+        polygon_c526a1e3b6842c804a15c7bb340dff1c.bindPopup(popup_aa2ac4129c4bfeb699fc0807ec71b18d)
+        ;
+
+        
+    
+    
+            polygon_c526a1e3b6842c804a15c7bb340dff1c.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_feee5683a0ceae1e6721d9740b8c97ed = L.polygon(
+                [[34.86565299999999, -81.468796], [34.86731499999999, -81.469443], [34.8684184668622, -81.46983538307104], [34.86647900000002, -81.469059], [34.86639300000005, -81.469007], [34.86519899999999, -81.468416], [34.864114, -81.467532], [34.86381900000002, -81.467213], [34.86471599999999, -81.468185], [34.86565299999999, -81.468796]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_77153482b423351a2982c8dd2061bd1c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4222c640055d1792c4e10f10165924e7 = $(`<div id="html_4222c640055d1792c4e10f10165924e7" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_77153482b423351a2982c8dd2061bd1c.setContent(html_4222c640055d1792c4e10f10165924e7);
+            
+        
+
+        polygon_feee5683a0ceae1e6721d9740b8c97ed.bindPopup(popup_77153482b423351a2982c8dd2061bd1c)
+        ;
+
+        
+    
+    
+            polygon_feee5683a0ceae1e6721d9740b8c97ed.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e8c9de15e3da3a51ee5f608ea30ce24d = L.polygon(
+                [[34.86891, -81.47001], [34.8687470500503, -81.46995222670053], [34.86948600000002, -81.470215], [34.87116400000002, -81.470501], [34.870292, -81.470352], [34.86891, -81.47001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_56ef2e7e1b9a822b2b492b3063722384 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1baa9a9c4b6f4a07f6cb6adc12e2d353 = $(`<div id="html_1baa9a9c4b6f4a07f6cb6adc12e2d353" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_56ef2e7e1b9a822b2b492b3063722384.setContent(html_1baa9a9c4b6f4a07f6cb6adc12e2d353);
+            
+        
+
+        polygon_e8c9de15e3da3a51ee5f608ea30ce24d.bindPopup(popup_56ef2e7e1b9a822b2b492b3063722384)
+        ;
+
+        
+    
+    
+            polygon_e8c9de15e3da3a51ee5f608ea30ce24d.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e41f860ad2930a5cfc478cfff8839a81 = L.polygon(
+                [[34.87792500000002, -81.470831], [34.877323999999945, -81.470949], [34.87724399999999, -81.470943], [34.87691400000002, -81.470919], [34.87764800000003, -81.470973], [34.878825999999975, -81.471246], [34.87792500000002, -81.470831]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_6b6d30b6df9838b368c0f90e3e720316 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0e06b3d3650c0ae89821863c5cc6546c = $(`<div id="html_0e06b3d3650c0ae89821863c5cc6546c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_6b6d30b6df9838b368c0f90e3e720316.setContent(html_0e06b3d3650c0ae89821863c5cc6546c);
+            
+        
+
+        polygon_e41f860ad2930a5cfc478cfff8839a81.bindPopup(popup_6b6d30b6df9838b368c0f90e3e720316)
+        ;
+
+        
+    
+    
+            polygon_e41f860ad2930a5cfc478cfff8839a81.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_52ca054d937526b18e33239681a07bd0 = L.polygon(
+                [[34.89136699999998, -81.472759], [34.89110999999997, -81.472606], [34.890580000000014, -81.472561], [34.89023000000002, -81.472497], [34.890948, -81.472629], [34.89191500000003, -81.47293], [34.89136699999998, -81.472759]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_7ead866ae976ac5e2b459c665351cc93 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7f29aece6ee9fe608422e99ccd2a9c39 = $(`<div id="html_7f29aece6ee9fe608422e99ccd2a9c39" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_7ead866ae976ac5e2b459c665351cc93.setContent(html_7f29aece6ee9fe608422e99ccd2a9c39);
+            
+        
+
+        polygon_52ca054d937526b18e33239681a07bd0.bindPopup(popup_7ead866ae976ac5e2b459c665351cc93)
+        ;
+
+        
+    
+    
+            polygon_52ca054d937526b18e33239681a07bd0.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_45feaa6733605d48f22437a4ae8c0201 = L.polygon(
+                [[34.89023000000002, -81.472497], [34.88843, -81.472668], [34.88817599999999, -81.472631], [34.885400000000004, -81.472215], [34.88514899999997, -81.472216], [34.88474800000005, -81.472152], [34.888137, -81.472696], [34.89023000000002, -81.472497]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_656d0e1724c829f1ef8a9e8733dcc39e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31bbc065834fc5df64cc78351e9d272b = $(`<div id="html_31bbc065834fc5df64cc78351e9d272b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_656d0e1724c829f1ef8a9e8733dcc39e.setContent(html_31bbc065834fc5df64cc78351e9d272b);
+            
+        
+
+        polygon_45feaa6733605d48f22437a4ae8c0201.bindPopup(popup_656d0e1724c829f1ef8a9e8733dcc39e)
+        ;
+
+        
+    
+    
+            polygon_45feaa6733605d48f22437a4ae8c0201.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_89d8129ae07c42cecd972ae291a5616a = L.polygon(
+                [[34.912552000000005, -81.47052], [34.912358999999995, -81.470717], [34.91073500000003, -81.47369], [34.90960600000002, -81.474678], [34.91075800000001, -81.47367], [34.91133700000003, -81.472687], [34.912316000000025, -81.470974], [34.912963999999995, -81.470471], [34.91380600000001, -81.470253], [34.91510499999999, -81.470311], [34.91671700000002, -81.47095], [34.919013, -81.472043], [34.919679999999985, -81.472605], [34.92065900000001, -81.473629], [34.92197299999999, -81.475556], [34.92212106643765, -81.47575442521429], [34.922079000000004, -81.475698], [34.92023800000002, -81.472948], [34.918216000000015, -81.471351], [34.918135999999976, -81.471309], [34.915112999999984, -81.470006], [34.913574, -81.470065], [34.912552000000005, -81.47052]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_ff1218f2b251ac166c0986cd6c1159fb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4ea52fd414162cecefb08a6b7fe1516a = $(`<div id="html_4ea52fd414162cecefb08a6b7fe1516a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ff1218f2b251ac166c0986cd6c1159fb.setContent(html_4ea52fd414162cecefb08a6b7fe1516a);
+            
+        
+
+        polygon_89d8129ae07c42cecd972ae291a5616a.bindPopup(popup_ff1218f2b251ac166c0986cd6c1159fb)
+        ;
+
+        
+    
+    
+            polygon_89d8129ae07c42cecd972ae291a5616a.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dbed23cbbbfaa6b3fc941be013b2aad1 = L.polygon(
+                [[34.894593000000015, -81.475802], [34.89458633788934, -81.47579239871703], [34.895300999999996, -81.476836], [34.89604699999998, -81.477693], [34.8962275767171, -81.47780748065244], [34.894593000000015, -81.475802]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_0a111cd3c6982be51e727c78a5552c4e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9196a0fe47301830653fde97b1505117 = $(`<div id="html_9196a0fe47301830653fde97b1505117" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_0a111cd3c6982be51e727c78a5552c4e.setContent(html_9196a0fe47301830653fde97b1505117);
+            
+        
+
+        polygon_dbed23cbbbfaa6b3fc941be013b2aad1.bindPopup(popup_0a111cd3c6982be51e727c78a5552c4e)
+        ;
+
+        
+    
+    
+            polygon_dbed23cbbbfaa6b3fc941be013b2aad1.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_474584a350ddbca645fd79868de4eac3 = L.polygon(
+                [[34.89628099999999, -81.477841], [34.89625014719443, -81.4778217897561], [34.897077000000024, -81.478346], [34.89628099999999, -81.477841]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_8e4ab1163443d306ffac69c7b16b3a1b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c2c8e0af898ee39743c23ef280e76f3e = $(`<div id="html_c2c8e0af898ee39743c23ef280e76f3e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_8e4ab1163443d306ffac69c7b16b3a1b.setContent(html_c2c8e0af898ee39743c23ef280e76f3e);
+            
+        
+
+        polygon_474584a350ddbca645fd79868de4eac3.bindPopup(popup_8e4ab1163443d306ffac69c7b16b3a1b)
+        ;
+
+        
+    
+    
+            polygon_474584a350ddbca645fd79868de4eac3.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_056983dd7b47249aeb63d5228dd78dcb = L.polygon(
+                [[34.900524, -81.478506], [34.899503999999986, -81.47874], [34.89796818148879, -81.47865306687534], [34.89838299999996, -81.478796], [34.89995800000005, -81.47873], [34.90143400000002, -81.478146], [34.900524, -81.478506]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_be7b748b09394b4b4ff453752db5427b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_84e2dbaa6abc0fc55811bf118f6ee581 = $(`<div id="html_84e2dbaa6abc0fc55811bf118f6ee581" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_be7b748b09394b4b4ff453752db5427b.setContent(html_84e2dbaa6abc0fc55811bf118f6ee581);
+            
+        
+
+        polygon_056983dd7b47249aeb63d5228dd78dcb.bindPopup(popup_be7b748b09394b4b4ff453752db5427b)
+        ;
+
+        
+    
+    
+            polygon_056983dd7b47249aeb63d5228dd78dcb.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f72190441768e93d0b592028f82611ef = L.polygon(
+                [[34.93215299999999, -81.474428], [34.932125208367374, -81.474446133579], [34.93278700000003, -81.474016], [34.93385500000003, -81.473673], [34.93500200000002, -81.473642], [34.93588200000002, -81.473842], [34.93646800000004, -81.474172], [34.93682900000001, -81.474644], [34.93751759281787, -81.47703697958264], [34.93731199999999, -81.475512], [34.93648799999999, -81.473941], [34.93593500000005, -81.473711], [34.93548900000002, -81.47351], [34.93355799999996, -81.473638], [34.93275100000002, -81.473931], [34.93215299999999, -81.474428]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_0047a7f11f9d7aee9ca1e68acd683852 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0400b7bd690a4db5288704a668d4792c = $(`<div id="html_0400b7bd690a4db5288704a668d4792c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_0047a7f11f9d7aee9ca1e68acd683852.setContent(html_0400b7bd690a4db5288704a668d4792c);
+            
+        
+
+        polygon_f72190441768e93d0b592028f82611ef.bindPopup(popup_0047a7f11f9d7aee9ca1e68acd683852)
+        ;
+
+        
+    
+    
+            polygon_f72190441768e93d0b592028f82611ef.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2de265cfcd0f8ab8abcc038998350f5e = L.polygon(
+                [[34.924243000000025, -81.477188], [34.922744809678626, -81.47659032300035], [34.92275800000001, -81.476608], [34.92337, -81.476985], [34.92450699999997, -81.477287], [34.92594396619874, -81.477261652127], [34.924243000000025, -81.477188]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_ef1c0f546ba71573ec5ac5d4a36b20ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_311d26f7fdc5033130dfa671a17b30e2 = $(`<div id="html_311d26f7fdc5033130dfa671a17b30e2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ef1c0f546ba71573ec5ac5d4a36b20ec.setContent(html_311d26f7fdc5033130dfa671a17b30e2);
+            
+        
+
+        polygon_2de265cfcd0f8ab8abcc038998350f5e.bindPopup(popup_ef1c0f546ba71573ec5ac5d4a36b20ec)
+        ;
+
+        
+    
+    
+            polygon_2de265cfcd0f8ab8abcc038998350f5e.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6d8849829fbb142aa6aa822e84e06c48 = L.polygon(
+                [[34.926649000000005, -81.477141], [34.926150000000014, -81.47724700000002], [34.926098305285244, -81.47725892954963], [34.926150999999976, -81.477258], [34.926477999999996, -81.477253], [34.92750611233831, -81.47695163797927], [34.926649000000005, -81.477141]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_d41a1d41fac89188ab75f2e2ffb0214f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_75762fee55d9276e0f0d7ed00ec0f616 = $(`<div id="html_75762fee55d9276e0f0d7ed00ec0f616" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d41a1d41fac89188ab75f2e2ffb0214f.setContent(html_75762fee55d9276e0f0d7ed00ec0f616);
+            
+        
+
+        polygon_6d8849829fbb142aa6aa822e84e06c48.bindPopup(popup_d41a1d41fac89188ab75f2e2ffb0214f)
+        ;
+
+        
+    
+    
+            polygon_6d8849829fbb142aa6aa822e84e06c48.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6bf9170c5e30a49583f5af7a1e34e8a4 = L.polygon(
+                [[34.93786799999995, -81.479876], [34.937907999999986, -81.480277], [34.93792000000001, -81.480403], [34.93820699999998, -81.482381], [34.938631999999984, -81.48434], [34.939364000000005, -81.486331], [34.93974513059228, -81.48718525994369], [34.938253000000024, -81.482483], [34.93789200000001, -81.479806], [34.93779518818531, -81.47909374144251], [34.93786300000001, -81.479812], [34.937864999999995, -81.479838], [34.93786799999995, -81.479876]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_e39b41228a30249fe4ea35f441419fe3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a461e2bb8aef4c1eae2b6dee255ab5b0 = $(`<div id="html_a461e2bb8aef4c1eae2b6dee255ab5b0" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_e39b41228a30249fe4ea35f441419fe3.setContent(html_a461e2bb8aef4c1eae2b6dee255ab5b0);
+            
+        
+
+        polygon_6bf9170c5e30a49583f5af7a1e34e8a4.bindPopup(popup_e39b41228a30249fe4ea35f441419fe3)
+        ;
+
+        
+    
+    
+            polygon_6bf9170c5e30a49583f5af7a1e34e8a4.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1a275f9a818b28ff3020d18ed571b1a0 = L.polygon(
+                [[34.98134900000004, -81.476112], [34.98211792341537, -81.47592432302511], [34.981340000000024, -81.476006], [34.979724000000004, -81.476781], [34.977743077734736, -81.47824494255426], [34.97784899999997, -81.47819900000002], [34.979104999999976, -81.477387], [34.98058, -81.476448], [34.98134900000004, -81.476112]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_301cd552152fb39a57897cd9b71900f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2c210df8029a58ae62a353e9b47587bc = $(`<div id="html_2c210df8029a58ae62a353e9b47587bc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_301cd552152fb39a57897cd9b71900f7.setContent(html_2c210df8029a58ae62a353e9b47587bc);
+            
+        
+
+        polygon_1a275f9a818b28ff3020d18ed571b1a0.bindPopup(popup_301cd552152fb39a57897cd9b71900f7)
+        ;
+
+        
+    
+    
+            polygon_1a275f9a818b28ff3020d18ed571b1a0.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1b0ce386c21cf5876b0a3b6cacd51df5 = L.polygon(
+                [[34.98311117366858, -81.47591355287454], [34.982966000000005, -81.475835], [34.982501487569124, -81.47588384358276], [34.98311117366858, -81.47591355287454]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_334f999602a88f10c9705239d9812a95 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_10d13b01d02763ce5686db374d305737 = $(`<div id="html_10d13b01d02763ce5686db374d305737" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_334f999602a88f10c9705239d9812a95.setContent(html_10d13b01d02763ce5686db374d305737);
+            
+        
+
+        polygon_1b0ce386c21cf5876b0a3b6cacd51df5.bindPopup(popup_334f999602a88f10c9705239d9812a95)
+        ;
+
+        
+    
+    
+            polygon_1b0ce386c21cf5876b0a3b6cacd51df5.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8933f368e4427a7c79172567a40f40f0 = L.polygon(
+                [[34.98592799999997, -81.477506], [34.98547799999997, -81.477191], [34.98479500000001, -81.476822], [34.98397299999998, -81.47624], [34.98608099999996, -81.477734], [34.98636046858645, -81.4779633803586], [34.98592799999997, -81.477506]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_b45e9301103bf3f76bb9d403ae49dc1a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1d4619a5e8a4e7ed5566c3d85a4d4550 = $(`<div id="html_1d4619a5e8a4e7ed5566c3d85a4d4550" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_b45e9301103bf3f76bb9d403ae49dc1a.setContent(html_1d4619a5e8a4e7ed5566c3d85a4d4550);
+            
+        
+
+        polygon_8933f368e4427a7c79172567a40f40f0.bindPopup(popup_b45e9301103bf3f76bb9d403ae49dc1a)
+        ;
+
+        
+    
+    
+            polygon_8933f368e4427a7c79172567a40f40f0.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_68a1a59b375bb847a6522670f9ecbd6a = L.polygon(
+                [[34.97761099999999, -81.478302], [34.97718500000004, -81.478487], [34.97773063293394, -81.47825034033312], [34.97761099999999, -81.478302]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_8dd1f2d8b82004c05a5638e05a44c8df = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ff54544a0a49fe144b79140974f73c4e = $(`<div id="html_ff54544a0a49fe144b79140974f73c4e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_8dd1f2d8b82004c05a5638e05a44c8df.setContent(html_ff54544a0a49fe144b79140974f73c4e);
+            
+        
+
+        polygon_68a1a59b375bb847a6522670f9ecbd6a.bindPopup(popup_8dd1f2d8b82004c05a5638e05a44c8df)
+        ;
+
+        
+    
+    
+            polygon_68a1a59b375bb847a6522670f9ecbd6a.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5f78ce6fe8d2c50b0a4ff0d06247303d = L.polygon(
+                [[34.97083000000001, -81.48058200000001], [34.97080399999997, -81.480601], [34.97051400000003, -81.480729], [34.970355117034025, -81.48092485573207], [34.97102100000001, -81.480445], [34.97083000000001, -81.48058200000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_2c794126babe1f6244bc684829e43208 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2c6ceb3e5cd7e61d9de79b98fbab0107 = $(`<div id="html_2c6ceb3e5cd7e61d9de79b98fbab0107" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_2c794126babe1f6244bc684829e43208.setContent(html_2c6ceb3e5cd7e61d9de79b98fbab0107);
+            
+        
+
+        polygon_5f78ce6fe8d2c50b0a4ff0d06247303d.bindPopup(popup_2c794126babe1f6244bc684829e43208)
+        ;
+
+        
+    
+    
+            polygon_5f78ce6fe8d2c50b0a4ff0d06247303d.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9fb281df4d02c904453e4d83b97a5a79 = L.polygon(
+                [[34.942175, -81.490363], [34.94397800000003, -81.491375], [34.945581000000026, -81.492121], [34.946774000000026, -81.492385], [34.94780799999995, -81.492344], [34.94839584667403, -81.49222315439772], [34.947193999999996, -81.49228200000002], [34.944756999999946, -81.49148], [34.941574999999986, -81.489557], [34.939916717766046, -81.48756986007989], [34.94020900000004, -81.488225], [34.94096999999998, -81.489268], [34.942175, -81.490363]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_1885c414440a70afab024c6782be73ff = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7cdc11c3dabc0736227949910dce3808 = $(`<div id="html_7cdc11c3dabc0736227949910dce3808" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_1885c414440a70afab024c6782be73ff.setContent(html_7cdc11c3dabc0736227949910dce3808);
+            
+        
+
+        polygon_9fb281df4d02c904453e4d83b97a5a79.bindPopup(popup_1885c414440a70afab024c6782be73ff)
+        ;
+
+        
+    
+    
+            polygon_9fb281df4d02c904453e4d83b97a5a79.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b2f55e894a9701284b63bcfad9fcc6c0 = L.polygon(
+                [[34.95051500000002, -81.491363], [34.95046199999998, -81.491397], [34.952828999999994, -81.48989], [34.954418999999966, -81.488719], [34.955650999999996, -81.487926], [34.95682400000001, -81.487476], [34.95816600000001, -81.487212], [34.959766, -81.487088], [34.96138100000003, -81.487091], [34.962714, -81.487033], [34.96402499999999, -81.486574], [34.96293299999998, -81.486956], [34.961671999999965, -81.48699600000002], [34.95970499999996, -81.487049], [34.958232000000024, -81.487085], [34.95586499999999, -81.487632], [34.955202999999955, -81.48788], [34.95051500000002, -81.491363]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_d1941fe62d98a1dbfc5ae6c2abf87066 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df0a706bb019c1ac00da80543a317ffa = $(`<div id="html_df0a706bb019c1ac00da80543a317ffa" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d1941fe62d98a1dbfc5ae6c2abf87066.setContent(html_df0a706bb019c1ac00da80543a317ffa);
+            
+        
+
+        polygon_b2f55e894a9701284b63bcfad9fcc6c0.bindPopup(popup_d1941fe62d98a1dbfc5ae6c2abf87066)
+        ;
+
+        
+    
+    
+            polygon_b2f55e894a9701284b63bcfad9fcc6c0.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8acc7adbe0c11b0a7565b84e78808161 = L.polygon(
+                [[34.99725800000002, -81.48479], [34.99834500000003, -81.484768], [34.998975683619, -81.48475564077151], [34.99834900000002, -81.48472000000001], [34.997435000000024, -81.484671], [34.99561099999999, -81.484201], [34.993441626758084, -81.4837271369007], [34.99382999999997, -81.483999], [34.994749000000006, -81.484329], [34.99725800000002, -81.48479]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_1266247e9c3e7314352c5e36939fb4e3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_23ce2c1efb197899e8a6e70cf879bd25 = $(`<div id="html_23ce2c1efb197899e8a6e70cf879bd25" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_1266247e9c3e7314352c5e36939fb4e3.setContent(html_23ce2c1efb197899e8a6e70cf879bd25);
+            
+        
+
+        polygon_8acc7adbe0c11b0a7565b84e78808161.bindPopup(popup_1266247e9c3e7314352c5e36939fb4e3)
+        ;
+
+        
+    
+    
+            polygon_8acc7adbe0c11b0a7565b84e78808161.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5f0daceef64a4d6061d3c78c1f433d4f = L.polygon(
+                [[35.010809020423544, -81.4832136400548], [35.00928300000003, -81.482005], [35.00923499999997, -81.48194], [35.00914099999999, -81.481878], [35.00911299999997, -81.481849], [35.00873699999997, -81.481459], [35.00985900000002, -81.482624], [35.010809020423544, -81.4832136400548]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_54a9ea346548fe3ad6c4f97ba1602d66 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f97edcbec7c438e6974421241ac70432 = $(`<div id="html_f97edcbec7c438e6974421241ac70432" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_54a9ea346548fe3ad6c4f97ba1602d66.setContent(html_f97edcbec7c438e6974421241ac70432);
+            
+        
+
+        polygon_5f0daceef64a4d6061d3c78c1f433d4f.bindPopup(popup_54a9ea346548fe3ad6c4f97ba1602d66)
+        ;
+
+        
+    
+    
+            polygon_5f0daceef64a4d6061d3c78c1f433d4f.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_eaace0338391a6380c0327b3f6e7279a = L.polygon(
+                [[34.99934900000001, -81.48474800000001], [34.999201396456016, -81.48475121752548], [35.00013099999995, -81.484733], [35.001223, -81.484027], [35.000907, -81.484231], [34.99934900000001, -81.48474800000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_5d06b1b942f6621ac64f82b01aa9fa04 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e71ee4334872aa4e2170ae81f6909c02 = $(`<div id="html_e71ee4334872aa4e2170ae81f6909c02" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_5d06b1b942f6621ac64f82b01aa9fa04.setContent(html_e71ee4334872aa4e2170ae81f6909c02);
+            
+        
+
+        polygon_eaace0338391a6380c0327b3f6e7279a.bindPopup(popup_5d06b1b942f6621ac64f82b01aa9fa04)
+        ;
+
+        
+    
+    
+            polygon_eaace0338391a6380c0327b3f6e7279a.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_85abb22cbd3003d4000af17630555d01 = L.polygon(
+                [[35.010901999999994, -81.483271], [35.01086541637857, -81.48324864332444], [35.011214000000024, -81.483465], [35.010901999999994, -81.483271]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_05390d76f54738ea483fdb600cca73cb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a36e8d0fd4dd3c9b55613a7fc02d9d2e = $(`<div id="html_a36e8d0fd4dd3c9b55613a7fc02d9d2e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_05390d76f54738ea483fdb600cca73cb.setContent(html_a36e8d0fd4dd3c9b55613a7fc02d9d2e);
+            
+        
+
+        polygon_85abb22cbd3003d4000af17630555d01.bindPopup(popup_05390d76f54738ea483fdb600cca73cb)
+        ;
+
+        
+    
+    
+            polygon_85abb22cbd3003d4000af17630555d01.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1ab1e55f04bd681eb170f4cc79aa63bb = L.polygon(
+                [[35.02812199999998, -81.48824], [35.02799099999997, -81.488222], [35.02812318091664, -81.48824037496641], [35.02812199999998, -81.48824]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_8a8ff6ff07db62b2ab9e3023bd73968b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_509bb675a7feb7158b94f111ea496e00 = $(`<div id="html_509bb675a7feb7158b94f111ea496e00" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_8a8ff6ff07db62b2ab9e3023bd73968b.setContent(html_509bb675a7feb7158b94f111ea496e00);
+            
+        
+
+        polygon_1ab1e55f04bd681eb170f4cc79aa63bb.bindPopup(popup_8a8ff6ff07db62b2ab9e3023bd73968b)
+        ;
+
+        
+    
+    
+            polygon_1ab1e55f04bd681eb170f4cc79aa63bb.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_2ee502242df8dd70787b0aff5b320337 = L.polygon(
+                [[35.0303111005514, -81.48799486477651], [35.03031099999999, -81.48799500000001], [35.030155000000015, -81.488205], [35.03010350028138, -81.48823669213475], [35.03018000000002, -81.488211], [35.030336000000005, -81.488011], [35.0303111005514, -81.48799486477651]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_aed5515c3d66c6c68d3a2e8d1f9f2e94 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ee1b619e96c702bab3376a8bf86283c5 = $(`<div id="html_ee1b619e96c702bab3376a8bf86283c5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Cherokee - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_aed5515c3d66c6c68d3a2e8d1f9f2e94.setContent(html_ee1b619e96c702bab3376a8bf86283c5);
+            
+        
+
+        polygon_2ee502242df8dd70787b0aff5b320337.bindPopup(popup_aed5515c3d66c6c68d3a2e8d1f9f2e94)
+        ;
+
+        
+    
+    
+            polygon_2ee502242df8dd70787b0aff5b320337.bindTooltip(
+                `<div>
+                      Cherokee - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a30335cadacbe7546eed151446bf3d62 = L.polygon(
+                [[34.856020000000036, -81.463352], [34.856959999999994, -81.463855], [34.85767200000004, -81.464134], [34.85941399999998, -81.464785], [34.86027299999999, -81.465003], [34.86137100000001, -81.465545], [34.86247699999998, -81.466146], [34.86381900000002, -81.467213], [34.864114, -81.467532], [34.86519899999999, -81.468416], [34.86639300000005, -81.469007], [34.86647900000002, -81.469059], [34.8684184668622, -81.46983538307104], [34.8687470500503, -81.46995222670053], [34.86891, -81.47001], [34.870292, -81.470352], [34.87116400000002, -81.470501], [34.874311000000006, -81.471328], [34.87472299999999, -81.471395], [34.87513399999999, -81.471413], [34.87691400000002, -81.470919], [34.87724399999999, -81.470943], [34.877323999999945, -81.470949], [34.87792500000002, -81.470831], [34.878825999999975, -81.471246], [34.88014699999998, -81.471823], [34.881341000000006, -81.472018], [34.88474800000005, -81.472152], [34.88514899999997, -81.472216], [34.885400000000004, -81.472215], [34.88817599999999, -81.472631], [34.88843, -81.472668], [34.89023000000002, -81.472497], [34.890580000000014, -81.472561], [34.89110999999997, -81.472606], [34.89136699999998, -81.472759], [34.89191500000003, -81.47293], [34.89263200000001, -81.473395], [34.893298, -81.474035], [34.894042999999996, -81.47499900000001], [34.89458633788934, -81.47579239871703], [34.894593000000015, -81.475802], [34.8962275767171, -81.47780748065244], [34.89625014719443, -81.4778217897561], [34.89628099999999, -81.477841], [34.897077000000024, -81.478346], [34.89796818148879, -81.47865306687534], [34.899503999999986, -81.47874], [34.900524, -81.478506], [34.90143400000002, -81.478146], [34.90240900000001, -81.477762], [34.90419099999999, -81.47684700000002], [34.906253999999954, -81.476227], [34.908000999999985, -81.475624], [34.90960600000002, -81.474678], [34.91073500000003, -81.47369], [34.912358999999995, -81.470717], [34.912552000000005, -81.47052], [34.913574, -81.470065], [34.915112999999984, -81.470006], [34.918135999999976, -81.471309], [34.918216000000015, -81.471351], [34.92023800000002, -81.472948], [34.922079000000004, -81.475698], [34.92212106643765, -81.47575442521429], [34.922744809678626, -81.47659032300035], [34.924243000000025, -81.477188], [34.92594396619874, -81.477261652127], [34.926098305285244, -81.47725892954963], [34.926150000000014, -81.47724700000002], [34.926649000000005, -81.477141], [34.92750611233831, -81.47695163797927], [34.92813600000001, -81.476767], [34.93006200000002, -81.476059], [34.93103500000003, -81.475391], [34.93179000000005, -81.474664], [34.932125208367374, -81.474446133579], [34.93215299999999, -81.474428], [34.93275100000002, -81.473931], [34.93355799999996, -81.473638], [34.93548900000002, -81.47351], [34.93593500000005, -81.473711], [34.93648799999999, -81.473941], [34.93731199999999, -81.475512], [34.93751759281787, -81.47703697958264], [34.937533999999985, -81.477094], [34.937743, -81.478541], [34.93779518818531, -81.47909374144251], [34.93789200000001, -81.479806], [34.938253000000024, -81.482483], [34.93974513059228, -81.48718525994369], [34.939916717766046, -81.48756986007989], [34.941574999999986, -81.489557], [34.944756999999946, -81.49148], [34.947193999999996, -81.49228200000002], [34.94839584667403, -81.49222315439772], [34.948956000000024, -81.49210800000002], [34.95046199999998, -81.491397], [34.95051500000002, -81.491363], [34.955202999999955, -81.48788], [34.95586499999999, -81.487632], [34.958232000000024, -81.487085], [34.95970499999996, -81.487049], [34.961671999999965, -81.48699600000002], [34.96293299999998, -81.486956], [34.96402499999999, -81.486574], [34.96510900000005, -81.486152], [34.966008999999964, -81.485561], [34.96693499999994, -81.484688], [34.968071000000016, -81.48365], [34.969047000000025, -81.482484], [34.970322999999986, -81.480948], [34.970355117034025, -81.48092485573207], [34.97051400000003, -81.480729], [34.97080399999997, -81.480601], [34.97083000000001, -81.48058200000001], [34.97102100000001, -81.480445], [34.972024, -81.479993], [34.974652999999975, -81.47927], [34.97718500000004, -81.478487], [34.97761099999999, -81.478302], [34.97773063293394, -81.47825034033312], [34.977743077734736, -81.47824494255426], [34.979724000000004, -81.476781], [34.981340000000024, -81.476006], [34.98211792341537, -81.47592432302511], [34.982319999999994, -81.475875], [34.982501487569124, -81.47588384358276], [34.982966000000005, -81.475835], [34.98311117366858, -81.47591355287454], [34.983263999999984, -81.475921], [34.98397299999998, -81.47624], [34.98479500000001, -81.476822], [34.98547799999997, -81.477191], [34.98592799999997, -81.477506], [34.98636046858645, -81.4779633803586], [34.98823499999999, -81.479502], [34.989915, -81.480911], [34.99063800000002, -81.481518], [34.99301000000001, -81.483425], [34.993441626758084, -81.4837271369007], [34.99561099999999, -81.484201], [34.997435000000024, -81.484671], [34.99834900000002, -81.48472000000001], [34.998975683619, -81.48475564077151], [34.999201396456016, -81.48475121752548], [34.99934900000001, -81.48474800000001], [35.000907, -81.484231], [35.001223, -81.484027], [35.00301300000003, -81.482744], [35.004487000000026, -81.481138], [35.00590599999996, -81.48057], [35.00734900000005, -81.480784], [35.00873699999997, -81.481459], [35.00911299999997, -81.481849], [35.00914099999999, -81.481878], [35.00923499999997, -81.48194], [35.00928300000003, -81.482005], [35.010809020423544, -81.4832136400548], [35.01086541637857, -81.48324864332444], [35.010901999999994, -81.483271], [35.011214000000024, -81.483465], [35.01290800000001, -81.48409100000002], [35.01470599999993, -81.484599], [35.016795000000016, -81.484529], [35.018512, -81.485048], [35.019939, -81.485703], [35.02214100000001, -81.486436], [35.02409300000001, -81.486935], [35.025964, -81.48756100000001], [35.02656299999999, -81.488041], [35.026867999999965, -81.488286], [35.02770600000001, -81.488182], [35.02799099999997, -81.488222], [35.02812199999998, -81.48824], [35.02812318091664, -81.48824037496641], [35.029516, -81.488434], [35.03010350028138, -81.48823669213475], [35.030155000000015, -81.488205], [35.03031099999999, -81.48799500000001], [35.0303111005514, -81.48799486477651], [35.02689300000004, -81.48578000000002], [35.02466599999997, -81.483279], [35.020176000000006, -81.478235], [35.009422, -81.466162], [35.00982200000002, -81.466073], [35.010144, -81.465905], [35.01041100000002, -81.465747], [35.010422, -81.465739], [35.010485999999965, -81.465696], [35.01065600000001, -81.465548], [35.010861000000006, -81.465354], [35.01098400000001, -81.465227], [35.01121900000002, -81.464934], [35.01172399999997, -81.464235], [35.01188700000004, -81.46399300000002], [35.012318999999955, -81.463375], [35.012824000000016, -81.462662], [35.01348, -81.461752], [35.013373000000044, -81.461683], [35.01305200000004, -81.461566], [35.012653, -81.46145800000001], [35.01217500000004, -81.461387], [35.01201100000002, -81.461383], [35.01187099999995, -81.461397], [35.01166499999999, -81.461426], [35.01122300000005, -81.458457], [35.01037699999996, -81.45866600000001], [35.009532999999955, -81.45435600000002], [35.00939699999998, -81.453659], [35.016313, -81.451907], [35.01638200000002, -81.446508], [35.015558000000006, -81.444318], [35.016081999999976, -81.442451], [35.016509000000006, -81.442755], [35.01690199999999, -81.442148], [35.01767699999997, -81.441213], [35.01831899999999, -81.440418], [35.01735600000004, -81.438349], [35.017462999999964, -81.43625900000002], [35.016418999999956, -81.43634], [35.015303999999986, -81.429318], [35.015120999999986, -81.429401], [35.01422699999999, -81.429513], [35.01413000000001, -81.429483], [35.01386099999999, -81.429401], [35.01303600000002, -81.428761], [35.011317999999974, -81.428734], [35.01065399999997, -81.429151], [35.01017300000001, -81.429903], [35.009921000000006, -81.43046], [35.009393999999986, -81.431211], [35.00914299999995, -81.431378], [35.00827200000002, -81.431629], [35.00776799999998, -81.431963], [35.00708100000001, -81.432214], [35.00659999999999, -81.432659], [35.005776000000026, -81.433718], [35.00559199999995, -81.43408], [35.005524, -81.434803], [35.00568400000003, -81.435249], [35.005688000000006, -81.435348], [35.00402699999999, -81.434025], [35.002697000000005, -81.432923], [35.00204699999997, -81.432185], [34.99969599999994, -81.429349], [34.998711000000014, -81.428482], [34.997298999999956, -81.427541], [34.996870999999985, -81.427219], [34.99655700000003, -81.426902], [34.99613199999997, -81.426495], [34.99582599999997, -81.426233], [34.99531199999998, -81.425936], [34.99499399999999, -81.425773], [34.99450000000001, -81.42552], [34.99356100000002, -81.4252], [34.99319300000002, -81.424896], [34.99247699999998, -81.424046], [34.992252000000015, -81.423722], [34.99206300000003, -81.423346], [34.991236999999956, -81.420961], [34.991067000000015, -81.420567], [34.99088499999998, -81.420215], [34.990632999999995, -81.419885], [34.99037200000003, -81.419554], [34.99018300000003, -81.419315], [34.990272999999945, -81.41914100000001], [34.99229900000002, -81.416158], [34.99263999999999, -81.415417], [34.99248300000002, -81.415124], [34.992382999999975, -81.414852], [34.99184399999997, -81.412583], [34.99021499999999, -81.412582], [34.99024400000001, -81.408297], [34.986118999999945, -81.408085], [34.98487400000003, -81.408051], [34.98382399999998, -81.407997], [34.98385800000002, -81.407728], [34.983886999999996, -81.407421], [34.98392000000001, -81.407018], [34.98392800000002, -81.406869], [34.98392600000002, -81.406621], [34.983921999999964, -81.406569], [34.983912999999994, -81.40643], [34.98387300000005, -81.40611700000001], [34.98381499999998, -81.405809], [34.98373700000005, -81.405491], [34.98364499999997, -81.405179], [34.983552999999986, -81.404911], [34.983444, -81.404632], [34.98332600000004, -81.404366], [34.983185999999954, -81.404082], [34.98287900000001, -81.403513], [34.98271199999998, -81.403172], [34.98255800000002, -81.402834], [34.98231100000003, -81.402257], [34.98222200000001, -81.40202], [34.98210999999999, -81.40167], [34.982025, -81.401361], [34.98195100000001, -81.40104400000001], [34.98189199999995, -81.400744], [34.981800000000014, -81.400533], [34.98164299999999, -81.399816], [34.98160800000004, -81.399608], [34.98152699999996, -81.399271], [34.981466000000026, -81.398934], [34.98136700000002, -81.39845], [34.981313, -81.39822300000002], [34.981109, -81.397313], [34.98105399999997, -81.397048], [34.980969000000016, -81.396639], [34.98087599999996, -81.39613], [34.980813000000005, -81.395696], [34.98080500000001, -81.395463], [34.98080799999993, -81.395259], [34.9808, -81.395091], [34.98080699999996, -81.394854], [34.98084700000002, -81.394317], [34.98089899999996, -81.393967], [34.980943000000046, -81.393666], [34.981009000000036, -81.393272], [34.98111699999996, -81.392749], [34.98123900000001, -81.39232], [34.981421000000005, -81.391802], [34.981657999999996, -81.391273], [34.98201399999999, -81.390547], [34.98231399999998, -81.38999], [34.982468, -81.389657], [34.98295500000001, -81.388674], [34.98307299999999, -81.388414], [34.983233999999975, -81.387967], [34.98337999999998, -81.387329], [34.983412999999956, -81.387107], [34.98346, -81.386438], [34.98347000000001, -81.38592], [34.983362000000014, -81.38522700000001], [34.98322299999998, -81.38468], [34.98315799999997, -81.38448700000001], [34.98293, -81.383875], [34.98277900000001, -81.383408], [34.982681000000014, -81.383041], [34.982646, -81.382872], [34.98261900000002, -81.382677], [34.98257299999998, -81.38235], [34.982432000000024, -81.380949], [34.98233500000001, -81.380076], [34.981698, -81.380615], [34.980039999999995, -81.381457], [34.978680999999966, -81.38162800000002], [34.977735999999986, -81.381965], [34.97697799999998, -81.38194], [34.976286, -81.381554], [34.975800999999976, -81.381138], [34.97356699999998, -81.380506], [34.972162999999995, -81.380066], [34.970359000000016, -81.380018], [34.970321000000034, -81.380017], [34.96984, -81.379934], [34.96924499999997, -81.379628], [34.968465999999985, -81.379628], [34.96807600000001, -81.37974], [34.96773299999999, -81.37999100000002], [34.96739, -81.380937], [34.967161000000026, -81.38116], [34.966840000000026, -81.381188], [34.96638200000001, -81.38091], [34.965993, -81.380882], [34.96551199999999, -81.380994], [34.964985000000006, -81.380632], [34.964595000000024, -81.380605], [34.96443499999996, -81.380438], [34.964342999999964, -81.38002100000001], [34.964159999999985, -81.379715], [34.96347299999999, -81.379715], [34.96312900000002, -81.378992], [34.962784999999975, -81.378937], [34.96239600000006, -81.378548], [34.96209799999998, -81.378437], [34.96166299999998, -81.37838100000002], [34.96088399999997, -81.37955], [34.959464999999994, -81.380998], [34.95887, -81.381749], [34.95880100000001, -81.382055], [34.95770200000003, -81.382781], [34.956374, -81.383893], [34.95543500000001, -81.384116], [34.95504600000001, -81.384117], [34.95483900000001, -81.383783], [34.95481599999999, -81.383003], [34.95465599999999, -81.382836], [34.954126000000024, -81.382638], [34.95368200000005, -81.38262], [34.95298399999995, -81.38281600000002], [34.95254899999998, -81.38331], [34.95215899999999, -81.383533], [34.95186199999997, -81.383561], [34.951243000000005, -81.383368], [34.950853999999985, -81.383452], [34.950716000000035, -81.383563], [34.950602000000025, -81.384147], [34.95080799999998, -81.38445300000001], [34.95115200000001, -81.384648], [34.95119799999999, -81.384926], [34.951107, -81.385566], [34.950878000000046, -81.385872], [34.95000699999998, -81.385872], [34.94931999999997, -81.386401], [34.948930999999995, -81.386458], [34.94854200000001, -81.386319], [34.94817500000003, -81.386737], [34.94792300000002, -81.386792], [34.94735099999999, -81.386264], [34.94693800000002, -81.386626], [34.94693300000001, -81.38671], [34.946916000000016, -81.38704300000002], [34.94682399999999, -81.387183], [34.94558699999993, -81.387628], [34.945106999999965, -81.388241], [34.944836, -81.388414], [34.94462599999997, -81.388548], [34.944213000000055, -81.388548], [34.943893, -81.388242], [34.94357199999999, -81.388242], [34.942655999999985, -81.388493], [34.94228999999996, -81.388939], [34.94222099999997, -81.389495], [34.94238200000001, -81.390496], [34.94176399999997, -81.391108], [34.94126400000002, -81.392075], [34.94119100000003, -81.392305], [34.940871, -81.392583], [34.939932000000006, -81.393056], [34.938877999999995, -81.393279], [34.93663399999999, -81.394643], [34.93624499999999, -81.394783], [34.93505399999999, -81.395145], [34.934894, -81.395312], [34.934527999999965, -81.396759], [34.93406999999998, -81.397455], [34.93404699999998, -81.398484], [34.93372700000004, -81.399096], [34.93338299999997, -81.399374], [34.93285599999999, -81.39943], [34.932626999999975, -81.399541], [34.93226099999998, -81.399986], [34.93145999999998, -81.401377], [34.93063499999999, -81.401989], [34.93013199999998, -81.402018], [34.92962799999996, -81.401712], [34.92916900000001, -81.401712], [34.928023999999986, -81.402547], [34.92738300000001, -81.403381], [34.92676499999997, -81.40477200000001], [34.92573499999998, -81.406637], [34.92559800000001, -81.406665], [34.92557499999998, -81.406915], [34.92504800000001, -81.408305], [34.92491099999998, -81.408973], [34.92472799999999, -81.411392], [34.92456800000001, -81.41167], [34.92408700000002, -81.411865], [34.923331999999995, -81.41339500000001], [34.92186600000001, -81.41587], [34.92168300000001, -81.415954], [34.92165999999999, -81.416482], [34.92154600000002, -81.41681600000001], [34.921271000000026, -81.417122], [34.92088100000001, -81.417177], [34.92049199999999, -81.417761], [34.91992000000001, -81.417929], [34.91934699999999, -81.419236], [34.91900399999999, -81.420293], [34.918637000000025, -81.421016], [34.91792699999999, -81.42135], [34.917286000000004, -81.421461], [34.916897000000034, -81.421239], [34.91668999999998, -81.420794], [34.91652999999998, -81.420794], [34.91576600000001, -81.42127100000002], [34.91578099999998, -81.421291], [34.916218, -81.421763], [34.91698000000003, -81.422402], [34.920916999999974, -81.424984], [34.92132500000001, -81.425272], [34.92163000000004, -81.42555], [34.92188500000001, -81.425817], [34.922145999999955, -81.426149], [34.92258800000004, -81.426963], [34.922140000000034, -81.42656500000001], [34.92182200000003, -81.426448], [34.91909199999998, -81.426183], [34.917533000000006, -81.426085], [34.91691000000002, -81.425893], [34.91670499999998, -81.425748], [34.91640200000001, -81.425532], [34.91483099999994, -81.424021], [34.91370799999997, -81.422893], [34.91302599999998, -81.42377], [34.911606000000035, -81.424465], [34.91064400000001, -81.425216], [34.91004800000004, -81.425355], [34.90965899999999, -81.425967], [34.909636000000006, -81.426523], [34.90986499999999, -81.42694], [34.90986499999999, -81.427107], [34.90920100000004, -81.427914], [34.90899499999999, -81.428276], [34.907162999999976, -81.429332], [34.905926000000015, -81.430139], [34.90471199999999, -81.431419], [34.903613, -81.432308], [34.90242199999998, -81.43344800000001], [34.90166599999999, -81.43431], [34.90113899999995, -81.435228], [34.900840999999986, -81.435589], [34.90065799999997, -81.435617], [34.900452, -81.435339], [34.899971, -81.435422], [34.899650000000065, -81.436117], [34.89916900000002, -81.436451], [34.898917, -81.437314], [34.898299000000016, -81.437315], [34.89800099999997, -81.43764800000001], [34.897977999999966, -81.438204], [34.89848200000001, -81.439928], [34.89848200000001, -81.440373], [34.89818400000002, -81.441012], [34.897864, -81.441373], [34.89534400000003, -81.443653], [34.89477099999999, -81.444348], [34.894334999999984, -81.444682], [34.89312100000002, -81.444738], [34.89188399999998, -81.44534900000001], [34.89158599999996, -81.445377], [34.89099100000002, -81.44521], [34.89039500000001, -81.445266], [34.889662, -81.44640500000001], [34.88952500000001, -81.446433], [34.889158000000016, -81.446072], [34.88881000000001, -81.44597], [34.888407, -81.446586], [34.88816099999998, -81.446628], [34.88784600000001, -81.446331], [34.88740700000003, -81.446309], [34.886969, -81.446649], [34.88646100000002, -81.447329], [34.885409000000024, -81.448964], [34.885041000000015, -81.449283], [34.884514999999965, -81.449283], [34.88441799999999, -81.449155], [34.884059000000015, -81.448253], [34.88369900000002, -81.447945], [34.88342800000001, -81.44788100000001], [34.88339299999997, -81.447796], [34.88226200000002, -81.447711], [34.88143800000001, -81.448104], [34.88107899999996, -81.448125], [34.880535000000044, -81.447393], [34.87989499999999, -81.447371], [34.87917600000001, -81.44787100000002], [34.878965999999984, -81.447913], [34.87868599999999, -81.447786], [34.87812499999997, -81.447786], [34.877406000000015, -81.448348], [34.877343999999994, -81.448794], [34.87765099999997, -81.449506], [34.87772100000001, -81.451375], [34.87799299999996, -81.452437], [34.87791399999997, -81.45283], [34.87772100000001, -81.453074], [34.87716000000002, -81.45342500000001], [34.87513399999999, -81.454035], [34.87502800000002, -81.454032], [34.87485500000004, -81.454061], [34.87453099999999, -81.454136], [34.87427799999996, -81.454225], [34.87415899999999, -81.454298], [34.87404899999998, -81.45439], [34.87392199999998, -81.454516], [34.87364600000002, -81.454808], [34.873516999999985, -81.454924], [34.87345100000003, -81.454947], [34.87335199999997, -81.45496], [34.873280000000015, -81.454953], [34.873252999999984, -81.454933], [34.87317600000002, -81.45480900000001], [34.87302400000003, -81.454495], [34.87293900000005, -81.454371], [34.87284300000005, -81.45426000000002], [34.87271400000001, -81.454136], [34.872578, -81.454026], [34.87225100000003, -81.453827], [34.87202700000002, -81.453653], [34.87189200000001, -81.453529], [34.87178299999999, -81.453388], [34.87174800000002, -81.453324], [34.87170700000003, -81.453214], [34.871625, -81.452904], [34.87159, -81.45279], [34.871525000000005, -81.45265], [34.871385999999994, -81.452379], [34.87132300000002, -81.452239], [34.87127700000001, -81.452088], [34.871143999999966, -81.451594], [34.87107300000005, -81.45141], [34.870967000000014, -81.451163], [34.870798, -81.450819], [34.87064800000004, -81.450555], [34.870484000000005, -81.450357], [34.870406999999965, -81.45028], [34.87032500000001, -81.45021], [34.87023699999996, -81.450149], [34.87014699999997, -81.450109], [34.870113999999994, -81.450105], [34.87004800000003, -81.450115], [34.869638000000016, -81.450266], [34.86923300000001, -81.45044], [34.86909299999999, -81.450543], [34.868817000000014, -81.450685], [34.86862999999997, -81.450764], [34.868374000000024, -81.450833], [34.86791799999997, -81.450913], [34.86774999999999, -81.450926], [34.86768699999996, -81.450922], [34.86726200000003, -81.450857], [34.86683899999999, -81.450771], [34.86638900000003, -81.450642], [34.86616100000001, -81.450601], [34.86589199999998, -81.450573], [34.86576200000004, -81.450575], [34.86566600000001, -81.450585], [34.86557299999999, -81.450624], [34.865487, -81.450687], [34.86532700000001, -81.450833], [34.86510100000003, -81.451068], [34.86499399999996, -81.451161], [34.864850000000004, -81.45125700000001], [34.864460000000044, -81.451482], [34.864347000000016, -81.451561], [34.86426700000002, -81.451631], [34.86417800000001, -81.451753], [34.864108999999985, -81.451893], [34.86405100000004, -81.45207600000002], [34.86395, -81.452502], [34.863894999999985, -81.452692], [34.86384699999995, -81.452795], [34.863717000000015, -81.45302800000002], [34.86366200000001, -81.453174], [34.86362000000003, -81.453327], [34.863541, -81.45396], [34.86337000000003, -81.455549], [34.86329399999998, -81.456142], [34.86325200000001, -81.456255], [34.863194, -81.456352], [34.863114000000024, -81.456425], [34.862993000000024, -81.456497], [34.862898999999985, -81.456523], [34.86280099999999, -81.456526], [34.862633000000045, -81.456509], [34.86253700000002, -81.456475], [34.86235599999997, -81.456377], [34.86224400000004, -81.456297], [34.862118, -81.456166], [34.862006, -81.456019], [34.861925999999954, -81.45588800000002], [34.861864, -81.455748], [34.861831, -81.455634], [34.86176600000001, -81.455324], [34.86174200000002, -81.455164], [34.861729000000025, -81.455007], [34.86175000000001, -81.454647], [34.86174700000003, -81.454527], [34.86172900000005, -81.454407], [34.86168500000001, -81.454257], [34.861636000000004, -81.45415], [34.861586999999986, -81.454096], [34.86155699999999, -81.454076], [34.86146600000004, -81.454032], [34.861163999999995, -81.453964], [34.861103999999955, -81.453974], [34.86107600000003, -81.453987], [34.86093900000005, -81.454016], [34.86090600000003, -81.454029], [34.86076000000001, -81.45412500000002], [34.860387999999965, -81.454386], [34.860242000000014, -81.454472], [34.860175999999996, -81.454489], [34.860110000000006, -81.454495], [34.85987699999998, -81.454474], [34.85978, -81.454477], [34.859684000000016, -81.454503], [34.859430999999994, -81.454605], [34.859368, -81.454624], [34.85930199999999, -81.45463100000002], [34.85923600000002, -81.45461], [34.85917799999996, -81.454567], [34.85912099999998, -81.454473], [34.85902299999998, -81.454259], [34.85896499999999, -81.45416200000001], [34.85891599999998, -81.454109], [34.858858999999995, -81.45406800000002], [34.85877500000001, -81.454038], [34.85869899999997, -81.454011], [34.85853700000003, -81.453977], [34.85834, -81.453985], [34.85814200000003, -81.454021], [34.85785800000002, -81.454123], [34.857480999999964, -81.454274], [34.856858999999986, -81.454544], [34.85664699999998, -81.454653], [34.85647900000002, -81.454779], [34.85635200000003, -81.454911], [34.85620299999997, -81.455124], [34.85609000000002, -81.45532], [34.855854, -81.45584900000001], [34.855608000000046, -81.456461], [34.85541300000005, -81.45697], [34.855393999999976, -81.457049], [34.85538300000003, -81.457129], [34.855388000000005, -81.457246], [34.85541199999999, -81.45744600000002], [34.85544899999998, -81.457643], [34.85549000000002, -81.457797], [34.85555, -81.45798], [34.85575899999999, -81.458481], [34.855842999999986, -81.458785], [34.855899999999984, -81.459055], [34.855973, -81.459489], [34.85601000000005, -81.459806], [34.856014999999985, -81.460006], [34.85601099999999, -81.460166], [34.85599400000001, -81.460366], [34.855969000000016, -81.460522], [34.855882000000015, -81.460869], [34.855688, -81.461531], [34.855465999999986, -81.462116], [34.855385000000005, -81.462286], [34.85530200000001, -81.462419], [34.85520599999999, -81.462542], [34.85513400000001, -81.462604], [34.85496900000003, -81.463063], [34.85548699999995, -81.463149], [34.856020000000036, -81.463352]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2c5d258c40eb518475165158b7dc710c);
+        
+    
+        var popup_d3e93fa21874f304ff17ed60c9ea3e29 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7972a457c70e277862913f5c2030209c = $(`<div id="html_7972a457c70e277862913f5c2030209c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> York - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d3e93fa21874f304ff17ed60c9ea3e29.setContent(html_7972a457c70e277862913f5c2030209c);
+            
+        
+
+        polygon_a30335cadacbe7546eed151446bf3d62.bindPopup(popup_d3e93fa21874f304ff17ed60c9ea3e29)
+        ;
+
+        
+    
+    
+            polygon_a30335cadacbe7546eed151446bf3d62.bindTooltip(
+                `<div>
+                      York - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_2c5d258c40eb518475165158b7dc710c.fitBounds(
+                [[34.85496900000003, -81.492385], [35.030336000000005, -81.37838100000002]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

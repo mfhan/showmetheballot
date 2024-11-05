@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_95c6b26d10f26310412462470d549a47 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> York - SC-CD05</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Lancaster - SC-CD05</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_95c6b26d10f26310412462470d549a47" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_95c6b26d10f26310412462470d549a47 = L.map(
+                "map_95c6b26d10f26310412462470d549a47",
+                {
+                    center: [35.00596399821716, -80.9000673135591],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_95c6b26d10f26310412462470d549a47);
+
+            
+
+        
+    
+            var tile_layer_802bc7613c70457d4276476d8d43db0b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_802bc7613c70457d4276476d8d43db0b.addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+            var polygon_291c9f45986e671aabff1b1733c9751f = L.polygon(
+                [[34.94144000000005, -80.868314], [34.94122700000004, -80.868214], [34.941250000000046, -80.86838], [34.941300974159105, -80.86848897910724], [34.94130100000001, -80.868489], [34.941668, -80.868788], [34.94266100000002, -80.869383], [34.94301696154997, -80.86870007376872], [34.94254999999996, -80.868639], [34.94225900000003, -80.868592], [34.94216699999998, -80.868559], [34.94144000000005, -80.868314]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_db5fb4e6682a28637671cd724eeb1177 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00c030b6563d7e54ae4f54865b2b16ac = $(`<div id="html_00c030b6563d7e54ae4f54865b2b16ac" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_db5fb4e6682a28637671cd724eeb1177.setContent(html_00c030b6563d7e54ae4f54865b2b16ac);
+            
+        
+
+        polygon_291c9f45986e671aabff1b1733c9751f.bindPopup(popup_db5fb4e6682a28637671cd724eeb1177)
+        ;
+
+        
+    
+    
+            polygon_291c9f45986e671aabff1b1733c9751f.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7c531462b9608b2ba54f3b32d84efaa8 = L.polygon(
+                [[34.950099999999956, -80.868925], [34.94996099999995, -80.869048], [34.94988399999998, -80.869122], [34.94962800000002, -80.869391], [34.9494830954421, -80.86959194515202], [34.949791000000005, -80.869415], [34.95007600000005, -80.869212], [34.950213999999974, -80.869019], [34.95043300000002, -80.868752], [34.950478741009114, -80.86869730966332], [34.95039499999996, -80.868736], [34.95014299999996, -80.868894], [34.950099999999956, -80.868925]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_6007d67998b04763ad53f5876f8dbe77 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3517f295a525bc9c5f7e160304eadf81 = $(`<div id="html_3517f295a525bc9c5f7e160304eadf81" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_6007d67998b04763ad53f5876f8dbe77.setContent(html_3517f295a525bc9c5f7e160304eadf81);
+            
+        
+
+        polygon_7c531462b9608b2ba54f3b32d84efaa8.bindPopup(popup_6007d67998b04763ad53f5876f8dbe77)
+        ;
+
+        
+    
+    
+            polygon_7c531462b9608b2ba54f3b32d84efaa8.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8adb09ff1ad2ef1e18d360fc6436080d = L.polygon(
+                [[34.96185199999996, -80.87266600000001], [34.961781426965295, -80.87264270403624], [34.96178199999997, -80.872643], [34.96185199999996, -80.87266600000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_b0c20ceb108a5ee4a69f4e6fc272e21c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3fc5423fad2b09d608a2f9522a811861 = $(`<div id="html_3fc5423fad2b09d608a2f9522a811861" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_b0c20ceb108a5ee4a69f4e6fc272e21c.setContent(html_3fc5423fad2b09d608a2f9522a811861);
+            
+        
+
+        polygon_8adb09ff1ad2ef1e18d360fc6436080d.bindPopup(popup_b0c20ceb108a5ee4a69f4e6fc272e21c)
+        ;
+
+        
+    
+    
+            polygon_8adb09ff1ad2ef1e18d360fc6436080d.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a4fe82f6fbe1c6d39a3dffb11350b118 = L.polygon(
+                [[34.96206000000001, -80.87278700000002], [34.96206262505745, -80.87278835520775], [34.96195099999995, -80.872717], [34.96206000000001, -80.87278700000002]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_fad0d5131898c2b62692cace78bac527 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c7171efbd0af0cc1ff86d26772157128 = $(`<div id="html_c7171efbd0af0cc1ff86d26772157128" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_fad0d5131898c2b62692cace78bac527.setContent(html_c7171efbd0af0cc1ff86d26772157128);
+            
+        
+
+        polygon_a4fe82f6fbe1c6d39a3dffb11350b118.bindPopup(popup_fad0d5131898c2b62692cace78bac527)
+        ;
+
+        
+    
+    
+            polygon_a4fe82f6fbe1c6d39a3dffb11350b118.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_380b2414875d6568d7e645aa32ef3597 = L.polygon(
+                [[34.96251499999998, -80.879842], [34.962570999999976, -80.879738], [34.962665999999984, -80.879586], [34.96272, -80.879503], [34.962762000000005, -80.879434], [34.96278100000003, -80.879399], [34.962801000000006, -80.879339], [34.96281600000007, -80.879301], [34.96284500000002, -80.87922200000001], [34.96286999999999, -80.879167], [34.96288799999996, -80.879131], [34.96290900000001, -80.879097], [34.962945000000026, -80.87905], [34.963013000000025, -80.878985], [34.96305599999999, -80.87894900000002], [34.96308200000001, -80.87892], [34.96310400000003, -80.878888], [34.963111, -80.878868], [34.963129000000016, -80.878785], [34.96314200000003, -80.878745], [34.96317399999998, -80.878695], [34.96330399999999, -80.878522], [34.96334199999999, -80.878478], [34.96339499999996, -80.878424], [34.96343700000004, -80.878385], [34.963462, -80.878356], [34.96350900000002, -80.87829200000002], [34.96351899999998, -80.878275], [34.963543000000016, -80.878218], [34.963557999999985, -80.878179], [34.96356700000001, -80.878137], [34.96357400000002, -80.878073], [34.96357999999999, -80.877986], [34.96356999999995, -80.877899], [34.963543999999985, -80.877816], [34.96352400000002, -80.877778], [34.96352194958003, -80.87777509523777], [34.96350399999998, -80.877809], [34.963373999999995, -80.877992], [34.963049999999996, -80.87821000000001], [34.962557000000004, -80.87858], [34.96241499999998, -80.878742], [34.96234, -80.878932], [34.962325999999976, -80.879195], [34.962325000000014, -80.879419], [34.96238599999997, -80.87962], [34.96251499999998, -80.879842]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_57ec5e0fb615480b43acff743ccd38d8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_78079916504c06e8dae06f2fbd96e2ef = $(`<div id="html_78079916504c06e8dae06f2fbd96e2ef" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_57ec5e0fb615480b43acff743ccd38d8.setContent(html_78079916504c06e8dae06f2fbd96e2ef);
+            
+        
+
+        polygon_380b2414875d6568d7e645aa32ef3597.bindPopup(popup_57ec5e0fb615480b43acff743ccd38d8)
+        ;
+
+        
+    
+    
+            polygon_380b2414875d6568d7e645aa32ef3597.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_3a9e0f14fbef806f91310e1d0eae66f7 = L.polygon(
+                [[34.96251499999998, -80.879842], [34.962611999999986, -80.879957], [34.962740000000004, -80.880102], [34.962933, -80.88024000000001], [34.96321400000002, -80.880275], [34.96332000000004, -80.88019], [34.96334600000002, -80.880169], [34.963346270071085, -80.8801687899448], [34.96251499999998, -80.879842]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_62d688294a254a3b29a070473202375c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7927b10af1fc2d3a647ab996b3b0abc5 = $(`<div id="html_7927b10af1fc2d3a647ab996b3b0abc5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_62d688294a254a3b29a070473202375c.setContent(html_7927b10af1fc2d3a647ab996b3b0abc5);
+            
+        
+
+        polygon_3a9e0f14fbef806f91310e1d0eae66f7.bindPopup(popup_62d688294a254a3b29a070473202375c)
+        ;
+
+        
+    
+    
+            polygon_3a9e0f14fbef806f91310e1d0eae66f7.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_f2ff281c2b1e1319d9b1a97d3b5580e8 = L.polygon(
+                [[34.96540799999999, -80.882476], [34.96557799999998, -80.88246100000002], [34.96577799999999, -80.882494], [34.96584499999997, -80.882501], [34.96587899999997, -80.88249900000001], [34.96600599999997, -80.882431], [34.966095000000045, -80.882368], [34.96619000000001, -80.882324], [34.966257000000006, -80.8823], [34.96639200000004, -80.882298], [34.96652599999997, -80.882273], [34.96658599999997, -80.88223100000002], [34.96667099999999, -80.882157], [34.96669700000006, -80.882129], [34.96671499999997, -80.882093], [34.966720000000024, -80.882071], [34.96673299999999, -80.882011], [34.96673399999994, -80.88197600000001], [34.96672700000003, -80.881923], [34.966733, -80.88184600000001], [34.96673199999999, -80.881789], [34.96672299999996, -80.88174], [34.96668600000001, -80.881665], [34.96664399999999, -80.881595], [34.96654799999998, -80.881465], [34.96615499999999, -80.88102300000001], [34.96610000000002, -80.88097], [34.96607499999999, -80.880938], [34.965992000000014, -80.880857], [34.965819, -80.880706], [34.96572599999999, -80.880645], [34.965659000000024, -80.880618], [34.96562400000003, -80.880611], [34.965588000000004, -80.880612], [34.96551899999998, -80.880623], [34.965449999999976, -80.880643], [34.96531400000001, -80.880694], [34.96524499999996, -80.880713], [34.96510200000003, -80.880728], [34.96499600000001, -80.880728], [34.96496100000002, -80.880736], [34.96487299999998, -80.880769], [34.964708037842726, -80.88070414645014], [34.96480800000004, -80.881091], [34.965031, -80.88176200000001], [34.96511100000001, -80.882453], [34.96511104660862, -80.8824534165623], [34.96517500000003, -80.88246], [34.965194999999994, -80.882465], [34.96527299999999, -80.882481], [34.96540799999999, -80.882476]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_3f042c0c4a61ffd81e70d58dec39dde7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_010f3bc80b4699df94772b54cfd62c26 = $(`<div id="html_010f3bc80b4699df94772b54cfd62c26" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_3f042c0c4a61ffd81e70d58dec39dde7.setContent(html_010f3bc80b4699df94772b54cfd62c26);
+            
+        
+
+        polygon_f2ff281c2b1e1319d9b1a97d3b5580e8.bindPopup(popup_3f042c0c4a61ffd81e70d58dec39dde7)
+        ;
+
+        
+    
+    
+            polygon_f2ff281c2b1e1319d9b1a97d3b5580e8.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_591931a4341a23cea76a972a35aa637d = L.polygon(
+                [[34.97073800000001, -80.882378], [34.970703550289414, -80.88237078195844], [34.970703999999984, -80.88237100000002], [34.97073800000001, -80.882378]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_19644c157dfc6d29f88af45429a3df4f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8681155d9ea00d65788491caa38eddb = $(`<div id="html_d8681155d9ea00d65788491caa38eddb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_19644c157dfc6d29f88af45429a3df4f.setContent(html_d8681155d9ea00d65788491caa38eddb);
+            
+        
+
+        polygon_591931a4341a23cea76a972a35aa637d.bindPopup(popup_19644c157dfc6d29f88af45429a3df4f)
+        ;
+
+        
+    
+    
+            polygon_591931a4341a23cea76a972a35aa637d.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e00756f7fe4fc4358e6e7bbdc73876de = L.polygon(
+                [[34.96670099999999, -80.884731], [34.96678899999996, -80.884624], [34.967452, -80.884406], [34.96795699999999, -80.884307], [34.968022999999995, -80.884238], [34.96802332934958, -80.88423765243893], [34.96796900000003, -80.88424], [34.96789, -80.884253], [34.967828, -80.884258], [34.96775900000003, -80.88422800000001], [34.967631000000004, -80.884192], [34.967586999999966, -80.884183], [34.967458, -80.884189], [34.96725500000005, -80.88424], [34.966856, -80.884357], [34.96669200000001, -80.884395], [34.96645900000001, -80.884473], [34.96625799999994, -80.88453], [34.966140999999986, -80.884587], [34.966117, -80.88456900000001], [34.96607000000002, -80.884533], [34.966006, -80.884493], [34.96588600000001, -80.88439700000002], [34.965772000000015, -80.884291], [34.96569399999999, -80.884201], [34.96558600000003, -80.884025], [34.965448999999985, -80.883823], [34.965370000000036, -80.883677], [34.965280843938494, -80.88353385908272], [34.96541900000002, -80.883823], [34.965571000000025, -80.884099], [34.965861000000004, -80.88439900000002], [34.96609299999999, -80.884605], [34.96620299999996, -80.88470200000002], [34.966359, -80.884742], [34.966606000000056, -80.884756], [34.96670099999999, -80.884731]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_0d6b216ade0eea65a284a08daa44b3cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_395ed3d667e904f32445a2a8fe46cb1a = $(`<div id="html_395ed3d667e904f32445a2a8fe46cb1a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_0d6b216ade0eea65a284a08daa44b3cd.setContent(html_395ed3d667e904f32445a2a8fe46cb1a);
+            
+        
+
+        polygon_e00756f7fe4fc4358e6e7bbdc73876de.bindPopup(popup_0d6b216ade0eea65a284a08daa44b3cd)
+        ;
+
+        
+    
+    
+            polygon_e00756f7fe4fc4358e6e7bbdc73876de.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_235e466610547467f696873779fccae6 = L.polygon(
+                [[34.96891431645476, -80.88352886259216], [34.96899, -80.88349600000001], [34.969494, -80.883239], [34.96959099999995, -80.883093], [34.969386, -80.883157], [34.96931899999999, -80.883186], [34.96919, -80.88326], [34.96896400000001, -80.883475], [34.96891431645476, -80.88352886259216]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_a2c4cdaf0d41bbdf90a8b99c096eb509 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3ee327849a33d8f9daa01330a09a92cd = $(`<div id="html_3ee327849a33d8f9daa01330a09a92cd" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_a2c4cdaf0d41bbdf90a8b99c096eb509.setContent(html_3ee327849a33d8f9daa01330a09a92cd);
+            
+        
+
+        polygon_235e466610547467f696873779fccae6.bindPopup(popup_a2c4cdaf0d41bbdf90a8b99c096eb509)
+        ;
+
+        
+    
+    
+            polygon_235e466610547467f696873779fccae6.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6cbaeccadce5de0cdceda9fb3aa01a0b = L.polygon(
+                [[34.97225900000003, -80.883353], [34.97213200000004, -80.883274], [34.97203399999996, -80.88322100000002], [34.97196600000004, -80.883195], [34.971934999999995, -80.88317400000001], [34.97185500000005, -80.883127], [34.971685, -80.88306000000001], [34.97171799999999, -80.883112], [34.971784000000014, -80.883164], [34.97191099999998, -80.883234], [34.97212600000002, -80.88335], [34.97232899999997, -80.8834], [34.97232971200847, -80.88340017273498], [34.97228899999999, -80.883376], [34.97225900000003, -80.883353]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_8ed69701d1e3996bd352df7e2a831270 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c671aa22b19cfeb50e7d761d097ab914 = $(`<div id="html_c671aa22b19cfeb50e7d761d097ab914" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_8ed69701d1e3996bd352df7e2a831270.setContent(html_c671aa22b19cfeb50e7d761d097ab914);
+            
+        
+
+        polygon_6cbaeccadce5de0cdceda9fb3aa01a0b.bindPopup(popup_8ed69701d1e3996bd352df7e2a831270)
+        ;
+
+        
+    
+    
+            polygon_6cbaeccadce5de0cdceda9fb3aa01a0b.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_34fbf0000b8364d2498131c497c9c439 = L.polygon(
+                [[34.974046999999985, -80.883727], [34.973976999999955, -80.883715], [34.973799, -80.883711], [34.97376400000003, -80.883722], [34.97362300000002, -80.883743], [34.97358800000002, -80.883753], [34.973555000000026, -80.883768], [34.973544142657246, -80.88377506589536], [34.97395099999997, -80.883963], [34.97412599999997, -80.883946], [34.97422478741881, -80.88386916534117], [34.97420399999998, -80.883812], [34.974183000000004, -80.883776], [34.97415100000003, -80.883758], [34.974046999999985, -80.883727]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_6f0868bc2aea1cdc5f7647e9a2e73c57 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44f59098931d1204fc886ba36cf53c7b = $(`<div id="html_44f59098931d1204fc886ba36cf53c7b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_6f0868bc2aea1cdc5f7647e9a2e73c57.setContent(html_44f59098931d1204fc886ba36cf53c7b);
+            
+        
+
+        polygon_34fbf0000b8364d2498131c497c9c439.bindPopup(popup_6f0868bc2aea1cdc5f7647e9a2e73c57)
+        ;
+
+        
+    
+    
+            polygon_34fbf0000b8364d2498131c497c9c439.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_230646f2c789caae396bcee324cb964a = L.polygon(
+                [[34.97650100000004, -80.885805], [34.976439999999975, -80.88576], [34.97630299999999, -80.885619], [34.97618199999997, -80.885457], [34.976119999999966, -80.88534900000002], [34.97601000000002, -80.885124], [34.97589500000002, -80.88485], [34.97583900000001, -80.884689], [34.975773999999994, -80.884531], [34.975716000000006, -80.884421], [34.97560900000001, -80.884305], [34.97549600000003, -80.884197], [34.97542664622477, -80.88414526886213], [34.97542699999998, -80.88414600000002], [34.97556100000004, -80.884618], [34.975654999999996, -80.885131], [34.97577700000003, -80.88535900000001], [34.97603899999999, -80.885554], [34.97647500000001, -80.885821], [34.97657458936962, -80.88584290966118], [34.97650100000004, -80.885805]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_06d16e8afa47671752350a9f9565ce67 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0627c6334964ccdcea4c89363e95d364 = $(`<div id="html_0627c6334964ccdcea4c89363e95d364" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_06d16e8afa47671752350a9f9565ce67.setContent(html_0627c6334964ccdcea4c89363e95d364);
+            
+        
+
+        polygon_230646f2c789caae396bcee324cb964a.bindPopup(popup_06d16e8afa47671752350a9f9565ce67)
+        ;
+
+        
+    
+    
+            polygon_230646f2c789caae396bcee324cb964a.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_381ecf8fdca8c434be2ce1bdf150ea07 = L.polygon(
+                [[34.97695100000004, -80.885909], [34.97670199999998, -80.885896], [34.976853, -80.885904], [34.97722099999998, -80.88598], [34.97745252063812, -80.88595305578798], [34.977303000000035, -80.885902], [34.97723299999998, -80.885889], [34.97716199999999, -80.885883], [34.97702200000003, -80.885905], [34.97695100000004, -80.885909]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_fa1c990fbddf231f910868dda92a774e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_920bd77eed67082fe3331e72106c2a1d = $(`<div id="html_920bd77eed67082fe3331e72106c2a1d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_fa1c990fbddf231f910868dda92a774e.setContent(html_920bd77eed67082fe3331e72106c2a1d);
+            
+        
+
+        polygon_381ecf8fdca8c434be2ce1bdf150ea07.bindPopup(popup_fa1c990fbddf231f910868dda92a774e)
+        ;
+
+        
+    
+    
+            polygon_381ecf8fdca8c434be2ce1bdf150ea07.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_47dc095a7e24c7a9d39c766ee42e31b7 = L.polygon(
+                [[34.97969200000002, -80.886306], [34.97945800000001, -80.886197], [34.97932000000006, -80.886155], [34.97905600000002, -80.886022], [34.97895500000003, -80.885977], [34.97885199999997, -80.885942], [34.97867600000002, -80.88591200000002], [34.97856900000004, -80.885915], [34.97852266487759, -80.88592185238619], [34.97852299999997, -80.88592200000001], [34.979010000000024, -80.886134], [34.97969500000002, -80.886411], [34.98011699999999, -80.886445], [34.980209000000045, -80.88646], [34.97999699999999, -80.886425], [34.979783000000005, -80.886353], [34.97969200000002, -80.886306]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_fc6741696faea114a1366727b68c45f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2bd23fdb90b6fc6c69cd6b4cf7266a75 = $(`<div id="html_2bd23fdb90b6fc6c69cd6b4cf7266a75" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_fc6741696faea114a1366727b68c45f2.setContent(html_2bd23fdb90b6fc6c69cd6b4cf7266a75);
+            
+        
+
+        polygon_47dc095a7e24c7a9d39c766ee42e31b7.bindPopup(popup_fc6741696faea114a1366727b68c45f2)
+        ;
+
+        
+    
+    
+            polygon_47dc095a7e24c7a9d39c766ee42e31b7.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_855d54c894ea4959757595eb7b01fdf4 = L.polygon(
+                [[34.98280700000001, -80.887626], [34.982715000000006, -80.887561], [34.98262499999997, -80.88749], [34.982532000000035, -80.887426], [34.98240200000002, -80.88735100000001], [34.98228600000004, -80.88725], [34.982106999999985, -80.887106], [34.98198399999999, -80.887017], [34.98182299999999, -80.886922], [34.981723999999986, -80.88687200000001], [34.98155000000003, -80.886822], [34.981414999999984, -80.886767], [34.98134900000004, -80.886733], [34.981314999999995, -80.88672], [34.981051999999984, -80.886586], [34.981154, -80.886638], [34.98118699999998, -80.886684], [34.981266000000026, -80.886812], [34.981806000000006, -80.887244], [34.982201999999994, -80.887498], [34.98243700000002, -80.887605], [34.982652000000016, -80.88765400000001], [34.98280700000001, -80.887626]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_bb628208794988dee7201af28c576eec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_afe94c91a64a8cfd20ddb859f7f6492c = $(`<div id="html_afe94c91a64a8cfd20ddb859f7f6492c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_bb628208794988dee7201af28c576eec.setContent(html_afe94c91a64a8cfd20ddb859f7f6492c);
+            
+        
+
+        polygon_855d54c894ea4959757595eb7b01fdf4.bindPopup(popup_bb628208794988dee7201af28c576eec)
+        ;
+
+        
+    
+    
+            polygon_855d54c894ea4959757595eb7b01fdf4.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4941df56495b53e098cc4545c5d8b661 = L.polygon(
+                [[34.989120000000014, -80.88548600000001], [34.989002000000006, -80.88552500000002], [34.98894900000003, -80.885544], [34.98881100000004, -80.88558], [34.98896300000004, -80.885627], [34.98908299999998, -80.885598], [34.989180999999995, -80.885558], [34.98931599999999, -80.885547], [34.989458724987436, -80.88540427501329], [34.98943300000001, -80.885409], [34.98915700000005, -80.885476], [34.989120000000014, -80.88548600000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_dddd12429e211211e54475652c7de70d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_68a7d01a3df12ae0be790bc711eb9d51 = $(`<div id="html_68a7d01a3df12ae0be790bc711eb9d51" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_dddd12429e211211e54475652c7de70d.setContent(html_68a7d01a3df12ae0be790bc711eb9d51);
+            
+        
+
+        polygon_4941df56495b53e098cc4545c5d8b661.bindPopup(popup_dddd12429e211211e54475652c7de70d)
+        ;
+
+        
+    
+    
+            polygon_4941df56495b53e098cc4545c5d8b661.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e0ebd34db25717e3855f427d7e8ec2b7 = L.polygon(
+                [[34.98814399999995, -80.886499], [34.98808900000002, -80.88666], [34.98803600000001, -80.886789], [34.98802179990415, -80.88682476322295], [34.98802300000001, -80.88682300000002], [34.98815899999997, -80.886622], [34.98822200000001, -80.88633], [34.98824099999999, -80.886265], [34.988259425927225, -80.88620196393549], [34.988231999999996, -80.886259], [34.98815500000004, -80.886457], [34.98814399999995, -80.886499]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_58d25e0176863ad12ee26e1f59fea95f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0afb709d81b56d97ad897745b82ed443 = $(`<div id="html_0afb709d81b56d97ad897745b82ed443" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_58d25e0176863ad12ee26e1f59fea95f.setContent(html_0afb709d81b56d97ad897745b82ed443);
+            
+        
+
+        polygon_e0ebd34db25717e3855f427d7e8ec2b7.bindPopup(popup_58d25e0176863ad12ee26e1f59fea95f)
+        ;
+
+        
+    
+    
+            polygon_e0ebd34db25717e3855f427d7e8ec2b7.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ff132dae1982d02622058052dee9476b = L.polygon(
+                [[34.98474999999998, -80.88814], [34.98476299999998, -80.888099], [34.984781999999974, -80.888015], [34.984786, -80.887971], [34.98478299999997, -80.887884], [34.984771000000016, -80.887753], [34.984758000000035, -80.887712], [34.98474400000005, -80.887685], [34.984739000000005, -80.887675], [34.98465799999994, -80.887589], [34.98462599999995, -80.88757], [34.98455700000001, -80.887549], [34.98445200000003, -80.88753], [34.984416, -80.887532], [34.98438100000001, -80.887542], [34.984310999999984, -80.887553], [34.98424600000004, -80.887588], [34.984124, -80.88768], [34.98403799999999, -80.887758], [34.98427300000002, -80.888014], [34.984461000000024, -80.888184], [34.984557999999986, -80.888398], [34.98464100000003, -80.888558], [34.98464127715381, -80.8885585337768], [34.98466300000002, -80.888473], [34.984723000000066, -80.888267], [34.98474999999998, -80.88814]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_3c4021e5aa0e98c29e3f35837c69a8b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bd57633372273e7b7566177a6e1e216b = $(`<div id="html_bd57633372273e7b7566177a6e1e216b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_3c4021e5aa0e98c29e3f35837c69a8b1.setContent(html_bd57633372273e7b7566177a6e1e216b);
+            
+        
+
+        polygon_ff132dae1982d02622058052dee9476b.bindPopup(popup_3c4021e5aa0e98c29e3f35837c69a8b1)
+        ;
+
+        
+    
+    
+            polygon_ff132dae1982d02622058052dee9476b.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_358c1055b5428eab702e0c633a5d0f39 = L.polygon(
+                [[34.98806899999999, -80.887453], [34.98812000000003, -80.887708], [34.98813100000001, -80.887883], [34.98811600000001, -80.887969], [34.98810500000001, -80.888011], [34.98806799999998, -80.888086], [34.98802699999999, -80.888157], [34.98795299999999, -80.888253], [34.987899999999975, -80.888311], [34.98800299999996, -80.888289], [34.98805799999998, -80.888261], [34.98815899999997, -80.888122], [34.98823300000005, -80.887846], [34.98815699999999, -80.887741], [34.98804208752734, -80.8873323112904], [34.98805700000001, -80.887412], [34.98806899999999, -80.887453]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_7d2b0987e612456ad9bcaddcefa30b5f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89da561e7581ae776d11b2c0bbead37e = $(`<div id="html_89da561e7581ae776d11b2c0bbead37e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_7d2b0987e612456ad9bcaddcefa30b5f.setContent(html_89da561e7581ae776d11b2c0bbead37e);
+            
+        
+
+        polygon_358c1055b5428eab702e0c633a5d0f39.bindPopup(popup_7d2b0987e612456ad9bcaddcefa30b5f)
+        ;
+
+        
+    
+    
+            polygon_358c1055b5428eab702e0c633a5d0f39.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_62083ef86e0dc292d6dec49739a98397 = L.polygon(
+                [[34.993073, -80.89393], [34.992983999999986, -80.893857], [34.99286899999999, -80.893752], [34.99277999999996, -80.89368], [34.99265499999999, -80.893594], [34.992590999999955, -80.893556], [34.992190000000015, -80.89327], [34.992001999999985, -80.893144], [34.991799999999984, -80.893062], [34.991765, -80.893052], [34.99166299999995, -80.893011], [34.99163100000002, -80.892993], [34.99146300000002, -80.892921], [34.99143099999998, -80.892901], [34.99132, -80.892791], [34.991260999999966, -80.892743], [34.99111799999996, -80.892613], [34.99098700000003, -80.892542], [34.9909672912951, -80.89253332227244], [34.990967999999945, -80.892534], [34.99126300000001, -80.892809], [34.992205999999996, -80.893429], [34.993170000000006, -80.894018], [34.99329500000003, -80.89407], [34.99319799999998, -80.894016], [34.993073, -80.89393]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_006ef5af083e459ef8c63227bdf731c8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e10578e00284e7ab885e13222a077745 = $(`<div id="html_e10578e00284e7ab885e13222a077745" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_006ef5af083e459ef8c63227bdf731c8.setContent(html_e10578e00284e7ab885e13222a077745);
+            
+        
+
+        polygon_62083ef86e0dc292d6dec49739a98397.bindPopup(popup_006ef5af083e459ef8c63227bdf731c8)
+        ;
+
+        
+    
+    
+            polygon_62083ef86e0dc292d6dec49739a98397.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5c7567b0d5f737c75b748fe44786593a = L.polygon(
+                [[34.99611999999999, -80.893416], [34.99609100000001, -80.89344], [34.99601400000002, -80.893531], [34.995975413894996, -80.89358285014173], [34.99609099999997, -80.893541], [34.99632200000003, -80.893319], [34.99656199999999, -80.893141], [34.99656262402221, -80.89314053530296], [34.99645800000003, -80.893179], [34.996361, -80.89323500000002], [34.99617100000002, -80.893357], [34.99611999999999, -80.893416]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_66e67283b7f4487b3f7824a74406748e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fdb026838b666a8b29a714ad07c97799 = $(`<div id="html_fdb026838b666a8b29a714ad07c97799" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_66e67283b7f4487b3f7824a74406748e.setContent(html_fdb026838b666a8b29a714ad07c97799);
+            
+        
+
+        polygon_5c7567b0d5f737c75b748fe44786593a.bindPopup(popup_66e67283b7f4487b3f7824a74406748e)
+        ;
+
+        
+    
+    
+            polygon_5c7567b0d5f737c75b748fe44786593a.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_17d41d9434910ad1309c48adc8ff88ec = L.polygon(
+                [[34.998585999999996, -80.893729], [34.99839999999997, -80.893524], [34.998274000000016, -80.89342], [34.99815599999998, -80.893281], [34.99809299999998, -80.893241], [34.99802500000001, -80.893214], [34.99798999999996, -80.893207], [34.997953999999964, -80.893211], [34.99788800000004, -80.893242], [34.99781999999997, -80.893268], [34.997758, -80.893311], [34.997740161631775, -80.89332018946445], [34.998071000000046, -80.893708], [34.998552999999994, -80.894191], [34.99909, -80.894374], [34.999311, -80.894436], [34.999311002137766, -80.89443600060666], [34.99907099999998, -80.894214], [34.998874, -80.894024], [34.998585999999996, -80.893729]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_2da8e7616936b1527d0c2e4308aac3c9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_11eb9d7ff37ad9fe1032892f396c823c = $(`<div id="html_11eb9d7ff37ad9fe1032892f396c823c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_2da8e7616936b1527d0c2e4308aac3c9.setContent(html_11eb9d7ff37ad9fe1032892f396c823c);
+            
+        
+
+        polygon_17d41d9434910ad1309c48adc8ff88ec.bindPopup(popup_2da8e7616936b1527d0c2e4308aac3c9)
+        ;
+
+        
+    
+    
+            polygon_17d41d9434910ad1309c48adc8ff88ec.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_635218187ceb173a2e48452a6e294e6d = L.polygon(
+                [[34.99346299999996, -80.894144], [34.99348199999998, -80.89415000000001], [34.99374700000001, -80.894221], [34.99401900000001, -80.894196], [34.99417600000005, -80.894172], [34.99456800000003, -80.894113], [34.994606182990545, -80.89409831423457], [34.99356300000002, -80.894151], [34.99346299999996, -80.894144]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_9613580e11d1dbcd028e2caa57aa2c17 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e8d54b1fb6e58396277eb67387415737 = $(`<div id="html_e8d54b1fb6e58396277eb67387415737" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_9613580e11d1dbcd028e2caa57aa2c17.setContent(html_e8d54b1fb6e58396277eb67387415737);
+            
+        
+
+        polygon_635218187ceb173a2e48452a6e294e6d.bindPopup(popup_9613580e11d1dbcd028e2caa57aa2c17)
+        ;
+
+        
+    
+    
+            polygon_635218187ceb173a2e48452a6e294e6d.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_43a3a2b3022a0bd27223bbb27b87be1b = L.polygon(
+                [[35.00047599999998, -80.89524], [35.00045462040047, -80.89523253177067], [35.00058000000002, -80.89534], [35.00047599999998, -80.89524]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_f4b84bd74b25d641853a33187cc405d2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e72cac179632316f8c2d3f32c3439d88 = $(`<div id="html_e72cac179632316f8c2d3f32c3439d88" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_f4b84bd74b25d641853a33187cc405d2.setContent(html_e72cac179632316f8c2d3f32c3439d88);
+            
+        
+
+        polygon_43a3a2b3022a0bd27223bbb27b87be1b.bindPopup(popup_f4b84bd74b25d641853a33187cc405d2)
+        ;
+
+        
+    
+    
+            polygon_43a3a2b3022a0bd27223bbb27b87be1b.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5b5081a42b75454c8afdb9ad40f295f8 = L.polygon(
+                [[35.002654, -80.898104], [35.002600000000015, -80.898009], [35.002572, -80.897965], [35.002535999999985, -80.897906], [35.00240100000002, -80.89769800000002], [35.002225000000024, -80.897404], [35.002136, -80.897255], [35.00208600000002, -80.897193], [35.00205282834623, -80.89715443791768], [35.002388999999994, -80.897738], [35.002545000000005, -80.898055], [35.00261000000002, -80.89817700000002], [35.00276199999997, -80.898357], [35.003025770268465, -80.8986859953782], [35.00301499999996, -80.89867], [35.002788000000066, -80.89830800000001], [35.002654, -80.898104]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_a56b080bf48d5df44083f55d9e57da18 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_12048a378e377c0d031951bf02b041c1 = $(`<div id="html_12048a378e377c0d031951bf02b041c1" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_a56b080bf48d5df44083f55d9e57da18.setContent(html_12048a378e377c0d031951bf02b041c1);
+            
+        
+
+        polygon_5b5081a42b75454c8afdb9ad40f295f8.bindPopup(popup_a56b080bf48d5df44083f55d9e57da18)
+        ;
+
+        
+    
+    
+            polygon_5b5081a42b75454c8afdb9ad40f295f8.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_73964d7e8eaf16c27281084ba9c1fbfa = L.polygon(
+                [[35.01223099999999, -80.90011], [35.01225300000001, -80.900144], [35.012397, -80.900335], [35.01244799999998, -80.900394], [35.01259700000002, -80.900575], [35.01263499999998, -80.900602], [35.01272700000003, -80.900667], [35.01283999999997, -80.900828], [35.012887999999954, -80.90107], [35.012924000000005, -80.901209], [35.01294399999998, -80.901279], [35.01289800274874, -80.9014229913952], [35.012933000000025, -80.901396], [35.012959, -80.901367], [35.013151000000015, -80.901107], [35.013424, -80.900763], [35.013470999999996, -80.900698], [35.01352199999998, -80.900635], [35.014030000000034, -80.900026], [35.01417300000001, -80.899832], [35.01437399999999, -80.899527], [35.01441999999997, -80.899407], [35.014440000000036, -80.899322], [35.01444600000004, -80.899279], [35.01444900000005, -80.899147], [35.01444099999999, -80.898971], [35.01441200000005, -80.89875400000001], [35.01436700000003, -80.898494], [35.01434099999998, -80.898366], [35.01429999999997, -80.898198], [35.014161999999985, -80.897744], [35.01407499999999, -80.89752], [35.01394599999999, -80.897188], [35.01388999999998, -80.897075], [35.01381600000001, -80.896981], [35.01376100000002, -80.896925], [35.01373, -80.896902], [35.013665, -80.896867], [35.01348800000001, -80.896849], [35.013453999999996, -80.896862], [35.013335000000005, -80.89695], [35.01322700000003, -80.897066], [35.013121999999996, -80.89718200000002], [35.013019999999976, -80.897304], [35.012921, -80.89743], [35.01282299999996, -80.89755700000002], [35.01277000000003, -80.89761600000001], [35.012659999999954, -80.897725], [35.01258000000003, -80.897812], [35.01256700000001, -80.89782900000002], [35.01255500000005, -80.897844], [35.012502, -80.89790300000001], [35.01242699999999, -80.897996], [35.012355000000014, -80.898094], [35.01217000000001, -80.898361], [35.012020000000035, -80.898608], [35.01156800000002, -80.899232], [35.01152600000002, -80.899312], [35.011441078874725, -80.89935001232418], [35.011473000000024, -80.899355], [35.01157300000002, -80.899429], [35.01160400000003, -80.899454], [35.01165600000001, -80.899493], [35.011702999999976, -80.89952600000001], [35.011718, -80.899538], [35.01207399999998, -80.89986], [35.01223099999999, -80.90011]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_76479af5c68de08db7771ef12bc2524f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fd5471f6001ab744262c401bd97b256d = $(`<div id="html_fd5471f6001ab744262c401bd97b256d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_76479af5c68de08db7771ef12bc2524f.setContent(html_fd5471f6001ab744262c401bd97b256d);
+            
+        
+
+        polygon_73964d7e8eaf16c27281084ba9c1fbfa.bindPopup(popup_76479af5c68de08db7771ef12bc2524f)
+        ;
+
+        
+    
+    
+            polygon_73964d7e8eaf16c27281084ba9c1fbfa.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c97c4a72a4d38185be5c98ebcf879188 = L.polygon(
+                [[35.00857499999997, -80.899631], [35.00851399999996, -80.899586], [35.00838700000003, -80.899508], [35.00835299999999, -80.899494], [35.008283000000034, -80.899474], [35.008212999985176, -80.89946399998837], [35.00821300000003, -80.899464], [35.00831000000003, -80.89954], [35.008527, -80.899631], [35.00862700000001, -80.899698], [35.008743999999965, -80.899777], [35.00883900000004, -80.899856], [35.00863200000002, -80.899683], [35.00857499999997, -80.899631]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_63fb26f29cd5da174659c6ad9168098e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cfa337bc083fd241e90afb8fb8308100 = $(`<div id="html_cfa337bc083fd241e90afb8fb8308100" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_63fb26f29cd5da174659c6ad9168098e.setContent(html_cfa337bc083fd241e90afb8fb8308100);
+            
+        
+
+        polygon_c97c4a72a4d38185be5c98ebcf879188.bindPopup(popup_63fb26f29cd5da174659c6ad9168098e)
+        ;
+
+        
+    
+    
+            polygon_c97c4a72a4d38185be5c98ebcf879188.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_16f0d33ed4dc2cbc337e8bd27e1e4887 = L.polygon(
+                [[35.00517999999998, -80.901845], [35.00539500000002, -80.90203], [35.00526899999999, -80.901876], [35.005221999999996, -80.901811], [35.00519400000001, -80.901783], [35.005174000000004, -80.901754], [35.00513333893729, -80.90169707450062], [35.00517999999998, -80.901845]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_ed7d4eed00763b20ef228792152c1f08 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6a578034dd42ab730b2f0635d93ce64a = $(`<div id="html_6a578034dd42ab730b2f0635d93ce64a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ed7d4eed00763b20ef228792152c1f08.setContent(html_6a578034dd42ab730b2f0635d93ce64a);
+            
+        
+
+        polygon_16f0d33ed4dc2cbc337e8bd27e1e4887.bindPopup(popup_ed7d4eed00763b20ef228792152c1f08)
+        ;
+
+        
+    
+    
+            polygon_16f0d33ed4dc2cbc337e8bd27e1e4887.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ab38b563085ac4a3a0c9121a6d92fee3 = L.polygon(
+                [[35.00601599999997, -80.9025], [35.00610499999996, -80.902546], [35.006304, -80.902538], [35.006367999999995, -80.902536], [35.00652100000002, -80.902548], [35.00668699999997, -80.902463], [35.00675500000002, -80.90239], [35.00685999999998, -80.902277], [35.00714600000002, -80.901995], [35.00718481163546, -80.9018994636673], [35.00708300000002, -80.902005], [35.00699500000004, -80.902078], [35.00688199999996, -80.902183], [35.00685200000001, -80.902206], [35.006755999999974, -80.90226300000002], [35.00668899999999, -80.90229200000002], [35.00658499999999, -80.902321], [35.006302000000005, -80.902366], [35.00623099999999, -80.902371], [35.006161, -80.902365], [35.00602000000003, -80.902363], [35.00588999999998, -80.90233700000002], [35.00584500000003, -80.902328], [35.00574200000004, -80.902296], [35.005678, -80.902259], [35.00564800000002, -80.902236], [35.00556323517782, -80.90217820578049], [35.00560300000003, -80.902213], [35.00564400000002, -80.902244], [35.005675000000004, -80.902267], [35.00573999999995, -80.902317], [35.00588299999998, -80.902425], [35.00590699999997, -80.902444], [35.00601599999997, -80.9025]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_d9237d42217d2ce371e547eea7e3ccd7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3cef1b7a3f7708f872294cd3d4fca6e9 = $(`<div id="html_3cef1b7a3f7708f872294cd3d4fca6e9" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d9237d42217d2ce371e547eea7e3ccd7.setContent(html_3cef1b7a3f7708f872294cd3d4fca6e9);
+            
+        
+
+        polygon_ab38b563085ac4a3a0c9121a6d92fee3.bindPopup(popup_d9237d42217d2ce371e547eea7e3ccd7)
+        ;
+
+        
+    
+    
+            polygon_ab38b563085ac4a3a0c9121a6d92fee3.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c5406748821318c6fefa5383ecd37714 = L.polygon(
+                [[35.03334000000002, -80.897508], [35.033582000000045, -80.89753], [35.03385500000002, -80.89755], [35.03412899999997, -80.897566], [35.034232999999986, -80.897573], [35.0343378196439, -80.89753905840108], [35.03417499999999, -80.897533], [35.03406899999998, -80.897481], [35.034004, -80.89745], [35.03383500000005, -80.897384], [35.03373700000002, -80.89736400000001], [35.03369500000001, -80.89735600000002], [35.033659999999955, -80.897343], [35.033629000000005, -80.897322], [35.033594, -80.897329], [35.03355000000002, -80.897342], [35.03349, -80.897361], [35.03345500000005, -80.897365], [35.03338399999995, -80.897357], [35.033348999999994, -80.897359], [35.033311, -80.897372], [35.033233999999986, -80.897399], [35.03321200000003, -80.897407], [35.03319900000004, -80.897412], [35.033145, -80.897436], [35.03309599999997, -80.897446], [35.03306300000001, -80.897465], [35.03304200000002, -80.897472], [35.033006000000015, -80.89748700000001], [35.032982, -80.897497], [35.032962000000026, -80.897506], [35.03289399999996, -80.897537], [35.032738000000016, -80.897609], [35.03268899999998, -80.897629], [35.03262099999998, -80.897658], [35.032475999999974, -80.897719], [35.032401000000014, -80.897752], [35.032054000000045, -80.89793], [35.031915000000005, -80.898002], [35.03167300000002, -80.898126], [35.03144800000005, -80.898244], [35.03113000000002, -80.89844], [35.03096899999996, -80.898535], [35.030874, -80.898592], [35.03073999999999, -80.898681], [35.030500999999994, -80.89884], [35.03064299999999, -80.898746], [35.03070999999997, -80.898711], [35.03074200000004, -80.898694], [35.03141999999999, -80.89834], [35.03193600000004, -80.898068], [35.03264699999998, -80.89768500000001], [35.032911000000006, -80.897594], [35.03334000000002, -80.897508]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_e81a53071b3f2ce9f7e226d3442bb323 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9c16b1ac7d19f7f61ccb92ec237922ce = $(`<div id="html_9c16b1ac7d19f7f61ccb92ec237922ce" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_e81a53071b3f2ce9f7e226d3442bb323.setContent(html_9c16b1ac7d19f7f61ccb92ec237922ce);
+            
+        
+
+        polygon_c5406748821318c6fefa5383ecd37714.bindPopup(popup_e81a53071b3f2ce9f7e226d3442bb323)
+        ;
+
+        
+    
+    
+            polygon_c5406748821318c6fefa5383ecd37714.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_949df4ef01ef84f121b4dd11c4e40626 = L.polygon(
+                [[35.030263999999995, -80.898926], [35.03024899999998, -80.898928], [35.030193000000025, -80.898936], [35.03005199999999, -80.89891800000001], [35.02998399999998, -80.898892], [35.029886, -80.89884], [35.02970199999998, -80.898706], [35.02966900000003, -80.898689], [35.02963399999998, -80.898679], [35.029564, -80.898669], [35.029527999999964, -80.898669], [35.02949300000003, -80.898676], [35.029458999999996, -80.89869], [35.029305, -80.8988], [35.02912399999998, -80.89894], [35.028899999999965, -80.899078], [35.028788999999975, -80.89914], [35.02876075057537, -80.89915597788347], [35.028760999999996, -80.899156], [35.028942999999984, -80.899172], [35.02940300000001, -80.899209], [35.02971300000001, -80.899157], [35.03002199999998, -80.89907], [35.03032699999999, -80.898911], [35.03032943908923, -80.89891010765075], [35.030263999999995, -80.898926]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_9576620d0455aed5ab1b5803fe9f652c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_42426ad32427039de12116f307541647 = $(`<div id="html_42426ad32427039de12116f307541647" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_9576620d0455aed5ab1b5803fe9f652c.setContent(html_42426ad32427039de12116f307541647);
+            
+        
+
+        polygon_949df4ef01ef84f121b4dd11c4e40626.bindPopup(popup_9576620d0455aed5ab1b5803fe9f652c)
+        ;
+
+        
+    
+    
+            polygon_949df4ef01ef84f121b4dd11c4e40626.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_afb3c0f8a47000dcd3468f68b36b31da = L.polygon(
+                [[35.012376910289255, -80.90209071488424], [35.01246700000003, -80.902066], [35.012377999999984, -80.90209], [35.012376910289255, -80.90209071488424]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_6a12da747bcddbfa4259f37122b9c2ba = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_987248254073ff3b6dd6a11ef16f2ef2 = $(`<div id="html_987248254073ff3b6dd6a11ef16f2ef2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_6a12da747bcddbfa4259f37122b9c2ba.setContent(html_987248254073ff3b6dd6a11ef16f2ef2);
+            
+        
+
+        polygon_afb3c0f8a47000dcd3468f68b36b31da.bindPopup(popup_6a12da747bcddbfa4259f37122b9c2ba)
+        ;
+
+        
+    
+    
+            polygon_afb3c0f8a47000dcd3468f68b36b31da.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1c2ccd11869153b732af144b6aa898c0 = L.polygon(
+                [[35.01169399999999, -80.902889], [35.0117403542344, -80.90270358325381], [35.01174000000005, -80.902704], [35.01169399999999, -80.902889]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_4764254da9a815f44cc3d745d02e1e59 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_db9066b2724cec034bc5baedcbf05576 = $(`<div id="html_db9066b2724cec034bc5baedcbf05576" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_4764254da9a815f44cc3d745d02e1e59.setContent(html_db9066b2724cec034bc5baedcbf05576);
+            
+        
+
+        polygon_1c2ccd11869153b732af144b6aa898c0.bindPopup(popup_4764254da9a815f44cc3d745d02e1e59)
+        ;
+
+        
+    
+    
+            polygon_1c2ccd11869153b732af144b6aa898c0.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_d4cab9857ac863dadc0de40835dc1b14 = L.polygon(
+                [[35.027373, -80.900257], [35.02741369769938, -80.90020661237358], [35.02729, -80.90030000000002], [35.027225999999985, -80.900339], [35.027087, -80.900381], [35.026875999999994, -80.90042], [35.02627399999996, -80.900481], [35.02620399999998, -80.900499], [35.02572099999998, -80.900653], [35.02562000000002, -80.900694], [35.02555399999998, -80.900726], [35.025352000000005, -80.90081], [35.02520599999999, -80.900879], [35.02511405393702, -80.90092299575674], [35.02568600000001, -80.900878], [35.02608500000001, -80.90086100000002], [35.026489, -80.90073200000002], [35.026902999999955, -80.900586], [35.02706800000005, -80.900477], [35.02723400000002, -80.900358], [35.027373, -80.900257]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_2d4fff8920a7f5be960517e3fc208559 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d495a3593a8a042f7293b408f313afb6 = $(`<div id="html_d495a3593a8a042f7293b408f313afb6" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_2d4fff8920a7f5be960517e3fc208559.setContent(html_d495a3593a8a042f7293b408f313afb6);
+            
+        
+
+        polygon_d4cab9857ac863dadc0de40835dc1b14.bindPopup(popup_2d4fff8920a7f5be960517e3fc208559)
+        ;
+
+        
+    
+    
+            polygon_d4cab9857ac863dadc0de40835dc1b14.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1a964e3f21385f25c0bf750ed9f45b21 = L.polygon(
+                [[35.01118276295406, -80.90399967711079], [35.01124499999999, -80.903951], [35.01118399999998, -80.903998], [35.01118276295406, -80.90399967711079]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_08daacf2f2244096616d0ef62f6aa0be = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ca32e6d493de76fdaa3c2f331ed9fdd9 = $(`<div id="html_ca32e6d493de76fdaa3c2f331ed9fdd9" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_08daacf2f2244096616d0ef62f6aa0be.setContent(html_ca32e6d493de76fdaa3c2f331ed9fdd9);
+            
+        
+
+        polygon_1a964e3f21385f25c0bf750ed9f45b21.bindPopup(popup_08daacf2f2244096616d0ef62f6aa0be)
+        ;
+
+        
+    
+    
+            polygon_1a964e3f21385f25c0bf750ed9f45b21.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_49bdd1347481ef45f5f14c27e6c350a0 = L.polygon(
+                [[35.02046800000001, -80.903412], [35.02027000000001, -80.90331], [35.02020600000002, -80.903273], [35.019965000000035, -80.903088], [35.019902000000016, -80.903048], [35.019836999999995, -80.903014], [35.01973600000001, -80.90297], [35.01970100000002, -80.902964], [35.019452999999984, -80.90297], [35.01940609270348, -80.90297911470839], [35.01960400000003, -80.903224], [35.01990300000003, -80.90353500000002], [35.02012099999998, -80.903595], [35.02040499999999, -80.903658], [35.02069599999997, -80.90346], [35.020696112271104, -80.90345992311893], [35.02053600000003, -80.903435], [35.02046800000001, -80.903412]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_ffc0222626f49d1228ddc6d76c2e0f11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7e6c9e81da3457991faeb5f5a569d781 = $(`<div id="html_7e6c9e81da3457991faeb5f5a569d781" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ffc0222626f49d1228ddc6d76c2e0f11.setContent(html_7e6c9e81da3457991faeb5f5a569d781);
+            
+        
+
+        polygon_49bdd1347481ef45f5f14c27e6c350a0.bindPopup(popup_ffc0222626f49d1228ddc6d76c2e0f11)
+        ;
+
+        
+    
+    
+            polygon_49bdd1347481ef45f5f14c27e6c350a0.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_71df2c176cfcd71d9b9cf55ec1e5ef39 = L.polygon(
+                [[35.022039, -80.902626], [35.021974999999976, -80.902665], [35.021826000000054, -80.902783], [35.021768999999985, -80.902835], [35.021686909239826, -80.90293077269018], [35.02173000000002, -80.90292], [35.022334, -80.90273100000002], [35.02261400000001, -80.90258], [35.02275390509521, -80.90247207321246], [35.022491000000024, -80.902517], [35.022313999999994, -80.902537], [35.02224399999999, -80.90255200000001], [35.022039, -80.902626]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_c9c4163309b9357f9120fd71967c4dd2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3ba64ac0482feb1f98506c22c8b22e1a = $(`<div id="html_3ba64ac0482feb1f98506c22c8b22e1a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_c9c4163309b9357f9120fd71967c4dd2.setContent(html_3ba64ac0482feb1f98506c22c8b22e1a);
+            
+        
+
+        polygon_71df2c176cfcd71d9b9cf55ec1e5ef39.bindPopup(popup_c9c4163309b9357f9120fd71967c4dd2)
+        ;
+
+        
+    
+    
+            polygon_71df2c176cfcd71d9b9cf55ec1e5ef39.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8f33761a16adc43440c68ba4d0fed662 = L.polygon(
+                [[35.019066999999964, -80.904716], [35.019066741349846, -80.90471564065301], [35.019019000000036, -80.904926], [35.01896299999996, -80.905087], [35.018936, -80.905214], [35.018919999999994, -80.905344], [35.018896999999996, -80.905428], [35.01886699999998, -80.905507], [35.018848000000006, -80.905545], [35.01868699999999, -80.905778], [35.01867, -80.905817], [35.01862599999996, -80.905886], [35.018522999999995, -80.906117], [35.018501000000015, -80.906201], [35.018493329315895, -80.90629688396263], [35.01849400000001, -80.906294], [35.01851099999998, -80.906218], [35.018792999999995, -80.905897], [35.01912900000001, -80.90550400000001], [35.01924099999998, -80.905192], [35.01918199999999, -80.904987], [35.019137999999984, -80.904815], [35.019066999999964, -80.904716]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_ad9fbc06409a6699139960ab031f34d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9dfc3d54609e0ecf53c38e8448d98b3f = $(`<div id="html_9dfc3d54609e0ecf53c38e8448d98b3f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ad9fbc06409a6699139960ab031f34d7.setContent(html_9dfc3d54609e0ecf53c38e8448d98b3f);
+            
+        
+
+        polygon_8f33761a16adc43440c68ba4d0fed662.bindPopup(popup_ad9fbc06409a6699139960ab031f34d7)
+        ;
+
+        
+    
+    
+            polygon_8f33761a16adc43440c68ba4d0fed662.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0d3653e3b8be8e3d6c47ffe742907295 = L.polygon(
+                [[35.012891000000025, -80.906785], [35.01289231451685, -80.90678551752539], [35.01288635703802, -80.9067797728098], [35.012891000000025, -80.906785]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_9a5e46d51ba5952df2de54c3371ed30f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_78e03aea94dd8b296c082b2133232894 = $(`<div id="html_78e03aea94dd8b296c082b2133232894" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_9a5e46d51ba5952df2de54c3371ed30f.setContent(html_78e03aea94dd8b296c082b2133232894);
+            
+        
+
+        polygon_0d3653e3b8be8e3d6c47ffe742907295.bindPopup(popup_9a5e46d51ba5952df2de54c3371ed30f)
+        ;
+
+        
+    
+    
+            polygon_0d3653e3b8be8e3d6c47ffe742907295.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ad305591f0482af1a53b063ef2371e57 = L.polygon(
+                [[35.014360000000025, -80.907538], [35.014264000000004, -80.907482], [35.0141, -80.907399], [35.014039547809375, -80.90737449224736], [35.01404, -80.907375], [35.01407900000002, -80.907419], [35.01449000000001, -80.907837], [35.01463564263741, -80.90789884824298], [35.01462899999998, -80.907884], [35.01458799999999, -80.907813], [35.01449399999999, -80.907679], [35.014360000000025, -80.907538]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_1cfdc03390caefdd75fef9bccb1567a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e14ddbb50d4decb7bfe667412cc95656 = $(`<div id="html_e14ddbb50d4decb7bfe667412cc95656" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_1cfdc03390caefdd75fef9bccb1567a3.setContent(html_e14ddbb50d4decb7bfe667412cc95656);
+            
+        
+
+        polygon_ad305591f0482af1a53b063ef2371e57.bindPopup(popup_1cfdc03390caefdd75fef9bccb1567a3)
+        ;
+
+        
+    
+    
+            polygon_ad305591f0482af1a53b063ef2371e57.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8e4a7993b7399a31f02c40ca69eb2dff = L.polygon(
+                [[35.04371699999998, -80.901796], [35.04371766307972, -80.90179629930557], [35.043652000000016, -80.901755], [35.04371699999998, -80.901796]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_96bf6b4d7fb08c61977bd3940ad77392 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3c421227acc94af7193bd02f4f0951a4 = $(`<div id="html_3c421227acc94af7193bd02f4f0951a4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_96bf6b4d7fb08c61977bd3940ad77392.setContent(html_3c421227acc94af7193bd02f4f0951a4);
+            
+        
+
+        polygon_8e4a7993b7399a31f02c40ca69eb2dff.bindPopup(popup_96bf6b4d7fb08c61977bd3940ad77392)
+        ;
+
+        
+    
+    
+            polygon_8e4a7993b7399a31f02c40ca69eb2dff.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c28ac64d1afb1b9df6e4e683160e73f2 = L.polygon(
+                [[35.01730032608743, -80.90950390537671], [35.01687100000005, -80.909535], [35.01730000000001, -80.909504], [35.01730032608743, -80.90950390537671]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_9e6f53da9d213821824c0e60a195b92a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_28ad0cb987dbf1a36198674cd80ae672 = $(`<div id="html_28ad0cb987dbf1a36198674cd80ae672" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_9e6f53da9d213821824c0e60a195b92a.setContent(html_28ad0cb987dbf1a36198674cd80ae672);
+            
+        
+
+        polygon_c28ac64d1afb1b9df6e4e683160e73f2.bindPopup(popup_9e6f53da9d213821824c0e60a195b92a)
+        ;
+
+        
+    
+    
+            polygon_c28ac64d1afb1b9df6e4e683160e73f2.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8ad1495ea686bc5e31391c0620922d12 = L.polygon(
+                [[35.01687100000005, -80.909535], [35.016762999999955, -80.909507], [35.01666299999998, -80.909458], [35.01660000000002, -80.909419], [35.016382999999976, -80.909268], [35.01606099999999, -80.908921], [35.015958999999995, -80.9088], [35.015851999999995, -80.908684], [35.015823000000005, -80.908658], [35.01566600000001, -80.908555], [35.015632999999966, -80.90854], [35.01550285318438, -80.90850580867038], [35.01550299999998, -80.908506], [35.01563599999997, -80.908679], [35.015866, -80.909005], [35.01618100000001, -80.90926], [35.01648100000002, -80.90948600000002], [35.01679299999996, -80.909527], [35.01687100000005, -80.909535]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_ac6f3caa6c7abb6fe116b76b3d6990fa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_50d69eb176af9c4a496db31be767be6a = $(`<div id="html_50d69eb176af9c4a496db31be767be6a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ac6f3caa6c7abb6fe116b76b3d6990fa.setContent(html_50d69eb176af9c4a496db31be767be6a);
+            
+        
+
+        polygon_8ad1495ea686bc5e31391c0620922d12.bindPopup(popup_ac6f3caa6c7abb6fe116b76b3d6990fa)
+        ;
+
+        
+    
+    
+            polygon_8ad1495ea686bc5e31391c0620922d12.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a4f68177233db19b972eddef22cbd39c = L.polygon(
+                [[35.019119999999994, -80.90795], [35.01911985014188, -80.90794958253753], [35.01909499999999, -80.907989], [35.01897700000003, -80.908088], [35.01891099999999, -80.908123], [35.01878400000002, -80.908202], [35.018719000000004, -80.908236], [35.018597, -80.908328], [35.01854099999999, -80.908382], [35.01851099999998, -80.908405], [35.01845599999997, -80.908461], [35.01830700000001, -80.90865000000001], [35.018468999999996, -80.90866], [35.018875, -80.908591], [35.018998, -80.90848], [35.01914, -80.908253], [35.01912900000004, -80.908128], [35.01914, -80.90805], [35.01914299999997, -80.908016], [35.019119999999994, -80.90795]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_53570da9694a6bb5708a0a9452eac1d1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6ecfd3a84593e927f8ad905c26baee4b = $(`<div id="html_6ecfd3a84593e927f8ad905c26baee4b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_53570da9694a6bb5708a0a9452eac1d1.setContent(html_6ecfd3a84593e927f8ad905c26baee4b);
+            
+        
+
+        polygon_a4f68177233db19b972eddef22cbd39c.bindPopup(popup_53570da9694a6bb5708a0a9452eac1d1)
+        ;
+
+        
+    
+    
+            polygon_a4f68177233db19b972eddef22cbd39c.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e99539eefbfd9d4754f38e59420b0fdc = L.polygon(
+                [[35.056190775566456, -80.90158694571579], [35.05609000000003, -80.901644], [35.05619, -80.901588], [35.056190775566456, -80.90158694571579]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_d6f0c923fba40db49d5990fca54a512d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_454dfe7eb86d4ab2f72e6df7a41a271f = $(`<div id="html_454dfe7eb86d4ab2f72e6df7a41a271f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d6f0c923fba40db49d5990fca54a512d.setContent(html_454dfe7eb86d4ab2f72e6df7a41a271f);
+            
+        
+
+        polygon_e99539eefbfd9d4754f38e59420b0fdc.bindPopup(popup_d6f0c923fba40db49d5990fca54a512d)
+        ;
+
+        
+    
+    
+            polygon_e99539eefbfd9d4754f38e59420b0fdc.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_d6e879d02030c383ea29ec14258623e3 = L.polygon(
+                [[35.055955000000026, -80.901885], [35.05595374981749, -80.90190333604049], [35.05595399999999, -80.90190300000002], [35.055955000000026, -80.901885]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_57a8e5e36f1c5cbc196982e1285ef6f9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_98c198dbf8004f5df38f1fbed3132aec = $(`<div id="html_98c198dbf8004f5df38f1fbed3132aec" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_57a8e5e36f1c5cbc196982e1285ef6f9.setContent(html_98c198dbf8004f5df38f1fbed3132aec);
+            
+        
+
+        polygon_d6e879d02030c383ea29ec14258623e3.bindPopup(popup_57a8e5e36f1c5cbc196982e1285ef6f9)
+        ;
+
+        
+    
+    
+            polygon_d6e879d02030c383ea29ec14258623e3.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1b4fb5df4e64027465d8c59590b44ccd = L.polygon(
+                [[35.04892600000001, -80.904716], [35.04890931497976, -80.90473731200325], [35.04891099999999, -80.904736], [35.04892600000001, -80.904716]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_6eaf6eab7b59773b4bda780e96c20f14 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_453d3c3b4d9c91037257952a324159fa = $(`<div id="html_453d3c3b4d9c91037257952a324159fa" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_6eaf6eab7b59773b4bda780e96c20f14.setContent(html_453d3c3b4d9c91037257952a324159fa);
+            
+        
+
+        polygon_1b4fb5df4e64027465d8c59590b44ccd.bindPopup(popup_6eaf6eab7b59773b4bda780e96c20f14)
+        ;
+
+        
+    
+    
+            polygon_1b4fb5df4e64027465d8c59590b44ccd.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_89ff880a0ec40be6d33cc2353f3b4f80 = L.polygon(
+                [[35.064420999999975, -80.904447], [35.06442098881193, -80.90444735678903], [35.064457000000026, -80.904372], [35.06454099999997, -80.904179], [35.06458200000005, -80.904108], [35.064678, -80.903973], [35.06476999999998, -80.903845], [35.06481399999995, -80.903775], [35.06483100000001, -80.903736], [35.064851999999995, -80.903652], [35.06486700000004, -80.903566], [35.06487000000003, -80.903522], [35.06486500000001, -80.903468], [35.064859000000034, -80.903435], [35.06482499999997, -80.903421], [35.064720000000015, -80.903393], [35.06465, -80.903405], [35.064512000000036, -80.903447], [35.064443000000026, -80.90346300000002], [35.06433600000002, -80.903474], [35.06422899999997, -80.903476], [35.06415800000002, -80.903469], [35.06416799999998, -80.90347], [35.064266999999994, -80.903494], [35.06429799999997, -80.903578], [35.06435299999998, -80.903736], [35.064382999999964, -80.903804], [35.06442799999994, -80.903896], [35.06442500000001, -80.9043], [35.064420999999975, -80.904447]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_6d0353d916444b931da3969d22a9acfd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_83c8f21c78ef6b69b2fd780d0a61e318 = $(`<div id="html_83c8f21c78ef6b69b2fd780d0a61e318" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_6d0353d916444b931da3969d22a9acfd.setContent(html_83c8f21c78ef6b69b2fd780d0a61e318);
+            
+        
+
+        polygon_89ff880a0ec40be6d33cc2353f3b4f80.bindPopup(popup_6d0353d916444b931da3969d22a9acfd)
+        ;
+
+        
+    
+    
+            polygon_89ff880a0ec40be6d33cc2353f3b4f80.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e73a21a750888516f0d6c3d033cb04f9 = L.polygon(
+                [[35.068154, -80.906277], [35.06813050617172, -80.90627272839431], [35.068131, -80.906273], [35.068154, -80.906277]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_55cc164e2450e1d0379c82b3c7702eda = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f112e94e1acd27cd4d3bc32e45b0136d = $(`<div id="html_f112e94e1acd27cd4d3bc32e45b0136d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_55cc164e2450e1d0379c82b3c7702eda.setContent(html_f112e94e1acd27cd4d3bc32e45b0136d);
+            
+        
+
+        polygon_e73a21a750888516f0d6c3d033cb04f9.bindPopup(popup_55cc164e2450e1d0379c82b3c7702eda)
+        ;
+
+        
+    
+    
+            polygon_e73a21a750888516f0d6c3d033cb04f9.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e3f251fd497e373d36bd51c56904164e = L.polygon(
+                [[35.072032999999976, -80.906001], [35.07205400000001, -80.905979], [35.07203279337965, -80.90600099205307], [35.072032999999976, -80.906001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_10417bb5ba23270fd93d735742b6c959 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ba106c56e0655a0239c22dfe99d6b4b4 = $(`<div id="html_ba106c56e0655a0239c22dfe99d6b4b4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_10417bb5ba23270fd93d735742b6c959.setContent(html_ba106c56e0655a0239c22dfe99d6b4b4);
+            
+        
+
+        polygon_e3f251fd497e373d36bd51c56904164e.bindPopup(popup_10417bb5ba23270fd93d735742b6c959)
+        ;
+
+        
+    
+    
+            polygon_e3f251fd497e373d36bd51c56904164e.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_65d96a3613f1131e0fe870c1c3b9c5c1 = L.polygon(
+                [[35.07307899999998, -80.905786], [35.07301764454183, -80.90581483708146], [35.07301799999996, -80.90581500000002], [35.07307899999998, -80.905786]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_e25006651f452b5ee476b573da1b7fb8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_52e8f2cd19b0be24354993f8e51babab = $(`<div id="html_52e8f2cd19b0be24354993f8e51babab" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_e25006651f452b5ee476b573da1b7fb8.setContent(html_52e8f2cd19b0be24354993f8e51babab);
+            
+        
+
+        polygon_65d96a3613f1131e0fe870c1c3b9c5c1.bindPopup(popup_e25006651f452b5ee476b573da1b7fb8)
+        ;
+
+        
+    
+    
+            polygon_65d96a3613f1131e0fe870c1c3b9c5c1.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_3d32127f62d4d60ff9ae21a658fe9bcb = L.polygon(
+                [[35.07324800000004, -80.905841], [35.073149999999956, -80.905787], [35.07327500000002, -80.90587], [35.07324800000004, -80.905841]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_7dc8baa32ca624ea11593a1b9c3fde58 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d5a024678df2e1d30262555caf28787c = $(`<div id="html_d5a024678df2e1d30262555caf28787c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_7dc8baa32ca624ea11593a1b9c3fde58.setContent(html_d5a024678df2e1d30262555caf28787c);
+            
+        
+
+        polygon_3d32127f62d4d60ff9ae21a658fe9bcb.bindPopup(popup_7dc8baa32ca624ea11593a1b9c3fde58)
+        ;
+
+        
+    
+    
+            polygon_3d32127f62d4d60ff9ae21a658fe9bcb.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6eab4960e7257864d335c45587a35347 = L.polygon(
+                [[35.0733250000319, -80.90596000001594], [35.07329699999998, -80.905904], [35.07332500000001, -80.90596], [35.0733250000319, -80.90596000001594]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_df5ad3a1a78d266573e87740706b6c26 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_552967e874c8a42d11c45468a86d74f4 = $(`<div id="html_552967e874c8a42d11c45468a86d74f4" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_df5ad3a1a78d266573e87740706b6c26.setContent(html_552967e874c8a42d11c45468a86d74f4);
+            
+        
+
+        polygon_6eab4960e7257864d335c45587a35347.bindPopup(popup_df5ad3a1a78d266573e87740706b6c26)
+        ;
+
+        
+    
+    
+            polygon_6eab4960e7257864d335c45587a35347.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6f858828536e96fecb20b1b111230929 = L.polygon(
+                [[35.07435524134892, -80.90635593815043], [35.074271999999986, -80.9063], [35.07435500000001, -80.906356], [35.07435524134892, -80.90635593815043]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_69774aaa25e896f85f71ec1b2cc67501 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f386e3643e5abc0a4729a20b3708edf5 = $(`<div id="html_f386e3643e5abc0a4729a20b3708edf5" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_69774aaa25e896f85f71ec1b2cc67501.setContent(html_f386e3643e5abc0a4729a20b3708edf5);
+            
+        
+
+        polygon_6f858828536e96fecb20b1b111230929.bindPopup(popup_69774aaa25e896f85f71ec1b2cc67501)
+        ;
+
+        
+    
+    
+            polygon_6f858828536e96fecb20b1b111230929.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5cf0d08e1e0f62373107e6cc575361d6 = L.polygon(
+                [[35.06963302845774, -80.90734899241127], [35.06958499999998, -80.90735], [35.06963300000002, -80.907349], [35.06963302845774, -80.90734899241127]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_b238654b3fa684d9baf8d3df756b461f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a0c13ace16636a1e5f4cf7534487860b = $(`<div id="html_a0c13ace16636a1e5f4cf7534487860b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Lancaster - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_b238654b3fa684d9baf8d3df756b461f.setContent(html_a0c13ace16636a1e5f4cf7534487860b);
+            
+        
+
+        polygon_5cf0d08e1e0f62373107e6cc575361d6.bindPopup(popup_b238654b3fa684d9baf8d3df756b461f)
+        ;
+
+        
+    
+    
+            polygon_5cf0d08e1e0f62373107e6cc575361d6.bindTooltip(
+                `<div>
+                      Lancaster - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c45a5cde29a537a4b73e460195835824 = L.polygon(
+                [[35.07508999999998, -80.906256], [35.07491499999999, -80.9063], [35.074642000000026, -80.906395], [35.074572000000025, -80.906398], [35.07453700000002, -80.906404], [35.07443099999997, -80.906399], [35.074397000000026, -80.906384], [35.07435524134892, -80.90635593815043], [35.07435500000001, -80.906356], [35.074271999999986, -80.9063], [35.07413299999999, -80.906197], [35.074119000000024, -80.906187], [35.073943, -80.906039], [35.07391199999997, -80.906017], [35.07387699999998, -80.90601], [35.073771000000036, -80.906025], [35.073736999999994, -80.906037], [35.07370500000006, -80.906056], [35.07367799999999, -80.906085], [35.07361699999999, -80.906131], [35.07358299999998, -80.906145], [35.07347700000004, -80.906154], [35.073442000000014, -80.90615], [35.073413, -80.906124], [35.07335300000001, -80.906016], [35.0733250000319, -80.90596000001594], [35.07332500000001, -80.90596], [35.07329699999998, -80.905904], [35.07327500000002, -80.90587], [35.073149999999956, -80.905787], [35.07311499999997, -80.905783], [35.07307899999998, -80.905786], [35.07301799999996, -80.90581500000002], [35.07301764454183, -80.90581483708146], [35.072979, -80.905833], [35.07285899999997, -80.905925], [35.07276199999996, -80.905982], [35.07262600000004, -80.906031], [35.07259000000001, -80.906035], [35.072488000000035, -80.906001], [35.072424000000005, -80.905962], [35.07232500000002, -80.905912], [35.07229000000003, -80.905901], [35.07225500000003, -80.9059], [35.072184000000064, -80.905913], [35.07211499999998, -80.90593400000002], [35.07205400000001, -80.905979], [35.072032999999976, -80.906001], [35.07203279337965, -80.90600099205307], [35.07202700000003, -80.906007], [35.07194700000002, -80.906151], [35.071811999999994, -80.906355], [35.07173299999998, -80.906445], [35.071673, -80.906491], [35.07151299999997, -80.906589], [35.071412, -80.90663], [35.07117199999997, -80.906709], [35.07103800000001, -80.906763], [35.07096899999997, -80.906786], [35.07072499999999, -80.906847], [35.07066900000002, -80.906864], [35.07038099999999, -80.906953], [35.070212000000005, -80.90701700000001], [35.07017900000001, -80.907035], [35.07003500000002, -80.907162], [35.06992999999998, -80.907278], [35.069866, -80.907317], [35.06979899999999, -80.90734], [35.06972799999998, -80.907347], [35.06963302845774, -80.90734899241127], [35.06963300000002, -80.907349], [35.06958499999998, -80.90735], [35.069550000000035, -80.907342], [35.06941299999997, -80.907331], [35.06932400000004, -80.907307], [35.069256000000046, -80.907282], [35.06912200000002, -80.907224], [35.06910400000001, -80.907207], [35.06904399999996, -80.907149], [35.06903599999996, -80.907141], [35.069020999999985, -80.907116], [35.069005999999995, -80.907112], [35.068973000000035, -80.907081], [35.06889300000002, -80.906992], [35.06870300000001, -80.906732], [35.06855599999997, -80.906541], [35.068472000000014, -80.90646], [35.06841399999999, -80.90641], [35.068320999999955, -80.906346], [35.06825600000001, -80.906311], [35.068154, -80.906277], [35.068131, -80.906273], [35.06813050617172, -80.90627272839431], [35.068121000000005, -80.906271], [35.06808400000004, -80.906264], [35.06794199999998, -80.906273], [35.06783600000001, -80.90629], [35.067597000000035, -80.90637000000001], [35.06730300000002, -80.906525], [35.067240000000034, -80.906565], [35.06711000000002, -80.906634], [35.067047, -80.906674], [35.06682000000001, -80.906801], [35.06675799999997, -80.906842], [35.066725000000034, -80.906859], [35.066632, -80.906922], [35.06657199999998, -80.906969], [35.066475999999994, -80.907026], [35.06640600000002, -80.907038], [35.06637099999998, -80.90705], [35.066265999999985, -80.907069], [35.066088000000036, -80.907085], [35.066052, -80.907084], [35.065875999999996, -80.907055], [35.06577099999997, -80.907031], [35.06563300000002, -80.906986], [35.06542499999995, -80.90693300000001], [35.06486299999998, -80.906811], [35.064656999999976, -80.906746], [35.06462199999997, -80.906731], [35.06445499999997, -80.906661], [35.06432399999997, -80.906593], [35.06423500000003, -80.906519], [35.06409900000002, -80.906379], [35.06402100000002, -80.906288], [35.06392199999996, -80.906163], [35.063734999999966, -80.905958], [35.06371400000002, -80.905912], [35.06370499999998, -80.905892], [35.06370000000004, -80.90585], [35.06371499999997, -80.90572], [35.06373200000001, -80.905681], [35.063793000000025, -80.905573], [35.06392099999998, -80.905427], [35.064029, -80.905306], [35.06423200000001, -80.905061], [35.06428099999999, -80.904944], [35.064306, -80.904861], [35.06435100000002, -80.904649], [35.064403000000034, -80.904485], [35.06442098881193, -80.90444735678903], [35.064420999999975, -80.904447], [35.06442500000001, -80.9043], [35.06442799999994, -80.903896], [35.064382999999964, -80.903804], [35.06435299999998, -80.903736], [35.06429799999997, -80.903578], [35.064266999999994, -80.903494], [35.06416799999998, -80.90347], [35.06415800000002, -80.903469], [35.06401899999999, -80.903434], [35.063817, -80.90335], [35.063644, -80.903299], [35.06353699999996, -80.903309], [35.063431000000016, -80.903325], [35.063360999999986, -80.903341], [35.06318499999997, -80.903366], [35.063114999999996, -80.90335], [35.063080999999954, -80.90333600000001], [35.063049, -80.903317], [35.06298800000004, -80.90327], [35.06293300000001, -80.903217], [35.06288900000002, -80.903148], [35.06281599999996, -80.902998], [35.06278900000003, -80.902918], [35.06274100000001, -80.902754], [35.06262500000002, -80.902108], [35.062588999999974, -80.901984], [35.06257199999996, -80.90194200000002], [35.062548000000014, -80.901881], [35.06254300000001, -80.901866], [35.06236200000005, -80.901437], [35.06220500000004, -80.901098], [35.06218199999995, -80.901064], [35.06214499999997, -80.90099], [35.06193899999999, -80.900688], [35.061708000000024, -80.900414], [35.061627000000016, -80.900329], [35.06142799999999, -80.900148], [35.061340000000015, -80.900074], [35.061070000000015, -80.899862], [35.06078699999998, -80.899681], [35.060753000000034, -80.89966], [35.060656999999956, -80.899603], [35.06059099999998, -80.899572], [35.06041999999997, -80.899515], [35.06038499999997, -80.899507], [35.06020800000003, -80.899491], [35.06010199999999, -80.899497], [35.06006700000002, -80.899506], [35.05986200000002, -80.899582], [35.059571, -80.899745], [35.05921000000001, -80.899932], [35.05900599999997, -80.900013], [35.058902, -80.900038], [35.05861900000004, -80.900084], [35.05840900000001, -80.900125], [35.05833999999998, -80.900147], [35.058071000000034, -80.90026], [35.05790100000002, -80.900326], [35.057832, -80.90034500000002], [35.057528999999974, -80.900472], [35.05739599999995, -80.900537], [35.05729900000004, -80.900592], [35.05720500000001, -80.90065200000001], [35.05708399999996, -80.900745], [35.056995999999955, -80.90082], [35.056891, -80.900937], [35.056643999999956, -80.901253], [35.05659200000001, -80.901314], [35.05650799999999, -80.901396], [35.056478000000006, -80.90142], [35.05641500000001, -80.90146], [35.056190775566456, -80.90158694571579], [35.05619, -80.901588], [35.05609000000003, -80.901644], [35.056031999999995, -80.901694], [35.05600499999998, -80.901723], [35.055983000000005, -80.901758], [35.055955000000026, -80.901885], [35.05595399999999, -80.90190300000002], [35.05595374981749, -80.90190333604049], [35.05595200000002, -80.901929], [35.055955000000026, -80.901973], [35.05598, -80.902101], [35.055983000000005, -80.902145], [35.05597800000001, -80.902233], [35.05596599999999, -80.902275], [35.05595300000003, -80.902298], [35.05584800000007, -80.902494], [35.055702000000025, -80.902744], [35.05556400000001, -80.902999], [35.05552000000001, -80.903068], [35.05532400000002, -80.903325], [35.05522200000003, -80.903448], [35.05506399999996, -80.903625], [35.05503499999999, -80.903651], [35.054903, -80.903798], [35.05478800000002, -80.903946], [35.05459299999995, -80.904217], [35.05435099999996, -80.904448], [35.05413600000001, -80.904657], [35.05398800000001, -80.904778], [35.053844000000005, -80.904828], [35.05362999999998, -80.904745], [35.05342099999998, -80.904602], [35.053332, -80.904498], [35.053233000000034, -80.904211], [35.05317799999994, -80.903881], [35.05303499999995, -80.903347], [35.053001999999985, -80.903171], [35.052825999999996, -80.902868], [35.05267200000001, -80.902665], [35.052501000000014, -80.902538], [35.05227599999998, -80.90256000000001], [35.052055000000024, -80.902643], [35.05184599999997, -80.902753], [35.05176899999996, -80.902819], [35.05166899999999, -80.902878], [35.051559000000026, -80.90287], [35.051334000000004, -80.902901], [35.05109199999997, -80.903022], [35.05087700000004, -80.90311], [35.05069799999997, -80.903222], [35.05051199999999, -80.903388], [35.050393, -80.903561], [35.05024, -80.90381300000001], [35.05004099999998, -80.904057], [35.04998799999998, -80.904145], [35.04990799999997, -80.904231], [35.04978899999998, -80.904304], [35.04959399999997, -80.904352], [35.049298, -80.904463], [35.04906500000002, -80.904603], [35.04892600000001, -80.904716], [35.04891099999999, -80.904736], [35.04890931497976, -80.90473731200325], [35.04880699999999, -80.904868], [35.048662000000014, -80.90512], [35.04858599999996, -80.905235], [35.04841199999999, -80.905396], [35.048356000000005, -80.905448], [35.04833000000002, -80.905473], [35.04831999999999, -80.90548], [35.04824999999995, -80.905537], [35.048245, -80.905553], [35.04814900000001, -80.905611], [35.04805300000004, -80.905669], [35.047887, -80.905747], [35.04771899999999, -80.90581900000001], [35.047414, -80.90593400000002], [35.04730899999993, -80.905959], [35.04721500000003, -80.905982], [35.04717, -80.905992], [35.04710100000001, -80.906011], [35.04695900000002, -80.906011], [35.04692399999998, -80.906006], [35.04685599999998, -80.90598], [35.04680300000003, -80.905921], [35.04678299999996, -80.905885], [35.046730000000004, -80.905721], [35.046710999999966, -80.905618], [35.04656300000001, -80.905026], [35.046567000000024, -80.904957], [35.046548999999985, -80.904875], [35.046515, -80.904786], [35.04650299999995, -80.904754], [35.04638399999999, -80.904402], [35.046379999999985, -80.904388], [35.04634799999995, -80.904283], [35.04631800000001, -80.904225], [35.04627400000006, -80.904063], [35.04625, -80.903997], [35.04615899999996, -80.903751], [35.04607100000004, -80.90350900000001], [35.04599099999999, -80.903314], [35.04597099999995, -80.903274], [35.045955000000006, -80.90324], [35.04588500000003, -80.90314], [35.045778999999996, -80.903025], [35.045718000000015, -80.902981], [35.04556999999999, -80.902861], [35.04528799999998, -80.90267900000002], [35.04452300000003, -80.902223], [35.044328999999955, -80.90211800000002], [35.04403700000003, -80.901971], [35.04387300000006, -80.901894], [35.04371766307972, -80.90179629930557], [35.04371699999998, -80.901796], [35.043652000000016, -80.901755], [35.04356199999996, -80.901686], [35.043389000000005, -80.901535], [35.043192000000026, -80.901345], [35.043000999999975, -80.90115], [35.04279400000002, -80.900984], [35.04276600000001, -80.900959], [35.04250699999999, -80.900724], [35.04242099999996, -80.90065000000001], [35.042359000000026, -80.900606], [35.04216299999999, -80.900514], [35.042062000000065, -80.90047600000001], [35.04192500000001, -80.900443], [35.04151100000001, -80.900394], [35.041441999999996, -80.900385], [35.04127299999997, -80.900353], [35.041114000000015, -80.900285], [35.04101599999996, -80.900228], [35.04085, -80.899996], [35.040741, -80.899827], [35.04061600000002, -80.899599], [35.040597000000005, -80.899562], [35.040506, -80.899423], [35.04044000000001, -80.899321], [35.04025, -80.899059], [35.04014899999999, -80.898936], [35.040138, -80.898922], [35.04002599999995, -80.898777], [35.04000999999999, -80.898759], [35.03986700000001, -80.898601], [35.039702, -80.898433], [35.03967200000001, -80.89841], [35.03938699999996, -80.898227], [35.039320999999966, -80.898194], [35.03918699999997, -80.898137], [35.03908100000001, -80.898121], [35.03872500000003, -80.89809], [35.03844099999995, -80.898108], [35.038315000000004, -80.898143], [35.03819799999998, -80.898176], [35.03786799999994, -80.898317], [35.037827999999976, -80.898335], [35.03774099999999, -80.898374], [35.03756100000003, -80.898457], [35.037458000000015, -80.898489], [35.03734899999996, -80.898498], [35.03728, -80.898505], [35.03721099999999, -80.898506], [35.037134000000044, -80.898508], [35.037032, -80.898504], [35.03690300000001, -80.898491], [35.036827000000024, -80.89848400000001], [35.036702000000005, -80.898434], [35.036607, -80.898385], [35.03650699999998, -80.898335], [35.036444000000046, -80.898295], [35.036354, -80.89822400000001], [35.03613600000001, -80.898], [35.03606500000003, -80.897916], [35.036034000000036, -80.897879], [35.03591599999997, -80.897727], [35.035863, -80.897657], [35.03570900000004, -80.897478], [35.03569899999997, -80.89747], [35.035650000000025, -80.89743], [35.035633000000004, -80.897419], [35.035444, -80.897324], [35.035268999999964, -80.897295], [35.035094000000015, -80.897305], [35.034924000000004, -80.897371], [35.034819999999996, -80.897423], [35.034607000000015, -80.897499], [35.03439000000006, -80.897541], [35.0343378196439, -80.89753905840108], [35.034232999999986, -80.897573], [35.03412899999997, -80.897566], [35.03385500000002, -80.89755], [35.033582000000045, -80.89753], [35.03334000000002, -80.897508], [35.032911000000006, -80.897594], [35.03264699999998, -80.89768500000001], [35.03193600000004, -80.898068], [35.03141999999999, -80.89834], [35.03074200000004, -80.898694], [35.03070999999997, -80.898711], [35.03064299999999, -80.898746], [35.030500999999994, -80.89884], [35.03047099999998, -80.898865], [35.030436999999985, -80.898879], [35.030367999999996, -80.898896], [35.030334, -80.898909], [35.03032943908923, -80.89891010765075], [35.03032699999999, -80.898911], [35.03002199999998, -80.89907], [35.02971300000001, -80.899157], [35.02940300000001, -80.899209], [35.028942999999984, -80.899172], [35.028760999999996, -80.899156], [35.02876075057537, -80.89915597788347], [35.028445999999995, -80.899334], [35.02831300000003, -80.899428], [35.028259999999996, -80.899473], [35.028105000000004, -80.899611], [35.028054, -80.899658], [35.02790699999996, -80.899781], [35.02773400000001, -80.899935], [35.027440999999996, -80.900186], [35.02741369769938, -80.90020661237358], [35.027373, -80.900257], [35.02723400000002, -80.900358], [35.02706800000005, -80.900477], [35.026902999999955, -80.900586], [35.026489, -80.90073200000002], [35.02608500000001, -80.90086100000002], [35.02568600000001, -80.900878], [35.02511405393702, -80.90092299575674], [35.025019999999984, -80.90096800000002], [35.02489300000004, -80.901046], [35.02458000000002, -80.901257], [35.02425799999999, -80.901446], [35.024132999999956, -80.901531], [35.023877, -80.901689], [35.023542, -80.901939], [35.023336999999955, -80.902111], [35.023125, -80.902271], [35.02300599999998, -80.902367], [35.02294099999998, -80.902405], [35.02280699999999, -80.902463], [35.02275390509521, -80.90247207321246], [35.02261400000001, -80.90258], [35.022334, -80.90273100000002], [35.02173000000002, -80.90292], [35.021686909239826, -80.90293077269018], [35.02161300000003, -80.903017], [35.021336000000005, -80.90336], [35.02130600000002, -80.903384], [35.021207000000025, -80.903432], [35.021138000000015, -80.903455], [35.02081900000001, -80.90347], [35.020747999999976, -80.903468], [35.020696112271104, -80.90345992311893], [35.02069599999997, -80.90346], [35.02040499999999, -80.903658], [35.02012099999998, -80.903595], [35.01990300000003, -80.90353500000002], [35.01960400000003, -80.903224], [35.01940609270348, -80.90297911470839], [35.01924200000001, -80.903011], [35.01897300000001, -80.903124], [35.01878800000001, -80.903255], [35.018729000000036, -80.903327], [35.018695999999956, -80.903405], [35.01868599999999, -80.903448], [35.01868399999999, -80.903492], [35.018688, -80.90358], [35.018695999999956, -80.903622], [35.018715000000014, -80.90366], [35.01873999999998, -80.903691], [35.01904399999998, -80.903919], [35.01908799999999, -80.903988], [35.01910500000002, -80.904027], [35.01912900000001, -80.90411000000002], [35.01913800000001, -80.904241], [35.01912600000002, -80.904416], [35.01911499999996, -80.904503], [35.019066741349846, -80.90471564065301], [35.019066999999964, -80.904716], [35.019137999999984, -80.904815], [35.01918199999999, -80.904987], [35.01924099999998, -80.905192], [35.01912900000001, -80.90550400000001], [35.018792999999995, -80.905897], [35.01851099999998, -80.906218], [35.01849400000001, -80.906294], [35.018493329315895, -80.90629688396263], [35.01848699999997, -80.906376], [35.01852399999998, -80.906546], [35.018556, -80.906624], [35.018649000000025, -80.906812], [35.018839, -80.90713], [35.01895199999999, -80.907355], [35.01912900000001, -80.907686], [35.01914099999997, -80.907727], [35.01914500000002, -80.907859], [35.01913800000001, -80.907903], [35.019123999999984, -80.907943], [35.01911985014188, -80.90794958253753], [35.019119999999994, -80.90795], [35.01914299999997, -80.908016], [35.01914, -80.90805], [35.01912900000004, -80.908128], [35.01914, -80.908253], [35.018998, -80.90848], [35.018875, -80.908591], [35.018468999999996, -80.90866], [35.01830700000001, -80.90865000000001], [35.01826099999999, -80.908718], [35.018243999999996, -80.908756], [35.01812700000002, -80.908975], [35.01808, -80.909042], [35.01792700000001, -80.909225], [35.017897000000005, -80.90925], [35.017816999999944, -80.909336], [35.01773800000002, -80.909447], [35.01772400000001, -80.909467], [35.017677999999954, -80.909471], [35.01765799999998, -80.909478], [35.01730032608743, -80.90950390537671], [35.01730000000001, -80.909504], [35.01687100000005, -80.909535], [35.01679299999996, -80.909527], [35.01648100000002, -80.90948600000002], [35.01618100000001, -80.90926], [35.015866, -80.909005], [35.01563599999997, -80.908679], [35.01550299999998, -80.908506], [35.01550285318438, -80.90850580867038], [35.01504299999998, -80.908385], [35.01494200000002, -80.908342], [35.01484800000004, -80.908281], [35.01482200000006, -80.908251], [35.01475399999998, -80.908148], [35.01471199999998, -80.908077], [35.014658999999966, -80.907963], [35.014645999999985, -80.907922], [35.01463564263741, -80.90789884824298], [35.01449000000001, -80.907837], [35.01407900000002, -80.907419], [35.01404, -80.907375], [35.014039547809375, -80.90737449224736], [35.01373, -80.907249], [35.01337799999996, -80.907079], [35.01317900000005, -80.906971], [35.01301799999999, -80.906885], [35.01292599999997, -80.906818], [35.01289231451685, -80.90678551752539], [35.012891000000025, -80.906785], [35.01288635703802, -80.9067797728098], [35.01281400000003, -80.90671000000002], [35.01273999999997, -80.906615], [35.012586999999996, -80.906373], [35.012314000000046, -80.906153], [35.01230699999999, -80.906083], [35.01226799999999, -80.905843], [35.012205999999985, -80.905525], [35.01212099999997, -80.905246], [35.01193500000001, -80.90506800000001], [35.01167100000002, -80.904913], [35.01149299999999, -80.90482], [35.01129899999999, -80.904796], [35.01110500000003, -80.904781], [35.01097399999999, -80.904683], [35.01096300000003, -80.904665], [35.01090399999998, -80.904564], [35.010895999999974, -80.904448], [35.01091900000005, -80.904324], [35.01094199999997, -80.904215], [35.011066000000014, -80.904091], [35.01118276295406, -80.90399967711079], [35.01118399999998, -80.903998], [35.01124499999999, -80.903951], [35.01136899999999, -80.903789], [35.01148500000001, -80.903502], [35.01157000000001, -80.903262], [35.01161700000001, -80.903068], [35.01169399999999, -80.902889], [35.01174000000005, -80.902704], [35.0117403542344, -80.90270358325381], [35.011752999999985, -80.902653], [35.01187500000002, -80.902436], [35.01202400000001, -80.902291], [35.01216499999997, -80.902183], [35.012354000000045, -80.902097], [35.012376910289255, -80.90209071488424], [35.012377999999984, -80.90209], [35.01246700000003, -80.902066], [35.01258000000003, -80.90199700000001], [35.01265300000005, -80.90181], [35.012668000000055, -80.901789], [35.01268199999995, -80.901753], [35.01275799999997, -80.901574], [35.012767, -80.90155500000002], [35.01277999999996, -80.901514], [35.01289800274874, -80.9014229913952], [35.01294399999998, -80.901279], [35.012924000000005, -80.901209], [35.012887999999954, -80.90107], [35.01283999999997, -80.900828], [35.01272700000003, -80.900667], [35.01263499999998, -80.900602], [35.01259700000002, -80.900575], [35.01244799999998, -80.900394], [35.012397, -80.900335], [35.01225300000001, -80.900144], [35.01223099999999, -80.90011], [35.01207399999998, -80.89986], [35.011718, -80.899538], [35.011702999999976, -80.89952600000001], [35.01165600000001, -80.899493], [35.01160400000003, -80.899454], [35.01157300000002, -80.899429], [35.011473000000024, -80.899355], [35.011441078874725, -80.89935001232418], [35.01142100000004, -80.899359], [35.01139200000002, -80.899371], [35.011359000000006, -80.899389], [35.01113099999998, -80.899599], [35.010866, -80.899822], [35.01073299999999, -80.899928], [35.010676000000025, -80.899992], [35.010664000000006, -80.9], [35.01041399999997, -80.900163], [35.010060999999986, -80.900373], [35.010027999999984, -80.900389], [35.009888000000025, -80.900421], [35.00985199999996, -80.900425], [35.00971100000001, -80.900419], [35.00963999999993, -80.900409], [35.009502999999995, -80.900358], [35.009374000000015, -80.900287], [35.00912299999998, -80.900119], [35.009064, -80.90007], [35.00883900000004, -80.899856], [35.008743999999965, -80.899777], [35.00862700000001, -80.899698], [35.008527, -80.899631], [35.00831000000003, -80.89954], [35.00821300000003, -80.899464], [35.008212999985176, -80.89946399998837], [35.00814299999997, -80.899454], [35.00807300000001, -80.899439], [35.00793100000003, -80.899443], [35.00786000000003, -80.899452], [35.00782599999999, -80.899466], [35.00773099999998, -80.899525], [35.007657999999964, -80.899622], [35.007601000000044, -80.899783], [35.007555000000025, -80.89995000000002], [35.00754000000001, -80.90008], [35.007517000000036, -80.90047600000001], [35.00752300000004, -80.900783], [35.00752899999999, -80.900941], [35.007529999999996, -80.900958], [35.00752899999999, -80.901047], [35.007518, -80.901134], [35.00751599999994, -80.901178], [35.007495, -80.901307], [35.00747099999999, -80.90139], [35.007443000000016, -80.90147], [35.00737599999998, -80.901626], [35.00733900000003, -80.901701], [35.007247000000035, -80.901835], [35.00718481163546, -80.9018994636673], [35.00714600000002, -80.901995], [35.00685999999998, -80.902277], [35.00675500000002, -80.90239], [35.00668699999997, -80.902463], [35.00652100000002, -80.902548], [35.006367999999995, -80.902536], [35.006304, -80.902538], [35.00610499999996, -80.902546], [35.00601599999997, -80.9025], [35.00590699999997, -80.902444], [35.00588299999998, -80.902425], [35.00573999999995, -80.902317], [35.005675000000004, -80.902267], [35.00564400000002, -80.902244], [35.00560300000003, -80.902213], [35.00556323517782, -80.90217820578049], [35.005537999999994, -80.90216100000002], [35.00539500000002, -80.90203], [35.00517999999998, -80.901845], [35.00513333893729, -80.90169707450062], [35.00512399999999, -80.90168400000002], [35.004982000000005, -80.901433], [35.004768999999975, -80.901081], [35.00450599999998, -80.900723], [35.00411200000002, -80.900217], [35.00406600000001, -80.900151], [35.00401199999998, -80.900081], [35.003943999999976, -80.899991], [35.003741999999974, -80.899743], [35.00369600000003, -80.899676], [35.003595999999995, -80.899544], [35.00325699999998, -80.899021], [35.003217000000056, -80.89897], [35.003025770268465, -80.8986859953782], [35.00276199999997, -80.898357], [35.00261000000002, -80.89817700000002], [35.002545000000005, -80.898055], [35.002388999999994, -80.897738], [35.00205282834623, -80.89715443791768], [35.00200600000002, -80.89710000000001], [35.00188100000001, -80.89693], [35.001667000000026, -80.896654], [35.00159500000002, -80.896577], [35.00148799999997, -80.896452], [35.00147900000004, -80.896441], [35.001382999999976, -80.896325], [35.00125600000001, -80.896155], [35.00121900000002, -80.896109], [35.001091000000024, -80.895983], [35.00102100000004, -80.8959], [35.000947, -80.895822], [35.000869000000016, -80.89574800000001], [35.00082500000002, -80.895689], [35.00080599999996, -80.895657], [35.000719000000025, -80.89554000000001], [35.000641000000016, -80.89541], [35.00058000000002, -80.89534], [35.00045462040047, -80.89523253177067], [35.00033000000001, -80.895189], [35.000155, -80.89512], [35.00003999999998, -80.895056], [34.99987799999996, -80.894942], [34.99967099999999, -80.894769], [34.999311002137766, -80.89443600060666], [34.999311, -80.894436], [34.99909, -80.894374], [34.998552999999994, -80.894191], [34.998071000000046, -80.893708], [34.997740161631775, -80.89332018946445], [34.99772500000002, -80.893328], [34.997517, -80.893389], [34.99744599999997, -80.893394], [34.99737499999999, -80.893384], [34.99713200000002, -80.893315], [34.99706499999999, -80.893283], [34.99677100000003, -80.893126], [34.99673599999998, -80.893115], [34.99669999999998, -80.893113], [34.99659399999999, -80.893129], [34.99656262402221, -80.89314053530296], [34.99656199999999, -80.893141], [34.99632200000003, -80.893319], [34.99609099999997, -80.893541], [34.995975413894996, -80.89358285014173], [34.99591800000007, -80.89366], [34.995858, -80.893707], [34.99582599999996, -80.893727], [34.99569299999997, -80.893787], [34.99548599999998, -80.893854], [34.99542000000003, -80.893887], [34.99538899999997, -80.893907], [34.995122999999985, -80.894034], [34.994983000000005, -80.89406600000001], [34.99494899999999, -80.894081], [34.994606182990545, -80.89409831423457], [34.99456800000003, -80.894113], [34.99417600000005, -80.894172], [34.99401900000001, -80.894196], [34.99374700000001, -80.894221], [34.99348199999998, -80.89415000000001], [34.99346299999996, -80.894144], [34.993428000000044, -80.894135], [34.99329500000003, -80.89407], [34.993170000000006, -80.894018], [34.992205999999996, -80.893429], [34.99126300000001, -80.892809], [34.990967999999945, -80.892534], [34.9909672912951, -80.89253332227244], [34.99085299999997, -80.892483], [34.99072200000005, -80.892413], [34.990611999999985, -80.892301], [34.990586999999984, -80.892269], [34.99057199999998, -80.892231], [34.99055400000002, -80.8921], [34.99055499999998, -80.89188], [34.99057199999998, -80.891705], [34.99059999999998, -80.891532], [34.99065099999996, -80.891368], [34.99067, -80.891331], [34.990697, -80.891301], [34.990820999999976, -80.891176], [34.99090900000002, -80.891045], [34.990930999999975, -80.891002], [34.99095799999995, -80.890921], [34.990989, -80.890899], [34.99099799999997, -80.89089], [34.99107599999998, -80.890821], [34.99110199999998, -80.890791], [34.991122999999966, -80.89075500000001], [34.99124499999996, -80.890488], [34.99126799999999, -80.890415], [34.991311, -80.890284], [34.99132600000002, -80.89024], [34.99135400000001, -80.89016400000001], [34.99141500000002, -80.890003], [34.991447, -80.889942], [34.99147199999997, -80.889865], [34.99151299999999, -80.889769], [34.99157600000001, -80.88956400000001], [34.99162599999994, -80.889353], [34.991655000000016, -80.889272], [34.99173499999998, -80.889077], [34.99173900000002, -80.889063], [34.991805000000035, -80.888875], [34.99182899999999, -80.888792], [34.991834999999995, -80.888749], [34.991854999999994, -80.888665], [34.991889, -80.88845], [34.99194600000001, -80.887752], [34.99195199999998, -80.887443], [34.99193500000002, -80.88709300000001], [34.991901999999996, -80.886878], [34.991868999999994, -80.886753], [34.99185499999998, -80.886713], [34.99181200000004, -80.88656], [34.99170300000001, -80.88617300000001], [34.991664999999976, -80.88605], [34.99164899999998, -80.886011], [34.99156299999998, -80.88587300000002], [34.99153600000001, -80.885843], [34.99147899999998, -80.88579100000001], [34.991416000000015, -80.88575], [34.99125399999999, -80.885658], [34.991082000000006, -80.885603], [34.99104700000004, -80.885597], [34.990833, -80.885588], [34.99079800000002, -80.885581], [34.990210999999974, -80.88539600000001], [34.99014, -80.885392], [34.989892999999995, -80.88535900000001], [34.989749999999994, -80.885363], [34.98964400000001, -80.885371], [34.989628999999994, -80.885373], [34.989458724987436, -80.88540427501329], [34.98931599999999, -80.885547], [34.989180999999995, -80.885558], [34.98908299999998, -80.885598], [34.98896300000004, -80.885627], [34.98881100000004, -80.88558], [34.98877699999999, -80.885593], [34.98867899999998, -80.885643], [34.988585999999984, -80.885707], [34.98856500000004, -80.885725], [34.98849899999998, -80.885785], [34.98844800000004, -80.885836], [34.988344999999974, -80.886024], [34.988259425927225, -80.88620196393549], [34.98824099999999, -80.886265], [34.98822200000001, -80.88633], [34.98815899999997, -80.886622], [34.98802300000001, -80.88682300000002], [34.98802179990415, -80.88682476322295], [34.98800899999999, -80.886857], [34.98797999999998, -80.886984], [34.987981, -80.887028], [34.98799400000001, -80.887115], [34.98801199999999, -80.8872], [34.988025, -80.887241], [34.98804208752734, -80.8873323112904], [34.98815699999999, -80.887741], [34.98823300000005, -80.887846], [34.98815899999997, -80.888122], [34.98805799999998, -80.888261], [34.98800299999996, -80.888289], [34.987899999999975, -80.888311], [34.98782999999996, -80.888359], [34.987677999999995, -80.888449], [34.98754299999999, -80.888505], [34.987438999999995, -80.888532], [34.98740800000001, -80.888552], [34.98737900000003, -80.888579], [34.98733999999998, -80.888624], [34.987269000000055, -80.888635], [34.98716199999999, -80.888635], [34.98715099999997, -80.888636], [34.98702100000002, -80.888653], [34.98695099999999, -80.88867], [34.98674400000004, -80.88873500000001], [34.986610000000006, -80.888794], [34.986541, -80.888812], [34.986469999999976, -80.88881700000002], [34.98642400000004, -80.888814], [34.986293000000025, -80.888806], [34.98615400000005, -80.888772], [34.98612299999998, -80.888766], [34.985835, -80.888719], [34.98572900000004, -80.888731], [34.98565800000003, -80.888744], [34.98562400000003, -80.888757], [34.98559600000002, -80.888784], [34.98554900000002, -80.88885], [34.985506000000036, -80.888921], [34.98544799999996, -80.889031], [34.985406, -80.889102], [34.98533099999999, -80.889252], [34.98530199999998, -80.889273], [34.98526699999996, -80.889275], [34.98520599999997, -80.889258], [34.98512199999998, -80.889208], [34.98505599999997, -80.889177], [34.98493899999998, -80.889079], [34.984912000000016, -80.889052], [34.98479299999997, -80.888957], [34.984771999999985, -80.888922], [34.984742, -80.888898], [34.98466399999999, -80.888809], [34.98464299999998, -80.888774], [34.98463100000001, -80.888687], [34.984630999999986, -80.888599], [34.98464127715381, -80.8885585337768], [34.98464100000003, -80.888558], [34.984557999999986, -80.888398], [34.984461000000024, -80.888184], [34.98427300000002, -80.888014], [34.98403799999999, -80.887758], [34.983988000000046, -80.887819], [34.98386299999998, -80.88790400000002], [34.98379899999995, -80.88794], [34.98369699999999, -80.887978], [34.983557000000005, -80.888009], [34.98344999999998, -80.888001], [34.983282, -80.887928], [34.98321600000003, -80.887894], [34.98286699999999, -80.887674], [34.98280700000001, -80.887626], [34.982652000000016, -80.88765400000001], [34.98243700000002, -80.887605], [34.982201999999994, -80.887498], [34.981806000000006, -80.887244], [34.981266000000026, -80.886812], [34.98118699999998, -80.886684], [34.981154, -80.886638], [34.981051999999984, -80.886586], [34.98095199999999, -80.88654], [34.98084800000002, -80.88651], [34.98063699999995, -80.886468], [34.98053000000002, -80.886465], [34.98049399999997, -80.886469], [34.98038700000001, -80.88647], [34.980209000000045, -80.88646], [34.98011699999999, -80.886445], [34.97969500000002, -80.886411], [34.979010000000024, -80.886134], [34.97852299999997, -80.88592200000001], [34.97852266487759, -80.88592185238619], [34.97842699999996, -80.885936], [34.978390999999995, -80.885937], [34.978182000000025, -80.885993], [34.97814899999997, -80.886008], [34.978113999999955, -80.886018], [34.97802299999998, -80.886033], [34.97799799999999, -80.886036], [34.977926000000004, -80.88604900000001], [34.977901999999986, -80.886053], [34.97783300000002, -80.886046], [34.97773799999998, -80.886037], [34.977629000000015, -80.886009], [34.977598, -80.886001], [34.977564000000015, -80.885987], [34.977507999999986, -80.885972], [34.97745252063812, -80.88595305578798], [34.97722099999998, -80.88598], [34.976853, -80.885904], [34.97670199999998, -80.885896], [34.97659999999994, -80.885856], [34.97657458936962, -80.88584290966118], [34.97647500000001, -80.885821], [34.97603899999999, -80.885554], [34.97577700000003, -80.88535900000001], [34.975654999999996, -80.885131], [34.97556100000004, -80.884618], [34.97542699999998, -80.88414600000002], [34.97542664622477, -80.88414526886213], [34.97537400000001, -80.884106], [34.975309000000024, -80.884071], [34.97523900000004, -80.884053], [34.97516800000001, -80.884053], [34.97513300000001, -80.884063], [34.975065000000036, -80.884091], [34.97497, -80.88415], [34.97494000000004, -80.884173], [34.97481200000003, -80.88425], [34.97467400000001, -80.884391], [34.974641000000005, -80.884404], [34.974571999999995, -80.884382], [34.974505999999984, -80.884347], [34.97447500000001, -80.884326], [34.97444999999999, -80.884296], [34.97430499999996, -80.884044], [34.974247999999974, -80.883933], [34.97422478741881, -80.88386916534117], [34.97412599999997, -80.883946], [34.97395099999997, -80.883963], [34.973544142657246, -80.88377506589536], [34.97349199999999, -80.883809], [34.97339399999997, -80.883864], [34.97336099999997, -80.883878], [34.97325499999999, -80.883898], [34.97321899999998, -80.883901], [34.97314799999996, -80.883896], [34.97311299999998, -80.883889], [34.97304399999995, -80.883864], [34.972977000000014, -80.883834], [34.97287899999999, -80.883781], [34.972545, -80.88353], [34.972450999999964, -80.883467], [34.97238499999999, -80.883433], [34.97232971200847, -80.88340017273498], [34.97232899999997, -80.8834], [34.97212600000002, -80.88335], [34.97191099999998, -80.883234], [34.971784000000014, -80.883164], [34.97171799999999, -80.883112], [34.971685, -80.88306000000001], [34.97162200000001, -80.883018], [34.97150999999999, -80.88291], [34.97132199999998, -80.882784], [34.97129399999999, -80.882756], [34.971233999999974, -80.882709], [34.971122000000015, -80.882602], [34.97096800000001, -80.88249], [34.970839999999974, -80.882413], [34.970781999999986, -80.882393], [34.97073800000001, -80.882378], [34.970703999999984, -80.88237100000002], [34.970703550289414, -80.88237078195844], [34.970632999999985, -80.882356], [34.970597, -80.882355], [34.970562, -80.88236000000002], [34.97045799999998, -80.882389], [34.970427, -80.88241], [34.970312000000014, -80.882515], [34.97013199999997, -80.882789], [34.97004900000006, -80.882872], [34.969897, -80.882984], [34.969659999999976, -80.883078], [34.96959099999995, -80.883093], [34.969494, -80.883239], [34.96899, -80.88349600000001], [34.96891431645476, -80.88352886259216], [34.96885699999996, -80.883591], [34.96865999999999, -80.883845], [34.96854299999999, -80.884009], [34.96846800000001, -80.884103], [34.968440999999984, -80.884131], [34.96828500000001, -80.884237], [34.96813099999997, -80.88423300000001], [34.96802332934958, -80.88423765243893], [34.968022999999995, -80.884238], [34.96795699999999, -80.884307], [34.967452, -80.884406], [34.96678899999996, -80.884624], [34.96670099999999, -80.884731], [34.966606000000056, -80.884756], [34.966359, -80.884742], [34.96620299999996, -80.88470200000002], [34.96609299999999, -80.884605], [34.965861000000004, -80.88439900000002], [34.965571000000025, -80.884099], [34.96541900000002, -80.883823], [34.965280843938494, -80.88353385908272], [34.96515199999998, -80.883327], [34.965049, -80.883148], [34.96500899999997, -80.883026], [34.96500599999998, -80.882982], [34.96500599999998, -80.88285], [34.96502399999998, -80.88272], [34.96505400000005, -80.88264000000001], [34.96508600000002, -80.882514], [34.965106999999996, -80.882453], [34.96511104660862, -80.8824534165623], [34.96511100000001, -80.882453], [34.965031, -80.88176200000001], [34.96480800000004, -80.881091], [34.964708037842726, -80.88070414645014], [34.963346270071085, -80.8801687899448], [34.96334600000002, -80.880169], [34.96332000000004, -80.88019], [34.96321400000002, -80.880275], [34.962933, -80.88024000000001], [34.962740000000004, -80.880102], [34.962611999999986, -80.879957], [34.96251499999998, -80.879842], [34.96238599999997, -80.87962], [34.962325000000014, -80.879419], [34.962325999999976, -80.879195], [34.96234, -80.878932], [34.96241499999998, -80.878742], [34.962557000000004, -80.87858], [34.963049999999996, -80.87821000000001], [34.963373999999995, -80.877992], [34.96350399999998, -80.877809], [34.96352194958003, -80.87777509523777], [34.96351200000001, -80.877761], [34.963467, -80.877708], [34.963498999999985, -80.877614], [34.96351800000002, -80.877577], [34.96356899999998, -80.877517], [34.96362700000001, -80.877467], [34.963722000000004, -80.877404], [34.96387400000003, -80.877291], [34.96395499999999, -80.877207], [34.96400500000001, -80.877144], [34.964051000000005, -80.87707600000002], [34.964113999999995, -80.876972], [34.96417100000001, -80.876858], [34.96418899999997, -80.876822], [34.96422900000005, -80.87675], [34.96428299999999, -80.876636], [34.964328999999964, -80.876569], [34.96442900000003, -80.876442], [34.96455699999998, -80.876291], [34.96462399999997, -80.876207], [34.964782000000056, -80.876009], [34.96491700000001, -80.87582], [34.96501800000002, -80.875678], [34.96508500000005, -80.875522], [34.96512299999999, -80.875448], [34.96515399999996, -80.875369], [34.96519400000002, -80.875246], [34.965251999999964, -80.875039], [34.965290999999986, -80.874823], [34.965301, -80.87478], [34.965309999999974, -80.874739], [34.965353000000015, -80.87448], [34.965354, -80.874436], [34.96533899999998, -80.874304], [34.965325000000036, -80.874218], [34.965294, -80.874168], [34.965269000000006, -80.874136], [34.96518499999999, -80.874054], [34.96509099999996, -80.873993], [34.965037999999964, -80.873974], [34.96494699999996, -80.873944], [34.964884000000026, -80.873927], [34.964814000000025, -80.873914], [34.964734000000014, -80.873888], [34.96457300000005, -80.873838], [34.964185999999984, -80.873764], [34.96408999999999, -80.873742], [34.96390599999998, -80.873701], [34.963876000000006, -80.873692], [34.963837, -80.873681], [34.963764999999995, -80.873675], [34.963694999999966, -80.87367], [34.96358900000001, -80.873647], [34.963486, -80.873617], [34.96343899999998, -80.873601], [34.963334000000025, -80.873565], [34.96320999999997, -80.87352400000002], [34.96314100000005, -80.873505], [34.96312799999998, -80.873499], [34.962942000000034, -80.87341], [34.962621999999996, -80.873215], [34.96256899999997, -80.873177], [34.96256000000001, -80.873171], [34.962398999999934, -80.87304500000002], [34.96238900000003, -80.873035], [34.96210900000002, -80.872818], [34.96206262505745, -80.87278835520775], [34.96206000000001, -80.87278700000002], [34.96195099999995, -80.872717], [34.96185199999996, -80.87266600000001], [34.96178199999997, -80.872643], [34.961781426965295, -80.87264270403624], [34.961749000000026, -80.872632], [34.96153499999996, -80.872629], [34.96146400000002, -80.872635], [34.96128699999995, -80.872665], [34.96096800000004, -80.872684], [34.96064799999997, -80.872693], [34.960363000000015, -80.87269], [34.96032700000005, -80.872693], [34.95974399999998, -80.87271], [34.95960199999997, -80.872725], [34.95956699999997, -80.872734], [34.95943199999997, -80.872788], [34.95927399999997, -80.87289], [34.958892, -80.873212], [34.95867900000001, -80.873372], [34.958402000000014, -80.873532], [34.95832499999999, -80.873578], [34.95809499999995, -80.873695], [34.957891999999994, -80.873777], [34.95775400000003, -80.873822], [34.957579999999986, -80.873868], [34.957406, -80.87392], [34.957336, -80.873935], [34.95727400000003, -80.873939], [34.957264999999964, -80.87394000000002], [34.957016, -80.873941], [34.95669800000002, -80.873883], [34.956076000000024, -80.873689], [34.955977, -80.873639], [34.955873999999994, -80.873606], [34.955564999999986, -80.873495], [34.955466999999985, -80.87344200000001], [34.95521899999999, -80.87326800000001], [34.954719, -80.872927], [34.95459699999999, -80.872837], [34.95436099999998, -80.872637], [34.954100000000004, -80.872389], [34.95403999999998, -80.872332], [34.953934999999994, -80.872214], [34.95362499999999, -80.871848], [34.95336899999996, -80.871435], [34.953103000000006, -80.870905], [34.952985999999996, -80.870718], [34.95245299999997, -80.869902], [34.95243599999998, -80.869871], [34.95217199999996, -80.869473], [34.952054999999994, -80.86932900000001], [34.95200200000002, -80.869269], [34.951885, -80.869157], [34.95180099999999, -80.869088], [34.95173299999997, -80.869042], [34.95163899999999, -80.868991], [34.95149199999998, -80.868865], [34.95146899999998, -80.86885000000001], [34.95144900000001, -80.868831], [34.95114299999998, -80.868652], [34.950977999999964, -80.868604], [34.95078299999998, -80.86858], [34.95076700000003, -80.86858], [34.95071099999999, -80.86859000000001], [34.950478741009114, -80.86869730966332], [34.95043300000002, -80.868752], [34.950213999999974, -80.869019], [34.95007600000005, -80.869212], [34.949791000000005, -80.869415], [34.9494830954421, -80.86959194515202], [34.949447000000006, -80.869642], [34.949333000000024, -80.869696], [34.949127999999995, -80.869773], [34.94902400000005, -80.869804], [34.948779, -80.869863], [34.948139, -80.869954], [34.94783999999998, -80.869973], [34.94772399999999, -80.86997], [34.94760200000001, -80.869976], [34.947282000000065, -80.869956], [34.947178000000015, -80.869949], [34.94710000000003, -80.86994], [34.947035000000014, -80.869933], [34.94678799999997, -80.869894], [34.946717999999976, -80.869877], [34.946337999999976, -80.869752], [34.94583999999996, -80.869514], [34.945679000000005, -80.86943], [34.945423000000005, -80.869301], [34.94531999999999, -80.869263], [34.94507699999996, -80.869156], [34.944881000000024, -80.86908], [34.94456800000002, -80.868988], [34.944425999999986, -80.868972], [34.94424500000001, -80.868934], [34.94413099999999, -80.86891], [34.94328400000002, -80.868735], [34.94301696154997, -80.86870007376872], [34.94266100000002, -80.869383], [34.941668, -80.868788], [34.94130100000001, -80.868489], [34.941300974159105, -80.86848897910724], [34.94133699999998, -80.868566], [34.94148899999999, -80.868754], [34.94180999999999, -80.869031], [34.94224300000002, -80.869388], [34.94322200000002, -80.870054], [34.94456899999999, -80.871194], [34.94498599999997, -80.871701], [34.94556799999998, -80.872407], [34.946171, -80.87433], [34.94624799999999, -80.874531], [34.946315999999996, -80.874795], [34.94635999999999, -80.874989], [34.946683999999976, -80.876416], [34.946912999999974, -80.878461], [34.946843999999984, -80.880537], [34.946840000000016, -80.880907], [34.94683600000001, -80.881275], [34.94682600000001, -80.882157], [34.94681699999999, -80.883039], [34.946813999999996, -80.88336], [34.946767999999985, -80.884321], [34.946638000000036, -80.885618], [34.946579999999976, -80.88613300000002], [34.946447000000006, -80.887312], [34.946196, -80.888334], [34.945585000000015, -80.890089], [34.945397000000035, -80.890509], [34.94495200000003, -80.891493], [34.944426, -80.892927], [34.94424599999998, -80.893657], [34.944191000000004, -80.894082], [34.944171999999995, -80.894191], [34.944127999999985, -80.894987], [34.94415100000002, -80.896055], [34.94418900000003, -80.897047], [34.944205000000004, -80.897175], [34.944265999999985, -80.89766300000001], [34.94432799999999, -80.898151], [34.944540000000025, -80.899382], [34.944585000000004, -80.899559], [34.944686, -80.899936], [34.94481499999995, -80.900434], [34.94514300000002, -80.901289], [34.945608000000036, -80.902372], [34.946249, -80.903807], [34.946752999999994, -80.905088], [34.94718000000002, -80.906218], [34.948854000000026, -80.913841], [34.94964599999999, -80.91667200000002], [34.95012500000004, -80.9187], [34.95039899999999, -80.920124], [34.95042200000003, -80.920241], [34.950460999999954, -80.921168], [34.95048099999999, -80.921652], [34.950501999999965, -80.922136], [34.950512999999965, -80.922393], [34.95056200000002, -80.923078], [34.950664999999965, -80.924483], [34.95093200000002, -80.926131], [34.95120300000001, -80.927248], [34.951306, -80.927672], [34.95145799999999, -80.928157], [34.952008000000035, -80.929904], [34.95261000000005, -80.931819], [34.952962000000056, -80.932937], [34.95329799999998, -80.93457], [34.95339500000001, -80.935831], [34.95341400000004, -80.935883], [34.953316, -80.936737], [34.953219, -80.937592], [34.95318399999999, -80.937912], [34.95316500000001, -80.93799], [34.952969, -80.938812], [34.95290800000002, -80.939259], [34.952902, -80.939657], [34.95288100000002, -80.939876], [34.95285400000003, -80.940094], [34.95283, -80.940446], [34.95282799999995, -80.940825], [34.952855000000014, -80.941282], [34.95284599999998, -80.9413], [34.95293100000003, -80.941777], [34.95300800000001, -80.94223], [34.95345800000001, -80.943756], [34.95428900000003, -80.945435], [34.95497599999998, -80.94693], [34.955831, -80.948074], [34.95641000000002, -80.948685], [34.95649499999999, -80.948772], [34.959448000000016, -80.951782], [34.96002800000005, -80.952774], [34.960576999999965, -80.953691], [34.96085200000002, -80.955049], [34.96105800000004, -80.956071], [34.96106499999996, -80.957032], [34.96106699999998, -80.957139], [34.961077, -80.957184], [34.961123, -80.957703], [34.961134999999985, -80.957841], [34.961280000000016, -80.958329], [34.96160800000003, -80.958955], [34.961767, -80.959103], [34.962295, -80.959596], [34.96262600000002, -80.959753], [34.962653, -80.959782], [34.963629000000026, -80.960247], [34.96488600000001, -80.960455], [34.96508600000002, -80.960445], [34.966449000000004, -80.960379], [34.966820999999996, -80.960361], [34.96765000000002, -80.959949], [34.968059000000025, -80.959694], [34.96889199999995, -80.959175], [34.969882, -80.958558], [34.971393000000006, -80.957445], [34.97188699999998, -80.957237], [34.972205999999986, -80.957178], [34.972638, -80.95709900000001], [34.97372200000003, -80.957125], [34.97450799999999, -80.957391], [34.97495500000001, -80.957691], [34.97835599999997, -80.962773], [34.979071000000005, -80.963546], [34.97979399999998, -80.963976], [34.980990999999975, -80.964653], [34.981796000000024, -80.965386], [34.98181299999999, -80.965392], [34.982034, -80.965686], [34.98225400000001, -80.965981], [34.98276299999997, -80.966661], [34.98279500000001, -80.966743], [34.98321399999998, -80.967831], [34.98371600000004, -80.969132], [34.984218999999996, -80.970434], [34.98565899999999, -80.974169], [34.98574999999999, -80.97444], [34.98590800000002, -80.975286], [34.98602799999995, -80.975921], [34.98731099999998, -80.982719], [34.987421000000026, -80.983302], [34.987438999999995, -80.983397], [34.987468999999976, -80.983549], [34.98760599999997, -80.983471], [34.988274999999994, -80.983012], [34.988642, -80.982762], [34.989941, -80.981865], [34.991611000000056, -80.980736], [34.99256099999997, -80.980088], [34.993116999999955, -80.979711], [34.99314600000004, -80.979771], [34.993271999999955, -80.980043], [34.99390499999996, -80.980011], [34.99516499999997, -80.979831], [34.99926000000001, -80.977975], [34.99937499999998, -80.977926], [34.99917500000003, -80.977702], [34.99907699999997, -80.977558], [34.99900500000002, -80.977452], [34.998853, -80.977229], [34.998547000000016, -80.97672], [34.998265000000025, -80.976224], [34.999044999999974, -80.975691], [35.001213999999955, -80.974222], [35.002131999999996, -80.973618], [35.00266199999997, -80.973291], [35.003243999999995, -80.97295300000002], [35.003662999999975, -80.972715], [35.00445600000001, -80.97234], [35.004848000000024, -80.972163], [35.00512399999999, -80.972047], [35.006267, -80.971615], [35.00632100000001, -80.97159], [35.006953999999965, -80.97139700000001], [35.00766800000002, -80.971209], [35.00832499999994, -80.971047], [35.00896299999996, -80.970934], [35.009427, -80.970846], [35.010670000000026, -80.97059], [35.01277599999998, -80.970161], [35.015185000000045, -80.969677], [35.01677700000001, -80.96935800000001], [35.01767000000001, -80.969167], [35.018664000000015, -80.968978], [35.01954099999999, -80.968786], [35.01958600000001, -80.968776], [35.01961699999996, -80.968673], [35.019629000000016, -80.968653], [35.019627000000014, -80.968634], [35.01965, -80.968559], [35.01969799999997, -80.968549], [35.020991000000016, -80.968286], [35.02175900000002, -80.968135], [35.021870999999976, -80.968111], [35.02272100000004, -80.967877], [35.02296000000001, -80.96779800000002], [35.02331800000003, -80.967665], [35.02342399999998, -80.967626], [35.02403599999998, -80.967406], [35.024565999999986, -80.967186], [35.02544899999999, -80.966679], [35.026407, -80.966074], [35.027274999999975, -80.965505], [35.02755299999996, -80.965285], [35.02777200000001, -80.96514], [35.02787899999995, -80.96507], [35.02804700000003, -80.964949], [35.028144999999974, -80.964885], [35.028389, -80.96472700000001], [35.02894799999998, -80.964294], [35.02959800000006, -80.96386], [35.03046499999999, -80.96325100000001], [35.030691, -80.963101], [35.03114899999999, -80.962798], [35.031767999999985, -80.962403], [35.032093999999994, -80.962216], [35.03270999999999, -80.96186], [35.03306999999998, -80.961657], [35.03338599999998, -80.9615], [35.03369300000004, -80.961364], [35.034149, -80.961197], [35.03453199999998, -80.961051], [35.034972000000025, -80.960911], [35.03544800000001, -80.960751], [35.03585399999998, -80.960648], [35.036311000000005, -80.960518], [35.03670999999995, -80.960434], [35.03695999999996, -80.96039100000002], [35.037035000000024, -80.960457], [35.037090000000006, -80.960448], [35.038341999999986, -80.960205], [35.03893499999998, -80.960125], [35.03986100000001, -80.960011], [35.040372000000026, -80.959927], [35.04107900000002, -80.959858], [35.041492999999974, -80.959792], [35.04245699999999, -80.95969], [35.043176999999986, -80.959585], [35.04330200000004, -80.95959], [35.04331700000002, -80.959588], [35.043373999999964, -80.959577], [35.04341300000007, -80.959629], [35.04349999999997, -80.95975], [35.046999, -80.959262], [35.05001500000001, -80.95886], [35.05198699999998, -80.958593], [35.054226000000014, -80.958326], [35.05523899999999, -80.958228], [35.05540399999997, -80.958183], [35.056059000000026, -80.958069], [35.05688799999999, -80.957901], [35.05814400000001, -80.957494], [35.05929400000003, -80.957093], [35.06034099999996, -80.956631], [35.06095999999999, -80.956292], [35.06194300000003, -80.955738], [35.063154999999995, -80.954967], [35.06436700000004, -80.954105], [35.06484300000001, -80.953701], [35.065176, -80.953451], [35.06609899999999, -80.952756], [35.06736600000002, -80.951804], [35.069470999999965, -80.950233], [35.070792000000004, -80.949259], [35.072624, -80.947902], [35.074359, -80.946577], [35.076083999999994, -80.945345], [35.07723999999998, -80.94449200000001], [35.078601999999954, -80.943416], [35.080366999999974, -80.94211], [35.081589, -80.941227], [35.082516999999974, -80.940501], [35.08305300000004, -80.940106], [35.084546999999986, -80.939008], [35.08616800000002, -80.937762], [35.086889000000006, -80.937267], [35.08681699999997, -80.937072], [35.087189999999985, -80.936806], [35.08903300000001, -80.935598], [35.08984300000001, -80.935008], [35.09103699999995, -80.934143], [35.09202399999998, -80.933593], [35.09220000000001, -80.933495], [35.09300400000001, -80.933093], [35.093764, -80.932826], [35.09454399999997, -80.932631], [35.09573499999999, -80.932446], [35.097491, -80.932241], [35.09874400000001, -80.932107], [35.09913599999999, -80.932065], [35.099453999999994, -80.932031], [35.100182000000025, -80.931953], [35.10132200000001, -80.931779], [35.102739999999955, -80.931422], [35.103283228581965, -80.93127247324173], [35.07518426977523, -80.90623995409105], [35.07508999999998, -80.906256]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_95c6b26d10f26310412462470d549a47);
+        
+    
+        var popup_566aa5dc9a4bffdf66cb16fcba602dc8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f6b9bd42c2640dcebbe342f00907cea2 = $(`<div id="html_f6b9bd42c2640dcebbe342f00907cea2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> York - SC-CD05</h4>                              </div>         </div>`)[0];
+                popup_566aa5dc9a4bffdf66cb16fcba602dc8.setContent(html_f6b9bd42c2640dcebbe342f00907cea2);
+            
+        
+
+        polygon_c45a5cde29a537a4b73e460195835824.bindPopup(popup_566aa5dc9a4bffdf66cb16fcba602dc8)
+        ;
+
+        
+    
+    
+            polygon_c45a5cde29a537a4b73e460195835824.bindTooltip(
+                `<div>
+                      York - SC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_95c6b26d10f26310412462470d549a47.fitBounds(
+                [[34.94122700000004, -80.983549], [35.103283228581965, -80.868214]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
