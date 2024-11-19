@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_85a45dc4d27517b6b3303174646c21d2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wayne - MI-CD13</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Wayne - MI-CD06</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_85a45dc4d27517b6b3303174646c21d2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_85a45dc4d27517b6b3303174646c21d2 = L.map(
+                "map_85a45dc4d27517b6b3303174646c21d2",
+                {
+                    center: [42.26118546152479, -83.41514245600769],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_85a45dc4d27517b6b3303174646c21d2);
+
+            
+
+        
+    
+            var tile_layer_464674dca143e568111d252823129486 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_464674dca143e568111d252823129486.addTo(map_85a45dc4d27517b6b3303174646c21d2);
+        
+    
+            var polygon_853a7f245f97719bd8aa5e173fdd81b0 = L.polygon(
+                [[42.26500900000001, -83.437548], [42.26502599999996, -83.43684], [42.26505, -83.436329], [42.26506199999997, -83.43606400000002], [42.267121999999986, -83.436078], [42.267273, -83.435949], [42.26763899999997, -83.435562], [42.26799599999997, -83.435328], [42.26854899999999, -83.435111], [42.268857000000004, -83.434914], [42.26906100000002, -83.434545], [42.269221, -83.433535], [42.26942600000004, -83.432997], [42.270577000000024, -83.42956], [42.270657000000014, -83.429761], [42.271162223846105, -83.4267945575573], [42.2379185786531, -83.42548745590554], [42.23790100000002, -83.425906], [42.237950000000005, -83.426399], [42.238085000000034, -83.426857], [42.23825800000002, -83.427179], [42.23856699999995, -83.427499], [42.238711999999985, -83.42757], [42.239061999999976, -83.427742], [42.23928299999999, -83.427766], [42.240782000000024, -83.427811], [42.241004000000004, -83.427902], [42.24127699999999, -83.428115], [42.24146099999997, -83.428518], [42.24147300000001, -83.428775], [42.24151100000002, -83.429681], [42.24158599999996, -83.429852], [42.24170600000002, -83.430124], [42.241939000000045, -83.430378], [42.242347000000045, -83.4305], [42.243041, -83.430517], [42.244167000000004, -83.430514], [42.24447899999999, -83.43056300000002], [42.244957999999954, -83.43073900000002], [42.245272, -83.431005], [42.24563200000001, -83.431421], [42.24592800000005, -83.431868], [42.24618200000005, -83.432175], [42.246404, -83.432361], [42.24679800000003, -83.432599], [42.24705999999999, -83.432636], [42.24732199999998, -83.432699], [42.248698999999995, -83.432719], [42.24886799999999, -83.432675], [42.248970000000035, -83.432649], [42.24919799999999, -83.432566], [42.24919899999999, -83.433825], [42.24920200000001, -83.436907], [42.24922400000004, -83.439779], [42.25361000000003, -83.43998], [42.25652799999998, -83.440135], [42.25653199999998, -83.440603], [42.25940299999997, -83.440771], [42.26491900000001, -83.440986], [42.26493399999995, -83.44051], [42.26500999999997, -83.438049], [42.26500900000001, -83.437548]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_85a45dc4d27517b6b3303174646c21d2);
+        
+    
+        var popup_52608018e9e342eb4af0dc1e8796606b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cb50f8d437d98d51779edfa6596f0825 = $(`<div id="html_cb50f8d437d98d51779edfa6596f0825" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wayne - MI-CD06</h4>                              </div>         </div>`)[0];
+                popup_52608018e9e342eb4af0dc1e8796606b.setContent(html_cb50f8d437d98d51779edfa6596f0825);
+            
+        
+
+        polygon_853a7f245f97719bd8aa5e173fdd81b0.bindPopup(popup_52608018e9e342eb4af0dc1e8796606b)
+        ;
+
+        
+    
+    
+            polygon_853a7f245f97719bd8aa5e173fdd81b0.bindTooltip(
+                `<div>
+                      Wayne - MI-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b75abd67d015e2ba5d94881c290eea27 = L.polygon(
+                [[42.27934000000002, -83.427129], [42.27970799999998, -83.42714200000002], [42.280055666311306, -83.42714443975615], [42.27600219238952, -83.42698495903618], [42.27888299999998, -83.427107], [42.279203999999936, -83.427112], [42.27934000000002, -83.427129]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_85a45dc4d27517b6b3303174646c21d2);
+        
+    
+        var popup_9fafc9ffc05dcea04dc7930d601a7052 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6d71787bd96e2e128f40cc2c4125be1c = $(`<div id="html_6d71787bd96e2e128f40cc2c4125be1c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wayne - MI-CD06</h4>                              </div>         </div>`)[0];
+                popup_9fafc9ffc05dcea04dc7930d601a7052.setContent(html_6d71787bd96e2e128f40cc2c4125be1c);
+            
+        
+
+        polygon_b75abd67d015e2ba5d94881c290eea27.bindPopup(popup_9fafc9ffc05dcea04dc7930d601a7052)
+        ;
+
+        
+    
+    
+            polygon_b75abd67d015e2ba5d94881c290eea27.bindTooltip(
+                `<div>
+                      Wayne - MI-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_73b38a26319441dfca984c167cc46fe3 = L.polygon(
+                [[42.28424100000001, -83.427312], [42.285101743327466, -83.42734299846228], [42.28061963270364, -83.42716662997368], [42.280692000000016, -83.427171], [42.28283999999994, -83.42726], [42.28424100000001, -83.427312]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_85a45dc4d27517b6b3303174646c21d2);
+        
+    
+        var popup_211c5b9e29943a9e6294200666fa59e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91332d633dcf058043d9f334c2adb968 = $(`<div id="html_91332d633dcf058043d9f334c2adb968" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wayne - MI-CD06</h4>                              </div>         </div>`)[0];
+                popup_211c5b9e29943a9e6294200666fa59e1.setContent(html_91332d633dcf058043d9f334c2adb968);
+            
+        
+
+        polygon_73b38a26319441dfca984c167cc46fe3.bindPopup(popup_211c5b9e29943a9e6294200666fa59e1)
+        ;
+
+        
+    
+    
+            polygon_73b38a26319441dfca984c167cc46fe3.bindTooltip(
+                `<div>
+                      Wayne - MI-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dc7d5c740d74744ee114eb8fb46e0e9c = L.polygon(
+                [[42.271163000000016, -83.42679], [42.271212, -83.426793], [42.272577000000005, -83.426848], [42.27303500000001, -83.426866], [42.274016, -83.426905], [42.27531700000001, -83.426956], [42.27541299999996, -83.42696], [42.27600219238952, -83.42698495903618], [42.280055666311306, -83.42714443975615], [42.280277999999996, -83.42714600000001], [42.28061963270364, -83.42716662997368], [42.285101743327466, -83.42734299846228], [42.28674000000002, -83.42740200000001], [42.287464999999976, -83.427436], [42.26746299999998, -83.348095], [42.267444999999995, -83.348996], [42.267428000000045, -83.349943], [42.267420999999985, -83.350306], [42.26740899999995, -83.350916], [42.267398999999955, -83.351459], [42.26736700000001, -83.352877], [42.267345999999975, -83.353766], [42.26732300000001, -83.354699], [42.267298000000025, -83.355743], [42.267271, -83.356671], [42.26723599999998, -83.358575], [42.26714200000001, -83.362058], [42.26713199999998, -83.36257], [42.26710700000003, -83.363646], [42.26701299999998, -83.36787600000001], [42.26699799999994, -83.368558], [42.266923000000034, -83.372233], [42.26687400000006, -83.374608], [42.26687100000001, -83.374756], [42.266867000000005, -83.37495], [42.266866, -83.375032], [42.26686100000001, -83.375282], [42.26682100000003, -83.37718700000002], [42.266772000000046, -83.379655], [42.26672399999999, -83.382084], [42.266699999999936, -83.383301], [42.266675999999954, -83.384519], [42.26665000000001, -83.38583], [42.26662800000004, -83.386986], [42.266604000000015, -83.388013], [42.266590999999984, -83.388998], [42.26656, -83.39033], [42.266558999999994, -83.390512], [42.26655500000001, -83.39118200000001], [42.26654199999997, -83.391752], [42.266486000000015, -83.394301], [42.266481, -83.394499], [42.266472999999955, -83.395249], [42.26643700000001, -83.396763], [42.266434999999994, -83.396827], [42.26635400000001, -83.400664], [42.266341999999995, -83.401411], [42.266318000000005, -83.402758], [42.266195999999994, -83.408897], [42.266189000000004, -83.409131], [42.26617699999998, -83.40957], [42.26616699999998, -83.410606], [42.26614600000001, -83.411608], [42.266069000000044, -83.415952], [42.26605300000005, -83.416409], [42.26604399999999, -83.416626], [42.26600299999996, -83.418858], [42.265959999999986, -83.421101], [42.26593699999999, -83.421865], [42.26592199999999, -83.422199], [42.265887999999975, -83.422698], [42.265842, -83.423172], [42.26578499999999, -83.423643], [42.26574200000001, -83.42393400000002], [42.26571399999999, -83.424126], [42.26565000000005, -83.42450500000001], [42.26549200000002, -83.425449], [42.26541000000001, -83.42598], [42.26535100000006, -83.42653400000002], [42.26404999999997, -83.426431], [42.256878000000015, -83.425731], [42.256439, -83.425698], [42.255921, -83.42566800000002], [42.255143, -83.425638], [42.254929999999995, -83.42563100000001], [42.253555999999975, -83.425579], [42.25309599999997, -83.425552], [42.252871999999975, -83.42553900000001], [42.252315999999965, -83.425531], [42.25036100000001, -83.425458], [42.24956000000001, -83.425411], [42.24933999999994, -83.425415], [42.24918199999996, -83.425419], [42.24869299999992, -83.42539], [42.24834600000003, -83.425377], [42.24326, -83.425179], [42.242865, -83.425172], [42.242832000000014, -83.425171], [42.24195400000005, -83.425154], [42.241663999999986, -83.425145], [42.241117000000045, -83.425127], [42.237937999999986, -83.425025], [42.2379185786531, -83.42548745590554], [42.271162223846105, -83.4267945575573], [42.271163000000016, -83.42679]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_85a45dc4d27517b6b3303174646c21d2);
+        
+    
+        var popup_a228a5a9970f4b35f2e4a9cdaba9d141 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b726a075683de40cb3b2d20c5c955998 = $(`<div id="html_b726a075683de40cb3b2d20c5c955998" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Wayne - MI-CD13</h4>                              </div>         </div>`)[0];
+                popup_a228a5a9970f4b35f2e4a9cdaba9d141.setContent(html_b726a075683de40cb3b2d20c5c955998);
+            
+        
+
+        polygon_dc7d5c740d74744ee114eb8fb46e0e9c.bindPopup(popup_a228a5a9970f4b35f2e4a9cdaba9d141)
+        ;
+
+        
+    
+    
+            polygon_dc7d5c740d74744ee114eb8fb46e0e9c.bindTooltip(
+                `<div>
+                      Wayne - MI-CD13
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_85a45dc4d27517b6b3303174646c21d2.fitBounds(
+                [[42.23790100000002, -83.440986], [42.287464999999976, -83.348095]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

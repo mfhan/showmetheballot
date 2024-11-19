@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a342cf0b586cd912bd02aec480c2f8ba {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Stokes - NC-CD05</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Rockingham - NC-CD05</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_a342cf0b586cd912bd02aec480c2f8ba" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a342cf0b586cd912bd02aec480c2f8ba = L.map(
+                "map_a342cf0b586cd912bd02aec480c2f8ba",
+                {
+                    center: [36.28164382419479, -80.03498151690476],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+
+            
+
+        
+    
+            var tile_layer_830489082b0c7ac2eace3847ecf7468a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_830489082b0c7ac2eace3847ecf7468a.addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+            var polygon_f1f23838d4c4b381799e771c9abd8a18 = L.polygon(
+                [[36.28357199999998, -80.034402], [36.28354806051574, -80.03440260937076], [36.28306966852719, -80.0344156132835], [36.28302200000004, -80.034417], [36.28296934380166, -80.03441834034365], [36.282545761280744, -80.03442985422315], [36.28247199999997, -80.034432], [36.282400591339005, -80.03443380022242], [36.282036659058214, -80.03444369253603], [36.28192199999997, -80.034447], [36.28186767021058, -80.03444828591417], [36.27932930478083, -80.03451728007616], [36.27935900000001, -80.034642], [36.27948900000002, -80.03484], [36.27969400000003, -80.03489500000002], [36.28055899999999, -80.034907], [36.28052700000002, -80.034986], [36.28021399999998, -80.035284], [36.28006700000003, -80.035514], [36.27994199999996, -80.0358], [36.279923000000025, -80.036025], [36.27998399999999, -80.036307], [36.28010600000002, -80.036517], [36.28025100000001, -80.03659], [36.28061600000001, -80.036655], [36.280704999999955, -80.03672], [36.280584, -80.03704], [36.28058799999998, -80.03720200000001], [36.280658000000045, -80.03748], [36.280766, -80.037601], [36.28081300000003, -80.03765300000002], [36.28108600000003, -80.037766], [36.28147100000002, -80.037434], [36.281755000000025, -80.037435], [36.28195800000002, -80.037578], [36.28223899999999, -80.038161], [36.28243999999998, -80.038313], [36.28258099999997, -80.03832600000001], [36.28259599999994, -80.038328], [36.282816999999994, -80.038166], [36.282792000000036, -80.03759], [36.28309100000003, -80.037057], [36.283119999999975, -80.037485], [36.28320699999999, -80.037682], [36.28346699999997, -80.0379], [36.28372599999999, -80.037938], [36.28402599999996, -80.037821], [36.28421700000001, -80.037602], [36.284361999999994, -80.037255], [36.28453699999995, -80.036538], [36.284643999999965, -80.036317], [36.285796999999974, -80.036389], [36.285895, -80.036436], [36.28610699999999, -80.03667800000001], [36.286209000000014, -80.036601], [36.28629500000004, -80.036229], [36.286211999999985, -80.035757], [36.286001999999996, -80.035568], [36.285783, -80.035478], [36.28532600000004, -80.03529200000001], [36.28507700000001, -80.035113], [36.284975000000024, -80.034796], [36.28494800000002, -80.034713], [36.28490300000002, -80.034572], [36.28480372026438, -80.03436847653735], [36.28359368161848, -80.03440136926417], [36.28357199999998, -80.034402]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_8dfe674ef52e2721866ed697681af4eb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_95d6a54f17a0f4b3c3db693e7c916214 = $(`<div id="html_95d6a54f17a0f4b3c3db693e7c916214" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Stokes - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_8dfe674ef52e2721866ed697681af4eb.setContent(html_95d6a54f17a0f4b3c3db693e7c916214);
+            
+        
+
+        polygon_f1f23838d4c4b381799e771c9abd8a18.bindPopup(popup_8dfe674ef52e2721866ed697681af4eb)
+        ;
+
+        
+    
+    
+            polygon_f1f23838d4c4b381799e771c9abd8a18.bindTooltip(
+                `<div>
+                      Stokes - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9d288a63a8f2d5ef8353eb62e0c1ef39 = L.polygon(
+                [[36.25738300000004, -80.03511800000001], [36.25745083777558, -80.03511175178451], [36.257184, -80.035119], [36.25738300000004, -80.03511800000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_d5bba9b21882f1b2b0d4580c836ae04c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3031d33bd2779e1158161906811c066d = $(`<div id="html_3031d33bd2779e1158161906811c066d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d5bba9b21882f1b2b0d4580c836ae04c.setContent(html_3031d33bd2779e1158161906811c066d);
+            
+        
+
+        polygon_9d288a63a8f2d5ef8353eb62e0c1ef39.bindPopup(popup_d5bba9b21882f1b2b0d4580c836ae04c)
+        ;
+
+        
+    
+    
+            polygon_9d288a63a8f2d5ef8353eb62e0c1ef39.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_69e0acf2bd0a4d5aec42e6581aa5aafc = L.polygon(
+                [[36.25953399999998, -80.035056], [36.2595975183772, -80.03505343877721], [36.259419473929796, -80.03505827535352], [36.25953399999998, -80.035056]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_4ce71374719c0c0fc33db12266b0495f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e2c47808a9a62aa96fbd24ef7555dc45 = $(`<div id="html_e2c47808a9a62aa96fbd24ef7555dc45" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_4ce71374719c0c0fc33db12266b0495f.setContent(html_e2c47808a9a62aa96fbd24ef7555dc45);
+            
+        
+
+        polygon_69e0acf2bd0a4d5aec42e6581aa5aafc.bindPopup(popup_4ce71374719c0c0fc33db12266b0495f)
+        ;
+
+        
+    
+    
+            polygon_69e0acf2bd0a4d5aec42e6581aa5aafc.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_b1e4c2ff98c2c349c1706624dba9e22c = L.polygon(
+                [[36.26065900000002, -80.035027], [36.26072937428208, -80.0350226913721], [36.260507935019504, -80.03502870694953], [36.26065900000002, -80.035027]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_9e01f5e1272f4a08f04a29c1c6c66339 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a667acaa015c7d05e5c9a4febc81c87c = $(`<div id="html_a667acaa015c7d05e5c9a4febc81c87c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_9e01f5e1272f4a08f04a29c1c6c66339.setContent(html_a667acaa015c7d05e5c9a4febc81c87c);
+            
+        
+
+        polygon_b1e4c2ff98c2c349c1706624dba9e22c.bindPopup(popup_9e01f5e1272f4a08f04a29c1c6c66339)
+        ;
+
+        
+    
+    
+            polygon_b1e4c2ff98c2c349c1706624dba9e22c.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4549313e64378d6ce9c27c67afac1edc = L.polygon(
+                [[36.265430000000045, -80.03489500000002], [36.26543701196678, -80.03489479601627], [36.265422142690205, -80.034895200005], [36.265430000000045, -80.03489500000002]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_55cbc79a522674b225b89bf7ffd6fdb3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c08d5f59e4631fd512b74fd901620d29 = $(`<div id="html_c08d5f59e4631fd512b74fd901620d29" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_55cbc79a522674b225b89bf7ffd6fdb3.setContent(html_c08d5f59e4631fd512b74fd901620d29);
+            
+        
+
+        polygon_4549313e64378d6ce9c27c67afac1edc.bindPopup(popup_55cbc79a522674b225b89bf7ffd6fdb3)
+        ;
+
+        
+    
+    
+            polygon_4549313e64378d6ce9c27c67afac1edc.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8afe30ddec1733d58c672762eafd2677 = L.polygon(
+                [[36.266805, -80.03485800000001], [36.266998727187755, -80.03485236430622], [36.266588159215075, -80.03486351958797], [36.266805, -80.03485800000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_539509a53827706dd856f23d58da27e3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_312e0a19a63142835e95ece10f674c64 = $(`<div id="html_312e0a19a63142835e95ece10f674c64" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_539509a53827706dd856f23d58da27e3.setContent(html_312e0a19a63142835e95ece10f674c64);
+            
+        
+
+        polygon_8afe30ddec1733d58c672762eafd2677.bindPopup(popup_539509a53827706dd856f23d58da27e3)
+        ;
+
+        
+    
+    
+            polygon_8afe30ddec1733d58c672762eafd2677.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_3c13a5113bb1afd406dca52920676ad3 = L.polygon(
+                [[36.26735400000002, -80.034843], [36.267504355353154, -80.03483862603349], [36.26717615374143, -80.03484754352348], [36.26735400000002, -80.034843]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_d368b698118d8a7553a45da091668274 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c9eed6e800242641cff0d48ff6d5a63f = $(`<div id="html_c9eed6e800242641cff0d48ff6d5a63f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_d368b698118d8a7553a45da091668274.setContent(html_c9eed6e800242641cff0d48ff6d5a63f);
+            
+        
+
+        polygon_3c13a5113bb1afd406dca52920676ad3.bindPopup(popup_d368b698118d8a7553a45da091668274)
+        ;
+
+        
+    
+    
+            polygon_3c13a5113bb1afd406dca52920676ad3.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c91bd3ed231f026b3b9feb73335e6e5b = L.polygon(
+                [[36.267904000000016, -80.034828], [36.2680252354409, -80.03482447315817], [36.26776842154162, -80.03483145109458], [36.267904000000016, -80.034828]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_c08bbe75662438bc921747261edc3fef = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_56fcfdf7ce07752d1a85dfb51f0f7526 = $(`<div id="html_56fcfdf7ce07752d1a85dfb51f0f7526" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_c08bbe75662438bc921747261edc3fef.setContent(html_56fcfdf7ce07752d1a85dfb51f0f7526);
+            
+        
+
+        polygon_c91bd3ed231f026b3b9feb73335e6e5b.bindPopup(popup_c08bbe75662438bc921747261edc3fef)
+        ;
+
+        
+    
+    
+            polygon_c91bd3ed231f026b3b9feb73335e6e5b.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4880a5ca14072ac10a367120b8035601 = L.polygon(
+                [[36.268454000000006, -80.03481300000001], [36.26857199999999, -80.03481], [36.26865396987158, -80.0348073894972], [36.2683509165872, -80.03481562394754], [36.268454000000006, -80.03481300000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_f66eb02ee9424037dcb6e8f0e01d5f7a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4a742715fe2b727bde79d6aa6892fb1b = $(`<div id="html_4a742715fe2b727bde79d6aa6892fb1b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_f66eb02ee9424037dcb6e8f0e01d5f7a.setContent(html_4a742715fe2b727bde79d6aa6892fb1b);
+            
+        
+
+        polygon_4880a5ca14072ac10a367120b8035601.bindPopup(popup_f66eb02ee9424037dcb6e8f0e01d5f7a)
+        ;
+
+        
+    
+    
+            polygon_4880a5ca14072ac10a367120b8035601.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_25c85161cf4b66f2d584bda3e0cc11ff = L.polygon(
+                [[36.26900400000002, -80.034798], [36.26906730739349, -80.03479615833567], [36.268933266354956, -80.03479980049778], [36.26900400000002, -80.034798]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_cca13d26df84f4aa907dc95aae7ce899 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_21c222469ad66d50c749e15ca610edb2 = $(`<div id="html_21c222469ad66d50c749e15ca610edb2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_cca13d26df84f4aa907dc95aae7ce899.setContent(html_21c222469ad66d50c749e15ca610edb2);
+            
+        
+
+        polygon_25c85161cf4b66f2d584bda3e0cc11ff.bindPopup(popup_cca13d26df84f4aa907dc95aae7ce899)
+        ;
+
+        
+    
+    
+            polygon_25c85161cf4b66f2d584bda3e0cc11ff.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_39cb73fdee6370601c41bdd835b2bd8b = L.polygon(
+                [[36.26955300000002, -80.034783], [36.26957333529786, -80.03478240842975], [36.26952899099893, -80.03478361337072], [36.26955300000002, -80.034783]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_9c6c14c87407f5f64b7dff4805e1e66c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a23234f35bbf0510ecc19490684d17fe = $(`<div id="html_a23234f35bbf0510ecc19490684d17fe" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_9c6c14c87407f5f64b7dff4805e1e66c.setContent(html_a23234f35bbf0510ecc19490684d17fe);
+            
+        
+
+        polygon_39cb73fdee6370601c41bdd835b2bd8b.bindPopup(popup_9c6c14c87407f5f64b7dff4805e1e66c)
+        ;
+
+        
+    
+    
+            polygon_39cb73fdee6370601c41bdd835b2bd8b.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_936526fa50437b42b67ae8dcd7e3d333 = L.polygon(
+                [[36.27057800000005, -80.034756], [36.270611150317606, -80.03475420809194], [36.27045547025111, -80.03475843840556], [36.27057800000005, -80.034756]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_f0f919f56dbd34c2023ad32179d3bab9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6a31786084c9b3bf14935fd56726b8dc = $(`<div id="html_6a31786084c9b3bf14935fd56726b8dc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_f0f919f56dbd34c2023ad32179d3bab9.setContent(html_6a31786084c9b3bf14935fd56726b8dc);
+            
+        
+
+        polygon_936526fa50437b42b67ae8dcd7e3d333.bindPopup(popup_f0f919f56dbd34c2023ad32179d3bab9)
+        ;
+
+        
+    
+    
+            polygon_936526fa50437b42b67ae8dcd7e3d333.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e394f733821bf1f4ba7cae047e0bfe64 = L.polygon(
+                [[36.271764000000026, -80.034724], [36.271922803316066, -80.03471856567367], [36.27158547593159, -80.03472773221598], [36.271764000000026, -80.034724]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_192cb1085f067c34247219403e546b57 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b6726a692ceecd7f06e8691e761af569 = $(`<div id="html_b6726a692ceecd7f06e8691e761af569" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_192cb1085f067c34247219403e546b57.setContent(html_b6726a692ceecd7f06e8691e761af569);
+            
+        
+
+        polygon_e394f733821bf1f4ba7cae047e0bfe64.bindPopup(popup_192cb1085f067c34247219403e546b57)
+        ;
+
+        
+    
+    
+            polygon_e394f733821bf1f4ba7cae047e0bfe64.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7c41e3b72dae188cdb9fdfbf24b5415b = L.polygon(
+                [[36.273191, -80.034685], [36.273340509247184, -80.03468003998171], [36.273157988723526, -80.034685], [36.273191, -80.034685]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_1fea262ffc57b08ab066388cb47047b7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d4231ff7aaba56e54866764ee0507416 = $(`<div id="html_d4231ff7aaba56e54866764ee0507416" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_1fea262ffc57b08ab066388cb47047b7.setContent(html_d4231ff7aaba56e54866764ee0507416);
+            
+        
+
+        polygon_7c41e3b72dae188cdb9fdfbf24b5415b.bindPopup(popup_1fea262ffc57b08ab066388cb47047b7)
+        ;
+
+        
+    
+    
+            polygon_7c41e3b72dae188cdb9fdfbf24b5415b.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_fb140d2e9223838f679bb33ecebaa3cc = L.polygon(
+                [[36.27367599999998, -80.034671], [36.27371624618813, -80.03466982920554], [36.27366709543969, -80.03467116489938], [36.27367599999998, -80.034671]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_60f973fdaa2fab5a0ac28149207fa60a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a317c7a3f4e075c7fc8193f612e16d31 = $(`<div id="html_a317c7a3f4e075c7fc8193f612e16d31" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_60f973fdaa2fab5a0ac28149207fa60a.setContent(html_a317c7a3f4e075c7fc8193f612e16d31);
+            
+        
+
+        polygon_fb140d2e9223838f679bb33ecebaa3cc.bindPopup(popup_60f973fdaa2fab5a0ac28149207fa60a)
+        ;
+
+        
+    
+    
+            polygon_fb140d2e9223838f679bb33ecebaa3cc.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_dae81bff9337aa34af59f380e09e36c7 = L.polygon(
+                [[36.27422600000005, -80.034656], [36.274325999999974, -80.034657], [36.274480263114526, -80.03464906647064], [36.274212236339565, -80.03465635034895], [36.27422600000005, -80.034656]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_8472351211add7e4b73d82814eb10c29 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0a5402853a684530db9d59db0d7a3040 = $(`<div id="html_0a5402853a684530db9d59db0d7a3040" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_8472351211add7e4b73d82814eb10c29.setContent(html_0a5402853a684530db9d59db0d7a3040);
+            
+        
+
+        polygon_dae81bff9337aa34af59f380e09e36c7.bindPopup(popup_8472351211add7e4b73d82814eb10c29)
+        ;
+
+        
+    
+    
+            polygon_dae81bff9337aa34af59f380e09e36c7.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_54e245c8711a00441ecc9515d27e9443 = L.polygon(
+                [[36.27610900000002, -80.034605], [36.2761181244297, -80.03460455490605], [36.27601141465085, -80.03460745497938], [36.27610900000002, -80.034605]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_7d394213a6263d1a0725a1a5c1099daf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b8c557533d4948723989c718f8be4a54 = $(`<div id="html_b8c557533d4948723989c718f8be4a54" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_7d394213a6263d1a0725a1a5c1099daf.setContent(html_b8c557533d4948723989c718f8be4a54);
+            
+        
+
+        polygon_54e245c8711a00441ecc9515d27e9443.bindPopup(popup_7d394213a6263d1a0725a1a5c1099daf)
+        ;
+
+        
+    
+    
+            polygon_54e245c8711a00441ecc9515d27e9443.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c5d4c1537be668ae67f736dcee9a28ba = L.polygon(
+                [[36.27803700000002, -80.03455300000002], [36.27805918381583, -80.03455180087505], [36.27794037420127, -80.03455502995764], [36.27803700000002, -80.03455300000002]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_2583afcc8ada2c80fd5ceade8c28bf76 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fe0912bd1e308a56b79c2d752547d43a = $(`<div id="html_fe0912bd1e308a56b79c2d752547d43a" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_2583afcc8ada2c80fd5ceade8c28bf76.setContent(html_fe0912bd1e308a56b79c2d752547d43a);
+            
+        
+
+        polygon_c5d4c1537be668ae67f736dcee9a28ba.bindPopup(popup_2583afcc8ada2c80fd5ceade8c28bf76)
+        ;
+
+        
+    
+    
+            polygon_c5d4c1537be668ae67f736dcee9a28ba.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_3fbfb5db0e85dfba6f7b1eac1c020e2f = L.polygon(
+                [[36.27915900000001, -80.034522], [36.27917022881843, -80.03452160368963], [36.2791372583949, -80.03452249980865], [36.27915900000001, -80.034522]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_a828f4c645880136efdee428cbad4b53 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a9abff77b4c7baef8bb048788de5002b = $(`<div id="html_a9abff77b4c7baef8bb048788de5002b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_a828f4c645880136efdee428cbad4b53.setContent(html_a9abff77b4c7baef8bb048788de5002b);
+            
+        
+
+        polygon_3fbfb5db0e85dfba6f7b1eac1c020e2f.bindPopup(popup_a828f4c645880136efdee428cbad4b53)
+        ;
+
+        
+    
+    
+            polygon_3fbfb5db0e85dfba6f7b1eac1c020e2f.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_47331b0a6eb4ca8fb255ffb8777fd8bb = L.polygon(
+                [[36.28247199999997, -80.034432], [36.282545761280744, -80.03442985422315], [36.282400591339005, -80.03443380022242], [36.28247199999997, -80.034432]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_01a961aef64b4cc29a42169b6c2ca2fd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a8ec4bcc109a000a2b119b6ab098029f = $(`<div id="html_a8ec4bcc109a000a2b119b6ab098029f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_01a961aef64b4cc29a42169b6c2ca2fd.setContent(html_a8ec4bcc109a000a2b119b6ab098029f);
+            
+        
+
+        polygon_47331b0a6eb4ca8fb255ffb8777fd8bb.bindPopup(popup_01a961aef64b4cc29a42169b6c2ca2fd)
+        ;
+
+        
+    
+    
+            polygon_47331b0a6eb4ca8fb255ffb8777fd8bb.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_8487c4e3651b1cd3e3b6c5a7d31c75c6 = L.polygon(
+                [[36.28302200000004, -80.034417], [36.28306966852719, -80.0344156132835], [36.28296934380166, -80.03441834034365], [36.28302200000004, -80.034417]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_7724a12b2f55b7176f6435ec897e2871 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c61b109f72cf050a6c888b02f6ffba9d = $(`<div id="html_c61b109f72cf050a6c888b02f6ffba9d" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_7724a12b2f55b7176f6435ec897e2871.setContent(html_c61b109f72cf050a6c888b02f6ffba9d);
+            
+        
+
+        polygon_8487c4e3651b1cd3e3b6c5a7d31c75c6.bindPopup(popup_7724a12b2f55b7176f6435ec897e2871)
+        ;
+
+        
+    
+    
+            polygon_8487c4e3651b1cd3e3b6c5a7d31c75c6.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c2ee8231d09496ad836094eceebb274b = L.polygon(
+                [[36.28357199999998, -80.034402], [36.28359368161848, -80.03440136926417], [36.28354806051574, -80.03440260937076], [36.28357199999998, -80.034402]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_08bf19b75f1b802d643903d8863d1842 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_07707fe2e360b819352f20fa5b85b5b8 = $(`<div id="html_07707fe2e360b819352f20fa5b85b5b8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_08bf19b75f1b802d643903d8863d1842.setContent(html_07707fe2e360b819352f20fa5b85b5b8);
+            
+        
+
+        polygon_c2ee8231d09496ad836094eceebb274b.bindPopup(popup_08bf19b75f1b802d643903d8863d1842)
+        ;
+
+        
+    
+    
+            polygon_c2ee8231d09496ad836094eceebb274b.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_4e8ce19914682787c0d333fa4c07c8bc = L.polygon(
+                [[36.28659499999996, -80.03432], [36.28663394537105, -80.03431872310296], [36.286468915442065, -80.03432320943159], [36.28659499999996, -80.03432]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_b7a010fde063b47a28f5285646799db8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_07d4a06288ac45773c3bc255a1a36424 = $(`<div id="html_07d4a06288ac45773c3bc255a1a36424" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_b7a010fde063b47a28f5285646799db8.setContent(html_07d4a06288ac45773c3bc255a1a36424);
+            
+        
+
+        polygon_4e8ce19914682787c0d333fa4c07c8bc.bindPopup(popup_b7a010fde063b47a28f5285646799db8)
+        ;
+
+        
+    
+    
+            polygon_4e8ce19914682787c0d333fa4c07c8bc.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_fd29899819f9bfbba6b40b33eca914e5 = L.polygon(
+                [[36.287145, -80.034305], [36.28723422609876, -80.03430240433822], [36.28704676791916, -80.03430750045898], [36.287145, -80.034305]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_c9848df29b575aaf97f672f665dff3f4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7bdc7bfd2cd75d7841315ffda5677f1e = $(`<div id="html_7bdc7bfd2cd75d7841315ffda5677f1e" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_c9848df29b575aaf97f672f665dff3f4.setContent(html_7bdc7bfd2cd75d7841315ffda5677f1e);
+            
+        
+
+        polygon_fd29899819f9bfbba6b40b33eca914e5.bindPopup(popup_c9848df29b575aaf97f672f665dff3f4)
+        ;
+
+        
+    
+    
+            polygon_fd29899819f9bfbba6b40b33eca914e5.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_7722a041acf32c786dbed74648842216 = L.polygon(
+                [[36.28769500000002, -80.03429], [36.287808, -80.03428700000002], [36.287860764296674, -80.03428537147475], [36.287624478386306, -80.03429179510061], [36.28769500000002, -80.03429]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_40ff824f4051477677c1e946d6277b7c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fc134f905c2349d2282ed2d2257aaef8 = $(`<div id="html_fc134f905c2349d2282ed2d2257aaef8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_40ff824f4051477677c1e946d6277b7c.setContent(html_fc134f905c2349d2282ed2d2257aaef8);
+            
+        
+
+        polygon_7722a041acf32c786dbed74648842216.bindPopup(popup_40ff824f4051477677c1e946d6277b7c)
+        ;
+
+        
+    
+    
+            polygon_7722a041acf32c786dbed74648842216.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_64193e35d5d41613daf5b3b3d80ca0d8 = L.polygon(
+                [[36.28824399999998, -80.034275], [36.28826877620852, -80.03427427924002], [36.28821520241892, -80.03427573570707], [36.28824399999998, -80.034275]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_4602e18a5159f4a9031204840e5e9099 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_369b7c8d004976ed45259065b471c0dc = $(`<div id="html_369b7c8d004976ed45259065b471c0dc" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_4602e18a5159f4a9031204840e5e9099.setContent(html_369b7c8d004976ed45259065b471c0dc);
+            
+        
+
+        polygon_64193e35d5d41613daf5b3b3d80ca0d8.bindPopup(popup_4602e18a5159f4a9031204840e5e9099)
+        ;
+
+        
+    
+    
+            polygon_64193e35d5d41613daf5b3b3d80ca0d8.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5f0c1b5c08c2e9a8cbc95e47ced9600f = L.polygon(
+                [[36.29052400000001, -80.03421300000001], [36.29053298867799, -80.03421272200035], [36.29051053442549, -80.03421333248363], [36.29052400000001, -80.03421300000001]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_5eeb2146c9c2277113a84d3876f0a4d6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_52138a424a164f474bb3d343839e6689 = $(`<div id="html_52138a424a164f474bb3d343839e6689" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_5eeb2146c9c2277113a84d3876f0a4d6.setContent(html_52138a424a164f474bb3d343839e6689);
+            
+        
+
+        polygon_5f0c1b5c08c2e9a8cbc95e47ced9600f.bindPopup(popup_5eeb2146c9c2277113a84d3876f0a4d6)
+        ;
+
+        
+    
+    
+            polygon_5f0c1b5c08c2e9a8cbc95e47ced9600f.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1eb38c655921985a34fa05c34de64382 = L.polygon(
+                [[36.292366999999956, -80.034163], [36.29244173602358, -80.03416082586705], [36.29228043310595, -80.03416521156862], [36.292366999999956, -80.034163]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_77b17702f1fe425220f9a2c396f8cc8f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_212afba735c05caaf52fe2eb19a57963 = $(`<div id="html_212afba735c05caaf52fe2eb19a57963" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_77b17702f1fe425220f9a2c396f8cc8f.setContent(html_212afba735c05caaf52fe2eb19a57963);
+            
+        
+
+        polygon_1eb38c655921985a34fa05c34de64382.bindPopup(popup_77b17702f1fe425220f9a2c396f8cc8f)
+        ;
+
+        
+    
+    
+            polygon_1eb38c655921985a34fa05c34de64382.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_58dcb46139e2007c93959a52c4114978 = L.polygon(
+                [[36.292917000000024, -80.034148], [36.29296765553048, -80.03414652638905], [36.292861492912664, -80.03414941291189], [36.292917000000024, -80.034148]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_ed3da93e16d678a01b58ae53e70e8e22 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d76cfe6236dde0c83d5f2ab1f4702545 = $(`<div id="html_d76cfe6236dde0c83d5f2ab1f4702545" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ed3da93e16d678a01b58ae53e70e8e22.setContent(html_d76cfe6236dde0c83d5f2ab1f4702545);
+            
+        
+
+        polygon_58dcb46139e2007c93959a52c4114978.bindPopup(popup_ed3da93e16d678a01b58ae53e70e8e22)
+        ;
+
+        
+    
+    
+            polygon_58dcb46139e2007c93959a52c4114978.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_81b7d884bf573620573d2494b195d281 = L.polygon(
+                [[36.29346700000001, -80.034133], [36.29349368219444, -80.03413222379334], [36.293341540836984, -80.03413636051779], [36.29346700000001, -80.034133]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_3ce9cba71b5ad68a15245c8382c1e8a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5efbe0d596e25b0f272910c948a0174f = $(`<div id="html_5efbe0d596e25b0f272910c948a0174f" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_3ce9cba71b5ad68a15245c8382c1e8a7.setContent(html_5efbe0d596e25b0f272910c948a0174f);
+            
+        
+
+        polygon_81b7d884bf573620573d2494b195d281.bindPopup(popup_3ce9cba71b5ad68a15245c8382c1e8a7)
+        ;
+
+        
+    
+    
+            polygon_81b7d884bf573620573d2494b195d281.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1e0798f4022281e885a9cd3c17170766 = L.polygon(
+                [[36.29401699999998, -80.034118], [36.294019667070884, -80.03411792212961], [36.294013916975075, -80.03411807847729], [36.29401699999998, -80.034118]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_5605223dc6e4f70cf11cb7b925d439a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_33c79cbbdb3b9e8b829a0d27f15700ef = $(`<div id="html_33c79cbbdb3b9e8b829a0d27f15700ef" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_5605223dc6e4f70cf11cb7b925d439a7.setContent(html_33c79cbbdb3b9e8b829a0d27f15700ef);
+            
+        
+
+        polygon_1e0798f4022281e885a9cd3c17170766.bindPopup(popup_5605223dc6e4f70cf11cb7b925d439a7)
+        ;
+
+        
+    
+    
+            polygon_1e0798f4022281e885a9cd3c17170766.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_a792b6e8733dbaff663f4e5212f73ba9 = L.polygon(
+                [[36.29813999999999, -80.034006], [36.29819881984895, -80.03400428263717], [36.298072228481075, -80.03400772509808], [36.29813999999999, -80.034006]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_ecdcda35d8a1550b4fcd19836b15d2b3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1f391ce333ae2f38e2074fe1b9c09340 = $(`<div id="html_1f391ce333ae2f38e2074fe1b9c09340" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ecdcda35d8a1550b4fcd19836b15d2b3.setContent(html_1f391ce333ae2f38e2074fe1b9c09340);
+            
+        
+
+        polygon_a792b6e8733dbaff663f4e5212f73ba9.bindPopup(popup_ecdcda35d8a1550b4fcd19836b15d2b3)
+        ;
+
+        
+    
+    
+            polygon_a792b6e8733dbaff663f4e5212f73ba9.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ff071203a26a75d89561b033b0f412f4 = L.polygon(
+                [[36.29868899999999, -80.033991], [36.298713873512746, -80.03399027640936], [36.29866864690834, -80.03399150629706], [36.29868899999999, -80.033991]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_b26ee81299606ea81612f4666c836d57 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_926aeaff09709f57fab67e90aebf1b26 = $(`<div id="html_926aeaff09709f57fab67e90aebf1b26" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_b26ee81299606ea81612f4666c836d57.setContent(html_926aeaff09709f57fab67e90aebf1b26);
+            
+        
+
+        polygon_ff071203a26a75d89561b033b0f412f4.bindPopup(popup_b26ee81299606ea81612f4666c836d57)
+        ;
+
+        
+    
+    
+            polygon_ff071203a26a75d89561b033b0f412f4.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_56b33f30aed9635019147fe3f0053c8f = L.polygon(
+                [[36.299238999999986, -80.033976], [36.29924107626403, -80.03397593959981], [36.29923673655519, -80.03397605761516], [36.299238999999986, -80.033976]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_0c3f70b08c0f0fed6217dd9adac68cb8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_001007240e78e74776dfe692a9cadff2 = $(`<div id="html_001007240e78e74776dfe692a9cadff2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_0c3f70b08c0f0fed6217dd9adac68cb8.setContent(html_001007240e78e74776dfe692a9cadff2);
+            
+        
+
+        polygon_56b33f30aed9635019147fe3f0053c8f.bindPopup(popup_0c3f70b08c0f0fed6217dd9adac68cb8)
+        ;
+
+        
+    
+    
+            polygon_56b33f30aed9635019147fe3f0053c8f.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_809a37bb0a3e39ac9136a2a9b08c3831 = L.polygon(
+                [[36.303911999999976, -80.033849], [36.303960057392295, -80.03384760197108], [36.303859808819794, -80.03385032850679], [36.303911999999976, -80.033849]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_ec3d78573a0ee0b42baaa331ccd4410b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2aca4f71b3a6ed19e08f73823c08e013 = $(`<div id="html_2aca4f71b3a6ed19e08f73823c08e013" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_ec3d78573a0ee0b42baaa331ccd4410b.setContent(html_2aca4f71b3a6ed19e08f73823c08e013);
+            
+        
+
+        polygon_809a37bb0a3e39ac9136a2a9b08c3831.bindPopup(popup_ec3d78573a0ee0b42baaa331ccd4410b)
+        ;
+
+        
+    
+    
+            polygon_809a37bb0a3e39ac9136a2a9b08c3831.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0012c9be98fc1cdf9f41619f3bc2a6a4 = L.polygon(
+                [[36.30446200000001, -80.033834], [36.30447859991023, -80.03383349866235], [36.304433408050286, -80.03383472779753], [36.30446200000001, -80.033834]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_65e6e7dd3907c02f569484d763d5f2a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_683ef73f0365fad6075193cd2491ee0b = $(`<div id="html_683ef73f0365fad6075193cd2491ee0b" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_65e6e7dd3907c02f569484d763d5f2a6.setContent(html_683ef73f0365fad6075193cd2491ee0b);
+            
+        
+
+        polygon_0012c9be98fc1cdf9f41619f3bc2a6a4.bindPopup(popup_65e6e7dd3907c02f569484d763d5f2a6)
+        ;
+
+        
+    
+    
+            polygon_0012c9be98fc1cdf9f41619f3bc2a6a4.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_e554caba72e22b7dfbf37e8002d60402 = L.polygon(
+                [[36.31023400000003, -80.033677], [36.31026043557263, -80.03367623096774], [36.31020543778941, -80.03367772704053], [36.31023400000003, -80.033677]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_a342cf0b586cd912bd02aec480c2f8ba);
+        
+    
+        var popup_c8e97fb9f6dd3b803546e67932e02d3c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d60c0b6418bc896a4dc20da049c1ab97 = $(`<div id="html_d60c0b6418bc896a4dc20da049c1ab97" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Rockingham - NC-CD05</h4>                              </div>         </div>`)[0];
+                popup_c8e97fb9f6dd3b803546e67932e02d3c.setContent(html_d60c0b6418bc896a4dc20da049c1ab97);
+            
+        
+
+        polygon_e554caba72e22b7dfbf37e8002d60402.bindPopup(popup_c8e97fb9f6dd3b803546e67932e02d3c)
+        ;
+
+        
+    
+    
+            polygon_e554caba72e22b7dfbf37e8002d60402.bindTooltip(
+                `<div>
+                      Rockingham - NC-CD05
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_a342cf0b586cd912bd02aec480c2f8ba.fitBounds(
+                [[36.257184, -80.038328], [36.31026043557263, -80.03367623096774]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

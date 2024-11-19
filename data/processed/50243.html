@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7b7367aea06185ace5ce6a1399d84008 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Polk - IA-CD03</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Story - IA-CD04</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Boone - IA-CD04</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_7b7367aea06185ace5ce6a1399d84008" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7b7367aea06185ace5ce6a1399d84008 = L.map(
+                "map_7b7367aea06185ace5ce6a1399d84008",
+                {
+                    center: [41.8655371614555, -93.69480151859267],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_7b7367aea06185ace5ce6a1399d84008);
+
+            
+
+        
+    
+            var tile_layer_5d21f4d42ac27fb11f9f77673c45d1e8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_5d21f4d42ac27fb11f9f77673c45d1e8.addTo(map_7b7367aea06185ace5ce6a1399d84008);
+        
+    
+            var polygon_b7254b9f9a90605d5ff1a25af51a4d7a = L.polygon(
+                [[41.86433000000001, -93.69803], [41.86479699999995, -93.698031], [41.86512800000001, -93.698021], [41.86527500000003, -93.698017], [41.86559599999998, -93.698043], [41.865694999999995, -93.698045], [41.86611400000001, -93.698053], [41.86662299999997, -93.698045], [41.86727999999997, -93.698052], [41.868005, -93.698041], [41.86833799999997, -93.698036], [41.86991200000003, -93.698048], [41.87044599999996, -93.69804], [41.870508, -93.698039], [41.870581000000065, -93.698038], [41.870602999999996, -93.698018], [41.870614999999994, -93.695909], [41.87061799999994, -93.69536700000002], [41.87061100000004, -93.693144], [41.87061000000002, -93.692677], [41.87061, -93.692493], [41.87061, -93.692454], [41.870592000000016, -93.688174], [41.870132000000005, -93.68817], [41.869629000000046, -93.688166], [41.86959300000005, -93.688166], [41.86928, -93.688163], [41.86924599999999, -93.688163], [41.86897899999999, -93.688161], [41.868525999999996, -93.688157], [41.868275, -93.688155], [41.86817299999999, -93.688154], [41.867982000000005, -93.688153], [41.86785899999999, -93.688152], [41.867684, -93.68815], [41.867548, -93.688149], [41.86723900000001, -93.688148], [41.86713099999995, -93.688146], [41.86710900000003, -93.688146], [41.86706600000003, -93.688145], [41.86697000000004, -93.688145], [41.86691699999995, -93.688144], [41.866765999999984, -93.688142], [41.86672999999998, -93.688142], [41.866606999999995, -93.68814], [41.86605799999996, -93.68813400000002], [41.86440700000002, -93.688114], [41.86347300000002, -93.688103], [41.8633755533158, -93.68809344640292], [41.86337000000001, -93.698032], [41.86433000000001, -93.69803]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_7b7367aea06185ace5ce6a1399d84008);
+        
+    
+        var popup_203e427fb2fb337d2a0fdd06c10018ad = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b236e9beb3971de970255f6c32e3aaef = $(`<div id="html_b236e9beb3971de970255f6c32e3aaef" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Story - IA-CD04</h4>                              </div>         </div>`)[0];
+                popup_203e427fb2fb337d2a0fdd06c10018ad.setContent(html_b236e9beb3971de970255f6c32e3aaef);
+            
+        
+
+        polygon_b7254b9f9a90605d5ff1a25af51a4d7a.bindPopup(popup_203e427fb2fb337d2a0fdd06c10018ad)
+        ;
+
+        
+    
+    
+            polygon_b7254b9f9a90605d5ff1a25af51a4d7a.bindTooltip(
+                `<div>
+                      Story - IA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_72845f3ef8f5814b3a0502eb205a7302 = L.polygon(
+                [[41.86334799999997, -93.70038], [41.863347, -93.699446], [41.863347, -93.69923000000001], [41.86334699999999, -93.699215], [41.86337000000001, -93.698032], [41.86336, -93.69743], [41.86335900000004, -93.69682], [41.86335900000004, -93.696686], [41.86335800000001, -93.696412], [41.863362, -93.696032], [41.86336100000002, -93.695909], [41.86335700000002, -93.695322], [41.86335900000004, -93.695251], [41.863364, -93.695002], [41.86336300000002, -93.694635], [41.86336300000002, -93.694618], [41.86336699999998, -93.693638], [41.86335900000004, -93.693182], [41.86335900000004, -93.693161], [41.863354999999984, -93.692471], [41.86335700000002, -93.692008], [41.86335700000002, -93.691963], [41.863362, -93.691378], [41.86335800000001, -93.690966], [41.863354999999984, -93.690446], [41.86335800000001, -93.690059], [41.86336699999998, -93.68936], [41.863364, -93.688794], [41.86336900000001, -93.688335], [41.86337099999998, -93.688168], [41.86337099999998, -93.688093], [41.863127000000034, -93.688084], [41.861360000000026, -93.688031], [41.86108100000003, -93.688041], [41.85694100000001, -93.687921], [41.85694099999999, -93.688182], [41.85694900000003, -93.697054], [41.856950000000005, -93.697983], [41.85787000000003, -93.697979], [41.85803499999998, -93.697981], [41.85805499999998, -93.699211], [41.859123999999994, -93.699211], [41.85993300000001, -93.699211], [41.859923, -93.702826], [41.863351000000016, -93.702844], [41.863348, -93.700445], [41.86334799999997, -93.70038]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_7b7367aea06185ace5ce6a1399d84008);
+        
+    
+        var popup_8483efae18e7b80146edc690f245c227 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e738c874016b9138296951c96e8fe6e2 = $(`<div id="html_e738c874016b9138296951c96e8fe6e2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Polk - IA-CD03</h4>                              </div>         </div>`)[0];
+                popup_8483efae18e7b80146edc690f245c227.setContent(html_e738c874016b9138296951c96e8fe6e2);
+            
+        
+
+        polygon_72845f3ef8f5814b3a0502eb205a7302.bindPopup(popup_8483efae18e7b80146edc690f245c227)
+        ;
+
+        
+    
+    
+            polygon_72845f3ef8f5814b3a0502eb205a7302.bindTooltip(
+                `<div>
+                      Polk - IA-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_46990a22c838739222007a7bc95192c5 = L.polygon(
+                [[41.870508, -93.698039], [41.87044599999996, -93.69804], [41.86991200000003, -93.698048], [41.86833799999997, -93.698036], [41.868005, -93.698041], [41.86727999999997, -93.698052], [41.86662299999997, -93.698045], [41.86611400000001, -93.698053], [41.865694999999995, -93.698045], [41.86559599999998, -93.698043], [41.86527500000003, -93.698017], [41.86512800000001, -93.698021], [41.86479699999995, -93.698031], [41.86433000000001, -93.69803], [41.86337000000001, -93.698032], [41.863378144255535, -93.70778882190241], [41.865966999999955, -93.707768], [41.86699199999996, -93.707759], [41.870474000000016, -93.707759], [41.87053700000001, -93.707759], [41.870636000000026, -93.707759], [41.870602999999974, -93.698038], [41.870581000000065, -93.698038], [41.870508, -93.698039]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_7b7367aea06185ace5ce6a1399d84008);
+        
+    
+        var popup_ff56cdb95dfa50877893273c003d0fc7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4ea9304e5f0c41514bac24f484f5e014 = $(`<div id="html_4ea9304e5f0c41514bac24f484f5e014" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Boone - IA-CD04</h4>                              </div>         </div>`)[0];
+                popup_ff56cdb95dfa50877893273c003d0fc7.setContent(html_4ea9304e5f0c41514bac24f484f5e014);
+            
+        
+
+        polygon_46990a22c838739222007a7bc95192c5.bindPopup(popup_ff56cdb95dfa50877893273c003d0fc7)
+        ;
+
+        
+    
+    
+            polygon_46990a22c838739222007a7bc95192c5.bindTooltip(
+                `<div>
+                      Boone - IA-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_7b7367aea06185ace5ce6a1399d84008.fitBounds(
+                [[41.85694099999999, -93.70778882190241], [41.870636000000026, -93.687921]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

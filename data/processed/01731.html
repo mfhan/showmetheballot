@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_68ee8faa3adf3121a9f8a7b3718534ec {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Middlesex - MA-CD06</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Middlesex - MA-CD03</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_68ee8faa3adf3121a9f8a7b3718534ec" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_68ee8faa3adf3121a9f8a7b3718534ec = L.map(
+                "map_68ee8faa3adf3121a9f8a7b3718534ec",
+                {
+                    center: [42.47177988684838, -71.28935731510158],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_68ee8faa3adf3121a9f8a7b3718534ec);
+
+            
+
+        
+    
+            var tile_layer_0beb4ce95cbc9de30d5a9d1a26dca296 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_0beb4ce95cbc9de30d5a9d1a26dca296.addTo(map_68ee8faa3adf3121a9f8a7b3718534ec);
+        
+    
+            var polygon_723f240b6e75c7eb7e966616fd6e15bd = L.polygon(
+                [[42.47334599999994, -71.301996], [42.47427800000002, -71.30352500000001], [42.474440000000016, -71.303804], [42.474464000000054, -71.303789], [42.474570999999976, -71.303693], [42.475035000000005, -71.30345], [42.47545100000001, -71.30333500000002], [42.47554199999996, -71.303121], [42.475642000000015, -71.30277400000001], [42.47573399999998, -71.3026], [42.47634800000004, -71.301797], [42.47641199999997, -71.301643], [42.47641199999997, -71.30151800000002], [42.47581799999998, -71.30065100000002], [42.47586599999996, -71.300581], [42.47572000000003, -71.300372], [42.475822, -71.298559], [42.47585300000002, -71.298007], [42.475870000000036, -71.297705], [42.47599000000003, -71.295544], [42.476218999999986, -71.295235], [42.47692199999999, -71.294286], [42.477238999999955, -71.293855], [42.47718600000003, -71.293782], [42.477078, -71.29363599999999], [42.476909, -71.293436], [42.47686300000003, -71.293382], [42.476773, -71.293256], [42.47645599999999, -71.292883], [42.47634800000004, -71.292756], [42.47619999999999, -71.292532], [42.476114999999965, -71.292373], [42.476066000000024, -71.292217], [42.47605600000002, -71.292117], [42.47605799999999, -71.29197400000001], [42.47607699999999, -71.291874], [42.47610800000003, -71.291705], [42.47613299999998, -71.291494], [42.476179000000016, -71.291109], [42.47619100000005, -71.291011], [42.476203999999974, -71.290909], [42.47634299999999, -71.28982], [42.47637999999998, -71.289672], [42.476474000000024, -71.289185], [42.47503099999997, -71.287721], [42.47548999999995, -71.286358], [42.47608800000002, -71.285906], [42.47686900000001, -71.285122], [42.47681600000001, -71.285007], [42.47733899999998, -71.28416900000002], [42.47615600000002, -71.282432], [42.47442299999998, -71.284286], [42.47335399999998, -71.283027], [42.47522999999999, -71.28145300000001], [42.47459699999999, -71.27927200000002], [42.47432600000004, -71.279244], [42.47424400000003, -71.278869], [42.472638999999965, -71.278641], [42.472412000000055, -71.276141], [42.472472, -71.27595100000002], [42.472532, -71.275805], [42.47232699999996, -71.27561600000001], [42.472501999999984, -71.27516000000001], [42.47241100000003, -71.275091], [42.47234099999997, -71.275052], [42.47230600000001, -71.275036], [42.47226100000003, -71.274996], [42.47231900000005, -71.274885], [42.472390000000004, -71.274913], [42.47242899999999, -71.274808], [42.47208199999997, -71.27454099999999], [42.471583999999986, -71.266049], [42.47170100000006, -71.265914], [42.47190299999999, -71.265844], [42.47229300000001, -71.266309], [42.472471, -71.266266], [42.472602, -71.266039], [42.47259700000003, -71.265726], [42.47211799999999, -71.265359], [42.47140799999996, -71.264787], [42.47060099999997, -71.26531400000002], [42.47037300000006, -71.265486], [42.468080000000015, -71.267036], [42.46771900000005, -71.267279], [42.467283, -71.267574], [42.46716200000001, -71.267654], [42.46706400000004, -71.26732000000001], [42.466794, -71.266269], [42.46620533238791, -71.26654488652656], [42.46618200000003, -71.289676], [42.47274728770139, -71.3041431989035], [42.47303900000003, -71.304106], [42.473266, -71.301868], [42.47334599999994, -71.301996]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_68ee8faa3adf3121a9f8a7b3718534ec);
+        
+    
+        var popup_0f1e84e0ceac4c4fb2e2c0849201066c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f57f45139f83a3bd0bc2d2140b56c531 = $(`<div id="html_f57f45139f83a3bd0bc2d2140b56c531" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Middlesex - MA-CD06</h4>                              </div>         </div>`)[0];
+                popup_0f1e84e0ceac4c4fb2e2c0849201066c.setContent(html_f57f45139f83a3bd0bc2d2140b56c531);
+            
+        
+
+        polygon_723f240b6e75c7eb7e966616fd6e15bd.bindPopup(popup_0f1e84e0ceac4c4fb2e2c0849201066c)
+        ;
+
+        
+    
+    
+            polygon_723f240b6e75c7eb7e966616fd6e15bd.bindTooltip(
+                `<div>
+                      Middlesex - MA-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_6ce64b17579da68f520d9cb3cb78bf0b = L.polygon(
+                [[42.46323500000002, -71.29520999999998], [42.46344599999998, -71.29519], [42.46344100000003, -71.295215], [42.462702000000036, -71.298794], [42.46266900000004, -71.298845], [42.46273800000002, -71.298892], [42.46293099999997, -71.299025], [42.463214000000015, -71.299231], [42.463417, -71.299364], [42.46374999999996, -71.299531], [42.464259, -71.299767], [42.46449499999999, -71.299882], [42.464732, -71.299997], [42.46512400000004, -71.300265], [42.46520599999998, -71.300333], [42.465353000000015, -71.300456], [42.46582000000001, -71.298968], [42.46587099999998, -71.298818], [42.46644999999999, -71.299384], [42.46596099999999, -71.301096], [42.46600100000004, -71.301172], [42.46622900000001, -71.300917], [42.466470999999956, -71.300616], [42.46665600000001, -71.300364], [42.46669999999998, -71.300263], [42.46683300000002, -71.299777], [42.468732999999965, -71.300796], [42.47126399999998, -71.30255299999999], [42.471399999999974, -71.304315], [42.47274728770139, -71.3041431989035], [42.46618200000003, -71.289676], [42.46366472195339, -71.29328973356773], [42.46323500000002, -71.29520999999998]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_68ee8faa3adf3121a9f8a7b3718534ec);
+        
+    
+        var popup_d42d52cf9809d2d17a57380cb0cd27e8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0e91675dac6d5ba3ffffb326e90c72f8 = $(`<div id="html_0e91675dac6d5ba3ffffb326e90c72f8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Middlesex - MA-CD03</h4>                              </div>         </div>`)[0];
+                popup_d42d52cf9809d2d17a57380cb0cd27e8.setContent(html_0e91675dac6d5ba3ffffb326e90c72f8);
+            
+        
+
+        polygon_6ce64b17579da68f520d9cb3cb78bf0b.bindPopup(popup_d42d52cf9809d2d17a57380cb0cd27e8)
+        ;
+
+        
+    
+    
+            polygon_6ce64b17579da68f520d9cb3cb78bf0b.bindTooltip(
+                `<div>
+                      Middlesex - MA-CD03
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_68ee8faa3adf3121a9f8a7b3718534ec.fitBounds(
+                [[42.46266900000004, -71.304315], [42.47733899999998, -71.264787]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

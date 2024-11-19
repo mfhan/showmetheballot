@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c739d69c1cf1bdab7f446c72ea66db49 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Ramsey - MN-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Dakota - MN-CD02</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Ramsey - MN-CD04</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_c739d69c1cf1bdab7f446c72ea66db49" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c739d69c1cf1bdab7f446c72ea66db49 = L.map(
+                "map_c739d69c1cf1bdab7f446c72ea66db49",
+                {
+                    center: [44.89867077915798, -93.10358303544866],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+
+            
+
+        
+    
+            var tile_layer_ffca5d7109eb733b94b84c2251bc4f7f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_ffca5d7109eb733b94b84c2251bc4f7f.addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+            var polygon_f103449748471ae0650a511f99408c87 = L.polygon(
+                [[44.89424099999998, -93.152238], [44.89458000000004, -93.151817], [44.89474799999998, -93.15161], [44.89532999999997, -93.15107], [44.89598599999997, -93.150462], [44.896195999999996, -93.15026700000001], [44.89658100000001, -93.149921], [44.89744299999998, -93.149109], [44.89794399999999, -93.148424], [44.89863200000005, -93.147543], [44.899188, -93.146836], [44.89930700000001, -93.146682], [44.899531000000025, -93.146336], [44.89999799999997, -93.145614], [44.900405000000006, -93.144985], [44.90076300000001, -93.144432], [44.900997999999994, -93.144069], [44.90169099999998, -93.142998], [44.902160000000016, -93.142273], [44.90249500000002, -93.141756], [44.90386300000004, -93.139643], [44.90408099999998, -93.139306], [44.90422699999998, -93.139085], [44.90424500000004, -93.139053], [44.90433500000004, -93.138914], [44.904359000000035, -93.138879], [44.904707000000016, -93.138339], [44.90519000000005, -93.137593], [44.90610199999999, -93.136493], [44.90618428251097, -93.13643723190945], [44.91973807457442, -93.10442740121283], [44.91973, -93.10321900000001], [44.91973, -93.10317000000002], [44.919720000000005, -93.101812], [44.919720000000005, -93.101773], [44.919710999999985, -93.100587], [44.919704999999986, -93.09989], [44.91970200000003, -93.099378], [44.919693000000024, -93.098108], [44.91969000000001, -93.09762800000001], [44.91969000000001, -93.097573], [44.919682, -93.096508], [44.91968100000001, -93.096378], [44.91968100000001, -93.096352], [44.91967900000002, -93.096098], [44.91967900000004, -93.096056], [44.91967900000002, -93.096024], [44.91970599999999, -93.096024], [44.91985899999995, -93.096026], [44.920024999999974, -93.096029], [44.920138, -93.096031], [44.920557000000024, -93.096038], [44.92070400000003, -93.09604], [44.92156100000003, -93.096047], [44.92169100000003, -93.096048], [44.921881999999975, -93.096051], [44.92191700000001, -93.096052], [44.922679999999964, -93.096065], [44.922850000000004, -93.096067], [44.923287000000016, -93.096041], [44.92109681993673, -93.09092008733796], [44.920626000000055, -93.090917], [44.92050500000006, -93.090916], [44.920440000000035, -93.090916], [44.91968700000001, -93.09091], [44.91966799999999, -93.09091], [44.91966699999998, -93.090539], [44.91966600000003, -93.090225], [44.91966600000007, -93.090033], [44.91966499999999, -93.08947600000002], [44.91966499999999, -93.089462], [44.91966199999997, -93.088016], [44.91966076692389, -93.08756283205324], [44.910165064915674, -93.06537170887883], [44.90950799999995, -93.06537], [44.908686000000024, -93.065369], [44.90798699999999, -93.065368], [44.906914000000015, -93.065366], [44.90620199999995, -93.065365], [44.905156, -93.065363], [44.904858000000026, -93.065362], [44.90291800000001, -93.065352], [44.902473999999984, -93.06535], [44.90220600000002, -93.065349], [44.90154999999999, -93.06534700000002], [44.900124999999974, -93.065339], [44.89814899999994, -93.065329], [44.89797100000003, -93.065327], [44.89711099999999, -93.065324], [44.89668999999997, -93.065333], [44.895995, -93.065318], [44.89567700000001, -93.065317], [44.895611000000024, -93.065317], [44.895420999999985, -93.065317], [44.89532000000005, -93.065315], [44.895034, -93.065314], [44.89447599999998, -93.065311], [44.89444400000001, -93.065311], [44.89414599999998, -93.065309], [44.89400399999998, -93.06531000000001], [44.89390399999993, -93.06530800000002], [44.892768000000004, -93.065303], [44.891347, -93.065296], [44.89091799999999, -93.065294], [44.89074600000002, -93.065293], [44.88853600000004, -93.065292], [44.88835499999994, -93.065292], [44.88726500000002, -93.065296], [44.88710700000001, -93.065296], [44.88673400000001, -93.065296], [44.88641000000001, -93.065293], [44.88594300000001, -93.06529], [44.88472599999999, -93.065288], [44.88466199999995, -93.065693], [44.884576000000045, -93.066238], [44.884477000000004, -93.066706], [44.88417400000002, -93.067571], [44.88374199999997, -93.068834], [44.88365100000002, -93.069251], [44.883591999999986, -93.069881], [44.88357899999997, -93.070399], [44.88353700000004, -93.071558], [44.883555, -93.07271700000001], [44.88362100000002, -93.080583], [44.883618999999925, -93.084347], [44.883626999999976, -93.085613], [44.88362499999996, -93.087326], [44.88362400000002, -93.088716], [44.88360599999998, -93.08893], [44.88359999999994, -93.09154], [44.88359900000001, -93.092025], [44.88360300000003, -93.09268600000001], [44.88358599999997, -93.093141], [44.883592999999976, -93.093897], [44.88359500000001, -93.094102], [44.88359599999996, -93.094166], [44.88352899999998, -93.095371], [44.88335299999997, -93.095381], [44.88329599999997, -93.094466], [44.88317000000003, -93.093565], [44.88297799999997, -93.092685], [44.88271699999994, -93.091844], [44.88236199999998, -93.090954], [44.88141000000002, -93.088848], [44.88129299999993, -93.088623], [44.88075400000003, -93.087326], [44.87984599999997, -93.085574], [44.87981400000002, -93.085548], [44.87903199999999, -93.084139], [44.87846599999997, -93.083114], [44.877967000000005, -93.08209], [44.87733299999998, -93.080623], [44.877311000000006, -93.080624], [44.876496000000024, -93.080643], [44.87639699999998, -93.080655], [44.875239999999955, -93.080617], [44.87370099999997, -93.080664], [44.872994000000034, -93.08066], [44.872819000000035, -93.080841], [44.87254400000003, -93.081137], [44.87017900000001, -93.083497], [44.86659800000003, -93.087162], [44.86520600000003, -93.088795], [44.86510699999996, -93.08892], [44.86476, -93.089362], [44.86188999999996, -93.093352], [44.86190599999998, -93.095708], [44.86189199999999, -93.096005], [44.861913999999985, -93.096391], [44.861937000000005, -93.096426], [44.86195899999998, -93.09645900000001], [44.86196299999995, -93.097403], [44.86196199999997, -93.097485], [44.86196599999997, -93.098055], [44.861969999999964, -93.099043], [44.861969999999964, -93.099138], [44.86197500000001, -93.101018], [44.861988999999966, -93.102744], [44.861986999999985, -93.103031], [44.862000000000045, -93.106121], [44.862031, -93.106121], [44.864511999999934, -93.106091], [44.86546599999999, -93.10607900000001], [44.867316000000066, -93.106056], [44.87086300000001, -93.106018], [44.871718999999985, -93.106008], [44.872082000000056, -93.106004], [44.872273000000014, -93.106002], [44.87241100000002, -93.106001], [44.872852999999964, -93.105996], [44.87639, -93.105956], [44.87822600000001, -93.10595], [44.87921200000004, -93.105947], [44.88250200000003, -93.105936], [44.88338500000003, -93.105933], [44.88339299999997, -93.111714], [44.88339799999998, -93.115035], [44.883449999999996, -93.116977], [44.88363200000003, -93.119951], [44.883688999999976, -93.121371], [44.88369399999999, -93.124817], [44.883693, -93.128252], [44.88369299999999, -93.129028], [44.88369200000003, -93.131051], [44.88372199999999, -93.135644], [44.88372699999997, -93.135782], [44.88371500000002, -93.137833], [44.883714999999995, -93.137983], [44.883705000000006, -93.13845], [44.88370099999993, -93.138688], [44.88369399999997, -93.139196], [44.883681, -93.140106], [44.88364700000006, -93.141665], [44.88362799999999, -93.142489], [44.883633999999994, -93.144948], [44.88363599999996, -93.146805], [44.88366099999997, -93.153615], [44.88366300000001, -93.154274], [44.88364800000003, -93.155183], [44.88361999999999, -93.155675], [44.88358400000002, -93.156166], [44.88353300000003, -93.156655], [44.88349299999997, -93.156986], [44.88347400000002, -93.157141], [44.88340100000002, -93.157624], [44.88335100000002, -93.15793], [44.88333099999998, -93.158054], [44.88350899999997, -93.158039], [44.883870000000016, -93.158025], [44.88455200000004, -93.15799], [44.88488599999998, -93.15702700000001], [44.886066000000014, -93.156992], [44.88828100000004, -93.156926], [44.88858300000004, -93.156915], [44.888702999999964, -93.15674], [44.888857999999985, -93.156513], [44.88891200000006, -93.156422], [44.889520999999974, -93.155402], [44.889783, -93.155124], [44.88980899999999, -93.155103], [44.88990999999997, -93.155026], [44.89014500000002, -93.154845], [44.890197000000015, -93.154805], [44.890255, -93.15476], [44.89053100000002, -93.154544], [44.89099900000005, -93.154062], [44.891259999999996, -93.153792], [44.89151299999998, -93.153531], [44.89175700000002, -93.153219], [44.892293999999985, -93.152441], [44.89267800000003, -93.151884], [44.892704, -93.151847], [44.89271800000003, -93.151826], [44.892813, -93.15171], [44.89291300000002, -93.151856], [44.89292200000002, -93.151869], [44.893208000000016, -93.152353], [44.893299000000006, -93.152513], [44.8936, -93.153032], [44.893787, -93.1528], [44.89424099999998, -93.152238]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_d7b0e3e95b72f800613ce9ff0270cb8e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7bb58e828b11ad710e3bf6b0ee40e1ae = $(`<div id="html_7bb58e828b11ad710e3bf6b0ee40e1ae" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Dakota - MN-CD02</h4>                              </div>         </div>`)[0];
+                popup_d7b0e3e95b72f800613ce9ff0270cb8e.setContent(html_7bb58e828b11ad710e3bf6b0ee40e1ae);
+            
+        
+
+        polygon_f103449748471ae0650a511f99408c87.bindPopup(popup_d7b0e3e95b72f800613ce9ff0270cb8e)
+        ;
+
+        
+    
+    
+            polygon_f103449748471ae0650a511f99408c87.bindTooltip(
+                `<div>
+                      Dakota - MN-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_66e08c12517b132c0d3af286d17611dc = L.polygon(
+                [[44.92050500000006, -93.090916], [44.920626000000055, -93.090917], [44.92109681993673, -93.09092008733796], [44.920804325196166, -93.09023625619758], [44.92061499999999, -93.090233], [44.920445999999984, -93.090216], [44.919761000000015, -93.090231], [44.91966600000003, -93.090225], [44.91966699999998, -93.090539], [44.91966799999999, -93.09091], [44.91968700000001, -93.09091], [44.920440000000035, -93.090916], [44.92050500000006, -93.090916]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_64f129e4da19b5d878f0840f3172cf28 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b372606dd26d010c464fad7b669f3c1c = $(`<div id="html_b372606dd26d010c464fad7b669f3c1c" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD02</h4>                              </div>         </div>`)[0];
+                popup_64f129e4da19b5d878f0840f3172cf28.setContent(html_b372606dd26d010c464fad7b669f3c1c);
+            
+        
+
+        polygon_66e08c12517b132c0d3af286d17611dc.bindPopup(popup_64f129e4da19b5d878f0840f3172cf28)
+        ;
+
+        
+    
+    
+            polygon_66e08c12517b132c0d3af286d17611dc.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_785b42d051742c2d8123259a608a8e60 = L.polygon(
+                [[44.92007199999999, -93.098301], [44.92006900000003, -93.098117], [44.919796000000055, -93.09810900000001], [44.919693000000024, -93.098108], [44.91970200000003, -93.099378], [44.919704999999986, -93.09989], [44.920196, -93.099904], [44.920217, -93.098312], [44.92007199999999, -93.098301]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_eb6f1d1dd411766113ab809f199d226c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ed76856bf18555b5661ffc1393250186 = $(`<div id="html_ed76856bf18555b5661ffc1393250186" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD02</h4>                              </div>         </div>`)[0];
+                popup_eb6f1d1dd411766113ab809f199d226c.setContent(html_ed76856bf18555b5661ffc1393250186);
+            
+        
+
+        polygon_785b42d051742c2d8123259a608a8e60.bindPopup(popup_eb6f1d1dd411766113ab809f199d226c)
+        ;
+
+        
+    
+    
+            polygon_785b42d051742c2d8123259a608a8e60.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_61a56269424d11b8844ccc4b899174b3 = L.polygon(
+                [[44.92003399999998, -93.10333], [44.92003799999998, -93.10322], [44.91973, -93.10321900000001], [44.91973807457442, -93.10442740121283], [44.92003229103358, -93.10373222172475], [44.92003399999998, -93.10333]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_84ed4226a419645b0a35dca5518f247d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_872d1e7779f55d42120b1d6cdfec7bde = $(`<div id="html_872d1e7779f55d42120b1d6cdfec7bde" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD02</h4>                              </div>         </div>`)[0];
+                popup_84ed4226a419645b0a35dca5518f247d.setContent(html_872d1e7779f55d42120b1d6cdfec7bde);
+            
+        
+
+        polygon_61a56269424d11b8844ccc4b899174b3.bindPopup(popup_84ed4226a419645b0a35dca5518f247d)
+        ;
+
+        
+    
+    
+            polygon_61a56269424d11b8844ccc4b899174b3.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD02
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_9dcb0011f7841877c5c82d2d71a2e21f = L.polygon(
+                [[44.91957000000001, -93.074673], [44.92037699999997, -93.074682], [44.920367999999996, -93.073021], [44.919562000000035, -93.073012], [44.91957000000001, -93.074673]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_4860cabf8569378a07f162529ca1fc0b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c0658451ecc734e29ef6b7479177e652 = $(`<div id="html_c0658451ecc734e29ef6b7479177e652" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD04</h4>                              </div>         </div>`)[0];
+                popup_4860cabf8569378a07f162529ca1fc0b.setContent(html_c0658451ecc734e29ef6b7479177e652);
+            
+        
+
+        polygon_9dcb0011f7841877c5c82d2d71a2e21f.bindPopup(popup_4860cabf8569378a07f162529ca1fc0b)
+        ;
+
+        
+    
+    
+            polygon_9dcb0011f7841877c5c82d2d71a2e21f.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_93eeb18dc2c13f2e6eca36b34aa93948 = L.polygon(
+                [[44.919709999999995, -93.080551], [44.91989000000001, -93.080535], [44.919902000000036, -93.08021600000001], [44.92000000000001, -93.080208], [44.92004500000006, -93.080139], [44.920041000000005, -93.078337], [44.919991999999965, -93.077083], [44.91995300000003, -93.077086], [44.919897999999975, -93.077091], [44.919895999999994, -93.076912], [44.919893999999964, -93.07665400000002], [44.91980099999997, -93.076641], [44.919677999999976, -93.076625], [44.91958099999998, -93.076465], [44.91958499999998, -93.076932], [44.91960900000003, -93.079971], [44.919614999999986, -93.080674], [44.919709999999995, -93.080551]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_bc4368b22891dd614a65911b8e8acee1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_495936d897cb31bd27bac6446135f4ab = $(`<div id="html_495936d897cb31bd27bac6446135f4ab" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD04</h4>                              </div>         </div>`)[0];
+                popup_bc4368b22891dd614a65911b8e8acee1.setContent(html_495936d897cb31bd27bac6446135f4ab);
+            
+        
+
+        polygon_93eeb18dc2c13f2e6eca36b34aa93948.bindPopup(popup_bc4368b22891dd614a65911b8e8acee1)
+        ;
+
+        
+    
+    
+            polygon_93eeb18dc2c13f2e6eca36b34aa93948.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_0db66b78528e28300059ae4777c81a85 = L.polygon(
+                [[44.92010800000003, -93.085833], [44.920092, -93.085057], [44.92011600000005, -93.085057], [44.920092, -93.083775], [44.92006800000002, -93.083726], [44.91964, -93.083725], [44.919650999999995, -93.085072], [44.91965600000002, -93.085679], [44.919657000000036, -93.085829], [44.91973899999998, -93.08583], [44.92010800000003, -93.085833]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_946a0c0967afbd65f59440fbacbeb5a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_63c6d2ba530b57902b8affa6cbd60893 = $(`<div id="html_63c6d2ba530b57902b8affa6cbd60893" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD04</h4>                              </div>         </div>`)[0];
+                popup_946a0c0967afbd65f59440fbacbeb5a6.setContent(html_63c6d2ba530b57902b8affa6cbd60893);
+            
+        
+
+        polygon_0db66b78528e28300059ae4777c81a85.bindPopup(popup_946a0c0967afbd65f59440fbacbeb5a6)
+        ;
+
+        
+    
+    
+            polygon_0db66b78528e28300059ae4777c81a85.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_94bdaad5df176d9e0ba933cb346f07c0 = L.polygon(
+                [[44.92123600000001, -93.090921], [44.921322999999965, -93.090917], [44.921345000000024, -93.090922], [44.92141699999998, -93.090923], [44.92147199999996, -93.090923], [44.921411999999926, -93.090769], [44.92140499999997, -93.090252], [44.92115500000001, -93.090236], [44.92115799999998, -93.090325], [44.92102400000002, -93.09032], [44.92102200000005, -93.09024], [44.920804325196166, -93.09023625619758], [44.92109681993673, -93.09092008733796], [44.92123600000001, -93.090921]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_b20b2c166d6ab5d22490283e8cddf9b5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d34102b5a7233776d0735e43e26e8a25 = $(`<div id="html_d34102b5a7233776d0735e43e26e8a25" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD04</h4>                              </div>         </div>`)[0];
+                popup_b20b2c166d6ab5d22490283e8cddf9b5.setContent(html_d34102b5a7233776d0735e43e26e8a25);
+            
+        
+
+        polygon_94bdaad5df176d9e0ba933cb346f07c0.bindPopup(popup_b20b2c166d6ab5d22490283e8cddf9b5)
+        ;
+
+        
+    
+    
+            polygon_94bdaad5df176d9e0ba933cb346f07c0.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ff1c08fe7400264d35412c547a8a685f = L.polygon(
+                [[44.920028999999985, -93.104506], [44.92003229103358, -93.10373222172475], [44.91973807457442, -93.10442740121283], [44.91973899999998, -93.104566], [44.91973899999998, -93.104608], [44.92003000000002, -93.104609], [44.920028999999985, -93.104506]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c739d69c1cf1bdab7f446c72ea66db49);
+        
+    
+        var popup_e7346079937e65a2748742d66facb373 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a11bd4d1459b28171577fc8b793c35aa = $(`<div id="html_a11bd4d1459b28171577fc8b793c35aa" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Ramsey - MN-CD04</h4>                              </div>         </div>`)[0];
+                popup_e7346079937e65a2748742d66facb373.setContent(html_a11bd4d1459b28171577fc8b793c35aa);
+            
+        
+
+        polygon_ff1c08fe7400264d35412c547a8a685f.bindPopup(popup_e7346079937e65a2748742d66facb373)
+        ;
+
+        
+    
+    
+            polygon_ff1c08fe7400264d35412c547a8a685f.bindTooltip(
+                `<div>
+                      Ramsey - MN-CD04
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_c739d69c1cf1bdab7f446c72ea66db49.fitBounds(
+                [[44.86188999999996, -93.158054], [44.923287000000016, -93.065288]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

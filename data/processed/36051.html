@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_58f29b81366dff70b5e08fa1a006548f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Autauga - AL-CD06</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Chilton - AL-CD06</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_58f29b81366dff70b5e08fa1a006548f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_58f29b81366dff70b5e08fa1a006548f = L.map(
+                "map_58f29b81366dff70b5e08fa1a006548f",
+                {
+                    center: [32.70915159863758, -86.55013345279765],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_58f29b81366dff70b5e08fa1a006548f);
+
+            
+
+        
+    
+            var tile_layer_4895aff9907017b0ebfb3f62bea81a1b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_4895aff9907017b0ebfb3f62bea81a1b.addTo(map_58f29b81366dff70b5e08fa1a006548f);
+        
+    
+            var polygon_63be404b2f28a179b2ee476c162d3817 = L.polygon(
+                [[32.70693799999999, -86.553278], [32.707019999999964, -86.533399], [32.70701999999998, -86.53309500000002], [32.70703600000001, -86.529462], [32.70703600000001, -86.529445], [32.707035999999995, -86.529421], [32.70705700000001, -86.52469300000001], [32.70687165821444, -86.55327769505398], [32.70693799999999, -86.553278]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_58f29b81366dff70b5e08fa1a006548f);
+        
+    
+        var popup_0bf37760ada8fbd9eb1a0017126330b3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e5b91dd79ace027ceb156f61119b5eb = $(`<div id="html_5e5b91dd79ace027ceb156f61119b5eb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Autauga - AL-CD06</h4>                              </div>         </div>`)[0];
+                popup_0bf37760ada8fbd9eb1a0017126330b3.setContent(html_5e5b91dd79ace027ceb156f61119b5eb);
+            
+        
+
+        polygon_63be404b2f28a179b2ee476c162d3817.bindPopup(popup_0bf37760ada8fbd9eb1a0017126330b3)
+        ;
+
+        
+    
+    
+            polygon_63be404b2f28a179b2ee476c162d3817.bindTooltip(
+                `<div>
+                      Autauga - AL-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_37d6508def615282c8e52a44a1d44667 = L.polygon(
+                [[32.706727999999956, -86.574986], [32.706776999999995, -86.570148], [32.70677799999996, -86.569962], [32.706815999999975, -86.566303], [32.70681700000001, -86.566226], [32.70684699999998, -86.56313], [32.706806117104925, -86.56312912344924], [32.706721727125775, -86.57562905671773], [32.706727999999956, -86.574986]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_58f29b81366dff70b5e08fa1a006548f);
+        
+    
+        var popup_a57e713e3e78145a630b33816bab26d8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_376f20d1414afc5496090205c0f93c14 = $(`<div id="html_376f20d1414afc5496090205c0f93c14" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Autauga - AL-CD06</h4>                              </div>         </div>`)[0];
+                popup_a57e713e3e78145a630b33816bab26d8.setContent(html_376f20d1414afc5496090205c0f93c14);
+            
+        
+
+        polygon_37d6508def615282c8e52a44a1d44667.bindPopup(popup_a57e713e3e78145a630b33816bab26d8)
+        ;
+
+        
+    
+    
+            polygon_37d6508def615282c8e52a44a1d44667.bindTooltip(
+                `<div>
+                      Autauga - AL-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_bf2d0174b40d7c41d407875eadfc616e = L.polygon(
+                [[32.707035999999995, -86.529421], [32.70703600000001, -86.529445], [32.70703600000001, -86.529462], [32.70701999999998, -86.53309500000002], [32.707019999999964, -86.533399], [32.70693799999999, -86.553278], [32.70693299999996, -86.554725], [32.70747300000004, -86.55445600000002], [32.707552, -86.554395], [32.70756299999999, -86.554307], [32.70757199999999, -86.554056], [32.70756799999997, -86.553804], [32.707553999999995, -86.55355100000001], [32.707544999999996, -86.553295], [32.707541, -86.553039], [32.707555, -86.552274], [32.70757199999999, -86.55202], [32.70761600000001, -86.551768], [32.70767500000001, -86.551527], [32.70775200000005, -86.551292], [32.70784399999996, -86.551064], [32.70794299999995, -86.550839], [32.70858499999994, -86.549516], [32.70921000000001, -86.548184], [32.70931700000002, -86.547968], [32.70953300000002, -86.547548], [32.709631, -86.547341], [32.70971099999999, -86.5472], [32.70986300000003, -86.54696500000001], [32.71005400000001, -86.546561], [32.71017200000001, -86.54633], [32.71028100000001, -86.546108], [32.71079099999998, -86.545], [32.71098799999999, -86.544553], [32.71126100000002, -86.543877], [32.71134700000001, -86.543641], [32.711418999999985, -86.543399], [32.71148400000002, -86.543152], [32.71165799999998, -86.542422], [32.711719999999964, -86.542177], [32.711803999999994, -86.541942], [32.71190799999998, -86.541721], [32.71203000000001, -86.541511], [32.71215800000001, -86.54131], [32.71229100000004, -86.541115], [32.712418000000056, -86.540917], [32.71253300000001, -86.54071], [32.712622, -86.540484], [32.712773000000006, -86.539998], [32.71285699999997, -86.539761], [32.71290100000001, -86.539659], [32.713147000000006, -86.539066], [32.713248000000014, -86.53884], [32.71335500000003, -86.538619], [32.71347199999996, -86.538405], [32.713593000000024, -86.538198], [32.71372399999998, -86.537997], [32.714003000000034, -86.537616], [32.71442699999997, -86.537051], [32.714719000000024, -86.536683], [32.71502400000002, -86.536331], [32.71565299999999, -86.535639], [32.71580300000002, -86.535459], [32.71593899999998, -86.535266], [32.71605099999999, -86.535053], [32.71610714360185, -86.53487829091303], [32.70705700000001, -86.52469300000001], [32.707035999999995, -86.529421]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_58f29b81366dff70b5e08fa1a006548f);
+        
+    
+        var popup_601b89510fd137a991ec11412c1d73bb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4a658a76911abe96bd33194d785f7356 = $(`<div id="html_4a658a76911abe96bd33194d785f7356" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Chilton - AL-CD06</h4>                              </div>         </div>`)[0];
+                popup_601b89510fd137a991ec11412c1d73bb.setContent(html_4a658a76911abe96bd33194d785f7356);
+            
+        
+
+        polygon_bf2d0174b40d7c41d407875eadfc616e.bindPopup(popup_601b89510fd137a991ec11412c1d73bb)
+        ;
+
+        
+    
+    
+            polygon_bf2d0174b40d7c41d407875eadfc616e.bindTooltip(
+                `<div>
+                      Chilton - AL-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_29a2b8fbb3916ad8605d5da749a8f5bf = L.polygon(
+                [[32.706815999999975, -86.566303], [32.70677799999996, -86.569962], [32.706815000000034, -86.569891], [32.706889999999994, -86.569706], [32.707044000000046, -86.569256], [32.707084000000016, -86.569065], [32.70710700000001, -86.568862], [32.707124, -86.568466], [32.707115999999985, -86.568028], [32.70712300000005, -86.56749700000002], [32.70712100000003, -86.566735], [32.70711300000002, -86.566448], [32.70711499999998, -86.565931], [32.707124000000015, -86.565308], [32.70711300000002, -86.564699], [32.70716099999999, -86.563075], [32.70721100000004, -86.562352], [32.70726799999999, -86.562099], [32.70730300000003, -86.562005], [32.707408000000015, -86.561761], [32.70753200000003, -86.561496], [32.70732400000006, -86.561064], [32.70709, -86.560596], [32.706876999999984, -86.560171], [32.70684699999998, -86.56313], [32.70681700000001, -86.566226], [32.706815999999975, -86.566303]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_58f29b81366dff70b5e08fa1a006548f);
+        
+    
+        var popup_f052e96a4977b022a2f933401c61404a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_97ff7419e4eca1d6f00d5d6d8bf783b9 = $(`<div id="html_97ff7419e4eca1d6f00d5d6d8bf783b9" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Chilton - AL-CD06</h4>                              </div>         </div>`)[0];
+                popup_f052e96a4977b022a2f933401c61404a.setContent(html_97ff7419e4eca1d6f00d5d6d8bf783b9);
+            
+        
+
+        polygon_29a2b8fbb3916ad8605d5da749a8f5bf.bindPopup(popup_f052e96a4977b022a2f933401c61404a)
+        ;
+
+        
+    
+    
+            polygon_29a2b8fbb3916ad8605d5da749a8f5bf.bindTooltip(
+                `<div>
+                      Chilton - AL-CD06
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_58f29b81366dff70b5e08fa1a006548f.fitBounds(
+                [[32.706721727125775, -86.57562905671773], [32.71610714360185, -86.52469300000001]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

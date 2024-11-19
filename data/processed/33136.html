@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c5718aba37fece91b3309825664be305 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Miami-Dade - FL-CD24</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Miami-Dade - FL-CD27</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Miami-Dade - FL-CD26</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_c5718aba37fece91b3309825664be305" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c5718aba37fece91b3309825664be305 = L.map(
+                "map_c5718aba37fece91b3309825664be305",
+                {
+                    center: [25.785432600473097, -80.20413660603816],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_c5718aba37fece91b3309825664be305);
+
+            
+
+        
+    
+            var tile_layer_f08bdc9148790d5ce316644c7d3eb14d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_f08bdc9148790d5ce316644c7d3eb14d.addTo(map_c5718aba37fece91b3309825664be305);
+        
+    
+            var polygon_209b28c56bcefc9082010e52cd521fef = L.polygon(
+                [[25.79414099999999, -80.197678], [25.79450641738698, -80.19767772379981], [25.795503732153648, -80.19655377007312], [25.795479999999984, -80.195814], [25.795526000000017, -80.194855], [25.795622999999964, -80.194455], [25.794615999999987, -80.194731], [25.794317000000007, -80.194813], [25.794251999999993, -80.194808], [25.79401500000001, -80.194809], [25.79246699999999, -80.194732], [25.79246699999999, -80.193969], [25.791646000000007, -80.193969], [25.79054100000003, -80.19391], [25.790520999999995, -80.19467500000002], [25.789382000000003, -80.19463600000002], [25.78934400000002, -80.194635], [25.788682999999946, -80.194626], [25.788255999999958, -80.194629], [25.788269000000014, -80.19442500000001], [25.788260999999974, -80.194119], [25.786995999999984, -80.194058], [25.786477999999953, -80.19406], [25.786327999999976, -80.194045], [25.786200000000036, -80.194032], [25.786076999999942, -80.19402], [25.786023999999955, -80.194015], [25.78596700000001, -80.194015], [25.785851000000026, -80.194012], [25.785775000000047, -80.19401], [25.785707, -80.194008], [25.78562646634071, -80.1940058234075], [25.789115000000002, -80.203753], [25.794121257824, -80.1981117794104], [25.79414099999999, -80.197678]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c5718aba37fece91b3309825664be305);
+        
+    
+        var popup_ea5223aa4e96f2b6ebcb61344b1c94fc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9b0224e2138281b8bce8327c12170b38 = $(`<div id="html_9b0224e2138281b8bce8327c12170b38" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Miami-Dade - FL-CD24</h4>                              </div>         </div>`)[0];
+                popup_ea5223aa4e96f2b6ebcb61344b1c94fc.setContent(html_9b0224e2138281b8bce8327c12170b38);
+            
+        
+
+        polygon_209b28c56bcefc9082010e52cd521fef.bindPopup(popup_ea5223aa4e96f2b6ebcb61344b1c94fc)
+        ;
+
+        
+    
+    
+            polygon_209b28c56bcefc9082010e52cd521fef.bindTooltip(
+                `<div>
+                      Miami-Dade - FL-CD24
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_cb4d199de3e0a49867919b353ae27847 = L.polygon(
+                [[25.78984099999997, -80.216308], [25.790384172421607, -80.21631549202984], [25.789115000000002, -80.203753], [25.78562646634071, -80.1940058234075], [25.785374000000015, -80.193999], [25.785126999999967, -80.193992], [25.784738999999984, -80.193973], [25.784779000000015, -80.19320900000001], [25.784789000000046, -80.192321], [25.78430700000001, -80.192291], [25.78382599999999, -80.192261], [25.78281600000003, -80.192215], [25.78281300000002, -80.192621], [25.78280799999995, -80.193377], [25.782805000000014, -80.193908], [25.78183999999994, -80.193877], [25.780844000000002, -80.193832], [25.78091300000004, -80.192153], [25.780504000000015, -80.192123], [25.78047600000004, -80.192125], [25.780428000000036, -80.193818], [25.779891000000003, -80.193831], [25.779876000000023, -80.195372], [25.778904000000015, -80.195334], [25.778880000000022, -80.196148], [25.77887599999997, -80.196258], [25.778859999999998, -80.196807], [25.778859000000026, -80.197881], [25.779798999999965, -80.197922], [25.780718000000007, -80.197968], [25.780707000000007, -80.19867], [25.780693000000024, -80.199653], [25.780497000000032, -80.199634], [25.779748999999963, -80.199594], [25.778783000000008, -80.199545], [25.77877000000001, -80.199768], [25.778779, -80.199987], [25.778775, -80.200145], [25.77974, -80.200223], [25.779695999999987, -80.201276], [25.779260999999998, -80.201259], [25.779197999999994, -80.20156400000002], [25.779158999999986, -80.201773], [25.779147999999978, -80.201965], [25.779160000000015, -80.20215], [25.779223999999992, -80.202269], [25.77927799999999, -80.202424], [25.779251999999985, -80.202507], [25.779164000000044, -80.20265300000001], [25.779153000000008, -80.202927], [25.779106999999986, -80.203323], [25.779106999999986, -80.203443], [25.779142000000004, -80.203584], [25.779182000000002, -80.203602], [25.77921900000003, -80.203806], [25.778997999999962, -80.203934], [25.77883799999998, -80.203929], [25.778666999999963, -80.20392], [25.778648999999984, -80.204551], [25.778583999999988, -80.20642400000001], [25.778578999999965, -80.206471], [25.778558000000004, -80.206534], [25.77852100000001, -80.206602], [25.778453999999993, -80.206695], [25.778417000000015, -80.206747], [25.77828900000002, -80.206915], [25.779301000000007, -80.208866], [25.779525999999994, -80.209301], [25.780165999999994, -80.209938], [25.780254000000014, -80.210483], [25.780306000000024, -80.210877], [25.780306000000003, -80.211351], [25.779463999999997, -80.210307], [25.77898399999999, -80.20969], [25.77892900000002, -80.211226], [25.778799000000017, -80.21123], [25.778759000000004, -80.211608], [25.778459999999995, -80.21161], [25.77844800000002, -80.211885], [25.77864799999995, -80.211863], [25.778647999999937, -80.21196800000001], [25.778894999999995, -80.211991], [25.778874000000002, -80.212869], [25.778721000000033, -80.212877], [25.778680000000005, -80.212923], [25.778670999999985, -80.213033], [25.77872499999997, -80.213034], [25.778728999999995, -80.213119], [25.778722000000016, -80.21351], [25.778859999999998, -80.213508], [25.77885399999998, -80.214264], [25.778702, -80.214256], [25.778700999999995, -80.214409], [25.778619999999986, -80.214416], [25.778615000000027, -80.214798], [25.779292000000037, -80.214813], [25.780182999999965, -80.214829], [25.781007000000017, -80.214862], [25.781289999999984, -80.21484], [25.781584999999975, -80.214788], [25.78209599999996, -80.21473600000002], [25.78226300000003, -80.214711], [25.782562000000006, -80.214683], [25.78288499999996, -80.214639], [25.783227, -80.214616], [25.78402599999997, -80.214562], [25.784166999999947, -80.214577], [25.78482800000001, -80.214675], [25.78524599999997, -80.214795], [25.785380999999994, -80.214829], [25.78550200000002, -80.214859], [25.785686000000005, -80.214889], [25.786008999999996, -80.214951], [25.786198999999986, -80.214966], [25.787594, -80.215003], [25.789337, -80.216705], [25.789812000000044, -80.21717000000001], [25.78983200000002, -80.216588], [25.78984099999997, -80.216308]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c5718aba37fece91b3309825664be305);
+        
+    
+        var popup_06dcf63ea305c9dfad152044686c8daa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7bbaaadb6f10beb9e080928823ad8a05 = $(`<div id="html_7bbaaadb6f10beb9e080928823ad8a05" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Miami-Dade - FL-CD27</h4>                              </div>         </div>`)[0];
+                popup_06dcf63ea305c9dfad152044686c8daa.setContent(html_7bbaaadb6f10beb9e080928823ad8a05);
+            
+        
+
+        polygon_cb4d199de3e0a49867919b353ae27847.bindPopup(popup_06dcf63ea305c9dfad152044686c8daa)
+        ;
+
+        
+    
+    
+            polygon_cb4d199de3e0a49867919b353ae27847.bindTooltip(
+                `<div>
+                      Miami-Dade - FL-CD27
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_ef79b29af1337484f99e3e9562612f03 = L.polygon(
+                [[25.795464, -80.197677], [25.795508999999978, -80.196718], [25.795503732153648, -80.19655377007312], [25.79450641738698, -80.19767772379981], [25.795464, -80.197677]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c5718aba37fece91b3309825664be305);
+        
+    
+        var popup_b764c10b9087c30ab6cdce4189d40b22 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_44af8dbd364c511232da83cf679aae44 = $(`<div id="html_44af8dbd364c511232da83cf679aae44" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Miami-Dade - FL-CD26</h4>                              </div>         </div>`)[0];
+                popup_b764c10b9087c30ab6cdce4189d40b22.setContent(html_44af8dbd364c511232da83cf679aae44);
+            
+        
+
+        polygon_ef79b29af1337484f99e3e9562612f03.bindPopup(popup_b764c10b9087c30ab6cdce4189d40b22)
+        ;
+
+        
+    
+    
+            polygon_ef79b29af1337484f99e3e9562612f03.bindTooltip(
+                `<div>
+                      Miami-Dade - FL-CD26
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_5f87627d51c3661ef2f0034659a98d73 = L.polygon(
+                [[25.790420999999974, -80.216316], [25.790434000000012, -80.216078], [25.79045800000002, -80.215074], [25.79045900000001, -80.21504100000001], [25.791799000000015, -80.215103], [25.793215999999983, -80.215108], [25.793221000000013, -80.21508800000001], [25.793251999999985, -80.213781], [25.793266999999997, -80.213148], [25.79324900000001, -80.212378], [25.79327100000001, -80.212307], [25.793432000000042, -80.211799], [25.79361999999999, -80.210909], [25.793883999999988, -80.211034], [25.795121, -80.211082], [25.795179999999995, -80.209055], [25.795239999999996, -80.207018], [25.79525400000002, -80.206509], [25.795269000000015, -80.206122], [25.795248999999995, -80.205864], [25.795239999999996, -80.205533], [25.795239000000006, -80.205297], [25.795238000000012, -80.205098], [25.795238000000015, -80.205025], [25.795289999999994, -80.204362], [25.79533399999995, -80.202433], [25.795398, -80.201387], [25.795431, -80.200353], [25.795438999999988, -80.199353], [25.79542900000004, -80.198872], [25.795434999999983, -80.198453], [25.794105999999957, -80.19844700000002], [25.794121257824, -80.1981117794104], [25.789115000000002, -80.203753], [25.790384172421607, -80.21631549202984], [25.790420999999974, -80.216316]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_c5718aba37fece91b3309825664be305);
+        
+    
+        var popup_421e1d6ff2f345981e2d6c853f5f21f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cc54738721e0a0b1b2aa3541b88b00f2 = $(`<div id="html_cc54738721e0a0b1b2aa3541b88b00f2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Miami-Dade - FL-CD26</h4>                              </div>         </div>`)[0];
+                popup_421e1d6ff2f345981e2d6c853f5f21f2.setContent(html_cc54738721e0a0b1b2aa3541b88b00f2);
+            
+        
+
+        polygon_5f87627d51c3661ef2f0034659a98d73.bindPopup(popup_421e1d6ff2f345981e2d6c853f5f21f2)
+        ;
+
+        
+    
+    
+            polygon_5f87627d51c3661ef2f0034659a98d73.bindTooltip(
+                `<div>
+                      Miami-Dade - FL-CD26
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_c5718aba37fece91b3309825664be305.fitBounds(
+                [[25.77828900000002, -80.21717000000001], [25.795622999999964, -80.192123]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

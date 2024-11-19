@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_03c327d06ab9636d25be2b0abc95adb2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Williamson - TX-CD17</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Williamson - TX-CD10</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #59a14f;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Travis - TX-CD10</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_03c327d06ab9636d25be2b0abc95adb2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_03c327d06ab9636d25be2b0abc95adb2 = L.map(
+                "map_03c327d06ab9636d25be2b0abc95adb2",
+                {
+                    center: [30.465212253363656, -97.68714569005846],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+
+            
+
+        
+    
+            var tile_layer_02bff512f56ca3db9dd7055b7fd0481f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_02bff512f56ca3db9dd7055b7fd0481f.addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+        
+    
+            var polygon_59dd2d0ed9560da87672c02c74080211 = L.polygon(
+                [[30.475343000000013, -97.684406], [30.473604000000034, -97.684952], [30.47353999999999, -97.684972], [30.473496000000047, -97.684985], [30.47310700000001, -97.68510500000001], [30.472399000000006, -97.685323], [30.47185699999999, -97.685489], [30.47145999999999, -97.685611], [30.470742999999988, -97.68583200000002], [30.46830099999996, -97.686584], [30.468256999999983, -97.6866], [30.468159999999976, -97.686634], [30.466901, -97.687084], [30.464914000000018, -97.687698], [30.46273200000001, -97.688373], [30.46270499999997, -97.688381], [30.461856999999984, -97.688643], [30.461401, -97.68878400000001], [30.461422000000006, -97.689519], [30.461496000000015, -97.692142], [30.461500999999945, -97.692284], [30.46150099999995, -97.692405], [30.461500999999945, -97.69246700000001], [30.461500999999945, -97.692731], [30.461500999999938, -97.693031], [30.461500999999938, -97.694592], [30.461500999999945, -97.694684], [30.46160099999997, -97.695784], [30.461401, -97.695984], [30.461266000000002, -97.696356], [30.46124100000004, -97.696426], [30.46092301435355, -97.69730262365049], [30.45855007254431, -97.70842747867077], [30.458648000000025, -97.715192], [30.45722599999998, -97.718128], [30.456704999999967, -97.71919], [30.456138999999983, -97.720358], [30.45630999999996, -97.720274], [30.457215999999978, -97.71992], [30.457568000000034, -97.719634], [30.457873, -97.719177], [30.458399999999997, -97.717935], [30.458633000000017, -97.717599], [30.46058900000002, -97.716256], [30.46205000000001, -97.71529400000001], [30.463902000000004, -97.714096], [30.46451799999996, -97.713698], [30.466206999999976, -97.712613], [30.47038999999999, -97.709913], [30.47269500000002, -97.708428], [30.473126999999987, -97.70814700000001], [30.473594000000013, -97.70784200000001], [30.476581999999997, -97.705912], [30.476801999999974, -97.70577], [30.476983999999984, -97.705652], [30.477244000000017, -97.705484], [30.477177999999988, -97.705298], [30.477019000000013, -97.704711], [30.476921, -97.704142], [30.476727999999987, -97.703712], [30.47650400000002, -97.703412], [30.476438999999985, -97.702703], [30.476438999999985, -97.70246400000002], [30.476438999999985, -97.702155], [30.476482000000008, -97.701339], [30.476675000000007, -97.69989], [30.47718, -97.697001], [30.477577, -97.694746], [30.477664999999984, -97.693921], [30.47732900000002, -97.69384900000001], [30.47721599999997, -97.693822], [30.476413, -97.693631], [30.475893000000013, -97.693496], [30.475480000000008, -97.693358], [30.474795000000046, -97.693053], [30.474302999999985, -97.692731], [30.47421700000004, -97.69267], [30.47405099999999, -97.69255100000001], [30.473672000000015, -97.692182], [30.472854000000005, -97.691234], [30.472308999999957, -97.690618], [30.472905999999977, -97.689958], [30.474563000000007, -97.688198], [30.47509500000002, -97.687633], [30.475740000000005, -97.686973], [30.475927999999985, -97.686781], [30.476842999999946, -97.685845], [30.476965999999987, -97.685719], [30.47703299999999, -97.685671], [30.477254999999992, -97.685518], [30.477416999999996, -97.685429], [30.47762299999999, -97.685317], [30.477900000000005, -97.685194], [30.478225, -97.685089], [30.478564999999985, -97.685008], [30.478963999999973, -97.685003], [30.479033000000037, -97.684604], [30.47906200000003, -97.684425], [30.479068226525253, -97.68434667759834], [30.476290000000006, -97.68412], [30.475343000000013, -97.684406]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+        
+    
+        var popup_3e3a32dc37953032c2693d033e6a60f4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4b78e68a464a282f6e4b7390449d6c14 = $(`<div id="html_4b78e68a464a282f6e4b7390449d6c14" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Williamson - TX-CD10</h4>                              </div>         </div>`)[0];
+                popup_3e3a32dc37953032c2693d033e6a60f4.setContent(html_4b78e68a464a282f6e4b7390449d6c14);
+            
+        
+
+        polygon_59dd2d0ed9560da87672c02c74080211.bindPopup(popup_3e3a32dc37953032c2693d033e6a60f4)
+        ;
+
+        
+    
+    
+            polygon_59dd2d0ed9560da87672c02c74080211.bindTooltip(
+                `<div>
+                      Williamson - TX-CD10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_074d478c4fdf2c260f6f56da27f5cc9d = L.polygon(
+                [[30.476290000000006, -97.68412], [30.479068226525253, -97.68434667759834], [30.479080999999965, -97.684186], [30.479096999999985, -97.684082], [30.479116000000054, -97.683964], [30.479134000000005, -97.683845], [30.479150999999984, -97.683726], [30.479168000000012, -97.683608], [30.479184999999983, -97.683484], [30.479200999999982, -97.68336], [30.479209999999988, -97.683293], [30.479261000000072, -97.683191], [30.476579000000008, -97.684033], [30.476290000000006, -97.68412]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+        
+    
+        var popup_95e49a428f3953b2f3bfcc275fd1a68c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f763510e98e9fb035773b0ceeac7afd3 = $(`<div id="html_f763510e98e9fb035773b0ceeac7afd3" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Williamson - TX-CD17</h4>                              </div>         </div>`)[0];
+                popup_95e49a428f3953b2f3bfcc275fd1a68c.setContent(html_f763510e98e9fb035773b0ceeac7afd3);
+            
+        
+
+        polygon_074d478c4fdf2c260f6f56da27f5cc9d.bindPopup(popup_95e49a428f3953b2f3bfcc275fd1a68c)
+        ;
+
+        
+    
+    
+            polygon_074d478c4fdf2c260f6f56da27f5cc9d.bindTooltip(
+                `<div>
+                      Williamson - TX-CD17
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_1e59026557ca71915f2e917682c19e8d = L.polygon(
+                [[30.46124100000004, -97.696426], [30.461266000000002, -97.696356], [30.461401, -97.695984], [30.46160099999997, -97.695784], [30.461500999999945, -97.694684], [30.461500999999938, -97.694592], [30.46092301435355, -97.69730262365049], [30.46124100000004, -97.696426]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+        
+    
+        var popup_86a4eebb5a160593542631e4b70a7ad3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a5d87bc158a498f90397f8695ed05a16 = $(`<div id="html_a5d87bc158a498f90397f8695ed05a16" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Travis - TX-CD10</h4>                              </div>         </div>`)[0];
+                popup_86a4eebb5a160593542631e4b70a7ad3.setContent(html_a5d87bc158a498f90397f8695ed05a16);
+            
+        
+
+        polygon_1e59026557ca71915f2e917682c19e8d.bindPopup(popup_86a4eebb5a160593542631e4b70a7ad3)
+        ;
+
+        
+    
+    
+            polygon_1e59026557ca71915f2e917682c19e8d.bindTooltip(
+                `<div>
+                      Travis - TX-CD10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_cc7beeb423511b082b26ee181a06fce0 = L.polygon(
+                [[30.461500999999938, -97.694592], [30.461500999999938, -97.693031], [30.461500999999945, -97.692731], [30.461500999999945, -97.69246700000001], [30.46150099999995, -97.692405], [30.461500999999945, -97.692284], [30.461496000000015, -97.692142], [30.461422000000006, -97.689519], [30.461401, -97.68878400000001], [30.461856999999984, -97.688643], [30.46270499999997, -97.688381], [30.46273200000001, -97.688373], [30.464914000000018, -97.687698], [30.466901, -97.687084], [30.468159999999976, -97.686634], [30.468256999999983, -97.6866], [30.46830099999996, -97.686584], [30.470742999999988, -97.68583200000002], [30.47145999999999, -97.685611], [30.47185699999999, -97.685489], [30.472399000000006, -97.685323], [30.47310700000001, -97.68510500000001], [30.473496000000047, -97.684985], [30.47353999999999, -97.684972], [30.473604000000034, -97.684952], [30.475343000000013, -97.684406], [30.476290000000006, -97.68412], [30.480038588391597, -97.67392870877899], [30.47975000000001, -97.673837], [30.479566999999992, -97.673779], [30.475568000000006, -97.672516], [30.474948999999995, -97.67231200000002], [30.47475899999998, -97.672249], [30.474385999999985, -97.672138], [30.473950999999968, -97.67201700000001], [30.47363500000003, -97.671911], [30.472616000000006, -97.671568], [30.47240500000003, -97.671503], [30.47207000000003, -97.671397], [30.46987500000001, -97.670706], [30.469475000000006, -97.670582], [30.469357999999975, -97.670546], [30.468124999999972, -97.670163], [30.467588, -97.669997], [30.467313000000026, -97.669919], [30.466902000000008, -97.669795], [30.46626500000001, -97.669595], [30.465645, -97.6694], [30.463852999999975, -97.66881], [30.462732999999975, -97.668456], [30.461073000000006, -97.667932], [30.460821000000017, -97.667852], [30.459496000000012, -97.667432], [30.459353000000018, -97.667387], [30.457990000000006, -97.666958], [30.45670900000002, -97.666611], [30.456644999999966, -97.666593], [30.45622299999999, -97.66653], [30.456034999999986, -97.666503], [30.45596399999999, -97.666493], [30.455830999999986, -97.66647300000001], [30.455520000000003, -97.666425], [30.454427999999986, -97.666287], [30.45408400000003, -97.666277], [30.45340700000002, -97.666275], [30.452521999999973, -97.666313], [30.45151300000001, -97.666448], [30.45044099999999, -97.666629], [30.449309999999997, -97.666851], [30.448802999999995, -97.666961], [30.448223000000038, -97.667088], [30.44691900000001, -97.667346], [30.44673000000001, -97.667384], [30.44600399999999, -97.667525], [30.444673, -97.667752], [30.44403099999998, -97.667875], [30.443073, -97.66807800000001], [30.442738999999968, -97.668135], [30.442914000000016, -97.668488], [30.443043, -97.668749], [30.442673000000013, -97.66881500000001], [30.442621000000024, -97.668727], [30.442541999999996, -97.668609], [30.44210299999996, -97.668751], [30.441620999999973, -97.668908], [30.441028999999993, -97.669136], [30.440705999999988, -97.669222], [30.440334000000007, -97.669309], [30.44059300000003, -97.66851000000001], [30.44043500000001, -97.668539], [30.440290999999988, -97.668566], [30.439290999999987, -97.668758], [30.438617999999995, -97.668898], [30.43743100000001, -97.66913], [30.435200298312868, -97.6695483746507], [30.461500999999938, -97.694592]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+        
+    
+        var popup_abdbae5cf108574f0f1aeb6aab66a5e3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_97e9911efb7ad00cc44ccfa8d7d4fbb3 = $(`<div id="html_97e9911efb7ad00cc44ccfa8d7d4fbb3" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Travis - TX-CD10</h4>                              </div>         </div>`)[0];
+                popup_abdbae5cf108574f0f1aeb6aab66a5e3.setContent(html_97e9911efb7ad00cc44ccfa8d7d4fbb3);
+            
+        
+
+        polygon_cc7beeb423511b082b26ee181a06fce0.bindPopup(popup_abdbae5cf108574f0f1aeb6aab66a5e3)
+        ;
+
+        
+    
+    
+            polygon_cc7beeb423511b082b26ee181a06fce0.bindTooltip(
+                `<div>
+                      Travis - TX-CD10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_c3f00e449fedb54e92fbeec63bf77179 = L.polygon(
+                [[30.456138999999983, -97.720358], [30.456704999999967, -97.71919], [30.45722599999998, -97.718128], [30.458648000000025, -97.715192], [30.45855007254431, -97.70842747867077], [30.45583500000002, -97.72114900000001], [30.455925999999987, -97.720786], [30.456138999999983, -97.720358]],
+                {"bubblingMouseEvents": true, "color": "#59a14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#59a14f", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_03c327d06ab9636d25be2b0abc95adb2);
+        
+    
+        var popup_9648681aca99947f7a6a6be7d8a9da69 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_960573a9acada0b1ef2e84377e240166 = $(`<div id="html_960573a9acada0b1ef2e84377e240166" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Travis - TX-CD10</h4>                              </div>         </div>`)[0];
+                popup_9648681aca99947f7a6a6be7d8a9da69.setContent(html_960573a9acada0b1ef2e84377e240166);
+            
+        
+
+        polygon_c3f00e449fedb54e92fbeec63bf77179.bindPopup(popup_9648681aca99947f7a6a6be7d8a9da69)
+        ;
+
+        
+    
+    
+            polygon_c3f00e449fedb54e92fbeec63bf77179.bindTooltip(
+                `<div>
+                      Travis - TX-CD10
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_03c327d06ab9636d25be2b0abc95adb2.fitBounds(
+                [[30.435200298312868, -97.72114900000001], [30.480038588391597, -97.666275]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

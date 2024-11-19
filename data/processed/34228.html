@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2fe66ea0d74eeb1af6351a4f2f0e213c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            max-width: 200px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+            ">
+            <div style="font-weight: bold; margin-bottom: 10px;">Areas</div>
+    
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #4e79a7;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Manatee - FL-CD16</span>
+            </div>
+        
+            <div style="
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            ">
+                <span style="
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    background: #f28e2b;
+                    opacity: 0.7;
+                    border-radius: 2px;
+                "></span>
+                <span> Sarasota - FL-CD17</span>
+            </div>
+        </div>
+    
+            <div class="folium-map" id="map_2fe66ea0d74eeb1af6351a4f2f0e213c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2fe66ea0d74eeb1af6351a4f2f0e213c = L.map(
+                "map_2fe66ea0d74eeb1af6351a4f2f0e213c",
+                {
+                    center: [27.39147917393602, -82.63388934808981],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_2fe66ea0d74eeb1af6351a4f2f0e213c);
+
+            
+
+        
+    
+            var tile_layer_5042e5356ec8fe72fd952bcdbae1c864 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_5042e5356ec8fe72fd952bcdbae1c864.addTo(map_2fe66ea0d74eeb1af6351a4f2f0e213c);
+        
+    
+            var polygon_52dcbdc9b303a8043236e55f3fc864c0 = L.polygon(
+                [[27.38962, -82.62362], [27.389619999999994, -82.62482], [27.38962, -82.62552], [27.38962099999999, -82.625719], [27.38966299999998, -82.631814], [27.38967400000002, -82.633435], [27.389716999999994, -82.639793], [27.38971799999999, -82.639924], [27.389719999999976, -82.641121], [27.389719999999976, -82.64115400000001], [27.389739000000027, -82.642613], [27.38973900000001, -82.642632], [27.389736999999982, -82.642832], [27.389719999999976, -82.644721], [27.389719999999976, -82.646887], [27.389720006994462, -82.64817062328216], [27.39662239630545, -82.65450948071944], [27.406347999999973, -82.660624], [27.408989000000002, -82.663361], [27.413064000000027, -82.667881], [27.419204976030496, -82.675258797783], [27.437218000000055, -82.691821], [27.44195407255787, -82.6944007391869], [27.44351699999995, -82.691521], [27.444613999999994, -82.688129], [27.445517000000017, -82.687321], [27.453517000000012, -82.68002100000001], [27.449022999999947, -82.673862], [27.44713399999999, -82.671272], [27.439217999999997, -82.660421], [27.43781800000002, -82.658621], [27.437453, -82.658165], [27.43701800000001, -82.657621], [27.432418000000002, -82.65142100000001], [27.41412600000002, -82.63656000000002], [27.389542000000038, -82.616585], [27.389547000000043, -82.617056], [27.38962, -82.62362]],
+                {"bubblingMouseEvents": true, "color": "#4e79a7", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e79a7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2fe66ea0d74eeb1af6351a4f2f0e213c);
+        
+    
+        var popup_7a6eb29a6b068e04089602972cb5293f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_289b97ce783866088769e4d09843a5b9 = $(`<div id="html_289b97ce783866088769e4d09843a5b9" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Manatee - FL-CD16</h4>                              </div>         </div>`)[0];
+                popup_7a6eb29a6b068e04089602972cb5293f.setContent(html_289b97ce783866088769e4d09843a5b9);
+            
+        
+
+        polygon_52dcbdc9b303a8043236e55f3fc864c0.bindPopup(popup_7a6eb29a6b068e04089602972cb5293f)
+        ;
+
+        
+    
+    
+            polygon_52dcbdc9b303a8043236e55f3fc864c0.bindTooltip(
+                `<div>
+                      Manatee - FL-CD16
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var polygon_79ca52a37d0e5db1387783826296d01e = L.polygon(
+                [[27.386151000000012, -82.614427], [27.376841000000013, -82.607134], [27.366742999999985, -82.59912], [27.359899999999993, -82.59375400000002], [27.35615800000003, -82.590819], [27.354466999999982, -82.589464], [27.341745999999986, -82.579274], [27.34096500000001, -82.579313], [27.33682299999998, -82.57952], [27.336476999999984, -82.579877], [27.333900999999983, -82.582519], [27.32779700000001, -82.589247], [27.32717700000002, -82.589929], [27.32703699999998, -82.590085], [27.324857339144693, -82.59259288202585], [27.348817000000018, -82.610581], [27.38602185382193, -82.64476988159257], [27.38971109555714, -82.64688190210056], [27.389500347877313, -82.61701988251758], [27.386151000000012, -82.614427]],
+                {"bubblingMouseEvents": true, "color": "#f28e2b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_2fe66ea0d74eeb1af6351a4f2f0e213c);
+        
+    
+        var popup_6e15291b1f016a37fa10cf57595fa84c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e30438e4e987c6a47532d214cf807215 = $(`<div id="html_e30438e4e987c6a47532d214cf807215" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial, sans-serif;">                 <h4 style="margin:0 0 5px 0;"> Sarasota - FL-CD17</h4>                              </div>         </div>`)[0];
+                popup_6e15291b1f016a37fa10cf57595fa84c.setContent(html_e30438e4e987c6a47532d214cf807215);
+            
+        
+
+        polygon_79ca52a37d0e5db1387783826296d01e.bindPopup(popup_6e15291b1f016a37fa10cf57595fa84c)
+        ;
+
+        
+    
+    
+            polygon_79ca52a37d0e5db1387783826296d01e.bindTooltip(
+                `<div>
+                      Sarasota - FL-CD17
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            map_2fe66ea0d74eeb1af6351a4f2f0e213c.fitBounds(
+                [[27.324857339144693, -82.6944007391869], [27.453517000000012, -82.579274]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
