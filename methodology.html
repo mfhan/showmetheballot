@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology - Show me the Ballot!</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  
+</head>
+<body>
+    <h1><a href="/" style="text-decoration: none; color: inherit;">    <img src="https://cdn.glitch.global/d0deef32-a01d-4d8a-974d-d4201e267934/icon.png?v=1729724853087" alt="Ballot Box" style="height: 1em; vertical-align: text-top; margin-right: 0em;">
+ Show me the Ballot!</a></h1>
+
+    <div id="methodology-section" class="content-section">
+        <h2>Methodology</h2>
+
+        <section>
+            <h3>Data Collection</h3>
+
+            <h4>Geographic Data Processing</h4>
+            <ol>
+                <li><strong>Geographic Boundary Files</strong>: Collected boundary files from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html" target="_blank">U.S. Census Bureau's TIGER/Line database</a> (2024) for:
+                    <ul>
+                        <li>Counties</li>
+                        <li>ZIP codes (ZCTA)</li>
+                        <li>Congressional districts</li>
+                    </ul>
+                </li>
+                <li><strong>Area Intersection Analysis</strong>:
+                    <ul>
+                        <li>Used GIS tools to compute intersections between county, ZIP code, and congressional district boundaries</li>
+                        <li>Calculated minimum width thresholds for valid areas</li>
+                        <li>Generated unique identifiers for each intersection area</li>
+                    </ul>
+                </li>
+                <li><strong>Coordinate Generation</strong>:
+                    <ul>
+                        <li>Calculated centroid coordinates for each intersection area</li>
+                        <li>Transformed coordinates from NAD83/Conus Albers (EPSG:5070) to WGS84 (EPSG:4326)</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Ballot Data Collection</h4>
+          <strong>API Integration</strong>
+                    <ul>
+                        <li>Integrated with <a href="https://developer.ballotpedia.org/" target="_blank">Ballotpedia's API</a> for election data</li>
+                        <li>Implemented rate-limited requests</li>
+                        <li>Cached responses to minimize API calls</li>
+                    </ul>
+        </section>
+
+        <section>
+            <h3>Data Processing</h3>
+
+            <h4>Geographic Processing</h4>
+            <ol>
+                <li><strong>Area Classification</strong>:
+                    <ul>
+                        <li>Categorized areas by administrative boundaries</li>
+                        <li>Generated district identifiers</li>
+                    </ul>
+                </li>
+                <li><strong>Visualization</strong>:
+                    <ul>
+                        <li>Generated interactive maps for split districts</li>
+                        <li>Created area-specific visualizations using Folium</li>
+                        <li>Implemented professional color schemes for district differentiation</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Ballot Information Processing</h4>
+            <ol>
+                <li><strong>Content Structuring</strong>:
+                    <ul>
+                        <li>Parsed API responses into structured format</li>
+                        <li>Organized races by jurisdiction level</li>
+                        <li>Standardized office and candidate information</li>
+                    </ul>
+                </li>
+                <li><strong>Complexity Analysis</strong>:
+                    <ul>
+                        <li>Calculated ballot complexity scores based on:
+                            <ul>
+                                <li>Number of races and decisions</li>
+                                <li>Information density</li>
+                                <li>Language complexity (Flesch-Kincaid Grade Level)</li>
+                                <li>Presence of non-partisan contests</li>
+                                <li>Total options per decision</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Technical Implementation</h3>
+
+                <h4>Development Stack</h4>
+                    <ul>
+                        <li>Python for data processing</li>
+                        <li>GeoPandas for geographic operations</li>
+                        <li>Folium for mapping visualization</li>
+                        <li>Papa Parse for CSV handling</li>
+                        <li>Showdown.js for markdown rendering</li>
+                    </ul>
+        </section>
+
+        <section>
+            <h3>Source Code</h3>
+            <p>The data processing pipeline is implemented in two main Jupyter notebooks:</p>
+            <ul>
+                <li><a href="https://github.com/mfhan/showballot/blob/main/DATA-get-geographical-coordinates.ipynb" target="_blank">Geographic Coordinate Processing</a> - Handles the processing of geographic boundaries and coordinate generation</li>
+                <li><a href="https://github.com/mfhan/showballot/blob/main/DATA-ballotpedia-lookup.ipynb" target="_blank">Ballotpedia Data Integration</a> - Manages the collection and processing of ballot information</li>
+            </ul>
+        </section>
+    </div>
+
+    <div id="about-section">
+        Data sourced from <a href="https://ballotpedia.org/" target="_blank">Ballotpedia</a>.
+    </div>
+</body>
+</html>
