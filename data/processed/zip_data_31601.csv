@@ -1,5 +1,5 @@
-,Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count
-8729,8729,Georgia,GA-CD08,Brooks,31601,"# Ballot Complexity Report
+state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
+Georgia,GA-CD08,Brooks,31601,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -263,8 +263,774 @@ Election Date: 2024-11-05
 
 ---
 
-",19,24.526315789473685,1.5789473684210529,16,3,6,['Middle South Georgia Soil and Water Conservation District Board Brooks County Seat'],20.9,6098,466
-8831,8831,Georgia,GA-CD08,Lowndes,31601,"# Ballot Complexity Report
+",19,24.526315789473685,1.5789473684210529,16,3,6,['Middle South Georgia Soil and Water Conservation District Board Brooks County Seat'],20.9,6098,466,"# Ballot for Brooks County, Georgia
+
+Election Date: 2024-11-05
+
+## President of the United States
+
+**Level:** Federal
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Kamala D. Harris** (Democratic Party)
+    - Running Mate: Tim Walz
+    - [More Info](https://ballotpedia.org/Kamala_Harris)
+
+- **Chase Oliver** (Libertarian Party)
+    - Running Mate: Mike ter Maat
+    - [More Info](https://ballotpedia.org/Chase_Oliver)
+
+- **Donald Trump** (Republican Party)
+    - Running Mate: J.D. Vance
+    - [More Info](https://ballotpedia.org/Donald_Trump)
+
+- **Jill Stein** (Green Party)
+    - Running Mate: Butch Ware
+    - [More Info](https://ballotpedia.org/Jill_Stein)
+
+---
+
+## U.S. House Georgia District 8
+
+**Level:** Federal
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Darrius Butler** (Democratic Party)
+[More Info](https://ballotpedia.org/Darrius_Butler)
+
+- **Austin Scott** (Republican Party)
+[More Info](https://ballotpedia.org/Austin_Scott)
+
+---
+
+## Georgia House of Representatives District 175
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **John LaHood** (Republican Party)
+[More Info](https://ballotpedia.org/John_LaHood)
+
+- **Anissa Knight Wiseman** (Democratic Party)
+[More Info](https://ballotpedia.org/Anissa_Knight_Wiseman)
+
+---
+
+## Georgia State Senate District 11
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Sam Watson** (Republican Party)
+[More Info](https://ballotpedia.org/Sam_Watson)
+
+---
+
+## Brooks County Commissioner Board District 4
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Linda D. Mitchell** (Democratic Party)
+[More Info](https://ballotpedia.org/Linda_D._Mitchell_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024))
+
+- **Myra Exum** (Republican Party)
+[More Info](https://ballotpedia.org/Myra_Exum_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Commissioner Board District 5
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **James Henry Maxwell** (Democratic Party)
+[More Info](https://ballotpedia.org/James_Henry_Maxwell_(Brooks_County_Commissioner_Board_District_5,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Coroner
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Delphanie S. McGhee** (Independent)
+[More Info](https://ballotpedia.org/Delphanie_S._McGhee_(Brooks_County_Coroner,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, At-large
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Ulysses Marable Jr.** (Democratic Party)
+[More Info](https://ballotpedia.org/Ulysses_Marable_Jr._(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024))
+
+- **Kanan Simpson** (Republican Party)
+[More Info](https://ballotpedia.org/Kanan_Simpson_(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 1
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Andrew Benjamin Shiver** (Republican Party)
+[More Info](https://ballotpedia.org/Andrew_Benjamin_Shiver_(Brooks_County_School_District_school_board,_District_1,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 3
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Elizabeth D. Thomas** (Democratic Party)
+[More Info](https://ballotpedia.org/Elizabeth_D._Thomas_(Brooks_County_School_District_school_board,_District_3,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 5
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Tenjurie Valencia Thomas** (Democratic Party)
+[More Info](https://ballotpedia.org/Tenjurie_Valencia_Thomas_(Brooks_County_School_District_school_board,_District_5,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Sheriff
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Tom Wheeler** (Democratic Party)
+[More Info](https://ballotpedia.org/Tom_Wheeler_(Brooks_County_Sheriff,_Georgia,_candidate_2024))
+
+- **Henry Michael Dewey** (Republican Party)
+[More Info](https://ballotpedia.org/Henry_Michael_Dewey_(Brooks_County_Sheriff,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Superior Court Clerk
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Belinda Wheeler** (Republican Party)
+[More Info](https://ballotpedia.org/Belinda_Wheeler_(Brooks_County_Superior_Court_Clerk,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Tax Commissioner
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Becky Peters Rothrock** (Republican Party)
+[More Info](https://ballotpedia.org/Becky_Peters_Rothrock_(Brooks_County_Tax_Commissioner,_Georgia,_candidate_2024))
+
+---
+
+## Georgia 2nd Superior Court District Attorney Southern Circuit
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Brad Shealy** (Republican Party)
+[More Info](https://ballotpedia.org/Brad_Shealy_(Georgia_2nd_Superior_Court_District_Attorney_Southern_Circuit,_Georgia,_candidate_2024))
+
+---
+
+## Middle South Georgia Soil and Water Conservation District Board Brooks County Seat
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Daniel Niewoehner** (Nonpartisan)
+[More Info](https://ballotpedia.org/Daniel_Niewoehner_(Middle_South_Georgia_Soil_and_Water_Conservation_District_Board_Brooks_County_Seat,_Georgia,_candidate_2024))
+
+---
+
+## Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Amendment 2, Creation of Tax Court Amendment (2024)
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+",8.28,22.1,0.8047509836097986,0.3736728681864015,"['Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)', 'Georgia Amendment 2, Creation of Tax Court Amendment (2024)', 'Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)']","['“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”', '“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”', '“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”']","# Ballot for Brooks County, Georgia
+
+Election Date: 2024-11-05
+
+## President of the United States
+
+**Level:** Federal
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Kamala D. Harris** (Democratic Party)
+    - Running Mate: Tim Walz
+    - [More Info](https://ballotpedia.org/Kamala_Harris)
+
+- **Chase Oliver** (Libertarian Party)
+    - Running Mate: Mike ter Maat
+    - [More Info](https://ballotpedia.org/Chase_Oliver)
+
+- **Donald Trump** (Republican Party)
+    - Running Mate: J.D. Vance
+    - [More Info](https://ballotpedia.org/Donald_Trump)
+
+- **Jill Stein** (Green Party)
+    - Running Mate: Butch Ware
+    - [More Info](https://ballotpedia.org/Jill_Stein)
+
+---
+
+## U.S. House Georgia District 8
+
+**Level:** Federal
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Darrius Butler** (Democratic Party)
+[More Info](https://ballotpedia.org/Darrius_Butler)
+
+- **Austin Scott** (Republican Party)
+[More Info](https://ballotpedia.org/Austin_Scott)
+
+---
+
+## Georgia House of Representatives District 175
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **John LaHood** (Republican Party)
+[More Info](https://ballotpedia.org/John_LaHood)
+
+- **Anissa Knight Wiseman** (Democratic Party)
+[More Info](https://ballotpedia.org/Anissa_Knight_Wiseman)
+
+---
+
+## Georgia State Senate District 11
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Sam Watson** (Republican Party)
+[More Info](https://ballotpedia.org/Sam_Watson)
+
+---
+
+## Brooks County Commissioner Board District 4
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Linda D. Mitchell** (Democratic Party)
+[More Info](https://ballotpedia.org/Linda_D._Mitchell_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024))
+
+- **Myra Exum** (Republican Party)
+[More Info](https://ballotpedia.org/Myra_Exum_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Commissioner Board District 5
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **James Henry Maxwell** (Democratic Party)
+[More Info](https://ballotpedia.org/James_Henry_Maxwell_(Brooks_County_Commissioner_Board_District_5,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Coroner
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Delphanie S. McGhee** (Independent)
+[More Info](https://ballotpedia.org/Delphanie_S._McGhee_(Brooks_County_Coroner,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, At-large
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Ulysses Marable Jr.** (Democratic Party)
+[More Info](https://ballotpedia.org/Ulysses_Marable_Jr._(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024))
+
+- **Kanan Simpson** (Republican Party)
+[More Info](https://ballotpedia.org/Kanan_Simpson_(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 1
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Andrew Benjamin Shiver** (Republican Party)
+[More Info](https://ballotpedia.org/Andrew_Benjamin_Shiver_(Brooks_County_School_District_school_board,_District_1,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 3
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Elizabeth D. Thomas** (Democratic Party)
+[More Info](https://ballotpedia.org/Elizabeth_D._Thomas_(Brooks_County_School_District_school_board,_District_3,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 5
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Tenjurie Valencia Thomas** (Democratic Party)
+[More Info](https://ballotpedia.org/Tenjurie_Valencia_Thomas_(Brooks_County_School_District_school_board,_District_5,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Sheriff
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Tom Wheeler** (Democratic Party)
+[More Info](https://ballotpedia.org/Tom_Wheeler_(Brooks_County_Sheriff,_Georgia,_candidate_2024))
+
+- **Henry Michael Dewey** (Republican Party)
+[More Info](https://ballotpedia.org/Henry_Michael_Dewey_(Brooks_County_Sheriff,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Superior Court Clerk
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Belinda Wheeler** (Republican Party)
+[More Info](https://ballotpedia.org/Belinda_Wheeler_(Brooks_County_Superior_Court_Clerk,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Tax Commissioner
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Becky Peters Rothrock** (Republican Party)
+[More Info](https://ballotpedia.org/Becky_Peters_Rothrock_(Brooks_County_Tax_Commissioner,_Georgia,_candidate_2024))
+
+---
+
+## Georgia 2nd Superior Court District Attorney Southern Circuit
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Brad Shealy** (Republican Party)
+[More Info](https://ballotpedia.org/Brad_Shealy_(Georgia_2nd_Superior_Court_District_Attorney_Southern_Circuit,_Georgia,_candidate_2024))
+
+---
+
+## Middle South Georgia Soil and Water Conservation District Board Brooks County Seat
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Daniel Niewoehner** (Nonpartisan)
+[More Info](https://ballotpedia.org/Daniel_Niewoehner_(Middle_South_Georgia_Soil_and_Water_Conservation_District_Board_Brooks_County_Seat,_Georgia,_candidate_2024))
+
+---
+
+## Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Amendment 2, Creation of Tax Court Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)
+
+“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+",8.19,20.4,0.7246386840388304,0.42194388975661834,-0.302694794282212,-0.08011229957096822,0.04827102157021684,"{""electionInfo"": {""title"": ""Ballot for Brooks County, Georgia"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}]}, {""title"": ""U.S. House Georgia District 8"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Darrius Butler"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Darrius_Butler""}, {""name"": ""Austin Scott"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Austin_Scott""}]}, {""title"": ""Georgia House of Representatives District 175"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""John LaHood"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/John_LaHood""}, {""name"": ""Anissa Knight Wiseman"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Anissa_Knight_Wiseman""}]}, {""title"": ""Georgia State Senate District 11"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Sam Watson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Sam_Watson""}]}, {""title"": ""Brooks County Commissioner Board District 4"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Linda D. Mitchell"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Linda_D._Mitchell_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024)""}, {""name"": ""Myra Exum"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Myra_Exum_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County Commissioner Board District 5"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""James Henry Maxwell"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/James_Henry_Maxwell_(Brooks_County_Commissioner_Board_District_5,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County Coroner"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Delphanie S. McGhee"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Delphanie_S._McGhee_(Brooks_County_Coroner,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County School District school board, At-large"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Ulysses Marable Jr."", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ulysses_Marable_Jr._(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024)""}, {""name"": ""Kanan Simpson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kanan_Simpson_(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County School District school board, District 1"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Andrew Benjamin Shiver"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Benjamin_Shiver_(Brooks_County_School_District_school_board,_District_1,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County School District school board, District 3"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Elizabeth D. Thomas"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Elizabeth_D._Thomas_(Brooks_County_School_District_school_board,_District_3,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County School District school board, District 5"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Tenjurie Valencia Thomas"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Tenjurie_Valencia_Thomas_(Brooks_County_School_District_school_board,_District_5,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County Sheriff"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Tom Wheeler"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Tom_Wheeler_(Brooks_County_Sheriff,_Georgia,_candidate_2024)""}, {""name"": ""Henry Michael Dewey"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Henry_Michael_Dewey_(Brooks_County_Sheriff,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County Superior Court Clerk"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Belinda Wheeler"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Belinda_Wheeler_(Brooks_County_Superior_Court_Clerk,_Georgia,_candidate_2024)""}]}, {""title"": ""Brooks County Tax Commissioner"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Becky Peters Rothrock"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Becky_Peters_Rothrock_(Brooks_County_Tax_Commissioner,_Georgia,_candidate_2024)""}]}, {""title"": ""Georgia 2nd Superior Court District Attorney Southern Circuit"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Brad Shealy"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Brad_Shealy_(Georgia_2nd_Superior_Court_District_Attorney_Southern_Circuit,_Georgia,_candidate_2024)""}]}, {""title"": ""Middle South Georgia Soil and Water Conservation District Board Brooks County Seat"", ""level"": ""Local"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Daniel Niewoehner"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Daniel_Niewoehner_(Middle_South_Georgia_Soil_and_Water_Conservation_District_Board_Brooks_County_Seat,_Georgia,_candidate_2024)""}]}, {""title"": ""Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Amendment 2, Creation of Tax Court Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+ 
+*This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
+
+**This ballot is more complex than 53 percent of U.S. Ballots.**
+|                         |                                 |                                          |
+|-------------------------|---------------------------------|------------------------------------------|
+| **Decision Complexity** | Number of Questions             | 19      |
+|                         | Average Words per Question      | 24.5|
+|                         | Average Options per Question    | 1.6|
+|                         | Number of Races                 | 16|
+|                         | Number of Competitive Races     | 6|
+|                         | Number of Ballot Measures       | 3|
+|                         | Non-Partisan Races  | Middle South Georgia Soil and Water Conservation District Board Brooks County Seat |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 20.9  years of education      |
+| **Length**              | Ballot Length                 | 6,098 characters       |
+|                         | Word Count                     | 466                         |
+
+---
+# Ballot for Brooks County, Georgia
+
+Election Date: 2024-11-05
+
+## President of the United States
+
+**Level:** Federal
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Kamala D. Harris** (Democratic Party)
+    - Running Mate: Tim Walz
+    - [More Info](https://ballotpedia.org/Kamala_Harris)
+
+- **Chase Oliver** (Libertarian Party)
+    - Running Mate: Mike ter Maat
+    - [More Info](https://ballotpedia.org/Chase_Oliver)
+
+- **Donald Trump** (Republican Party)
+    - Running Mate: J.D. Vance
+    - [More Info](https://ballotpedia.org/Donald_Trump)
+
+- **Jill Stein** (Green Party)
+    - Running Mate: Butch Ware
+    - [More Info](https://ballotpedia.org/Jill_Stein)
+
+---
+
+## U.S. House Georgia District 8
+
+**Level:** Federal
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Darrius Butler** (Democratic Party)
+[More Info](https://ballotpedia.org/Darrius_Butler)
+
+- **Austin Scott** (Republican Party)
+[More Info](https://ballotpedia.org/Austin_Scott)
+
+---
+
+## Georgia House of Representatives District 175
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **John LaHood** (Republican Party)
+[More Info](https://ballotpedia.org/John_LaHood)
+
+- **Anissa Knight Wiseman** (Democratic Party)
+[More Info](https://ballotpedia.org/Anissa_Knight_Wiseman)
+
+---
+
+## Georgia State Senate District 11
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Sam Watson** (Republican Party)
+[More Info](https://ballotpedia.org/Sam_Watson)
+
+---
+
+## Brooks County Commissioner Board District 4
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Linda D. Mitchell** (Democratic Party)
+[More Info](https://ballotpedia.org/Linda_D._Mitchell_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024))
+
+- **Myra Exum** (Republican Party)
+[More Info](https://ballotpedia.org/Myra_Exum_(Brooks_County_Commissioner_Board_District_4,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Commissioner Board District 5
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **James Henry Maxwell** (Democratic Party)
+[More Info](https://ballotpedia.org/James_Henry_Maxwell_(Brooks_County_Commissioner_Board_District_5,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Coroner
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Delphanie S. McGhee** (Independent)
+[More Info](https://ballotpedia.org/Delphanie_S._McGhee_(Brooks_County_Coroner,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, At-large
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Ulysses Marable Jr.** (Democratic Party)
+[More Info](https://ballotpedia.org/Ulysses_Marable_Jr._(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024))
+
+- **Kanan Simpson** (Republican Party)
+[More Info](https://ballotpedia.org/Kanan_Simpson_(Brooks_County_School_District_school_board,_At-large,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 1
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Andrew Benjamin Shiver** (Republican Party)
+[More Info](https://ballotpedia.org/Andrew_Benjamin_Shiver_(Brooks_County_School_District_school_board,_District_1,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 3
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Elizabeth D. Thomas** (Democratic Party)
+[More Info](https://ballotpedia.org/Elizabeth_D._Thomas_(Brooks_County_School_District_school_board,_District_3,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County School District school board, District 5
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Tenjurie Valencia Thomas** (Democratic Party)
+[More Info](https://ballotpedia.org/Tenjurie_Valencia_Thomas_(Brooks_County_School_District_school_board,_District_5,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Sheriff
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Tom Wheeler** (Democratic Party)
+[More Info](https://ballotpedia.org/Tom_Wheeler_(Brooks_County_Sheriff,_Georgia,_candidate_2024))
+
+- **Henry Michael Dewey** (Republican Party)
+[More Info](https://ballotpedia.org/Henry_Michael_Dewey_(Brooks_County_Sheriff,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Superior Court Clerk
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Belinda Wheeler** (Republican Party)
+[More Info](https://ballotpedia.org/Belinda_Wheeler_(Brooks_County_Superior_Court_Clerk,_Georgia,_candidate_2024))
+
+---
+
+## Brooks County Tax Commissioner
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Becky Peters Rothrock** (Republican Party)
+[More Info](https://ballotpedia.org/Becky_Peters_Rothrock_(Brooks_County_Tax_Commissioner,_Georgia,_candidate_2024))
+
+---
+
+## Georgia 2nd Superior Court District Attorney Southern Circuit
+
+**Level:** Local
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Brad Shealy** (Republican Party)
+[More Info](https://ballotpedia.org/Brad_Shealy_(Georgia_2nd_Superior_Court_District_Attorney_Southern_Circuit,_Georgia,_candidate_2024))
+
+---
+
+## Middle South Georgia Soil and Water Conservation District Board Brooks County Seat
+
+**Level:** Local
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Daniel Niewoehner** (Nonpartisan)
+[More Info](https://ballotpedia.org/Daniel_Niewoehner_(Middle_South_Georgia_Soil_and_Water_Conservation_District_Board_Brooks_County_Seat,_Georgia,_candidate_2024))
+
+---
+
+## Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Amendment 2, Creation of Tax Court Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)
+
+“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+"
+Georgia,GA-CD08,Lowndes,31601,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -374,4 +1140,310 @@ Election Date: 2024-11-05
 
 ---
 
-",7,26.142857142857142,2.142857142857143,4,3,3,[],15.2,1911,183
+",7,26.142857142857142,2.142857142857143,4,3,3,[],15.2,1911,183,"# Ballot for Lowndes County, Georgia
+
+Election Date: 2024-11-05
+
+## President of the United States
+
+**Level:** Federal
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Donald Trump** (Republican Party)
+    - Running Mate: J.D. Vance
+    - [More Info](https://ballotpedia.org/Donald_Trump)
+
+- **Chase Oliver** (Libertarian Party)
+    - Running Mate: Mike ter Maat
+    - [More Info](https://ballotpedia.org/Chase_Oliver)
+
+- **Jill Stein** (Green Party)
+    - Running Mate: Butch Ware
+    - [More Info](https://ballotpedia.org/Jill_Stein)
+
+- **Kamala D. Harris** (Democratic Party)
+    - Running Mate: Tim Walz
+    - [More Info](https://ballotpedia.org/Kamala_Harris)
+
+---
+
+## U.S. House Georgia District 8
+
+**Level:** Federal
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Austin Scott** (Republican Party)
+[More Info](https://ballotpedia.org/Austin_Scott)
+
+- **Darrius Butler** (Democratic Party)
+[More Info](https://ballotpedia.org/Darrius_Butler)
+
+---
+
+## Georgia House of Representatives District 175
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Anissa Knight Wiseman** (Democratic Party)
+[More Info](https://ballotpedia.org/Anissa_Knight_Wiseman)
+
+- **John LaHood** (Republican Party)
+[More Info](https://ballotpedia.org/John_LaHood)
+
+---
+
+## Georgia State Senate District 8
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Russ Goodman** (Republican Party)
+[More Info](https://ballotpedia.org/Russ_Goodman)
+
+---
+
+## Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Amendment 2, Creation of Tax Court Amendment (2024)
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+",8.45,16.3,0.07179857253010143,0.509915182190237,"['Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)', 'Georgia Amendment 2, Creation of Tax Court Amendment (2024)', 'Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)']","['“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”', '“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”', '“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”']","# Ballot for Lowndes County, Georgia
+
+Election Date: 2024-11-05
+
+## President of the United States
+
+**Level:** Federal
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Donald Trump** (Republican Party)
+    - Running Mate: J.D. Vance
+    - [More Info](https://ballotpedia.org/Donald_Trump)
+
+- **Chase Oliver** (Libertarian Party)
+    - Running Mate: Mike ter Maat
+    - [More Info](https://ballotpedia.org/Chase_Oliver)
+
+- **Jill Stein** (Green Party)
+    - Running Mate: Butch Ware
+    - [More Info](https://ballotpedia.org/Jill_Stein)
+
+- **Kamala D. Harris** (Democratic Party)
+    - Running Mate: Tim Walz
+    - [More Info](https://ballotpedia.org/Kamala_Harris)
+
+---
+
+## U.S. House Georgia District 8
+
+**Level:** Federal
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Austin Scott** (Republican Party)
+[More Info](https://ballotpedia.org/Austin_Scott)
+
+- **Darrius Butler** (Democratic Party)
+[More Info](https://ballotpedia.org/Darrius_Butler)
+
+---
+
+## Georgia House of Representatives District 175
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Anissa Knight Wiseman** (Democratic Party)
+[More Info](https://ballotpedia.org/Anissa_Knight_Wiseman)
+
+- **John LaHood** (Republican Party)
+[More Info](https://ballotpedia.org/John_LaHood)
+
+---
+
+## Georgia State Senate District 8
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Russ Goodman** (Republican Party)
+[More Info](https://ballotpedia.org/Russ_Goodman)
+
+---
+
+## Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Amendment 2, Creation of Tax Court Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)
+
+“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+",8.28,15.3,0.07981573380256628,0.48618003519247116,0.40636430138990487,0.008017161272464851,-0.023735146997765855,"{""electionInfo"": {""title"": ""Ballot for Lowndes County, Georgia"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Georgia District 8"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Austin Scott"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Austin_Scott""}, {""name"": ""Darrius Butler"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Darrius_Butler""}]}, {""title"": ""Georgia House of Representatives District 175"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Anissa Knight Wiseman"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Anissa_Knight_Wiseman""}, {""name"": ""John LaHood"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/John_LaHood""}]}, {""title"": ""Georgia State Senate District 8"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Russ Goodman"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Russ_Goodman""}]}, {""title"": ""Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Amendment 2, Creation of Tax Court Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+ 
+*This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
+
+**This ballot is more complex than 3 percent of U.S. Ballots.**
+|                         |                                 |                                          |
+|-------------------------|---------------------------------|------------------------------------------|
+| **Decision Complexity** | Number of Questions             | 7      |
+|                         | Average Words per Question      | 26.1|
+|                         | Average Options per Question    | 2.1|
+|                         | Number of Races                 | 4|
+|                         | Number of Competitive Races     | 3|
+|                         | Number of Ballot Measures       | 3|
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.2  years of education      |
+| **Length**              | Ballot Length                 | 1,911 characters       |
+|                         | Word Count                     | 183                         |
+
+---
+# Ballot for Lowndes County, Georgia
+
+Election Date: 2024-11-05
+
+## President of the United States
+
+**Level:** Federal
+**Branch:** Executive
+**Number of Seats:** 1
+
+### Candidates:
+- **Donald Trump** (Republican Party)
+    - Running Mate: J.D. Vance
+    - [More Info](https://ballotpedia.org/Donald_Trump)
+
+- **Chase Oliver** (Libertarian Party)
+    - Running Mate: Mike ter Maat
+    - [More Info](https://ballotpedia.org/Chase_Oliver)
+
+- **Jill Stein** (Green Party)
+    - Running Mate: Butch Ware
+    - [More Info](https://ballotpedia.org/Jill_Stein)
+
+- **Kamala D. Harris** (Democratic Party)
+    - Running Mate: Tim Walz
+    - [More Info](https://ballotpedia.org/Kamala_Harris)
+
+---
+
+## U.S. House Georgia District 8
+
+**Level:** Federal
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Austin Scott** (Republican Party)
+[More Info](https://ballotpedia.org/Austin_Scott)
+
+- **Darrius Butler** (Democratic Party)
+[More Info](https://ballotpedia.org/Darrius_Butler)
+
+---
+
+## Georgia House of Representatives District 175
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Anissa Knight Wiseman** (Democratic Party)
+[More Info](https://ballotpedia.org/Anissa_Knight_Wiseman)
+
+- **John LaHood** (Republican Party)
+[More Info](https://ballotpedia.org/John_LaHood)
+
+---
+
+## Georgia State Senate District 8
+
+**Level:** State
+**Branch:** Legislative
+**Number of Seats:** 1
+
+### Candidates:
+- **Russ Goodman** (Republican Party)
+[More Info](https://ballotpedia.org/Russ_Goodman)
+
+---
+
+## Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Amendment 2, Creation of Tax Court Amendment (2024)
+
+“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+## Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)
+
+“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”
+
+**Type:** Ballot Measure
+**Level:** State
+
+---
+
+"
