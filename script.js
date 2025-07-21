@@ -162,7 +162,7 @@ async function performSearch(searchTerm) {
         try {
             // Dynamically load ballot data for specific zip code
             const response = await new Promise((resolve, reject) => {
-                url = `https://edbltn.github.io/show-me-the-ballot/data/processed/zip_data_${zip}.csv`;
+                url = `/data/processed/zip_data_${zip}.csv`;
                 Papa.parse(url, {
                     download: true,
                     header: true,
