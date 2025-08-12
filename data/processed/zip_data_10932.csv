@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-New York,NY-CD18,Orange,10932,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+29414,New York,NY-CD18,Orange,10932,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ New York,NY-CD18,Orange,10932,"# Ballot Complexity Report
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 5|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.7  years of education      |
-| **Length**              | Ballot Length                 | 1,969 characters       |
-|                         | Word Count                     | 178                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.9 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.04      |
+| **Length**              | Ballot Length                 |  1,969 characters       |
+|                         | Word Count                     |  143                         |
 
 ---
 # Ballot for Orange County, New York
@@ -205,7 +206,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.18,15.9,0.045730441487573895,0.2997489076494197,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Orange County, New York
+",10.043019101123596,15.862233146067418,0.04272524170110125,0.009885525613396864,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Orange County, New York
 
 Election Date: 2024-11-05
 
@@ -303,7 +304,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.44,15.0,0.05035686747464363,0.6130805274916468,0.5627236600170031,0.004626425987069735,0.31333161984222707,"{""electionInfo"": {""title"": ""Ballot for Orange County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 18"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Pat Ryan"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Pat_Ryan_(New_York)""}, {""name"": ""Alison Esposito"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Alison_Esposito""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 100"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Louis Ingrassia Jr."", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Louis_Ingrassia_Jr.""}, {""name"": ""Paula Kay"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Paula_Kay""}]}, {""title"": ""New York State Senate District 42"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Dorey Houle"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dorey_Houle""}, {""name"": ""James Skoufis"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/James_G._Skoufis""}, {""name"": ""Timothy Mitts"", ""party"": ""Conservative Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Timothy_Mitts""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -316,9 +317,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 5|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.7  years of education      |
-| **Length**              | Ballot Length                 | 1,969 characters       |
-|                         | Word Count                     | 178                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.1 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.18      |
+| **Length**              | Ballot Length                 |  2,379 characters       |
+|                         | Word Count                     |  198                         |
 
 ---
 # Ballot for Orange County, New York
@@ -419,4 +421,4 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
+",10.176483389830508,15.112000000000002,0.07712687083572234,0.029340240020561893,-0.04778663081516045,0.03440162913462109,0.01945471440716503,"{""electionInfo"": {""title"": ""Ballot for Orange County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 18"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Pat Ryan"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Pat_Ryan_(New_York)""}, {""name"": ""Alison Esposito"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Alison_Esposito""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 100"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Louis Ingrassia Jr."", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Louis_Ingrassia_Jr.""}, {""name"": ""Paula Kay"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Paula_Kay""}]}, {""title"": ""New York State Senate District 42"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Dorey Houle"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dorey_Houle""}, {""name"": ""James Skoufis"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/James_G._Skoufis""}, {""name"": ""Timothy Mitts"", ""party"": ""Conservative Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Timothy_Mitts""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

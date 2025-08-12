@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-Tennessee,TN-CD05,Davidson,37217,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+41064,Tennessee,TN-CD05,Davidson,37217,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ Tennessee,TN-CD05,Davidson,37217,"# Ballot Complexity Report
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 18.7  years of education      |
-| **Length**              | Ballot Length                 | 2,750 characters       |
-|                         | Word Count                     | 212                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 19.8 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.99      |
+| **Length**              | Ballot Length                 |  2,750 characters       |
+|                         | Word Count                     |  180                         |
 
 ---
 # Ballot for Davidson County, Tennessee
@@ -239,7 +240,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.68,19.9,0.5409359615650764,0.972300757231262,"['Nashville, Tennessee, Transit Improvement Program Referendum (2024)']",[],"# Ballot for Davidson County, Tennessee
+",11.988682608695653,19.786858080393767,0.5391664524802784,0.9756519504142035,"['Nashville, Tennessee, Transit Improvement Program Referendum (2024)']",[],"# Ballot for Davidson County, Tennessee
 
 Election Date: 2024-11-05
 
@@ -350,7 +351,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.68,19.9,0.6750331165108049,0.974267976828328,0.2992348603175231,0.1340971549457285,0.0019672195970660278,"{""electionInfo"": {""title"": ""Ballot for Davidson County, Tennessee"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Rachele Fruit"", ""party"": ""Independent"", ""runningMate"": ""Dennis Richter"", ""moreInfoUrl"": ""https://ballotpedia.org/Rachele_Fruit""}, {""name"": ""Jay Bowman"", ""party"": ""Independent"", ""runningMate"": ""De Bowman"", ""moreInfoUrl"": ""https://ballotpedia.org/Jay_Bowman""}, {""name"": ""Jill Stein"", ""party"": ""Independent"", ""runningMate"": ""Samson LeBeau Kpadenou"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Tennessee District 5"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Bob Titley"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Bob_Titley""}, {""name"": ""Maryam Abolfazli"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Maryam_Abolfazli""}, {""name"": ""Yomi Faparusi"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Yomi_Faparusi""}, {""name"": ""Andy Ogles"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andy_Ogles""}, {""name"": ""Jim Larkin"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Jim_Larkin_(Tennessee_congressional_candidate)""}]}, {""title"": ""U.S. Senate Tennessee"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Hastina Robinson"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Hastina_Robinson""}, {""name"": ""Tharon Chandler"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Tharon_Chandler""}, {""name"": ""Pamela Moses"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Pamela_Moses""}, {""name"": ""Gloria Johnson"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gloria_Johnson_(Tennessee)""}, {""name"": ""Marsha Blackburn"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Marsha_Blackburn""}]}, {""title"": ""Tennessee House of Representatives District 52"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Laura Nelson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Laura_Nelson_(Tennessee)""}, {""name"": ""Justin Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Justin_Jones_(Tennessee_state_representative)""}]}, {""title"": ""Nashville, Tennessee, Transit Improvement Program Referendum (2024)"", ""level"": ""City-town"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -363,9 +364,10 @@ Election Date: 2024-11-05
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 18.7  years of education      |
-| **Length**              | Ballot Length                 | 2,750 characters       |
-|                         | Word Count                     | 212                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 19.8 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.99      |
+| **Length**              | Ballot Length                 |  2,750 characters       |
+|                         | Word Count                     |  180                         |
 
 ---
 # Ballot for Davidson County, Tennessee
@@ -479,8 +481,8 @@ Election Date: 2024-11-05
 
 ---
 
-"
-Tennessee,TN-CD06,Davidson,37217,"# Ballot Complexity Report
+",11.988682608695653,19.786858080393767,0.6652859882559956,0.9757508056703375,0.31046481741434184,0.12611953577571722,9.885525613395618e-05,"{""electionInfo"": {""title"": ""Ballot for Davidson County, Tennessee"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Rachele Fruit"", ""party"": ""Independent"", ""runningMate"": ""Dennis Richter"", ""moreInfoUrl"": ""https://ballotpedia.org/Rachele_Fruit""}, {""name"": ""Jay Bowman"", ""party"": ""Independent"", ""runningMate"": ""De Bowman"", ""moreInfoUrl"": ""https://ballotpedia.org/Jay_Bowman""}, {""name"": ""Jill Stein"", ""party"": ""Independent"", ""runningMate"": ""Samson LeBeau Kpadenou"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Tennessee District 5"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Bob Titley"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Bob_Titley""}, {""name"": ""Maryam Abolfazli"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Maryam_Abolfazli""}, {""name"": ""Yomi Faparusi"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Yomi_Faparusi""}, {""name"": ""Andy Ogles"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andy_Ogles""}, {""name"": ""Jim Larkin"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Jim_Larkin_(Tennessee_congressional_candidate)""}]}, {""title"": ""U.S. Senate Tennessee"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Hastina Robinson"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Hastina_Robinson""}, {""name"": ""Tharon Chandler"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Tharon_Chandler""}, {""name"": ""Pamela Moses"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Pamela_Moses""}, {""name"": ""Gloria Johnson"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gloria_Johnson_(Tennessee)""}, {""name"": ""Marsha Blackburn"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Marsha_Blackburn""}]}, {""title"": ""Tennessee House of Representatives District 52"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Laura Nelson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Laura_Nelson_(Tennessee)""}, {""name"": ""Justin Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Justin_Jones_(Tennessee_state_representative)""}]}, {""title"": ""Nashville, Tennessee, Transit Improvement Program Referendum (2024)"", ""level"": ""City-town"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"
+41161,Tennessee,TN-CD06,Davidson,37217,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -493,9 +495,10 @@ Tennessee,TN-CD06,Davidson,37217,"# Ballot Complexity Report
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.8  years of education      |
-| **Length**              | Ballot Length                 | 2,470 characters       |
-|                         | Word Count                     | 197                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 18.5 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.66      |
+| **Length**              | Ballot Length                 |  2,470 characters       |
+|                         | Word Count                     |  168                         |
 
 ---
 # Ballot for Davidson County, Tennessee
@@ -702,7 +705,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.25,19.0,0.43455782043931274,0.9139168429585401,"['Nashville, Tennessee, Transit Improvement Program Referendum (2024)']",[],"# Ballot for Davidson County, Tennessee
+",11.659374720812183,18.500230964467004,0.36560627928586964,0.9064829276972657,"['Nashville, Tennessee, Transit Improvement Program Referendum (2024)']",[],"# Ballot for Davidson County, Tennessee
 
 Election Date: 2024-11-05
 
@@ -804,7 +807,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.25,19.0,0.5518792384191068,0.920836710887918,0.36895747246881117,0.11732141797979406,0.006919867929377821,"{""electionInfo"": {""title"": ""Ballot for Davidson County, Tennessee"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Rachele Fruit"", ""party"": ""Independent"", ""runningMate"": ""Dennis Richter"", ""moreInfoUrl"": ""https://ballotpedia.org/Rachele_Fruit""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}, {""name"": ""Jay Bowman"", ""party"": ""Independent"", ""runningMate"": ""De Bowman"", ""moreInfoUrl"": ""https://ballotpedia.org/Jay_Bowman""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Jill Stein"", ""party"": ""Independent"", ""runningMate"": ""Samson LeBeau Kpadenou"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}]}, {""title"": ""U.S. House Tennessee District 6"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Lore Bergman"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Lore_Bergman""}, {""name"": ""John Rose"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/John_Rose_(Tennessee)""}]}, {""title"": ""U.S. Senate Tennessee"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Marsha Blackburn"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Marsha_Blackburn""}, {""name"": ""Gloria Johnson"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gloria_Johnson_(Tennessee)""}, {""name"": ""Pamela Moses"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Pamela_Moses""}, {""name"": ""Tharon Chandler"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Tharon_Chandler""}, {""name"": ""Hastina Robinson"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Hastina_Robinson""}]}, {""title"": ""Tennessee House of Representatives District 52"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Laura Nelson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Laura_Nelson_(Tennessee)""}, {""name"": ""Justin Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Justin_Jones_(Tennessee_state_representative)""}]}, {""title"": ""Nashville, Tennessee, Transit Improvement Program Referendum (2024)"", ""level"": ""City-town"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -817,9 +820,10 @@ Election Date: 2024-11-05
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.8  years of education      |
-| **Length**              | Ballot Length                 | 2,470 characters       |
-|                         | Word Count                     | 197                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 18.5 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.66      |
+| **Length**              | Ballot Length                 |  2,470 characters       |
+|                         | Word Count                     |  168                         |
 
 ---
 # Ballot for Davidson County, Tennessee
@@ -924,8 +928,8 @@ Election Date: 2024-11-05
 
 ---
 
-"
-Tennessee,TN-CD07,Davidson,37217,"# Ballot Complexity Report
+",11.659374720812183,18.500230964467004,0.46857391407501137,0.9182269321259812,0.4496530180509698,0.10296763478914173,0.011744004428715482,"{""electionInfo"": {""title"": ""Ballot for Davidson County, Tennessee"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Rachele Fruit"", ""party"": ""Independent"", ""runningMate"": ""Dennis Richter"", ""moreInfoUrl"": ""https://ballotpedia.org/Rachele_Fruit""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}, {""name"": ""Jay Bowman"", ""party"": ""Independent"", ""runningMate"": ""De Bowman"", ""moreInfoUrl"": ""https://ballotpedia.org/Jay_Bowman""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Jill Stein"", ""party"": ""Independent"", ""runningMate"": ""Samson LeBeau Kpadenou"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}]}, {""title"": ""U.S. House Tennessee District 6"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Lore Bergman"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Lore_Bergman""}, {""name"": ""John Rose"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/John_Rose_(Tennessee)""}]}, {""title"": ""U.S. Senate Tennessee"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Marsha Blackburn"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Marsha_Blackburn""}, {""name"": ""Gloria Johnson"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gloria_Johnson_(Tennessee)""}, {""name"": ""Pamela Moses"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Pamela_Moses""}, {""name"": ""Tharon Chandler"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Tharon_Chandler""}, {""name"": ""Hastina Robinson"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Hastina_Robinson""}]}, {""title"": ""Tennessee House of Representatives District 52"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Laura Nelson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Laura_Nelson_(Tennessee)""}, {""name"": ""Justin Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Justin_Jones_(Tennessee_state_representative)""}]}, {""title"": ""Nashville, Tennessee, Transit Improvement Program Referendum (2024)"", ""level"": ""City-town"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"
+41329,Tennessee,TN-CD07,Davidson,37217,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -938,9 +942,10 @@ Tennessee,TN-CD07,Davidson,37217,"# Ballot Complexity Report
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.7  years of education      |
-| **Length**              | Ballot Length                 | 2,554 characters       |
-|                         | Word Count                     | 202                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 18.6 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.70      |
+| **Length**              | Ballot Length                 |  2,554 characters       |
+|                         | Word Count                     |  172                         |
 
 ---
 # Ballot for Davidson County, Tennessee
@@ -1153,7 +1158,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.43,18.8,0.4043278831135452,0.956009411020384,"['Nashville, Tennessee, Transit Improvement Program Referendum (2024)']",[],"# Ballot for Davidson County, Tennessee
+",11.69593149457803,18.596082036775112,0.37730085608651814,0.9170900966804405,"['Nashville, Tennessee, Transit Improvement Program Referendum (2024)']",[],"# Ballot for Davidson County, Tennessee
 
 Election Date: 2024-11-05
 
@@ -1258,7 +1263,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.43,18.8,0.5160639791217699,0.9613278238003915,0.44526384467862157,0.11173609600822476,0.005318412780007553,"{""electionInfo"": {""title"": ""Ballot for Davidson County, Tennessee"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Rachele Fruit"", ""party"": ""Independent"", ""runningMate"": ""Dennis Richter"", ""moreInfoUrl"": ""https://ballotpedia.org/Rachele_Fruit""}, {""name"": ""Jay Bowman"", ""party"": ""Independent"", ""runningMate"": ""De Bowman"", ""moreInfoUrl"": ""https://ballotpedia.org/Jay_Bowman""}, {""name"": ""Jill Stein"", ""party"": ""Independent"", ""runningMate"": ""Samson LeBeau Kpadenou"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Tennessee District 7"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Shaun Greene"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Shaun_Greene""}, {""name"": ""Mark Green"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mark_Green_(Tennessee)""}, {""name"": ""Megan Barry"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Megan_Barry""}]}, {""title"": ""U.S. Senate Tennessee"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Hastina Robinson"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Hastina_Robinson""}, {""name"": ""Tharon Chandler"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Tharon_Chandler""}, {""name"": ""Pamela Moses"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Pamela_Moses""}, {""name"": ""Gloria Johnson"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gloria_Johnson_(Tennessee)""}, {""name"": ""Marsha Blackburn"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Marsha_Blackburn""}]}, {""title"": ""Tennessee House of Representatives District 52"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Laura Nelson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Laura_Nelson_(Tennessee)""}, {""name"": ""Justin Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Justin_Jones_(Tennessee_state_representative)""}]}, {""title"": ""Nashville, Tennessee, Transit Improvement Program Referendum (2024)"", ""level"": ""City-town"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -1271,9 +1276,10 @@ Election Date: 2024-11-05
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.7  years of education      |
-| **Length**              | Ballot Length                 | 2,554 characters       |
-|                         | Word Count                     | 202                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 18.6 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.70      |
+| **Length**              | Ballot Length                 |  2,554 characters       |
+|                         | Word Count                     |  172                         |
 
 ---
 # Ballot for Davidson County, Tennessee
@@ -1381,4 +1387,4 @@ Election Date: 2024-11-05
 
 ---
 
-"
+",11.69593149457803,18.596082036775112,0.4845192668894205,0.9279246327527234,0.4434053658633029,0.10721841080290234,0.010834536072282908,"{""electionInfo"": {""title"": ""Ballot for Davidson County, Tennessee"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Rachele Fruit"", ""party"": ""Independent"", ""runningMate"": ""Dennis Richter"", ""moreInfoUrl"": ""https://ballotpedia.org/Rachele_Fruit""}, {""name"": ""Jay Bowman"", ""party"": ""Independent"", ""runningMate"": ""De Bowman"", ""moreInfoUrl"": ""https://ballotpedia.org/Jay_Bowman""}, {""name"": ""Jill Stein"", ""party"": ""Independent"", ""runningMate"": ""Samson LeBeau Kpadenou"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Tennessee District 7"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Shaun Greene"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Shaun_Greene""}, {""name"": ""Mark Green"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mark_Green_(Tennessee)""}, {""name"": ""Megan Barry"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Megan_Barry""}]}, {""title"": ""U.S. Senate Tennessee"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Hastina Robinson"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Hastina_Robinson""}, {""name"": ""Tharon Chandler"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Tharon_Chandler""}, {""name"": ""Pamela Moses"", ""party"": ""Independent"", ""moreInfoUrl"": ""https://ballotpedia.org/Pamela_Moses""}, {""name"": ""Gloria Johnson"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gloria_Johnson_(Tennessee)""}, {""name"": ""Marsha Blackburn"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Marsha_Blackburn""}]}, {""title"": ""Tennessee House of Representatives District 52"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Laura Nelson"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Laura_Nelson_(Tennessee)""}, {""name"": ""Justin Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Justin_Jones_(Tennessee_state_representative)""}]}, {""title"": ""Nashville, Tennessee, Transit Improvement Program Referendum (2024)"", ""level"": ""City-town"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

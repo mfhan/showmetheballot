@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-New York,NY-CD01,Suffolk,11742,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+28772,New York,NY-CD01,Suffolk,11742,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ New York,NY-CD01,Suffolk,11742,"# Ballot Complexity Report
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 5|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 13.4  years of education      |
-| **Length**              | Ballot Length                 | 1,895 characters       |
-|                         | Word Count                     | 173                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.4 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 9.74      |
+| **Length**              | Ballot Length                 |  1,895 characters       |
+|                         | Word Count                     |  139                         |
 
 ---
 # Ballot for Suffolk County, New York
@@ -199,7 +200,7 @@ Election Date: 2024-11-05
 
 ---
 
-",7.82,14.6,0.00025702366594831846,0.09654204314043378,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Suffolk County, New York
+",9.74037225433526,14.409533959537573,9.885525613396864e-05,0.0010972933430870519,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Suffolk County, New York
 
 Election Date: 2024-11-05
 
@@ -294,7 +295,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.17,13.7,0.0015619130469167045,0.40591945273730207,0.40435753969038535,0.001304889380968386,0.30937740959686827,"{""electionInfo"": {""title"": ""Ballot for Suffolk County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 1"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Nicholas J. LaLota"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Nicholas_J._LaLota""}, {""name"": ""John Avlon"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/John_Avlon""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 5"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Doug Smith"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Doug_Smith_(New_York)""}, {""name"": ""Michael A. Reynolds"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_A._Reynolds_(New_York)""}]}, {""title"": ""New York State Senate District 3"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Dean Murray"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dean_Murray""}, {""name"": ""Michael Conroy"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Conroy""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -307,9 +308,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 5|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 13.4  years of education      |
-| **Length**              | Ballot Length                 | 1,895 characters       |
-|                         | Word Count                     | 173                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 9.95      |
+| **Length**              | Ballot Length                 |  2,305 characters       |
+|                         | Word Count                     |  194                         |
 
 ---
 # Ballot for Suffolk County, New York
@@ -407,8 +409,8 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
-New York,NY-CD02,Suffolk,11742,"# Ballot Complexity Report
+",9.951198181818183,13.995885281385284,0.0030447418889262344,0.006771585045176852,0.0037268431562506176,0.0029458866327922656,0.0056742917020898,"{""electionInfo"": {""title"": ""Ballot for Suffolk County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 1"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Nicholas J. LaLota"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Nicholas_J._LaLota""}, {""name"": ""John Avlon"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/John_Avlon""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 5"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Doug Smith"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Doug_Smith_(New_York)""}, {""name"": ""Michael A. Reynolds"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_A._Reynolds_(New_York)""}]}, {""title"": ""New York State Senate District 3"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Dean Murray"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dean_Murray""}, {""name"": ""Michael Conroy"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Conroy""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"
+28859,New York,NY-CD02,Suffolk,11742,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -421,9 +423,10 @@ New York,NY-CD02,Suffolk,11742,"# Ballot Complexity Report
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 5|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.9  years of education      |
-| **Length**              | Ballot Length                 | 1,889 characters       |
-|                         | Word Count                     | 172                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.4 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 9.99      |
+| **Length**              | Ballot Length                 |  1,889 characters       |
+|                         | Word Count                     |  138                         |
 
 ---
 # Ballot for Suffolk County, New York
@@ -608,7 +611,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.24,14.9,0.0024219537752822318,0.3433935032325669,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Suffolk County, New York
+",9.988793178294575,15.363395348837212,0.01374088060262164,0.007651396824769173,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Suffolk County, New York
 
 Election Date: 2024-11-05
 
@@ -703,7 +706,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.49,15.1,0.057197651199114255,0.653116906225904,0.5959192550267898,0.05477569742383202,0.3097234029933371,"{""electionInfo"": {""title"": ""Ballot for Suffolk County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 2"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Rob Lubin"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Rob_Lubin""}, {""name"": ""Andrew Garbarino"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Garbarino""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 5"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Doug Smith"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Doug_Smith_(New_York)""}, {""name"": ""Michael A. Reynolds"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_A._Reynolds_(New_York)""}]}, {""title"": ""New York State Senate District 3"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Dean Murray"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dean_Murray""}, {""name"": ""Michael Conroy"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Conroy""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -716,9 +719,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 5|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.9  years of education      |
-| **Length**              | Ballot Length                 | 1,889 characters       |
-|                         | Word Count                     | 172                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.7 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.14      |
+| **Length**              | Ballot Length                 |  2,299 characters       |
+|                         | Word Count                     |  193                         |
 
 ---
 # Ballot for Suffolk County, New York
@@ -816,4 +820,4 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
+",10.141008009153317,14.731922196796344,0.038771031455742504,0.025524427133790703,-0.0132466043219518,0.025030150853120863,0.01787303030902153,"{""electionInfo"": {""title"": ""Ballot for Suffolk County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 2"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Rob Lubin"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Rob_Lubin""}, {""name"": ""Andrew Garbarino"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Garbarino""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 5"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Doug Smith"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Doug_Smith_(New_York)""}, {""name"": ""Michael A. Reynolds"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_A._Reynolds_(New_York)""}]}, {""title"": ""New York State Senate District 3"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Dean Murray"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dean_Murray""}, {""name"": ""Michael Conroy"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Conroy""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"
