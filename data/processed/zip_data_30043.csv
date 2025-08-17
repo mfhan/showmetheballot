@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-Georgia,GA-CD09,Gwinnett,30043,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+8952,Georgia,GA-CD09,Gwinnett,30043,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ Georgia,GA-CD09,Gwinnett,30043,"# Ballot Complexity Report
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 3|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 16.1  years of education      |
-| **Length**              | Ballot Length                 | 2,015 characters       |
-|                         | Word Count                     | 190                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 16.4 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.59      |
+| **Length**              | Ballot Length                 |  2,015 characters       |
+|                         | Word Count                     |  158                         |
 
 ---
 # Ballot for Gwinnett County, Georgia
@@ -207,7 +208,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.43,16.1,0.0595998339231697,0.4937325767611064,"['Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)', 'Georgia Amendment 2, Creation of Tax Court Amendment (2024)', 'Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)']","['“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”', '“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”', '“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”']","# Ballot for Gwinnett County, Georgia
+",10.594317813765183,16.442631578947367,0.07805611024338165,0.08997805413313825,"['Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)', 'Georgia Amendment 2, Creation of Tax Court Amendment (2024)', 'Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)']","['“Shall the Constitution of Georgia be amended so as to authorize the General Assembly to provide by general law for a state-wide homestead exemption that serves to limit increases in the assessed value of homesteads, but which any county, consolidated government, municipality, or local school system may opt out of upon the completion of certain procedures?[4]”', '“Shall the Constitution of Georgia be amended so as to provide for the Georgia Tax Court to be vested with the judicial power of the state and to have venue,  judges, and jurisdiction concurrent with superior courts?[2]”', '“Do you approve the Act that increases an exemption from property tax for all tangible personal property from $7,500.00 to $20,000.00?[2]”']","# Ballot for Gwinnett County, Georgia
 
 Election Date: 2024-11-05
 
@@ -308,7 +309,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.26,15.0,0.05035686747464363,0.4707882718124123,0.42043140433776865,-0.009242966448526069,-0.022944304948694094,"{""electionInfo"": {""title"": ""Ballot for Gwinnett County, Georgia"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Georgia District 9"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Tambrei Cash"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Tambrei_Cash""}, {""name"": ""Andrew Clyde"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Clyde""}]}, {""title"": ""Georgia House of Representatives District 105"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Sandy Donatucci"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Sandy_Donatucci""}, {""name"": ""Farooq Mughal"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Farooq_Mughal""}]}, {""title"": ""Georgia State Senate District 7"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Nabilah Islam Parkes"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Nabilah_Islam_Parkes""}, {""name"": ""J. Gregory Howard"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/J._Gregory_Howard""}]}, {""title"": ""Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Amendment 2, Creation of Tax Court Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -321,9 +322,10 @@ Election Date: 2024-11-05
 |                         | Number of Races                 | 4|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 3|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 16.1  years of education      |
-| **Length**              | Ballot Length                 | 2,015 characters       |
-|                         | Word Count                     | 190                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.4 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.44      |
+| **Length**              | Ballot Length                 |  2,741 characters       |
+|                         | Word Count                     |  268                         |
 
 ---
 # Ballot for Gwinnett County, Georgia
@@ -427,4 +429,4 @@ Election Date: 2024-11-05
 
 ---
 
-"
+",10.444714705882353,15.449907120743031,0.1103620079479626,0.12190830186441014,0.011546293916447542,0.03230589770458095,0.031930247731271885,"{""electionInfo"": {""title"": ""Ballot for Gwinnett County, Georgia"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Georgia District 9"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Tambrei Cash"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Tambrei_Cash""}, {""name"": ""Andrew Clyde"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Clyde""}]}, {""title"": ""Georgia House of Representatives District 105"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Sandy Donatucci"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Sandy_Donatucci""}, {""name"": ""Farooq Mughal"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Farooq_Mughal""}]}, {""title"": ""Georgia State Senate District 7"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Nabilah Islam Parkes"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Nabilah_Islam_Parkes""}, {""name"": ""J. Gregory Howard"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/J._Gregory_Howard""}]}, {""title"": ""Georgia Amendment 1, Local Option Homestead Property Tax Exemption Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Amendment 2, Creation of Tax Court Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}, {""title"": ""Georgia Referendum A, Personal Property Tax Exemption Increase Measure (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

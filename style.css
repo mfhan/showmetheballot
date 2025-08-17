@@ -141,6 +141,42 @@ button:hover {
     100% { transform: rotate(360deg); }
 }
 
+#methodology-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    margin-top: 30px;
+}
+
+#methodology-section h2, #about-section h3 {
+    color: #1a3e6f;
+    margin-bottom: 15px;
+}
+
+#methodology-section h3 {
+    margin-top: 20px;
+}
+
+#methodology-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#methodology-section li {
+    margin-bottom: 10px;
+}
+
+#methodology-section a {
+    color: #1a3e6f;
+    text-decoration: none;
+}
+
+#methodology-section a:hover {
+    text-decoration: underline;
+}
+
+
 #about-section {
     background-color: #f9f9f9;
     padding: 20px;
@@ -175,6 +211,26 @@ button:hover {
 #about-section a:hover {
     text-decoration: underline;
 }
+
+#results a {
+    color: #1a3e6f;
+    text-decoration: none;
+}
+
+#results a:hover {
+    text-decoration: underline;
+}
+
+
+footer a {
+    color: #1a3e6f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 
 .feedback-link {
     display: inline-block;
@@ -244,7 +300,7 @@ footer {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     font-family: 'Libre Caslon Text', serif;
     font-weight: normal;
 }
@@ -261,7 +317,7 @@ em {
 }
 
 strong {
-    font-family: 'Public Sans', serif;
+/*     font-family: 'Public Sans', serif; */
     font-weight: 600;
 }
 
@@ -315,4 +371,68 @@ strong {
 
 .about-link:hover {
     text-decoration: underline;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul ul {
+  margin-top: 0;
+  margin-left: 0rem;
+}
+
+ul p {
+  margin-bottom: 0.25rem;
+}
+
+ul > li {
+  margin-bottom: 0;
+}
+
+ul ul > li {
+  margin-bottom: 0;
+}
+
+/* Tab interface styles */
+.ballot-tabs {
+    margin-top: 10px;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 15px;
+    gap: 0;
+}
+
+.tab-button {
+    background-color: transparent;
+    color: #666;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+}
+
+.tab-button:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.tab-button.active {
+    color: #1a3e6f;
+    border-bottom-color: #1a3e6f;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.tab-content {
+    min-height: 200px;
 }

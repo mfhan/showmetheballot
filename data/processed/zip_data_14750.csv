@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-New York,NY-CD23,Chautauqua,14750,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+30583,New York,NY-CD23,Chautauqua,14750,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ New York,NY-CD23,Chautauqua,14750,"# Ballot Complexity Report
 |                         | Number of Races                 | 6|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.5  years of education      |
-| **Length**              | Ballot Length                 | 2,335 characters       |
-|                         | Word Count                     | 209                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.9 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.43      |
+| **Length**              | Ballot Length                 |  2,335 characters       |
+|                         | Word Count                     |  168                         |
 
 ---
 # Ballot for Chautauqua County, New York
@@ -235,7 +236,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.46,15.6,0.02538602977520315,0.5185353605251192,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Chautauqua County, New York
+",10.42548985645933,15.924734449760766,0.04796457027620159,0.07058265287965361,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Chautauqua County, New York
 
 Election Date: 2024-11-05
 
@@ -348,7 +349,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.62,14.7,0.039225765633958756,0.7371438739397774,0.6979181083058187,0.013839735858755607,0.21860851341465826,"{""electionInfo"": {""title"": ""Ballot for Chautauqua County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 23"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Nick Langworthy"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Nick_Langworthy""}, {""name"": ""Thomas Carle"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Thomas_Carle""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 150"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Michael Bobseine"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Bobseine""}, {""name"": ""Andrew Molitor"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Molitor""}]}, {""title"": ""New York State Senate District 57"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""George Borrello"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/George_Borrello""}]}, {""title"": ""New York Supreme Court 8th Judicial District"", ""level"": ""Local"", ""branch"": ""Judicial"", ""seats"": 4, ""candidates"": [{""name"": ""Henry J. Nowak"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Henry_J._Nowak""}, {""name"": ""Catherine Nugent Panepinto"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Catherine_Nugent_Panepinto""}, {""name"": ""Deborah A. Chimes"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Deborah_A._Chimes""}, {""name"": ""Michael J. Norris"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_J._Norris""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -361,9 +362,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 6|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.5  years of education      |
-| **Length**              | Ballot Length                 | 2,335 characters       |
-|                         | Word Count                     | 209                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.2 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.46      |
+| **Length**              | Ballot Length                 |  2,745 characters       |
+|                         | Word Count                     |  223                         |
 
 ---
 # Ballot for Chautauqua County, New York
@@ -479,4 +481,4 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
+",10.45698913857678,15.221409176029965,0.08972103046718995,0.1251507542656043,0.035429723798414345,0.04175646019098836,0.05456810138595068,"{""electionInfo"": {""title"": ""Ballot for Chautauqua County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 23"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Nick Langworthy"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Nick_Langworthy""}, {""name"": ""Thomas Carle"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Thomas_Carle""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 150"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Michael Bobseine"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Bobseine""}, {""name"": ""Andrew Molitor"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Andrew_Molitor""}]}, {""title"": ""New York State Senate District 57"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""George Borrello"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/George_Borrello""}]}, {""title"": ""New York Supreme Court 8th Judicial District"", ""level"": ""Local"", ""branch"": ""Judicial"", ""seats"": 4, ""candidates"": [{""name"": ""Henry J. Nowak"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Henry_J._Nowak""}, {""name"": ""Catherine Nugent Panepinto"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Catherine_Nugent_Panepinto""}, {""name"": ""Deborah A. Chimes"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Deborah_A._Chimes""}, {""name"": ""Michael J. Norris"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_J._Norris""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

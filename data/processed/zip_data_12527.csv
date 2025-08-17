@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-New York,NY-CD18,Dutchess,12527,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+29377,New York,NY-CD18,Dutchess,12527,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ New York,NY-CD18,Dutchess,12527,"# Ballot Complexity Report
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 13.8  years of education      |
-| **Length**              | Ballot Length                 | 1,804 characters       |
-|                         | Word Count                     | 167                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.4 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 9.90      |
+| **Length**              | Ballot Length                 |  1,804 characters       |
+|                         | Word Count                     |  134                         |
 
 ---
 # Ballot for Dutchess County, New York
@@ -193,7 +194,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.2,15.0,0.006445362699934756,0.3143102868779533,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Dutchess County, New York
+",9.901211035072713,15.417831479897355,0.0151347397141106,0.004774708871270686,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Dutchess County, New York
 
 Election Date: 2024-11-05
 
@@ -285,7 +286,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.47,15.2,0.06775539255422211,0.6370924692065877,0.5693370766523655,0.06131002985428735,0.32278218232863437,"{""electionInfo"": {""title"": ""Ballot for Dutchess County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 18"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Pat Ryan"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Pat_Ryan_(New_York)""}, {""name"": ""Alison Esposito"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Alison_Esposito""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 105"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Anil Beephan Jr."", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Anil_Beephan_Jr.""}]}, {""title"": ""New York State Senate District 39"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Yvette Vald\u00e9s Smith"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Yvette_Vald\u00e9s_Smith""}, {""name"": ""Robert Rolison"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_Rolison""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -298,9 +299,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 13.8  years of education      |
-| **Length**              | Ballot Length                 | 1,804 characters       |
-|                         | Word Count                     | 167                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.8 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.08      |
+| **Length**              | Ballot Length                 |  2,214 characters       |
+|                         | Word Count                     |  189                         |
 
 ---
 # Ballot for Dutchess County, New York
@@ -395,4 +397,4 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
+",10.081255555555556,14.773000000000003,0.04030328792581902,0.019840249906087508,-0.02046303801973151,0.02516854821170842,0.015065541034816821,"{""electionInfo"": {""title"": ""Ballot for Dutchess County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 18"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Pat Ryan"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Pat_Ryan_(New_York)""}, {""name"": ""Alison Esposito"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Alison_Esposito""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 105"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Anil Beephan Jr."", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Anil_Beephan_Jr.""}]}, {""title"": ""New York State Senate District 39"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Yvette Vald\u00e9s Smith"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Yvette_Vald\u00e9s_Smith""}, {""name"": ""Robert Rolison"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_Rolison""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

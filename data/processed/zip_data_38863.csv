@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-Mississippi,MS-CD01,Lafayette,38863,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+23129,Mississippi,MS-CD01,Lafayette,38863,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -13,9 +13,10 @@ Mississippi,MS-CD01,Lafayette,38863,"# Ballot Complexity Report
 |                         | Number of Competitive Races     | 3|
 |                         | Number of Ballot Measures       | 0|
 |                         | Non-Partisan Races  | Mississippi Supreme Court District 3 Position 1, Mississippi Supreme Court District 3 Position 2 |
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.6  years of education      |
-| **Length**              | Ballot Length                 | 2,408 characters       |
-|                         | Word Count                     | 208                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.1 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.14      |
+| **Length**              | Ballot Length                 |  2,408 characters       |
+|                         | Word Count                     |  178                         |
 
 ---
 # Ballot for Lafayette County, Mississippi
@@ -224,7 +225,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.31,16.8,0.10439115047747088,0.9314043377686392,[],[],"# Ballot for Lafayette County, Mississippi
+",11.136378461538463,17.05830769230769,0.12247177682437375,0.4445323157832302,[],[],"# Ballot for Lafayette County, Mississippi
 
 Election Date: 2024-11-05
 
@@ -327,7 +328,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.31,16.8,0.23373336760315547,0.9380869530832955,0.70435358548014,0.12934221712568458,0.006682615314656304,"{""electionInfo"": {""title"": ""Ballot for Lafayette County, Mississippi"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Shiva Ayyadurai"", ""party"": ""Independent"", ""runningMate"": ""Crystal Ellis"", ""moreInfoUrl"": ""https://ballotpedia.org/Shiva_Ayyadurai""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Peter Sonski"", ""party"": ""Independent"", ""runningMate"": ""Lauren Onak"", ""moreInfoUrl"": ""https://ballotpedia.org/Peter_Sonski""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Randall Terry"", ""party"": ""Constitution Party"", ""runningMate"": ""Stephen E. Broden"", ""moreInfoUrl"": ""https://ballotpedia.org/Randall_Terry""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Mississippi District 1"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Trent Kelly"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Trent_Kelly""}, {""name"": ""Dianne Black"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dianne_Black""}]}, {""title"": ""U.S. Senate Mississippi"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Ty Pinkins"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ty_Pinkins""}, {""name"": ""Roger Wicker"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Roger_Wicker""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 1"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Robert P. Chamberlin"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_Chamberlin""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 2"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Jimmy Maxwell"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Jimmy_Maxwell""}]}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -341,9 +342,10 @@ Election Date: 2024-11-05
 |                         | Number of Competitive Races     | 3|
 |                         | Number of Ballot Measures       | 0|
 |                         | Non-Partisan Races  | Mississippi Supreme Court District 3 Position 1, Mississippi Supreme Court District 3 Position 2 |
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.6  years of education      |
-| **Length**              | Ballot Length                 | 2,408 characters       |
-|                         | Word Count                     | 208                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.1 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.14      |
+| **Length**              | Ballot Length                 |  2,408 characters       |
+|                         | Word Count                     |  178                         |
 
 ---
 # Ballot for Lafayette County, Mississippi
@@ -449,8 +451,8 @@ Election Date: 2024-11-05
 
 ---
 
-"
-Mississippi,MS-CD01,Pontotoc,38863,"# Ballot Complexity Report
+",11.136378461538463,17.05830769230769,0.26751220862413255,0.544237727119951,0.27672551849581845,0.14504043179975878,0.09970541133672078,"{""electionInfo"": {""title"": ""Ballot for Lafayette County, Mississippi"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Shiva Ayyadurai"", ""party"": ""Independent"", ""runningMate"": ""Crystal Ellis"", ""moreInfoUrl"": ""https://ballotpedia.org/Shiva_Ayyadurai""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Peter Sonski"", ""party"": ""Independent"", ""runningMate"": ""Lauren Onak"", ""moreInfoUrl"": ""https://ballotpedia.org/Peter_Sonski""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Randall Terry"", ""party"": ""Constitution Party"", ""runningMate"": ""Stephen E. Broden"", ""moreInfoUrl"": ""https://ballotpedia.org/Randall_Terry""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Mississippi District 1"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Trent Kelly"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Trent_Kelly""}, {""name"": ""Dianne Black"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dianne_Black""}]}, {""title"": ""U.S. Senate Mississippi"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Ty Pinkins"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ty_Pinkins""}, {""name"": ""Roger Wicker"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Roger_Wicker""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 1"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Robert P. Chamberlin"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_Chamberlin""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 2"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Jimmy Maxwell"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Jimmy_Maxwell""}]}], ""ballotMeasures"": []}"
+23189,Mississippi,MS-CD01,Pontotoc,38863,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -464,9 +466,10 @@ Mississippi,MS-CD01,Pontotoc,38863,"# Ballot Complexity Report
 |                         | Number of Competitive Races     | 3|
 |                         | Number of Ballot Measures       | 0|
 |                         | Non-Partisan Races  | Mississippi Supreme Court District 3 Position 1, Mississippi Supreme Court District 3 Position 2 |
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.6  years of education      |
-| **Length**              | Ballot Length                 | 2,407 characters       |
-|                         | Word Count                     | 208                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.1 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.14      |
+| **Length**              | Ballot Length                 |  2,407 characters       |
+|                         | Word Count                     |  178                         |
 
 ---
 # Ballot for Pontotoc County, Mississippi
@@ -675,7 +678,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.31,16.8,0.10439115047747088,0.9314043377686392,[],[],"# Ballot for Pontotoc County, Mississippi
+",11.136378461538463,17.05830769230769,0.12247177682437375,0.4445323157832302,[],[],"# Ballot for Pontotoc County, Mississippi
 
 Election Date: 2024-11-05
 
@@ -778,7 +781,7 @@ Election Date: 2024-11-05
 
 ---
 
-",9.31,16.8,0.23373336760315547,0.9380869530832955,0.70435358548014,0.12934221712568458,0.006682615314656304,"{""electionInfo"": {""title"": ""Ballot for Pontotoc County, Mississippi"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Shiva Ayyadurai"", ""party"": ""Independent"", ""runningMate"": ""Crystal Ellis"", ""moreInfoUrl"": ""https://ballotpedia.org/Shiva_Ayyadurai""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Peter Sonski"", ""party"": ""Independent"", ""runningMate"": ""Lauren Onak"", ""moreInfoUrl"": ""https://ballotpedia.org/Peter_Sonski""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Randall Terry"", ""party"": ""Constitution Party"", ""runningMate"": ""Stephen E. Broden"", ""moreInfoUrl"": ""https://ballotpedia.org/Randall_Terry""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Mississippi District 1"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Trent Kelly"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Trent_Kelly""}, {""name"": ""Dianne Black"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dianne_Black""}]}, {""title"": ""U.S. Senate Mississippi"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Ty Pinkins"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ty_Pinkins""}, {""name"": ""Roger Wicker"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Roger_Wicker""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 1"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Robert P. Chamberlin"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_Chamberlin""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 2"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Jimmy Maxwell"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Jimmy_Maxwell""}]}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -792,9 +795,10 @@ Election Date: 2024-11-05
 |                         | Number of Competitive Races     | 3|
 |                         | Number of Ballot Measures       | 0|
 |                         | Non-Partisan Races  | Mississippi Supreme Court District 3 Position 1, Mississippi Supreme Court District 3 Position 2 |
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.6  years of education      |
-| **Length**              | Ballot Length                 | 2,407 characters       |
-|                         | Word Count                     | 208                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 17.1 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 11.14      |
+| **Length**              | Ballot Length                 |  2,407 characters       |
+|                         | Word Count                     |  178                         |
 
 ---
 # Ballot for Pontotoc County, Mississippi
@@ -900,4 +904,4 @@ Election Date: 2024-11-05
 
 ---
 
-"
+",11.136378461538463,17.05830769230769,0.26751220862413255,0.544237727119951,0.27672551849581845,0.14504043179975878,0.09970541133672078,"{""electionInfo"": {""title"": ""Ballot for Pontotoc County, Mississippi"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Robert F. Kennedy Jr."", ""party"": ""Independent"", ""runningMate"": ""Nicole Shanahan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_F._Kennedy_Jr.""}, {""name"": ""Shiva Ayyadurai"", ""party"": ""Independent"", ""runningMate"": ""Crystal Ellis"", ""moreInfoUrl"": ""https://ballotpedia.org/Shiva_Ayyadurai""}, {""name"": ""Chase Oliver"", ""party"": ""Libertarian Party"", ""runningMate"": ""Mike ter Maat"", ""moreInfoUrl"": ""https://ballotpedia.org/Chase_Oliver""}, {""name"": ""Peter Sonski"", ""party"": ""Independent"", ""runningMate"": ""Lauren Onak"", ""moreInfoUrl"": ""https://ballotpedia.org/Peter_Sonski""}, {""name"": ""Claudia De La Cruz"", ""party"": ""Independent"", ""runningMate"": ""Karina Garcia"", ""moreInfoUrl"": ""https://ballotpedia.org/Claudia_De_La_Cruz""}, {""name"": ""Jill Stein"", ""party"": ""Green Party"", ""runningMate"": ""Butch Ware"", ""moreInfoUrl"": ""https://ballotpedia.org/Jill_Stein""}, {""name"": ""Randall Terry"", ""party"": ""Constitution Party"", ""runningMate"": ""Stephen E. Broden"", ""moreInfoUrl"": ""https://ballotpedia.org/Randall_Terry""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House Mississippi District 1"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Trent Kelly"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Trent_Kelly""}, {""name"": ""Dianne Black"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Dianne_Black""}]}, {""title"": ""U.S. Senate Mississippi"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Ty Pinkins"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ty_Pinkins""}, {""name"": ""Roger Wicker"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Roger_Wicker""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 1"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Robert P. Chamberlin"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Robert_Chamberlin""}]}, {""title"": ""Mississippi Supreme Court District 3 Position 2"", ""level"": ""State"", ""branch"": ""Judicial"", ""seats"": 1, ""candidates"": [{""name"": ""Jimmy Maxwell"", ""party"": ""Nonpartisan"", ""moreInfoUrl"": ""https://ballotpedia.org/Jimmy_Maxwell""}]}], ""ballotMeasures"": []}"

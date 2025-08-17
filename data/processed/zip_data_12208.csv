@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-New York,NY-CD20,Albany,12208,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+29900,New York,NY-CD20,Albany,12208,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ New York,NY-CD20,Albany,12208,"# Ballot Complexity Report
 |                         | Number of Races                 | 6|
 |                         | Number of Competitive Races     | 6|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.9  years of education      |
-| **Length**              | Ballot Length                 | 2,175 characters       |
-|                         | Word Count                     | 197                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 16.5 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.30      |
+| **Length**              | Ballot Length                 |  2,175 characters       |
+|                         | Word Count                     |  157                         |
 
 ---
 # Ballot for Albany County, New York
@@ -229,7 +230,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.3,16.1,0.0595998339231697,0.38980604598746516,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Albany County, New York
+",10.30285007464915,16.54260973424903,0.08540105577413551,0.053134700172008144,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Albany County, New York
 
 Election Date: 2024-11-05
 
@@ -339,7 +340,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.51,16.3,0.17102947863737916,0.6667490460467783,0.49571956740939915,0.11142964471420946,0.27694300005931316,"{""electionInfo"": {""title"": ""Ballot for Albany County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 20"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Paul Tonko"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Paul_Tonko""}, {""name"": ""Kevin Waltz"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kevin_Waltz""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 109"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Alicia Purdy"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Alicia_Purdy""}, {""name"": ""Gabriella Romero"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gabriella_Romero""}]}, {""title"": ""New York State Senate District 46"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Patricia Fahy"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Patricia_Fahy""}, {""name"": ""Theodore Danz, Jr."", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Theodore_J._Danz,_Jr.""}]}, {""title"": ""Albany County District Attorney"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Lee Kindlon"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Lee_Kindlon""}, {""name"": ""Ralph Ambrosio"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ralph_Ambrosio""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -352,9 +353,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 6|
 |                         | Number of Competitive Races     | 6|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.9  years of education      |
-| **Length**              | Ballot Length                 | 2,175 characters       |
-|                         | Word Count                     | 197                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.7 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.37      |
+| **Length**              | Ballot Length                 |  2,585 characters       |
+|                         | Word Count                     |  212                         |
 
 ---
 # Ballot for Albany County, New York
@@ -467,4 +469,4 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
+",10.369021008403362,15.707282913165269,0.12512109768876412,0.10196919670218865,-0.023151900986575463,0.03972004191462861,0.04883449653018051,"{""electionInfo"": {""title"": ""Ballot for Albany County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 20"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Paul Tonko"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Paul_Tonko""}, {""name"": ""Kevin Waltz"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kevin_Waltz""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 109"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Alicia Purdy"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Alicia_Purdy""}, {""name"": ""Gabriella Romero"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gabriella_Romero""}]}, {""title"": ""New York State Senate District 46"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Patricia Fahy"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Patricia_Fahy""}, {""name"": ""Theodore Danz, Jr."", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Theodore_J._Danz,_Jr.""}]}, {""title"": ""Albany County District Attorney"", ""level"": ""Local"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Lee Kindlon"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Lee_Kindlon""}, {""name"": ""Ralph Ambrosio"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Ralph_Ambrosio""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

@@ -1,5 +1,5 @@
-state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json,full_enhanced_ballot
-New York,NY-CD17,Westchester,10514,"# Ballot Complexity Report
+Unnamed: 0,state,district,county,zip,full_markdown,unique_questions,avg_words_per_question,avg_options_per_question,races,measures,competitive_races,non_partisan_races,flesch_kincaid_grade,ballot_length,word_count,ballot_text,dale_chall_initial,flesch_kincaid_initial,flesch_kincaid_percentile_initial,dale_chall_percentile_initial,measure_titles,measure_texts,enhanced_ballot,full_enhanced_ballot,dale_chall_enhanced,flesch_kincaid_enhanced,flesch_kincaid_percentile_enhanced,dale_chall_percentile_enhanced,dale_chall_flesch_diff,flesch_kincaid_change,dale_chall_change,ballot_json
+29333,New York,NY-CD17,Westchester,10514,"# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -12,9 +12,10 @@ New York,NY-CD17,Westchester,10514,"# Ballot Complexity Report
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.2  years of education      |
-| **Length**              | Ballot Length                 | 1,895 characters       |
-|                         | Word Count                     | 172                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.6 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.21      |
+| **Length**              | Ballot Length                 |  1,895 characters       |
+|                         | Word Count                     |  138                         |
 
 ---
 # Ballot for Westchester County, New York
@@ -199,7 +200,7 @@ Election Date: 2024-11-05
 
 ---
 
-",8.47,15.2,0.01147709523715376,0.528747108483758,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Westchester County, New York
+",10.213022591362126,15.614219269102993,0.02241048656557069,0.03199944641056565,"['New York Proposal 1, Equal Protection of Law Amendment (2024)']","['“This proposal would protect against unequal treatment based on ethnicity, national origin, age, disability, and sex, including sexual orientation, gender identity and pregnancy. It also protects against unequal treatment based on reproductive healthcare and autonomy.\nA YES vote puts these protections in the New York State Constitution.\nA NO vote leaves these protections out of the State Constitution.[7]”']","# Ballot for Westchester County, New York
 
 Election Date: 2024-11-05
 
@@ -294,7 +295,7 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-",8.66,15.4,0.0926768026255956,0.7564107633602879,0.6637339607346923,0.08119970738844184,0.22766365487652984,"{""electionInfo"": {""title"": ""Ballot for Westchester County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 17"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Mondaire Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mondaire_Jones""}, {""name"": ""Michael Lawler"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Lawler_(New_York)""}, {""name"": ""Anthony Frascone"", ""party"": ""Working Families Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Anthony_Frascone""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 93"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Chris Burdick"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Chris_Burdick""}]}, {""title"": ""New York State Senate District 40"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Peter Harckham"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Peter_Harckham""}, {""name"": ""Gina Arena"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gina_Arena""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}","# Ballot Complexity Report
+","# Ballot Complexity Report
  
 *This report provides an AI-assisted analysis of ballot complexity. Please note that this is a supplementary analysis and not a substitute for official election information.*
 
@@ -307,9 +308,10 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 |                         | Number of Races                 | 5|
 |                         | Number of Competitive Races     | 4|
 |                         | Number of Ballot Measures       | 1|
-| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 15.2  years of education      |
-| **Length**              | Ballot Length                 | 1,895 characters       |
-|                         | Word Count                     | 172                         |
+| **Language Complexity** | [Flesch-Kincaid Grade Level](https://ballotpedia.org/Ballot_measure_readability_scores,_2024#Flesch-Kincaid_Grade_Level)| 14.9 years of education |
+|                         | [Dale-Chall Formula](https://en.wikipedia.org/wiki/Dale%E2%80%93Chall_readability_formula)| 10.31      |
+| **Length**              | Ballot Length                 |  2,305 characters       |
+|                         | Word Count                     |  193                         |
 
 ---
 # Ballot for Westchester County, New York
@@ -407,4 +409,4 @@ A NO vote leaves these protections out of the State Constitution.[7]”
 
 ---
 
-"
+",10.311669082125604,14.942898550724639,0.05649577888056308,0.0734395697819253,0.01694379090136222,0.03408529231499238,0.04144012337135965,"{""electionInfo"": {""title"": ""Ballot for Westchester County, New York"", ""date"": ""2024-11-05""}, ""contests"": [{""title"": ""President of the United States"", ""level"": ""Federal"", ""branch"": ""Executive"", ""seats"": 1, ""candidates"": [{""name"": ""Donald Trump"", ""party"": ""Republican Party"", ""runningMate"": ""J.D. Vance"", ""moreInfoUrl"": ""https://ballotpedia.org/Donald_Trump""}, {""name"": ""Kamala D. Harris"", ""party"": ""Democratic Party"", ""runningMate"": ""Tim Walz"", ""moreInfoUrl"": ""https://ballotpedia.org/Kamala_Harris""}]}, {""title"": ""U.S. House New York District 17"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Mondaire Jones"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mondaire_Jones""}, {""name"": ""Michael Lawler"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Michael_Lawler_(New_York)""}, {""name"": ""Anthony Frascone"", ""party"": ""Working Families Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Anthony_Frascone""}]}, {""title"": ""U.S. Senate New York"", ""level"": ""Federal"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Kirsten Gillibrand"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Kirsten_Gillibrand""}, {""name"": ""Diane Sare"", ""party"": ""LaRouche Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Diane_Sare""}, {""name"": ""Mike Sapraicone"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Mike_Sapraicone""}]}, {""title"": ""New York State Assembly District 93"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Chris Burdick"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Chris_Burdick""}]}, {""title"": ""New York State Senate District 40"", ""level"": ""State"", ""branch"": ""Legislative"", ""seats"": 1, ""candidates"": [{""name"": ""Peter Harckham"", ""party"": ""Democratic Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Peter_Harckham""}, {""name"": ""Gina Arena"", ""party"": ""Republican Party"", ""moreInfoUrl"": ""https://ballotpedia.org/Gina_Arena""}]}, {""title"": ""New York Proposal 1, Equal Protection of Law Amendment (2024)"", ""level"": ""State"", ""branch"": null, ""seats"": 1, ""candidates"": []}], ""ballotMeasures"": []}"

@@ -49,9 +49,15 @@ function handleInput(e) {
     const input = e.target.value.toLowerCase();
     if (input.length < 2) return;
 
-    const matches = autocompleteData.filter(item => 
-        item.toLowerCase().includes(input)
-    ).slice(0, 5); // Limit to 5 suggestions
+    // Split input into terms and filter out empty strings
+    const searchTerms = input.split(/\s+/).filter(term => term.length > 0);
+    if (searchTerms.length === 0) return;
+
+    // Filter autocomplete data to require all terms match
+    const matches = autocompleteData.filter(item => {
+        const itemLower = item.toLowerCase();
+        return searchTerms.every(term => itemLower.includes(term));
+    }).slice(0, 10); // Limit to 5 suggestions
 
     showSuggestions(matches);
 }
@@ -73,6 +79,7 @@ function showSuggestions(suggestions) {
         li.addEventListener('click', () => {
             document.getElementById('search-input').value = item;
             removeSuggestionList();
+            clearToggleStates();
             search(item);
         });
         suggestionList.appendChild(li);
@@ -111,8 +118,10 @@ function handleKeyDown(e) {
             if (selectedIndex > -1) {
                 document.getElementById('search-input').value = suggestions[selectedIndex].textContent;
                 removeSuggestionList();
+                clearToggleStates();
                 search(suggestions[selectedIndex].textContent);
             } else {
+                clearToggleStates();
                 search();
             }
             break;
@@ -123,6 +132,8 @@ function handleKeyDown(e) {
 function checkUrlParameters() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('q');
+    const toggleStates = urlParams.get('toggles');
+
     if (searchQuery) {
         document.getElementById('search-input').value = searchQuery;
         search(searchQuery);
@@ -145,6 +156,20 @@ function updateUrlWithToggles(toggleStates) {
     window.history.pushState({}, '', url);
 }
 
+// Function to clear all toggle states from both URL and display
+function clearToggleStates() {
+    // Clear from URL
+    const url = new URL(window.location);
+    url.searchParams.delete('toggles');
+    window.history.pushState({}, '', url);
+
+    // Close all expanded ballots
+    const ballotContents = document.querySelectorAll('.ballot-content');
+    ballotContents.forEach(content => {
+        content.style.display = 'none';
+    });
+}
+
 
 // Function to search for a county, state, or zip code
 // Modified performSearch function to handle async displayResults
@@ -156,12 +181,14 @@ async function performSearch(searchTerm) {
     const parsedResult = parseSearchTerm(searchTerm);
     let results = [];
     let zip = "";
+    let county = "";
     if (parsedResult) {
-        console.log(zip);
         zip = parsedResult.zip;
+        county = parsedResult.county;
         try {
             // Dynamically load ballot data for specific zip code
             const response = await new Promise((resolve, reject) => {
+
                 url = `/data/processed/zip_data_${zip}.csv`;
                 Papa.parse(url, {
                     download: true,
@@ -193,6 +220,7 @@ async function performSearch(searchTerm) {
         results = await Promise.all(matchingZips.map(async (match) => {
             try {
                 const response = await new Promise((resolve, reject) => {
+
                     Papa.parse(`/data/processed/zip_data_${match.zip}.csv`, {
                         download: true,
                         header: true,
@@ -213,7 +241,7 @@ async function performSearch(searchTerm) {
         })).flat();
     }
 
-    await displayResults(results, zip);
+    await displayResults(results, zip, county);
     hideLoadingIndicator();
 }
 
@@ -241,8 +269,11 @@ function parseSearchTerm(searchTerm) {
 
 
 // Modified displayResults function
-async function displayResults(results, zip) {
+async function displayResults(results, zip, county) {
     const resultsDiv = document.getElementById('results');
+    
+    // Store results globally for toggle functionality
+    window.currentResults = results;
     
     // Create a function to check if URL exists
     const checkUrlExists = async (url) => {
@@ -261,6 +292,7 @@ async function displayResults(results, zip) {
     // Only show iframe if map exists
     const iframeHTML = mapExists ? `
         <div class="iframe-container" style="margin-bottom: 20px; margin-left: auto; margin-right: auto; overflow: hidden;">
+            <h3>Map of Zip Code ${zip}</h3>
             <iframe 
                 src="${mapUrl}"
                 style="width: 100%; height: 300px; border: 1px solid #ccc; border-radius: 4px; transform-origin: 0 0;"
@@ -282,11 +314,20 @@ async function displayResults(results, zip) {
                 <div class="result-toggle">
                     <h2 onclick="toggleBallot(${index})">${title}</h2>
                     <div id="ballot-${index}" class="ballot-content" style="display: none;">
-                        ${htmlContent}
+                        <div class="ballot-tabs">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="switchTab(${index}, 'simplified')">Simplified Ballot</button>
+                                <button class="tab-button" onclick="switchTab(${index}, 'full')">Full Ballot</button>
+                            </div>
+                            <div class="tab-content">
+                                <div id="ballot-content-${index}">
+                                    ${htmlContent}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            `;
-        }).join('');
+            `        }).join('');
       
         // Check URL parameters for toggle states
         const urlParams = new URLSearchParams(window.location.search);
@@ -295,11 +336,26 @@ async function displayResults(results, zip) {
         if (results.length === 1) {
           toggleBallot(0)
         } else if (toggleStates) {
-            toggleStates.split(',').forEach((state, index) => {
-                if (state === '1') {
-                    toggleBallot(index);
-                }
-            });
+              // Otherwise, respect the toggle states from URL if present
+              toggleStates.split(',').forEach((state, index) => {
+                  if (state === '1') {
+                      toggleBallot(index);
+                  }
+              });
+        } else {
+            // Find results that match both county and zip
+            const matchingResults = results.map((result, index) => ({
+                result,
+                index
+            })).filter(item => 
+                item.result.county.toLowerCase() + ' county' === (county || '').toLowerCase() && 
+                item.result.zip === zip
+            );
+
+            // If exactly one result matches both county and zip, show it
+            if (matchingResults.length === 1) {
+                toggleBallot(matchingResults[0].index);
+            }
         }
       
     } else {
@@ -317,32 +373,105 @@ function toggleBallot(index) {
     updateUrlWithToggles(toggleStates);
 }
 
+// Function to switch between tabs
+function switchTab(index, tabType) {
+    const contentDiv = document.getElementById(`ballot-content-${index}`);
+    const resultData = window.currentResults[index];
+    
+    // Update active tab button
+    const tabButtons = document.querySelectorAll(`#ballot-${index} .tab-button`);
+    tabButtons.forEach(button => button.classList.remove('active'));
+    
+    if (tabType === 'simplified') {
+        tabButtons[0].classList.add('active');
+        // Show full_markdown converted to HTML
+        const htmlContent = converter.makeHtml(resultData.full_markdown);
+        contentDiv.innerHTML = htmlContent;
+    } else if (tabType === 'full' && resultData.full_enhanced_ballot) {
+        tabButtons[1].classList.add('active');
+        // Show full_enhanced_ballot converted to HTML
+        const htmlContent = converter.makeHtml(resultData.full_enhanced_ballot);
+        contentDiv.innerHTML = htmlContent;
+    }
+}
+
 function displayDefaultMessage() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = `<h2>Your Voice, Your Vote</h2>
-<p>Elections shape our daily life. Schools, taxes, roads – it's all on the ballot. Know what's at stake before you go.</p>
+<p>Elections shape our daily life. President, senators, schools, judges, taxes, roads — it's all on the ballot. </p>
+<p>Show Me The Ballot makes voting information more accessible and provides a content report that analyzes the complexity of each ballot.  </p>
+<p>To see what Americans voted for on November 5th, 2024, type and select from any location in the United States. Examples:</p>
 
-<p>To see what you'll be voting for, type and select from any location in the United States. Examples:</p>
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap;">
     <div style="width: 50%;">
       <h3 className="text-xl font-bold mb-2">Most Complex Ballots</h3>
       <ul className="list-disc list-inside space-y-1">
-        <li><a href="?q=Harris%20County,%20Texas%20(77375)" className="text-blue-600 hover:underline">Harris County, Texas (77375)</a></li>
-        <li><a href="?q=Oakland%20County,%20Michigan%20(48363)" className="text-blue-600 hover:underline">Oakland County, Michigan (48363)</a></li>
-        <li><a href="?q=Los%20Angeles%20County,%20California%20(90201)" className="text-blue-600 hover:underline">Los Angeles County, California (90201)</a></li>
-        <li><a href="?q=Multnomah%20County,%20Oregon%20(97227)" className="text-blue-600 hover:underline">Multnomah County, Oregon (97227)</a></li>
-        <li><a href="?q=Silver%20Bow%20County,%20Montana%20(59701)" className="text-blue-600 hover:underline">Silver Bow County, Montana (59701)</a></li>
+          <li>
+            <a href="?q=Harris+County%2C+Texas+%2877375%29&toggles=1%2C0%2C0" 
+               className="text-blue-600 hover:underline">
+              Harris County, TX-CD02 (77375)
+            </a>
+          </li>
+          <li>
+            <a href="?q=Oakland%20County,%20Michigan%20(48363)&toggles=1" 
+               className="text-blue-600 hover:underline">
+              Oakland County, MI-CD09 (48363)
+            </a>
+          </li>
+          <li>
+            <a href="?q=San%20Bernardino%20County,%20California%20(92377)&toggles=1" 
+               className="text-blue-600 hover:underline">
+              San Bernardino County, CA-CD33 (92377)
+            </a>
+          </li>
+          <li>
+            <a href="?q=Multnomah%20County,%20Oregon%20(97227)&toggles=0,1" 
+               className="text-blue-600 hover:underline">
+              Multnomah County, OR-CD03 (97227)
+            </a>
+          </li>
+          <li>
+            <a href="?q=Silver%20Bow%20County,%20Montana%20(59701)&toggles=0,0,1,0,0,0" 
+               className="text-blue-600 hover:underline">
+              Silver Bow County, MT-CD01 (59701)
+            </a>
+          </li>
       </ul>
     </div>
     <div style="width: 50%;">
       <h3 className="text-xl font-bold mb-2">Least Complex Ballots</h3>
       <ul className="list-disc list-inside space-y-1">
-        <li><a href="?q=Major%20County,%20Oklahoma%20(73755)" className="text-blue-600 hover:underline">Major County, Oklahoma (73755)</a></li>
-        <li><a href="?q=Lincoln%20County,%20Maine%20(45700)" className="text-blue-600 hover:underline">Lincoln County, Maine (45700)</a></li>
-        <li><a href="?q=Winston%20County,%20Mississippi%20(39350)" className="text-blue-600 hover:underline">Winston County, Mississippi (39350)</a></li>
-        <li><a href="?q=District%20of%20Columbia,%20District%20of%20Columbia%20(20515)" className="text-blue-600 hover:underline">District of Columbia (20515)</a></li>
-        <li><a href="?q=Rockingham%20County,%20New%20Hampshire%20(38010)" className="text-blue-600 hover:underline">Rockingham County, New Hampshire (38010)</a></li>
+<li>
+  <a href="?q=Monroe+County%2C+New+York+%2814559%29&toggles=1" 
+     className="text-blue-600 hover:underline">
+    Monroe County, NY-CD25 (14559)
+  </a>
+</li>
+<li>
+  <a href="?q=Clayton+County%2C+Georgia+%2830250%29&toggles=1" 
+     className="text-blue-600 hover:underline">
+    Clayton County, GA-CD13 (30250)
+  </a>
+</li>
+<li>
+  <a href="?q=Anderson+County%2C+South+Carolina+%2829643%29&toggles=1" 
+     className="text-blue-600 hover:underline">
+    Anderson County, SC-CD03 (29643)
+  </a>
+</li>
+<li>
+  <a href="?q=Essex+County%2C+Massachusetts+%2801944%29&toggles=1" 
+     className="text-blue-600 hover:underline">
+    Essex County, MA-CD06 (01944)
+  </a>
+</li>
+<li>
+  <a href="?q=Lincoln+County%2C+Maine+%2804570%29&toggles=1" 
+     className="text-blue-600 hover:underline">
+    Lincoln County, ME-CD01 (04570)
+  </a>
+</li>
       </ul>
     </div>
 </div>
