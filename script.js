@@ -188,7 +188,8 @@ async function performSearch(searchTerm) {
         try {
             // Dynamically load ballot data for specific zip code
             const response = await new Promise((resolve, reject) => {
-                url = `https://raw.githubusercontent.com/edbltn/showmetheballot/refs/heads/main/data/processed/zip_data_${zip}.csv`;
+
+                url = `/data/processed/zip_data_${zip}.csv`;
                 Papa.parse(url, {
                     download: true,
                     header: true,
@@ -219,7 +220,8 @@ async function performSearch(searchTerm) {
         results = await Promise.all(matchingZips.map(async (match) => {
             try {
                 const response = await new Promise((resolve, reject) => {
-                    Papa.parse(`https://raw.githubusercontent.com/edbltn/showmetheballot/refs/heads/main/data/processed/zip_data_${match.zip}.csv`, {
+
+                    Papa.parse(`/data/processed/zip_data_${match.zip}.csv`, {
                         download: true,
                         header: true,
                         complete: function(results) {
@@ -284,7 +286,7 @@ async function displayResults(results, zip, county) {
     };
 
     // Check if the map file exists before creating iframe
-    const mapUrl = `https://edbltn.github.io/showmetheballot/data/processed/${zip}.html`;
+    const mapUrl = `/data/processed/${zip}.html`;
     const mapExists = await checkUrlExists(mapUrl);
 
     // Only show iframe if map exists
